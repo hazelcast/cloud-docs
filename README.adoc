@@ -20,7 +20,7 @@ This section describes some important information about how this repository is s
 
 - The component name, version, and start page are configured in each branch's `antora.yml` file.
 - The navigation for all modules is stored in the ROOT module's `nav.adoc` file.
-- The {url-playbook}[docs site playbook] instructs Antora to automatically build the site using content in the `master` branch as well as any tags that are prefixed with *v*.
+- The {url-playbook}[docs site playbook] instructs Antora to build the site using content in the `main` branch.
 
 == GitHub Actions
 
