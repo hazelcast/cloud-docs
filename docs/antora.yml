@@ -1,0 +1,12 @@
+name: cloud
+title: Hazelcast Cloud
+version: 2.2
+prerelease: true
+asciidoc:
+  attributes:
+    javasource: ROOT:example$
+    page-toclevels: 1
+    page-ghissue: https://github.com/hazelcast/cloud-docs/issues/new
+    javadocBaseUrl: https://docs.hazelcast.org/docs/
+nav:
+- modules/ROOT/nav.adoc
