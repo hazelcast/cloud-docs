@@ -49,7 +49,7 @@ Select *Elastic Stack (ELK)* from *Logging Technology* list.
 
 image:elasticsearch-logging.png[A dropdown of logging integrations with Elastic Stack (ELK) highlighted]
 
-In this Configuration page, provide *Username*, *Password*, and Url you saved in previous steps. In URL section, it will require port number, so the value will be something like *https://<domain>:443* since Elasticsearch Service provides Elasticsearch through this port not *9200*. Once you complete this step, your logging configuration will be ready in ~30 seconds. 
+In this Configuration page, provide *Username*, *Password*, and Url you saved in previous steps. In URL section, it will require port number, so the value will be something like `https://<domain>:443` since Elasticsearch Service provides Elasticsearch through this port not *9200*. Once you complete this step, your logging configuration will be ready in ~30 seconds. 
 
 == Setting up Elasticsearch Service Kibana Dashboard
 
