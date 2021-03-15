@@ -4,7 +4,7 @@ Hazelcast Cloud Enterprise allows to integrate your own log management system. W
 
 == Setting up Logging Integration
 
-To set up the logging integration, click on the *Manage Cluster* button in the cluster details page (Hazelcast Cloud console) and select `Settings`. Go to the *Logging* tab of the appeared "UPDATE CLUSTER" dialog.
+To set up the logging integration, click on the *Manage Cluster* button in the cluster details page (Hazelcast Cloud console) and select *Settings*. Go to the *Logging* tab of the appeared "UPDATE CLUSTER" dialog.
 
 image:logging-tab.png[Logging tab in the cluster settings]
 
