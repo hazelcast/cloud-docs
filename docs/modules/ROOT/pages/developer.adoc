@@ -20,7 +20,7 @@ image:developer.png[A screen for viewing, creating, and deleting API keys]
 
 == Deleting API Key
 
-You can delete your API Key anytime you want from the `Delete API Key` button as shown below.
+You can delete your API Key anytime you want from the *Delete API Key* button as shown below.
 
 WARNING: After you delete your API Key, every application you used this API Key and API Secret won't work unless you supply the new API Key and API Secret.
 

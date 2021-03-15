@@ -12,7 +12,7 @@ image:hazelcast-version-selection.png[Selecting a version of Hazelcast while cre
 
 To update the existing Hazelcast cluster version, follow the steps below:
 
-- Click on the *Manage Cluster* button in the cloud console and select `Settings`. 
+- Click on the *Manage Cluster* button in the cloud console and select *Settings*. 
 - Go to the Hazelcast Version tab of the appeared "UPDATE CLUSTER" form. 
 - Select the new version in the "Update Hazelcast Version" field.
 - Click on the *Update* button.
