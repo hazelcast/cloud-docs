@@ -1,0 +1,20 @@
+= Hazelcast Version
+
+In Hazelcast Cloud Enterprise, you can choose a Hazelcast version while creating a Hazelcast cluster or update the existing cluster version.
+
+== When Creating a Cluster
+
+Simply choose the version in the Hazelcast Version dropdown menu of the cluster creation form:
+
+image:hazelcast-version-selection.png[Selecting a version of Hazelcast while creating a new cluster]
+
+== When Updating a Cluster
+
+To update the existing Hazelcast cluster version, follow the steps below:
+
+- Click on the *Manage Cluster* button in the cloud console and select `Settings`. 
+- Go to the Hazelcast Version tab of the appeared "UPDATE CLUSTER" form. 
+- Select the new version in the "Update Hazelcast Version" field.
+- Click on the *Update* button.
+
+image:hazelcast-version-update.png[Updating the version of Hazelcast on an existing cluster]

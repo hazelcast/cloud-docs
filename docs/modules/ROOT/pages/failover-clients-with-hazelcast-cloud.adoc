@@ -1,0 +1,114 @@
+= Failover Clients with Hazelcast Cloud
+
+Failover is an important feature of the mission-critical systems that rely on near-constant availability. Hazelcast fault tolerance automatically and transparently redirects your connection from one cluster that has problems to the second running cluster.
+
+In this tutorial, we will create a setup with Failover Configuration using multiple Hazelcast Cloud Clusters.
+
+== Create Multiple Clusters
+
+In order to achieve failover configuration, you need to create multiple clusters on Hazelcast Cloud. So, we can setup which clusters will get into action when there is a problem with one of them.
+
+TIP: You can check how to create Starter and Enterprise Clusters from xref:create-enterprise-cluster.adoc[Creating Enterprise Cluster] and xref:create-starter-cluster.adoc [Creating Starter Cluster].
+
+image:hazelcast-cloud-clusters.png[A dashboard that displays two clusters running on Hazelcast Cloud]
+
+== Create Client Configs
+
+You need to create a client configuration for each cluster you want to use.
+In order to do that you should have the following:
+
+- Cluster Name
+- Discovery Token
+- Password (Only for Hazelcast 3.x)
+
+You can get this information from a Popup that opens when you click the *Configure Clients* button on the Cluster Details page.
+
+image:java-client-setup.png[Instructions for setting up a Java client]
+
+As soon as you successfully collect needed information for every cluster, you are ready to create your client configurations as shown below for different Hazelcast Versions.
+
+[tabs] 
+====
+Hazelcast 4.x:: 
++ 
+--
+[source,java]
+----
+public static ClientConfig getPrimaryClientConfig() {
+  String discoveryToken = "CLUSTER_DISCOVERY_TOKEN";
+  String clusterName = "YOUR_CLUSTER_NAME";
+
+  ClientNetworkConfig clientNetworkConfig = new ClientNetworkConfig();
+  ClientCloudConfig cloudConfig = new ClientCloudConfig()
+    .setDiscoveryToken(discoveryToken)
+    .setEnabled(true);
+  clientNetworkConfig.setCloudConfig(cloudConfig);
+
+  ClientConfig config = new ClientConfig();
+  config.setNetworkConfig(clientNetworkConfig);
+  config.setClusterName(clusterName);
+  config.setProperty(STATISTICS_ENABLED.getName(), "true");
+  return config;
+}
+----
+--
+Hazelcast 3.x:: 
++ 
+--
+[source,java]
+----
+public static ClientConfig getPrimaryClientConfig() {
+  String clusterName = "YOUR_CLUSTER_NAME";
+  String clusterPassword = "YOUR_CLUSTER_PASSWORD";
+  String discoveryToken = "YOUR_CLUSTER_DISCOVERY_TOKEN";
+
+  ClientConfig config = new ClientConfig();
+  config.setGroupConfig(new GroupConfig(clusterName, clusterPassword));
+
+  ClientNetworkConfig clientNetworkConfig = new ClientNetworkConfig();
+  ClientCloudConfig cloudConfig = new ClientCloudConfig()
+    .setDiscoveryToken(discoveryToken)
+    .setEnabled(true);
+  clientNetworkConfig.setCloudConfig(cloudConfig);
+
+  config.setNetworkConfig(clientNetworkConfig);
+  config.setProperty("hazelcast.client.statistics.enabled", "true");
+  return config;
+}
+----
+--
+==== 
+
+== Create Failover Client
+
+You should configure and use Hazelcast Failover Client in order to provide multiple clusters to your Hazelcast Client and accomplish this strategy. 
+You can easily create a fail-over client by providing every client configuration for different Hazelcast Cloud Clusters as shown below.
+
+[source,java]
+----
+ClientFailoverConfig clientFailoverConfig = new ClientFailoverConfig();
+//First Cluster
+clientFailoverConfig.addClientConfig(getPrimaryClientConfig());
+//Second Cluster
+clientFailoverConfig.addClientConfig(getSecondaryClientConfig());
+//Other Clusters Optionally
+.
+.
+.
+  
+HazelcastInstance client = HazelcastClient
+  .newHazelcastFailoverClient(clientFailoverConfig);
+----
+
+== Check Failover In Action
+
+When you complete all the steps above, you are ready to go and try fail-over with Hazelcast Cloud.
+You can easily simulate a fail-over by stopping or deleting one of the clusters that you provided in Configure Failover Client. After you do that, you will see that your client will try to connect the other clusters one by. You will see a message on your console that says it will use a different cluster.
+
+```
+INFO: hz.client_1 [my-primary-cluster] [4.0] Unable to connect to any address from the cluster with name: my-primary-cluster. The following addresses were tried: [[-], [-]]
+
+INFO: hz.client_1 [my-primary-cluster] [4.0] Resetting local state of the client, because of a cluster change 
+
+INFO: hz.client_1 [my-secondary-cluster] [4.0] Trying to connect to next cluster: my-secondary-cluster
+```

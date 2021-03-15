@@ -1,0 +1,38 @@
+= JCache
+
+== JCache Name
+
+In Hazelcast, you can create custom jcache configurations associated with the names of jcaches. The jcaches that do not have any configuration defined use the default configuration. If you want to set a configuration that is valid for all jcaches, you can name your configuration as `default`. A user-defined `default` configuration applies to every jcache that does not have a specific custom jcache configuration defined with the jcache's name. 
+You can also use wildcards to associate your configuration with multiple jcache names. See the xref:imdg:configuration:using-wildcards.adoc[IMDG documentation] for more information about wildcards.
+
+== Backup Count
+
+Number of synchronous backups/replications. The higher number the more highly available cluster but performance decreases and memory cost of each entry increases. Synchronous backup operations have a blocking cost which may cause the higher latencies.
+
+== Asynchronous Backup Count
+
+Number of asynchronous backups/replications. The higher number the more highly available cluster but performance decreases and memory cost of each entry increases. Asynchronous backups are fire & forget and do not require the acknowledgements.
+
+== Key Type
+
+Fully qualified class name of the cache key type. Its default value is `java.lang.Object`.
+
+== Value Type
+
+Fully qualified class name of the cache value type. Its default value is `java.lang.Object`.
+
+== Eviction Policy
+
+Eviction policy that compares values to find the best matching eviction candidate. Its default value is `LRU` (less recently used).
+
+== Max Size Policy
+
+Maximum size policy. If maximum size is reached, the cache is evicted based on the eviction policy. 
+
+== Maximum Size
+
+Maximum free/used percentage or maximum size in bytes depending on the selected `maxSizePolicy`.
+
+== Time To Live
+
+Time-to-live for cache entries, in seconds.

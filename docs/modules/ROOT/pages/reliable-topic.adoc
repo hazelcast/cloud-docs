@@ -1,0 +1,33 @@
+= Reliable Topic
+
+Reliable Topic uses the same ITopic interface. The main difference is that it is backed up by
+Hazelcast Ringbuffer data structure. Reliable Topic messages are stored in the Ringbuffer Configuration element's name is "reliable-topic". It has the optional attribute "name" with which you
+can specify the name of your Reliable Topic, which is the same name you give to your Ringbuffer.
+This attribute's default value is "default". 
+
+== Reliable Topic Name
+
+You can give to custom name to your Reliable Topic structure.
+
+== Reliable Topic Batch Size
+
+The minimum number of messages that Reliable Topic tries to read in batches. Its default value is 10.
+
+If the *readBatchSize* is *10* and there are *50* messages available, 10 items are retrieved and processed consecutively before the thread goes back to the pool and helps out with the processing of other messages. 
+If the *readBatchSize* is *10* and there are *2* items available, *2* items are retrieved and processed consecutively. 
+If the *readBatchSize* is an issue because a thread will be busy too long with processing a single MessageListener and it can't help out other MessageListeners, increase the size of the threadpool so the other MessageListeners don't need to wait for a thread, but can be processed in parallel.
+
+== Reliable Topic Overload Policy
+
+A policy to deal with an overloaded topic; so topic where there is no place to store new messages. This policy can only be used in combination with the *com.hazelcast.core.HazelcastInstance#getReliableTopic(String)*. The reliable topic uses a com.hazelcast.ringbuffer.Ringbuffer to store the messages. A ringbuffer doesn't track where readers are, so it has no concept of a slow consumers. This provides many advantages like high performance reads, but it also gives the ability to the reader to re-read the same message multiple times in case of an error. A ringbuffer has a limited, fixed capacity. A fast producer may overwrite old messages that are still being read by a slow consumer. To prevent this, we may configure a time-to-live on the ringbuffer (see *com.hazelcast.config.RingbufferConfig#setTimeToLiveSeconds(int)*). Once the time-to-live is configured, the TopicOverloadPolicy controls how the publisher is going to deal with the situation that a ringbuffer is full and the oldest item in the ringbuffer is not old enough to get overwritten. Keep in mind that this retention period (time-to-live) can keep messages from being overwritten, even though all readers might have already completed reading.
+
+Its default value is *BLOCK*. Available values are as follows:
+
+- *DISCARD_OLDEST*: Using this policy, a message that has not expired can be overwritten.
+No matter the retention period set, the overwrite will just overwrite the item.
++
+This can be a problem for slow consumers because they were promised a
+certain time window to process messages. But it will benefit producers and fast consumers since they are able to continue. This policy sacrifices the slow producer in favor of fast producers/consumers.
+- *DISCARD_NEWEST*: Message that was to be published is discarded.
+- *BLOCK*: The caller will wait until there is space in the Ringbuffer.
+- *ERROR*: The publish call fails immediately.

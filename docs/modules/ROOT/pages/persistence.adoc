@@ -1,0 +1,9 @@
+= Persistence
+
+Persistence enables you to get your cluster up and running swiftly after a cluster restart. A restart can be caused by a planned shutdown (including rolling upgrades) or a sudden cluster-wide crash, e.g., power outage. For Hot Restart Persistence, required states for Hazelcast clusters and members are introduced. 
+
+The purpose of the persistence is to provide a maintenance window for member operations and restart the cluster in a fast way. It is not meant to recover the catastrophic shutdown of one member.
+
+In Hazelcast Cloud Enterprise, you can enable the Hot Restart Persistence feature while creating a Hazelcast cluster using the "Persistence" field in the cluster creation form:
+
+image:persistence.png[Enable persistence]

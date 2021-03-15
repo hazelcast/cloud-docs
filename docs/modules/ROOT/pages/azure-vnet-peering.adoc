@@ -1,0 +1,137 @@
+= Azure vNet Peering
+:url-azure-cli: https://docs.microsoft.com/en-us/cli/azure/
+:url-github-cloud-cli: https://github.com/hazelcast/hazelcast-cloud-cli/
+
+Since security is vital in Hazelcast Cloud Enterprise, your clusters are installed within a private "Virtual Network" and can not be accessed unless you choose "Public Access" on cluster creation. So to connect private Azure Hazelcast Clusters, you need to establish a vNet peering connection between your network and Hazelcast Cluster network. 
+
+== Create Peering
+
+=== 1) Prerequisites
+
+- Hazelcast Cloud CLI
++
+Hazelcast Cloud CLI should be installed on your workstation. 
+TIP: You can download Hazelcast Cloud CLI from link:{url-cloud-cli[Hazelcast Cloud CLI Github].
+- Azure CLI
++
+Azure CLI should be installed on your workstation and it should be logged in via the `az login` command. Also, the account you logged in to via Azure CLI should have the following permissions:
++
+- Create a Service Principal
+- Assign Role
+- Create, Read, Update on the Virtual Networks that you will create peering.
+- Peer Action on the Virtual Networks that you will create peering.
++
+TIP: You can check further details about Azure CLI and download it from link:{url-azure-cli}[Azure Command-Line Interface (CLI) Documentation].
+
+=== 2) Create Peering
+After you successfully complete prerequisites, you can easily create Azure vNet Peering using Hazelcast Cloud CLI by running the following command.
+
+[source,shell]
+----
+hzcloud azure-peering create \
+--cluster-id={YOUR_CLUSTER_ID} \
+--tenant-id={YOUR_TENANT_ID} \
+--subscription-id={YOUR_SUBSCRIPTION_ID} \
+--resource-group={YOUR_RESOURCE_GROUP} \
+--vnet={YOUR_VNET_NAME}
+----
+
+Make sure to replace the following placeholders:
+
+- `YOUR_CLUSTER_ID` with the ID of your cluster,
+- `YOUR_TENANT_ID` with the ID of your tenant which contains your subscription,
+- `YOUR_SUBSCRIPTION_ID` with the ID of your subscription which contains your resource group,
+- `YOUR_RESOURCE_GROUP` with the Name of your resource group which contains your vNet,
+- `YOUR_VNET_NAME` with the name of your Virtual Network that you will make vNet peering.
+
+This command will create a service principal on your account and assign the `Network Contributor` role to it. Then, it will create peering for both sides (Hazelcast's, Your's). This command may take up to 5 minutes to finish.
+
+You can see an example as shown below after peering finishes:
+
+image:azure-peering-cli.png[Create a new peering]
+
+[NOTE]
+====
+*Cheatsheet for Collecting Variables*
+
+- You can grab the *Cluster ID* by running `hzcloud enterprise-cluster list`
+- You can grab the *Resource Group Name* and list your *vNet* with the following command: `az network vnet list`
+- You can grab the *Tenant ID* and *Subscription ID* with the following command: `az account list`
+====
+
+WARNING: The CIDR of your Hazelcast Cloud Enterprise Cluster and the CIDR of your VPC should not be overlapped otherwise, it will fail.
+
+=== 3) Validate Peering
+
+After you see the `Peering successfully established.` message, you can check active peerings from the Peerings tab after you select your Virtual Network on Azure for your side of peering. You can filter by its peer, which will be `cl-<CLUSTER_ID>`. On the example below, it is `cl53949` because the cluster ID was `53949`
+
+image:my-vnet-peerings.png[Check that your peering status is connected]
+
+== List Peerings
+
+You can list Azure vNet peerings on your Enterprise Hazelcast Cluster on Azure from Console by going *Cluster Details -> Settings -> vNet* Peering one by one as shown below.
+You can check where the connection established by checking the name of the vNet with it's CIDR from this list.
+
+image:vnet-peerings.png[List all vNet peering connections]
+
+Also, you can easily use Hazelcast Cloud SDK, Hazelcast Cloud CLI for listing vNet peerings as shown below.
+
+[tabs] 
+====
+Hazelcast Cloud CLI:: 
++ 
+--
+[source,shell]
+----
+hzcloud azure-peering list --cluster-id={YOUR_CLUSTER_ID}
+----
+--
+Hazelcast Cloud SDK:: 
++ 
+--
+[source,go]
+----
+client, _, _ := hazelcastcloud.New()
+peerings, _, _ := client.AzurePeering.List(context.Background(), &models.ListAzurePeeringsInput{
+  ClusterId: "YOUR_CLUSTER_ID",
+},
+)
+for _,peer := range *peerings {
+  fmt.Println(peer.Id)
+  fmt.Println(peer.VpcId)
+  fmt.Println(peer.VpcCidr)
+}
+----
+--
+==== 
+
+== Delete Peering
+
+You can delete Azure vNet peerings of your Enterprise Hazelcast Cluster on Azure from the vNet Peerings list by easily clicking the garbage can on the item.
+
+image:vnet-delete-peering.png[Click Delete to delete a peering connection]
+
+[tabs] 
+====
+Hazelcast Cloud CLI:: 
++ 
+--
+[source,shell]
+----
+hzcloud azure-peering delete --peering-id={ID_OF_PEERING}
+----
+--
+Hazelcast Cloud SDK:: 
++ 
+--
+[source,go]
+----
+client, _, _ := hazelcastcloud.New()
+result, _, _ := client.AzurePeering.Delete(context.Background(), &models.DeleteAzurePeeringInput{
+  Id: "ID_OF_PEERING",
+},
+)
+fmt.Println(result.Status)
+----
+--
+==== 

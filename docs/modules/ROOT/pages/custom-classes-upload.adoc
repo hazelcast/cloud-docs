@@ -1,0 +1,46 @@
+= Custom Classes Upload
+
+In Hazelcast cluster, you need to upload custom Java classes for the following situations:
+
+. You have objects that run on the cluster via the clients such as `Runnable`, `Callable` and entry processors.
+. You have new or amended user domain objects, e.g., in-memory format of the `IMap` set to `Object`, which need to be deployed into the cluster.
+. You have your own `MapLoader` or `MapStore` implementations.
+
+WARNING: Uploaded custom classes are deployed onto the cluster by using rolling restart, hence there is a risk to lose data if cluster consists of one member.
+
+It's allowed to upload files with extensions `zip` and `jar` only. The maximum file size is 500MB.
+
+[WARNING]
+====
+Uploaded classes are restricted by a limited set of JSP permissions.
+
+If you need your uploaded code to be granted any additional permissions, please create a support ticket for it.
+====
+
+== Uploading Custom Classes
+
+To upload JAR files with custom classes, you need to click on the *Upload Custom Classes* button in the cluster details page:
+
+image:upload-custom-classes.png[Upload custom classes to an existing cluster]
+
+or during cluster creation:
+
+image:upload-custom-classes-at-creation.png[Upload custom classes to a new cluster]
+
+Once you click on it, the following dialog appears where you can drag your file to or select it using the `browse` link:
+
+image:drag-and-drop-classes.png[Drag and drop custom classes]
+
+Once the upload is successfully finished and the progress indicator disappeared, the custom classes are deployed and ready to use:
+
+image:upload-classes-success.png[Successful upload of custom classes]
+
+== Removing Custom Classes
+
+To remove the custom classes from the cluster, click on the `Upload Custom Classes` in the cluster details page. In the appeared dialog (seen above) click on the trash button next to the file name and wait until the operation finishes:
+
+image:remove-custom-classes.png[Remove a custom class from a cluster]
+
+== Downloading Custom Classes
+
+All filenames are downloadable links. You can download the desired class files by clicking on their names in the "UPLOAD CUSTOM CLASSES" dialog.

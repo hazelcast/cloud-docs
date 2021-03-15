@@ -1,0 +1,14 @@
+= Replicated Map
+
+== Replicated Map Name
+
+In Hazelcast, you can create custom replicated map configurations associated with the names of replicated maps. The replicated maps that do not have any configuration defined use the default configuration. If you want to set a configuration that is valid for all replicated maps, you can name your configuration as `default`. A user-defined `default` configuration applies to every replicated map that does not have a specific custom replicated map configuration defined with the replicated map's name. 
+You can also use wildcards to associate your configuration with multiple replicated map names. See the xref:imdg:configuration:using-wildcards.adoc[IMDG documentation] for more information about wildcards.
+
+== In Memory Format
+
+Internal storage format. See the xref:imdg:data-structures:replicated-map.adoc#in-memory-format-on-replicated-map[In-Memory Format section]. Its default value is `OBJECT`.
+
+== Asynchronous Fillup
+
+Specifies whether the Replicated Map is available for reads before the initial replication is completed. Its default value is `true`. If set to `false`, i.e., synchronous initial fill up, no exception is thrown when the Replicated Map is not yet ready, but `null` values can be seen until the initial replication is completed.

@@ -1,0 +1,29 @@
+= Pricing
+
+== Hazelcast Cloud Starter
+
+Hazelcast Cloud Stater offers a pay-per-use model. Only running clusters are taken into account when your cost is calculated. For example, while developing, you can stop your clusters when you are not using them to minimize costs.
+
+Pricing is on a per hourly basis. All non-free clusters have a single pricing model:
+*$0.10 per GB per hour*
+
+Cost is calculated based upon the provisioned memory. If you create a cluster with 10 GB capacity but do not insert any entries into it, i.e. the cluster is empty, your cost will still be calculated according to 10 GB because 10 GB have been reserved for your use. Hazelcast Cloud offers the flexibility to start small and scale as your data size grows.
+
+Example calculation:
+You have three clusters: cluster1, cluster2, and cluster3.
+cluster1 is 10 GB and run for 10 hours during the month.
+cluster2 is 1 GB and run for 100 hours during the month.
+cluster3 is 3 GB and run for 50 hours during the month.
+
+Cost of cluster1 will be: 10 X 10 X $0.10 = $10.00
+Cost of cluster2 will be: 1 X 100 X $0.10 = $10.00
+Cost of cluster3 will be: 3 X 50 X $0.10 = $15.00
+Your total cost will be: $10.00 + $10.00 + $15.00 = $35.00
+
+You can track your month to date cost in the Billing & Payments page of Account top menu.
+
+image:billing-and-payments.png[Billing and Payments page of Hazelcast Cloud]
+
+== Hazelcast Cloud Enterprise
+
+Contact us at mailto:sales@hazelcast.com[]

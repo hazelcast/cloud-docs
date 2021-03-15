@@ -1,0 +1,55 @@
+= FAQ
+
+== GENERAL
+
+*What is Hazelcast Cloud?*
+
+Hazelcast cloud is on demand delivery of hazelcast, deployed and managed by the experts. Leveraging over a decade of our experience and best practices 
+
+*What business problems does it solve? What value does it offer?*
+
+Hazelcast Cloud provides a high performance data/caching layer for cloud native microservices and is also a good fit for state management in Function-as-a-Service applications like AWS Lambda. APIs are provided for popular programming languages such including Java, Python, Node.js, .NET, C++, and Golang. By deploying hazelcast.cloud developers not only benefit from enhanced cloud caching services but also gain access to richer APIs which feature server side processing, concurrency utilities and more. 
+
+*How does it compare to other offerings?*
+
+- Hazelcast Cloud is designed with Serverless philosophy since day 1. Using hazelcast cloud, you will know nothing about servers, instances and any other operational detail. You will just configure your cluster and start using it. Hazelcast team will handle all the boring operational tasks for you, so you can focus on your own business.
+- The other `cache as a service` offerings are based on Redis. Redis is a key value store. Hazelcast is more than a key value store with processing and application level capabilities like entry listening, querying. Hazelcast is designed for multi threaded distributed systems while single is single threaded that can not leverage multiple cores. This introduces clear performance advantage to hazelcast in multi core setups, this is reflected as more throughput to hazelcast cloud users.
+
+*What use cases are a good fit?*
+
+- Data layer for cloud based applications and microservices: If your application is composed of microservices that are already deployed to cloud, then hazelcast can be easy and performance optimized solution with its low latency memory based approach. You can share the data among your microservices using hazelcast cloud. You will just create a hazelcast client in your microservices that connects to hazelcast cloud and access the shared data.
+- Caching layer for cloud based applications and microservices: You may have an application or a microservice that reads and writes shared data to a database. But for some type of data needs to be accessed with low latency or with high load your database can be a bottleneck of your system. For both cases, introducing Hazelcast Cloud as an in memory cache is a great solution.
+- Data layer and state management for your serverless functions: You have AWS Lambda functions. What do you do when you need to read/write a state inside the function. Accessing to database will not be the best idea as each microsecond is important for cost efficiency of your lambda function, Hazelcast Cloud is a perfect solution with its low latency memory based nature.   
+
+*What is next?*
+
+Hazelcast Cloud is the first step. Although we believe it has already a high potential to be useful in many usecases, we have many things to do. Some of them:
+We are planning more flexibility on deployment options. We are planning to support dedicated clusters that means users will be able to deploy hazelcast clusters to their own cloud instances but still the cluster will be maintained by hazelcast team. 
+We started with AWS with 3 regions, Oregon, N. Virginia and Ireland. We are planning to add new regions as well as new cloud providers like Microsoft Azure and Google Cloud.
+Hazelcast Cloud utilizes Hazelcast Enterprise HD at the background. This gives us rich options that we can reflect to hazelcast cloud users. In near future, we will introduce higher availability options like zone replication and WAN replication over regions.
+
+== HAZELCAST
+
+*Which hazelcast APIs are supported in hazelcast cloud?*
+
+Currently, only IMap can be used and configured via hazelcast cloud. You can still create and use Queue,  List and others but they are not officially tested and supported for high loads. We will support all hazelcast API eventually.  
+
+*Can I connect hazelcast cloud from my development computer?*
+
+Yes, you can connect hazelcast cloud wherever you want. But for a good performance we recommend you to deploy your application to the same cloud provider and region with your hazelcast cloud cluster.
+
+*Can I use hazelcast cloud inside my AWS Lambda function?*
+
+Yes, for the best performance place the connection code into static context of your function, so it will not try to connect at each request.
+
+*Which languages does hazelcast cloud support?*
+
+You can use Java, Node.js, C#, Python and Go clients.
+
+*If I stop my cluster, will I lose my data?*
+
+If you have enabled persistence for the cluster, you should not lose any data.
+
+*Can I use free cluster for production?*
+
+Practically you can. But free clusters are not replicated this means if cloud instance crashes due to any reason, your cluster may lose data. That's why we do not recommend free clusters for production use cases if you do not tolerate data loss.

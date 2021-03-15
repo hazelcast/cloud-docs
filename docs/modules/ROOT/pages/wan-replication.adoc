@@ -1,0 +1,71 @@
+= WAN Replication
+
+WAN Replication is one of the powerful features of Hazelcast that lets you synchronize multiple clusters. While you can do *Active-Active* and *Active-Passive* setup, you can also configure WAN Replication parameters according to your use-case. For a complete reference of this feature, see xref:imdg:wan:wan.adoc[].
+
+[cols="e,a"]
+|===
+|Term|Definition
+
+|Publisher Cluster
+|The cluster that sends data within WAN Replication
+
+|Consumer Cluster
+|The cluster that receives data from publisher within WAN Replication
+|===
+
+== Getting Started
+
+In order to use WAN Replication, basically you can do following:
+- Create at least 2 clusters
+- Initiate WAN Replication from one of those clusters
+
+NOTE: In Hazelcast Cloud Enterprise, you can create WAN Replication both within same and different cloud providers. If you have 2 clusters in AWS and 1 cluster in Azure, you can create WAN Replication between AWS-to-AWS and also AWS-to-Azure.
+
+Let's have a look at each item a bit deeper.
+
+== Creating Clusters
+
+To learn how to create a cluster, see xref:create-enterprise-cluster.adoc[].
+
+[WARNING]
+====
+If clusters are in *same* cloud providers, you can create WAN Replication between *public <-> public*, *public <-> private*, *private <-> private* clusters.
+
+If clusters are in *different* cloud providers, you can create WAN Replication only between *public <-> public* clusters.
+====
+
+== Creating WAN Replication
+
+In order to create WAN Replication, you can go to *Cluster Detail* > *Settings* > *Wan Replication* and click *Create New Replication* 
+
+image:aws-cluster-settings.png[Go to Manage Cluster > Settings]
+
+image:wan-replication-settings.png[WAN Replication settings]
+
+image:configure-wan-replication.png[WAN Replication configuration]
+
+You will see current cluster as Active cluster and also you can see additional parameters:
+
+- *Queue Full Behavior:* WAN Replication uses Hazelcast Queue within its architecture to manage data replication events. This parameter  lets you to decide what to do next if this queue is full. 
+- *Queue Capacity:* Capacity of queue and if queue us full, the criteria in first item will be applied.
+- *Batch Size:* You can define the size of batch operation for data replication with this param
+- *Batch Max Delay Millis:* Even data replication events is not reached to batch size amount, data will be replicated to consumer cluster when you reach this delay limit.
+
+After setting all this parameters, you can click *Next* to select and configure consumer cluster.
+
+image:configure-wan-replication-2.png[Part 2 of the WAN Replication configuration]
+
+Settings on this screen for consumer cluster are same as publisher cluster except *Active/Passive* section. If you set consumer cluster as *Active*, data will be synchronized from/to publisher and consumer. If you set consumer cluster as *Passive*, data will be sent only from publisher to consumer. 
+Once you configured settings for consumer, you can click *Save* 
+
+image:wan-replication-in-progress.png[Wan Replication is being set up]
+
+Within seconds, wan replication will be ready there. 
+
+image:wan-replication-successful.png[Wan Replication is active]
+
+Once it is finished, you can verify it by going to management center *Cluster Detail* > *Management Center* > *Enable*  then *Management Center* > *Open Management Center*. 
+
+image:wan-replication-mc.png[Wan Replication data in Management Center]
+
+When you connect publish cluster and try to write some data, you will see data will be replicated to consumer cluster

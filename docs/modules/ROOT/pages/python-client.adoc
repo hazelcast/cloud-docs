@@ -1,0 +1,168 @@
+= Python Client
+:url-github-python: https://github.com/hazelcast/hazelcast-python-client#142-configuring-hazelcast-python-client
+
+== Quick Setup
+
+Follow the below instructions to connect a Python client to your cluster.
+
+. xref:create-starter-cluster.adoc[Create a cluster].
++
+The cluster-specific page will load and cluster's state will be "Pending" for some seconds, as shown below.
++
+image:create-cluster-pending.png[A cluster being created]
+
+. When the cluster's state becomes "Running", the previously inactive button `Configure Client` on this page becomes active. Click on it and the following dialog box appears:
++
+image:python-client-dialog.png[Instructions for installing a Python client]
+
+. Click on the Python tab (the Java tab is active by default) and download the ZIP file as instructed in Step 1 of the dialog box.
+
+. Extract the ZIP file and run the command, in the extracted folder, shown in Step 2 of the above dialog box.
+
+You should see log output similar to the following:
+
+image:python-client-log.png[Python client logs that it is connected]
+
+`Connection Successful!` in your logs means that your client application has successfully connected to your cluster in Hazelcast Cloud. The sample code inserts random entries to your cluster as you can see in the logs. In your Hazelcast Cloud console (your cluster's page where you can reach from the "Clusters" top menu), you should see the charts are being populated with metrics of your map, as shown below:
+
+image:map-metrics-client-connection.png[Map metrics that show entries are being added to the map]
+
+== Client Code
+
+Now, as we have successfully connected and put data into the cluster, let's review and explain the client code you downloaded.
+
+Go to the directory (extracted from the ZIP file you downloaded in the Step 3 above) and locate the client sample code. If you had enabled encryption in your cluster, open the `client_with_ssl.py` file. Otherwise, open the `client.py` file. We will explain both files line by line in the following sections.
+
+=== client.py
+
+This is the downloaded sample client code when your cluster does not have an encryption.
+
+[source,python]
+----
+import hazelcast
+import logging
+import random
+import time
+
+if __name__ == "__main__":
+  logging.basicConfig()
+  logging.getLogger().setLevel(logging.INFO)
+
+  config = hazelcast.ClientConfig() # <1>
+
+  # Set up group name and password for authentication
+  # <2>
+  config.group_config.name = "YOUR_CLUSTER_NAME"
+  config.group_config.password = "YOUR_CLUSTER_PASSWORD"
+
+  # Enable Hazelcast.Cloud configuration and set the token of your cluster.
+  config.network_config.cloud_config.enabled = True
+  config.network_config.cloud_config.discovery_token = "YOUR_CLUSTER_DISCOVERY_TOKEN" # <3>
+
+  # Start a new Hazelcast client with this configuration.
+  client = hazelcast.HazelcastClient(config) # <4>
+
+  # <5>
+  my_map = client.get_map("map").blocking()
+  my_map.put("key", "value")
+
+  # <6>
+  if my_map.get("key") == "value":
+    print("Connection Successful!")
+    print("Now, `map` will be filled with random entries.");
+    while True:
+      random_key = random.randint(1, 100000)
+      my_map.put("key" + str(random_key), "value" + str(random_key))
+      my_map.get("key" + str(random.randint(1,100000)))
+      if random_key % 10 == 0:
+        print("Map size:" + str(my_map.size()))
+      time.sleep(0.1)
+  else:
+    raise Exception("Connection failed, check your configuration.")
+
+
+  client.shutdown()
+----
+
+<1> First, we create a client configuration.
+
+<2> Then, we set the cluster name and password via `group` configuration.
++
+The cluster name and password are unique to your cluster; the client is authenticated using this password.
+
+<3> Then, we set the discovery token.
++
+This token is also unique to your cluster and used to discover Hazelcast cluster members.
+
+<4> Now, we create the client with `config`.
++
+This step creates the connection between your application and the cluster.
+
+<5> We get/create a map and put a simple entry ("key", "value").
++
+For simplicity, we created a blocking map.
+
+<6> Then, we check if the entry has been added and let the code throw an exception if the value is not correct. Finally, we put random entries with 100-millisecond intervals.
+
+=== client_with_ssl.py
+
+This is the downloaded sample client code when your cluster has encryption enabled.
+
+[source,python]
+----
+import hazelcast
+import logging
+import os
+import random
+import time
+
+if __name__ == "__main__":
+
+  logging.basicConfig()
+  logging.getLogger().setLevel(logging.INFO)
+
+  config = hazelcast.ClientConfig()
+  # <1>
+  config.network_config.ssl_config.enabled = True
+  config.network_config.ssl_config.cafile = os.path.abspath("ca.pem")
+  config.network_config.ssl_config.certfile = os.path.abspath("cert.pem")
+  config.network_config.ssl_config.keyfile = os.path.abspath("key.pem")
+  config.network_config.ssl_config.password = "YOUR_TLS_PASSWORD"
+
+  # Set up group name and password for authentication
+  config.group_config.name = "YOUR_CLUSTER_NAME"
+  config.group_config.password = "YOUR_CLUSTER_PASSWORD"
+
+  # Enable Hazelcast.Cloud configuration and set the token of your cluster.
+  config.network_config.cloud_config.enabled = True
+  config.network_config.cloud_config.discovery_token = "YOUR_CLUSTER_DISCOVERY_TOKEN"
+
+  # Start a new Hazelcast client with this configuration.
+  client = hazelcast.HazelcastClient(config)
+
+  my_map = client.get_map("map").blocking()
+  my_map.put("key", "value")
+
+  if my_map.get("key") == "value":
+    print("Connection Successful!")
+    print("Now, `map` will be filled with random entries.");
+    while True:
+      random_key = random.randint(1, 100000)
+      my_map.put("key" + str(random_key), "value" + str(random_key))
+      my_map.get("key" + str(random.randint(1,100000)))
+      if random_key % 10 == 0:
+        print("Map size:" + str(my_map.size()))
+      time.sleep(0.1)
+  else:
+    raise Exception("Connection failed, check your configuration.")
+
+  client.shutdown()
+----
+
+<1> The only difference between this one and the `client.py` is the lines that enable and configure TLS encryption on the client side.
+
+You may want to move the 'pem' files to another directory. Then, you need to set 'ca', 'cert' and 'key' file directories accordingly. 
+
+== More Configuration Options
+
+Please refer to the link:{url-github-python}[Hazelcast Python Client Documentation] for further configuration options.

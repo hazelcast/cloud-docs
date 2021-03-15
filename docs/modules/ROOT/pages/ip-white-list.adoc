@@ -1,0 +1,17 @@
+= IP Whitelist
+
+By default, any client with the correct credentials can connect to the cluster. You may want to restrict this behavior by defining an IP whitelist. When you enable this list, only the clients from the listed IP addresses will be able to connect to your cluster. This enhances the security of your cluster, especially for production deployments.
+
+== How To Enable
+
+IP whitelisting can be enabled when creating the cluster, as shown below:
+
+image:enable-ip-whitelist.png[Enable IP whitelist and add IP addresses to the list]
+
+Once you select the *Enable IP Whitelist* checkbox, a text field appears just below it. Simply type the IP address of your client and click on the *Add* button to add it to the whitelist. You can add multiple client IP addresses.
+
+You can also enable/disable IP whitelisting and change or remove IP addresses in/from the whitelist on a running cluster. To do so, go to the cluster details page and click on the *Manage Allowed IPs* button. You will see a screen like the following:
+
+image:manage-ip-whitelist.png[Manage IP addresses in the whitelist]
+
+Any changes you make will be effective immediately.

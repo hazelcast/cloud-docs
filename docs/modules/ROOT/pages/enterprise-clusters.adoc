@@ -1,0 +1,5 @@
+= Enterprise Clusters
+
+== What are Cloud Enterprise Clusters?"
+
+Hazelcast Cloud Enterprise is a special edition of Hazelcast Cloud which provides the users more control over resources that are dedicated to them. In Hazelcast Cloud Enterprise, we create a separate cloud subaccount for you. And for each cluster, we create the required resources under an isolated VPC (Virtual Private Cloud). Different than Hazelcast Cloud Starter (see the Hazelcast Cloud Editions below), the user has full control over how many and which type of instances are deployed. Also, there is no limitation about the regions. The users can set up the cluster in all of the regions that are supported by the cloud provider.

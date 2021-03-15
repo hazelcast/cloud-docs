@@ -1,0 +1,27 @@
+= Scale Up / Down
+
+Once you have a running dedicated cluster, you can easily scale up or down your cluster.
+For this, first click on the *Manage Cluster* button located at top right of the cluster details page and select `Settings` from the dropdown menu:
+
+image:aws-cluster-settings.png[Settings page of a hazelcast cluster running on AWS]
+
+Once you select `Settings`, the following dialog appears:
+
+image:cluster-settings-instance-count.png[Choose a number of cluster members]
+
+You can use the Scale Up / Down tab, which is the first thing that appears when this dialog opens. This tab lists the information about your current instance and zone configuration, under the "CURRENT CONFIGURATION" heading. Here are the current configuration items:
+
+- *Instance Count Per Zone*: Count of Hazelcast instances you have in each availability zone. 
+- *Total Instance Count*: Count of total instances you have for all zones.
+- *Number Of Zones*: Count of zones used in this dedicated cluster.
+
+To scale up or down, use the `New Instance Count Per Zone` dropdown menu under the "NEW CONFIGURATION" heading to select the new count of instances for each availability zone. You can select an instance count between 1 and 10. As you select the count, the *Total Instance Count Will Be* field will show you the new count of total instances in your cluster.
+
+Click on the *Update* button to apply your change.
+
+[NOTE]
+====
+Scaling down your cluster does not mean you will lose data. With this operation, every Hazelcast instance gracefully shuts down, waiting for migrating data to other cluster members.
+
+Scaling up or down your dedicated cluster may take up to 8 or 10 minutes.
+====

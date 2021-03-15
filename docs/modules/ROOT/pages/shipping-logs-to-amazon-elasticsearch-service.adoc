@@ -1,0 +1,70 @@
+= Shipping Logs to Amazon ElasticSearch Service
+:url-github-elasticsearch: https://github.com/elastic/elasticsearch
+:url-amazon-elasticsearch: https://aws.amazon.com/elasticsearch-service
+:url-aws-console: https://us-west-2.console.aws.amazon.com/es/home
+
+Amazon provides link:{url-github-elasticsearch}[ElasticSearch] as a service which is called link:{url-amazon-elasticsearch}[ElasticSearch Service]. Basically, you can create ElasticSearch services with some built-in plugins like Kibana. In this tutorial, you will see how easy it is to set up an ElasticSearch service on AWS then ship Hazelcast Cloud Cluster logs to ElasticSearch Service. 
+
+== Setting Up ElasticSearch Service Instance
+
+Go to link:{url-aws-console}[] and click *Create a new domain*
+
+image:elasticsearch.png[Homepage for Amazon ElasticSearch Service]
+
+On the initial page of domain creation, you can select your deployment type. For testing purpose, you can select *Development and Testing*, or if it is a live environment you can select *Production* option, *Custom* otherwise. And *7.7* is recommended for Elasticsearch version.
+
+image:elasticsearch-deployment-type.png[A list of deployment types to choose from while creating a domain]
+
+On the next screen, you can configure your Elasticsearch instance's specs; domain name, machine type, and EBS volume size. 
+
+image:elasticsearch-configure-domain.png[Configuration options for a new domain, including name, instance type and number of nodes]
+
+Once you configured specs, you can continue with the security part which is the most critical one. It is not possible to use *VPC Access* if you will ship logs from Hazelcast Cloud since there should be a VPC Peering between ES instance and Hazelcast Cloud Cluster VPC, at least there is no support for now. Select *Public Access* and scroll down below configurations.
+
+image:elasticsearch-configure-security.png[Security configuration options, including public internet access or VPC access]
+
+Since your ES instance has public access, you need to apply Fine-Grained access control to allow certain users to access. Select *Create master user* and provide username/password pair. 
+
+NOTE: Save Username / Password pair to a safe place to use it Hazelcast Cloud logging configuration in next steps.
+
+image:elasticsearch-configure-access.png[Access configuration options, including form fields for the master username and password]
+
+Select *Domain access policy* as *Allow open access to the domain*
+ 
+image:elasticsearch-configure-access-policy.png[Choose an access policy to allow or deny access by certain credentials such as AWS account]
+
+The configuration part is done, and you should see *Loading* in your dashboard
+
+image:elasticsearch-domains-dash.png[Overview of a loading domain, including its configuration settings]
+
+After a while (~5-8 mins after), you should see it is Active and it will provide some endpoints to be used.
+
+NOTE: Please store Endpoint value in a safe place to use in Hazelcast Cloud Logging Configuration step.
+
+== Hazelcast Cloud Logging Configuration
+
+To configure logging, you can go to *Hazelcast Cluster Detail Page* > *Settings* > *Logging Configuration*
+
+Select *Elastic Stack (ELK)* from *Logging Technology* list.
+
+image:elasticsearch-logging.png[A dropdown of logging integrations with Elastic Stack (ELK) highlighted]
+
+In this Configuration page, provide *Username*, *Password*, and Url you saved in previous steps. In URL section, it will require port number, so the value will be something like *https://<domain>:443* since Elasticsearch Service provides Elasticsearch through this port not *9200*. Once you complete this step, your logging configuration will be ready in ~30 seconds. 
+
+== Setting up Elasticsearch Service Kibana Dashboard
+
+In Elasticsearch Service instance detail page, you can see the URL for Kibana, please click on it and you will see a login page. Use username/password as you defined in the creation phase.
+
+image:kibana-login.png[A login page for Kibana]
+
+Once you logged in, you can skip the onboarding part, and click Discover menu on the left-hand-side to define the index pattern. Please put the *wildcard* char in the text box to handle all the logs coming from Hazelcast Cloud Clusters.
+
+image:kibana-index-patterns.png[A * wildcard is displayed in the Index pattern field]
+
+Once you click the Next step, you can skip the Settings part then you will see some aggregated table data for summary and now you are ready to discover data of Hazelcast Cloud Clusters.
+
+image:kibana-index-pattern-settings.png[A time filter called updated_at is listed at the top of a dropdown]
+
+You can go to the Discover page from the left menu and see logs coming from Hazelcast Cloud Cluster.
+
+image:kibana-hazelcast-cluster-log.png[Hazelcast Cloud cluster logs are displayed in Kibana]

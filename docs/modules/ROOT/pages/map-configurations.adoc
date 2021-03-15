@@ -1,0 +1,51 @@
+= Map
+
+image:map-configuration.png[Map configuration]
+
+== Map Name
+
+In Hazelcast, you can create custom map configurations associated with the names of maps. The maps that do not have any configuration defined use the default configuration. If you want to set a configuration that is valid for all maps, you can name your configuration as `default`. A user-defined `default` configuration applies to every map that does not have a specific custom map configuration defined with the map's name. 
+You can also use wildcards to associate your configuration with multiple map names. See the xref:imdg:configuration:using-wildcards.adoc[IMDG documentation] for more information about wildcards.
+
+== Backup Count
+
+Hazelcast distributes the map entries onto multiple cluster members. Each member holds some portion of the data. Distributed maps have one backup by default. If a member goes down, your data is recovered using the backups in the cluster. You can set the backup count to 0, 1, or 2 depending on your requirements.
+
+* *Backup Count 0:* This means entries are not replicated to any member other than the primary one. This is the most cost-effective and best-performing option, but also the least safe. It is cost-effective because 100% of the total memory is reserved for your entries. So, set the backup count to 0 if you can tolerate data loss at some level (example use cases may include caching).
+* *Backup Count 1:* This means entries are replicated to one member in addition to the primary one. 50% of the total memory is reserved for your entries. If you have a cluster with 10 GB and your backup count is 1, then you can keep up to 5 GB of entries because the other half of the cluster memory is used for the backups of those entries. This is the default option for Hazelcast maps and recommended for most use cases where you cannot tolerate data loss.
+* *Backup Count 2:* This means entries are replicated to two member in addition to the primary one. 33.3% of the total memory is reserved for your entries. If you have a cluster with 30 GB and your backup count is 2, then you can keep entries up to 10 GB because the remaining cluster memory is used for two backups of those entries. This is recommended for the use cases where you keep mission-critical data with high data safety requirements. Note that this is the least cost-effective setup with the biggest performance overhead, but also has the highest data redundancy.
+ 
+== Time To Live
+
+Time To Live (TTL) is the maximum time in seconds for each entry to stay in the map. It limits the lifetime of the entries relative to the time of the last write access performed on them. If it is not 0, the entries whose lifetime exceeds this period (without any write access performed on them during this period) are expired and evicted automatically. An individual entry may have its own lifetime limit by using one of the methods accepting a TTL. See xref:imdg:data-structures:map.adoc#evicting-specific-entries[Evicting Specific Entries section] in the Hazelcast IMDG Reference Manual. If there is no TTL value provided for the individual entry, it inherits the value set for this element. Valid values are integers between 0 and Integer.MAX VALUE. Its default value is 0, which means infinite (no expiration and eviction). If it is not 0, entries are evicted regardless of the set eviction policy described below.
+
+== Max Idle Seconds
+
+Maximum time in seconds for each entry to stay idle in the map. It limits the lifetime of the entries relative to the time of the last read or write access performed on them. The entries whose idle period exceeds this limit are expired and evicted automatically. An entry is idle if no `get`, `put` or `containsKey` is called on it. Valid values are integers between 0 and Integer.MAX_VALUE. Its default value is 0, which means infinite.
+
+NOTE: Both Time-to-Live and Max Idle Seconds may be used simultaneously on the map entries. In that case, the entry is considered expired if at least one of the policies marks it as expired.
+
+== Eviction Policy
+
+Eviction policy to be applied when the size of map grows larger than the value specified by the Max Size element described below. Valid values are as follows:
+
+- NONE: Default policy. If set, no items are evicted and the property Max Size described below will be ignored. You still can combine it with TTL and Max Idle Seconds.
+- LRU: Least Recently Used.
+- LFU: Least Frequently Used.
+
+== Max Size Policy
+
+Policy on how to define the map's maximum size. Hazelcast detects if a map has reached its maximum size based on the Max Size Policy and then executes the eviction. The options are as follows:
+
+- Used memory percentage: Maximum used memory size percentage per map. If this percentage rises above the specified value, then the eviction operation is executed.
+- Free memory percentage: Minimum free native memory size percentage. If the used memory percentage drops below the specified value here, then the eviction operation is executed.
+
+== Max Size
+
+The percentage value when the eviction will start depending on the selected Max Size Policy.
+
+== Indexes
+
+You can add indexes to your map. Hazelcast distributed queries run on each member in parallel and return only the results to the caller. Then, on the caller side, the results are merged.
+
+When a query runs on a member, Hazelcast iterates through all the owned entries and finds the matching ones. This can be made faster by indexing the most frequently queried fields, just like you would do for your database. Indexing adds an overhead for each write operation but the queries will be a lot faster. If you query your map a lot, make sure to add indexes for the most frequently queried fields. For example, if you do an `active and age < 30` query, make sure you add an index for the `active` and `age` fields.
