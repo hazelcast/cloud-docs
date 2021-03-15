@@ -41,8 +41,8 @@ In the cloud console, open the cluster that you want to connect to. Click on the
 image:map-metrics.png[Map Metrics]
 
 For more detailed information about clients see the chapters:
-xref:clients:java.adoc[Java Client]
-xref:clients:csharp.adoc[.NET Client]
-xref:clients:nodejs.adoc[Node.js Client] 
-xref:clients:python.adoc[Python Client]
-xref:clients:go.adoc[Go Client]
+xref:clients:java-client.adoc[Java Client]
+xref:clients:net-client.adoc[.NET Client]
+xref:clients:nodejs-client.adoc[Node.js Client] 
+xref:clients:python-client.adoc[Python Client]
+xref:clients:go-client.adoc[Go Client]
