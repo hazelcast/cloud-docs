@@ -42,7 +42,7 @@ image:map-metrics.png[Map Metrics]
 
 For more detailed information about clients see the chapters:
 xref:imdg:clients:java.adoc[Java Client]
-xref:imdg:clients:csharp.adoc[.NET Client]
+xref:imdg:clients:dotnet.adoc[.NET Client]
 xref:imdg:clients:nodejs.adoc[Node.js Client] 
 xref:imdg:clients:python.adoc[Python Client]
 xref:imdg:clients:go.adoc[Go Client]
