@@ -1,0 +1,49 @@
+= Encryption
+
+Hazelcast Cloud Enterprise allows enabling SSL encryption for the client-server communication.
+
+== Setting up Encryption
+
+You can enable the encryption by selecting the *Enable Encryption* checkbox while creating a Hazelcast cluster in the cluster creation form:
+
+image:enable-encryption.jpg[Enable encryption]
+
+To provide the highest performance, the OpenSSL library is always used on the server side.
+
+== Using OpenSSL in Hazelcast Client
+
+For the highest performance results, you can change the default SSL implementation to OpenSSL in your client application. In order to do it, please perform the following steps.
+
+. Make sure OpenSSL is installed on your machine.
+. Include the OpenSSL dependency in your source code.
++
+[source,xml]
+----
+<dependency>
+  <groupId>io.netty</groupId>
+  <artifactId>netty-tcnative</artifactId>
+  <version>2.0.19.Final</version>
+  <classifier>linux-x86_64</classifier>
+</dependency>
+<dependency>
+  <groupId>io.netty</groupId>
+  <artifactId>netty-handler</artifactId>
+  <version>4.1.31.Final</version>
+</dependency>
+----
+. Change the SSL factory name in your application code to `com.hazelcast.nio.ssl.OpenSSLEngineFactory` and use the `TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256` ciphersuite.
++
+[source,java]
+----
+Properties props = new Properties();
+...
+props.setProperty("ciphersuites", "TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256");
+ClientConfig config = new ClientConfig();
+config.getNetworkConfig().setSSLConfig(
+  new SSLConfig().setEnabled(true)
+    .setFactoryClassName("com.hazelcast.nio.ssl.OpenSSLEngineFactory")
+    .setProperties(props)
+);
+----
+
+With such configuration in place, you are able to use OpenSSL for the client-server communication, which ensures the highest encryption performance.

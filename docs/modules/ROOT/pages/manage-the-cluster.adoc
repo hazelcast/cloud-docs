@@ -1,0 +1,45 @@
+= Scale, Stop, Delete
+
+== Scaling Cluster
+
+Once you have a running cluster, you can scale up or down depending on your requirements. To do so, simply click on the *Manage Memory* button on the Cluster page and adjust the memory using the slider, as shown below.
+
+image:manage-memory.png[Slide the bar to choose how much memory to allocate the cluster]
+
+When the size of your data in the cluster reaches 80%, we will send an email to warn you about a possible data overflow. We always recommend to scale up when your data size reaches 75% of your memory capacity. When you scale the cluster, you will not experience any downtime on your client application. However, you may temporarily experience a slight degradation in the throughput after scaling. 
+
+WARNING: If you scale down to a size less than your actual data size, some of your entries will be discarded. This can cause data loss for your applications.
+
+TIP: While calculating your data size, you should take backups into account. For example, if your map's backup count is 1 and the size of your entries is 5 MB, then your total data size will be 10 MB (primary entries + backup entries).
+
+== Auto-Scaling
+
+When auto-scaling is enabled, you do not set a specific memory size for your cluster. Instead, your cluster starts with the minimum size for the cluster type you selected, e.g., 2 GB for _Small_ cluster. The Hazelcast cluster size automatically increases or decreases according to your data size/memory utilization. When the memory utilization exceeds 80%, the cluster is scaled up. When memory utilization drops below 40%, the cluster is scaled down. Scale up/down is performed by the minimum step permissible at that cluster size, e.g., 1 GB for _Small_, 5 GB for _Medium_. As an example, if your cluster memory is 5 GB, it will be scaled to 6 GB when the used memory reaches 4 GB (80%).
+
+In addition to enabling the auto-scaling during the cluster creation, you can also enable/disable this option while the cluster is running.
+
+To enable the auto-scaling during the cluster creation, select the *Enable Auto-Scaling* checkbox as shown below:
+
+image:cluster-type.png[Choose a default cluster size]
+
+To enable or disable auto-scaling in a running cluster, click the *Manage Memory* button in the "Cluster Details" page, then check or uncheck the *Enable Auto-Scaling* checkbox.
+
+image:auto-scaling.png[Allow the cluster to scale its own memory size]
+
+WARNING: Auto-scaling is not supported in the free clusters.
+
+== Stopping or Deleting Cluster
+
+You may want to stop or delete your clusters. To do so, click on the *Stop Cluster* or *Delete Cluster* button in the "Cluster" page.
+
+image:stop-delete-cluster.png[Stop or delete the cluster]
+
+When you stop a cluster, Hazelcast Cloud saves your configuration so that you can resume the cluster at a later time with the exact same configuration. If you have enabled persistence while creating the cluster, the cluster data will also be persisted and available after you resume the cluster. Stopping your cluster can help minimize your costs while during development because you are only charged for the running clusters. So you can resume and run your cluster only when you are actively working with it. 
+
+On the other hand, when you delete a cluster, all the data related to the cluster, including the configuration and actual cluster data, are removed. There is no way of recovering any data from a deleted cluster. Think twice before clicking *Delete Cluster*. 
+
+WARNING: Persistence has a performance overhead. If you are not planning to use the Stop/Resume feature, you will achieve better performance leaving it disabled.
+
+IMPORTANT: When scaling down, you need to ensure that the new capacity is larger than your total data size which includes your backup entries. If you set it to a size smaller than your total data size, some of your entries may be discarded.
+
+TIP: When you stop your cluster, you are not charged. So it is a good practice to stop it when you are not using it in development phase.

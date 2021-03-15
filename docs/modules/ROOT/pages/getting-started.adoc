@@ -1,0 +1,48 @@
+= Getting Started
+:url-cloud-sign-up: https://cloud.hazelcast.com/sign-up
+:url-cloud-sign-in: https://cloud.hazelcast.com/sign-in
+
+Here are the steps to set up your first cluster in Hazelcast Cloud:
+
+== 1. Register
+
+Create your account at link:{url-cloud-sign-up}[]. A confirmation will be sent to you. When you confirm the email, your account becomes ready for use.
+
+image:create-account.png[Create a new cloud account]
+
+== 2. Sign-in
+
+After setting your password via the link provided by email, you can log in with your email and password at link:{url-cloud-sign-in}[]. 
+
+image:sign-in.png[Sign into your cloud account]
+
+=== 2.1 (Optional) Sign-in with Social Providers
+
+You can use also use sign-in with Github and Google options in order to sign-in easily without spending your time on email verification and filling registration forms. The only thing you should do is selecting your social provider and authorizing Hazelcast Cloud for registration purposes. Then it will directly redirect you to our console. 
+
+image:social-sign-in.png[Sign into your cloud account with a social media account]
+
+== 3. Create a Cluster
+
+After successfully logging in, you can create your first cluster by clicking the *+ New Cluster* button in the top left corner. On the New Cluster page, provide a name for your cluster. You can leave the other options as they are. Click *+ Create Cluster* to create and start your new cluster. 
+
+image:create-cluster.png[Create a new cluster]
+
+Once your cluster is running and ready, you will see the Cluster Memory and Client Count charts as well as lifecycle information about the cluster.
+
+image:cluster-dash.png[Cluster Metrics]
+
+== 4. Set-Up and Run the Hazelcast Client
+
+Now, we have a running cluster, but it is empty. So, let's fill it with data. To do so, we need to run a Hazelcast client application.  
+
+In the cloud console, open the cluster that you want to connect to. Click on the *Configure Hazelcast Client* button. Step 1 provides you a pre-configured sample client project. Download that. Step 2 provides a command. Copy that command and run it in your command line. In the logs you should see `Connection Successful!` and then the application will start to insert random entries. After 5-10 seconds you will see map stats in your cluster dashboard as below:  
+
+image:map-metrics.png[Map Metrics]
+
+For more detailed information about clients see the chapters:
+xref:imdg:clients:java.adoc[Java Client]
+xref:imdg:clients:dotnet.adoc[.NET Client]
+xref:imdg:clients:nodejs.adoc[Node.js Client] 
+xref:imdg:clients:python.adoc[Python Client]
+xref:imdg:clients:go.adoc[Go Client]

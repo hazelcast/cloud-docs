@@ -1,0 +1,7 @@
+= Availability Zones
+
+You can deploy your Hazelcast cluster onto multiple availability zones to prevent data loss in case of a zone failure. This feature is backed by the xref:imdg:clusters:partition-group-configuration.adoc[partition grouping] feature of Hazelcast IMDG. Note that a single-zone cluster usually performs better than the multiple-zone deployments.
+
+To enable a multi-zone deployment, select two or more availability zones when creating a new cluster in the cluster creation form:
+
+image:cluster-zones.png[Available cluster zones for US West (Oregon)]

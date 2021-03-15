@@ -1,0 +1,20 @@
+= Account Security
+:url-ga-install: https://support.google.com/accounts/answer/1066447?co=GENIE.Platform%3DAndroid&hl=en&oco=0
+
+== Enable MFA
+
+It is recommended to enable MFA (Multi Factor Authentication) for the security of your account. Here the step by step instructions on how to enable it:
+
+. Login to your account then go to *Account* > *Security* page. 
++
+image:security-2fa.png[An example of a barcode to scan in Google Authenticator]
+
+. If you do not have it already, link:{url-ga-install}[install Google Authenticator].
+
+. Open your Google Authenticator app and press the plus button on the top right. Click *Scan barcode* then scan the QR code shown in hazelcast cloud console. 
+
+. Enter the 6 digit code shown in your authenticator app to the input box in the console then press *Enable two factor authentication* button.
+
+. Now, MFA is enabled. You sign out and try logging again. After you enter your username, password correctly, you will be asked to enter the verification code. You need to enter 6 digit code shown on your mobile authenticator app.
++
+image:login-verification.png[A login screen asking for a verification code]

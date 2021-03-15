@@ -1,0 +1,76 @@
+= Multimap
+:url-github-sample-multimap: https://github.com/hazelcast/hazelcast-code-samples/blob/master/org-website-samples/src/main/java/member/MultiMapSample.java
+
+*Multimap* is a specialized Hazelcast map. It is a distributed data structure where you can store multiple values for a single key.
+
+== Multimap Name
+
+You can give to custom name to your MultiMap structure.
+
+[source,java]
+----
+MultiMap<String , String > customerMap = hazelcastInstance.getMultiMap("customer_map");
+----
+
+== Value Collection Type
+
+When using MultiMap, the collection type of values can be either `Set` or `List`. 
+The default value is `Set`.
+If you choose `Set`, duplicate and null values are not allowed in your collection and ordering is irrelevant.
+If you choose `List`, ordering is relevant and your collection can include duplicate and null values.
+
+== Backup Count
+
+Defines the number of synchronous backups. 
+Let's say as an example:
+if it is set to *1*, the backup of a partition will be placed on *one* other member. 
+If it is *2*, it will be placed on *two* other members.
+
+== Asynchronous Backups Count
+
+The number of asynchronous backups. Behavior is the same as that of the `Backup Count` property.
+
+== Usage Examples
+
+[tabs] 
+====
+Multimap set:: 
++ 
+--
+[source,java]
+----
+//Set Example
+MultiMap<Integer, String> customerReviews = hazelcastInstance.getMultiMap("customer_reviews");
+customerReviews.put(1, "Review-1");
+customerReviews.put(1, "Review-2");
+customerReviews.put(1, "Review-3");
+customerReviews.put(1, "Review-1");
+System.out.println(customerReviews.get(1));
+//Output
+[Review-1, Review-2, Review-3]
+----
+--
+Multimap list:: 
++ 
+--
+[source,java]
+----
+// List Example
+MultiMap<Integer, String> customerProductView = hazelcastInstance.getMultiMap("customer_product_view");
+customerProductView.put(1, "Product-1");
+customerProductView.put(1, "Product-2");
+customerProductView.put(1, "Product-3");
+customerProductView.put(1, "Product-1");
+customerProductView.put(1, "Product-4");
+System.out.println(customerProductView.get(1));
+//Output
+[Product-1, Product-2, Product-3, Product-1, Product-4]
+----
+--
+GitHub samples:: 
++ 
+--
+link:{url-github-sample-multimap}[Github Samples]
+--
+==== 
+

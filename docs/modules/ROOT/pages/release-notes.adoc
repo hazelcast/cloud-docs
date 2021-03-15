@@ -1,0 +1,243 @@
+= Release Notes
+:url-cloud-cli-announcement: https://hazelcast.com/blog/announcing-hazelcast-cloud-cli/
+:url-cloud-sdk-announcement: https://hazelcast.com/blog/announcing-hazelcast-cloud-go-sdk/
+
+== March 9, 2021 - v2.7.3
+
+*Fixes:*
+
+-  Fixed an issue with token generator
+
+== February 17, 2021 - v2.7.2
+
+*Fixes:*
+
+-  Fixed an issue with Logging Integration in Hazelcast Enterprise
+
+== February 9, 2021 - v2.7.1
+
+*Fixes:*
+
+-  Fixed an issue with GitHub OAuth
+-  Fixed an issue with applying promo codes
+-  Fixed an issue with the custom classes uploaded to GCP
+
+== February 8, 2021 - v2.7.0
+
+*New Features:*
+
+- Introduced Social Sign-On with Google and GitHub. You can now start using Hazelcast Cloud with a few clicks.
+- Hazelcast 4.1 in the cloud now
+
+*Fixes:*
+
+- Improve customer invitation and signups
+- Several improvements with GCP Enterprise Clusters
+
+== January 29, 2021 - v2.6.4
+
+*Fixes:*
+
+-  Fixed an issue with payment approvals
+
+== January 25, 2021 - v2.6.3
+
+*Fixes:*
+
+-  Fixed an issue with metric calculations
+
+== December 17, 2020 - v2.6.2
+
+*Fixes:*
+
+-  Fixed an issue with users Invitation and decommissioning
+
+== December 2, 2020 - v2.6.1
+
+*Fixes:*
+
+-  Fixed an issue in the GCP Enterprise cluster scale-up
+
+== December 1, 2020 - v2.6.0
+
+*New Features:*
+
+- Introduced GCP Cloud Provider support, now you can create an Enterprise cluster on GCP
+- Official link:{url-cloud-cli-announcement[Hazelcast Cloud CLI] is released
+- Official link:{url-cloud-sdk-announcement[Hazelcast Cloud Golang SDK] is released
+- Unified VPC Peering flow. Now you can handle VPC Peering flow by using hzcloud cli for all cloud providers
+
+*Fixes:*
+
+- UK Post Code validation in the Payment Method screen is fixed.
+
+== September 17, 2020 - v.2.5.0
+
+*New Features:*
+
+- Cluster management API using GraphQL
+- Added the ability to reset token/password
+
+*Fixes:*
+
+- Fixed an issue where some clusters were failing during creation
+- Fixed an issue in Map loader upload
+- Improve the Cluster listing page speed
+
+== September 7, 2020 - v2.4.1
+
+*Fixes:*
+
+- Fixed an issue where a stopped cluster couldn't be deleted
+
+== September 2, 2020 - v.2.4.0
+
+*New Features:*
+
+- IMDG 4.0 clusters are now available in Cloud Starter
+- Added a Description field for IP Whitelisting entry
+
+*Fixes:*
+
+- Fixed an issue where User was asked to pay the credits when trying to delete a public cloud account
+- Fixed an issue with Management Center IP whitelisting not working correctly
+- Fixed an issue where the Cluster Start time was showing incorrectly on the UI
+- Added confirmation popup on WAN replication deletion
+- Several UI improvements
+
+== August 6, 2020 - v2.3.0
+
+*New Features:*
+
+- Support for xref:maploader-and-mapstore.adoc[MapLoader And MapStore]
+- Support for Azure Cluster creation
+
+== June 8, 2020 - v2.2.0
+
+*New Feature:*
+
+- Support for Hazelcast 4.0
+
+== June 2, 2020 - v2.1.1
+
+*Fixes:*
+
+- Fixed an issue where Team couldn't create a cluster
+
+== May 14, 2020 - v2.1.0
+
+*New Features:*
+
+- Public Access Option For Enterprise
+- Public IP Whitelisting Support
+- xref:wan-replication.adoc[WAN Replication]
+
+== March 31, 2020 - Cloud Enterprise GA on AWS (v2.0.0)
+
+*New Features:*
+
+- Support for cluster creation and management in AWS.
+- Connection via xref:aws-vpc-peering.adoc[AWS VPC peering].
+- Connection via xref:aws-private-link.adoc[AWS Private Link]
+- Replication to multiple xref:availability-zones.adoc[Availability Zones].
+- xref:scale-up-down.adoc[Scale Up / Down] for Clusters
+- TLS xref:encryption.adoc[Encryption] for the data in transit.
+- xref:logging-integration.adoc[Logging integration].
+- xref:custom-classes-upload.adoc[Custom Classes upload] to support user defined objects.
+- Support for all the Hazelcast data structures.
+- Support for xref:java-client.adoc[Java], xref:net-client.adoc[.NET],  xref:nodejs-client.adoc[Node.js], xref:python-client.adoc[Python] and xref:go-client.adoc[Go] and clients.
+
+== August 9, 2019
+
+Hazelcast version has been updated to 3.12.2.
+
+== June 19, 2019
+
+*New Features:*
+
+- Team and role-based access support
+- More flexible credit (voucher) system
+
+== May 16, 2019
+
+*New Features:*
+
+- xref:account-security.adoc[Multi-Factor Authentication] support has been added
+
+*Fixes:*
+
+- Promo code confirmation position not intuitive
+- Add button for indexes overflow on Firefox
+- Field validation on login screen triggered when clicking to `Forgot your password` link
+- Custom map config dialog moves row height on error
+- Credit card icon is distorted on Firefox
+
+== March 19, 2019 - Hazelcast Cloud 1.0
+
+- Completed the Beta stage and launched Hazelcast Cloud 1.0 GA.
+- New UI for login and registration.
+
+== March 15, 2019
+
+*New Features:*
+
+- Enabled the xref:imdg:clusters:deploying-code-on-member.adoc[User code deployment feature] for Hazelcast Cloud. You can now run the executor service, entry processor and queries with custom objects.
+
+*Fixes:*
+
+- Added the missing import statement for the Go-lang example.
+
+== March 4, 2019
+
+*Fixes:*
+
+- Added the missing TLS password for the downloadable sample clients.
+
+== February 24, 2019
+
+*Enhancements:*
+
+- Added more explanation (tooltip) for autoscaling.
+- Removed the unused static files.
+- Improved the misleading label when creating a new cluster.
+
+*Fixes:*
+
+- Fixed an issue where the "New Cluster" page was blank when you visit it sequentially by manually entering in the browser.
+- Fixed several typos on the emails.
+- Fixed an issue where the dashboard and client API was showing different map sizes.
+
+== January 28, 2019
+
+*New Features:*
+
+- IP Whitelisting: Introduced xref:ip-white-list.adoc[IP whitelisting] that allows you to restrict the clients that can connect to your cluster.
+- Autoscaling: Introduced xref:manage-the-cluster.adoc[automatic scaling] (up or down) of your cluster depending on the memory utilization.
+
+*Enhancements:*
+
+- Introduced a page with maintenance warning to be shown during the Hazelcast Cloud's maintenance works.
+- Improved the message for the resetting password operations requested by the users.
+- Introduced a mechanism to clean up all the resources (map configurations, secrets, network policies, etc.) after a cluster is deleted.
+- Added the allowed IP's field into the cluster details page.
+
+*Fixes:*
+
+- Fixed an issue where the "Billing & Payments" page was missing the invoice numbers.
+- Added links to the past invoices and receipts under the "Billing & Payments" page.
+- Fixed a validation issue where the UI was sending login requests for invalid form fields.
+- Fixed the malfunctioning offline detection.
+
+== January 11, 2019
+
+*Enhancements:*
+
+- Introduced a timeout to the metric query so that the cluster detail page is not destroyed.
+- Improved the cluster detail page so that the chart panels are now hidden when the cluster is stopped.
+
+*Fixes:*
+
+- Fixed an issue where the Java client sample was not working since `mvnw` could not be executed.
+- Fixed the issues in the Go client sample that caused indentation defects.
+- Fixed an issue where the cluster details were still accessible for the deleted clusters.
+- Fixed an issue where the "Cost this month" field under "Billing & Payment" page was not resetting.

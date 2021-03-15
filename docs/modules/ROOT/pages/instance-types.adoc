@@ -1,0 +1,11 @@
+= Instance Types
+
+Hazelcast Cloud Enterprise allows you to choose the underlying machine instance type on which a Hazelcast cluster is deployed. You can select it while *creating a cluster* and also change it later when *updating the cluster*.
+
+== Create Cluster
+
+While creating a new dedicated cluster, you can select the desired instance type in the cluster creation form:
+
+image:instance-types.png[Machine instance types with various memory sizes and CPU cores]
+
+This instance type decides on the underlying virtual machine, which is specific to the selected cloud provider. It is used as the host machine for the Hazelcast member.

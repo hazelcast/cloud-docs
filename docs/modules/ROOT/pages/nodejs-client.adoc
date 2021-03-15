@@ -1,0 +1,216 @@
+= Node.js Client
+:url-github-nodejs: https://github.com/hazelcast/hazelcast-nodejs-client#configuration
+
+== Quick Setup
+
+Follow the below instructions to connect a Node.js client to your cluster.
+
+. xref:create-starter-cluster.adoc[Create a cluster].
++
+The cluster-specific page will load and cluster's state will be "Pending" for some seconds, as shown below.
++
+image:create-cluster-pending.png[A cluster being created]
+
+. When the cluster's state becomes "Running", the previously inactive button `Configure Client` on this page becomes active. Click on it and the following dialog box appears:
++
+image:nodejs-client-dialog.png[Instructions for installing a Node.js client]
+
+. Click on the Node.js tab (the Java tab is active by default) and download the ZIP file as instructed in Step 1 of the dialog box.
+
+. Extract the ZIP file and run the command, in the extracted folder, shown in Step 2 of the above dialog box.
+
+You should see log output similar to the following:
+
+image:nodejs-client-log.png[Node.js client logs that it is connected]
+
+`Connection Successful!` in your logs means that your client application has successfully connected to your cluster in Hazelcast Cloud. The sample code inserts random entries to your cluster as you can see in the logs. In your Hazelcast Cloud console (your cluster's page where you can reach from the "Clusters" top menu), you should see the charts are being populated with metrics of your map, as shown below:
+
+image:map-metrics-client-connection.png[Map metrics that show entries are being added to the map]
+
+== Client Code
+
+Now, as we have successfully connected and put data into the cluster, let's review and explain the client code you downloaded.
+
+Go to the directory (extracted from the ZIP file you downloaded in the Step 3 above) and locate the client sample code. If you had enabled encryption in your cluster, open the `client_with_ssl.js` file. Otherwise, open the `client.js` file. We will explain both files line by line in the following sections.
+
+=== client.js
+
+This is the downloaded sample client code when your cluster does not have an encryption.
+
+[source,javascript]
+----
+var async = require('async');
+var Client = require('hazelcast-client').Client;
+var ClientConfig = require('hazelcast-client').Config.ClientConfig;
+
+function createClientConfig() {
+  var fs = require('fs');
+  var cfg = new ClientConfig(); // <1>
+  cfg.networkConfig.cloudConfig.enabled = true;
+  cfg.networkConfig.cloudConfig.discoveryToken = 'XK4AUToYIE3YoYF2bDLLbx1fPqyxXDEdIrLTpEtFwKbp3ZAfqq ';
+  cfg.networkConfig.redoOperation = true;
+  cfg.networkConfig.connectionAttemptLimit = 10;
+  cfg.groupConfig.name = 'test_cluster';
+  cfg.groupConfig.password = '2495ca7335404d8390d4e502bd930ced';
+  cfg.properties['hazelcast.client.cloud.url'] = 'https://coordinator.hazelcast.cloud';
+  cfg.properties['hazelcast.client.statistics.enabled'] = true;
+  cfg.properties['hazelcast.client.statistics.period.seconds'] = 1;
+  return cfg;
+}
+
+var cfg = createClientConfig();
+
+Client.newHazelcastClient(cfg).then(function (hazelcastClient) { // <2>
+  var client = hazelcastClient;
+  var map;
+  hazelcastClient.getMap('map').then(function (mp) { // <3>
+    map = mp;
+
+    map.put('key', 'value').then(function () {
+      return map.get('key');
+    }).then((res) => {
+      if(res === 'value') {
+        console.log("Connection Successful!");
+        console.log("Now, `map` will be filled with random entries.");
+
+        async.whilst(() => {
+          return true;
+        },(next) => {
+          var randomKey = Math.floor(Math.random() * 100000);
+          map.put('key' + randomKey, 'value' + randomKey).then(function () {
+            map.get('key' + randomKey);
+            if (randomKey % 10 == 0) {
+              map.size().then((size) => console.log(`map size: ${size}`));
+            }
+            next();
+          });
+        },(err) => {
+          client.shutdown();
+        });
+      }
+      else {
+          throw new Error("Connection failed, check your configuration.");
+      }
+    });
+  });
+});
+----
+
+<1> Create a client configuration.
++
+The `createClientConfig()` function creates a client configuration where Hazelcast Cloud requires the following parameters:
++
+- `groupConfig.name`: Name of your cluster.
+- `groupConfig.password`: Password to be used to authenticate your client with the cluster.
+- `networkConfig.cloudConfig.discoveryToken`: Token to be used while discovering the cluster members.
+
+<2> Create the client.
+
+<3> Check if the entry has been added and if so, start to add random entries to it.
+
+=== client_with_ssl.js
+
+This is the downloaded sample client code when your cluster has encryption enabled.
+
+[source,javascript]
+----
+var async = require('async');
+var Client = require('hazelcast-client').Client;
+var ClientConfig = require('hazelcast-client').Config.ClientConfig;
+var path = require('path')
+
+function createClientConfig() {
+  var fs = require('fs');
+  var cfg = new ClientConfig();
+  // <1>
+  var caFile = path.resolve(path.join(__dirname, 'ca.pem'));
+  var certFile = path.resolve(path.join(__dirname, 'cert.pem'));
+  var keyFile = path.resolve(path.join(__dirname, 'key.pem'));
+  cfg.networkConfig.sslOptions = {
+      rejectUnauthorized: false,
+      ca: [fs.readFileSync(caFile)],
+      cert: [fs.readFileSync(certFile)],
+      key: [fs.readFileSync(keyFile)],
+      passphrase: 'a'
+  };
+  cfg.networkConfig.cloudConfig.enabled = true;
+  cfg.networkConfig.cloudConfig.discoveryToken = 'XK4AUToYIE3YoYF2bDLLbx1fPqyxXDEdIrLTpEtFwKbp3ZAfqq ';
+  cfg.networkConfig.redoOperation = true;
+  cfg.networkConfig.connectionAttemptLimit = 10;
+  cfg.groupConfig.name = 'test_cluster';
+  cfg.groupConfig.password = '2495ca7335404d8390d4e502bd930ced';
+  cfg.properties['hazelcast.client.cloud.url'] = 'https://coordinator.hazelcast.cloud';
+  cfg.properties['hazelcast.client.statistics.enabled'] = true;
+  cfg.properties['hazelcast.client.statistics.period.seconds'] = 1;
+  return cfg;
+}
+
+var cfg = createClientConfig();
+
+Client.newHazelcastClient(cfg).then(function (hazelcastClient) {
+  var client = hazelcastClient;
+  var map;
+  hazelcastClient.getMap('map').then(function (mp) {
+    map = mp;
+
+    map.put('key', 'value').then(function () {
+      return map.get('key');
+    }).then((res) => {
+      if(res === 'value')
+      {
+        console.log("Connection Successful!");
+        console.log("Now, `map` will be filled with random entries.");
+
+        async.whilst(() => {
+          return true;
+        },(next) => {
+          var randomKey = Math.floor(Math.random() * 100000);
+          map.put('key' + randomKey, 'value' + randomKey).then(function () {
+            map.get('key' + randomKey);
+            if (randomKey % 10 == 0) {
+              map.size().then((size) => console.log(`map size: ${size}`));
+            }
+            next();
+          });
+        },(err) => {
+          client.shutdown();
+        });
+      }
+      else {
+        throw new Error("Connection failed, check your configuration.");
+      }
+    });
+  });
+});
+----
+
+<1> As you notice in the above sample code, the only difference from the previous one (`client.js`) is that it has TLS related configurations.
++
+You may want to move `pem` files to another directory. Then you need to set `ca`, `cert` and `key` options accordingly.
+
+== Project Setup
+
+The only dependency of the sample client is Hazelcast Node.js client. Here is the content of `package.json` file:
+
+[source,json]
+----
+{
+  "name": "hazelcast-cloud-nodejs-sample-client",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "client": "npm install && node client.js",
+    "client_with_ssl": "npm install && node client_with_ssl.js"
+  },
+  "author": "",
+  "dependencies": {
+    "async": "^2.6.1",
+    "hazelcast-client": "^0.10.0"
+  }
+}
+----
+
+== More Configuration Options
+
+Please refer to the link:{url-github-nodejs}[Hazelcast Node.js Client Documentation] for further configuration options.

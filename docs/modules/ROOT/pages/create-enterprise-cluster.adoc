@@ -1,0 +1,26 @@
+= Create an Enterprise Cluster
+
+In order to create a dedicated cluster, you need to provide a couple of parameters according to your needs. These parameters are very important for your use cases, like selecting multiple zones to have highly available Hazelcast clusters.
+
+You can click on the *+ New Cluster* button on the "Dedicated Clusters" page to create a new cluster as follows:
+
+image:new-enterprise-cluster.png[Fill out the form to define a new Enterprise cluster]
+
+* *Cluster Name*: Give an alphanumeric name to your cluster. 
+* *Cloud Provider*: Select your cloud provider. During the Early Access period, only AWS is supported. We will be supporting Microsoft Azure and Google Cloud Platform in the GA release.
+* *Regions*: Select your region. It is important to choose the same region as your client application to achieve a low network latency.
+* *Instance Type*: Select the instance type. You can easily define your instance type according to your use case.
+* *Instances Per Zone*: Select the instance count per zone. This is the Hazelcast member count in your cluster. In the end, you will have `zone count X instance count per zone` members.
+* *Zones*: Select your zones. It has the same importance on the latency to have a maximum throughput. They will be selectable only if you choose a region in the *Regions* field above.
+* *Hazelcast Version*: Select the Hazelcast version. You will see multiple available Hazelcast versions to fulfill your requirements. To be on the safe side, you can select the version that you are already using in your production environment.
+* *VPC CIDR*: Select VPC CIDR. This field may seem technical, but since we are in the Kubernetes world, VPC is the must-have component to install everything inside. You will see the suggested CIDR range on this field, but feel free to change it using the *Change* button in the field.
+* *Memory*: The cluster creation mechanism gives you a total memory of 7GB for each Hazelcast IMDG member in your cluster. You can change the native and heap memory capacity using the *Change* button in the field. You can see a summary of your memory distribution as you change the sizes at the very bottom of the page under the "Summary" heading.
+* *Backup/Snapshot*: Enable or disable Hazelcast's Hot Backup feature. If you enable it, your cluster will be backed-up daily. In addition, you can create snapshots and you will be able to restore your cluster from a previous snapshot or backup later. 
+* *Encryption*: Enable or disable the TLS communication between the clients and members.
+* *Custom Configuration*: You can specify your own configurations for Hazelcast IMDG data structures in your cluster. If you desire so, click on the *Add* button in this field and configure the data structures using the appeared form which is shown below:
+
+After you provide all the required and desired information in the above fields, click on the *Create Cluster* button at the bottom of the page. The Hazelcast Cloud console page loads and the cluster creation will be seen in its "pending" state for a few minutes:
+
+image:create-enterprise-cluster.png[An Enterprise cluster is being created]
+
+After about fifteen minutes, the cluster starts and its state becomes "Running". As mentioned before, the above page is the Hazelcast Cloud console for your cluster. You can always reach to the console by clicking on the "Clusters" top menu item and selecting your cluster which is listed afterwards.

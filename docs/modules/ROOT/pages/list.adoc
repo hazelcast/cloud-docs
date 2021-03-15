@@ -1,0 +1,25 @@
+= List
+
+Hazelcast List (*IList*) is similar to Hazelcast Set, but it also allows duplicate elements. This data structure also preserves the order of elements. It is a non-partitioned data structure where values and each backup are represented by their own single partition.
+
+== List Name
+
+In Hazelcast, you can create custom list configurations associated with the names of list. The list that do not have any configuration defined use the default configuration. If you want to set a configuration that is valid for all lists, you can name your configuration as `default`. A user-defined `default` configuration applies to every list that does not have a specific custom list configuration defined with the list's name. 
+You can also use wildcards to associate your configuration with multiple list names. See the xref:imdg:configuration:using-wildcards.adoc[IMDG documentation] for more information about wildcards.
+
+== Maximum Size
+
+You can set a maximum number of entries for the List you are creating with setting this value.
+This value can be any integer between 0 and Integer.MAX_VALUE.
+
+NOTE: If you set this value to zero, no capacity constraint will be applied.
+
+== Backup Count
+
+This value sets how many synchronous back-ups there will be. In this case, backup operations block operations until backups are successfully copied to backup members (or deleted from backup members in case of remove) and acknowledgements are received. Therefore, backups are updated before a put operation is completed, provided that the cluster is stable.
+0 means there will be no backup, and 1 means there will be 1 backup of this set in another member of the cluster. When you set 2, two members will have the backup.
+
+== Asynchronous Backup Count
+
+This value sets how many asynchronous back-ups there will be. In contrast to asynchronous, synchronous backups doesn't block operations. They are fire & forget and do not require acknowledgements; the backup operations are performed at some point in time.
+0 means there will be no asynchronous backup, and 1 means there will be 1 asynchronous backup of this set in another member of the cluster. When you set 2, two members will have the asynchronous backup.
