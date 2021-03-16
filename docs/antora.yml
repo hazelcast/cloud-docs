@@ -1,8 +1,7 @@
 name: cloud
 title: Hazelcast Cloud
 start_page: preface.adoc
-version: 2.2
-prerelease: true
+version: master
 asciidoc:
   attributes:
     javasource: ROOT:example$
