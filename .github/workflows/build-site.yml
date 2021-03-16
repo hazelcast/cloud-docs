@@ -1,5 +1,5 @@
 # This workflow triggers a build of the production documentation site
-# if a commit it made to the listed branches
+# if a commit is made to the listed branches
 
 name: Build production site
 
