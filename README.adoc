@@ -8,7 +8,9 @@ endif::[]
 :url-contribute: https://github.com/hazelcast/hazelcast-docs/blob/develop/.github/CONTRIBUTING.adoc
 :url-ui: {url-org}/hazelcast-docs-ui
 :url-playbook: {url-org}/hazelcast-docs
-:url-staging: https://develop--nifty-wozniak-71a44b.netlify.app/home/index.html
+:url-staging: https://xenodochial-spence-280948.netlify.app/cloud/preface.html
+
+image:https://img.shields.io/badge/Build-Staging-yellow[link="{url-staging}"]
 
 This repository contains the Antora components for the Hazelcast Cloud documentation.
 
@@ -42,6 +44,6 @@ To automate some elements of the build process, this repository includes the fol
 
 == Contributing
 
-If you want to add a change or contribute new content, see our {url-contribute}[contributing guide].
+If you want to add a change or contribute new content, simply submit a pull request to the `main` branch. The documentation site is set up to build on a push. For more detailed information about the site structure, see our {url-contribute}[contributing guide].
 
 To let us know about something that you'd like us to change, consider {url-org}/hazelcast-reference-manual/issues/new[creating an issue].
