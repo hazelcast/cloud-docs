@@ -43,7 +43,7 @@ To automate some elements of the build process, this repository includes the fol
 |===
 
 == Contributing
-
+#
 If you want to add a change or contribute new content, simply submit a pull request to the `main` branch. The documentation site is set up to build on a push. For more detailed information about the site structure, see our {url-contribute}[contributing guide].
 
 To let us know about something that you'd like us to change, consider {url-org}/hazelcast-reference-manual/issues/new[creating an issue].
