@@ -2,6 +2,24 @@
 :url-cloud-cli-announcement: https://hazelcast.com/blog/announcing-hazelcast-cloud-cli/
 :url-cloud-sdk-announcement: https://hazelcast.com/blog/announcing-hazelcast-cloud-go-sdk/
 
+== April 7, 2021 - v2.8.0
+
+*New Features:*
+
+- Hazelcast IMDG 3.12.12 is available in Starter and Enterprise
+- UI persists last console location
+
+*Fixes:*
+
+-  Fixed an issue with custom classes
+-  Fixed an issue with cluster state inconsistency
+-  Fixed an issue with console log in
+
+*Enhancements:*
+
+-  Cluster monitoring and alerting improvements
+-  Improved the message for the resetting password and signup operations
+
 == March 9, 2021 - v2.7.3
 
 *Fixes:*
