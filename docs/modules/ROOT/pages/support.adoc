@@ -27,7 +27,7 @@ If you're interested in Enterprise support, contact us at mailto:sales@hazelcast
 
 Severity 1 (production applications are down): We will respond in less than 30 minutes.
 
-Severity 2 (a major incident with significant impact): First Response < 2 Hours
+Severity 2 (production applications are down and there is a known workaround): We will respond in less than 2 hours.
 
 Severity 3 (a minor incident with low impact): First Response < 4 Hours
 
