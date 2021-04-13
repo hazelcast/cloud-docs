@@ -7,7 +7,7 @@ Hazelcast Cloud has different support options depending on your requirements. He
 
 Standard support is available for all users with non-free clusters.
 
-*Coverage:* 24 x 7 x 365
+*Coverage:* 24 hours a day, 7 days a week, 365 days a year
 
 *Support Channel:* link:{url-zendesk-hazelcast}[ZenDesk]
 
