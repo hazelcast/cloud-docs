@@ -21,7 +21,7 @@ If you're interested in Enterprise support, contact us at mailto:sales@hazelcast
 
 *Coverage:* 24 hours a day, 7 days a week, 365 days a year
 
-*Support channels:* link:{url-zendesk-hazelcast}[ZenDesk], Emergency Telephone Number
+*Support Channels:* link:{url-zendesk-hazelcast}[ZenDesk], Emergency Telephone Number
 
 *Our Response Times:*
 
