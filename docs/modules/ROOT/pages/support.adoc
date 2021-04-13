@@ -23,7 +23,7 @@ If you're interested in Enterprise support, contact us at mailto:sales@hazelcast
 
 *Support channels:* link:{url-zendesk-hazelcast}[ZenDesk], Emergency Telephone Number
 
-*SLA*
+*Our Response Times:*
 
 Severity 1: First Response < 30mins (24 x 7 x 365)
 
