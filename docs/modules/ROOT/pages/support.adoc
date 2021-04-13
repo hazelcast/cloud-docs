@@ -6,9 +6,14 @@ Hazelcast Cloud has different support options depending on your requirements. He
 == Standard
 
 Standard support is available for all users with non-free clusters.
+
 *Coverage:* 24 x 7 x 365
+
 *Support Channel:* link:{url-zendesk-hazelcast}[ZenDesk]
-*SLA:* First Response < 1 Business Day
+
+*SLA:*
+
+First Response < 1 Business Day
 
 == Enterprise
 
@@ -18,13 +23,15 @@ For enterprise support please email to mailto:sales@hazelcast.com[].
 
 *Support channels:* link:{url-zendesk-hazelcast}[ZenDesk], Emergency Telephone Number
 
-*Emergency Patches*
 *SLA*
 
-- Severity 1: First Response < 30mins (24 x 7 x 365)
-- Severity 2: First Response < 2 Hours (24 x 7 x 365)
-- Severity 3: First Response < 4 Hours (24 x 7 x 365)
-- Severity 4: First Response < 1 Business Day
+Severity 1: First Response < 30mins (24 x 7 x 365)
+
+Severity 2: First Response < 2 Hours (24 x 7 x 365)
+
+Severity 3: First Response < 4 Hours (24 x 7 x 365)
+
+Severity 4: First Response < 1 Business Day
 
 == Contact Us
 
