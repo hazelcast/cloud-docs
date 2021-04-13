@@ -19,19 +19,19 @@ We will respond in less than one business day.
 
 If you're interested in Enterprise support, contact us at mailto:sales@hazelcast.com[].
 
-*Coverage:* 24 x 7 x 365
+*Coverage:* 24 hours a day, 7 days a week, 365 days a year
 
 *Support channels:* link:{url-zendesk-hazelcast}[ZenDesk], Emergency Telephone Number
 
 *Our Response Times:*
 
-Severity 1: First Response < 30mins (24 x 7 x 365)
+Severity 1 (a critical incident with very high impact): First Response < 30mins
 
-Severity 2: First Response < 2 Hours (24 x 7 x 365)
+Severity 2 (a major incident with significant impact): First Response < 2 Hours
 
-Severity 3: First Response < 4 Hours (24 x 7 x 365)
+Severity 3 (a minor incident with low impact): First Response < 4 Hours
 
-Severity 4: First Response < 1 Business Day
+Severity 4 (an insignificant issue with little to no impact): First Response < 1 Business Day
 
 == Contact Us
 
