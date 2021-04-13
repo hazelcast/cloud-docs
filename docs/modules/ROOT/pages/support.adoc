@@ -31,7 +31,7 @@ Severity 2 (production applications are down and there is a known workaround): W
 
 Severity 3 (low impact on applications): We will respond in less than 4 hours.
 
-Severity 4 (an insignificant issue with little to no impact): First Response < 1 Business Day
+Severity 4 (insignificant issue with little to no impact): We will respond in less than one business day.
 
 == Contact Us
 
