@@ -8,7 +8,7 @@
 
 - During cluster deletion, Azure storage accounts are now also deleted 
 - Field labels now match the placeholder text
-- Wan Replication fails on Azure clusters
+- WAN Replication no longer fails on Azure clusters
 
 == April 7, 2021 - v2.8.0
 
