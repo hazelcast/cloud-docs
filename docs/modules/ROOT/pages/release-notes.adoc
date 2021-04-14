@@ -6,7 +6,7 @@
 
 *Fixes:*
 
-- Azure Storage Account is not deleted during cluster deletion
+- During cluster deletion, Azure storage accounts are now also deleted 
 - Field labels now match the placeholder text
 - Wan Replication fails on Azure clusters
 
