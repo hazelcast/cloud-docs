@@ -1,33 +1,38 @@
 = Support
-:url-slack-hazelcast: https://join.slack.com/t/hazelcastcommunity/shared_invite/zt-feevu2bl-AWtL_N~pc7fGvdO9iKJAww
 :url-zendesk-hazelcast: https://hazelcast.zendesk.com/
 
 Hazelcast Cloud has different support options depending on your requirements. Here are the support levels:
 
-== Community
-
-Community support is available for free tier users. 
-*Support Channel:* link:{url-slack-hazelcast}[Slack]
-
 == Standard
 
 Standard support is available for all users with non-free clusters.
-*Coverage:* 24 x 7 x 365
+
+*Coverage:* 24 hours a day, 7 days a week, 365 days a year
+
 *Support Channel:* link:{url-zendesk-hazelcast}[ZenDesk]
-*SLA:* First Response < 1 Business Day
+
+*Our Response Times:*
+
+We will respond in less than one business day.
 
 == Enterprise
 
-For enterprise support please email to mailto:sales@hazelcast.com[]. 
-*Coverage:* 24 x 7 x 365
-*Support channels: * link:{url-zendesk-hazelcast}[ZenDesk], Emergency Telephone Number
-*Emergency Patches*
-*SLA*
-Severity 1: First Response < 30mins (24 x 7 x 365)
-Severity 2: First Response < 2 Hours (24 x 7 x 365)
-Severity 3: First Response < 4 Hours (24 x 7 x 365)
-Severity 4: First Response < 1 Business Day
+If you're interested in Enterprise support, contact us at mailto:sales@hazelcast.com[].
+
+*Coverage:* 24 hours a day, 7 days a week, 365 days a year
+
+*Support Channels:* link:{url-zendesk-hazelcast}[ZenDesk], Emergency Telephone Number
+
+*Our Response Times:*
+
+Severity 1 (production applications are down): We will respond in less than 30 minutes.
+
+Severity 2 (production applications are down and there is a known workaround): We will respond in less than 2 hours.
+
+Severity 3 (low impact on applications): We will respond in less than 4 hours.
+
+Severity 4 (insignificant issue with little to no impact): We will respond in less than one business day.
 
 == Contact Us
 
-Have a question? Need some information? Email us: mailto:cloud.support@hazelcast.com[]
+Have a question? Need some information? Email us: mailto:support@hazelcast.com[]
