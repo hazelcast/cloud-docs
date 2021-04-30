@@ -63,6 +63,7 @@
 * Tutorials
 ** xref:shipping-logs-to-amazon-elasticsearch-service.adoc[]
 ** xref:failover-clients-with-hazelcast-cloud.adoc[]
+** xref:data-migration.adoc[]
 
 * API
 ** xref:api-reference.adoc[]
