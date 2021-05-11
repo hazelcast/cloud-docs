@@ -72,3 +72,4 @@
 ** xref:faq.adoc[]
 ** xref:support.adoc[]
 ** xref:release-notes.adoc[]
+** https://github.com/hazelcast/hazelcast-cloud-code-samples[Code Samples]
