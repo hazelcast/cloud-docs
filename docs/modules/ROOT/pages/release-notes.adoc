@@ -2,11 +2,23 @@
 :url-cloud-cli-announcement: https://hazelcast.com/blog/announcing-hazelcast-cloud-cli/
 :url-cloud-sdk-announcement: https://hazelcast.com/blog/announcing-hazelcast-cloud-go-sdk/
 
+== May 11, 2021 - v2.8.3
+
+*Fixes:*
+
+- Hazelcast Starter Discovery returns correct values for suspended clusters
+
+== April 16, 2021 - v2.8.2
+
+*Fixes:*
+
+- The latest stable Kubernetes version are used on Azure
+
 == April 9, 2021 - v2.8.1
 
 *Fixes:*
 
-- During cluster deletion, Azure storage accounts are now also deleted 
+- During cluster deletion, Azure storage accounts are now also deleted
 - Field labels now match the placeholder text
 - WAN Replication no longer fails on Azure clusters
 
