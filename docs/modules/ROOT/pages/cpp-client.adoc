@@ -1,0 +1,173 @@
+= C++ Client
+:url-github-cpp: https://github.com/hazelcast/hazelcast-cpp-client/blob/v4.1.0/Reference_Manual.md
+
+== Quick Setup
+
+Follow the below instructions to connect a .Net client to your cluster.
+
+. xref:create-starter-cluster.adoc[Create a cluster].
++
+The cluster-specific page will load and cluster's state will be "Pending" for some seconds, as shown below.
++
+image:create-cluster-pending.png[A cluster being created]
+
+. When the cluster's state becomes "Running", the previously inactive button `Configure Client` on this page becomes active. Click on it and the following dialog box appears:
++
+image:cpp-client-dialog.png[Instructions for installing a .Net client]
+
+. Click on the C++ tab (the Java tab is active by default) and download the ZIP file as instructed in Step 1 of the dialog box.
+
+. Extract the ZIP file and run the command we provided, in the extracted folder, shown in Step 2 of the above dialog box.
+
+You should see log output similar to the following after build finishes:
+
+image:cpp-client-log.png[.Net client logs that it is connected]
+
+`Connection Successful!` in your logs means that your client application has successfully connected to your cluster in Hazelcast Cloud. The sample code inserts random entries to your cluster as you can see in the logs. In your Hazelcast Cloud console (your cluster's page where you can reach from the "Clusters" top menu), you should see the charts are being populated with metrics of your map, as shown below:
+
+image:map-metrics.png[Map metrics that show entries are being added to the map]
+
+== Client Code
+
+Now, as we have successfully connected and put data into the cluster, let's review and explain the client code you downloaded.
+
+Go to the directory (extracted from the ZIP you downloaded in the Step 3 above) and locate the client sample code. If you had enabled encryption in your cluster, open the `client_with_ssl.cpp` file. Otherwise, open the `client.cpp` file. We will explain both files line by line in the following sections.
+
+=== client.cpp
+
+This is the downloaded sample client code when your cluster does not have an encryption.
+
+[source,c++]
+----
+#include <hazelcast/client/hazelcast_client.h>
+#include <string>
+
+int main(int argc, char **argv) {
+    hazelcast::client::client_config config;
+    
+    config.set_cluster_name("YOUR_CLUSTER_NAME"); // <1>
+    config.set_property("hazelcast.client.statistics.enabled", "true"); // <2>
+
+    auto &cloud_configuration = config.get_network_config().get_cloud_config();
+    cloud_configuration.enabled = true;
+    cloud_configuration.discovery_token = "YOUR_CLUSTER_DISCOVERY_TOKEN"; // <3>
+
+    auto hazelcastClient = hazelcast::new_client(std::move(config)).get();  // <4>
+    auto map = hazelcastClient.get_map("map").get(); // <5>
+    auto check = map->put<std::string, std::string>("key", "value").get(); // <6>
+    map->clear().get();
+    std::cout << "Connection Successful!" << std::endl;
+    std::cout << "Now, 'map' will be filled with random entries." << std::endl;
+
+    int iterationCount = 0;
+    while (true) { // <7>
+        int randomKey = rand();
+        std::string randomKeyString = std::to_string(randomKey); 
+        try {
+            map->put<std::string, std::string>("key" + randomKeyString, "value" + randomKeyString).get();
+        } catch (std::exception &e) {
+            std::cout << "Put operation failed error:" << e.what() << std::endl;
+        }
+        if (++iterationCount == 10){
+            iterationCount = 0;
+            std::cout << "Map size:" + std::to_string(map->size().get()) << std::endl;
+        }
+    }
+
+    return 0;
+}
+----
+
+<1> First, we set name of the our cluster. 
+
+<2> Then, we enable statistics in order to see statistics in Hazelcast Cloud Console.
+
+<3> Then, we set discovery token of our cluster. 
++
+This discovery token will be used by client in order to discover cluster members.
+
+<4> Now, we create the client with `config`.
+
+<5> We get/create a map with name `map`.
+
+<6> Then, we check add a value to our map, and get it to let the code throw an exception if the value is not correct.
+
+<7> Finally, we add random entries to the map we specified before.
+
+=== ClientWithSsl/Program.cs
+
+This is the downloaded sample client code when your cluster has encryption enabled.
+
+[source,cpp]
+----
+#include <hazelcast/client/hazelcast_client.h>
+#include <string>
+
+int main(int argc, char **argv) {
+    hazelcast::client::client_config config;
+    
+    config.set_cluster_name("YOUR_CLUSTER_NAME"); // <1>
+    config.set_property("hazelcast.client.statistics.enabled", "true"); // <2>
+
+    auto &cloud_configuration = config.get_network_config().get_cloud_config();
+    cloud_configuration.enabled = true;
+    cloud_configuration.discovery_token = "YOUR_CLUSTER_DISCOVERY_TOKEN"; // <3>
+
+    boost::asio::ssl::context ctx(boost::asio::ssl::context::tlsv12); // <4>
+    ctx.set_verify_mode(boost::asio::ssl::verify_peer);
+    ctx.load_verify_file("ca.pem"); 
+    ctx.use_certificate_file("cert.pem", boost::asio::ssl::context::pem);
+    ctx.set_password_callback([&] (std::size_t max_length, boost::asio::ssl::context::password_purpose purpose) {
+        return "YOUR_SSL_PASSWORD";
+    });
+    ctx.use_private_key_file("key.pem", boost::asio::ssl::context::pem);
+    config.get_network_config().get_ssl_config().set_context(std::move(ctx));
+
+    auto hazelcastClient = hazelcast::new_client(std::move(config)).get(); // <5>
+    auto map = hazelcastClient.get_map("map").get(); // <6>
+    auto check = map->put<std::string, std::string>("key", "value").get(); // <7>
+    map->clear().get();
+    std::cout << "Connection Successful!" << std::endl;
+    std::cout << "Now, 'map' will be filled with random entries." << std::endl;
+    
+    int iterationCount = 0;
+    while (true) { // <8>
+        int randomKey = rand();
+        std::string randomKeyString = std::to_string(randomKey);
+        try {
+            map->put<std::string, std::string>("key" + randomKeyString, "value" + randomKeyString).get();
+        } catch (std::exception &e) {
+            std::cout << "Put operation failed error:" << e.what() << std::endl;
+        }
+        if (++iterationCount == 10){
+            iterationCount = 0;
+            std::cout << "Map size:" + std::to_string(map->size().get()) << std::endl;
+        }
+    }
+
+    return 0;
+}
+----
+
+
+<1> First, we set name of the our cluster. 
+
+<2> We enable statistics in order to see statistics in Hazelcast Cloud Console.
+
+<3> We set discovery token of our cluster. 
++
+This discovery token will be used by client in order to discover cluster members.
+
+<4> We create SSL Context and set our certificates, key and SSL Password.
+
+<5> We create the client with our `config`.
+
+<6> We get/create a map with name `map`.
+
+<7> Then, we check add a value to our map, and get it to let the code throw an exception if the value is not correct.
+
+<8> Finally, we add random entries to the map we specified before.
+
+== More Configuration Options
+
+Please refer to the link:{url-github-cpp}[Hazelcast C++ Client Documentation] for further configuration options.

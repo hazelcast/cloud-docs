@@ -52,6 +52,7 @@
 ** xref:python-client.adoc[]
 ** xref:go-client.adoc[]
 ** xref:net-client.adoc[]
+** xref:cpp-client.adoc[]
 
 * Account Management
 ** xref:credits.adoc[]
