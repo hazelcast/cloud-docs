@@ -1,5 +1,5 @@
 name: cloud
-title: Hazelcast Cloud
+title: Cloud
 start_page: preface.adoc
 version: master
 asciidoc:
