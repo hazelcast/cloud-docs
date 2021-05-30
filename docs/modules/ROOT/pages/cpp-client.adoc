@@ -17,7 +17,11 @@ image:cpp-client-dialog.png[Instructions for installing a .Net client]
 
 . Click on the C++ tab (the Java tab is active by default) and download the ZIP file as instructed in Step 1 of the dialog box.
 
-. Extract the ZIP file and run the command we provided, in the extracted folder, shown in Step 2 of the above dialog box.
+. Extract the ZIP file and run the command we provided, in the extracted folder, shown in Step 2.
+
+* Windows users may need update this command according to configuration of their system.  
+** If your target triple doesn't match with operation system, you may need to install Client with providing target suffix. For example: `vcpkg install "hazelcast-cpp-client[openssl]:x64-windows"`
+** Location of the compiled binary may change according to configuration and system defaults.
 
 You should see log output similar to the following after build finishes:
 
@@ -68,8 +72,7 @@ int main(int argc, char **argv) {
         } catch (std::exception &e) {
             std::cout << "Put operation failed error:" << e.what() << std::endl;
         }
-        if (++iterationCount == 10){
-            iterationCount = 0;
+        if (++iterationCount % 10 == 0){
             std::cout << "Map size:" + std::to_string(map->size().get()) << std::endl;
         }
     }
@@ -115,7 +118,7 @@ int main(int argc, char **argv) {
 
     boost::asio::ssl::context ctx(boost::asio::ssl::context::tlsv12); // <4>
     ctx.set_verify_mode(boost::asio::ssl::verify_peer);
-    ctx.load_verify_file("ca.pem"); 
+    ctx.load_verify_file("ca.pem");
     ctx.use_certificate_file("cert.pem", boost::asio::ssl::context::pem);
     ctx.set_password_callback([&] (std::size_t max_length, boost::asio::ssl::context::password_purpose purpose) {
         return "YOUR_SSL_PASSWORD";
@@ -139,8 +142,7 @@ int main(int argc, char **argv) {
         } catch (std::exception &e) {
             std::cout << "Put operation failed error:" << e.what() << std::endl;
         }
-        if (++iterationCount == 10){
-            iterationCount = 0;
+        if (++iterationCount % 10 == 0){
             std::cout << "Map size:" + std::to_string(map->size().get()) << std::endl;
         }
     }
@@ -158,7 +160,7 @@ int main(int argc, char **argv) {
 +
 This discovery token will be used by client in order to discover cluster members.
 
-<4> We create SSL Context and set our certificates, key and SSL Password.
+<4> We set our certificate file, key file and password in order establish a secure connection with our Cluster..
 
 <5> We create the client with our `config`.
 
