@@ -19,7 +19,7 @@ image:cpp-client-dialog.png[Instructions for installing a .Net client]
 
 . Extract the ZIP file and run the command we provided, in the extracted folder, shown in Step 2.
 
-* Windows users may need update this command according to configuration of their system.  
+* Windows users may need update this command according to configuration of their system.
 ** If your target triple doesn't match with operation system, you may need to install Client with providing target suffix. For example: `vcpkg install "hazelcast-cpp-client[openssl]:x64-windows"`
 ** Location of the compiled binary may change according to configuration and system defaults.
 
@@ -48,7 +48,7 @@ This is the downloaded sample client code when your cluster does not have an enc
 
 int main(int argc, char **argv) {
     hazelcast::client::client_config config;
-    
+
     config.set_cluster_name("YOUR_CLUSTER_NAME"); // <1>
     config.set_property("hazelcast.client.statistics.enabled", "true"); // <2>
 
@@ -66,7 +66,7 @@ int main(int argc, char **argv) {
     int iterationCount = 0;
     while (true) { // <7>
         int randomKey = rand();
-        std::string randomKeyString = std::to_string(randomKey); 
+        std::string randomKeyString = std::to_string(randomKey);
         try {
             map->put<std::string, std::string>("key" + randomKeyString, "value" + randomKeyString).get();
         } catch (std::exception &e) {
@@ -81,11 +81,11 @@ int main(int argc, char **argv) {
 }
 ----
 
-<1> First, we set name of the our cluster. 
+<1> First, we set the name of our cluster.
 
 <2> Then, we enable statistics in order to see statistics in Hazelcast Cloud Console.
 
-<3> Then, we set discovery token of our cluster. 
+<3> Then, we set discovery token of our cluster.
 +
 This discovery token will be used by client in order to discover cluster members.
 
@@ -108,7 +108,7 @@ This is the downloaded sample client code when your cluster has encryption enabl
 
 int main(int argc, char **argv) {
     hazelcast::client::client_config config;
-    
+
     config.set_cluster_name("YOUR_CLUSTER_NAME"); // <1>
     config.set_property("hazelcast.client.statistics.enabled", "true"); // <2>
 
@@ -132,7 +132,7 @@ int main(int argc, char **argv) {
     map->clear().get();
     std::cout << "Connection Successful!" << std::endl;
     std::cout << "Now, 'map' will be filled with random entries." << std::endl;
-    
+
     int iterationCount = 0;
     while (true) { // <8>
         int randomKey = rand();
@@ -152,21 +152,21 @@ int main(int argc, char **argv) {
 ----
 
 
-<1> First, we set name of the our cluster. 
+<1> First, we set the name of our cluster.
 
 <2> We enable statistics in order to see statistics in Hazelcast Cloud Console.
 
-<3> We set discovery token of our cluster. 
+<3> Then, we set our cluster's discovery token.
 +
-This discovery token will be used by client in order to discover cluster members.
+The client will use this discovery token to discover cluster members.
 
-<4> We set our certificate file, key file and password in order establish a secure connection with our Cluster..
+<4> To establish a secure connection to our cluster, we set our certificate file, key file and password.
 
-<5> We create the client with our `config`.
+<5> We create the client, using our `config` object.
 
 <6> We get/create a map with name `map`.
 
-<7> Then, we check add a value to our map, and get it to let the code throw an exception if the value is not correct.
+<7> Then, we add an entry to our map and read it back to check that everything is working.
 
 <8> Finally, we add random entries to the map we specified before.
 
