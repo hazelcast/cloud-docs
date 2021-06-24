@@ -20,7 +20,7 @@ image:cpp-client-dialog.png[Instructions for installing a .Net client]
 . Extract the ZIP file and run the command we provided, in the extracted folder, shown in Step 2.
 
 * Windows users may need update this command according to configuration of their system.
-** If your target triple doesn't match with operation system, you may need to install Client with providing target suffix. For example: `vcpkg install "hazelcast-cpp-client[openssl]:x64-windows"`
+** If the link:https://wiki.osdev.org/Target_Triplet[target triplet] doesn't match your operating system, you may need to provide a target suffix to the `install` command. For example: `vcpkg install "hazelcast-cpp-client[openssl]:x64-windows"`
 ** Location of the compiled binary may change according to configuration and system defaults.
 
 You should see log output similar to the following after build finishes:
