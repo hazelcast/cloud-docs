@@ -1,5 +1,5 @@
 = Go Client
-:url-github-go: https://github.com/hazelcast/hazelcast-go-client#3-configuration-overview
+:url-github-go: https://pkg.go.dev/github.com/hazelcast/hazelcast-go-client#hdr-Configuration
 
 == Quick Setup
 
@@ -42,66 +42,83 @@ This is the downloaded sample client code when your cluster does not have encryp
 package main
 
 import (
+  "context"
   "fmt"
   "log"
   "math/rand"
   "time"
 
-  hazelcast "github.com/hazelcast/hazelcast-go-client"
-  "github.com/hazelcast/hazelcast-go-client/config"
-  "github.com/hazelcast/hazelcast-go-client/config/property"
+  "github.com/hazelcast/hazelcast-go-client"
+  "github.com/hazelcast/hazelcast-go-client/logger"
+  "github.com/hazelcast/hazelcast-go-client/types"
 )
+
 func main() {
+  // <1>
+  config := hazelcast.Config{}
+  cc := &config.Cluster
+  cc.Name = "YOUR_CLUSTER_NAME" // <2>
+  cc.Cloud.Enabled = true
+  cc.Cloud.Token = "YOUR_CLUSTER_TOKEN" // <3>
+  config.Stats.Enabled = true // <4>
+  config.Stats.Period = types.Duration(1*time.Second)
+  config.Logger.Level = logger.InfoLevel
 
-  cfg := hazelcast.NewConfig() // <1>
-  // <2>
-  cfg.GroupConfig().SetName("YOUR_CLUSTER_NAME")
-  cfg.GroupConfig().SetPassword("YOUR_CLUSTER_PASSWORD")
-
-  cfg.NetworkConfig().SSLConfig().SetEnabled(false)
-  // <3>
-  discoveryCfg := config.NewCloudConfig()
-  discoveryCfg.SetEnabled(true)
-  discoveryCfg.SetDiscoveryToken("YOUR_CLUSTER_DISCOVERY_TOKEN")
-  cfg.NetworkConfig().SetCloudConfig(discoveryCfg)
-  // <4>
-  cfg.SetProperty(property.StatisticsEnabled.Name(), "true")
-  cfg.SetProperty(property.StatisticsPeriodSeconds.Name(), "1")
-
-  client, _ := hazelcast.NewClientWithConfig(cfg) // <5>
-  // <6>
-  mp, _ := client.GetMap("map")
-  mp.Put("key", "value")
-  val, _ := mp.Get("key")
-  // <7>
-  if val == "value" {
-    log.Println("Connection Successful!")
-    log.Println("Now, `map` will be filled with random entries.")
-    rand.Seed(time.Now().UTC().UnixNano())
-    for true {
-      randKey := rand.Intn(100000)
-      mp.Put("key"+string(randKey), "value"+string(randKey))
-      if randKey%10 == 0 {
-        size, _ := mp.Size()
-        log.Println(fmt.Sprintf("Map size: %d", size))
-      }
-      time.Sleep(100 * time.Millisecond)
-    }
-  } else {
-    panic("Connection failed, check your configuration.")
+  ctx := context.TODO()
+  client, err := hazelcast.StartNewClientWithConfig(ctx, config) // <5>
+  if err != nil {
+    log.Fatal(err)
   }
 
-  client.Shutdown()
+  // <6>
+  myMap, err := client.GetMap(ctx, "map")
+  if err != nil {
+    log.Fatal(err)
+  }
+  if _, err := myMap.Put(ctx, "key", "value"); err != nil {
+    log.Fatal(err)
+  }
+
+  // <7>
+  if _, err = myMap.Get(ctx, "key"); err != nil {
+    client.Shutdown(ctx)
+    log.Print("Connection failed, check your configuration: %s")
+    log.Fatal(err)
+  }
+  log.Print("Successfully connected!")
+  log.Print("Now, 'map' will be filled with random entries.")
+  rand.Seed(time.Now().UTC().UnixNano())
+  counter := 0
+  for {
+    r := rand.Int63n(100_000) + 1
+    key := fmt.Sprintf("key%d", r)
+    value := fmt.Sprintf("value%d", r)
+    if _, err = myMap.Put(ctx, key, value); err != nil {
+      log.Fatal(err)
+    }
+    if _, err = myMap.Get(ctx, key); err != nil {
+      log.Fatal(err)
+    }
+    counter++
+    if counter % 10 == 0 {
+      size, err := myMap.Size(ctx)
+      if err != nil {
+        log.Fatal(err)
+      }
+      fmt.Println("Map size:", size)
+    }
+    time.Sleep(100*time.Millisecond)
+	}
 }
 ----
 
 <1> First, we create an empty client configuration.
 
-<2> Then, we set the cluster name and password via `GroupConfig`.
+<2> Then, we set the cluster name via `Cluster`.
 +
 The cluster name and password are unique to your cluster. The client is authenticated using this password.
 
-<3> Then, we set the discovery token.
+<3> Then, we set the Hazelcast Cloud token.
 +
 This token is also unique to your cluster and used to discover Hazelcast cluster members.
 
@@ -113,7 +130,7 @@ This step creates the connection between your application and the cluster.
 
 <6> We get/create a map and put a simple entry ("key", "value").
 
-<7> Then, we check if the entry has been added and let the code throw an exception if the value is not correct. Finally, we add random entries with 100-millisecond intervals.
+<7> Then, we check if the entry has been added and let the code log and fail with an error if the value is not correct. Finally, we add random entries with 100-millisecond intervals.
 
 === client_with_ssl.go
 
@@ -124,64 +141,87 @@ This is the downloaded sample client code when your cluster has encryption enabl
 package main
 
 import (
+  "context"
   "fmt"
   "log"
   "math/rand"
-  "path/filepath"
   "time"
 
-  hazelcast "github.com/hazelcast/hazelcast-go-client"
-  "github.com/hazelcast/hazelcast-go-client/config"
-  "github.com/hazelcast/hazelcast-go-client/config/property"
+  "github.com/hazelcast/hazelcast-go-client"
+  "github.com/hazelcast/hazelcast-go-client/logger"
+  "github.com/hazelcast/hazelcast-go-client/types"
 )
 
 func main() {
-  cfg := hazelcast.NewConfig()
   // <1>
-  sslConfig := cfg.NetworkConfig().SSLConfig()
-  sslConfig.SetEnabled(true)
-  caFile,_ := filepath.Abs("./ca.pem")
-  certFile,_ := filepath.Abs("./cert.pem")
-  keyFile,_ := filepath.Abs("./key.pem")
-  sslConfig.SetCaPath(caFile)
-  sslConfig.AddClientCertAndEncryptedKeyPath(certFile, keyFile, "YOUR_SSL_PASSWORD")
-
-  sslConfig.ServerName = "hazelcast.cloud"
-  cfg.GroupConfig().SetName("YOUR_CLUSTER_NAME")
-  cfg.GroupConfig().SetPassword("YOUR_CLUSTER_PASSWORD")
-  discoveryCfg := config.NewCloudConfig()
-  discoveryCfg.SetEnabled(true)
-  discoveryCfg.SetDiscoveryToken("YOUR_CLUSTER_DISCOVERY_TOKEN")
-  cfg.NetworkConfig().SetCloudConfig(discoveryCfg)
-  cfg.SetProperty(property.StatisticsEnabled.Name(), "true")
-  cfg.SetProperty(property.StatisticsPeriodSeconds.Name(), "1")
-
-  client, _ := hazelcast.NewClientWithConfig(cfg)
-
-  mp, _ := client.GetMap("map")
-  mp.Put("key", "value")
-  val, _ := mp.Get("key")
-  if val == "value" {
-    log.Println("Connection Successful!")
-    log.Println("Now, `map` will be filled with random entries.")
-    rand.Seed(time.Now().UTC().UnixNano())
-    for true {
-      randKey := rand.Intn(100000)
-      mp.Put("key"+string(randKey), "value"+string(randKey))
-      if randKey%10 == 0 {
-        size, _ := mp.Size()
-        log.Println(fmt.Sprintf("Map size: %d", size))
-      }
-      time.Sleep(100 * time.Millisecond)
-    }
-  } else {
-      panic("Connection failed, check your configuration.")
+  config := hazelcast.Config{}
+  cc := &config.Cluster
+  cc.Name = "YOUR_CLUSTER_NAME" // <2>
+  cc.Cloud.Enabled = true
+  cc.Cloud.Token = "YOUR_CLUSTER_TOKEN" // <3>
+  cc.Network.SSL.Enabled = true
+  cc.Network.SSL.SetTLSConfig(&tls.Config{ServerName: "hazelcast.cloud"})
+  if err := cc.Network.SSL.SetCAPath("ca.pem"); err != nil {
+    log.Fatal(err)
   }
-  client.Shutdown()
+  if err := cc.Network.SSL.AddClientCertAndEncryptedKeyPath("cert.pem", "key.pem", "YOUR_SSL_PASSWORD"); err != nil {
+    log.Fatal(err)
+  }
+  config.Stats.Enabled = true // <4>
+  config.Stats.Period = types.Duration(1*time.Second)
+  config.Logger.Level = logger.InfoLevel
+
+  ctx := context.TODO()
+  client, err := hazelcast.StartNewClientWithConfig(ctx, config) // <5>
+  if err != nil {
+    log.Fatal(err)
+  }
+
+  // <6>
+  myMap, err := client.GetMap(ctx, "map")
+  if err != nil {
+    log.Fatal(err)
+  }
+  if _, err := myMap.Put(ctx, "key", "value"); err != nil {
+    log.Fatal(err)
+  }
+
+  // <7>
+  if _, err = myMap.Get(ctx, "key"); err != nil {
+    client.Shutdown(ctx)
+    log.Print("Connection failed, check your configuration: %s")
+    log.Fatal(err)
+  }
+  log.Print("Successfully connected!")
+  log.Print("Now, 'map' will be filled with random entries.")
+  rand.Seed(time.Now().UTC().UnixNano())
+  counter := 0
+  for {
+    r := rand.Int63n(100_000) + 1
+    key := fmt.Sprintf("key%d", r)
+    value := fmt.Sprintf("value%d", r)
+    if _, err = myMap.Put(ctx, key, value); err != nil {
+      log.Fatal(err)
+    }
+    if _, err = myMap.Get(ctx, key); err != nil {
+      log.Fatal(err)
+    }
+    counter++
+    if counter % 10 == 0 {
+      size, err := myMap.Size(ctx)
+      if err != nil {
+        log.Fatal(err)
+      }
+      fmt.Println("Map size:", size)
+    }
+    time.Sleep(100*time.Millisecond)
+  }
 }
 ----
 
 <1> The only difference between this one and the `client.go` is the lines that enable and configure TLS encryption on the client side.
+
+Note that you have to export the following environment variable for code compiled with Go 1.15 or Go 1.16: `GODEBUG=x509ignoreCN=0`. Go 1.17 is not supported.
 
 You may want to move the 'pem' files to another directory. Then, you need to set 'ca', 'cert' and 'key' file directories accordingly.
 
