@@ -269,4 +269,4 @@ HazelcastInstance client = HazelcastClient.newHazelcastClient();
 
 == More Configuration Options
 
-Please refer to the xref:imdg:clients:java.adoc#configuring-java-client[Hazelcast IMDG Reference Manual] for further configuration options.
+Please refer to the xref:hazelcast:clients:java.adoc#configuring-java-client[Java client documentation] for further configuration options.

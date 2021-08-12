@@ -1,6 +1,6 @@
 = WAN Replication
 
-WAN Replication is one of the powerful features of Hazelcast that lets you synchronize multiple clusters. While you can do *Active-Active* and *Active-Passive* setup, you can also configure WAN Replication parameters according to your use-case. For a complete reference of this feature, see xref:imdg:wan:wan.adoc[].
+WAN Replication is one of the powerful features of Hazelcast that lets you synchronize multiple clusters. While you can do *Active-Active* and *Active-Passive* setup, you can also configure WAN Replication parameters according to your use-case. For a complete reference of this feature, see xref:hazelcast:wan:wan.adoc[].
 
 [cols="e,a"]
 |===
