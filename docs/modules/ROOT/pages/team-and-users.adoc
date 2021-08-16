@@ -7,38 +7,46 @@
 
 In each team, users can have one of the following roles:
 
-[cols="a,a"]
+[cols="a,a,a,a,a"]
 |===
-|Role|Actions
+||Admin|Developer|Finance|View only
 
-|Admin
-|Creating new teams
+|Creating new clusters for the team
+|yes
+|yes
+|no
+|no
 
-Managing billing settings
+|Managing billing settings
+|yes
+|no
+|yes
+|no
 
-Viewing charts and metrics
+|Redeeming credits
+|yes
+|no
+|yes
+|no
 
-Updating charts and metrics
+|Managing API keys
+|yes
+|yes
+|no
+|no
 
-|View Only
-|Creating new teams
+|Updating cluster settings
+|yes
+|yes
+|no
+|no
 
-Viewing charts and metrics
+|Viewing charts and metrics
+|yes
+|yes
+|yes
+|yes
 
-
-|Developer
-|
-Creating new teams
-
-Updating clusters
-
-Viewing charts and metrics
-
-|Finance
-|
-Creating new teams
-
-Managing billing settings
 
 |===
 
