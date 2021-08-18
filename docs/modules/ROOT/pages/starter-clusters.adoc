@@ -1,5 +1,0 @@
-= Starter Clusters
-
-== What are Cloud Starter Clusters?
-
-Cloud Starter is a multitenant Hazelcast cloud deployment where clusters are isolated by Kubernetes deployments. Different clusters can be deployed to the same instances but in different containers. The user does not have to control the instance types or the number of instances in the cluster.

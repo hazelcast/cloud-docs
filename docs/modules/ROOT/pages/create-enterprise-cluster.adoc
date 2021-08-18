@@ -1,26 +1,81 @@
-= Create an Enterprise Cluster
+= Creating an Enterprise Cluster
+:description: Enterprise clusters are ideal for large applications that need dedicated instances of a virtual private cloud (VPC).
+:page-aliases: availability-zones.adoc, instance-types.adoc, enterprise-clusters.adoc
 
-In order to create a dedicated cluster, you need to provide a couple of parameters according to your needs. These parameters are very important for your use cases, like selecting multiple zones to have highly available Hazelcast clusters.
+{description}
 
-You can click on the *+ New Cluster* button on the "Dedicated Clusters" page to create a new cluster as follows:
+NOTE: When you create an Enterprise cluster, you are charged not only the hourly rate, but also for data transfer costs as well as storage costs (if you turn on backups). See xref:pricing.adoc[].
 
-image:new-enterprise-cluster.png[Fill out the form to define a new Enterprise cluster]
+== Prerequisites
 
-* *Cluster Name*: Give an alphanumeric name to your cluster. 
-* *Cloud Provider*: Select your cloud provider. During the Early Access period, only AWS is supported. We will be supporting Microsoft Azure and Google Cloud Platform in the GA release.
-* *Regions*: Select your region. It is important to choose the same region as your client application to achieve a low network latency.
-* *Instance Type*: Select the instance type. You can easily define your instance type according to your use case.
-* *Instances Per Zone*: Select the instance count per zone. This is the Hazelcast member count in your cluster. In the end, you will have `zone count X instance count per zone` members.
-* *Zones*: Select your zones. It has the same importance on the latency to have a maximum throughput. They will be selectable only if you choose a region in the *Regions* field above.
-* *Hazelcast Version*: Select the Hazelcast version. You will see multiple available Hazelcast versions to fulfill your requirements. To be on the safe side, you can select the version that you are already using in your production environment.
-* *VPC CIDR*: Select VPC CIDR. This field may seem technical, but since we are in the Kubernetes world, VPC is the must-have component to install everything inside. You will see the suggested CIDR range on this field, but feel free to change it using the *Change* button in the field.
-* *Memory*: The cluster creation mechanism gives you a total memory of 7GB for each Hazelcast member in your cluster. You can change the native and heap memory capacity using the *Change* button in the field. You can see a summary of your memory distribution as you change the sizes at the very bottom of the page under the "Summary" heading.
-* *Backup/Snapshot*: Enable or disable Hazelcast's Hot Backup feature. If you enable it, your cluster will be backed-up daily. In addition, you can create snapshots and you will be able to restore your cluster from a previous snapshot or backup later. 
-* *Encryption*: Enable or disable the TLS communication between the clients and members.
-* *Custom Configuration*: You can specify your own configurations for Hazelcast data structures in your cluster. If you desire so, click on the *Add* button in this field and configure the data structures using the appeared form which is shown below:
+To create a cluster for a team, you must have either an admin or developer role. See xref:teams-and-users.adoc[].
 
-After you provide all the required and desired information in the above fields, click on the *Create Cluster* button at the bottom of the page. The Hazelcast Cloud console page loads and the cluster creation will be seen in its "pending" state for a few minutes:
+== Create the Cluster
+
+. Click *Plans & Pricing* in the header.
+
+. In the Enterprise plan, click *Create Cluster*.
+
+. Select one of the available Cloud providers on which to host your cluster:
++
+** AWS
+** Microsoft Azure
+** Google Cloud Platform
+
+. Select a region.
++
+NOTE: For best performance, choose a region that's closest to your client applications. The closer your clients are to the cluster, the lower the network latency.
+
+. Select an instance type that offers the resources that you plan on using.
++
+You cannot change this selection after the cluster is created.
++
+For details about the cost of instances, see xref:pricing.adoc[].
+
+. Choose whether to host your instances in a single availability zone or in a multi-zone environment (three zones within a region), and select the number of instances that you want in each zone.
++
+Hosting a cluster in a multi-zone environment prevents data loss after a zone failure. To make sure that all data is available after a single zone failure, Hazelcast, backups are stored in different availability zones, using the xref:hazelcast:clusters:partition-group-configuration.adoc[ZONE_AWARE partition grouping] feature of Hazelcast.
+
+. To encrypt communications between clients and your cluster, turn on TLS Encryption.
++
+You cannot change this selection after the cluster is created.
+
+. If you want all clients to be able to connect to your cluster, turn on Public Access.
++
+We recommend leaving this disabled.
+
+. If you want to persist cluster data on disk and have that data backed up in cloud storage, turn on Backup/Snapshot.
++
+You cannot change this selection after the cluster is created.
++
+If you turn on this feature, you will be charged for the extra storage costs. See xref:pricing.adoc[].
++
+WARNING: Persisting data can degrade throughput by up to 40%. For details about what is persisted and how to configure Persistence, see xref:hazelcast:storage:persistence.adoc[].
+
+. If you store custom objects in Hazelcast and you want to query or process them, click *Edit* in the Custom Classes field and add those classes to your cluster.
++
+TIP: You can also add custom classes after the cluster is created.
+
+. If you need more or fewer available IP addresses in your VPC instance, edit the VPC CIDR range.
++
+You cannot change this selection after the cluster is created.
++
+For an introduction to VPC CIDR, see xref:https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing[Classless Inter-Domain Routing].
+
+. If you want to use an older version of Hazelcast, select a new version from the Hazelcast Version field.
++
+After the cluster is created, you will only be able to upgrade the version.
+
+. To configure data structures before starting your cluster, click *Data Structures Configuration*.
++
+TIP: You can also add data structure configuration after the cluster is created.
+
+. Enter a name for your cluster and click *CREATE CLUSTER*.
+
+It takes between 30-50 minutes to create an Enterprise cluster. During this period, your cluster will be in a pending state. When the cluster state changes to running, you will be able to use it.
 
 image:create-enterprise-cluster.png[An Enterprise cluster is being created]
 
-After about fifteen minutes, the cluster starts and its state becomes "Running". As mentioned before, the above page is the Hazelcast Cloud console for your cluster. You can always reach to the console by clicking on the "Clusters" top menu item and selecting your cluster which is listed afterwards.
+== Next Steps
+
+xref:connect-to-private-cluster.adoc[].
