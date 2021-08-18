@@ -5,7 +5,7 @@
 
 Follow the below instructions to connect a Python client to your cluster.
 
-. xref:create-starter-cluster.adoc[Create a cluster].
+. xref:create-standard-cluster.adoc[Create a cluster].
 +
 The cluster-specific page will load and cluster's state will be "Pending" for some seconds, as shown below.
 +

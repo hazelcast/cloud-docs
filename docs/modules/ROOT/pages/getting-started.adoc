@@ -8,7 +8,7 @@
 To set up a free cluster, you need to do the following:
 
 . Create a Hazelcast Cloud account
-. Create your free cluster
+. Create a cluster on the Basic plan
 . Add data to your cluster
 
 == 1. Create a Hazelcast Cloud Account
@@ -23,13 +23,11 @@ A confirmation will be sent to the provided email address. After confirming your
 - Your GitHub account
 - Your Google account
 
-NOTE: If you don't use your free cluster for 16 hours or more, it will be deleted along with any data that was stored in it.
-
-== 2. Create a Free Cluster
+== 2. Create a Cluster on the Basic Plan
 
 . Click the *+ New Cluster* button in the top-left corner.
 
-. In the basic plan, click *Create Cluster*.
+. In the Basic plan, click *Create Cluster*.
 +
 image:free-plan.png[Create Cluster button in the free plan option]
 
@@ -38,6 +36,8 @@ image:free-plan.png[Create Cluster button in the free plan option]
 image:create-cluster.png[Create a new cluster]
 +
 It may take up to 30 seconds to create the cluster. Until the cluster is ready, you will see a pending label and a spinning wheel.
++
+NOTE: If you don't use your free cluster for 16 hours or more, it will be deleted along with any data that was stored in it.
 
 Once your cluster is running and ready, you will see the Cluster Memory and Client Count charts as well as lifecycle information about the cluster.
 
@@ -63,10 +63,14 @@ You should see all the metrics for this map, including how many entries were add
 
 == Next Steps
 
-For more detailed information about clients see the client documentation:
+Find more information about using this client code:
 
-- xref:hazelcast:clients:java.adoc[Java Client]
-- xref:hazelcast:clients:dotnet.adoc[.NET Client]
-- xref:hazelcast:clients:nodejs.adoc[Node.js Client] 
-- xref:hazelcast:clients:python.adoc[Python Client]
-- xref:hazelcast:clients:go.adoc[Go Client]
+- xref:java-client.adoc[Java Client]
+- xref:net-client.adoc[.NET Client]
+- xref:nodejs-client.adoc[Node.js Client] 
+- xref:python-client.adoc[Python Client]
+- xref:go-client.adoc[Go Client]
+
+See a link:{page-plans}[feature comparison of all cluster plans].
+
+Set up a xref:create-standard-cluster.adoc[Standard cluster] or an xref:create-enterprise-cluster.adoc[Enterprise cluster].
