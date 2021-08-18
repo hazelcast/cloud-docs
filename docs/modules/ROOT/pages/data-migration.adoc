@@ -1,22 +1,20 @@
-= Migrate Data to another cluster
+= Migrating Data to Another Cluster
 
-The goal of this document is to describe the way how to migrate data from one cluster to another.
+The goal of this document is to describe how to migrate data from one cluster to another.
 
-== Create an Enterprise Cluster
+== Prerequisites
 
-To learn how to create a cluster, see xref:create-enterprise-cluster.adoc[].
+Your cluster must be on the link:{page-plans}[Enterprise plan] to use this feature.
 
-Highly recommended creating a cluster with the same configuration, so if your existed cluster
-contains xref:custom-classes-upload.adoc[custom classes], xref:backup-and-restore.adoc[backup] or xref:persistence.adoc[persistence],
-it makes sense to enable/configure these options for a new cluster as well.
+You need at least two xref:create-enterprise-cluster.adoc[Enterprise clusters] with the same configuration. For example, if one cluster
+contains xref:custom-classes-upload.adoc[custom classes], xref:backup-and-restore.adoc[backup], or xref:persistence.adoc[persistence],
+you should enable and configure these options for the other cluster as well.
 
-== Create WAN Replication
+== Step 1. Create WAN Replication
 
 In this tutorial, we are going to use a fantastic Hazelcast feature for data migration which is called xref:wan-replication.adoc[WAN Replication]
 
 In order to create WAN Replication, you can go to *Cluster Detail* > *Settings* > *Wan Replication* and click *Create New Replication*
-
-image:aws-cluster-settings.png[Go to Manage Cluster > Settings]
 
 image:wan-replication-settings.png[WAN Replication settings]
 
@@ -43,12 +41,11 @@ When you connect publish cluster and try to write some data, you will see data w
 
 NOTE: You can synchronize all data by using `Sync` button in the WAN replication settings.
 
-== Connect to a Cluster
+== Step 2. Connect to a Cluster
 
 After migration is done, you can connect to a new cluster via different clients, e.g. xref:java-client.adoc[]
 
-
-== Delete a Cluster
+== Step 3. Delete the Old Cluster
 
 You can delete your old cluster once migration finished and clients connected to a new cluster.
 

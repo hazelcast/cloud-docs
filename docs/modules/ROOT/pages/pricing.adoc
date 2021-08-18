@@ -1,4 +1,4 @@
-= Pricing
+= Plans and Pricing
 :description: Hazelcast offers a free pricing plan as well as two paid plans that allow you to configure the amount of resources each cluster has, depending on your budget.
 
 {description}

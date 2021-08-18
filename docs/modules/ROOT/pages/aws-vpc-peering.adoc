@@ -1,4 +1,4 @@
-= AWS VPC Peering
+= Creating an AWS VPC Peering Connection
 :url-aws-service-endpoints: https://docs.aws.amazon.com/general/latest/gr/rande.html
 :url-aws-cli: https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-envvars.html
 :url-aws-vpc-peering: https://docs.aws.amazon.com/vpc/latest/peering/create-vpc-peering-connection.html
@@ -7,32 +7,35 @@
 :url-github-go-sdk: https://github.com/hazelcast/hazelcast-cloud-sdk-go
 :url-cloud-api: https://cloud.hazelcast.com/v1/api/explorer
 
-Since security is vital in Hazelcast Cloud Enterprise, your clusters are installed within a private "VPC Network" and can not be accessed unless you choose "Public Access" on cluster creation. In order to connect your private Hazelcast Cloud Enterprise AWS Cluster, you need to establish AWS VPC Peering Connection. This feature allows an internal IP address connectivity across two VPCs.
 
-== Create Peering
-There are 2 ways of creating an AWS VPC Peering.
-- First Option (Easy and Recommended)
-- Second Option (Manual)
+There are two ways of creating an AWS VPC peering connection:
 
-=== Option 1 (Easy and Recommended)
-This option provides the easiest way of creating an AWS VPC Peering with your Enterprise Hazelcast Cloud Cluster.
+- Use the CLI (recommended)
+- Create a manual connection
 
-==== 1) Prerequisites
+== Using the Hazelcast Cloud CLI
 
-- Hazelcast Cloud CLI
-Hazelcast Cloud CLI should be installed on your workstation.
+This option provides the easiest way of creating an AWS VPC Peering with your Enterprise Hazelcast Cloud cluster.
+
+=== Prerequisites
+
+Download the Hazelcast Cloud CLI from link:{url-github-cloud-cli[Github].
+
+Create the following AWS envrionment variables:
+
+- `AWS_ACCESS_KEY_ID` as your access key ID.
+- `AWS_SECRET_ACCESS_KEY` as your secret access key.
 +
-TIP: You can download Hazelcast Cloud CLI from link:{url-github-cloud-cli[Hazelcast Cloud CLI on Github].
-
-- AWS Credentials
+These parameters will be used in order to create a peering connection from your side with Hazelcast Cloud CLI.
 +
-AWS Credentials should be set on your workstation, which is `AWS_ACCESS_KEY_ID` as your access key ID and `AWS_SECRET_ACCESS_KEY ` as your secret access key. These parameters will be used in order to create a peering connection from your side with Hazelcast Cloud CLI.
+NOTE: For information about setting environment variables in AWS, see the link:{url-aws-cli}[AWS CLI documentation].
+
+To create a peering connection on a team cluster, you must have either an admin or developer role. See xref:teams-and-users.adoc[].
+
+=== Create a Peering Connection
+
+. Create the peering connection.
 +
-NOTE: You can check further details from link:{url-aws-cli}[Environment variables to configure the AWS CLI].
-
-==== 2) Create Peering
-After you successfully complete prerequisites, you can easily create AWS VPC Peering Connection using Hazelcast Cloud CLI by running the following command.
-
 [source,shell]
 ----
 hzcloud aws-peering create --cluster-id={YOUR_CLUSTER_ID} \
@@ -40,42 +43,37 @@ hzcloud aws-peering create --cluster-id={YOUR_CLUSTER_ID} \
 --vpc-id={YOUR_VPC_ID} \
 --subnet-ids={YOUR_SUBNET_LIST}
 ----
-
++
 Make sure to replace the following placeholders:
-
-- `YOUR_CLUSTER_ID` with the ID of your cluster,
-- `YOUR_REGION` with the name of the region which contains your VPC,
-- `YOUR_VPC_ID` with the ID of your VPC which you will create VPC Peering Connection,
++
+- `YOUR_CLUSTER_ID` with the ID of your cluster.
++
+To get your cluster ID, use the `hzcloud enterprise-cluster list` command of the Hazelcast Cloud CLI.
+- `YOUR_REGION` with the name of the region which contains your VPC.
++
+You can get a list of *Regions* from the link:{url-aws-service-endpoints[AWS service endpoints].
+- `YOUR_VPC_ID` with the ID of your VPC which you will create VPC Peering Connection.
++
+To get your VPC ID, use the `aws ec2 describe-vpcs` command of the AWS CLI.
 - `YOUR_SUBNET_LIST` with the comma-separated IDs of your subnets under your VPC that you provided.
-
-When you run this command, it will create a VPC Peering connection from your environment to Hazelcast Cloud Enterprise Cluster VPC, then it will create necessary routes for VPC Peering connection. Lastly, It will accept this connection request from the Hazelcast Cloud side.
-
-You can see an example as shown below after peering finishes:
-
++
+To get your VPC ID, use the `aws ec2 describe-subnets` command of the AWS CLI.
++
+When you run this command, it will create a VPC Peering connection from your environment to the VPC of your Hazelcast Cloud Enterprise cluster, then it will create the necessary routes for the VPC Peering connection. Lastly, it will accept this connection request from the Hazelcast Cloud side.
++
 image:cli-enterprise-cluster-list.png[CLI output for the `list` command]
-
++
 This command may take up to 4 minutes to finish. You can follow ongoing actions while it is running. 
 
-[NOTE]
-====
-*Cheatsheet for Collecting Variables*
-
-- You can grab the *Cluster Id* by running `hzcloud enterprise-cluster list.
-- You can grab the list of  *VPCs* from AWS CLI by running `aws ec2 describe-vpcs`.
-- You can grab the list of *Subnets* from AWS CLI by running `aws ec2 describe-subnets`.
-- You can grab the list of *Regions* from link:{url-aws-service-endpoints[AWS service endpoints].
-====
-
-==== 3) Validating Peering
-
-After you see the `Peering successfully established.` message, you can check active peerings from the Peering Connections tabs after you select VPC Service on AWS for your side of peering. In the example below, you can see how an active peering connection seems like.
-
+. Check for active peerings in the Peering Connections tabs after you select VPC Service on AWS for your side of peering. In the example below, you can see how an active peering connection seems like.
++
 image:create-peering-connection.png[A list of active peering connections]
++
+WARNING: Do not overlap the CIDR of your Hazelcast Cloud Enterprise cluster and the CIDR of your VPC, otherwise the connection will fail.
 
-WARNING: The CIDR of your Hazelcast Cloud Enterprise Cluster and the CIDR of your VPC should not be overlapped otherwise, it will fail.
+== Creating a Manual Connection
 
-=== Option 2 (Manual)
-You can still create AWS VPC peering without using Hazelcast Cloud CLI. But, you need the handle everything it does properly. This way is more difficult but more configurable.
+You can still create AWS VPC Peering without using Hazelcast Cloud CLI. But, you need the handle everything it does properly. This way is more difficult but more configurable.
 
 In order to create AWS VPC Peering, you need to do the followings
 - Collect AWS Peering Properties for your Cluster with our API.
@@ -83,7 +81,8 @@ In order to create AWS VPC Peering, you need to do the followings
 - Create routes for AWS Peering Connection
 - Accept our side of the AWS VPC Peering Connection that you already sent, with API.
 
-==== 1) Collecting Properties
+=== Collecting Properties
+
 You need to collect AWS VPC Peering properties for your Enterprise Hazelcast Cloud cluster on AWS in order to create your side of the AWS VPC Peering connection. 
 You can get these properties from link:{url-cloud-api}[Hazelcast Cloud Public API] or link:{url-github-go-sdk}[Hazelcast Cloud SDK Go] as the following command.
 
@@ -120,19 +119,21 @@ fmt.Println(properties.Region)
 --
 ==== 
 
-==== 2) Creating Peering
-After you successfully collect peering properties, you need to create a peering connection from your VPC to our VPC using values you collected from peering the properties previous step.
+=== Creating a Peering Connection
 
-TIP: You can check how to create a VPC Peering Connection on AWS from link:{url-aws-vpc-peering}[Creating a VPC peering connection with a VPC in another AWS account].
+To create a peering connection from your VPC to the Hazelcast Cloud VPC, use the values that you collected from the peering properties.
 
-==== 3) Creating Routes
-After you successfully create your side of the AWS VPC Peering connection in order to access VPC on our side,  you should create routes.
+You can check how to create a VPC Peering Connection on AWS in the link:{url-aws-vpc-peering}[AWS documentation].
 
-TIP: You can check how to create routes properly according to for your VPC Peering Connection from link:{url-aws-vpc-routing}[Updating your Route tables for a VPC peering connection].
+=== Creating Routes
 
-==== 4) Accepting Peering
+To access the Hazelcast VPC, you must create routes.
 
-After you successfully create an AWS VPC Peering to the Hazelcast Cloud Enterprise Cluster, you need to accept that from our side by using Hazelcast Cloud Public API or Hazelcast Cloud SDK Go as the following commands.
+You can check how to create routes properly according to for your VPC Peering Connection from link:{url-aws-vpc-routing}[Updating your Route tables for a VPC peering connection].
+
+=== Accepting a Peering Request
+
+To accept an AWS VPC Peering connection, use either the Hazelcast Cloud Public API or Hazelcast Cloud Go SDK.
 
 [tabs] 
 ====
@@ -190,12 +191,13 @@ fmt.Println(result.Status)
 --
 ==== 
 
-==== 5) Verifying Peering
-After you see the status value as `Initiated.`, you can check active peerings from the `Peering Connections` tabs after you select VPC Service on AWS for your side of peering. 
+=== Verifying a Peering Connection
 
-WARNING: The CIDR of your Hazelcast Cloud Enterprise Cluster and the CIDR of your VPC *should not be overlapped.* or you can not see peering in this list.
+After you see the status value as `Initiated.`, you can check for active peerings from the `Peering Connections` tabs after you select VPC Service on AWS on your side of peering. 
 
-== Listing Peerings
+WARNING: The CIDR of your Hazelcast Cloud Enterprise cluster and the CIDR of your VPC *should not overlap,* otherwise you will not see a connection in this list.
+
+== Listing Peering Connections
 
 You can list Google Cloud Platform peerings on your Enterprise Hazelcast Cluster on GCP from Console by going *Cluster Details > Settings > VPC Peering* one by one as shown below. 
 You can check where the connection established by checking VPC ID and Subnet from the list.
@@ -243,7 +245,7 @@ for _,peering := range *peerings {
 --
 ==== 
 
-== Delete Peering
+== Deleting Peering Connections
 
 You can delete the VPC Peering Connection of your Enterprise Hazelcast Cluster on AWS from the VPC Peerings list by easily clicking the cross on the item.
 
