@@ -1,5 +1,13 @@
-= Payment Methods
+= Managing Payment Methods
 
-Hazelcast Cloud works with Stripe Inc for safely processing payments. We never keep any credit card data in our database. You can add your credit card details under *Account* > *Payment Methods* menu as below:
+Hazelcast Cloud works with Stripe Inc for safely processing payments. We never keep any credit card data in our database.
+
+== Prerequisites
+
+To manage payment methods for a team, you must have either an admin or finance role. See xref:teams-and-users.adoc[].
+
+== Adding Card Details
+
+To add your payment card details, go to *Account* > *Payment Methods*.
 
 image:payment-methods.png[Enter card details in the form to add a new payment method]

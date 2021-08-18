@@ -1,31 +1,31 @@
-= Custom Classes Upload
+= Uploading Custom Classes
+:description: To store and query custom objects, those objects' classes must be on the classpath of your cluster members. In Hazelcast Cloud, you can upload custom classes by dragging and dropping files in the UI.
 
-In Hazelcast cluster, you need to upload custom Java classes for the following situations:
+{description}
 
-. You have objects that run on the cluster via the clients such as `Runnable`, `Callable` and entry processors.
-. You have new or amended user domain objects, e.g., in-memory format of the `IMap` set to `Object`, which need to be deployed into the cluster.
+You may need to upload custom Java classes in the following situations:
+
+. You have objects that run on the cluster via clients such as `Runnable`, `Callable` and entry processors.
+. You have new or amended user domain objects
 . You have your own `MapLoader` or `MapStore` implementations.
 
-WARNING: Uploaded custom classes are deployed onto the cluster by using rolling restart, hence there is a risk to lose data if cluster consists of one member.
+== Prerequisites
 
-It's allowed to upload files with extensions `zip` and `jar` only. The maximum file size is 500MB.
+You need a cluster that has at least two members (nodes).
 
-[WARNING]
-====
-Uploaded classes are restricted by a limited set of JSP permissions.
+WARNING: Custom classes are uploaded onto clusters by using rolling restart, which relies on shutting down each member one at a time. As a result, your cluster may lose all its data if it consists of a single member.
 
-If you need your uploaded code to be granted any additional permissions, please create a support ticket for it.
-====
+Your files must be in either `zip` or `jar` format and the maximum file size is 500 MB.
 
-== Uploading Custom Classes
+Uploaded classes are restricted by a limited set of JSP permissions. If you need your uploaded code to be granted any additional permissions, link:https://hazelcast.zendesk.com/hc/en-us/signin?return_to=https%3A%2F%2Fhazelcast.zendesk.com%2Fhc%2Fen-us%2Frequests%2Fnew[create a support ticket] for it.
 
-To upload JAR files with custom classes, you need to click on the *Upload Custom Classes* button in the cluster details page:
+To upload custom classes onto a team's cluster, you must have either an admin or developer role. See xref:teams-and-users.adoc[].
+
+== Uploading Files
+
+To upload JAR files with custom classes, click *Upload Custom Classes*.
 
 image:upload-custom-classes.png[Upload custom classes to an existing cluster]
-
-or during cluster creation:
-
-image:upload-custom-classes-at-creation.png[Upload custom classes to a new cluster]
 
 Once you click on it, the following dialog appears where you can drag your file to or select it using the `browse` link:
 
@@ -35,12 +35,12 @@ Once the upload is successfully finished and the progress indicator disappeared,
 
 image:upload-classes-success.png[Successful upload of custom classes]
 
-== Removing Custom Classes
+== Removing Files
 
-To remove the custom classes from the cluster, click on the `Upload Custom Classes` in the cluster details page. In the appeared dialog (seen above) click on the trash button next to the file name and wait until the operation finishes:
+To remove custom classes from the cluster, click *Upload Custom Classes*, find your class in the list and click on the delete icon next to it.
 
 image:remove-custom-classes.png[Remove a custom class from a cluster]
 
-== Downloading Custom Classes
+== Downloading Files
 
-All filenames are downloadable links. You can download the desired class files by clicking on their names in the "UPLOAD CUSTOM CLASSES" dialog.
+All filenames are downloadable links. You can download your uploaded class files by clicking on their names in the modal window.

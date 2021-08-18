@@ -1,5 +1,5 @@
 = Managing Teams and Users
-:description: By default, accounts include a single admin user. If you want other team members to access specific clusters, you can invite them to a team and assign them roles based on what actions they need to perform on the cluster.
+:description: By default, accounts include a single owner. If you want to collaborate with other team members, you can allow them to access specific clusters by inviting them to a team and assigning them roles based on what actions they need to perform on the team's clusters.
 
 {description}
 
@@ -7,7 +7,7 @@
 
 In each team, users can have one of the following roles:
 
-[cols="a,a,a,a,a"]
+[cols="2a,1a,1a,1a,1a"]
 |===
 ||Admin|Developer|Finance|View only
 

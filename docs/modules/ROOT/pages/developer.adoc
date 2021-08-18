@@ -1,27 +1,29 @@
-= Developer
+= Managing API Keys
 :url-github-cloud-cli: https://github.com/hazelcast/hazelcast-cloud-cli/
 :url-github-go-sdk: https://github.com/hazelcast/hazelcast-cloud-sdk-go
 :url-cloud-developers: https://cloud.hazelcast.com/settings/developer
 :url-cloud-api: https://cloud.hazelcast.com/v1/api/explorer
 
-The Hazelcast Cloud allows you to manage your resources and clusters via link:{url-cloud-api}[API], link:{url-github-go-sdk}[SDK], and link:{url-github-cloud-cli}[CLI]. You can get further details about them from xref:api-reference.adoc[API Reference].
+Hazelcast Cloud allows you to manage your resources and clusters via an link:{url-cloud-api}[API], an link:{url-github-go-sdk}[SDK], and a link:{url-github-cloud-cli}[CLI]. To use these applications, you need an API key and an API secret, which can be created from link:{url-cloud-developers}[Developers] tab in your account or team settings. 
 
-In order to use these applications, you need to provide API Key and API Secret. This API Key and API Secret can be created from link:{url-cloud-developers}[Developers] tab in Settings as shown below. 
+== Prerequisites
+
+To manage API keys for a team's cluster, you must have either an admin or developer role. See xref:teams-and-users.adoc[].
 
 == Creating API Key and API Secret
 
-You can easily create a new API Key from the *Generate new API Key* button on this page. Then you can use these credentials on our applications to make actions. Currently, you can only create 1 API Key and API Secret pair on your account.
+You can easily create a new API Key from the *Generate new API Key* button on this page. Then you can use these credentials on our applications to make actions. Currently, you can only create one API key and secret pair on your account.
 
-NOTE: You can only see API Secret once you created it. So, you should copy them once you created.
+NOTE: You can only see API secret once you created it. So, you should copy them once you created.
 
-IMPORTANT: You should keep API Key and Secret as secret. Anyone who has them can make any actions like deleting your cluster on Hazelcast Cloud.
+IMPORTANT: Keep your keys and secrets secure. Anyone who has these credentials can delete your clusters.
 
 image:developer.png[A screen for viewing, creating, and deleting API keys]
 
 == Deleting API Key
 
-You can delete your API Key anytime you want from the *Delete API Key* button as shown below.
+You can delete your API key anytime by clicking the *Delete API Key* button.
 
-WARNING: After you delete your API Key, every application you used this API Key and API Secret won't work unless you supply the new API Key and API Secret.
+WARNING: After you delete your API key, any application that used this key will no longer work unless you configure a new set of credentials.
 
 image:delete-api-key.png[An API key with a button to delete it called Delete API key]

@@ -1,6 +1,12 @@
 = MapLoader and MapStore
 :url-code-sample-mapstore: https://github.com/hazelcast/hazelcast-cloud-code-samples/tree/master/mapstore
 
+== Prerequisites
+
+Your cluster must be on the link:{page-plans}[Enterprise plan] to use this feature.
+
+To use this feature, you must have either an admin or developer role. See xref:teams-and-users.adoc[].
+
 == Terminology
 
 [cols="e,a"]
@@ -23,7 +29,7 @@
 
 == Enable MapStore or MapLoader
 
-MapStore Configuration is available as a part of the Map Config.  In order to enable it, you have to open Custom Configuration form and click Enable Map Store checkbox.
+MapStore Configuration is available as a part of the Map Config. In order to enable it, you have to open Custom Configuration form and click Enable Map Store checkbox.
 
 image:map-custom-config.png[Custom configuration settings for maps]
 
@@ -31,7 +37,7 @@ After that, you will see the Map Store fields:
 
 image:map-store-config.png[Configuration settings for MapStore]
 
-Some of these fields are already predefined, some must be set.  The following are the descriptions of MapStore configuration elements and attributes:
+Some of these fields are already predefined, some must be set. The following are the descriptions of MapStore configuration elements and attributes:
 
 - *class-name*: Name of the class implementing MapLoader and/or MapStore. This class can be uploaded via the [Custom Classes upload](doc:custom-classes-upload) feature.
 
