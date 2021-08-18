@@ -1,29 +1,92 @@
 = Pricing
+:description: Hazelcast offers a free pricing plan as well as two paid plans that allow you to configure the amount of resources each cluster has, depending on your budget.
 
-== Hazelcast Cloud Starter
+{description}
 
-Hazelcast Cloud Stater offers a pay-per-use model. Only running clusters are taken into account when your cost is calculated. For example, while developing, you can stop your clusters when you are not using them to minimize costs.
+== Hazelcast Cloud Plans
 
-Pricing is on a per hourly basis. All non-free clusters have a single pricing model:
-*$0.10 per GB per hour*
+Hazelcast Cloud has three plans.
 
-Cost is calculated based upon the provisioned memory. If you create a cluster with 10 GB capacity but do not insert any entries into it, i.e. the cluster is empty, your cost will still be calculated according to 10 GB because 10 GB have been reserved for your use. Hazelcast Cloud offers the flexibility to start small and scale as your data size grows.
+[cols="a,a,a"]
+|===
+|Plan|Cost|Additional costs
 
-Example calculation:
-You have three clusters: cluster1, cluster2, and cluster3.
-cluster1 is 10 GB and run for 10 hours during the month.
-cluster2 is 1 GB and run for 100 hours during the month.
-cluster3 is 3 GB and run for 50 hours during the month.
+|Basic
+|Free
+|None
 
-Cost of cluster1 will be: 10 X 10 X $0.10 = $10.00
-Cost of cluster2 will be: 1 X 100 X $0.10 = $10.00
-Cost of cluster3 will be: 3 X 50 X $0.10 = $15.00
-Your total cost will be: $10.00 + $10.00 + $15.00 = $35.00
+| Standard
+|$0.10 per hour per GB
+|None
+
+|Enterprise
+|Depends on the size of the chosen cloud instance
+|<<additional-charges-for-enterprise-plans, Data transfer and snapshot storage>>
+|===
+
+== How the Cost is Calculated
+
+Cost is calculated based on your provisioned memory. If you create a cluster with 10 GB capacity but do not insert any entries into it, your cost will still be calculated according to 10 GB because this amount of memory was reserved for your use.
+
+== Shared vs Dedicated
+
+On the *Your Clusters* page, clusters are categorized as either dedicated or shared.
+
+Shared clusters are those on the Standard or Basic plans. These clusters are called _shared_ because they share cloud instances, but they are isolated in different Kubernetes deployments.
+
+Dedicated clusters are those on the Enterprise plan because they have their own dedicated cloud instances, and different clusters never share the same instance.
+
+== Example Charges for Standard Clusters
+
+This example shows the cost per month of three clusters that each have a different memory capacity and uptime:
+
+[cols="a,a,a,a"]
+|===
+|Cluster|Memory|Total uptime per month|Cost
+
+|1
+|10 GB
+|10 hours
+|10 X 10 X $0.10 = $10.00
+
+|2
+|1 GB
+|100 hours
+|1 X 100 X $0.10 = $10.00
+
+|3
+|3 GB
+|50 hours
+|3 X 50 X $0.10 = $15.00
+
+|===
+
+In this scenario, the total cost for the month for all three clusters will be: $10.00 + $10.00 + $15.00 = $35.00
+
+== Additional Charges for Enterprise Plans
+
+Clusters on the Enterprise plan incur additional charges for data transfer costs and any snapshot storage costs.
+
+=== Data Transfer Pricing
+
+Data transfer costs account for the volume of data going into, out of, and within your clusters.
+
+Your data transfer charges are aggregated over the month and added to your monthly bill.
+
+=== Snapshot Storage Pricing
+
+If you enable backup snapshots on a cluster, we store those snapshots in cloud storage, which comes with additional costs.
+
+Snapshot storage costs depend on the cloud providers cost of storing the backup snapshots in their object store such as S3 on AWS.
+
+== Custom Plans
+
+Hazelcast offers custom pricing plans. To discuss a custom plan, contact us at mailto:sales@hazelcast.com[].
+
+== Next Steps
+
+Track your usage and current billing total by managing your billing and payment information.
 
 You can track your month to date cost in the Billing & Payments page of Account top menu.
 
 image:billing-and-payments.png[Billing and Payments page of Hazelcast Cloud]
-
-== Hazelcast Cloud Enterprise
-
-Contact us at mailto:sales@hazelcast.com[]
