@@ -1,40 +1,55 @@
-* Overview
+.Get Started
 ** xref:preface.adoc[]
 ** xref:getting-started.adoc[]
 ** xref:architecture.adoc[]
 ** xref:use-cases.adoc[]
 ** xref:pricing.adoc[]
 
-* Clusters
-** xref:starter-clusters.adoc[]
-*** xref:create-starter-cluster.adoc[]
-*** xref:manage-the-cluster.adoc[]
-** xref:enterprise-clusters.adoc[]
-*** xref:create-enterprise-cluster.adoc[]
-*** xref:aws-vpc-peering.adoc[]
-*** xref:aws-private-link.adoc[]
-*** xref:azure-vnet-peering.adoc[]
-*** xref:gcp-vpc-peering.adoc[]
-*** xref:scale-up-down.adoc[]
-*** xref:availability-zones.adoc[]
-*** xref:instance-types.adoc[]
-*** xref:hazelcast-version.adoc[]
-*** xref:persistence.adoc[]
-*** xref:custom-classes-upload.adoc[]
-*** xref:maploader-and-mapstore.adoc[]
-*** xref:wan-replication.adoc[]
-*** xref:backup-and-restore.adoc[]
+.Account Management
+** xref:account-security.adoc[]
+** xref:team-and-users.adoc[]
+** xref:payment-methods.adoc[]
+** xref:credits.adoc[]
+** xref:developer.adoc[]
 
-* Monitoring
+.Create Clusters
+** link:{page-plans}[Standard vs Enterprise^]
+** xref:create-standard-cluster.adoc[]
+** xref:create-enterprise-cluster.adoc[]
+
+.Download Client Code
+** xref:java-client.adoc[]
+** xref:nodejs-client.adoc[]
+** xref:python-client.adoc[]
+** xref:go-client.adoc[]
+** xref:net-client.adoc[]
+** xref:cpp-client.adoc[]
+** https://github.com/hazelcast/hazelcast-cloud-code-samples[Code Samples]
+
+.Manage Clusters
+** xref:scale-up-down.adoc[]
+** xref:hazelcast-version.adoc[]
+** xref:custom-classes-upload.adoc[]
+** xref:maploader-and-mapstore.adoc[]
+** xref:wan-replication.adoc[]
+** xref:backup-and-restore.adoc[]
+** xref:manage-the-cluster.adoc[]
+
+.Monitor Clusters
 ** xref:charts-and-stats.adoc[]
 ** xref:management-center.adoc[]
 ** xref:logging-integration.adoc[]
 
-* Security
+.Secure Clusters
 ** xref:ip-white-list.adoc[]
 ** xref:encryption.adoc[]
+** xref:connect-to-private-cluster.adoc[]
+*** xref:aws-vpc-peering.adoc[]
+*** xref:aws-private-link.adoc[]
+*** xref:azure-vnet-peering.adoc[]
+*** xref:gcp-vpc-peering.adoc[]
 
-* Data Structures
+.Configure Data Structures
 ** xref:map-configurations.adoc[]
 ** xref:jcache.adoc[]
 ** xref:queue.adoc[]
@@ -46,30 +61,15 @@
 ** xref:ringbuffer.adoc[]
 ** xref:reliable-topic.adoc[]
 
-* Clients
-** xref:java-client.adoc[]
-** xref:nodejs-client.adoc[]
-** xref:python-client.adoc[]
-** xref:go-client.adoc[]
-** xref:net-client.adoc[]
-** xref:cpp-client.adoc[]
-
-* Account Management
-** xref:credits.adoc[]
-** xref:payment-methods.adoc[]
-** xref:account-security.adoc[]
-** xref:team-and-users.adoc[]
-** xref:developer.adoc[]
-
-* Tutorials
+.Tutorials
 ** xref:shipping-logs-to-amazon-elasticsearch-service.adoc[]
 ** xref:failover-clients-with-hazelcast-cloud.adoc[]
 ** xref:data-migration.adoc[]
 
-* API
-** xref:api-reference.adoc[]
+.API Reference
+** xref:api-reference.adoc[GraphQL]
 
-* Resources
+.Resources
 ** xref:faq.adoc[]
 ** xref:support.adoc[]
 ** xref:release-notes.adoc[]
