@@ -3,7 +3,7 @@
 
 == Quick Setup
 
-Follow the below instructions to connect a .Net client to your cluster.
+Follow the below instructions to connect a .Net client to your cluster and put your data.
 
 . xref:create-starter-cluster.adoc[Create a cluster].
 +
@@ -18,6 +18,8 @@ image:net-client-dialog.png[Instructions for installing a .Net client]
 . Click on the .Net tab (the Java tab is active by default) and download the ZIP file as instructed in Step 1 of the dialog box.
 
 . Extract the ZIP file and run the command, in the extracted folder, shown in Step 2 of the above dialog box.
+
+. Özge test
 
 You should see log output similar to the following:
 
