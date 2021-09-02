@@ -5,7 +5,7 @@ version: master
 asciidoc:
   attributes:
     javasource: ROOT:example$
-    page-plans: https:cloud.hazelcast.com/plans
+    page-plans: https://cloud.hazelcast.com/plans
     page-toclevels: 1
     page-ghissue: https://github.com/hazelcast/cloud-docs/issues/new
     javadocBaseUrl: https://docs.hazelcast.org/docs/
