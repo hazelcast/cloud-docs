@@ -7,7 +7,7 @@ The goal of this document is to describe how to migrate data from one cluster to
 Your cluster must be on the link:{page-plans}[Enterprise plan] to use this feature.
 
 You need at least two xref:create-enterprise-cluster.adoc[Enterprise clusters] with the same configuration. For example, if one cluster
-contains xref:custom-classes-upload.adoc[custom classes], xref:backup-and-restore.adoc[backup], or xref:persistence.adoc[persistence],
+contains xref:custom-classes-upload.adoc[custom classes], xref:backup-and-restore.adoc[backup], or persistence,
 you should enable and configure these options for the other cluster as well.
 
 == Step 1. Create WAN Replication

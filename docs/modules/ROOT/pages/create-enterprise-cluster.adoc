@@ -50,7 +50,7 @@ You cannot change this selection after the cluster is created.
 +
 If you turn on this feature, you will be charged for the extra storage costs. See xref:pricing.adoc[].
 +
-WARNING: Persisting data can degrade throughput by up to 40%. For details about what is persisted and how to configure Persistence, see xref:hazelcast:storage:persistence.adoc[].
+WARNING: Persisting data can degrade throughput by up to 40%. For details about persistence, see xref:hazelcast:storage:persistence.adoc[].
 
 . If you store custom objects in Hazelcast and you want to query or process them, click *Edit* in the Custom Classes field and add those classes to your cluster.
 +

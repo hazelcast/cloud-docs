@@ -69,8 +69,6 @@ If you've created one or more teams, you can invite users to them and assign tho
 image:choose-team.png[Choose an existing team]
 
 . Enter the email address of the team member that you want to add and assign them a <<user-roles, role>> from the dropdown.
-+
-image:user-roles.png[A dropdown menu with a list of roles]
 
 . Click *Invite*.
 +
