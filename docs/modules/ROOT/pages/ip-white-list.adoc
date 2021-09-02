@@ -3,7 +3,7 @@
 
 {description}
 
-== Prerequisites
+== Before you Begin
 
 If you're on the Enterprise plan, you can use IP whitelisting only if you turned on public access while xref:create-enterprise-cluster.adoc[creating the cluster]. Otherwise, your cluster is private and you need to xref:connect-to-private-cluster.adoc[set up peering to allow clients to connect to it].
 

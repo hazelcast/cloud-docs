@@ -7,7 +7,7 @@ NOTE: If the hot-backup feature is enabled, your cluster will create a backup au
 
 WARNING: You can keep at most 10 backups. The oldest backup will be deleted automatically after the 10th backup.
 
-== Prerequisites
+== Before you Begin
 
 To back up or restore clusters in a team, you must have either an admin or developer role. See xref:teams-and-users.adoc[].
 

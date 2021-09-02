@@ -3,7 +3,7 @@
 
 {description}
 
-== Prerequisites
+== Before you Begin
 
 Calculate how much memory your cluster needs before scaling up or down.
 

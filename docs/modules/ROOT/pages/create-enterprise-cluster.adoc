@@ -6,7 +6,7 @@
 
 NOTE: When you create an Enterprise cluster, you are charged not only the hourly rate, but also for data transfer costs as well as storage costs (if you turn on backups). See xref:pricing.adoc[].
 
-== Prerequisites
+== Before you Begin
 
 To create a cluster for a team, you must have either an admin or developer role. See xref:teams-and-users.adoc[].
 

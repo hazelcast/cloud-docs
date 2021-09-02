@@ -2,7 +2,7 @@
 
 The goal of this document is to describe how to migrate data from one cluster to another.
 
-== Prerequisites
+== Before you Begin
 
 Your cluster must be on the link:{page-plans}[Enterprise plan] to use this feature.
 

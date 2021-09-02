@@ -9,7 +9,7 @@ You may need to upload custom Java classes in the following situations:
 . You have new or amended user domain objects
 . You have your own `MapLoader` or `MapStore` implementations.
 
-== Prerequisites
+== Before you Begin
 
 You need a cluster that has at least two members (nodes).
 

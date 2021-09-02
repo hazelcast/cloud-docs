@@ -4,7 +4,7 @@ Hazelcast Management Center enables you to monitor and manage your cluster membe
 
 Hazelcast Cloud Enterprise provides a metrics view-only access to the Management Center of your Hazelcast cluster so that you can get more useful insights about a cluster state, data structure metrics and other important aspects.
 
-== Prerequisites
+== Before you Begin
 
 Your cluster must be on the link:{page-plans}[Enterprise plan] to use this feature.
 

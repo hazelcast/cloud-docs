@@ -2,7 +2,7 @@
 
 Hazelcast Cloud allows you to encrypt traffic between clients and your cluster, using TLS. To provide the best performance, members always use the OpenSSL library. To encrypt traffic on the client side, you must configure the clients to use OpenSSL.
 
-== Prerequisites
+== Before you Begin
 
 You must have enabled encryption when you created the cluster. You cannot enable encryption on a cluster that has already been created.
 

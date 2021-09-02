@@ -4,7 +4,7 @@ Failover is an important feature of the mission-critical systems that rely on ne
 
 In this tutorial, we will create a setup with Failover Configuration using multiple Hazelcast Cloud Clusters.
 
-== Prerequisites
+== Before you Begin
 
 In order to achieve failover configuration, you need to create multiple clusters on Hazelcast Cloud. So, we can set up which clusters will get into action when there is a problem with one of them. See xref:create-enterprise-cluster.adoc[] or xref:create-standard-cluster.adoc [].
 

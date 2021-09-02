@@ -20,7 +20,7 @@ For a complete reference of this feature, see xref:hazelcast:wan:wan.adoc[].
 |The cluster that receives data from publisher within WAN Replication
 |===
 
-== Prerequisites
+== Before you Begin
 
 You need at least two active clusters on the link:{page-plans}[Enterprise plan]. To learn how to create an Enterprise cluster, see xref:create-enterprise-cluster.adoc[].
 

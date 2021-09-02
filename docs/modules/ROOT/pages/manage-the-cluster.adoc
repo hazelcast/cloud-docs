@@ -3,7 +3,7 @@
 
 {description}
 
-== Prerequisites
+== Before you Begin
 
 To stop or delete clusters in a team, you must have either an admin or developer role. See xref:teams-and-users.adoc[].
 

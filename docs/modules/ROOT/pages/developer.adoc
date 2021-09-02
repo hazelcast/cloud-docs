@@ -6,7 +6,7 @@
 
 Hazelcast Cloud allows you to manage your resources and clusters via an link:{url-cloud-api}[API], an link:{url-github-go-sdk}[SDK], and a link:{url-github-cloud-cli}[CLI]. To use these applications, you need an API key and an API secret, which can be created from link:{url-cloud-developers}[Developers] tab in your account or team settings. 
 
-== Prerequisites
+== Before you Begin
 
 To manage API keys for a team's cluster, you must have either an admin or developer role. See xref:teams-and-users.adoc[].
 

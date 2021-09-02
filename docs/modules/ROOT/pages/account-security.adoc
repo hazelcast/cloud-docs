@@ -3,7 +3,7 @@
 
 {description}
 
-== Prerequisites
+== Before you Begin
 
 Install an authenticator app such as Google Authenticator on your device.
 

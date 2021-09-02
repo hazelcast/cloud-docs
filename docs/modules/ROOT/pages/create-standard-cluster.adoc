@@ -4,7 +4,7 @@
 
 {description}
 
-== Prerequisites
+== Before you Begin
 
 To create a cluster for a team, you must have either an admin or developer role. See xref:teams-and-users.adoc[].
 

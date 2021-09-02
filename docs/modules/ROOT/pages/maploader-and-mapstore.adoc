@@ -1,7 +1,7 @@
 = MapLoader and MapStore
 :url-code-sample-mapstore: https://github.com/hazelcast/hazelcast-cloud-code-samples/tree/master/mapstore
 
-== Prerequisites
+== Before you Begin
 
 Your cluster must be on the link:{page-plans}[Enterprise plan] to use this feature.
 

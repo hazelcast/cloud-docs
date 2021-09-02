@@ -18,16 +18,11 @@ To create a peering connection on a team cluster, you must have either an admin 
 
 This option provides the easiest way of creating GCP VPC Peering with your Enterprise Hazelcast Cloud Cluster.
  
-=== Prerequisites
+=== Set Up Your Environment
 
-- Hazelcast Cloud CLI
-+
-Hazelcast Cloud CLI should be installed on your workstation.
-+
-TIP: You download Hazelcast Cloud CLI from link:{url-github-cloud-cli}[GitHub].
-- Google Application Credentials
-+
-Environment variable ` GOOGLE_APPLICATION_CREDENTIALS ` should be set correctly in order to provide your Google Cloud credentials file. 
+. Install link:{url-github-cloud-cli}[Hazelcast Cloud CLI].
+
+. Set the `GOOGLE_APPLICATION_CREDENTIALS` environment variable to the path to your Google Cloud credentials file. 
 +
 NOTE: You can check further details about *Google Application Credentials* in the link:{url-google-cloud-authentication}[Google Cloud documentation].
 

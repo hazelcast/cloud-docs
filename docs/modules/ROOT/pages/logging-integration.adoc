@@ -2,7 +2,7 @@
 
 Hazelcast Cloud Enterprise allows to integrate your own log management system. With the correct setup, all Hazelcast members send their logs to the configured remote logging solution.
 
-== Prerequisites
+== Before you Begin
 
 Your cluster must be on the link:{page-plans}[Enterprise plan] to use this feature.
 

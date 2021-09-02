@@ -3,7 +3,7 @@
 
 {description}
 
-== Prerequisites
+== Before you Begin
 
 Your cluster must be on the link:{page-plans}[Enterprise plan] to use this feature.
 

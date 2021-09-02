@@ -5,7 +5,7 @@
 
 Since security is vital in Hazelcast Cloud Enterprise, your clusters are installed within a private "Virtual Network" and can not be accessed unless you choose "Public Access" on cluster creation. So to connect private Azure Hazelcast Clusters, you need to establish a vNet peering connection between your network and Hazelcast Cluster network. 
 
-== Prerequisites
+== Before you Begin
 
 Download the Hazelcast Cloud CLI from link:{url-github-cloud-cli[Github].
 
