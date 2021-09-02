@@ -12,21 +12,12 @@
 ** xref:credits.adoc[]
 ** xref:developer.adoc[]
 
-.Create Clusters
+.Standard and Enterprise Clusters
 ** link:{page-plans}[Standard vs Enterprise^]
 ** xref:create-standard-cluster.adoc[]
 ** xref:create-enterprise-cluster.adoc[]
 
-.Download Client Code
-** xref:java-client.adoc[]
-** xref:nodejs-client.adoc[]
-** xref:python-client.adoc[]
-** xref:go-client.adoc[]
-** xref:net-client.adoc[]
-** xref:cpp-client.adoc[]
-** https://github.com/hazelcast/hazelcast-cloud-code-samples[Code Samples]
-
-.Manage Clusters
+.Cluster Management
 ** xref:scale-up-down.adoc[]
 ** xref:hazelcast-version.adoc[]
 ** xref:custom-classes-upload.adoc[]
@@ -35,12 +26,12 @@
 ** xref:backup-and-restore.adoc[]
 ** xref:manage-the-cluster.adoc[]
 
-.Monitor Clusters
+.Monitoring
 ** xref:charts-and-stats.adoc[]
 ** xref:management-center.adoc[]
 ** xref:logging-integration.adoc[]
 
-.Secure Clusters
+.Security
 ** xref:ip-white-list.adoc[]
 ** xref:encryption.adoc[]
 ** xref:connect-to-private-cluster.adoc[]
@@ -49,7 +40,7 @@
 *** xref:azure-vnet-peering.adoc[]
 *** xref:gcp-vpc-peering.adoc[]
 
-.Configure Data Structures
+.Data Structure Configuration
 ** xref:map-configurations.adoc[]
 ** xref:jcache.adoc[]
 ** xref:queue.adoc[]
@@ -60,6 +51,15 @@
 ** xref:multimap.adoc[]
 ** xref:ringbuffer.adoc[]
 ** xref:reliable-topic.adoc[]
+
+.Client Code
+** xref:java-client.adoc[]
+** xref:nodejs-client.adoc[]
+** xref:python-client.adoc[]
+** xref:go-client.adoc[]
+** xref:net-client.adoc[]
+** xref:cpp-client.adoc[]
+** https://github.com/hazelcast/hazelcast-cloud-code-samples[Code Samples]
 
 .Tutorials
 ** xref:shipping-logs-to-amazon-elasticsearch-service.adoc[]
