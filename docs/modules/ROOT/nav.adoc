@@ -7,7 +7,7 @@
 
 .Account Management
 ** xref:account-security.adoc[]
-** xref:team-and-users.adoc[]
+** xref:teams-and-users.adoc[]
 ** xref:payment-methods.adoc[]
 ** xref:credits.adoc[]
 ** xref:developer.adoc[]

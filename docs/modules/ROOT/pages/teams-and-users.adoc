@@ -54,7 +54,7 @@ In each team, users can have one of the following roles:
 
 . Go to *Settings* > *Team & Users*.
 +
-image:team-and-users.png[Create a new team]
+image:teams-and-users.png[Create a new team]
 
 . Enter a team name and click *Create Team*.
 
