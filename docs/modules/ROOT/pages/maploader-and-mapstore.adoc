@@ -47,7 +47,7 @@ Some of these fields are already predefined, some must be set. The following are
 
 - *write-coalescing*: In write-behind mode, Hazelcast coalesces updates on a specific key by default; it applies only the last update on it. You can set this element to false to store all updates performed on a key to the data store.
 
-- *initial-mode*: Sets the initial load mode. *LAZY* is the default load mode, where the load is asynchronous. *EAGER* means the load is blocked till all partitions are loaded. 
+- *initial-mode*: Sets the initial load mode. *Lazy* is the default load mode, where the load is asynchronous. *Eager* means the load is blocked till all partitions are loaded. 
 
 - *properties*: The (key, value) properties for MapStore or MapLoader. For example database properties. To initialize the MapLoader/MapStore implementation with the given map name, configuration properties and the Hazelcast instance, implement the `MapLoaderLifecycleSupport` interface. 
 

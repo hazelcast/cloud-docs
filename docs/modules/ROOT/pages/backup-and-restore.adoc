@@ -13,7 +13,7 @@ To back up or restore clusters in a team, you must have either an admin or devel
 
 == Create, List, and Delete Backups
 
-To do this, first, you need to click on the *MANAGE CLUSTER* button located at the top right of the cluster details page and select *Backup And Restore* from the dropdown menu:
+To do this, first, you need to click on the *Manage Cluster* button located at the top right of the cluster details page and select *Backup And Restore* from the dropdown menu:
 
 image:cluster-settings-backup.png[Backup and Restore settings for a cluster]
 

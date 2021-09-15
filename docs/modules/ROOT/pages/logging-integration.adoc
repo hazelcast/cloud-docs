@@ -17,7 +17,7 @@ See our tutorial on xref:shipping-logs-to-amazon-elasticsearch-service.adoc[Ship
 
 == Setting up Logging Integration
 
-To set up the logging integration, click on the *MANAGE CLUSTER* button in the cluster details page (Hazelcast Cloud console) and select *Settings*. Go to the *Logging* tab of the appeared 'UPDATE CLUSTER' dialog.
+To set up the logging integration, click on the *Manage Cluster* button in the cluster details page (Hazelcast Cloud console) and select *Settings*. Go to the *Logging* tab of the appeared 'UPDATE CLUSTER' dialog.
 
 image:logging-tab.png[Logging tab in the cluster settings]
 
@@ -27,7 +27,7 @@ image:logging-tech.png[Creating a logging integration]
 
 Click on the *Create Logging Integration* button. You should receive the Hazelcast member logs in your preferred log management system.
 
-You can always remove the defined logging integrations by first clicking on the *MANAGE CLUSTER* button in the cluster details page, selecting *Settings* and navigating to the *Logging* tab of the appeared 'UPDATE CLUSTER' dialog.
+You can always remove the defined logging integrations by first clicking on the *Manage Cluster* button in the cluster details page, selecting *Settings* and navigating to the *Logging* tab of the appeared 'UPDATE CLUSTER' dialog.
 
 image:delete-logging.png[Deleting a logging integration]
 

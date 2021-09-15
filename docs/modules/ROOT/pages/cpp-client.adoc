@@ -7,15 +7,13 @@ Follow the below instructions to connect a .Net client to your cluster.
 
 . xref:create-standard-cluster.adoc[Create a cluster].
 +
-The cluster-specific page will load and cluster's state will be "Pending" for some seconds, as shown below.
+The cluster's state will be *Pending* while the cluster is provisioned.
 +
 image:create-cluster-pending.png[A cluster being created]
 
-. When the cluster's state becomes "Running", the previously inactive button `Configure Client` on this page becomes active. Click on it and the following dialog box appears:
-+
-image:cpp-client-dialog.png[Instructions for installing a .Net client]
+. When the cluster's state changes to *Running*, click *Configure Client*.
 
-. Click on the C++ tab (the Java tab is active by default) and download the ZIP file as instructed in Step 1 of the dialog box.
+. Go to the *C++* tab and download the ZIP file as instructed in Step 1 of the dialog box.
 
 . Extract the ZIP file and run the command we provided, in the extracted folder, shown in Step 2.
 

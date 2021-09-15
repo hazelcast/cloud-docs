@@ -20,7 +20,7 @@ When data in a cluster occupies 80% of all available memory, we send a warning e
 Enterprise:: 
 + 
 --
-. Go to *MANAGE CLUSTER* > *Settings* > *Scale Up/Down*.
+. Go to *Manage Cluster* > *Settings* > *Scale Up/Down*.
 +
 image:cluster-settings-instance-count.png[Choose a number of cluster members]
 +
@@ -55,7 +55,7 @@ WARNING: If you scale down to a size that's smaller than your actual data size, 
 Enterprise:: 
 + 
 --
-. Go to *MANAGE CLUSTER* > *Settings* > *Scale Up/Down*.
+. Go to *Manage Cluster* > *Settings* > *Scale Up/Down*.
 +
 image:cluster-settings-instance-count.png[Choose a number of cluster members]
 +

@@ -1,6 +1,6 @@
 = Failover Clients with Hazelcast Cloud
 
-Failover is an important feature of the mission-critical systems that rely on near-constant availability. Hazelcast fault tolerance automatically and transparently redirects your connection from one cluster that has problems to the second running cluster.
+Failover is an important feature of systems that rely on near-constant availability. Hazelcast fault tolerance automatically and transparently redirects your connection from one cluster that has problems to the second running cluster.
 
 In this tutorial, we will create a setup with Failover Configuration using multiple Hazelcast Cloud Clusters.
 

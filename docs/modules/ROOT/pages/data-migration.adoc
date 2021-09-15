@@ -33,13 +33,12 @@ Within seconds, wan replication will be ready there.
 
 image:wan-replication-successful.png[Wan Replication is active]
 
-Once it is finished, you can verify it by going to management center *Cluster Detail* > *Management Center* > *Enable*  then *Management Center* > *Open Management Center*.
+Once it is finished, you can verify it by going to Management Center *Cluster Detail* > *Management Center* > *Enable*  then *Management Center* > *Open Management Center*.
 
-image:wan-replication-mc.png[Wan Replication data in Management Center]
 
 When you connect publish cluster and try to write some data, you will see data will be replicated to consumer cluster.
 
-NOTE: You can synchronize all data by using `Sync` button in the WAN replication settings.
+NOTE: You can synchronize all data by using *Sync* button in the WAN replication settings.
 
 == Step 2. Connect to a Cluster
 

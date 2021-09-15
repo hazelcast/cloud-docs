@@ -62,17 +62,17 @@ Now that you've created a team, you can invite users to it and assign them roles
 
 == Inviting Users to a Team
 
-If you've created one or more teams, you can invite users to them and assign those users one of <<user-roles, four roles>>.
+If you've created one or more teams, you can invite users to them and assign those users a role.
 
 . Select an existing team from the dropdown.
 +
 image:choose-team.png[Choose an existing team]
 
-. Enter the email address of the team member that you want to add and assign them a <<user-roles, role>> from the dropdown.
+. Enter the email address of the team member that you want to add and assign them a role from the dropdown.
 
 . Click *Invite*.
 +
-The user will receive an email invitation. When the user accepts the invitation, the user's status will change to 'ACTIVE'.
+The user will receive an email invitation. When the user accepts the invitation, the user's status will change to *Active*.
 
 == Viewing your Team's Clusters
 

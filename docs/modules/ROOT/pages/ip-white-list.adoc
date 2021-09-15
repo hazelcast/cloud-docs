@@ -5,7 +5,7 @@
 
 == Before you Begin
 
-If you're on the Enterprise plan, you can use IP whitelisting only if you turned on public access while xref:create-enterprise-cluster.adoc[creating the cluster]. Otherwise, your cluster is private and you need to xref:connect-to-private-cluster.adoc[set up peering to allow clients to connect to it].
+If you're on the Enterprise plan, you can use IP whitelisting only if you turned on public access while creating the cluster. Otherwise, your cluster is private and you need to set up peering to allow clients to connect to it. See xref:connect-to-private-cluster.adoc[].
 
 To add IP addresses to the whitelist of a team's cluster, you must have either an admin or developer role. See xref:teams-and-users.adoc[].
 
@@ -16,7 +16,7 @@ To add IP addresses to the whitelist of a team's cluster, you must have either a
 Enterprise:: 
 + 
 --
-If you're on the Enterprise plan, go to *MANAGE CLUSTER* > *SETTINGS* > *IP Whitelisting* and add the IP addresses of your clients.
+If you're on the Enterprise plan, go to *Manage Cluster* > *Settings* > *IP Whitelisting* and add the IP addresses of your clients.
 
 image:ip-whitelist-enterprise.png[Adding IP addresses to the whitelist of an Enterprise cluster]
 --

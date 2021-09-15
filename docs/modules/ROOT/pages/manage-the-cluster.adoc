@@ -1,5 +1,5 @@
 = Stopping and Deleting Clusters
-:description: After creating a cluster, you can either stop it to save the configuration but stop charges accumulating or you can delete it all together.
+:description: After creating a cluster, you can either stop it to save the configuration and stop charges accumulating or you can delete it all together.
 
 {description}
 
@@ -9,7 +9,7 @@ To stop or delete clusters in a team, you must have either an admin or developer
 
 == Stopping a Cluster
 
-To stop a cluster, go to *MANAGE CLUSTER* and click *STOP*.
+To stop a cluster, go to *Manage Cluster* and click *Stop*.
 
 image:stop-delete-cluster.png[Stop or delete the cluster]
 
@@ -19,7 +19,7 @@ TIP: When you stop a cluster, you are not charged. So it is a good practice to s
 
 == Deleting a Cluster
 
-To delete a cluster, go to *MANAGE CLUSTER* and click *DELETE*.
+To delete a cluster, go to *Manage Cluster* and click *Delete*.
 
 When you delete a cluster, all the data related to the cluster, including the configuration and actual cluster data, are removed. There is no way of recovering any data from a deleted cluster. Think twice before clicking *Delete*. 
 
