@@ -1,14 +1,12 @@
 = Failover Clients with Hazelcast Cloud
 
-Failover is an important feature of the mission-critical systems that rely on near-constant availability. Hazelcast fault tolerance automatically and transparently redirects your connection from one cluster that has problems to the second running cluster.
+Failover is an important feature of systems that rely on near-constant availability. Hazelcast fault tolerance automatically and transparently redirects your connection from one cluster that has problems to the second running cluster.
 
 In this tutorial, we will create a setup with Failover Configuration using multiple Hazelcast Cloud Clusters.
 
-== Create Multiple Clusters
+== Before you Begin
 
-In order to achieve failover configuration, you need to create multiple clusters on Hazelcast Cloud. So, we can setup which clusters will get into action when there is a problem with one of them.
-
-TIP: You can check how to create Starter and Enterprise Clusters from xref:create-enterprise-cluster.adoc[Creating Enterprise Cluster] and xref:create-starter-cluster.adoc [Creating Starter Cluster].
+In order to achieve failover configuration, you need to create multiple clusters on Hazelcast Cloud. So, we can set up which clusters will get into action when there is a problem with one of them. See xref:create-enterprise-cluster.adoc[] or xref:create-standard-cluster.adoc[].
 
 image:hazelcast-cloud-clusters.png[A dashboard that displays two clusters running on Hazelcast Cloud]
 
@@ -19,7 +17,7 @@ In order to do that you should have the following:
 
 - Cluster Name
 - Discovery Token
-- Password (Only for Hazelcast 3.x)
+- Password
 
 You can get this information from a Popup that opens when you click the *Configure Clients* button on the Cluster Details page.
 

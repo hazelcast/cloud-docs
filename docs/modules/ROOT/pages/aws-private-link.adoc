@@ -1,4 +1,4 @@
-= AWS PrivateLink
+= Creating AWS PrivateLink Connections
 
 AWS Private Link simplifies connectivity of services across different accounts and VPCs so that your data will be shared between services without exposure of data to the public internet. In addition to xref:aws-vpc-peering.adoc[AWS VPC peering], Hazelcast Cloud Enterprise provides AWS Private Link connection strategy and in this new strategy, Hazelcast Clusters are like AWS Marketplace Items that you can connect to your own clusters by subscribing them with a couple of clicks via Hazelcast Cloud Console.
 
@@ -20,7 +20,7 @@ In order to use AWS Private Link, you need to enable it first. This is because, 
 
 image:enable-aws-private-link.png[Enable AWS PrivateLink]
 
-After you click Enable AWS Private Link in *Manage Cluster > Settings > AWS PrivateLink* popup, you should see it is in progress
+After you click Enable AWS Private Link in *Manage Cluster* > *Settings* > *AWS PrivateLink* popup, you should see it is in progress
 
 WARNING: You cannot add AWS Private Link connections without enabling AWS Private Link, you need to wait until you see it is enabled.
 
@@ -32,7 +32,7 @@ image:new-aws-private-link.png[Add a new PrivateLink connection]
 
 == Adding AWS Private Link Connections
 
-*Enabling AWS Private Link* means we just created a *VPC Endpoint Service* for you Hazelcast Cluster and now we are ready to subscribe your *VPC Endpoints* to this service. Since, confidentiality is important in Hazelcast Cloud Enterprise, we never collect from data, we provide CloudFormation template instead to execute it in your account in a controlled way. In order to get Cloud Formation template, you can go *Manage Cluster > Settings > AWS PrivateLink* and click first *Download* button. This is the file that contains all the necessary stack creation resources, and you can upload this Cloud Formation screen in your account by clicking *Upload* button
+*Enabling AWS Private Link* means we just created a *VPC Endpoint Service* for you Hazelcast Cluster and now we are ready to subscribe your *VPC Endpoints* to this service. Since, confidentiality is important in Hazelcast Cloud Enterprise, we never collect from data, we provide CloudFormation template instead to execute it in your account in a controlled way. In order to get Cloud Formation template, you can go *Manage Cluster* > *Settings* > *AWS PrivateLink* and click first *Download* button. This is the file that contains all the necessary stack creation resources, and you can upload this Cloud Formation screen in your account by clicking *Upload* button
 
 image:new-aws-private-link-connection.png[Create a client connection]
 

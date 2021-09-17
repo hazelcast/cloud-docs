@@ -20,4 +20,4 @@ image:state-management-use-case.png[Using Hazelcast to manage the state of serve
 
 == Enterprise Applications
 
-Hazelcast Cloud enables you to lift and shift your applications to the cloud without any coding changes. Hazelcast Cloud Enterprise uses the latest Hazelcast IMDG Enterprise version, so all enterprise features are available for your cloud deployments. Due to the simplicity of adding advanced features such as mutual authentication with TLS, persistence and off-heap storage, you can take advantage of these without the need for code changes.
+Hazelcast Cloud enables you to lift and shift your applications to the cloud without any coding changes. Hazelcast Cloud Enterprise uses the latest Hazelcast Enterprise version, so all enterprise features are available for your cloud deployments. Due to the simplicity of adding advanced features such as mutual authentication with TLS, persistence and off-heap storage, you can take advantage of these without the need for code changes.

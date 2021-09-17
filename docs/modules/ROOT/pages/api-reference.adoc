@@ -12,14 +12,14 @@ link:{url-cloud-api}[Go to GraphQL Explorer]
 
 === Cloud Providers
 
-While creating a Hazelcast Cluster on Hazelcast Cloud, you need to decide on which Cloud Provider you will use. You can make this decision according to where your current infrastructure is. Also, the cloud providers we support change according to the type of product you will use. We support different cloud providers on the Starter and Enterprise Hazelcast Cloud products. So, you need to check available cloud providers before creating a cluster from our GraphQL API with a `query cloudProviders` 
+While creating a cluster on Hazelcast Cloud, you need to decide which cloud provider to use. You can make this decision according to where your current infrastructure is. Also, the cloud providers we support change according to the type of product you will use. We support different cloud providers on the Standard and Enterprise plans. So, you need to check available cloud providers before creating a cluster from our GraphQL API with a `query cloudProviders` 
 
 [source,shell]
 ----
 query {
   cloudProviders {
     name
-    isEnabledForStarter
+    isEnabledForStandard
     isEnabledForEnterprise
   }
 }
@@ -34,7 +34,7 @@ Regions are geographic locations of where your cloud resources are located. Diff
 query {
   regions(cloudProvider: "aws") {
     name
-    isEnabledForStarter
+    isEnabledForStandard
     isEnabledForEnterprise
   }
 }
@@ -118,12 +118,12 @@ query {
 ----
 
 === Cluster List
-You can list all of your clusters according to their type of product (`STARTER`, `ENTERPRISE`) with their details. You can fetch them will using `clusters query` with providing product type. 
+You can list all of your clusters according to their type of product (`STANDARD`, `ENTERPRISE`) with their details. You can fetch them will using `clusters query` with providing product type. 
 
 [source,shell]
 ----
 query {
-  clusters(productType:"STARTER") {
+  clusters(productType:"STANDARD") {
     id
     name
     password
@@ -149,17 +149,15 @@ query {
 
 == Mutations
 
-=== Create Starter Cluster
+=== Create Standard Cluster
 
-You can create a new *Starter Hazelcast Cluster** with `createStarterCluster` mutation. This mutation needs at least the following inputs; `name, cloud provider, region, cluster type, total memory, and Hazelcast version`. You can optionally provide other properties like data structures etc.
+You can create a new *Standard Hazelcast Cluster* with `createStandardCluster` mutation. This mutation needs at least the following inputs; `name, cloud provider, region, cluster type, total memory, and Hazelcast version`. You can optionally provide other properties like data structures etc.
 
 [WARNING]
 ====
 You need to collect some inputs from other queries.
 
 In this case, you need to get `cloudProvider` from `cloudProviders query`,  `region` from `regions query`.
-
-Also, you need to care about if the cloud provider and region are enabled for the starter version of the Hazelcast Cloud Product.
 ====
 
 TIP: You can optionally provide other properties like data structures, hot backup features, etc.
@@ -167,7 +165,7 @@ TIP: You can optionally provide other properties like data structures, hot backu
 [source,shell]
 ----
 mutation {
-  createStarterCluster(
+  createStandardCluster(
     input: {
       name: "my-cluster"
       cloudProvider: "aws"
@@ -235,7 +233,7 @@ mutation {
 
 === Stop Cluster
 
-You can stop your *Starter Hazelcast Cluster* with `stopCluster` mutation with providing id of the cluster as an argument.
+You can stop your *Standard Hazelcast Cluster* with `stopCluster` mutation with providing id of the cluster as an argument.
 
 [source,shell]
 ----
@@ -248,7 +246,7 @@ mutation {
 
 === Resume Cluster
 
-You can resume your *Starter Hazelcast Cluster* with `resumeCluster` mutation with providing id of the cluster as an argument.
+You can resume your *Standard Hazelcast Cluster* with `resumeCluster` mutation with providing id of the cluster as an argument.
 
 [source,shell]
 ----

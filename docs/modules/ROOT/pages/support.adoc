@@ -3,9 +3,9 @@
 
 Hazelcast Cloud has different support options depending on your requirements. Here are the support levels:
 
-== Standard
+== Standard Support
 
-Standard support is available for all users with non-free clusters.
+Standard support is available for all users with Standard or Enterprise clusters.
 
 *Coverage:* 24 hours a day, 7 days a week, 365 days a year
 
@@ -15,7 +15,7 @@ Standard support is available for all users with non-free clusters.
 
 We will respond in less than one business day.
 
-== Enterprise
+== Enterprise Support
 
 If you're interested in Enterprise support, contact us at mailto:sales@hazelcast.com[].
 

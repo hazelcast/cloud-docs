@@ -1,4 +1,4 @@
-= Backup and Restore
+= Backing up and Restoring a Cluster
 
 Once you have a running hot-backup feature enabled enterprise cluster, you can easily create a backup for your cluster and restore it.
 In order to make a restore, first you should have a backup to choose where to restore from.
@@ -6,6 +6,10 @@ In order to make a restore, first you should have a backup to choose where to re
 NOTE: If the hot-backup feature is enabled, your cluster will create a backup automatically within 24 hours period.
 
 WARNING: You can keep at most 10 backups. The oldest backup will be deleted automatically after the 10th backup.
+
+== Before you Begin
+
+To back up or restore clusters in a team, you must have either an admin or developer role. See xref:teams-and-users.adoc[].
 
 == Create, List, and Delete Backups
 
@@ -28,14 +32,12 @@ Also, you can easily delete your backup by clicking the *Delete* button.
 
 == Restore from Backup
 
-Once you have at least one backup, you can easily restore It to the new cluster by clicking the *Restore* button of the backup you selected. Then, you need to follow nearly the same process as you followed while creating your cluster like setting name, cidr, etc. in order to create a new cluster with the backup.
+Once you have at least one backup, you can easily use it to bootstrap a new cluster by clicking the *Restore* button of the backup you selected. Then, you need to follow nearly the same process as you followed while creating your cluster to create a new cluster with the backup.
 
 image:restore-from-backup.png[Restore a cluster from a backup snapshot]
 
 WARNING: You can not select all specifications like Instance Type, Instance Per Zone, and some other features other than you see in the form while creating a cluster from a backup.
 
 Once you click the *Restore Data to New Cluster* button, It will create a new cluster with the data your backup has. 
-
-image:backup-restore-in-progress.png[A new cluster being created from a backup snapshot]
 
 IMPORTANT: You shouldn't delete your other cluster your restoring backups belong to until the new cluster be in a Running state.

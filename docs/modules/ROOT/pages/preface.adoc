@@ -1,35 +1,48 @@
 = What is Hazelcast Cloud?
-:description: Hazelcast Cloud delivers enterprise-grade Hazelcast software as a convenient and easy cloud-based web service. This service is deployed and fully managed by Hazelcast. Leveraging over a decade of our experience and best practices, the result is a high-throughput low-latency service that scales to your needs while remaining simple to deploy.
+:description: Hazelcast Cloud provides all the features of the in-memory storage and data processing engine in a simple cloud-based web application that's deployed and fully managed by Hazelcast. Leveraging over a decade of our experience and best practices, the result is a high-throughput low-latency service that scales to your needs while remaining simple to deploy.
 
 {description}
 
-== Why Hazelcast Cloud?
+== Simplicity and Reduced IT Costs
 
-- *Simplicity & Reduced IT Costs*: Hazelcast Cloud is easy to use and deploy. No dealing with servers and a bare minimum of configuration. We will maintain your Hazelcast instances using high-quality cloud instances and a high-performance network. You can stop your instances when you are not using them and scale up your cluster when necessary. Pay only for what you use.
-- *Scalability and Flexibility*: You can scale your cluster from MBs to hundreds of GBs in seconds with a single click.
-- *Up-to-date Software*: No need to worry about software updates. We will keep your software stack up-to-date with regular upgrades without causing any downtime on your application.
-- *Multi Cloud*: Hazelcast Cloud will be supported in leading cloud providers, so you can easily deploy Hazelcast in accordance with your cloud architecture.
-- *Enterprise Hazelcast*: Hazelcast Cloud leverages Hazelcast IMDG Enterprise. This means, as an Hazelcast Cloud user, you will have access to enterprise features such as rolling upgrades, hot restart, security and High-Density memory store.
+Hazelcast Cloud is easy to use and deploy. No dealing with servers and a bare minimum of configuration. We will maintain your Hazelcast instances using high-quality cloud instances and a high-performance network. You can stop your instances when you are not using them and scale up your cluster when necessary. Pay only for what you use.
 
-== Hazelcast Cloud Editions
+See xref:manage-the-cluster.adoc[].
 
-Hazelcast Cloud delivers the enterprise-grade Hazelcast software as a convenient and easy cloud-based web service. This service is deployed and fully managed by Hazelcast. Leveraging over a decade of our experience and best practices, the result is a high-throughput low-latency service that scales to your needs while remaining simple to deploy.
+== Scalability and Flexibility
 
-Hazelcast Cloud has two editions:
+You can scale your cluster from MBs to hundreds of GBs in seconds with a single click.
 
-- *Hazelcast Cloud Starter*: A multitenant Hazelcast cloud deployment where clusters are isolated by Kubernetes deployments. Different clusters can be deployed to the same instances but in different containers. The user does not have to control the instance types or the number of instances in the cluster.
+See xref:manage-the-cluster.adoc#scaling-a-cluster[Scaling a Cluster].
 
-- *Hazelcast Cloud Enterprise*: All user clusters are separated on VPC level. Each of the clusters has cloud instances that are dedicated to themselves: clusters never share the same instances. The user decides the instance type and number of instances that the Hazelcast cluster will be deployed on.
+== Up-To-Date Software
 
-== Key Benefits and Comparative Advantages
+No need to worry about software updates. We will keep your software stack up-to-date with regular upgrades without causing any downtime on your application.
 
-- *Feature Set*: Hazelcast is not solely a key-value store. Distributed maps are just one of the Hazelcast distributed data structures. By using Hazelcast Cloud, you will have access to the rich API, including distributed maps, multimaps, queues, topics, lists, sets and locks, as well as the other features.
-- *Distributed Architecture and High-Performance*: Hazelcast had been designed as a highly distributed system since day one. Utilizing multithreading, Hazelcast servers deliver higher performance when compared to older generation key-value stores.
-- *Comprehensive Security*: Hazelcast Cloud makes use of all the security features included in Hazelcast Enterprise, including industry standard technologies like TLS and JAAS that are designed for large enterprises.
-- *Reliable Clients*: Hazelcast has high-quality clients that are developed, maintained, and supported by Hazelcast. While developing your application, you will not cope with the issues and restrictions of an immature client.
+See xref:architecture.adoc[].
 
-== Is Hazelcast Cloud Right For Me?
+== Multi-Cloud
 
-Hazelcast Cloud is an excellent fit for many use cases. For example, you can use Hazelcast Cloud as a low-latency, high-performance caching or data layer for your microservices. With the introduction of Hazelcast Cloud, your in-memory data management/caching solution will be ready in minutes, without needing to worry about its maintenance.
+Hazelcast Cloud can be deployed on leading cloud providers, so you can choose the right one for your architecture.
 
-Hazelcast Cloud is also a perfect solution for state management of serverless functions, such as AWS Lambda.
+See xref:create-enterprise-cluster.adoc[].
+
+== Enterprise Features
+
+Hazelcast Cloud gives you access to Enterprise features such as rolling upgrades, hot restart, security, and High-Density memory store.
+
+== Rich Feature Set
+
+Hazelcast is not solely a key-value store. Distributed maps are just one of the Hazelcast distributed data structures. By using Hazelcast Cloud, you will have access to the rich API, including distributed maps, multimaps, queues, topics, lists, sets and locks, as well as the other features.
+
+== Distributed Architecture and High Performance
+
+Hazelcast had been designed as a highly distributed system since day one. Utilizing multithreading, Hazelcast servers deliver higher performance when compared to older generation key-value stores.
+
+== Comprehensive Security
+
+Hazelcast Cloud makes use of all the security features included in Hazelcast Enterprise, including industry standard technologies like TLS and JAAS that are designed for large enterprises.
+
+== Reliable Clients
+
+Hazelcast has high-quality clients that are developed, maintained, and supported by Hazelcast. While developing your application, you will not cope with the issues and restrictions of an immature client.

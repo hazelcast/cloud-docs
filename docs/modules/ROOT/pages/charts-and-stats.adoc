@@ -1,4 +1,4 @@
-= Charts and Stats
+= Reading Charts and Statistics
 
 Once you have a running cluster, you can monitor the performance metrics and status using the Hazelcast Cloud console. To monitor, click on your cluster's name in the "Clusters" page to see the cluster details which include the charts for monitoring purposes. In this "Cluster Details" page, these charts are grouped into cluster and map metrics, and client statistics.
 

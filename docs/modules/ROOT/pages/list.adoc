@@ -5,7 +5,7 @@ Hazelcast List (*IList*) is similar to Hazelcast Set, but it also allows duplica
 == List Name
 
 In Hazelcast, you can create custom list configurations associated with the names of list. The list that do not have any configuration defined use the default configuration. If you want to set a configuration that is valid for all lists, you can name your configuration as `default`. A user-defined `default` configuration applies to every list that does not have a specific custom list configuration defined with the list's name. 
-You can also use wildcards to associate your configuration with multiple list names. See the xref:imdg:configuration:using-wildcards.adoc[IMDG documentation] for more information about wildcards.
+You can also use wildcards to associate your configuration with multiple list names. See the xref:hazelcast:configuration:using-wildcards.adoc[configuration documentation] for more information about wildcards.
 
 == Maximum Size
 

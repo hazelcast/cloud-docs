@@ -1,49 +1,76 @@
-= Getting Started
+= Getting Started with Hazelcast Cloud
 :url-cloud-sign-up: https://cloud.hazelcast.com/sign-up
 :url-cloud-sign-in: https://cloud.hazelcast.com/sign-in
+:description: It's free to create an account on Hazelcast Cloud and get started with a free cluster.
 
-Here are the steps to set up your first cluster in Hazelcast Cloud:
+{description}
 
-== 1. Register
+To set up a free cluster, you need to do the following:
 
-Create your account at link:{url-cloud-sign-up}[]. A confirmation will be sent to you. When you confirm the email, your account becomes ready for use.
+. Create a Hazelcast Cloud account
+. Create a cluster on the Basic plan
+. Add data to your cluster
 
-image:create-account.png[Create a new cloud account]
+== 1. Create a Hazelcast Cloud Account
 
-== 2. Sign-in
+. Go to link:{url-cloud-sign-up}[] and enter your details.
++
+A confirmation will be sent to the provided email address. After confirming your email address, you'll be able to log into your account.
 
-After setting your password via the link provided by email, you can log in with your email and password at link:{url-cloud-sign-in}[]. 
+. Go to link:{url-cloud-sign-in}[] and log into your account, using one of the following options:
++
+- The email address and password that you provided when you created the account
+- Your GitHub account
+- Your Google account
 
-image:sign-in.png[Sign into your cloud account]
+== 2. Create a Cluster on the Basic Plan
 
-=== 2.1 (Optional) Sign-in with Social Providers
+. Click the *+ New Cluster* button in the top-left corner.
 
-You can use also use sign-in with Github and Google options in order to sign-in easily without spending your time on email verification and filling registration forms. The only thing you should do is selecting your social provider and authorizing Hazelcast Cloud for registration purposes. Then it will directly redirect you to our console. 
+. In the Basic plan, click *Create Cluster*.
++
+image:free-plan.png[Create Cluster button in the free plan option]
 
-image:social-sign-in.png[Sign into your cloud account with a social media account]
-
-== 3. Create a Cluster
-
-After successfully logging in, you can create your first cluster by clicking the *+ New Cluster* button in the top left corner. On the New Cluster page, provide a name for your cluster. You can leave the other options as they are. Click *+ Create Cluster* to create and start your new cluster. 
-
+. Scroll to the bottom of the page, and click *Create Free Cluster*.
++
 image:create-cluster.png[Create a new cluster]
++
+It may take up to 30 seconds to create the cluster. Until the cluster is ready, you will see a pending label and a spinning wheel.
++
+NOTE: If you don't use your free cluster for 16 hours or more, it will be deleted along with any data that was stored in it.
 
 Once your cluster is running and ready, you will see the Cluster Memory and Client Count charts as well as lifecycle information about the cluster.
 
-image:cluster-dash.png[Cluster Metrics]
+image:cluster-dash.gif[Cluster Metrics]
 
-== 4. Set-Up and Run the Hazelcast Client
+Now, you have a running cluster, but it is empty. You can add data to the cluster, using a Hazelcast client application.
 
-Now, we have a running cluster, but it is empty. So, let's fill it with data. To do so, we need to run a Hazelcast client application.  
+== 3. Add Data to your Cluster
+  
+. Click the *Configure Clients* button.
++
+image:configure-client.png[Configure Clients button]
 
-In the cloud console, open the cluster that you want to connect to. Click on the *Configure Hazelcast Client* button. Step 1 provides you a pre-configured sample client project. Download that. Step 2 provides a command. Copy that command and run it in your command line. In the logs you should see `Connection Successful!` and then the application will start to insert random entries. After 5-10 seconds you will see map stats in your cluster dashboard as below:  
+. Choose the client language that you want to use and follow the on-screen instructions.
++
+These instructions show you how to download and run a client application that inserts random entries into maps on your cluster. After 5-10 seconds, exit the application, using *Ctrl+C*.
 
+. Scroll down to Map Metrics and select the map called `map`.
++
 image:map-metrics.png[Map Metrics]
 
-For more detailed information about clients see the chapters:
+You should see all the metrics for this map, including how many entries were added to it.
 
-xref:imdg:clients:java.adoc[Java Client]
-xref:imdg:clients:dotnet.adoc[.NET Client]
-xref:imdg:clients:nodejs.adoc[Node.js Client] 
-xref:imdg:clients:python.adoc[Python Client]
-xref:imdg:clients:go.adoc[Go Client]
+== Next Steps
+
+Find more information about using this client code:
+
+- xref:java-client.adoc[Java Client]
+- xref:net-client.adoc[.NET Client]
+- xref:nodejs-client.adoc[Node.js Client] 
+- xref:python-client.adoc[Python Client]
+- xref:go-client.adoc[Go Client]
+
+See a link:{page-plans}[feature comparison of all cluster plans].
+
+Set up a xref:create-standard-cluster.adoc[Standard cluster] or an xref:create-enterprise-cluster.adoc[Enterprise cluster].

@@ -8,7 +8,7 @@ WARNING: Since the whole set lives on a single partition, storing a large amount
 == Set Name
 
 In Hazelcast, you can create custom set configurations associated with the names of the Set. The Set that does not have any configuration defined will use the default configuration. If you want to set a configuration that is valid for all sets, you can name your configuration as `default`. A user-defined `default` configuration applies to every set that does not have a specific custom set configuration defined with the set's name. 
-You can also use wildcards to associate your configuration with multiple set names. See the xref:imdg:configuration:using-wildcards.adoc[IMDG documentation] for more information about wildcards.
+You can also use wildcards to associate your configuration with multiple set names. See the xref:hazelcast:configuration:using-wildcards.adoc[configuration documentation] for more information about wildcards.
 
 == Maximum Size
 

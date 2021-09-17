@@ -1,0 +1,19 @@
+= Setting Up a Peering Connection to a Private Enterprise Cluster
+:description: To connect to a private Enterprise cluster, you need to set up a peering connection. Hazelcast Cloud offers different options for setting up peering connections, depending on the cloud provider that you chose while creating the cluster.
+
+{description}
+
+== AWS
+
+For clusters hosted on AWS, use one of the following options:
+
+- xref:aws-vpc-peering.adoc[]
+- xref:aws-private-link.adoc[]
+
+== GCP
+
+For clusters hosted on GCP, see xref:gcp-vpc-peering.adoc[].
+
+== Azure
+
+For clusters hosted on Azure, see xref:azure-vnet-peering.adoc[].

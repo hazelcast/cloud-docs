@@ -4,17 +4,15 @@
 
 Follow the below instructions to connect a Java client to your cluster.
 
-. xref:create-starter-cluster.adoc[Create a cluster].
+. xref:create-standard-cluster.adoc[Create a cluster].
 +
-The cluster-specific page will load and cluster's state will be "Pending" for some seconds, as shown below.
+The cluster's state will be *Pending* while the cluster is provisioned.
 +
 image:create-cluster-pending.png[A cluster being created]
 
-. When the cluster's state becomes "Running", the previously inactive button `Configure Client` on this page becomes active. Click on it and the following dialog appears:
-+
-image:java-client-dialog.png[Instructions for installing a Java client]
+. When the cluster's state changes to *Running*, click *Configure Client*.
 
-. Click on the Java tab (which is the default when the above dialog displays) and download the ZIP file as instructed in Step 1 in the above dialog box.
+. Download the ZIP file as instructed in Step 1 of the dialog box.
 
 . Extract the ZIP file and run the command, in the extracted folder, shown in the Step 2 in the above dialog box. If you are using Windows, run `mvnw.cmd` instead of `mvnw`.
 
@@ -269,4 +267,4 @@ HazelcastInstance client = HazelcastClient.newHazelcastClient();
 
 == More Configuration Options
 
-Please refer to the xref:imdg:clients:java.adoc#configuring-java-client[Hazelcast IMDG Reference Manual] for further configuration options.
+Please refer to the xref:hazelcast:clients:java.adoc#configuring-java-client[Java client documentation] for further configuration options.
