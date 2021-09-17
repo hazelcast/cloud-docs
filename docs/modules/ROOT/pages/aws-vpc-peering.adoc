@@ -199,7 +199,7 @@ WARNING: The CIDR of your Hazelcast Cloud Enterprise cluster and the CIDR of you
 
 == Listing Peering Connections
 
-You can list Google Cloud Platform peerings on your Enterprise Hazelcast Cluster on GCP from Console by going *Cluster Details > Settings > VPC Peering* one by one as shown below. 
+You can list VPC peerings on your Enterprise Hazelcast Cluster by going to *Cluster Details > *Settings* > *VPC Peering* one by one as shown below. 
 You can check where the connection established by checking VPC ID and Subnet from the list.
 
 image:cluster-settings.png[VPC peering settings]
