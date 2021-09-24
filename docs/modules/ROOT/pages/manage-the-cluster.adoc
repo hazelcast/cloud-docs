@@ -7,7 +7,7 @@
 
 Your cluster must be on the link:{page-plans}[Enterprise plan] to use this feature.
 
-To stop or delete clusters in a team, you must have either an admin or developer role. See xref:teams-and-users.adoc[].
+To stop clusters in a team, you must have either an admin or developer role. See xref:teams-and-users.adoc[].
 
 == Stopping a Cluster
 

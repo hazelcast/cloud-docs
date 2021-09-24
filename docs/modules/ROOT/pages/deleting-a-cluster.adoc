@@ -1,7 +1,14 @@
 = Deleting a Cluster
+:description: If you no longer need a cluster, you can delete it.
+
+{description}
+
+== Before you Begin
+
+To delete clusters in a team, you must have either an admin or developer role. See xref:teams-and-users.adoc[].
+
+== Delete a Cluster
 
 To delete a cluster, go to *Manage Cluster* and click *Delete*.
 
-When you delete a cluster, all the data related to the cluster, including the configuration and actual cluster data, are removed. There is no way of recovering any data from a deleted cluster. Think twice before clicking *Delete*. 
-
-WARNING: Persistence has a performance overhead. If you are not planning to use the Stop/Resume feature, you will achieve better performance leaving it disabled.
+When you delete a cluster, all the data related to the cluster, including the configuration and actual cluster data, are removed. There is no way of recovering any data from a deleted cluster. Think twice before clicking *Delete*.
