@@ -25,6 +25,7 @@
 ** xref:wan-replication.adoc[]
 ** xref:backup-and-restore.adoc[]
 ** xref:manage-the-cluster.adoc[]
+** xref:deleting-a-cluster.adoc[]
 
 .Monitoring
 ** xref:charts-and-stats.adoc[]

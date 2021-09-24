@@ -1,0 +1,7 @@
+= Deleting a Cluster
+
+To delete a cluster, go to *Manage Cluster* and click *Delete*.
+
+When you delete a cluster, all the data related to the cluster, including the configuration and actual cluster data, are removed. There is no way of recovering any data from a deleted cluster. Think twice before clicking *Delete*. 
+
+WARNING: Persistence has a performance overhead. If you are not planning to use the Stop/Resume feature, you will achieve better performance leaving it disabled.

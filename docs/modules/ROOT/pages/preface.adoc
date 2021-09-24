@@ -13,7 +13,7 @@ See xref:manage-the-cluster.adoc[].
 
 You can scale your cluster from MBs to hundreds of GBs in seconds with a single click.
 
-See xref:manage-the-cluster.adoc#scaling-a-cluster[Scaling a Cluster].
+See xref:scale-up-down[].
 
 == Up-To-Date Software
 

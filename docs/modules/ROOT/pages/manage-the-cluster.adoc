@@ -1,26 +1,26 @@
-= Stopping and Deleting Clusters
-:description: After creating a cluster, you can either stop it to save the configuration and stop charges accumulating or you can delete it all together.
+= Stopping and Resuming Clusters
+:description: You can stop and resume any cluster that has persistence enabled. Stopping a cluster saves your cluster's configuration and stops charges accumulating.
 
 {description}
 
 == Before you Begin
 
+Your cluster must be on the link:{page-plans}[Enterprise plan] to use this feature.
+
 To stop or delete clusters in a team, you must have either an admin or developer role. See xref:teams-and-users.adoc[].
 
 == Stopping a Cluster
+
+Stopping your cluster can help minimize your costs during development because you are only charged for running clusters.
 
 To stop a cluster, go to *Manage Cluster* and click *Stop*.
 
 image:stop-delete-cluster.png[Stop or delete the cluster]
 
-When you stop a cluster, Hazelcast Cloud saves your configuration so that you can resume the cluster at a later time with the exact same configuration. If you have enabled persistence while creating the cluster, the cluster data will also be persisted and available after you resume the cluster. Stopping your cluster can help minimize your costs while during development because you are only charged for the running clusters. So you can resume and run your cluster only when you are actively working with it.
+When you stop a cluster, Hazelcast Cloud saves your configuration so that you can resume the cluster at a later time.
 
-TIP: When you stop a cluster, you are not charged. So it is a good practice to stop it when you are not using it in development phase.
+== Resuming a Cluster
 
-== Deleting a Cluster
+When you resume a cluster, Hazelcast restarts it with the same configuration as before it was stopped. Persisted data is also restored from disk. 
 
-To delete a cluster, go to *Manage Cluster* and click *Delete*.
-
-When you delete a cluster, all the data related to the cluster, including the configuration and actual cluster data, are removed. There is no way of recovering any data from a deleted cluster. Think twice before clicking *Delete*. 
-
-WARNING: Persistence has a performance overhead. If you are not planning to use the Stop/Resume feature, you will achieve better performance leaving it disabled.
+To resume a cluster after stopping it, go to *Manage Cluster* and click *Resume*.
