@@ -5,7 +5,7 @@
 
 == Before you Begin
 
-Your cluster must be on the link:{page-plans}[Enterprise plan] to use this feature.
+Your cluster must be on the link:{page-plans}[Standard or Enterprise plan] to use this feature.
 
 To stop clusters in a team, you must have either an admin or developer role. See xref:teams-and-users.adoc[].
 
