@@ -2,6 +2,22 @@
 :url-cloud-cli-announcement: https://hazelcast.com/blog/announcing-hazelcast-cloud-cli/
 :url-cloud-sdk-announcement: https://hazelcast.com/blog/announcing-hazelcast-cloud-go-sdk/
 
+== October 4, 2021 - v3.1.0
+
+*New Features:*
+
+- We've changed our pricing model and introduced three plans: Basic, Standard, and Enterprise. See xref:pricing.adoc[] for details.
+
+- You can now stop and resume clusters on the Enterprise plan. When a cluster is resumed, any persisted data is restored from disk. See xref:manage-the-cluster.adoc[].
+
+*Fixes:*
+
+- Cluster names can now include up to 200 characters without breaking the layout.
+
+*Enhancements:*
+
+- Multi-factor authentication (MFA) is no longer restricted to just Google Authenticator.
+
 == May 11, 2021 - v2.8.3
 
 *Fixes:*
@@ -250,7 +266,7 @@ Hazelcast version has been updated to 3.12.2.
 *New Features:*
 
 - IP Whitelisting: Introduced xref:ip-white-list.adoc[IP whitelisting] that allows you to restrict the clients that can connect to your cluster.
-- Autoscaling: Introduced xref:manage-the-cluster.adoc[automatic scaling] (up or down) of your cluster depending on the memory utilization.
+- Autoscaling: Introduced xref:scale-up-down.adoc[automatic scaling] (up or down) of your cluster depending on the memory utilization.
 
 *Enhancements:*
 
