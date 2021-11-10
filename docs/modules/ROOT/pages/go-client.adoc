@@ -1,17 +1,15 @@
-= Go Client
+= Connect a Go Client
 :url-github-go: https://github.com/hazelcast/hazelcast-go-client#3-configuration-overview
 
-== Quick Setup
+== Before you Begin
 
-Follow the below instructions to connect a Go client to your cluster.
+. link:https://cloud.hazelcast.com/sign-up[Sign up for a Hazelcast Cloud account].
 
-. xref:create-standard-cluster.adoc[Create a cluster].
-+
-The cluster's state will be *Pending* while the cluster is provisioned.
-+
-image:create-cluster-pending.png[A cluster being created]
+. Create a free cluster on the Basic plan. For help creating a cluster, see xref:getting-started.adoc[].
 
-. When the cluster's state changes to *Running*, click *Configure Client*.
+== Download and Run the Sample Code
+
+. Click *Configure Clients*.
 
 . Go to the *Go* tab and download the ZIP file as instructed in Step 1 of the dialog box.
 

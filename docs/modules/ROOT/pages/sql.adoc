@@ -1,0 +1,421 @@
+= Hazelcast Cloud Quickstart
+:description: Follow this five-minute tutorial to set up a Hazelcast cluster in the cloud. In five minutes, you will learn how to create a cluster, connect to the SQL shell, and use SQL to write data to memory and query that data.
+
+{description}
+
+To run a Hazelcast cluster on your local machine instead, see xref:hazelcast:getting-started:quickstart.adoc[].
+
+++++
+<script type="application/ld+json">
+{
+"@context": "http://schema.org",
+"@type": "HowTo",
+"name": "Hazelcast Cloud Quickstart",
+"description": "Follow this five-minute tutorial to set up a Hazelcast cluster in the cloud. In five minutes, you will learn how to create a cluster, connect to the SQL shell, and use SQL to write data to memory and query that data.",
+"totalTime": "PT5M",
+"step":[
+    {
+        "@type": "HowToStep",
+        "text": "Create a Cluster."
+    },
+    {
+        "@type": "HowToStep",
+        "text": "Download the CLI Client."
+    }, {
+        "@type": "HowToStep",
+        "text": "Connect to the SQL shell."
+    }, {
+        "@type": "HowToStep",
+        "text": "Create a Mapping."
+    }, {
+        "@type": "HowToStep",
+        "text": "Run Queries."
+    }]
+}
+</script>
+++++
+
+== Step 1. Create a Cluster
+
+. link:https://cloud.hazelcast.com/sign-up[Sign up for a Hazelcast Cloud account].
+
+. Create a free cluster on the Basic plan. For help creating a cluster, see xref:getting-started.adoc[].
+
+NOTE: Don't enable encryption on your cluster. At the moment, you can't connect the CLI to a Hazelcast Cloud cluster if encryption is enabled.
+
+== Step 2. Download the CLI Client
+
+. Go to *Your Clusters* and click your cluster.
+
+. Click *Connect your Application* and open the *SQL* tab.
+
+. Download and extract the client configuration file.
++
+This file contains the credentials that allow the CLI to connect to your Hazelcast Cloud cluster:
++
+```
+hazelcast-client:
+  cluster-name: {your-cluster-name} <1>
+  network:
+    hazelcast-cloud:
+      enabled: true <2>
+      discovery-token: {your-discovery-token} <3>
+  metrics:
+    enabled: true <4>
+```
++
+<1> The name of your cluster, which you can find in the *Credentials* section
+<2> This field tells the client that it is connecting to a Hazelcast Cloud cluster.
+<3> Your discovery token, which you can find in the *Credentials* section.
+<4> This field tells the client to send metrics to the cluster so that they can be displayed in Hazelcast Cloud and/or used by other applications such as Management Center.
+
+. Make a note of where you extracted the client configuration file.
+
+. To install the Hazelcast CLI client, use one of the following methods, depending on your operating system.
++
+The CLI client may appear quite large because it is packaged with the full distribution of Hazelcast, Management Center, and a JDK. We are working on a new CLI client that will be more lightweight.
++
+[tabs] 
+==== 
+Mac:: 
++ 
+--
+
+To install the CLI on macOS, use the Homebrew package manager.
+
+[source,bash]
+----
+brew tap hazelcast/hz
+brew install hazelcast
+----
+--
+
+Linux::
++
+--
+
+To install the CLI on Linux, you can use either of these package managers, depending on your Linux distribution:
+
+.Debian
+[source,shell]
+----
+wget -qO - https://repository.hazelcast.com/api/gpg/key/public | sudo apt-key add -
+echo "deb https://repository.hazelcast.com/debian stable main" | sudo tee -a /etc/apt/sources.list
+sudo apt update && sudo apt install hazelcast
+----
+
+.RPM
+[source,shell]
+----
+wget https://repository.hazelcast.com/rpm/hazelcast-rpm.repo -O hazelcast-rpm.repo
+sudo mv hazelcast-rpm.repo /etc/yum.repos.d/
+sudo yum install hazelcast
+----
+--
+Windows::
++
+--
+At the moment, Hazelcast does not support any Windows package managers.
+
+The easiest way to use the CLI on Windows it to install the Hazelcast Docker image. The Docker container comes with the `hz-cli` client. See xref:hazelcast:getting-started:install-hazelcast.adoc[]
+--
+====
+
+. Check that the CLI client is installed.
++
+[source,shell]
+----
+hz-cli -V
+----
++
+You should see your installed versions of the CLI client.
+
+== Step 3. Connect to the SQL Shell
+
+. Go to the directory where you extracted the client configuration file.
+
+. Connect to the SQL shell on your Hazelcast Cloud cluster.
++
+```bash
+hz-cli -f hazelcast-client.yml sql
+```
++
+The `-f` flag passes the configuration file to the CLI client so that the cluster can authenticate the client, using the credentials.
+
+You should see the SQL prompt:
+
+```
+sql>
+```
+
+== Step 4. Create a Mapping to a Map
+
+Before you can query data in a map, you need to create a mapping to one, using the map connector.
+
+. In the SQL shell, configure the map connector to set up an SQL connection to a new map called `cities`.
++
+[source,sql]
+----
+CREATE MAPPING cities
+TYPE IMap OPTIONS ('keyFormat'='varchar', 'valueFormat'='varchar');
+----
+
+. Add some countries and their capital cities to the map.
++
+[source,sql]
+----
+INSERT INTO cities VALUES
+('Australia','Canberra'),
+('Croatia','Zagreb'),
+('Czech Republic','Prague'),
+('England','London'),
+('Turkey','Ankara'),
+('United States','Washington, DC');
+----
++
+The first argument of the `VALUES` command is the key of the map entry and the second argument is the value.
+
+== Step 5. Run Ad-Hoc Queries
+
+. Use the `SELECT` statement to query all data in the map.
++
+[source,sql]
+----
+SELECT * FROM cities;
+----
++
+You should see the following:
++
+[source,shell]
+----
++--------------------+--------------------+
+|__key               |this                |
++--------------------+--------------------+
+|England             |London              |
+|United States       |Washington, DC      |
+|Czech Republic      |Prague              |
+|Turkey              |Ankara              |
+|Croatia             |Zagreb              |
+|Australia           |Canberra            |
++--------------------+--------------------+
+----
+
+. Query only the countries by filtering on the `__key` column.
++
+[source,sql]
+----
+SELECT __key FROM cities;
+----
++
+```
++--------------------+
+|__key               |
++--------------------+
+|England             |
+|United States       |
+|Czech Republic      |
+|Turkey              |
+|Croatia             |
+|Australia           |
++--------------------+
+```
+
+. Query only the cities by filtering on the `this` column.
++
+[source,sql]
+----
+SELECT this FROM cities;
+----
++
+```
++--------------------+
+|this                |
++--------------------+
+|London              |
+|Washington, DC      |
+|Prague              |
+|Ankara              |
+|Zagreb              |
+|Canberra            |
++--------------------+
+```
+
+. Give your query results more context by adding an alias to the `__key` and `this` columns.
++
+NOTE: This clause does not rename the column in the table.
++
+[source,sql]
+----
+SELECT __key AS countries, this AS cities
+FROM cities;
+----
++
+```
++--------------------+--------------------+
+|countries           |cities              |
++--------------------+--------------------+
+|England             |London              |
+|United States       |Washington, DC      |
+|Czech Republic      |Prague              |
+|Turkey              |Ankara              |
+|Croatia             |Zagreb              |
+|Australia           |Canberra            |
++--------------------+--------------------+
+```
+
+. Use a filter to display only countries where the name of the capital city is at least 8 characters long.
++
+[source,sql]
+----
+SELECT __key AS countries FROM cities WHERE LENGTH(this) >= 8;
+----
++
+```
++--------------------+
+|countries           |
++--------------------+
+|United States       |
+|Australia           |
++--------------------+
+```
+
+. Use another filter to display only countries beginning with the letter C where the name of the capital city is at least 6 characters long.
++
+[source,sql]
+----
+SELECT __key AS countries
+FROM cities
+WHERE LENGTH(this) >= 6 AND __key LIKE 'C%';
+----
++
+```
++--------------------+
+|countries           |
++--------------------+
+|Czech Republic      |
+|Croatia             |
++--------------------+
+```
+
+. Configure the map connector to create a new map table called `population2020`.
++
+[source,sql]
+----
+CREATE MAPPING population2020
+TYPE IMap OPTIONS ('keyFormat'='varchar', 'valueFormat'='int');
+----
+
+. Add the 2020 populations of the following cities.
++
+[source,sql]
+----
+INSERT INTO population2020 VALUES
+('Canberra', 354644),
+('Zagreb', 804200),
+('Prague', 1227332),
+('London', 8174100),
+('Ankara', 4890893),
+('Washington, DC', 601723);
+----
+
+. Use the `JOIN` clause to merge results from the `cities` and `population2020` tables so you can see which countries had the most populated captial cities in 2020.
++
+[source,sql]
+---- 
+SELECT cities.__key AS country, cities.this AS city, population2020.this AS population
+FROM cities
+JOIN population2020
+ON cities.this = population2020.__key;
+----
++
+```
++--------------------+--------------------+------------+
+|country             |city                |  population|
++--------------------+--------------------+------------+
+|England             |London              |     8174100|
+|United States       |Washington, DC      |      601723|
+|Czech Republic      |Prague              |     1227332|
+|Croatia             |Zagreb              |      804200|
+|Australia           |Canberra            |      354644|
++--------------------+--------------------+------------+
+```
+
+. Use the `ORDER BY` clause to order the results alphabetically by country.
++
+[source,sql]
+----
+SELECT cities.__key AS country, cities.this AS city, population2020.this AS population
+FROM cities
+JOIN population2020
+ON cities.this = population2020.__key
+ORDER BY cities.__key;
+----
++
+```
++--------------------+--------------------+------------+
+|country             |city                |  population|
++--------------------+--------------------+------------+
+|Australia           |Canberra            |      354644|
+|Croatia             |Zagreb              |      804200|
+|Czech Republic      |Prague              |     1227332|
+|England             |London              |     8174100|
+|United States       |Washington, DC      |      601723|
++--------------------+--------------------+------------+
+```
+
+. Use the `SUM()` function to find the total population of all the cities in 2020.
++
+[source,sql]
+----
+SELECT SUM(population2020.this) AS total_population
+FROM population2020;
+----
++  
+You should see the following:
++
+```
++--------------------+
+|    total_population|
++--------------------+
+|            16052892|
++--------------------+
+```
+
+. Filter for cities that had a population of more than 1,000,000 in 2020.
++
+[source,sql]
+----
+SELECT population2020.__key AS large_cities
+FROM population2020
+GROUP BY population2020.__key HAVING SUM(population2020.this) > 1000000;
+----
++
+```
++--------------------+
+|large_cities        |
++--------------------+
+|Prague              |
+|London              |
+|Ankara              |
++--------------------+
+```
++
+The `HAVING` clause allows you to filter aggregations like you would with the `WHERE` clause for non-aggregated queries.
+
+== Next Steps
+
+Build an application with one of our clients:
+
+- xref:java-client.adoc[Java]
+- xref:nodejs-client.adoc[Node.js] 
+- xref:net-client.adoc[.NET]
+- xref:python-client.adoc[Python]
+- xref:go-client.adoc[Go]
+
+Find out more about the statements used in this tutorial:
+
+- xref:hazelcast:sql:create-mapping.adoc[]
+- xref:hazelcast:sql:select.adoc[]
+- xref:hazelcast:sql:expressions.adoc[].
+
+Explore xref:hazelcast:sql:sql-statements.adoc[all available SQL statements].
