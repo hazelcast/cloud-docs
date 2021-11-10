@@ -1,4 +1,4 @@
-= Getting Started with Hazelcast Cloud
+= Create a Hazelcast Cloud Cluster
 :url-cloud-sign-up: https://cloud.hazelcast.com/sign-up
 :url-cloud-sign-in: https://cloud.hazelcast.com/sign-in
 :description: It's free to create an account on Hazelcast Cloud and get started with a free cluster.
@@ -11,7 +11,7 @@ To set up a free cluster, you need to do the following:
 . Create a cluster on the Basic plan
 . Add data to your cluster
 
-== 1. Create a Hazelcast Cloud Account
+== Step 1. Create a Hazelcast Cloud Account
 
 . Go to link:{url-cloud-sign-up}[] and enter your details.
 +
@@ -23,7 +23,7 @@ A confirmation will be sent to the provided email address. After confirming your
 - Your GitHub account
 - Your Google account
 
-== 2. Create a Cluster on the Basic Plan
+== Step 2. Create a Cluster on the Basic Plan
 
 . Click the *+ New Cluster* button in the top-left corner.
 
@@ -45,32 +45,16 @@ image:cluster-dash.gif[Cluster Metrics]
 
 Now, you have a running cluster, but it is empty. You can add data to the cluster, using a Hazelcast client application.
 
-== 3. Add Data to your Cluster
-  
-. Click the *Configure Clients* button.
-+
-image:configure-client.png[Configure Clients button]
-
-. Choose the client language that you want to use and follow the on-screen instructions.
-+
-These instructions show you how to download and run a client application that inserts random entries into maps on your cluster. After 5-10 seconds, exit the application, using *Ctrl+C*.
-
-. Scroll down to Map Metrics and select the map called `map`.
-+
-image:map-metrics.png[Map Metrics]
-
-You should see all the metrics for this map, including how many entries were added to it.
-
 == Next Steps
 
-Find more information about using this client code:
+Connect to your cluster, using one of the following clients:
 
-- xref:java-client.adoc[Java Client]
-- xref:net-client.adoc[.NET Client]
-- xref:nodejs-client.adoc[Node.js Client] 
-- xref:python-client.adoc[Python Client]
-- xref:go-client.adoc[Go Client]
+- xref:java-client.adoc[Java]
+- xref:net-client.adoc[.NET]
+- xref:nodejs-client.adoc[Node.js] 
+- xref:python-client.adoc[Python]
+- xref:go-client.adoc[Go]
 
 See a link:{page-plans}[feature comparison of all cluster plans].
 
-Set up a xref:create-standard-cluster.adoc[Standard cluster] or an xref:create-enterprise-cluster.adoc[Enterprise cluster].
+Upgrade to a xref:create-standard-cluster.adoc[Standard] or xref:create-enterprise-cluster.adoc[Enterprise cluster].
