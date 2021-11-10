@@ -9,7 +9,7 @@
 
 == Download and Run the Sample Code
 
-. Click *Configure Clients*.
+. Click *Configure Client*.
 
 . Go to the *Node.js* tab and download the ZIP file as instructed in Step 1 of the dialog box.
 

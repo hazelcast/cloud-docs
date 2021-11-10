@@ -8,7 +8,7 @@
 
 == Download and Run the Sample Code
 
-. Click *Configure Clients*.
+. Click *Configure Client*.
 
 . Download the ZIP file as instructed in Step 1 of the dialog box.
 
