@@ -1,6 +1,6 @@
 name: cloud
 title: Cloud
-start_page: sql.adoc
+start_page: preface.adoc
 version: master
 asciidoc:
   attributes:

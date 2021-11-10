@@ -1,21 +1,9 @@
-.Quickstart
-** xref:sql.adoc[]
-
 .Get Started
 ** xref:preface.adoc[]
+** xref:getting-started.adoc[]
 ** xref:architecture.adoc[]
 ** xref:use-cases.adoc[]
 ** xref:pricing.adoc[]
-** xref:getting-started.adoc[]
-** Connect a Client
-*** xref:java-client.adoc[Java]
-*** xref:nodejs-client.adoc[Node.js]
-*** xref:python-client.adoc[Python]
-*** xref:go-client.adoc[Go]
-*** xref:net-client.adoc[C#]
-*** xref:cpp-client.adoc[C++]
-*** xref:sql.adoc[SQL]
-** https://github.com/hazelcast/hazelcast-cloud-code-samples[Code Samples]
 
 .Account Management
 ** xref:account-security.adoc[]
@@ -64,6 +52,15 @@
 ** xref:multimap.adoc[]
 ** xref:ringbuffer.adoc[]
 ** xref:reliable-topic.adoc[]
+
+.Client Code
+** xref:java-client.adoc[]
+** xref:nodejs-client.adoc[]
+** xref:python-client.adoc[]
+** xref:go-client.adoc[]
+** xref:net-client.adoc[]
+** xref:cpp-client.adoc[]
+** https://github.com/hazelcast/hazelcast-cloud-code-samples[Code Samples]
 
 .Tutorials
 ** xref:shipping-logs-to-amazon-elasticsearch-service.adoc[]

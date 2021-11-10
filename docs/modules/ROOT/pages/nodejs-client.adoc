@@ -1,15 +1,17 @@
 = Node.js Client
 :url-github-nodejs: https://github.com/hazelcast/hazelcast-nodejs-client#configuration
 
-== Before you Begin
+== Quick Setup
 
-. link:https://cloud.hazelcast.com/sign-up[Sign up for a Hazelcast Cloud account].
+Follow the below instructions to connect a Node.js client to your cluster.
 
-. Create a free cluster on the Basic plan. For help creating a cluster, see xref:getting-started.adoc[].
+. xref:create-standard-cluster.adoc[Create a cluster].
++
+The cluster's state will be *Pending* while the cluster is provisioned.
++
+image:create-cluster-pending.png[A cluster being created]
 
-== Download and Run the Sample Code
-
-. Click *Configure Clients*.
+. When the cluster's state changes to *Running*, click *Configure Client*.
 
 . Go to the *Node.js* tab and download the ZIP file as instructed in Step 1 of the dialog box.
 
