@@ -1,5 +1,5 @@
 = Support
-:url-zendesk-hazelcast: https://hazelcast.zendesk.com/
+:url-zendesk-hazelcast: https://support.hazelcast.com
 
 Hazelcast Cloud has different support options depending on your requirements. Here are the support levels:
 
@@ -9,7 +9,7 @@ Standard support is available for all users with Standard or Enterprise clusters
 
 *Coverage:* 24 hours a day, 7 days a week, 365 days a year
 
-*Support Channel:* link:{url-zendesk-hazelcast}[ZenDesk]
+*Support Channel:* link:{url-zendesk-hazelcast}[Hazelcast Support]
 
 *Our Response Times:*
 
@@ -21,7 +21,7 @@ If you're interested in Enterprise support, contact us at mailto:sales@hazelcast
 
 *Coverage:* 24 hours a day, 7 days a week, 365 days a year
 
-*Support Channels:* link:{url-zendesk-hazelcast}[ZenDesk], Emergency Telephone Number
+*Support Channels:* link:{url-zendesk-hazelcast}[Hazelcast Support], Emergency Telephone Number
 
 *Our Response Times:*
 
