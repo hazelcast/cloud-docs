@@ -2,6 +2,16 @@
 :url-cloud-cli-announcement: https://hazelcast.com/blog/announcing-hazelcast-cloud-cli/
 :url-cloud-sdk-announcement: https://hazelcast.com/blog/announcing-hazelcast-cloud-go-sdk/
 
+
+
+== December 3, 2021 - v3.2.0
+
+- A release focused on service quality, security and performance. Many enhancements and improvements under the hood of Hazelcast Cloud.
+
+- UI for configuring the data structures extended with contextual help to help you navigate through the config options.
+
+- We added a feedback form as another channel for your product improvement inputs. Do you prefer a live chat? Please join us at [Hazelcast Community Slack](https://slack.hazelcast.com/)!
+
 == October 4, 2021 - v3.1.0
 
 *New Features:*
