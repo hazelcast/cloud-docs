@@ -10,8 +10,6 @@
 
 - UI for configuring the data structures extended with a contextual help to help you navigate through the config options.
 
-- We added a feedback form as another channel for your product improvement inputs. Do you prefer a live chat? Please join us at [Hazelcast Community Slack](https://slack.hazelcast.com/)!
-
 == October 4, 2021 - v3.1.0
 
 *New Features:*
