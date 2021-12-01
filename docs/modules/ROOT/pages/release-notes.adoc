@@ -6,9 +6,9 @@
 
 == December 3, 2021 - v3.2.0
 
-- A release focused on service quality, security and performance. Many enhancements and improvements under the hood of Hazelcast Cloud.
+- A release focused on a service quality, security and performance. It brings many enhancements and improvements under the hood of Hazelcast Cloud.
 
-- UI for configuring the data structures extended with contextual help to help you navigate through the config options.
+- UI for configuring the data structures extended with a contextual help to help you navigate through the config options.
 
 - We added a feedback form as another channel for your product improvement inputs. Do you prefer a live chat? Please join us at [Hazelcast Community Slack](https://slack.hazelcast.com/)!
 
