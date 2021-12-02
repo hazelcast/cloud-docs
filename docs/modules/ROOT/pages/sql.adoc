@@ -49,7 +49,7 @@ NOTE: Don't enable encryption on your cluster. At the moment, you can't connect 
 
 . Click *Connect your Application* and open the *SQL* tab.
 
-. Download and extract the client configuration file.
+. Download and unzip the client configuration file.
 +
 This file contains the credentials that allow the CLI to connect to your Hazelcast Cloud cluster:
 +
@@ -71,9 +71,9 @@ hazelcast-client:
 
 . Make a note of where you extracted the client configuration file.
 
-. To install the Hazelcast CLI client, use one of the following methods, depending on your operating system.
+. Install the Hazelcast CLI client. Use one of the following methods, depending on your operating system.
 +
-The CLI client may appear quite large because it is packaged with the full distribution of Hazelcast, Management Center, and a JDK. We are working on a new CLI client that will be more lightweight.
+NOTE: The CLI client may appear quite large because it is packaged with the full distribution of Hazelcast, Management Center, and a JDK. We are working on a new CLI client that will be more lightweight.
 +
 [tabs] 
 ==== 
@@ -117,7 +117,7 @@ Windows::
 --
 At the moment, Hazelcast does not support any Windows package managers.
 
-The easiest way to use the CLI on Windows it to install the Hazelcast Docker image. The Docker container comes with the `hz-cli` client. See xref:hazelcast:getting-started:install-hazelcast.adoc[]
+The easiest way to use the CLI on Windows is to install the Hazelcast Docker image. The Docker container comes with the `hz-cli` client. See xref:hazelcast:getting-started:install-hazelcast.adoc[]
 --
 ====
 
@@ -128,7 +128,7 @@ The easiest way to use the CLI on Windows it to install the Hazelcast Docker ima
 hz-cli -V
 ----
 +
-You should see your installed versions of the CLI client.
+You should see your installed version of the CLI client.
 
 == Step 3. Connect to the SQL Shell
 
