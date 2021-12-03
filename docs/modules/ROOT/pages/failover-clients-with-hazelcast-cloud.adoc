@@ -19,7 +19,7 @@ In order to do that you should have the following:
 - Discovery Token
 - Password
 
-You can get this information from a Popup that opens when you click the *Configure Clients* button on the Cluster Details page.
+You can get this information from a Popup that opens when you click the *Configure Client* button on the Cluster Details page.
 
 image:java-client-setup.png[Instructions for setting up a Java client]
 
