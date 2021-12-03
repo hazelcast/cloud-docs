@@ -2,6 +2,16 @@
 :url-cloud-cli-announcement: https://hazelcast.com/blog/announcing-hazelcast-cloud-cli/
 :url-cloud-sdk-announcement: https://hazelcast.com/blog/announcing-hazelcast-cloud-go-sdk/
 
+== December 3, 2021 - v3.3.0
+
+*New Features:*
+
+- Support for Hazelcast Platform 5.0. xref:ROOT:sql.adoc[Try the new SQL features].
+
+- Contextual help to guide you through the process of configuring data structures.
+
+- Lots of backend improvements to our service quality, security, and performance.
+
 == October 4, 2021 - v3.1.0
 
 *New Features:*
