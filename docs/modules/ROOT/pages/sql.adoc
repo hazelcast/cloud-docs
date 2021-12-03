@@ -180,7 +180,7 @@ INSERT INTO cities VALUES
 +
 The first argument of the `VALUES` command is the key of the map entry and the second argument is the value.
 
-== [[ad-hoc]]Step 2. Run Ad-Hoc Queries
+== [[ad-hoc]]Step 5. Run Ad-Hoc Queries
 
 . Use the `SELECT` statement to query all data in the map.
 +
