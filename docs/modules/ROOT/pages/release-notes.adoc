@@ -2,6 +2,18 @@
 :url-cloud-cli-announcement: https://hazelcast.com/blog/announcing-hazelcast-cloud-cli/
 :url-cloud-sdk-announcement: https://hazelcast.com/blog/announcing-hazelcast-cloud-go-sdk/
 
+== January 20, 2022 - v3.4.0
+
+*New Features:*
+
+- Introducing SQL for Python and Node.js. xref:ROOT:sql.adoc[Try the new SQL features] from your Python and Node.js apps.
+
+- Lots of improvements in the UI.
+
+- Improved Hazelcast 5 support. Hazelcast Cloud now runs on the latest 5.0.2 version. 
+
+- You can no longer create Hazelcast 3 clusters in the Cloud as they reached the end of support. Existing clusters are unaffected.
+
 == December 3, 2021 - v3.3.0
 
 *New Features:*
