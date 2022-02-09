@@ -2,6 +2,22 @@
 :url-cloud-cli-announcement: https://hazelcast.com/blog/announcing-hazelcast-cloud-cli/
 :url-cloud-sdk-announcement: https://hazelcast.com/blog/announcing-hazelcast-cloud-go-sdk/
 
+== February 10, 2022 - v3.5.0
+
+*New Features:*
+
+- Introducing a support for C++ apps. Follow the code sample, connect your C++ app to the cloud and use latest features of Hazeclast!
+
+- Introducing a new compact design for the page with your clusters. 
+
+*Fixes:*
+
+- Fixed issue with resuming multi-zone AWS clusters.
+
+- Fixed UI issues with map configuration.
+
+- Fixed issue with syncing custom classes among cluster members.
+
 == January 20, 2022 - v3.4.0
 
 *New Features:*
