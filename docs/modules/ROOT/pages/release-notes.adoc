@@ -6,7 +6,7 @@
 
 *New Features:*
 
-- Introducing a support for C++ apps. Follow the code sample, connect your C++ app to the cloud and use latest features of Hazeclast!
+- Introducing a support for C\++ apps. Follow the code sample, connect your C\++ app to the cloud and use latest features of Hazelcast!
 
 - Introducing a new compact design for the page with your clusters. 
 
