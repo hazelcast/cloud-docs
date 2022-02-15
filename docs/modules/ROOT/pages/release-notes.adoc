@@ -6,9 +6,9 @@
 
 *New Features:*
 
-- Introducing a support for C\++ apps. Follow the code sample, connect your C\++ app to the cloud and use latest features of Hazelcast!
+- Support for C++ apps. Follow our xref:cpp-client.adoc[tutorial] to connect your C++ app to the cloud, and use the latest features of Hazelcast!
 
-- Introducing a new compact design for the page with your clusters. 
+- A new compact design for the cluster page. 
 
 *Fixes:*
 
