@@ -2,6 +2,17 @@
 :url-cloud-cli-announcement: https://hazelcast.com/blog/announcing-hazelcast-cloud-cli/
 :url-cloud-sdk-announcement: https://hazelcast.com/blog/announcing-hazelcast-cloud-go-sdk/
 
+== March 25, 2022 - v3.6.0
+
+*New Features:*
+
+This release introduces Hazelcast 5.1 and the improvements to SQL:
+
+- SQL support for aggregating streams into tumbling and hopping windows, sometimes known as sliding windows.  This then gives you the ability to run functions and aggregations such as sum or count that is snapped to a time window.
+- Ability to create views, create indexes and run troubleshooting explain plans.
+- union, union all, right join, exists and not exists.  
+- JSON records with nested fields can be indexed and queried
+
 == February 10, 2022 - v3.5.0
 
 *New Features:*
