@@ -1,0 +1,33 @@
+= Connecting to a Hazelcast Cloud Cluster
+:description: To communicate with a cluster in Hazelcast Cloud, you need a client. Hazelcast offers client libraries in a variety of languages as well as a SQL interface for interacting with the cluster in SQL. To use a client, you need to authenticate it with the correct credentials.
+
+{description}
+
+== Before you Begin
+
+If your cluster is running in a private instance of Hazelcast Dedicated, you need to xref:vpc-peering.adoc[set up a peering connection to the cluster].
+
+== Authenticating a Client
+
+To authenticate a client, you must configure it with the following details. To find these details, click *Connect your Application* in the Hazelcast Cloud console.
+
+- *Cluster name:* A unique name that is given to your cluster. This is not the name that you chose when you created the cluster.
+- *Discovery token:* A unique token that is used to 
+- *TLS authentication:* Files and passwords to authenticate the client over TLS.
+** Keystore file
+** Keystore password
+** Truststore file
+** Truststore password
+
+You can configure these details, using either a client library API or a client configuration file.
+
+For an example of using a client library API, see one of the following hello world tutorials:
+
+* xref:java-client.adoc[Java]
+* xref:nodejs-client.adoc[Node.js]
+* xref:python-client.adoc[Python]
+* xref:go-client.adoc[Go]
+* xref:net-client.adoc[C#]
+* xref:cpp-client.adoc[C++]
+
+For an example of using a configuration file, see the xref:sql.adoc[SQL tutorial].

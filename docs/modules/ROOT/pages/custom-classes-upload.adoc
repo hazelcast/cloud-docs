@@ -1,46 +1,50 @@
-= Uploading Custom Classes
-:description: To store and query custom objects, those objects' classes must be on the classpath of your cluster members. In Hazelcast Cloud, you can upload custom classes by dragging and dropping files in the UI.
+= Deploying Cluster-Side Modules to Hazelcast Cloud
+:description: Before Hazelcast Cloud can execute or store your xref:cluster-side-modules.adoc[cluster-side modules], they need to be packaged into a single file and uploaded to Hazelcast Cloud. You can upload cluster-side modules, using the Hazelcast Cloud console, or the Maven plugin.
 
 {description}
 
-You may need to upload custom Java classes in the following situations:
-
-. You have objects that run on the cluster via clients such as `Runnable`, `Callable` and entry processors.
-. You have new or amended user domain objects
-. You have your own `MapLoader` or `MapStore` implementations.
-
 == Before you Begin
 
-You need a cluster that has at least two members (nodes).
+Check the xref:cluster-side-modules.adoc#prereqs, [requirements and limitations] to make sure that your code is ready to be packaged.
 
-WARNING: Custom classes are uploaded onto clusters by using rolling restart, which relies on shutting down each member one at a time. As a result, your cluster may lose all its data if it consists of a single member.
+[[package]]
+== Uploading Cluster-Side Modules
 
-Your files must be in either `zip` or `jar` format and the maximum file size is 500 MB.
+Hazelcast Cloud expects all classes of cluster-side modules to be packaged into a single ZIP or JAR file. When you’ve built and packaged your cluster-side modules, the final step is to upload the resulting package file to Hazelcast Cloud.
 
-Uploaded classes are restricted by a limited set of JSP permissions. If you need your uploaded code to be granted any additional permissions, link:https://hazelcast.zendesk.com/hc/en-us/signin?return_to=https%3A%2F%2Fhazelcast.zendesk.com%2Fhc%2Fen-us%2Frequests%2Fnew[create a support ticket] for it.
+[tabs]
+====
+Maven plugin:: 
++ 
+--
+[.serverless]*Serverless*
 
-To upload custom classes onto a team's cluster, you must have either an admin or developer role. See xref:teams-and-users.adoc[].
+. xref:maven-plugin.adoc[Configure the Hazelcast Cloud Maven plugin] in your `pom.xml` file.
 
-== Uploading Files
+. Change into your project's root directory.
 
-To upload JAR files with custom classes, click *Upload Custom Classes*.
+. Execute the `deploy` goal to package your project into a JAR file and upload it to the configured cluster.
 
-image:upload-custom-classes.png[Upload custom classes to an existing cluster]
+In the output, you should see that the plugin packaged and deployed your JAR to your Hazelcast Serverless cluster.
+--
 
-Once you click on it, the following dialog appears where you can drag your file to or select it using the `browse` link:
+Hazelcast Cloud console:: 
++ 
+--
+You must have either an xref:teams-and-users.adoc[admin or developer role] to upload code to Hazelcast Cloud.
 
-image:drag-and-drop-classes.png[Drag and drop custom classes]
+. Use your build tool such as Gradle or Maven to package the classes into a JAR or ZIP file.
 
-Once the upload is successfully finished and the progress indicator disappeared, the custom classes are deployed and ready to use:
+. Go to *Upload Custom Classes* and use the file selector to upload the file to Hazelcast Cloud.
 
-image:upload-classes-success.png[Successful upload of custom classes]
+When the file is uploaded and ready to use, you will see a success message.
+--
+====
 
-== Removing Files
+== Removing Cluster-Side Modules
 
-To remove custom classes from the cluster, click *Upload Custom Classes*, find your class in the list and click on the delete icon next to it.
+To remove cluster-side modules from the cluster, click *Upload Custom Classes*, find your class in the list and click on the delete icon next to it.
 
-image:remove-custom-classes.png[Remove a custom class from a cluster]
+== Downloading Cluster-Side Modules
 
-== Downloading Files
-
-All filenames are downloadable links. You can download your uploaded class files by clicking on their names in the modal window.
+To download a cluster-side module, click *Upload Custom Classes*, find your class in the *Uploaded Classes* list and click on it.

@@ -1,0 +1,279 @@
+= Use Hazelcast Serverless as a Write-Through Cache with MongoDB
+:description: In this tutorial, you'll build an application that writes changes made to a map in Hazelcast Serverless back to MongoDB.
+:github-directory: https://github.com/hazelcast/hazelcast-cloud-code-samples/tree/serverless-mvp-uat/mapstore/mapstore-sample-hazelcast5-mongodb
+:page-serverless: true
+
+{description}
+
+== Context
+
+When you build a write-behind or write-through cache, you are responsible for maintaining data integrity. On every write request, the data needs to be updated both in the cache and in the backend data source. You can use the link:https://docs.hazelcast.org/docs/latest/javadoc/com/hazelcast/map/MapStore.html[`MapStore` API] to make sure that when applications write data to a map in Hazelcast Cloud (the cache), Hazelcast also updates the records in the database as well.
+
+image:maploader.png[A MapStore connecting a database to a Hazelcast Cluster]
+
+In this tutorial, you'll deploy the following to Hazelcast Cloud:
+
+- A MapStore that connects to a MongoDB database.
+- A `Person` class that you will use to write `Person` objects to a map.
+
+You'll use SQL to write new `Person` objects to a map, at which point the MapStore will replicate those objects to the MongoDB database. 
+
+TIP: The code in this tutorial is available as a link:{github-directory}[sample app on GitHub].
+
+== Before you Begin
+
+. xref:create-cluster.adoc[Create a Serverless cluster].
+
+. Install the following tools:
++
+- link:https://git-scm.com/book/en/v2/Getting-Started-Installing-Git[Git]
+- link:https://maven.apache.org/install.html[Maven]
+
+. Make sure that you have JDK 8, 9, or 11 installed.
+
+[[step-one]]
+== Step 1. Create a MongoDB Atlas Database
+
+You need a database that Hazelcast Cloud can connect to and store your data in. MongoDB Atlas is a multi-cloud database service that's quick, free, and easy to set up without any payment details.
+
+If you already have a MongoDB database that is accessible to the Internet, you can <<step-two, skip this step>>.
+
+. link:https://account.mongodb.com/account/register[Sign up to a MongoDB Atlas account] if you don't have one already.
+
+. Create an organization and a new project inside that organization.
+
+. Click *Build a Database* and select the free *Shared* option.
+
+. Select the *AWS* cloud provider and the region that's closest to the one that you chose when you created your Hazelcast Serverless cluster. The closer the database is to Hazelcast Serverless, the faster the connection.
+
+. Leave the other options as the defaults and click *Create Cluster*.
+
+. Enter a username and password for your database and click *Create User*.
++
+TIP: Make a note of these credentials because you will need to give them to Hazelcast Serverless later.
+
+. Go to *Database* in the left navigation under *Deployment*.
+
+. Go to the *Collections* tab, click *Add My Own Data*, and create a database called *Hazelcast* with a collection called *person*.
++
+Hazelcast Cloud will store your data in this *person* collection.
++
+image:mongo-db-atlas-setup.gif[Set up a database on MongoDB]
+
+. Go to *Network Access* in the left navigation under *Security*, and click *Add IP Address*.
+
+. Select *Allow Access From Anywhere* and click *Confirm*.
+
+Now your database is ready. Hazelcast Cloud will be able to connect to it and write data to your collection.
+
+[[step-two]]
+== Step 2. Clone the Sample Project
+
+All the code for this project is available on GitHub. In this step, you'll clone the project and learn how it works.
+
+Clone the GitHub repository and checkout the `serverless-mvp-uat` branch.
+
+[tabs] 
+====
+HTTPS:: 
++ 
+--
+```bash
+git clone https://github.com/hazelcast/hazelcast-cloud-code-samples.git
+
+cd hazelcast-cloud-code-samples
+
+git checkout serverless-mvp-uat
+```
+--
+SSH:: 
++ 
+--
+```bash
+git clone git@github.com:hazelcast/hazelcast-cloud-code-samples.git
+
+cd hazelcast-cloud-code-samples
+
+git checkout serverless-mvp-uat
+```
+--
+====
+
+The sample code for this tutorial is in the link:{github-directory}[`hazelcast-cloud-code-samples/mapstore/mapstore-sample-hazelcast5-mongodb`] directory:
+
+.`Person.java`
+[%collapsible]
+====
+This class is for the objects that you will store in a Hazelcast map and that will be replicated to MongoDB.
+
+The `Person` class uses the Java `Serializable` interface as a serializer so that Hazelcast can send it to clients and other members as well as deserialize it. 
+
+To allow you to query the object fields with SQL, the fields include getters and setters. Although, you could also make the fields public.
+
+[source,java]
+----
+include::mapstore-sample:example$src/main/java/sample/com/hazelcast/cloud/mapstore5/mongo/Person.java[tag=class]
+----
+
+link:{github-directory}/src/main/java/sample/com/hazelcast/cloud/mapstore5/mongo/Person.java[View source]
+====
+
+.`MongoPersonRepository.java`
+[%collapsible]
+====
+This class declares methods for interacting with the MongoDB database, using the MongoDB Java driver. These methods are invoked by the MapStore, which is defined in the `MongoPersonMapStore.java` file.
+
+[source,java]
+----
+include::mapstore-sample:example$src/main/java/sample/com/hazelcast/cloud/mapstore5/mongo/MongoPersonRepository.java[tag=class]
+----
+
+link:{github-directory}/src/main/java/sample/com/hazelcast/cloud/mapstore5/mongo/MongoPersonRepository.java[View source]
+====
+
+.`MongoPersonMapStore.java`
+[%collapsible]
+====
+This class declares the trigger methods for the MapStore that will work with a map that has integer keys and `Person` object values.
+
+The class implements the `MapLoaderLifecycleSupport` interface to manage the connection to the database, using the `init()` and `destroy()` methods.
+
+The `init()` method reads the database connection credentials from the Java properties. You'll provide these in Hazelcast Cloud when you configure the MapStore.
+
+[source,java]
+----
+include::mapstore-sample:example$src/main/java/sample/com/hazelcast/cloud/mapstore5/mongo/MongoPersonMapStore.java[tag=class]
+----
+
+link:{github-directory}/src/main/java/sample/com/hazelcast/cloud/mapstore5/mongo/MongoPersonMapStore.java[View source]
+====
+
+[[step-three]]
+== Step 3. Deploy the Classes to the Cluster
+
+In this step, you'll use the xref:maven-plugin.adoc[Hazelcast Cloud Maven plugin] to package the project into a single JAR file and upload that file to Hazelcast Serverless.
+
+. Open the `pom.xml` file in the `hazelcast-cloud-code-samples` directory.
+
+. Configure the Maven plugin with values for the following elements:
++
+[cols="1a,1a"]
+|===
+|Element|Where to find the value
+
+|`<clusterName>`
+|Go to *Connect your Application*. The cluster name is listed in a table at the bottom of the modal window.
+
+|`<apiKey>` and `<apiSecret>`
+|
+include::developer.adoc[tag=create]
+
+|===
++
+[source,xml,indent=0]
+----
+include::mapstore-sample:example$pom.xml[tag=maven-plugin]
+----
+
+. Execute the following goal of the Maven plugin to package the project into a JAR file and deploy that file to your Hazelcast Serverless cluster:
++
+```bash
+mvn clean package hazelcast-cloud:deploy
+```
+
+You should see that the file was uploaded and is ready to be used.
+
+image:maven-deploy.gif[Deployment success message in a command prompt]
+
+[[step-four]]
+== Step 4. Configure the MapStore
+
+To use a MapStore, it must be configured for a specific map in Hazelcast Serverless. When a map is configured with a MapStore, Hazelcast plugs the MapStore implementation into the lifecycle of the map so that the MapStore is triggered when certain map operations are invoked.
+
+. Go to *Data Structure Config* > *Add New Configuration* in Hazelcast Cloud.
+. Enter *person* in the *Map Name* field.
+. In the bottom left corner, select *Enable MapStore*.
+. Select the *sample.com.hazelcast.cloud.mapstore5.mongo.MongoPersonMapStore* classname from the dropdown. If you don't see a classname, you need to <<step-three, deploy the MapStore to your Hazelcast Serverless cluster>>.
+. Leave the *Write Delay Seconds* field set to 0 to configure a write-through cache.
++
+In this configuration, when you add new entries to the *person* map, Hazelcast will invoke the MapStore's `store()` method before adding the entry to the map.
+. In the *Properties* section, enter the following.
++
+Hazelcast encrypts these properties to keep them safe.
++
+[cols="1s,2a"]
+|===
+|Name|Value
+
+|uri
+| Your MongoDB connection string. Replace the *<username>* and *<password>* placeholder with the username and password that you created in <<step-one, step 1>>.
+
+```
+mongodb+srv://<username>:<password>@cluster0.51w1h.mongodb.net/Hazelcast?retryWrites=true&w=majority
+```
+
+|database
+| The name of the database that you created in <<step-one, step 1>>.
+
+```
+Hazelcast
+```
+
+|===
+. Click *Save Configuration*.
+
+== Step 5. Test the MapStore
+
+To test that the MapStore is working, you need to create a map, add some entries to it, and check that those entries are replicated to your MongoDB database.
+
+. Go to *Manage Cluster* > *Management Center* in Hazelcast Cloud.
+
+. Click *SQL Browser* in the toolbar at the top of the page.
+
+. Execute the following queries to set up a connection to the map and add an entry to it.
++
+```sql
+CREATE MAPPING person
+TYPE IMap
+OPTIONS (
+    'keyFormat' = 'int',
+    'valueFormat' = 'java',
+    'valueJavaClass' = 'sample.com.hazelcast.cloud.mapstore5.mongo.Person')
+```
++
+```sql
+INSERT INTO person VALUES (
+  1, 1, 'Cahill', 'Jake'
+);
+```
+
+. Open your database in MongoDB Atlas and click on the *person* collection.
++
+You should see that the collection has a new document, which contains the same data as the map entry you added to the map in Hazelcast Serverless.
++
+image:mongodb-person.png[A person]
+
+If your test fails, do the following:
+
+. xref:custom-classes-upload.adoc[Remove the MapStore class] from Hazelcast Cloud.
+. Update the MapStore implementation or the configuration and start the process again.
+
+== Summary
+
+In this tutorial, you learned how to do the following:
+
+- Use a Mapstore to write changes made in Hazelcast Cloud back to an external database.
+- Deploy the MapStore to a Hazelcast Cloud cluster, using the Hazelcast Cloud Maven plugin.
+- Trigger the MapStore by adding data to a map, using SQL. 
+
+== Learn More
+
+Use these resources to continue learning:
+
+- xref:maploader-and-mapstore.adoc[].
+
+- xref:cluster-side-modules.adoc[].
+
+- xref:custom-classes-upload.adoc[].
+
+- xref:maven-plugin.adoc[]
