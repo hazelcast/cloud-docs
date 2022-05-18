@@ -217,7 +217,7 @@
 - Connection via xref:aws-private-link.adoc[AWS Private Link]
 - Replication to multiple xref:availability-zones.adoc[Availability Zones].
 - xref:scale-up-down.adoc[Scale Up / Down] for Clusters
-- TLS xref:encryption.adoc[Encryption] for the data in transit.
+- TLS encryption for the data in transit.
 - xref:logging-integration.adoc[Logging integration].
 - xref:custom-classes-upload.adoc[Custom Classes upload] to support user defined objects.
 - Support for all the Hazelcast data structures.

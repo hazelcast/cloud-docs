@@ -1,10 +1,10 @@
-= Logging Integration
+= Logging Integrations for Hazelcast Dedicated
+:description: Hazelcast Dedicated allows to integrate your own log management system. With the correct setup, all Hazelcast members send their logs to the configured remote logging integration.
+:page-dedicated: true
 
-Hazelcast Cloud Enterprise allows to integrate your own log management system. With the correct setup, all Hazelcast members send their logs to the configured remote logging solution.
+{description}
 
-== Before you Begin
-
-Your cluster must be on the link:{page-plans}[Enterprise plan] to use this feature.
+NOTE: For Hazelcast Serverless, the Maven plugin will allow you stream cluster logs back to your local environment. This feature is in development. 
 
 == Supported Log Management Systems
 
@@ -19,17 +19,11 @@ See our tutorial on xref:shipping-logs-to-amazon-elasticsearch-service.adoc[Ship
 
 To set up the logging integration, click on the *Manage Cluster* button in the cluster details page (Hazelcast Cloud console) and select *Settings*. Go to the *Logging* tab of the appeared 'UPDATE CLUSTER' dialog.
 
-image:logging-tab.png[Logging tab in the cluster settings]
-
 Select the desired solution in the *Logging Technology* dropdown menu and provide the access parameters. Below is a sample screenshot when "ELK" is selected.
-
-image:logging-tech.png[Creating a logging integration]
 
 Click on the *Create Logging Integration* button. You should receive the Hazelcast member logs in your preferred log management system.
 
 You can always remove the defined logging integrations by first clicking on the *Manage Cluster* button in the cluster details page, selecting *Settings* and navigating to the *Logging* tab of the appeared 'UPDATE CLUSTER' dialog.
-
-image:delete-logging.png[Deleting a logging integration]
 
 Click on the *Delete Logging Integration* and the Hazelcast member logs are no longer sent out.
 

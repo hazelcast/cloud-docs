@@ -1,10 +1,9 @@
-= Architecture
+= Hazelcast Dedicated Architecture
 
 image:architecture.png[Cloud architecture]
 
-- Hazelcast Cloud is designed for Cloud Native applications.
-- It will support hybrid clouds. You can have different clusters and applications running on different cloud providers.
-- Hazelcast Cloud is built on containerization and orchestration technologies: Docker and Kubernetes.
+- Designed for Cloud Native applications.
+- Built on containerization and orchestration technologies: Docker and Kubernetes.
 - Minimal Docker images are used for the sake of simplicity and security. 
 - User clusters are isolated from each other on the orchestration level.
 - Resources (memory, CPU) are limited on the container level, so resource stealing is prevented.
@@ -12,14 +11,14 @@ image:architecture.png[Cloud architecture]
 - All client endpoints to Kubernetes clusters and all endpoints to Hazelcast Cloud console are encrypted via TLS.
 - Authentication of Hazelcast Cloud console is performed via the JSON Web Token (JWT) standard.
 - No one, including Hazelcast staff, has access to customer data inside the Hazelcast clusters.
-- Persistence is optional. When enabled, persistence is delivered using the Hazelcast Enterprise Hot Restart feature. Enabling persistence will cause a notable drop in the cluster throughput.
+- Persistence is optional. When enabled, persistence is delivered using the Hazelcast Enterprise Persistence feature. Enabling persistence will cause a notable drop in the cluster throughput.
 - Clusters can be upgraded via Rolling Upgrades without any downtime.
 - Internal server logs and some cluster metrics are aggregated to Prometheus. The Hazelcast operations team receives alerts in case of any unusual metrics or exception logs. This ensures issues are handled proactively before causing any instability to your users.
 - The overall system is periodically audited and tested by third-party security consultancies.
 
-== Hazelcast Cloud Enterprise components
+== Components
 
-Hazelcast Cloud Enterprise creates a subaccount for each customer. Under this subaccount, the following components are created in the given order when you create a cluster:
+Hazelcast Dedicated creates a subaccount for each customer. Under this subaccount, the following components are created in the given order when you create a cluster:
 
 - Virtual Private Cloud (VPC)
   * Kubernetes cluster
@@ -27,7 +26,7 @@ Hazelcast Cloud Enterprise creates a subaccount for each customer. Under this su
     ** Management Center for Hazelcast metrics
     ** Hazelcast cluster
 
-image:enterprise-architecture.png[Cloud Enterprise architecture]
+image:enterprise-architecture.png[Dedicated architecture]
 
 As you can see in the above schema, there are two types of access to the customer data plane (where the Hazelcast cluster is hosted): Hazelcast control plane and customer client applications.
 

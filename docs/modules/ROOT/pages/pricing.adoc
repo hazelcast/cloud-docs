@@ -11,32 +11,29 @@ Hazelcast Cloud has three plans.
 |===
 |Plan|Cost|Additional costs
 
-|Basic
-|Free
+|Serverless
+|Free to store up to 2GB
 |None
 
-| Standard
-|$0.10 per hour per GB
-|None
-
-|Enterprise
+|Dedicated
 |Depends on the size of the chosen cloud instance
 |<<additional-charges-for-enterprise-plans, Data transfer and snapshot storage>>
 |===
 
-== How the Cost is Calculated
+== Pricing for Serverless Clusters
 
-Cost is calculated based on your provisioned memory. If you create a cluster with 10 GB capacity but do not insert any entries into it, your cost will still be calculated according to 10 GB because this amount of memory was reserved for your use.
 
-== Shared vs Dedicated
+== Pricing for Dedicated Clusters
 
-On the *Your Clusters* page, clusters are categorized as either dedicated or shared.
+The cost of a dedicated cluster is calculated based on the following factors:
 
-Shared clusters are those on the Standard or Basic plans. These clusters are called _shared_ because they share cloud instances, but they are isolated in different Kubernetes deployments.
+- Provisioned memory: How many resources you asked for when we created the cluster for you.
+- Data transfer: The volume of data going into, out of, and within your clusters.
+- Snapshot storage: If you requested persistence for your data, this is the cost of storing your backups in cloud storage.
 
-Dedicated clusters are those on the Enterprise plan because they have their own dedicated cloud instances, and different clusters never share the same instance.
+=== Provisioned Memory
 
-== Example Charges for Standard Clusters
+Hazelcast charges you a fixed amount, depending on how much memory capacity is reserved for your cluster. If your cluster has 10 GB capacity but you do not use all that memory, you are still charged for the full 10 GB because this amount of memory was reserved for your use.
 
 This example shows the cost per month of three clusters that each have a different memory capacity and uptime:
 
@@ -63,19 +60,17 @@ This example shows the cost per month of three clusters that each have a differe
 
 In this scenario, the total cost for the month for all three clusters will be: $10.00 + $10.00 + $15.00 = $35.00
 
-== Additional Charges for Enterprise Plans
+Dedicated clusters also incur charges for data transfer costs and any snapshot storage costs.
 
-Clusters on the Enterprise plan incur additional charges for data transfer costs and any snapshot storage costs.
-
-=== Data Transfer Pricing
+=== Data Transfer
 
 Data transfer costs account for the volume of data going into, out of, and within your clusters.
 
 Your data transfer charges are aggregated over the month and added to your monthly bill.
 
-=== Snapshot Storage Pricing
+=== Snapshot Storage
 
-If you enable backup snapshots on a cluster, we store those snapshots in cloud storage, which comes with additional costs.
+If backup snapshots are enabled on your cluster, Hazelcast stores those snapshots in cloud storage, which comes with additional costs.
 
 Snapshot storage costs depend on the cloud providers cost of storing the backup snapshots in their object store such as S3 on AWS.
 
@@ -83,10 +78,8 @@ Snapshot storage costs depend on the cloud providers cost of storing the backup 
 
 Hazelcast offers custom pricing plans. To discuss a custom plan, contact us at mailto:sales@hazelcast.com[].
 
-== Next Steps
+== Related Resources
 
-Track your usage and current billing total by managing your billing and payment information.
+Track your usage and current billing total.
 
-You can track your month to date cost in the Billing & Payments page of Account top menu.
-
-image:billing-and-payments.png[Billing and Payments page of Hazelcast Cloud]
+Manage your billing and payment information.

@@ -1,31 +1,30 @@
-= Management Center
+= Management Center for Cloud
+:description: You can use Hazelcast Management Center to monitor your Hazelcast cluster. Hazelcast Management Center for Cloud provides view-only access so that you can get more useful insights about a cluster state, data structure metrics and other important aspects.
 
-Hazelcast Management Center enables you to monitor and manage your cluster members running Hazelcast. In addition to monitoring the overall state of your clusters, you can also analyze and browse your data structures in detail, update map configurations and take thread dumps from the members. You can run scripts (JavaScript, Groovy, etc.) and commands on your members with its scripting and console modules. See the xref:management-center:ROOT:index.adoc[official docs] to learn more.
+{description}
 
-Hazelcast Cloud Enterprise provides a metrics view-only access to the Management Center of your Hazelcast cluster so that you can get more useful insights about a cluster state, data structure metrics and other important aspects.
+Management Center is enabled for Hazelcast Serverless clusters, but disabled by default for Hazelcast Dedicated clusters.
 
-== Before you Begin
-
-Your cluster must be on the link:{page-plans}[Enterprise plan] to use this feature.
+To learn how to use Management Center, see the xref:management-center:ROOT:index.adoc[Management Center documentation].
 
 == Enabling Management Center
+[.dedicated]*Dedicated*
+
+To use Management Center in a Hazelcast Dedicated cluster, you need to enable it.
 
 . On the cluster details page, click *Management Center* button and select *Enable*.
+
+. Click *Enable Management Center*.
 +
-image:enable-mc.png[The Enable option is in the Management Center dropdown]
+Management Center is available only to a set of the whitelisted IP addresses, which is initially empty.
 
-. Then you need to click on the *Enable Management Center* checkbox in the appeared 'MANAGEMENT CENTER ACCESS' dialog. This exposes a metrics view-only login URL of the Management Center. It's available only to a set of the whitelisted IP addresses which is initially empty. Proceed by adding the direct IPs or use the CIDR notation.
+. Add the IP address that you want to authorize to access Management Center for your cluster. You can use direct IP addresses or CIDR notation.
+
+. Go to *Management Center* > *Open Management Center* on the cluster details page.
 +
-image:configure-mc-access.png[Add IP addresses of users who are authorized to view metrics in Management Center]
+If your IP address is included in the whitelist, you should see a metrics read-only view of Management Center.
 
-. Then, go back to the cluster details page, click on the *Management Center* button and select  *Open Management Center*.
-+
-image:open-mc.png[The Open Management Center option is in the Management Center dropdown]
+== Disabling Management Center
+[.dedicated]*Dedicated*
 
-If your IP address is included in the whitelist, you should be able to see a metrics read-only view of the Management Center:
-
-image:mc-read-view.png[Read-only view of metrics in the Management Center]
-
-To disable a metrics view-only access, again click on the *Management Center* button in the cluster details page and select *Configure Access* to uncheck the corresponding checkbox in the "MANAGEMENT CENTER ACCESS" dialog.
-
-Please note that in case of inactivity, the Management Center user session expires and you are redirected to the Hazelcast Cloud console of your cluster. You need to again click on the *Management Center* button and select *Open Management Center* to renew your access to a metrics read-only view.
+Go to *Management Center* > *Configure Access* and uncheck the checkbox.

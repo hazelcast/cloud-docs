@@ -1,0 +1,68 @@
+= Creating a Hazelcast Cloud Cluster
+:description: You can create a free Serverless cluster or contact us to create a Dedicated cluster.
+:page-aliases: create-starter-cluster.adoc, starter-clusters.adoc, create-standard-cluster.adoc, availability-zones.adoc, instance-types.adoc, enterprise-clusters.adoc, create-enterprise-cluster.adoc
+
+{description}
+
+To create a cluster for a team, you must have either an xref:create-account.adoc#roles[admin or developer role].
+
+== Before you Begin
+
+You need a xref:create-account.adoc[Hazelcast Cloud account].
+
+== Creating a Serverless Cluster
+
+// tag::serverless[]
+. Click *Plans* in the left navigation.
+. Click *Create cluster* in the *Serverless* tab.
+. Select a region.
++
+[NOTE]
+====
+More regions will be available in new releases of Hazelcast Cloud.
+
+For best performance, use a region that's closest to your client applications or data stores. The closer your clients and data are to the cluster, the lower the network latency.
+====
+
+. Give your cluster a memorable name. This name is a label to help you differentiate clusters in your account.
+
+// tag::serverless-sandbox[]
+. If this is your first cluster or you're testing an application, click *Advanced settings* and turn on *Developer mode*.
++
+.Learn more
+[%collapsible]
+====
+When you turn on developer mode for a new cluster, that cluster includes only a single member. Single-member clusters are faster because you don't need to wait for the cluster to replicate your cluster-side modules over other members or create and update backup replicas of your data.
+====
++
+WARNING: In developer mode, your data is not backed up. When the cluster restarts for any reason, you will lose in-memory data such as your map entries. You cannot turn developer mode off in an existing cluster.
+
+// end::serverless-sandbox[]
+
+It takes a few minutes to create a Serverless cluster. During this period, your cluster will be in a pending state. When the cluster state changes to running, you will be able to use it.
+// end::serverless[]
+
+== Creating a Dedicated Cluster
+
+Dedicated clusters are created and managed by Hazelcast staff. Dedicated clusters are ideal for large applications that need dedicated instances of a virtual private cloud (VPC). To request more information about creating a dedicated cluster:
+
+. Go to *Plans* > *Dedicated*.
+. Complete the form and click *Get in touch*.
+
+== Changing your Cluster Name
+
+You cannot change your cluster name after it has been created. To choose a different name, create a new cluster.
+
+== Next Steps
+
+Try a hello world tutorial:
+
+* xref:java-client.adoc[Java]
+* xref:nodejs-client.adoc[Node.js]
+* xref:python-client.adoc[Python]
+* xref:go-client.adoc[Go]
+* xref:net-client.adoc[C#]
+* xref:cpp-client.adoc[C++]
+* xref:sql.adoc[SQL]
+
+Or build a sample caching app: xref:mapstore-mongodb.adoc[].

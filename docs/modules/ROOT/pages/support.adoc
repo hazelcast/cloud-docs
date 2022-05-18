@@ -1,38 +1,32 @@
 = Support
 :url-zendesk-hazelcast: https://support.hazelcast.com
+:description: Hazelcast Cloud has different support options depending on your requirements and your budget.
 
-Hazelcast Cloud has different support options depending on your requirements. Here are the support levels:
+{description}
 
-== Standard Support
+[cols="1a,1a,1a,1a"]
+|===
+|Support option|Coverage|Support Channel|Response Times
+|*Standard support* [.dedicated]*Dedicated* [.serverless]*Serverless*
+|24 hours a day, 7 days a week, 365 days a year
+|link:{url-zendesk-hazelcast}[Hazelcast Support]
+|Less than one business day.
 
-Standard support is available for all users with Standard or Enterprise clusters.
+|*Enterprise support* [.dedicated]*Dedicated*
+|24 hours a day, 7 days a week, 365 days a year
+|link:{url-zendesk-hazelcast}[Hazelcast Support], Emergency Telephone Number
+|Response times vary, depending on the <<severity, severity level>>.
+|===
 
-*Coverage:* 24 hours a day, 7 days a week, 365 days a year
+== Severity Levels
 
-*Support Channel:* link:{url-zendesk-hazelcast}[Hazelcast Support]
+The Hazelcast support team prioritizes issues by their severity level:
 
-*Our Response Times:*
+- *Severity 1* (production applications are down): We will respond in less than 30 minutes.
+- *Severity 2* (production applications are down and there is a known workaround): We will respond in less than 2 hours.
+- *Severity 3* (low impact on applications): We will respond in less than 4 hours.
+- *Severity 4* (insignificant issue with little to no impact): We will respond in less than one business day.
 
-We will respond in less than one business day.
+== Contact Hazelcast
 
-== Enterprise Support
-
-If you're interested in Enterprise support, contact us at mailto:sales@hazelcast.com[].
-
-*Coverage:* 24 hours a day, 7 days a week, 365 days a year
-
-*Support Channels:* link:{url-zendesk-hazelcast}[Hazelcast Support], Emergency Telephone Number
-
-*Our Response Times:*
-
-Severity 1 (production applications are down): We will respond in less than 30 minutes.
-
-Severity 2 (production applications are down and there is a known workaround): We will respond in less than 2 hours.
-
-Severity 3 (low impact on applications): We will respond in less than 4 hours.
-
-Severity 4 (insignificant issue with little to no impact): We will respond in less than one business day.
-
-== Contact Us
-
-Have a question? Need some information? Email us: mailto:support@hazelcast.com[]
+If you have a question or you're interested in Enterprise support, contact us at mailto:sales@hazelcast.com[].

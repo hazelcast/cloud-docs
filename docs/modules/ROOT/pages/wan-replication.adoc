@@ -1,11 +1,11 @@
 = Synchronizing Clusters
-:description: To synchronize data between two or more Enterprise clusters, you can use WAN replication.
+:description: To synchronize data between two or more clusters, you can use WAN Replication.
 
 {description}
 
 WAN Replication is a tool that can do *Active-Active* and *Active-Passive* replication. You can also configure WAN Replication parameters according to your use-case.
 
-For a complete reference of this feature, see xref:hazelcast:wan:wan.adoc[].
+For a complete reference of this feature, see the xref:hazelcast:wan:wan.adoc[Hazelcast Platform documentation].
 
 == Terminology
 
@@ -22,7 +22,7 @@ For a complete reference of this feature, see xref:hazelcast:wan:wan.adoc[].
 
 == Before you Begin
 
-You need at least two active clusters on the link:{page-plans}[Enterprise plan]. To learn how to create an Enterprise cluster, see xref:create-enterprise-cluster.adoc[].
+You need at least two active clusters.
 
 [WARNING]
 ====
@@ -35,10 +35,6 @@ If clusters are hosted on *different* cloud providers, you can create WAN Replic
 
 In order to create WAN Replication, you can go to *Cluster Detail* > *Settings* > *Wan Replication* and click *Create New Replication* 
 
-image:wan-replication-settings.png[WAN Replication settings]
-
-image:configure-wan-replication.png[WAN Replication configuration]
-
 You will see current cluster as Active cluster and also you can see additional parameters:
 
 - *Queue Full Behavior:* WAN Replication uses Hazelcast Queue within its architecture to manage data replication events. This parameter  lets you to decide what to do next if this queue is full. 
@@ -48,16 +44,10 @@ You will see current cluster as Active cluster and also you can see additional p
 
 After setting all this parameters, you can click *Next* to select and configure consumer cluster.
 
-image:configure-wan-replication-2.png[Part 2 of the WAN Replication configuration]
-
 Settings on this screen for consumer cluster are same as publisher cluster except *Active/Passive* section. If you set consumer cluster as *Active*, data will be synchronized from/to publisher and consumer. If you set consumer cluster as *Passive*, data will be sent only from publisher to consumer. 
 Once you configured settings for consumer, you can click *Save* 
 
-image:wan-replication-in-progress.png[Wan Replication is being set up]
-
 Within seconds, wan replication will be ready there. 
-
-image:wan-replication-successful.png[Wan Replication is active]
 
 Once it is finished, you can verify it by going to Management Center *Cluster Detail* > *Management Center* > *Enable*  then *Management Center* > *Open Management Center*. 
 

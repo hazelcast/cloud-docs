@@ -1,0 +1,66 @@
+= Hazelcast Cloud
+:description: Hazelcast Cloud is a managed cloud service that simplifies Hazelcast cluster deployments, allowing you to focus on building applications for low-latency querying, aggregation, and stateful computations.
+:page-aliases: use-cases.adoc, faq.adoc
+
+{description}
+
+
+image:serverless-app-server.svg[A Hazelcast client application communicating with a Hazelcast Cloud cluster]
+
+Hazelcast Cloud comes in two flavors:
+
+[cols="1a,1a"]
+|===
+|Flavor|Intended applications
+
+|<<serverless, Serverless>>
+|
+- Starter projects
+- Development environments
+- Unpredicable scaling requirements
+- Budget constraints
+
+|<<dedicated, Dedicated>>
+|
+- Explicit resource and configuration requirements
+- Critical production workloads
+|===
+
+== Serverless
+
+Serverless is a fully managed, multi-tenant deployment of a Hazelcast cluster
+
+You pay only for the amount of data that you put in storage, without needing to know what that might be before you start. If you use more storage, Hazelcast will allocate more hardware to your cluster to handle the increased load. If you use less storage, then you’ll pay less.
+
+=== Dedicated
+
+Hazelcast Dedicated is a fully managed, single-tenant deployment of a Hazelcast cluster.
+
+Hazelcast Dedicated is created and fully managed by Hazelcast. You tell Hazelcast how many resources you need and Hazelcast will provision and deploy the cluster. You will need to consider the following before your cluster is created:
+
+- *Resources:* You need to know how many resources your application needs in advance.
+- *Cost:* You are charged by the number of GB that you choose to give the cluster at creation. Even if you don't use all available storage, you are charged the same. See xref:pricing.adoc[].
+
+If you give your Hazelcast Cloud cluster too few resources, your cluster may fail under heavy load and cause an outage. If you give your cluster too many resources, you waste money on servers that are just sitting idle.
+
+== Restrictions on Free Serverless Clusters
+
+If you create a Serverless cluster for free and don't use it for 16 hours, it will be stopped.
+
+== Use Cases
+
+Explore example use cases for Hazelcast Cloud.
+
+=== Caching/Data Layer for Cloud Based Microservices
+
+You can use Hazelcast Cloud as a low-latency, high-performance caching or data layer for your microservices. Your in-memory data management or caching solution will be ready in minutes, without needing to deal with its maintenance.
+
+=== State Management for Serverless Functions (AWS Lambda)
+
+Hazelcast Cloud is the perfect solution if you need to keep or access data and state inside your serverless function. We offer:
+
+- Low latency data access
+- Cloud based solution
+- Ease of set up and use
+- Zero maintenance burden
+- Node.js and Python support.

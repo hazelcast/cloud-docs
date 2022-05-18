@@ -1,63 +1,91 @@
-= Java Client
+= Java Hello World
+:description: This tutorial shows you how to get started with Hazelcast Cloud quickly. You'll create a Hazelcast Serverless cluster, and then use the Java client to add some entries to a map.
+:page-aliases: getting-started.adoc
+
+{description}
 
 == Before you Begin
 
-. link:https://cloud.hazelcast.com/sign-up[Sign up for a Hazelcast Cloud account].
+You need a xref:create-account.adoc[Hazelcast Cloud account].
 
-. Create a free cluster on the Basic plan. For help creating a cluster, see xref:getting-started.adoc[].
+== Step 1. Start a Hazelcast Cloud Cluster
 
-== Download and Run the Sample Code
+In the Hazelcast Cloud console, do the following:
 
-. Click *Configure Client*.
+include::create-cluster.adoc[tags=serverless;serverless-sandbox] 
 
-. Download the ZIP file as instructed in Step 1 of the dialog box.
+== Step 2. Run the Sample Client
 
-. Extract the ZIP file and run the command, in the extracted folder, shown in the Step 2 in the above dialog box. If you are using Windows, run `mvnw.cmd` instead of `mvnw`.
+. Open the Hazelcast Cloud console and click *Connect your Application*.
+
+. Download and extract the ZIP file.
+
+. Change into the extracted root directory and execute the following command:
++
+[tabs] 
+====
+Linux and Mac:: 
++ 
+--
+```bash
+./mvnw clean compile exec:java@client-with-ssl
+```
+--
+Windows:: 
++ 
+--
+```bash
+mvnw.cmd clean compile exec:java@client-with-ssl
+```
+--
+====
 
 You should see log output similar to the following:
 
 image:java-client-log.png[Java client logs that it is connected]
 
-`Connection Successful!` in your logs means that your client application has successfully connected to your cluster in Hazelcast Cloud. The sample code inserts random entries to your cluster as you can see in the logs. In your Hazelcast Cloud console (your cluster's page which you can reach from the "Clusters" top menu), you should see the charts begin to be populated with metrics of your map, as shown below:   
+`Connection Successful!` in your logs means that your client application has successfully connected to your cluster in Hazelcast Cloud. The sample client code adds random entries to a map in your cluster. In your Hazelcast Cloud console, you should see the charts begin to be populated with metrics of your map.
 
-image:map-metrics-client-connection.png[Map metrics that show entries are being added to the map]
-
-Also, you can see your client listed under the "Client Statistics" at the bottom of your cluster's page: 
-
-image:connected-client.png[A client connection is displayed in the client statistics]
+Also, you can see your client listed under *Client Statistics* at the bottom of your cluster's page.
 
 == Client Code
 
-Now, as we have successfully connected and put data into the cluster, let's review and explain the client code you downloaded.
+To help you understand how the client connected to the cluster, this section explains some of the source code. 
 
-You may want to open the directory (extracted from the ZIP file you downloaded in the Step 3 above) as a Maven Java project in your favorite IDE. 
+TIP: The code for this sample client is hosted on link:https://github.com/hazelcast/hazelcast-cloud-java-sample-client/tree/5.1/src/main/java/com/hazelcast/cloud/ClientWithSsl.java[GitHub].
 
-Alternatively, you can simply go to `src/main/java/com/hazelcast/cloud` in the directory mentioned above. If you had enabled encryption in your cluster, open the `ClientWithSsl.java` file. Otherwise, open the `Client.java` file. We will explain both files line by line in the following sections.
-
-=== Client.java
-
-This is the downloaded sample client code when your cluster does not have an encryption.
-
+.ClientWithSsl.java
 [source,java]
 ----
 public class Client {
 
   public static void main(String[] args) throws InterruptedException {
-    ClientConfig config = new ClientConfig(); // <1>
+    ClientConfig config = new ClientConfig(); <1>
 
-    config.setGroupConfig(new GroupConfig("YOUR_CLUSTER_NAME", "YOUR_CLUSTER_PASSWORD")); // <2>
+    <2>
+    ClassLoader classLoader = ClientWithSsl.class.getClassLoader();
+    Properties props = new Properties();
+    props.setProperty("javax.net.ssl.keyStore", classLoader.getResource("client.keystore").getPath());
+    props.setProperty("javax.net.ssl.keyStorePassword", "YOUR_KEY_STORE_PASSWORD");
+    props.setProperty("javax.net.ssl.trustStore", classLoader.getResource("client.truststore").getPath());
+    props.setProperty("javax.net.ssl.trustStorePassword", "YOUR_KEYSTORE_PASSWORD");
 
-    config.setProperty("hazelcast.client.statistics.enabled","true"); // <3>
+    ClientConfig config = new ClientConfig();
+    config.getNetworkConfig().setSSLConfig(new SSLConfig().setEnabled(true).setProperties(props));
 
-    config.setProperty(ClientProperty.HAZELCAST_CLOUD_DISCOVERY_TOKEN.getName(), "YOUR_CLUSTER_DISCOVERY_TOKEN"); // <4>
+    config.setClusterName("YOUR_CLUSTER_NAME"); <3>
 
-    HazelcastInstance client = HazelcastClient.newHazelcastClient(config); // <5>
+    config.setProperty("hazelcast.client.statistics.enabled","true"); <4>
 
-    // <6>
+    config.setProperty(ClientProperty.HAZELCAST_CLOUD_DISCOVERY_TOKEN.getName(), "YOUR_CLUSTER_DISCOVERY_TOKEN"); <5>
+
+    HazelcastInstance client = HazelcastClient.newHazelcastClient(config); <6>
+
+    <7>
     IMap<String, String> map = client.getMap("map");
     map.put("key", "value");
 
-    // <7>
+    <8>
     if (map.get("key").equals("value")) {
       System.out.println("Connection Successful!");
       System.out.println("Now, `map` will be filled with random entries.");
@@ -68,7 +96,7 @@ public class Client {
 
     Random random = new Random();
 
-    // <8>
+    <9>
     while (true) {
       int randomKey = (int) random.nextInt(100_000);
       map.put("key" + randomKey, "value" + randomKey);
@@ -86,183 +114,28 @@ public class Client {
 
 <1> Create an empty client configuration.
 
-<2> Set the cluster name and password via `GroupConfig`.
+<2> Configure TLS encryption. You already downloaded these certificate and key files with the client code.
+
+<3> Set the cluster name.
 +
-The cluster name and password are unique to your cluster. The client is authenticated using this password.
+The cluster name is unique to your cluster. The client is authenticated using this cluster name.
 
-<3> Enable Hazelcast to send the client statistics to the cluster's page.
+<4> Enable Hazelcast to send the client statistics to the cluster's page.
 
-<4> Set the discovery token.
+<5> Set the discovery token.
 +
 This token is also unique to your cluster and used to discover Hazelcast cluster members.
 
-<5> Create the client with `config`.
+<6> Create the client with `config`.
 +
 This step creates the connection between your application and the cluster.
 
-<6> Get/create a map and put a simple entry ("key", "value").
+<7> Get/create a map and put a simple entry ("key", "value").
 
-<7> Check if the entry has been added successfully and let the code throw an exception if the value is not correct.
+<8> Check if the entry has been added successfully and let the code throw an exception if the value is not correct.
 
-<8> Add random entries with 100-millisecond intervals.
+<9> Add random entries with 100-millisecond intervals. 
 
-=== ClientWithSsl.java
+== Learn More
 
-This is the downloaded sample client code when your cluster has encryption enabled.
-
-[source,java]
-----
-public class ClientWithSsl {
-
-  public static void main(String[] args) throws InterruptedException {
-    // <1>
-    ClassLoader classLoader = ClientWithSsl.class.getClassLoader();
-    Properties props = new Properties();
-    props.setProperty("javax.net.ssl.keyStore", classLoader.getResource("client.keystore").getPath());
-    props.setProperty("javax.net.ssl.keyStorePassword", "YOUR_KEY_STORE_PASSWORD");
-    props.setProperty("javax.net.ssl.trustStore", classLoader.getResource("client.truststore").getPath());
-    props.setProperty("javax.net.ssl.trustStorePassword", "YOUR_TRUST_STORE_PASSWORD");
-
-    ClientConfig config = new ClientConfig();
-    config.getNetworkConfig().setSSLConfig(new SSLConfig().setEnabled(true).setProperties(props));
-    config.getGroupConfig().setName("YOUR_CLUSTER_NAME").setPassword("YOUR_CLUSTER_PASSWORD");
-    config.setProperty("hazelcast.client.statistics.enabled","true");
-    config.setProperty(ClientProperty.HAZELCAST_CLOUD_DISCOVERY_TOKEN.getName(), "YOUR_CLUSTER_DISCOVERY_TOKEN");
-    HazelcastInstance client = HazelcastClient.newHazelcastClient(config);
-    IMap<String, String> map = client.getMap("map");
-    map.put("key", "value");
-    if(map.get("key").equals("value")) {
-      System.out.println("Connection Successful!");
-      System.out.println("Now, `map` will be filled with random entries.");
-    }
-    else {
-      throw new RuntimeException("Connection failed, check your configuration.");
-    }
-    Random random = new Random();
-    while (true) {
-      int randomKey = (int) random.nextInt(100_000);
-      map.put("key" + randomKey, "value" + randomKey);
-      map.get("key" + random.nextInt(100_000));
-      if(randomKey % 10 == 0 ) {
-        System.out.println("map size:" + map.size());
-      }
-      Thread.sleep(100);
-    }
-  }
-}
-----
-
-<1> The only difference between this one and the `Client.java` is the lines that enable and configure TLS encryption on the client side. The following lines set the paths and passwords for the TLS keystore and truststore files:
-
-The above example code finds the keystore and truststore in the classloader's `resources` directory. You can find these files under `/src/main/resources` in the extracted ZIP's directory. If you move these files to another directory, you should set the above properties accordingly.
-
-== Project Setup
-
-The example client application you downloaded is a plain Maven Java project. See the `pom.xml` below:
-
-[source,xml]
-----
-<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-
-  <groupId>com.hazelcast.cloud</groupId>
-  <artifactId>hazelcast-cloud-java-sample-client</artifactId>
-  <version>1.0-BETA</version>
-
-  <dependencies>
-    <dependency>
-      <groupId>com.hazelcast</groupId>
-      <artifactId>hazelcast-enterprise-client</artifactId>
-      <version>3.11.1</version>
-    </dependency>
-  </dependencies>
-
-  <build>
-    <plugins>
-      <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-compiler-plugin</artifactId>
-          <configuration>
-              <source>1.8</source>
-              <target>1.8</target>
-          </configuration>
-      </plugin>
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>exec-maven-plugin</artifactId>
-        <version>1.6.0</version>
-        <executions>
-            <execution>
-                <id>client</id>
-                <goals>
-                    <goal>java</goal>
-                </goals>
-                <configuration>
-                    <mainClass>com.hazelcast.cloud.Client</mainClass>
-                </configuration>
-            </execution>
-            <execution>
-                <id>client-with-ssl</id>
-                <goals>
-                    <goal>java</goal>
-                </goals>
-                <configuration>
-                    <mainClass>com.hazelcast.cloud.ClientWithSsl</mainClass>
-                </configuration>
-            </execution>
-        </executions>
-      </plugin>
-    </plugins>
-  </build>
-
-  <repositories>
-    <repository>
-      <id>hazelcast-ee</id>
-      <name>Sonatype Repository</name>
-      <url>https://repository-hazelcast-l337.forge.cloudbees.com/release</url>
-    </repository>
-  </repositories>
-</project>
-----
-
-The application has just one dependency: `hazelcast-enterprise-client`.
-You may want to use the Hazelcast Open Source client, but you can only use it when encryption is disabled since the Open Source Java client does not support the TLS encryption.
-
-== Declarative Configuration
-
-The easiest way to configure your client declaratively is to put the `hazelcast-client.xml` file to your project's classpath. You can find others ways [here](https://docs.hazelcast.org/docs/latest/manual/html-single/#configuring-java-client). The following is a sample XML file for configuring the client to connect to Hazelcast Cloud:
-
-[source,xml]
-----
-<?xml version="1.0" encoding="UTF-8"?>
-<hazelcast-client xsi:schemaLocation="http://www.hazelcast.com/schema/client-config hazelcast-client-config-3.11.xsd"
-  xmlns="http://www.hazelcast.com/schema/client-config"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <group>
-    <name>YOUR_CLUSTER_NAME</name>
-    <password>YOUR_CLUSTER_PASSWORD</password>
-  </group>
-  <properties>
-    <property name="hazelcast.client.statistics.enabled">true</property>
-  </properties>
-  <network>
-    <hazelcast-cloud enabled="true">
-        <discovery-token>YOUR_CLUSTER_DISCOVERY_TOKEN</discovery-token>
-    </hazelcast-cloud>
-  </network>
-</hazelcast-client>
-----
-
-Finally, you need to create a Hazelcast client with the empty constructor as shown below:
-
-[source,java]
-----
-HazelcastInstance client = HazelcastClient.newHazelcastClient();
-----
-
-== More Configuration Options
-
-Please refer to the xref:hazelcast:clients:java.adoc#configuring-java-client[Java client documentation] for further configuration options.
+See the xref:hazelcast:clients:java.adoc#configuring-java-client[Java client documentation] for more information about using the Java client.
