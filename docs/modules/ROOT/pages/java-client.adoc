@@ -1,6 +1,5 @@
 = Java Hello World
 :description: This tutorial shows you how to get started with Hazelcast Cloud quickly. You'll create a Hazelcast Serverless cluster, and then use the Java client to add some entries to a map.
-:page-aliases: getting-started.adoc
 
 {description}
 

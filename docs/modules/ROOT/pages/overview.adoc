@@ -32,7 +32,7 @@ Serverless is a fully managed, multi-tenant deployment of a Hazelcast cluster
 
 You pay only for the amount of data that you put in storage, without needing to know what that might be before you start. If you use more storage, Hazelcast will allocate more hardware to your cluster to handle the increased load. If you use less storage, then you’ll pay less.
 
-=== Dedicated
+== Dedicated
 
 Hazelcast Dedicated is a fully managed, single-tenant deployment of a Hazelcast cluster.
 

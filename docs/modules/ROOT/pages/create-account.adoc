@@ -1,13 +1,13 @@
 = Creating an Account
 :description: Before you create a cluster on Hazelcast Cloud, you must create a Hazelcast Cloud account. You can create an account with your GitHub credentials, Google credentials, or you can provide an email address and password.
-:page-aliases: 
+:page-aliases: getting-started.adoc
 :toclevels: 3
 
 {description}
 
 == Creating a New Account
 
-To create a new account, go to the link:https://cloud.hazelcast.com/sign-up[Hazelcast Cloud sign-up page].
+To create a new account, go to the link:https://console-uat.hazelcast.cloud/sign-in[Hazelcast Cloud sign-up page].
 
 [tabs] 
 ====
