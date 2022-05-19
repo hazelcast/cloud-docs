@@ -44,7 +44,7 @@ Yes, for the best performance place the connection code into static context of y
 
 *Which languages does hazelcast cloud support?*
 
-You can use Java, Node.js, C#, Python and Go clients.
+You can use Java, Node.js, C#, C++, Python and Go clients.
 
 *If I stop my cluster, will I lose my data?*
 
