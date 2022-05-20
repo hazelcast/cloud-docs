@@ -40,31 +40,25 @@ In each team, users can have one of the following roles:
 |===
 |Roles ->|Admin|Developer|Finance|View only
 
-|Creating new clusters for the team
+|xref:create-cluster.adoc[Create and manage new clusters for the team]
 |yes
 |yes
 |no
 |no
 
-|Managing billing settings and redeeming credits
+|xref:payment-methods.adoc[Manage billing settings and redeem credits]
 |yes
 |no
 |yes
 |no
 
-|Managing API keys
+|xref:developer.adoc[Manage API keys]
 |yes
 |yes
 |no
 |no
 
-|Updating cluster settings
-|yes
-|yes
-|no
-|no
-
-|Viewing charts and metrics
+|xref:charts-and-stats.adoc[View charts and metrics]
 |yes
 |yes
 |yes
