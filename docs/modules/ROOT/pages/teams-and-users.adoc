@@ -3,6 +3,8 @@
 
 {description}
 
+NOTE: Serverless clusters for teams do not include the free 2 GB storage.
+
 == Creating a Team
 
 . Click the *Account* icon in the bottom left corner.
