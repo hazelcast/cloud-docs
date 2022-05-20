@@ -14,7 +14,7 @@ If you have a promo code, you can use it to redeem credit. As long as your credi
 To manage credits for a team, you must have either an admin or finance role.
 
 . Click the *Account* icon in the bottom left corner.
-. Click *Credits*
+. Click *Credits*.
 . Enter a promo code and click *Redeem*.
 
 == Adding a Payment Card
@@ -27,4 +27,7 @@ Hazelcast uses a third-party to store payment details and process payments. Paym
 
 == Viewing Bills and Payments
 
-You can keep track of what you 
+You can see how much you've spent in the current month as well as previous months.
+
+. Click the *Account* icon in the bottom left corner.
+. Click *Billing & Payments*.

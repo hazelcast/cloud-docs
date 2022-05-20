@@ -115,6 +115,4 @@ Hazelcast offers custom pricing plans. To discuss a custom plan, contact us at m
 
 == Related Resources
 
-Track your usage and current billing total.
-
-Manage your billing and payment information.
+xref:payment-methods.adoc[].
