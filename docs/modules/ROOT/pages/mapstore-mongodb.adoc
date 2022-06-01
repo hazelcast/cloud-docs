@@ -153,7 +153,7 @@ link:{github-directory}/src/main/java/sample/com/hazelcast/cloud/mapstore5/mongo
 
 In this step, you'll use the xref:maven-plugin.adoc[Hazelcast Cloud Maven plugin] to package the project into a single JAR file and upload that file to Hazelcast Serverless.
 
-. Open the `pom.xml` file in the `hazelcast-cloud-code-samples` directory.
+. Open the `pom.xml` file in the ``hazelcast-cloud-code-samples/mapstore/mapstore-sample-hazelcast5-mongodb`` directory.
 
 . Configure the Maven plugin with values for the following elements:
 +

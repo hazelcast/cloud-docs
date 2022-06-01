@@ -15,19 +15,21 @@ link:https://docs.hazelcast.org/docs/latest/javadoc/com/hazelcast/map/MapStore.h
 
 The following steps describe the workflow for developing a MapStore for Hazelcast Cloud:
 
-. Implement the MapStore
-. Test the MapStore
-. Deploy the MapStore
-. Configure the MapStore in Hazelcast Cloud
+. <<implement, Implement>>
+. <<test, Test>>
+. <<deploy, Deploy>>
+. <<configure, Configure>>
 
 To use this feature, you must have either an admin or developer role. See xref:teams-and-users.adoc[].
 
+[[implement]]
 == Implementing the MapStore
 
 To implement a MapStore for Hazelcast Cloud, you can mostly xref:hazelcast:data-structures:working-with-external-data.adoc[follow the guide in the Hazelcast Platform documentation]. However, you must make sure to manage the lifecycle of the MapStore.
 
 When Hazelcast Cloud loads the MapStore, it makes a connection to the external data store. If open connections are left open, these connections will consume unnecessary resources. To manage this connection, make sure to implement the link:https://docs.hazelcast.org/docs/latest/javadoc/com/hazelcast/map/MapLoaderLifecycleSupport.html[`MapLoaderLifeCycleSupport` interface] to allow Hazelcast Cloud to close connections to the data store on a graceful shutdown.
 
+[[test]]
 == Testing the MapStore
 
 Before you deploy the MapStore to Hazelcast Cloud, you should test the MapStore for the following:
@@ -37,13 +39,14 @@ Before you deploy the MapStore to Hazelcast Cloud, you should test the MapStore 
 
 For general guidance on testing cluster-side modules, see xref:cluster-side-modules.adoc[].
 
+[[deploy]]
 == Deploying the MapStore
 
 Before you can configure the MapStore, you need to deploy it, which involves packaging your classes into a file along with any dependencies and uploading that file to Hazelcast Cloud.
 
 For a guide, see xref:custom-classes-upload.adoc[].
 
-[[config]]
+[[configure]]
 == Configuring the MapStore
 
 To use a MapStore, it must be configured for a specific map in Hazelcast Cloud. When a map is configured with a MapStore, Hazelcast plugs the MapStore implementation into the lifecycle of the map so that the MapStore is triggered when certain map operations are invoked.
@@ -61,7 +64,7 @@ To use a MapStore, it must be configured for a specific map in Hazelcast Cloud. 
 
 The following are the descriptions of MapStore configuration elements and attributes:
 
-- *Class Name*: Name of the class implementing MapLoader and/or MapStore. This class can be uploaded via the [Custom Classes upload](doc:custom-classes-upload) feature.
+- *Class Name*: Name of the uploaded file that contains the MapStore.
 
 - *Write Delay Seconds*: Number of seconds to delay to call the `MapStore.store(key, value)`. If the value is zero then it is write-through, so the `MapStore.store(key, value)` method is called as soon as the entry is updated. Otherwise, it is write-behind; so the updates will be stored after the *Write Delay Seconds* value by calling the `Hazelcast.storeAll(map)` method. Its default value is *0*.
 
