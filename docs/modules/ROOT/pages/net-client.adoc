@@ -29,145 +29,165 @@ image:map-metrics-client-connection.png[Map metrics that show entries are being 
 
 Now, as we have successfully connected and put data into the cluster, let's review and explain the client code you downloaded.
 
-Go to the directory (extracted from the ZIP you downloaded in the Step 3 above) and locate the client sample code. If you had enabled encryption in your cluster, open the `ClientWithSsl/Program.cs` file. Otherwise, open the `Client/Program.cs` file. We will explain both files line by line in the following sections.
+Go to the directory (extracted from the ZIP you downloaded in the Step 3 above) and locate the client sample code. If you had enabled encryption in your cluster, open the `ClientWithSsl/Program.cs` file. We will explain the code line by line in the following section.
 
-=== Client/Program.cs
+=== ClientWithSsl/Program.cs
 
-This is the downloaded sample client code when your cluster does not have an encryption.
+This is the downloaded sample client code with encryption.
 
 [source,cs]
 ----
 using System;
-using System.Threading;
-using Hazelcast.Client;
-using Hazelcast.Config;
+using System.Security.Authentication;
+using System.Threading.Tasks;
+using Hazelcast;
+using Hazelcast.Networking;
+using Microsoft.Extensions.Logging;
 
- namespace Client
- {
-  class Program
-  {
-    public static void Main(string[] args)
+namespace ClientWithSsl
+{
+    /*
+     * A sample application that configures a client to connect to an Hazelcast Cloud cluster
+     * with SSL, and to then put and get random values in/from a map, thus testing that the
+     * connection to the Hazelcast Cloud cluster is successful.
+     *
+     * see: https://hazelcast.github.io/hazelcast-csharp-client/
+     */
+    internal static class Program
     {
-      Environment.SetEnvironmentVariable("hazelcast.client.cloud.url", "YOUR_DISCOVERY_URL");
-      var config = new ClientConfig(); // <1>
-      // <2>
-      config.GetGroupConfig()
-          .SetName("YOUR_CLUSTER_NAME")
-          .SetPassword("YOUR_CLUSTER_PASSWORD");
-      // <3>
-      config.GetNetworkConfig().GetCloudConfig()
-          .SetEnabled(true)
-          .SetDiscoveryToken("YOUR_CLUSTER_DISCOVERY_TOKEN");
+        private const int IterationCount = 100;
 
-      var client = HazelcastClient.NewHazelcastClient(config); // <4>
-      // <5>
-      var map = client.GetMap<string, string>("map");
-      map.Put("key", "value");
-      // <6>
-      if(map.Get("key").Equals("value"))
-      {
-        Console.WriteLine("Connection Successful!");
-        Console.WriteLine("Now, `map` will be filled with random entries.");
-      }
-      else {
-        throw new Exception("Connection failed, check your configuration.");
-      }
-      var random = new Random();
-      while (true) {
-        var randomKey = random.Next(100_000);
-        map.Put("key" + randomKey, "value" + randomKey);
-        map.Get("key" + random.Next(100_000));
-        if(randomKey % 10 == 0 )
+        public static async Task Main(string[] args)
         {
-          Console.WriteLine("map size: {0}", map.Size());
+            Console.WriteLine();
+            Console.WriteLine("Hazelcast Cloud Client with SSL");
+
+            Console.Write("Build options...");
+            var options = new HazelcastOptionsBuilder()
+                .With(args)
+                .WithConsoleLogger()
+                .With("Logging:LogLevel:Hazelcast", "Information")
+                .Build();// <1>
+
+            // log level must be a valid Microsoft.Extensions.Logging.LogLevel value
+            //   Trace | Debug | Information | Warning | Error | Critical | None
+
+            if (args.Length == 0)
+            {
+                // it is OK to pass the arguments in the command line
+                // otherwise, they must be specified here
+
+                // set the cluster name
+                options.ClusterName = "YOUR_CLUSTER_NAME";// <2>
+
+                // set the cloud discovery token and url
+                options.Networking.Cloud.DiscoveryToken = "YOUR_CLUSTER_DISCOVERY_TOKEN";// <3>
+                options.Networking.Cloud.Url = new Uri("YOUR_DISCOVERY_URL");
+            }
+
+            // make sure the client stays connected
+            options.Networking.ReconnectMode = ReconnectMode.ReconnectAsync;
+            
+            // enable metrics
+            options.Metrics.Enabled = true;
+
+            // set ssl
+            options.Networking.Ssl.Enabled = true;
+            options.Networking.Ssl.ValidateCertificateChain = false;
+            options.Networking.Ssl.Protocol = SslProtocols.Tls12;
+            options.Networking.Ssl.CertificatePath = "client.pfx";//downloaded from cloud <4>
+            options.Networking.Ssl.CertificatePassword = "YOUR_CERTIFICATE_PASSWORD";
+
+            Console.WriteLine(" ok.");
+
+            Console.Write("Get and connect client...");
+            await using var client = await HazelcastClientFactory.StartNewClientAsync(options);// <5>
+            Console.WriteLine(" ok.");
+
+            Console.Write("Get map...");
+            await using var map = await client.GetMapAsync<string, string>("map"); // <6>
+            Console.WriteLine(" ok.");
+
+            Console.Write("Put value into map...");
+            await map.PutAsync("key", "value");
+            Console.WriteLine(" ok.");
+
+            Console.Write("Get value from map...");
+            var value = await map.GetAsync("key");
+            Console.WriteLine(" ok");
+
+            Console.Write("Validate value...");// <7>
+            if (value.Equals("value"))
+            {
+                Console.WriteLine("ok.");
+            }
+            else
+            {
+                Console.WriteLine("Error.");
+                Console.WriteLine("Check your configuration.");
+                return;
+            }
+
+            Console.WriteLine("Put/Get values in/from map with random values...");
+            var random = new Random();
+            var step = IterationCount / 10;
+            for (var i = 0; i < IterationCount; i++)
+            {
+                var randomValue = random.Next(100_000);
+                await map.PutAsync("key_" + randomValue, "value_" + randomValue);
+
+                randomValue = random.Next(100_000);
+                await map.GetAsync("key" + randomValue);
+
+                if (i % step == 0)
+                {
+                    Console.WriteLine($"[{i:D3}] map size: {await map.GetSizeAsync()}");
+                }
+            }
+
+            Console.WriteLine("Done.");
         }
-        Thread.Sleep(100);
-      }
+
+        public static HazelcastOptionsBuilder WithConsoleLogger(this HazelcastOptionsBuilder builder)
+        {
+            return builder
+                .With("Logging:LogLevel:Default", "None")
+                .With("Logging:LogLevel:System", "None")
+                .With("Logging:LogLevel:Microsoft", "None")
+                .With((configuration, options) =>
+                {
+                    // configure logging factory and add the console provider
+                    options.LoggerFactory.Creator = () => LoggerFactory.Create(loggingBuilder =>
+                        loggingBuilder
+                            .AddConfiguration(configuration.GetSection("logging"))
+                            .AddConsole());
+                });
+        }
     }
-  }
 }
+
 ----
 
 <1> First, we create an empty client configuration.
 
-<2> Then, we set the cluster name and password via `GroupConfig`.
+<2> Then, we set the cluster name.
 +
-The cluster name and password are unique to your cluster. The client is authenticated using this password.
+The cluster name is unique to your cluster. 
 
-<3> We enable the cloud configuration and set the discovery token.
+<3> We enable the cloud configuration by setting the discovery token.
 +
 The discovery token is also unique to your cluster and is used to discover Hazelcast cluster members.
 
-<4> Now, we create the client with `config`.
+<4> the lines that enable and configure SSL encryption on the client side.
+
+<5> Now, we create the client with `config`.
 +
 This step creates the connection between your application and the cluster.
 
-<5> We get/create a map and put a simple entry ("key", "value").
+<6> We get/create a map and put a simple entry ("key", "value").
 
-<6> Then, we check if the entry has been added and let the code throw an exception if the value is not correct. Finally, we add random entries with 100-millisecond intervals.
+<7> Then, we check if the entry has been added and let the code throw an exception if the value is not correct. Finally, we add random entries.
 
-=== ClientWithSsl/Program.cs
-
-This is the downloaded sample client code when your cluster has encryption enabled.
-
-[source,cs]
-----
-using System;
-using System.Threading;
-using Hazelcast.Client;
-using Hazelcast.Config;
-
-namespace Client
-{
-  class Program
-  {
-    public static void Main(string[] args)
-    {
-      Environment.SetEnvironmentVariable("hazelcast.client.statistics.enabled", "true");
-      Environment.SetEnvironmentVariable("hazelcast.client.cloud.url", "YOUR_DISCOVERY_URL");
-      var config = new ClientConfig();
-      config.GetGroupConfig()
-          .SetName("YOUR_CLUSTER_NAME")
-          .SetPassword("YOUR_CLUSTER_PASSWORD");
-
-      config.GetNetworkConfig().GetCloudConfig()
-          .SetEnabled(true)
-          .SetDiscoveryToken("YOUR_CLUSTER_DISCOVERY_TOKEN");
-      // <1>
-      config.GetNetworkConfig().GetSSLConfig()
-          .SetEnabled(true)
-          .SetProperty(SSLConfig.ValidateCertificateChain, "false")
-          .SetProperty(SSLConfig.CertificateFilePath, "client.pfx")
-          .SetProperty(SSLConfig.CertificatePassword, "YOUR_SSL_PASSWORD");
-
-      var client = HazelcastClient.NewHazelcastClient(config);
-      var map = client.GetMap<string, string>("map");
-      map.Put("key", "value");
-      if(map.Get("key").Equals("value"))
-      {
-        Console.WriteLine("Connection Successful!");
-        Console.WriteLine("Now, `map` will be filled with random entries.");
-      }
-      else {
-        throw new Exception("Connection failed, check your configuration.");
-      }
-      var random = new Random();
-      while (true) {
-        var randomKey = random.Next(100_000);
-        map.Put("key" + randomKey, "value" + randomKey);
-        map.Get("key" + random.Next(100_000));
-        if(randomKey % 10 == 0 )
-        {
-          Console.WriteLine("map size: {0}", map.Size());
-        }
-        Thread.Sleep(100);
-      }
-    }
-  }
-}
-----
-
-<1> The only difference between this one and the `Client/Program.cs` is the lines that enable and configure SSL encryption on the client side.
 +
 You may want to move the `pfx` file to another directory. Then, you need to set `CertificateFilePath` accordingly. 
 
