@@ -1,5 +1,5 @@
 = .Net Client
-:url-github-net: http://hazelcast.github.io/hazelcast-csharp-client/dev/doc/configuration.html
+:url-github-net: http://hazelcast.github.io/hazelcast-csharp-client/latest/doc/configuration/sources.html
 
 == Quick Setup
 
