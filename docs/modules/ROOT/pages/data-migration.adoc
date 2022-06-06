@@ -1,6 +1,8 @@
 = Migrate Data to another Cluster
 :description: In this tutorial, you'll use xref:wan-replication.adoc[WAN Replication] to migrate data from one cluster to another.
 
+{description}
+
 == Before you Begin
 
 You cannot use WAN Replication if your cluster has developer mode turned on.

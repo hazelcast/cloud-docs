@@ -54,25 +54,7 @@ Hazelcast Cloud supports the following serializers. Follow the links to learn mo
 |===
 | Serializer| Advantages| Disadvantages|Client support
 
-| xref:hazelcast:serialization:implementing-java-serializable.adoc[`Serializable`]
-| * A standard and basic Java interface
-
-* Requires no implementation
-| * More time and CPU usage
-
-* More space occupancy
-
-|Java only
-
-| xref:hazelcast:serialization:implementing-java-serializable.adoc[`Externalizable`]
-| * A standard Java interface
-
-* More CPU and memory efficient than `Serializable`
-| * Serialization interface must be implemented
-
-|Java only
-
-| xref:hazelcast:serialization:compact-serialization.adoc[Compact Serialization (BETA)]
+| xref:hazelcast:serialization:compact-serialization.adoc[Compact Serialization] [.beta]*Beta*
 |
 
 * Convenient, flexible, and can be used with no configuration
@@ -93,7 +75,7 @@ guarantees are given yet
 
 |All clients
 
-| xref:hazelcast:serialization:serializing-json.adoc[`HazelcastJsonValue`]
+| xref:hazelcast:serialization:serializing-json.adoc[Hazelcast JSON]
 | * No member-side coding required
 
 |* Specific to Hazelcast
@@ -101,12 +83,30 @@ guarantees are given yet
 * Requires extra metadata to be stored on members.
 
 |All clients
+
+| xref:hazelcast:serialization:implementing-java-serializable.adoc[Serializable]
+| * A standard and basic Java interface
+
+* Requires no implementation
+| * More time and CPU usage
+
+* More space occupancy
+
+|Java only
+
+| xref:hazelcast:serialization:implementing-java-serializable.adoc[Externalizable]
+| * A standard Java interface
+
+* More CPU and memory efficient than Serializable
+| * Serialization interface must be implemented
+
+|Java only
 |===
 
 [[prereqs]]
 == Requirements and Limitations
 
-Hazelcast Cloud has strict requirements that your cluster-side modules must meet.
+Any Java code in cluster-side modules must meet the following requirements.
 
 === Java Version
 
