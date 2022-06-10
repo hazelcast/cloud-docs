@@ -1,0 +1,96 @@
+= Connect a Hazelcast Command-Line Client
+:url-github-hazelcast-clc: https://github.com/hazelcast/hazelcast-commandline-client#ssl-configuration
+
+== Before you Begin
+
+. link:https://cloud.hazelcast.com/sign-up[Sign up for a Hazelcast Cloud account].
+
+. Create a free cluster on the Basic plan. For help creating a cluster, see xref:getting-started.adoc[].
+
+. Install the Hazelcast Command-Line Client
+You can install the Hazelcast CLC locally on Linux and macOS.
+
+[tabs]
+====
+Installer Script::
++
+--
+[source,bash]
+----
+curl https://raw.githubusercontent.com/hazelcast/hazelcast-commandline-client/main/scripts/install.sh | bash
+----
+--
+Homebrew::
++
+[source,bash]
+----
+brew tap hazelcast/homebrew-hz
+brew install hazelcast-commandline-client
+----
+====
+
+NOTE: To take advantage of auto-completion support, follow the instructions that appear during installation.
+
+
+== Connect to the Cluster
+
+First, you should configure the Hazelcast Command-Line Client to connect to the cluster.
+
+. Click *Connect Your Application*
+
+. On any language tab, scroll down to see *Advanced Setup* section.
+
+[tabs]
+====
+TLS-Encryption Disabled::
++
+Copy the values from "Cluster name" and "Discovery token" fields of Advanced Setup table and use them in the following command:
+--
+[source,bash]
+----
+hzc --cluster-name <cluster-name> --cloud-token <cloud-token>
+----
+or place them in the configuration file (default one is on `~/.local/share/hz-cli/config.yaml`)
+
+--
+[source,yaml]
+----
+hazelcast:
+  cluster:
+    name: "Cluster name"
+    cloud:
+      token: "Discovery token"
+      enabled: true
+----
+--
+TLS-Encryption Enabled::
++
+Click "Download" to download the Keystore file and unzip it to a directory. For this example let's assume it unzipped on  `/hzcloud_keys`.
+
+Copy the values from "Cluster name" , "Discovery token" and "Keystore and truststore password" fields of Advanced Setup table and use place them as in the following configuration:
+
+[source,yaml]
+----
+ssl:
+  enabled: true
+  capath: "/hzcloud_keys/ca.pem"
+  certpath: "/hzcloud_keys/cert.pem"
+  keypath: "/hzcloud_keys/key.pem"
+  keypassword: "Keystore and truststore password"
+hazelcast:
+  cluster:
+    name: "Cluster name"
+    cloud:
+      token: "Discovery token"
+      enabled: true
+----
+====
+
+After that, you can start doing operations on the cluster such as putting/retrieving entries to/from map:
+
+[source,bash]
+----
+hzc map put --name testMap --key tmpKey --value tmpValue
+hzc map get --name testMap --key tmpKey
+----
+
