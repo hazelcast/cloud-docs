@@ -3,7 +3,7 @@
 
 {description}
 
-To run a Hazelcast cluster on your local machine instead, see xref:hazelcast:getting-started:quickstart.adoc[].
+To run a Hazelcast cluster on your local machine, see xref:hazelcast:getting-started:quickstart.adoc[].
 
 ++++
 <script type="application/ld+json">
@@ -39,15 +39,15 @@ To run a Hazelcast cluster on your local machine instead, see xref:hazelcast:get
 
 . link:https://cloud.hazelcast.com/sign-up[Sign up for a Hazelcast Cloud account].
 
-. Create a free cluster on the Basic plan. For help creating a cluster, see xref:getting-started.adoc[].
+. Create a free cluster on the Basic plan. For more information about creating a cluster, see xref:getting-started.adoc[].
 
 NOTE: Don't enable encryption on your cluster. At the moment, you can't connect the CLI to a Hazelcast Cloud cluster if encryption is enabled.
 
-== Step 2. Download the CLI Client
+== Step 2. Download CLI Client
 
-. Go to *Your Clusters* and click your cluster.
+. Go to *Your Clusters*, and then click your cluster.
 
-. Click *Connect your Application* and open the *SQL* tab.
+. Click *Connect your Application*, and now open the *SQL* tab.
 
 . Download and unzip the client configuration file.
 +
@@ -65,7 +65,7 @@ hazelcast-client:
 ```
 +
 <1> The name of your cluster, which you can find in the *Credentials* section
-<2> This field tells the client that it is connecting to a Hazelcast Cloud cluster.
+<2> This field tells the client that it is connected to a Hazelcast Cloud cluster.
 <3> Your discovery token, which you can find in the *Credentials* section.
 <4> This field tells the client to send metrics to the cluster so that they can be displayed in Hazelcast Cloud and/or used by other applications such as Management Center.
 
@@ -140,7 +140,7 @@ You should see your installed version of the CLI client.
 hz-cli -f hazelcast-client.yml sql
 ```
 +
-The `-f` flag passes the configuration file to the CLI client so that the cluster can authenticate the client, using the credentials.
+The `-f` flag passes the configuration file to the CLI client so that the cluster can authenticate the client using the credentials.
 
 You should see the SQL prompt:
 
