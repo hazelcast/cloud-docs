@@ -1,13 +1,13 @@
 = Building a MapStore for Hazelcast Cloud
 :toclevels: 3
 :url-code-sample-mapstore: https://github.com/hazelcast/hazelcast-cloud-code-samples/tree/master/mapstore
-:description: pass:q[MapStore is an API for building a cache on top of Hazelcast. The MapStore interface includes methods that are triggered when operations are invoked on a map. You can implement your own logic in these methods to load data from an external data store or write data back to it. For example, when a map entry is read with the `map.get()` method, the `load()` method of the MapStore is invoked.]
+:description: pass:q[MapStore is an API for building a cache on top of Hazelcast. The MapStore interface includes methods that are triggered when operations are invoked on a map. You can implement your own logic in these methods to connect to an external data store, load data from it, and write data back to it. For example, you can use a MapStore to load data from a MongoDB, MySQL, or PostgreSQL database.]
 
 {description}
 
 MapStore supports the following caching patterns:
 
-- *Read-through:* If an entry does not exist in memory when an application asks for it, Hazelcast asks the MapLoader implementation to load that entry from the data store. If the entry exists, the MapLoader implementation requests it from the data store and Hazelcast puts it into memory.
+- *Read-through:* If an entry does not exist in memory when an application asks for it, Hazelcast asks the MapStore implementation to load that entry from the data store. If the entry exists, the MapStore implementation requests it from the data store and Hazelcast puts it into memory.
 - *Write-through:* When new entries are added to a map, those entries are added to the data store synchronously.
 - *Write-behind:* When new entries are added to a map, those entries are added to the data store asynchronously, after a configured delay.
 
@@ -25,9 +25,7 @@ To use this feature, you must have either an admin or developer role. See xref:t
 [[implement]]
 == Implementing the MapStore
 
-To implement a MapStore for Hazelcast Cloud, you can mostly xref:hazelcast:data-structures:working-with-external-data.adoc[follow the guide in the Hazelcast Platform documentation]. However, you must make sure to manage the lifecycle of the MapStore.
-
-When Hazelcast Cloud loads the MapStore, it makes a connection to the external data store. If open connections are left open, these connections will consume unnecessary resources. To manage this connection, make sure to implement the link:https://docs.hazelcast.org/docs/latest/javadoc/com/hazelcast/map/MapLoaderLifecycleSupport.html[`MapLoaderLifeCycleSupport` interface] to allow Hazelcast Cloud to close connections to the data store on a graceful shutdown.
+To implement a MapStore for Hazelcast Cloud, you can mostly xref:hazelcast:data-structures:working-with-external-data.adoc[follow the guide in the Hazelcast Platform documentation]. However, you must make sure to manage the lifecycle of the MapStore. When Hazelcast Cloud loads the MapStore, it makes a connection to the external data store. If open connections are left open, these connections will consume unnecessary resources. To manage this connection, make sure to implement the link:https://docs.hazelcast.org/docs/latest/javadoc/com/hazelcast/map/MapLoaderLifecycleSupport.html[`MapLoaderLifeCycleSupport` interface] to allow Hazelcast Cloud to close connections to the data store on a graceful shutdown.
 
 [[test]]
 == Testing the MapStore

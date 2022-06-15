@@ -28,8 +28,9 @@ TIP: The code in this tutorial is available as a link:{github-directory}[sample 
 +
 - link:https://git-scm.com/book/en/v2/Getting-Started-Installing-Git[Git]
 - link:https://maven.apache.org/install.html[Maven]
+- link:https://docs.docker.com/engine/install[Docker]
 
-. Make sure that you have JDK 8, 9, or 11 installed.
+. Make sure that you have JDK 8, 9, or 11 installed and set up as the `JAVA_HOME` environment variable.
 
 [[step-one]]
 == Step 1. Create a MongoDB Atlas Database
@@ -108,7 +109,7 @@ This class is for the objects that you will store in a Hazelcast map and that wi
 
 The `Person` class uses the Java `Serializable` interface as a serializer so that Hazelcast can send it to clients and other members as well as deserialize it. 
 
-To allow you to query the object fields with SQL, the fields include getters and setters. Although, you could also make the fields public.
+To allow you to query the object fields with SQL, the fields include getters and setters. Although, you can also make the fields public.
 
 [source,java]
 ----
@@ -206,11 +207,7 @@ Hazelcast encrypts these properties to keep them safe.
 |Name|Value
 
 |uri
-| Your MongoDB connection string. Replace the *<username>* and *<password>* placeholder with the username and password that you created in <<step-one, step 1>>.
-
-```
-mongodb+srv://<username>:<password>@cluster0.51w1h.mongodb.net/Hazelcast?retryWrites=true&w=majority
-```
+| Your MongoDB connection string. You can find this connection string in the link:https://www.mongodb.com/docs/guides/atlas/connection-string/[Atlas console].
 
 |database
 | The name of the database that you created in <<step-one, step 1>>.
@@ -220,6 +217,7 @@ Hazelcast
 ```
 
 |===
+
 . Click *Save Configuration*.
 
 == Step 5. Test the MapStore
@@ -262,7 +260,7 @@ If your test fails, do the following:
 
 In this tutorial, you learned how to do the following:
 
-- Use a Mapstore to write changes made in Hazelcast Cloud back to an external database.
+- Use a Mapstore to write changes made in Hazelcast Cloud back to a MongoDB Atlas database.
 - Deploy the MapStore to a Hazelcast Cloud cluster, using the Hazelcast Cloud Maven plugin.
 - Trigger the MapStore by adding data to a map, using SQL. 
 
