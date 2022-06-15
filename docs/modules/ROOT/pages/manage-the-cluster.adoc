@@ -1,5 +1,5 @@
 = Stopping and Resuming Clusters
-:description: You can stop and resume any cluster that has persistence enabled. Stopping a cluster saves your cluster's configuration and stops charges accumulating.
+:description: Stopping a cluster saves your cluster's configuration and stops charges accumulating. All map entries, JCache entries, and jobs are persisted so you can stop and resume your cluster at any time without losing that data.
 
 {description}
 

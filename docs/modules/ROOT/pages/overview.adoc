@@ -45,7 +45,7 @@ If you give your Hazelcast Cloud cluster too few resources, your cluster may fai
 
 == Restrictions on Free Serverless Clusters
 
-If you create a Serverless cluster for free and don't use it for 16 hours, it will be stopped.
+If you create a Serverless cluster for free and don't connect to it for 16 hours, it will be stopped. Any map entries, JCache entries or jobs in the cluster are persisted for as long as your account is active so that you can resume the cluster from the previous state.
 
 == Use Cases
 
