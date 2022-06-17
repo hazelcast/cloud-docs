@@ -1,6 +1,5 @@
 = IP Whitelisting
-:description: Hazelcast Serverless clusters are exposed to the Internet and allow any authenticated client to connect to them by default. To grant access only to specific clients, you can add their IP addresses to a whitelist.
-:page-serverless: true
+:description: Hazelcast Cloud clusters are exposed to the Internet and allow any authenticated client to connect to them by default. To grant access only to specific clients, you can add their IP addresses to a whitelist.
 
 {description}
 

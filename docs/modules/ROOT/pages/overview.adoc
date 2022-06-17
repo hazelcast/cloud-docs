@@ -4,7 +4,6 @@
 
 {description}
 
-
 image:serverless-app-server.svg[A Hazelcast client application communicating with a Hazelcast Cloud cluster]
 
 Hazelcast Cloud comes in two flavors:
@@ -13,39 +12,18 @@ Hazelcast Cloud comes in two flavors:
 |===
 |Flavor|Intended applications
 
-|<<serverless, Serverless>>
+|xref:serverless-clusters.adoc[Serverless]
 |
 - Starter projects
 - Development environments
 - Unpredicable scaling requirements
 - Budget constraints
 
-|<<dedicated, Dedicated>>
+|xref:dedicated-clusters.adoc[Dedicated]
 |
 - Explicit resource and configuration requirements
 - Critical production workloads
 |===
-
-== Serverless
-
-Serverless is a fully managed, multi-tenant deployment of a Hazelcast cluster
-
-You pay only for the amount of data that you put in storage, without needing to know what that might be before you start. If you use more storage, Hazelcast will allocate more hardware to your cluster to handle the increased load. If you use less storage, then you’ll pay less.
-
-== Dedicated
-
-Hazelcast Dedicated is a fully managed, single-tenant deployment of a Hazelcast cluster.
-
-Hazelcast Dedicated is created and fully managed by Hazelcast. You tell Hazelcast how many resources you need and Hazelcast will provision and deploy the cluster. You will need to consider the following before your cluster is created:
-
-- *Resources:* You need to know how many resources your application needs in advance.
-- *Cost:* You are charged by the number of GB that you choose to give the cluster at creation. Even if you don't use all available storage, you are charged the same. See xref:pricing.adoc[].
-
-If you give your Hazelcast Cloud cluster too few resources, your cluster may fail under heavy load and cause an outage. If you give your cluster too many resources, you waste money on servers that are just sitting idle.
-
-== Restrictions on Free Serverless Clusters
-
-If you create a Serverless cluster for free and don't connect to it for 16 hours, it will be stopped. Any map entries, JCache entries or jobs in the cluster are persisted for as long as your account is active so that you can resume the cluster from the previous state.
 
 == Use Cases
 
@@ -64,3 +42,12 @@ Hazelcast Cloud is the perfect solution if you need to keep or access data and s
 - Ease of set up and use
 - Zero maintenance burden
 - Node.js and Python support.
+
+== Getting Started
+
+If you are a first-time user of Hazelcast Cloud, use the following resources to get started:
+
+- xref:create-serverless-cluster.adoc[]
+- xref:developer-guide.adoc[]
+- xref:pricing.adoc[]
+- xref:mapstore-mongodb.adoc[]

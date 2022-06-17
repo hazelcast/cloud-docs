@@ -76,4 +76,4 @@ After you set up your account, you’ll want to keep it safe. Here are some reco
 
 == Next Steps
 
-xref:create-cluster.adoc[].
+xref:create-serverless-cluster.adoc[].

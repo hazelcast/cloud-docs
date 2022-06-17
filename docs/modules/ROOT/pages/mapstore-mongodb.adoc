@@ -22,7 +22,7 @@ TIP: The code in this tutorial is available as a link:{github-directory}[sample 
 
 == Before you Begin
 
-. xref:create-cluster.adoc[Create a Serverless cluster].
+. xref:create-serverless-cluster.adoc[Create a Serverless cluster].
 
 . Install the following tools:
 +

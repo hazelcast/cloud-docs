@@ -1,5 +1,5 @@
 = Upgrading a Dedicated Cluster
-:description: In Hazelcast Dedicated clusters, you can manually update to newer versions of Hazelcast.
+:description: In Hazelcast Dedicated clusters, you can manually upgrade your clusters to newer versions of Hazelcast.
 :page-dedicated: true
 
 {description}

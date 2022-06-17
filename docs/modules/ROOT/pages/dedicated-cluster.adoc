@@ -1,0 +1,88 @@
+= Dedicated Clusters
+:description: Hazelcast Dedicated is a fully managed, single-tenant deployment of a Hazelcast cluster.
+:page-dedicated: true
+
+{description}
+
+Dedicated clusters are created and fully managed by the Hazelcast team. You tell Hazelcast how many resources you need and Hazelcast will provision and deploy the cluster.
+
+Consider a Dedicated cluster for the following:
+
+- Explicit resource and configuration requirements
+- Critical production workloads
+
+== Supported Functionality
+
+Use this table to learn what is supported in Dedicated clusters:
+
+[cols="1a,1a"]
+|===
+|Functionality|Support
+
+|xref:create-dedicated-cluster.adoc[Create a cluster]
+|Supported
+
+|xref:deleting-a-cluster.adoc[Delete a cluster]
+|Supported
+
+|xref:stop-and-resume.adoc[Stop and resume the cluster]
+|Supported
+
+|xref:connect-to-cluster.adoc[Connect to the cluster]
+|Supported
+
+|xref:charts-and-stats.adoc[Read metrics]
+|Supported
+
+|xref:scale-up-down.adoc[Manually scale the cluster]
+|Supported
+
+|Auto scaling
+|Not Supported
+
+|xref:custom-classes-upload.adoc[Custom class upload]
+|Supported
+
+|xref:map-configurations.adoc[Add data structure configuration]
+|Supported
+
+|xref:map-configurations.adoc[Edit map configuration]
+|Supported
+
+|Delete data structure configuration
+|Not supported
+
+|Automated daily backups
+|Not supported
+
+|xref:backup-and-restore.adoc[Manual backups]
+|Supported
+
+|xref:ip-white-list.adoc[IP whitelisting]
+|Supported
+
+|xref:management-center.adoc[Management Center]
+|Supported
+
+|xref:wan-replication.adoc[WAN replication]
+|
+
+|xref:hazelcast-version.adoc[Choose a version of Hazelcast member software]
+|Supported
+
+|xref:logging-integration.adoc[Integrate with an external logging service]
+|Supported
+
+|xref:vpc-peering.adoc[VPC peering]
+|Supported
+
+|xref:aws-private-link.adoc[AWS PrivateLink]
+|Supported
+
+|===
+
+== Related Resources
+
+- xref:pricing.adoc[]
+- xref:teams-and-users.adoc[]
+- xref:architecture.adoc[]

@@ -9,7 +9,7 @@ Failover is an important feature of systems that rely on near-constant availabil
 
 == Before you Begin
 
-You need to xref:create-cluster.adoc[create more than one cluster] on Hazelcast Cloud.
+You need to xref:create-serverless-cluster.adoc[create more than one cluster] on Hazelcast Cloud.
 
 == Create the Client Configuration
 

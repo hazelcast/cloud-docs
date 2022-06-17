@@ -40,9 +40,9 @@ For general guidance on testing cluster-side modules, see xref:cluster-side-modu
 [[deploy]]
 == Deploying the MapStore
 
-Before you can configure the MapStore, you need to deploy it, which involves packaging your classes into a file along with any dependencies and uploading that file to Hazelcast Cloud.
+Before you can configure the MapStore, you need to deploy it by packaging your classes into a file along with any dependencies and uploading that file to Hazelcast Cloud.
 
-For a guide, see xref:custom-classes-upload.adoc[].
+See xref:custom-classes-upload.adoc[].
 
 [[configure]]
 == Configuring the MapStore

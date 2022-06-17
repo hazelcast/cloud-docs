@@ -1,0 +1,89 @@
+= Creating a Serverless Cluster
+:description: You can create a free Serverless cluster for xref:serverless-cluster.adoc[development or production].
+:page-aliases: create-starter-cluster.adoc, starter-clusters.adoc, create-standard-cluster.adoc, availability-zones.adoc, instance-types.adoc
+:page-serverless: true
+
+{description}
+
+To create a cluster for a team, you must have either an xref:create-account.adoc#roles[admin or developer role].
+
+== Before you Begin
+
+You need a xref:create-account.adoc[Hazelcast Cloud account].
+
+== Creating a Serverless Cluster in the Cloud Console
+
+[tabs] 
+====
+Development:: 
++ 
+--
+// tag::development[]
+. Click *Plans* in the left navigation.
+. Click *Create cluster* in the *Serverless* tab.
+. Click *Create Development Cluster*.
+
+. Select a region.
++
+NOTE: For best performance, use a region that's closest to your client applications or data stores. The closer your clients and data are to the cluster, the lower the network latency.
+
+. Give your cluster a memorable name. This name is a label to help you differentiate clusters in your account.
+
+It takes a few minutes to create a Serverless cluster. During this period, your cluster will be in a pending state. When the cluster state changes to running, you will be able to use it.
+// end::development[]
+--
+
+Production:: 
++ 
+--
+// tag::production[]
+. Click *Plans* in the left navigation.
+. Click *Create cluster* in the *Serverless* tab.
+. Click *Create Production Cluster*
+. Select a region.
++
+NOTE: For best performance, use a region that's closest to your client applications or data stores. The closer your clients and data are to the cluster, the lower the network latency.
+
+. Give your cluster a memorable name. This name is a label to help you differentiate clusters in your account.
+
+It takes a few minutes to create a Serverless cluster. During this period, your cluster will be in a pending state. When the cluster state changes to running, you will be able to use it.
+// end::production[]
+--
+====
+
+== Creating a Production Cluster
+
+. Click *Plans* in the left navigation.
+. Click *Create cluster* in the *Serverless* tab.
+. Click *Create Production Cluster*
+. Select a region.
++
+[NOTE]
+====
+For best performance, use a region that's closest to your client applications or data stores. The closer your clients and data are to the cluster, the lower the network latency.
+====
+. Give your cluster a memorable name. This name is a label to help you differentiate clusters in your account.
+
+It takes a few minutes to create a Serverless cluster. During this period, your cluster will be in a pending state. When the cluster state changes to running, you will be able to use it.
+ 
+== Changing your Cluster Name
+
+You cannot change your cluster name after it has been created. To choose a different name, create a new cluster.
+
+== Restrictions on Free Serverless Clusters
+
+If you create a Serverless cluster for free and don't connect to it for 16 hours, it will be stopped. Any map entries, JCache entries or jobs in the cluster are persisted for as long as your account is active so that you can resume the cluster from the previous state.
+
+== Next Steps
+
+Try a hello world tutorial:
+
+* xref:java-client.adoc[Java]
+* xref:nodejs-client.adoc[Node.js]
+* xref:python-client.adoc[Python]
+* xref:go-client.adoc[Go]
+* xref:net-client.adoc[C#]
+* xref:cpp-client.adoc[C++]
+* xref:sql.adoc[SQL]
+
+Or build a sample caching app: xref:mapstore-mongodb.adoc[].

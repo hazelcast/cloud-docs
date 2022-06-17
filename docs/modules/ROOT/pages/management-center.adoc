@@ -1,4 +1,4 @@
-= Management Center for Cloud
+= Management Center for Hazelcast Cloud
 :description: You can use Hazelcast Management Center to monitor your Hazelcast cluster. Hazelcast Management Center for Cloud provides view-only access so that you can get more useful insights about a cluster state, data structure metrics and other important aspects.
 
 {description}
@@ -12,13 +12,13 @@ To learn how to use Management Center, see the xref:management-center:ROOT:index
 
 To use Management Center in a Hazelcast Dedicated cluster, you need to enable it.
 
-. On the cluster details page, click *Management Center* button and select *Enable*.
+. On the cluster details page, click *Management Center* and select *Enable*.
 
 . Click *Enable Management Center*.
 +
 Management Center is available only to a set of the whitelisted IP addresses, which is initially empty.
 
-. Add the IP address that you want to authorize to access Management Center for your cluster. You can use direct IP addresses or CIDR notation.
+. Add the IP address that you want to authorize to access Management Center for your cluster. You can use CIDR notation.
 
 . Go to *Management Center* > *Open Management Center* on the cluster details page.
 +

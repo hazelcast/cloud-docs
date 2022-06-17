@@ -30,7 +30,7 @@
 
 - We've changed our pricing model and introduced three plans: Basic, Standard, and Enterprise. See xref:pricing.adoc[] for details.
 
-- You can now stop and resume clusters on the Enterprise plan. When a cluster is resumed, any persisted data is restored from disk. See xref:manage-the-cluster.adoc[].
+- You can now stop and resume clusters on the Enterprise plan. When a cluster is resumed, any persisted data is restored from disk. See xref:stop-and-resume.adoc[].
 
 *Fixes:*
 

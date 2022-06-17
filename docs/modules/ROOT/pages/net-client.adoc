@@ -12,7 +12,7 @@ You need a xref:create-account.adoc[Hazelcast Cloud account].
 
 In the Hazelcast Cloud console, do the following:
 
-include::create-cluster.adoc[tags=serverless;serverless-sandbox] 
+include::create-serverless-cluster.adoc[tag=development] 
 
 == Step 2. Run the Sample Client
 

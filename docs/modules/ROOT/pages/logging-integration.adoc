@@ -1,10 +1,10 @@
-= Logging Integrations for Hazelcast Dedicated
+= Logging Integrations
 :description: Hazelcast Dedicated allows to integrate your own log management system. With the correct setup, all Hazelcast members send their logs to the configured remote logging integration.
 :page-dedicated: true
 
 {description}
 
-NOTE: For Hazelcast Serverless, the Maven plugin will allow you stream cluster logs back to your local environment. This feature is in development. 
+NOTE: For Hazelcast Serverless, you can use the xref:maven-plugin.adoc[Maven plugin] to stream cluster logs back to your local environment. 
 
 == Supported Log Management Systems
 

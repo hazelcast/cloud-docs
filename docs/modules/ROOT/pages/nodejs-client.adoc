@@ -14,7 +14,7 @@ link:https://docs.npmjs.com/cli/v8/configuring-npm/install[Install the npm packa
 
 In the Hazelcast Cloud console, do the following:
 
-include::create-cluster.adoc[tags=serverless;serverless-sandbox] 
+include::create-serverless-cluster.adoc[tag=development] 
 
 == Step 2. Run the Sample Client
 

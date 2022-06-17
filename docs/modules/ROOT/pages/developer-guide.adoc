@@ -1,0 +1,32 @@
+= Developing Applications for Hazelcast Cloud
+:description: You can run Java code in Hazelcast Cloud to process batch or streaming data as well as cache your custom objects in distributed data structures.
+
+{description}
+
+The Java code that you run in Hazelcast Cloud is called a cluster-side module. These modules must implement a serializer and be deployed to a Hazelcast Cloud cluster before you can use them.
+
+After deploying a cluster-side module, you can use any available client to interact with the cluster. For example, you can use the command-line client to connect to the cluster's SQL shell and query your data.
+
+To learn more about developing applications for Hazelcast Cloud, see the following topics, depending on the xref:overview.adoc[flavor of Hazelcast Cloud] that you are using:
+
+[tabs] 
+====
+Serverless:: 
++ 
+--
+- xref:connect-to-cluster.adoc[]
+- xref:cluster-side-modules.adoc[]
+- xref:custom-classes-upload.adoc[]
+- xref:maploader-and-mapstore.adoc[]
+- xref:maven-plugin.adoc[]
+--
+Dedicated:: 
++ 
+--
+- xref:connect-to-cluster.adoc[]
+- xref:cluster-side-modules.adoc[]
+- xref:custom-classes-upload.adoc[]
+- xref:maploader-and-mapstore.adoc[]
+- xref:logging-integration.adoc[]
+--
+====

@@ -5,14 +5,14 @@
 
 == Hazelcast Cloud Plans
 
-Hazelcast Cloud has three plans.
+Hazelcast Cloud has two plans.
 
 [cols="a,a,a"]
 |===
 |Plan|Cost|Additional costs
 
 |Serverless
-|Free to store up to 2 GB, then $0.10 (USD) per GB
+|Free to store up to 2 GB, then $0.10 USD per GB
 |None
 
 |Dedicated
@@ -63,7 +63,7 @@ Examples of what is included in storage:
 Dedicated clusters are charged for the following:
 
 - *Provisioned memory:* How many resources you asked for when we created the cluster for you.
-- Data transfer: The volume of data going into, out of, and within your clusters.
+- *Data transfer:* The volume of data going into, out of, and within your clusters.
 - *Backup storage:* If you requested persistence for your data, this is the cost of storing your backups in cloud storage.
 
 === Provisioned Memory

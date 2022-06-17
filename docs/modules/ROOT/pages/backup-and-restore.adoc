@@ -1,9 +1,16 @@
-= Backing up and Restoring a Cluster
-:description: You can create a backup of all your cluster data and later restore new clusters from that backup.
+= Backing up and Restoring Data
+:description: You can create a backup of your cluster data and later restore new clusters from that backup.
 
 {description}
 
-NOTE: Hazelcast Dedicated clusters create a backup automatically once every 24 hours.
+Cluster data includes the following:
+
+- Configuration settings
+- Cluster-side modules
+- Jobs
+- Map and JCache data structures
+
+Serverless clusters create a backup automatically once every 24 hours.
 
 To back up or restore clusters in a team, you must have either an admin or developer role. See xref:teams-and-users.adoc[].
 
@@ -13,7 +20,7 @@ To back up or restore clusters in a team, you must have either an admin or devel
  
 . Click *Create a Snapshot*.
 
-The time of creating a backup can vary according to the size of your cluster and the data. You need to wait until the backup status is *Ready* before using it for restore.
+The time it takes to create a backup can vary, according to the size of your cluster and the amount of data in it.
 
 You can keep at most 10 backups. The oldest backup will be deleted automatically after the 10th backup.
 

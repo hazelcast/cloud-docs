@@ -139,7 +139,7 @@ The libraries in your project must not conflict with those that are built into H
 
 Before you go into production with your cluster-side modules, it's best to test them to make sure that they work as expected. To test cluster-side modules, follow these best practices:
 
-- *Use developer mode:* It's faster to test cluster-side modules in xref:create-cluster.adoc[developer mode]. When you turn on developer mode for a new cluster, that cluster includes only a single member. Single-member clusters are faster because you don't need to wait for the cluster to replicate your cluster-side modules over other members or create and update backup replicas of your data.
+- *Use developer mode:* It's faster to test cluster-side modules in a xref:serverless-cluster.adoc[development cluster]. When you turn on developer mode for a new cluster, that cluster includes only a single member. Single-member clusters are faster because you don't need to wait for the cluster to replicate your cluster-side modules over other members or create and update backup replicas of your data.
 - *Use the Maven plugin:* The xref:maven-plugin.adoc[Maven plugin] allows you to package and deploy your cluster-side modules in a single command.
 
 [[deploy]]
@@ -147,7 +147,7 @@ Before you go into production with your cluster-side modules, it's best to test 
 
 After testing your cluster-side modules, you need to deploy them to production.
 
-. xref:create-cluster.adoc[Create a new Hazelcast Cloud cluster] that is not in developer mode.
+. xref:create-serverless-cluster.adoc[Create a new Serverless production cluster].
 +
 You need to provide payment details to run more than one Hazelcast Cloud cluster.
 . Deploy your cluster-side modules to Hazelcast Cloud.

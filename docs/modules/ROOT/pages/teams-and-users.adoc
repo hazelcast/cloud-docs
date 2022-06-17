@@ -40,7 +40,7 @@ In each team, users can have one of the following roles:
 |===
 |Roles ->|Admin|Developer|Finance|View only
 
-|xref:create-cluster.adoc[Create and manage new clusters for the team]
+|xref:create-serverless-cluster.adoc[Create and manage new clusters for the team]
 |yes
 |yes
 |no
