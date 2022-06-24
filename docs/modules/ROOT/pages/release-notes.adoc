@@ -61,7 +61,7 @@ This release introduces Hazelcast 5.1 and the improvements to SQL:
 
 - We've changed our pricing model and introduced three plans: Basic, Standard, and Enterprise. See xref:pricing.adoc[] for details.
 
-- You can now stop and resume clusters on the Enterprise plan. When a cluster is resumed, any persisted data is restored from disk. See xref:manage-the-cluster.adoc[].
+- You can now stop and resume clusters on the Enterprise plan. When a cluster is resumed, any persisted data is restored from disk. See xref:stop-and-resume.adoc[].
 
 *Fixes:*
 
@@ -248,7 +248,7 @@ This release introduces Hazelcast 5.1 and the improvements to SQL:
 - Connection via xref:aws-private-link.adoc[AWS Private Link]
 - Replication to multiple xref:availability-zones.adoc[Availability Zones].
 - xref:scale-up-down.adoc[Scale Up / Down] for Clusters
-- TLS xref:encryption.adoc[Encryption] for the data in transit.
+- TLS encryption for the data in transit.
 - xref:logging-integration.adoc[Logging integration].
 - xref:custom-classes-upload.adoc[Custom Classes upload] to support user defined objects.
 - Support for all the Hazelcast data structures.

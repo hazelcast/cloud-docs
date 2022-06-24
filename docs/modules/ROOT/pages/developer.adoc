@@ -3,27 +3,28 @@
 :url-github-go-sdk: https://github.com/hazelcast/hazelcast-cloud-sdk-go
 :url-cloud-developers: https://cloud.hazelcast.com/settings/developer
 :url-cloud-api: https://cloud.hazelcast.com/v1/api/explorer
+:description: To connect a client to Hazelcast Cloud, you need an API key and an API secret. These credentials authenticate clients to your account. You can manage these credentials in your account settings in Hazelcast Cloud.
 
-Hazelcast Cloud allows you to manage your resources and clusters via an link:{url-cloud-api}[API], an link:{url-github-go-sdk}[SDK], and a link:{url-github-cloud-cli}[CLI]. To use these applications, you need an API key and an API secret, which can be created from link:{url-cloud-developers}[Developers] tab in your account or team settings. 
+{description}
 
-== Before you Begin
+To manage API keys for a team's cluster, you must have either an xref:create-account.adoc#roles[admin or developer role].
 
-To manage API keys for a team's cluster, you must have either an admin or developer role. See xref:teams-and-users.adoc[].
+== Creating API Keys and Secrets
 
-== Creating API Key and API Secret
+// tag::create[]
+To create a new set of API credentials, do the following:
 
-You can easily create a new API Key from the *Generate new API Key* button on this page. Then you can use these credentials on our applications to make actions. Currently, you can only create one API key and secret pair on your account.
+. Click the *Account* icon in the bottom left corner.
+. Click *Developer*.
+. Click *Generate new API Key*.
+// end::create[]
 
-NOTE: You can only see API secret once you created it. So, you should copy them once you created.
+You can use these credentials in your applications to make actions. Currently, you can only create one API key and secret pair on your account.
 
 IMPORTANT: Keep your keys and secrets secure. Anyone who has these credentials can delete your clusters.
 
-image:developer.png[A screen for viewing, creating, and deleting API keys]
-
-== Deleting API Key
+== Deleting an API Key
 
 You can delete your API key anytime by clicking the *Delete API Key* button.
 
-WARNING: After you delete your API key, any application that used this key will no longer work unless you configure a new set of credentials.
-
-image:delete-api-key.png[An API key with a button to delete it called Delete API key]
+WARNING: After you delete your API key, any application that uses this key will no longer work unless you configure them with a new set of credentials.

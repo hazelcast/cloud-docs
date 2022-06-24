@@ -1,0 +1,31 @@
+= Stopping and Resuming Clusters
+:description: Stopping a cluster saves your cluster's configuration and stops charges accumulating. All map entries, JCache entries, and jobs are persisted so you can stop and resume your cluster at any time without losing that data.
+:page-aliases: manage-the-cluster.adoc
+
+{description}
+
+== Before you Begin
+
+To stop clusters in a team, you must have either an admin or developer role. See xref:teams-and-users.adoc[].
+
+== Stopping a Cluster
+
+Stopping your cluster can help minimize your costs during development because you are only charged for running clusters.
+
+To stop a cluster, go to *Manage Cluster* and click *Stop*.
+
+If you're using a Serverless production cluster or a Dedicated cluster, Hazelcast Cloud saves your cluster data so that you can resume the cluster at a later time.
+
+If you're using a Serverless development cluster, all cluster data is lost after the cluster is stopped.
+
+.What is cluster data?
+[%collapsible]
+====
+include::backup-and-restore.adoc[tag=cluster-data]
+====
+
+== Resuming a Cluster
+
+When you resume a cluster, Hazelcast restarts it with the same configuration as before it was stopped. Persisted data is also restored from disk. 
+
+To resume a cluster after stopping it, go to *Manage Cluster* and click *Resume*.

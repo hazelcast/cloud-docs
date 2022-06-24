@@ -1,9 +1,9 @@
-= Hazelcast Cloud Quickstart
+= SQL Hello World
 :description: Follow this five-minute tutorial to set up a Hazelcast cluster in the cloud. In five minutes, you will learn how to create a cluster, connect to the SQL shell, and use SQL to write data to memory and query that data.
 
 {description}
 
-To run a Hazelcast cluster on your local machine instead, see xref:hazelcast:getting-started:quickstart.adoc[].
+To run a Hazelcast cluster on your local machine instead, see xref:hazelcast:getting-started:get-started-cli.adoc[].
 
 ++++
 <script type="application/ld+json">
@@ -35,21 +35,25 @@ To run a Hazelcast cluster on your local machine instead, see xref:hazelcast:get
 </script>
 ++++
 
-== Step 1. Create a Cluster
+== Before you Begin
 
-. link:https://cloud.hazelcast.com/sign-up[Sign up for a Hazelcast Cloud account].
+You need a xref:create-account.adoc[Hazelcast Cloud account].
 
-. Create a free cluster on the Basic plan. For help creating a cluster, see xref:getting-started.adoc[].
+link:https://docs.npmjs.com/cli/v8/configuring-npm/install[Install the npm package manager].
 
-NOTE: Don't enable encryption on your cluster. At the moment, you can't connect the CLI to a Hazelcast Cloud cluster if encryption is enabled.
+== Step 1. Start a Hazelcast Cloud Cluster
+
+In the Hazelcast Cloud console, do the following:
+
+include::create-serverless-cluster.adoc[tag=development] 
 
 == Step 2. Download the CLI Client
 
-. Go to *Your Clusters* and click your cluster.
+. Open the Hazelcast Cloud console and click *Connect your Application*.
 
-. Click *Connect your Application* and open the *SQL* tab.
+. Go to the *SQL* tab and download the ZIP file.
 
-. Download and unzip the client configuration file.
+. Extract the ZIP file.
 +
 This file contains the credentials that allow the CLI to connect to your Hazelcast Cloud cluster:
 +
@@ -60,20 +64,28 @@ hazelcast-client:
     hazelcast-cloud:
       enabled: true <2>
       discovery-token: {your-discovery-token} <3>
+    ssl: <4>
+      enabled: true
+      properties:
+        keyStore: client.keystore
+        keyStorePassword: {your-keystore-password}
+        trustStore: client.truststore
+        trustStorePassword: {your-keystore-password}
   metrics:
-    enabled: true <4>
+    enabled: true <5>
 ```
 +
-<1> The name of your cluster, which you can find in the *Credentials* section
+<1> The name of your cluster, which you can find in the *SQL Client Advanced Setup* section
 <2> This field tells the client that it is connecting to a Hazelcast Cloud cluster.
-<3> Your discovery token, which you can find in the *Credentials* section.
-<4> This field tells the client to send metrics to the cluster so that they can be displayed in Hazelcast Cloud and/or used by other applications such as Management Center.
+<3> Your discovery token, which you can find in the *SQL Client Advanced Setup* section.
+<4> TLS encryption configuration. You downloaded these certificate and key files in step 2.
+<5> This field tells the client to send metrics to the cluster so that they can be displayed in Hazelcast Cloud and/or used by other applications such as Management Center.
 
 . Make a note of where you extracted the client configuration file.
 
 . Install the Hazelcast CLI client. Use one of the following methods, depending on your operating system.
 +
-NOTE: The CLI client may appear quite large because it is packaged with the full distribution of Hazelcast, Management Center, and a JDK. We are working on a new CLI client that will be more lightweight.
+The CLI client application is large because it is packaged with the full distribution of Hazelcast, Management Center, and a JDK. We are working on a new CLI client that will be more lightweight.
 +
 [tabs] 
 ==== 
@@ -86,7 +98,7 @@ To install the CLI on macOS, use the Homebrew package manager.
 [source,bash]
 ----
 brew tap hazelcast/hz
-brew install hazelcast
+brew install hazelcast-enterprise
 ----
 --
 
@@ -101,7 +113,7 @@ To install the CLI on Linux, you can use either of these package managers, depen
 ----
 wget -qO - https://repository.hazelcast.com/api/gpg/key/public | sudo apt-key add -
 echo "deb https://repository.hazelcast.com/debian stable main" | sudo tee -a /etc/apt/sources.list
-sudo apt update && sudo apt install hazelcast
+sudo apt update && sudo apt install hazelcast-enterprise
 ----
 
 .RPM
@@ -109,7 +121,7 @@ sudo apt update && sudo apt install hazelcast
 ----
 wget https://repository.hazelcast.com/rpm/hazelcast-rpm.repo -O hazelcast-rpm.repo
 sudo mv hazelcast-rpm.repo /etc/yum.repos.d/
-sudo yum install hazelcast
+sudo yum install hazelcast-enterprise
 ----
 --
 Windows::
@@ -137,7 +149,7 @@ You should see your installed version of the CLI client.
 . Connect to the SQL shell on your Hazelcast Cloud cluster.
 +
 ```bash
-hz-cli -f hazelcast-client.yml sql
+hz-cli -f hazelcast-client-with-ssl.yml sql
 ```
 +
 The `-f` flag passes the configuration file to the CLI client so that the cluster can authenticate the client, using the credentials.
@@ -152,7 +164,7 @@ sql>
 
 Before you can query data in a map, you need to create a mapping to one, using the map connector.
 
-. In the SQL shell, configure the map connector to set up an SQL connection to a new map called `cities`.
+. In the SQL shell, configure the map connector to set up a SQL connection to a new map called `cities`.
 +
 [source,sql]
 ----

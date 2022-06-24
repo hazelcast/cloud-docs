@@ -1,0 +1,50 @@
+= Hazelcast Cloud
+:description: Hazelcast Cloud is a managed cloud service that simplifies Hazelcast cluster deployments, allowing you to focus on building applications for low-latency querying, aggregation, and stateful computations.
+:page-aliases: use-cases.adoc, faq.adoc
+
+{description}
+
+image:serverless-app-server.svg[A Hazelcast client application communicating with a Hazelcast Cloud cluster]
+
+== Cloud Clusters
+
+Hazelcast Cloud comes in two flavors:
+
+[cols="1a,1a"]
+|===
+|Flavor|Intended applications
+
+|xref:serverless-clusters.adoc[Serverless]
+|
+include::serverless-cluster.adoc[tag=intended-apps]
+
+|xref:dedicated-clusters.adoc[Dedicated]
+|
+include::dedicated-cluster.adoc[tag=intended-apps]
+|===
+
+== Use Cases
+
+Explore example use cases for Hazelcast Cloud.
+
+=== Caching/Data Layer for Cloud Based Microservices
+
+You can use Hazelcast Cloud as a low-latency, high-performance caching or data layer for your microservices. Your in-memory data management or caching solution will be ready in minutes, without needing to deal with its maintenance.
+
+=== State Management for Serverless Functions
+
+Hazelcast Cloud is the perfect solution if you need to keep or access data and state inside your serverless function. We offer:
+
+- Low latency data access
+- Ease of set up and use
+- Zero maintenance burden
+
+== Getting Started
+
+If you are a first-time user of Hazelcast Cloud, use the following resources to get started:
+
+- xref:get-started.adoc[]
+- xref:create-serverless-cluster.adoc[]
+- xref:developer-guide.adoc[]
+- xref:pricing.adoc[]
+- Tutorial: xref:mapstore-mongodb.adoc[]

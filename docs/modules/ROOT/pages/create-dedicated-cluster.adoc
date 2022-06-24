@@ -1,0 +1,31 @@
+= Creating a Dedicated Cluster
+:page-dedicated: true
+:description: xref:overview.adoc[Dedicated clusters] are created and managed by the Hazelcast team. To create a dedicated cluster, you need to get in contact with the Hazelcast team who will provision a cluster, depending on your resource requirements.
+:page-aliases: enterprise-clusters.adoc, create-enterprise-cluster.adoc
+:page-dedicated: true
+
+{description}
+
+== Before you Begin
+
+You need a xref:create-account.adoc[Hazelcast Cloud account].
+
+Consider the following requirements:
+
+- *Resources:* You need to know how many resources your application needs.
+- *Cost:* You are charged by the number of GB that you choose to give the cluster at creation. Even if you don't use all available storage, you are charged the same. See xref:pricing.adoc[].
+
+If you give your Hazelcast Cloud cluster too few resources, your cluster may fail under heavy load and cause an outage. If you give your cluster too many resources, you waste money on servers that are just sitting idle.
+
+== Creating a Dedicated Cluster in the Cloud Console
+
+To request more information about creating a dedicated cluster, do the following:
+
+. Go to *Plans* > *Dedicated*.
+. Complete the form and click *Get in touch*.
+
+== Next Steps
+
+Try the xref:get-started.adoc[hello world tutorial].
+
+Or, build a sample caching app: xref:mapstore-mongodb.adoc[].

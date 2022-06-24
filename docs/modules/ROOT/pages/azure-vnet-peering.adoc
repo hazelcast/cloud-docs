@@ -1,9 +1,9 @@
 = Creating an Azure vNet Peering Connection
 :url-azure-cli: https://docs.microsoft.com/en-us/cli/azure/
-:url-github-cloud-cli: https://github.com/hazelcast/hazelcast-cloud-cli/
 :url-azure-permissions: https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-manage-peering#permissions
+:page-dedicated: true
 
-Since security is vital in Hazelcast Cloud Enterprise, your clusters are installed within a private "Virtual Network" and can not be accessed unless you choose "Public Access" on cluster creation. So to connect private Azure Hazelcast Clusters, you need to establish a vNet peering connection between your network and Hazelcast Cluster network. 
+Since security is vital in Hazelcast Dedicated, your clusters are installed within a private virtual network and can not be accessed unless you choose *Public Access* on cluster creation. So to connect private Azure Hazelcast Clusters, you need to establish a vNet peering connection between your network and Hazelcast Cluster network. 
 
 == Before you Begin
 
@@ -49,18 +49,14 @@ This command will create a service principal on your account and assign the `Net
 +
 image:azure-peering-cli.png[Create a new peering]
 +
-WARNING: The CIDR of your Hazelcast Cloud Enterprise Cluster and the CIDR of your VPC should not be overlapped otherwise, it will fail.
+WARNING: The CIDR of your Hazelcast Dedicated Cluster and the CIDR of your VPC should not be overlapped otherwise, it will fail.
 
 . Check for active peerings from the Peerings tab after you select your Virtual Network on Azure for your side of peering. You can filter by its peer, which will be `cl-<CLUSTER_ID>`. On the example below, it is `cl53949` because the cluster ID was `53949`
-+
-image:my-vnet-peerings.png[Check that your peering status is connected]
 
 == Listing Peering Connections
 
 You can list Azure vNet peerings on your Enterprise Hazelcast Cluster on Azure from Console by going *Settings* > *vNet* Peering one by one as shown below.
 You can check where the connection established by checking the name of the vNet with it's CIDR from this list.
-
-image:vnet-peerings.png[List all vNet peering connections]
 
 Also, you can easily use Hazelcast Cloud SDK, Hazelcast Cloud CLI for listing vNet peerings as shown below.
 
@@ -95,9 +91,7 @@ for _,peer := range *peerings {
 
 == Deleting Peering Connections
 
-You can delete Azure vNet peerings of your Enterprise Hazelcast Cluster on Azure from the vNet Peerings list by easily clicking the garbage can on the item.
-
-image:vnet-delete-peering.png[Click Delete to delete a peering connection]
+You can delete Azure vNet peerings of your Hazelcast cluster on Azure from the vNet Peerings list by easily clicking the garbage can on the item.
 
 [tabs] 
 ====

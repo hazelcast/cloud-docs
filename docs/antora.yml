@@ -1,13 +1,14 @@
 name: cloud
 title: Cloud
-start_page: sql.adoc
-version: master
+start_page: overview.adoc
+version: ~
 asciidoc:
   attributes:
-    javasource: ROOT:example$
-    page-plans: https://cloud.hazelcast.com/plans
-    page-toclevels: 1
-    page-ghissue: https://github.com/hazelcast/cloud-docs/issues/new
-    javadocBaseUrl: https://docs.hazelcast.org/docs/
+    page-toclevels: 3
+    url-github-cloud-cli: https://github.com/hazelcast/hazelcast-cloud-cli
+    url-github-go-sdk: https://github.com/hazelcast/hazelcast-cloud-sdk-go
+    url-cloud-api: https://cloud.hazelcast.com/v1/api/explorer
+    java-hello-world-github: https://github.com/hazelcast/hazelcast-cloud-java-sample-client/blob/2de802aff7f4b1ed0b9b7c18a501f43e4a1fd2cf/src/main/java/com/hazelcast/cloud/ClientWithSsl.java#L25
+    
 nav:
 - modules/ROOT/nav.adoc

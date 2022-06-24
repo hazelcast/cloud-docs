@@ -1,7 +1,5 @@
 = Map
 
-image:map-configuration.png[Map configuration]
-
 == Map Name
 
 In Hazelcast, you can create custom map configurations associated with the names of maps. The maps that do not have any configuration defined use the default configuration. If you want to set a configuration that is valid for all maps, you can name your configuration as `default`. A user-defined `default` configuration applies to every map that does not have a specific custom map configuration defined with the map's name. 

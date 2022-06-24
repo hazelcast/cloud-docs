@@ -1,43 +1,35 @@
-= Backing up and Restoring a Cluster
+= Backing up and Restoring Data
+:description: You can create a backup of your cluster data and later restore new clusters from that backup.
 
-Once you have a running hot-backup feature enabled enterprise cluster, you can easily create a backup for your cluster and restore it.
-In order to make a restore, first you should have a backup to choose where to restore from.
+{description}
 
-NOTE: If the hot-backup feature is enabled, your cluster will create a backup automatically within 24 hours period.
+// tag::cluster-data[]
+Cluster data includes the following:
 
-WARNING: You can keep at most 10 backups. The oldest backup will be deleted automatically after the 10th backup.
+- Configuration settings
+- Cluster-side modules
+- Jobs
+- Map and JCache data structures
+// end::cluster-data[]
 
-== Before you Begin
+Serverless clusters create a backup automatically once every 24 hours and when they are stopped.
 
 To back up or restore clusters in a team, you must have either an admin or developer role. See xref:teams-and-users.adoc[].
 
-== Create, List, and Delete Backups
+== Creating a Backups
 
-To do this, first, you need to click on the *Manage Cluster* button located at the top right of the cluster details page and select *Backup And Restore* from the dropdown menu:
+. Go to *Manage Cluster* > *Backup And Restore*.
+ 
+. Click *Create a Snapshot*.
 
-image:cluster-settings-backup.png[Backup and Restore settings for a cluster]
+The time it takes to create a backup can vary, according to the size of your cluster and the amount of data in it.
 
-Once you select Backup and Restore, the following dialog appears. 
+You can keep at most 10 backups. The oldest backup will be deleted automatically after the 10th backup.
 
-image:create-a-backup.png[Create a new backup snapshot]
-
-You can easily list the backups and create a new one with the current data on your cluster. 
-Once you click *Create a Snapshot*, It will start to snapshot creation process and then you will see your new backup with the date of the backup created and status.   
-
-NOTE: The time of creating a backup can vary according to the size of your cluster and the data. You need to wait until the backup status is Ready before using it for restore.
-
-image:backup-created.png[View available backup snapshots]
-
-Also, you can easily delete your backup by clicking the *Delete* button.
-
-== Restore from Backup
+== Restore a New Cluster from a Backup
 
 Once you have at least one backup, you can easily use it to bootstrap a new cluster by clicking the *Restore* button of the backup you selected. Then, you need to follow nearly the same process as you followed while creating your cluster to create a new cluster with the backup.
 
-image:restore-from-backup.png[Restore a cluster from a backup snapshot]
-
-WARNING: You can not select all specifications like Instance Type, Instance Per Zone, and some other features other than you see in the form while creating a cluster from a backup.
-
 Once you click the *Restore Data to New Cluster* button, It will create a new cluster with the data your backup has. 
 
-IMPORTANT: You shouldn't delete your other cluster your restoring backups belong to until the new cluster be in a Running state.
+IMPORTANT: Do not delete the cluster that owns the backup until the new cluster is running.

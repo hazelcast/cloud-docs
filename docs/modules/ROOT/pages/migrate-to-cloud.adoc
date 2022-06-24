@@ -1,0 +1,33 @@
+= Migrating an Embedded Application to Hazelcast Cloud
+:description: To migrate an existing application from embedded Hazelcast to Hazelcast Cloud, you need to <<refactor, refactor your code>> as well as consider how you <<migrate, migrate any existing data to the cloud>>.
+
+{description}
+
+TIP: For the benefits of migrating your application from an embedded topology to a client/server topology such as Hazelcast Cloud, see link:https://hazelcast.com/blog/from-embedded-to-client-server/[our blog].
+
+== Refactoring Code for the Cloud
+
+Applications in Hazelcast Cloud are split into two parts:
+
+- The cluster-side that runs on Hazelcast Cloud.
+
+- The client-side that calls APIs on Hazelcast Cloud.
+
+image:ROOT:serverless-app-server.svg[A Hazelcast client application communicating with a Hazelcast Cloud cluster]
+
+To separate your embedded application into these two parts, see the following checklist:
+
+- [ ] Deploy xref:cluster-side-modules.adoc[cluster-side modules] to Hazelcast Cloud. If you use classes such as MapStore or an entry processor, or if you store custom objects in Hazelcast, you need to add those classes to the classpath of Hazelcast Cloud by deploying them as cluster-side modules.
+- [ ] Copy any data structure configuration over to Hazelcast Cloud. Data structures are configured in the Hazelcast Cloud console.
+- [ ] Remove member configuration from your code. Hazelcast configures the cluster for the best possible performance. All you need to do is configure the client and any data structures.
+- [ ] If you use the executor service, make sure that you are using the ‘default’ service in both uploaded executor services and client code. You cannot access named executor services in Hazelcast Cloud. 
+- [ ] Replace any instance of
+`HazelcastInstance
+newHazelcastInstance` with a client. `newHazelcastInstance` creates an instance of a Hazelcast member. Instead, you need to configure a client to xref:connect-to-cluster.adoc[connect to the cluster].
+
+== Migrating Stateful Data
+
+If you have existing data stored in Hazelcast, consider one of the following ways to migrate that data to Hazelcast Cloud:
+
+- Use xref:wan-replication.adoc[WAN Replication].
+- Reingest data, using one of the available xref:hazelcast:ingest:overview.adoc[APIs/tools].

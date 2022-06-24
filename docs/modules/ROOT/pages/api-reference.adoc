@@ -1,12 +1,9 @@
 = API Reference
-:url-github-cloud-cli: https://github.com/hazelcast/hazelcast-cloud-cli/
-:url-github-go-sdk: https://github.com/hazelcast/hazelcast-cloud-sdk-go
-:url-cloud-api: https://cloud.hazelcast.com/v1/api/explorer
 :url-graphql: https://graphql.org/
 
 Hazelcast Cloud uses link:{url-graphql}[GraphQL] to provide a public API to consumers.
 
-link:{url-cloud-api}[Go to GraphQL Explorer]
+link:{url-cloud-api}[Go to the GraphQL Explorer]
 
 == Queries
 
@@ -118,6 +115,7 @@ query {
 ----
 
 === Cluster List
+
 You can list all of your clusters according to their type of product (`STANDARD`, `ENTERPRISE`) with their details. You can fetch them will using `clusters query` with providing product type. 
 
 [source,shell]
@@ -149,9 +147,9 @@ query {
 
 == Mutations
 
-=== Create Standard Cluster
+=== Create Serverless Cluster
 
-You can create a new *Standard Hazelcast Cluster* with `createStandardCluster` mutation. This mutation needs at least the following inputs; `name, cloud provider, region, cluster type, total memory, and Hazelcast version`. You can optionally provide other properties like data structures etc.
+You can create a new *Hazelcast Serverless* cluster with the `createStandardCluster` mutation. This mutation needs at least the following inputs; `name, cloud provider, region, cluster type, total memory, and Hazelcast version`. You can optionally provide other properties like data structures etc.
 
 [WARNING]
 ====
@@ -180,9 +178,9 @@ mutation {
 }
 ----
 
-=== Create Enterprise Cluster
+=== Create Dedicated Cluster
 
-You can create a new *Enterprise Hazelcast Cluster* with `createEnterpriseCluster mutation`. This mutation needs at least the following inputs; `name, cloud provider, region, zones, instance type, instance per zone, Hazelcast version, public access value, and CIDR block`.
+You can create a new *Hazelcast Dedicated* cluster with the `createEnterpriseCluster mutation`. This mutation needs at least the following inputs; `name, cloud provider, region, zones, instance type, instance per zone, Hazelcast version, public access value, and CIDR block`.
 
 
 [WARNING]
@@ -191,10 +189,10 @@ You need to collect some inputs from other queries.
 
 In this case, you need to get `cloudProvider` from `cloudProviders query`,  `region` from `regions query`, `zones`  from `availabilityZones query`, instanceType from `instanceTypes query`.
 
-Also, you need to care about if the cloud provider and region are enabled for the enterprise version of the Hazelcast Cloud Product.
+Also, you need to care about if the cloud provider and region are enabled for Hazelcast Dedicated.
 ====
 
-TIP: You can optionally provide other properties like data structures, hot backup features, etc.
+TIP: You can optionally provide other properties such as data structures and Persistence features.
 
 [source,shell]
 ----
@@ -220,7 +218,7 @@ mutation {
 
 === Delete Cluster
 
-You can delete your cluster with `deleteCluster` mutation with providing id of the cluster as an argument.
+You can delete your cluster with `deleteCluster` mutation by providing the ID of the cluster as an argument.
 
 [source,shell]
 ----
@@ -233,7 +231,7 @@ mutation {
 
 === Stop Cluster
 
-You can stop your *Standard Hazelcast Cluster* with `stopCluster` mutation with providing id of the cluster as an argument.
+You can stop your *Standard Hazelcast Cluster* with `stopCluster` mutation by providing the ID of the cluster as an argument.
 
 [source,shell]
 ----
@@ -246,7 +244,7 @@ mutation {
 
 === Resume Cluster
 
-You can resume your *Standard Hazelcast Cluster* with `resumeCluster` mutation with providing id of the cluster as an argument.
+You can resume your *Standard Hazelcast Cluster* with `resumeCluster` mutation by providing the ID of the cluster as an argument.
 
 [source,shell]
 ----

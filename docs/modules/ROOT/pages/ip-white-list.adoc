@@ -1,30 +1,10 @@
 = IP Whitelisting
-:description: Clusters that are exposed to the Internet allow any client with the correct credentials to connect to them. To grant access only to specific clients, you can add their IP addresses to a whitelist.
+:description: Hazelcast Cloud clusters are exposed to the Internet and allow any authenticated client to connect to them by default. To grant access only to specific clients, you can add their IP addresses to a whitelist.
 
 {description}
 
-== Before you Begin
+To add IP addresses to the whitelist of a team's cluster, you must have either an xref:teams-and-users.adoc[admin or developer role].
 
-If you're on the Enterprise plan, you can use IP whitelisting only if you turned on public access while creating the cluster. Otherwise, your cluster is private and you need to set up peering to allow clients to connect to it. See xref:connect-to-private-cluster.adoc[].
-
-To add IP addresses to the whitelist of a team's cluster, you must have either an admin or developer role. See xref:teams-and-users.adoc[].
-
-== Setting Up IP Whitelisting
-
-[tabs] 
-====
-Enterprise:: 
-+ 
---
-If you're on the Enterprise plan, go to *Manage Cluster* > *Settings* > *IP Whitelisting* and add the IP addresses of your clients.
-
-image:ip-whitelist-enterprise.png[Adding IP addresses to the whitelist of an Enterprise cluster]
---
-Standard or Basic:: 
-+ 
---
-If you're on the Standard or Basic plan, click *IP Whitelist* and add the IP addresses of your clients.
---
-====
+Go to *Manage Cluster* > *Settings* > *IP Whitelisting* and add the IP addresses of your clients.
 
 Any changes you make will be effective immediately.

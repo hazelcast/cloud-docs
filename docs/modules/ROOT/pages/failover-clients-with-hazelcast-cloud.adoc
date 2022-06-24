@@ -1,16 +1,17 @@
 = Failover Clients with Hazelcast Cloud
+:description: In this tutorial, you'll configure the Hazelcast Java client to connect to a failover cluster when it cannot connect to the primary cluster.
+
+{description}
+
+== Context
 
 Failover is an important feature of systems that rely on near-constant availability. Hazelcast fault tolerance automatically and transparently redirects your connection from one cluster that has problems to the second running cluster.
 
-In this tutorial, we will create a setup with Failover Configuration using multiple Hazelcast Cloud Clusters.
-
 == Before you Begin
 
-In order to achieve failover configuration, you need to create multiple clusters on Hazelcast Cloud. So, we can set up which clusters will get into action when there is a problem with one of them. See xref:create-enterprise-cluster.adoc[] or xref:create-standard-cluster.adoc[].
+You need to xref:create-serverless-cluster.adoc[create more than one cluster] on Hazelcast Cloud.
 
-image:hazelcast-cloud-clusters.png[A dashboard that displays two clusters running on Hazelcast Cloud]
-
-== Create Client Configs
+== Create the Client Configuration
 
 You need to create a client configuration for each cluster you want to use.
 In order to do that you should have the following:
@@ -19,9 +20,7 @@ In order to do that you should have the following:
 - Discovery Token
 - Password
 
-You can get this information from a Popup that opens when you click the *Configure Client* button on the Cluster Details page.
-
-image:java-client-setup.png[Instructions for setting up a Java client]
+You can get this information from a popup that opens when you click the *Connect your Application*.
 
 As soon as you successfully collect needed information for every cluster, you are ready to create your client configurations as shown below for different Hazelcast Versions.
 
@@ -79,8 +78,7 @@ public static ClientConfig getPrimaryClientConfig() {
 
 == Create Failover Client
 
-You should configure and use Hazelcast Failover Client in order to provide multiple clusters to your Hazelcast Client and accomplish this strategy. 
-You can easily create a fail-over client by providing every client configuration for different Hazelcast Cloud Clusters as shown below.
+You can create a failover client by providing every client configuration for different Hazelcast Cloud clusters.
 
 [source,java]
 ----
@@ -100,8 +98,8 @@ HazelcastInstance client = HazelcastClient
 
 == Check Failover In Action
 
-When you complete all the steps above, you are ready to go and try fail-over with Hazelcast Cloud.
-You can easily simulate a fail-over by stopping or deleting one of the clusters that you provided in Configure Failover Client. After you do that, you will see that your client will try to connect the other clusters one by. You will see a message on your console that says it will use a different cluster.
+When you complete all the steps above, you are ready to go and try failover with Hazelcast Cloud.
+You can easily simulate a failover by stopping or deleting one of the clusters that you provided in the failover configuration. After you do that, you will see that your client will try to connect the other clusters one by. You will see a message on your console that says it will use a different cluster.
 
 ```
 INFO: hz.client_1 [my-primary-cluster] [4.0] Unable to connect to any address from the cluster with name: my-primary-cluster. The following addresses were tried: [[-], [-]]

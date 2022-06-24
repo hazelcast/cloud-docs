@@ -1,0 +1,150 @@
+= Serverless Clusters
+:description: Hazelcast Serverless is a fully managed, multi-tenant deployment of Hazelcast. In Serverless clusters, you pay only for the amount of data that you put in storage, without needing to know what that might be before you start.
+:toc-levels: 3
+:page-serverless: true
+
+{description}
+
+== When to Use Serverless
+
+Consider a Serverless cluster for the following:
+
+// tag::intended-apps[]
+- Starter projects
+- Unpredicable scaling requirements
+- Strict budget constraints
+// end::intended-apps[]
+
+== Cluster Types
+
+// tag::types[]
+Hazelcast Serverless clusters can be one of two types: Development and Production.
+// end::types[]
+
+[[dev]]
+== Development Clusters
+
+// tag::development[]
+Development clusters include only a single member for fast, iterative development while you prototype your application.
+// end::development[]
+
+=== Limitations
+
+Development clusters have the following limitations:
+
+- Maximum 1 GB of storage
+- No ability to scale up
+- Data is not backed up or persisted
+
+When a development cluster restarts for any reason, you lose cluster data such as maps and cluster-side modules.
+
+NOTE: You cannot currently convert a development cluster to a production cluster.
+
+[[prod]]
+== Production Clusters
+
+// tag::production[]
+Production clusters are for applications that have already been tested and are ready to be deployed in real-world scenarios.
+// end::production[]
+
+Production clusters automatically scale up and down, depending on the amount of resources you use.
+
+All cluster data is backed up automatically once per day so that you can stop and resume your clusters at any time. You can also trigger manual backups.
+
+== Supported Functionality
+
+Use this table to learn what is supported in Serverless clusters:
+
+[cols="1a,1a,1a"]
+|===
+|Functionality|Support for production clusters|Support for development clusters
+
+|xref:create-serverless-cluster.adoc[Create a cluster]
+|Supported
+|Supported
+
+|xref:deleting-a-cluster.adoc[Delete a cluster]
+|Supported
+|Supported
+
+|xref:stop-and-resume.adoc[Stop and resume the cluster]
+|Supported
+|Supported
+
+|xref:connect-to-cluster.adoc[Connect to the cluster]
+|Supported
+|Supported
+
+|xref:charts-and-stats.adoc[Read metrics]
+|Supported
+|Supported
+
+|Manually scale the cluster
+|Not supported
+|Not supported
+
+|Auto scaling
+|Supported (always enabled)
+|Not supported
+
+|xref:custom-classes-upload.adoc[Custom class upload]
+|Supported
+|Supported
+
+|xref:map-configurations.adoc[Add data structure configuration]
+|Supported
+|Supported
+
+|Edit map configuration
+|Not Supported
+|Not Supported
+
+|Delete data structure configuration
+|Not supported
+|Not supported
+
+|Automated daily backups
+|Supported (always enabled)
+|Not supported
+
+|xref:backup-and-restore.adoc[Manual backups]
+|Supported
+|Not supported
+
+|xref:ip-white-list.adoc[IP whitelisting]
+|Supported
+|Supported
+
+|xref:management-center.adoc[Management Center]
+|Supported
+|Supported
+
+|xref:wan-replication.adoc[WAN replication]
+|Supported
+|Not supported
+
+|Choose a version of Hazelcast member software
+|Not supported (always uses the latest version)
+|Not supported (always uses the latest version)
+
+|Integrate with an external logging service
+|Not supported
+|Not supported
+
+|VPC peering
+|Not supported
+|Not supported
+
+|AWS PrivateLink
+|Not supported
+|Not supported
+
+|===
+
+== Related Resources
+
+- xref:create-serverless-cluster.adoc[]
+- xref:pricing.adoc[]
+- xref:teams-and-users.adoc[]
+- xref:architecture.adoc[]
+- xref:mapstore-mongodb.adoc[]

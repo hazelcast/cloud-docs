@@ -1,186 +1,145 @@
-= Connect a Go Client
+= Go Hello World
 :url-github-go: https://github.com/hazelcast/hazelcast-go-client#3-configuration-overview
+:description: This tutorial shows you how to get started with Hazelcast Cloud quickly. You'll create a Hazelcast Serverless cluster, and then use the Go client to add some entries to a map.
+
+{description}
 
 == Before you Begin
 
-. link:https://cloud.hazelcast.com/sign-up[Sign up for a Hazelcast Cloud account].
+You need a xref:create-account.adoc[Hazelcast Cloud account].
 
-. Create a free cluster on the Basic plan. For help creating a cluster, see xref:getting-started.adoc[].
+== Step 1. Start a Hazelcast Cloud Cluster
 
-== Download and Run the Sample Code
+In the Hazelcast Cloud console, do the following:
 
-. Click *Configure Client*.
+include::create-serverless-cluster.adoc[tag=development] 
 
-. Go to the *Go* tab and download the ZIP file as instructed in Step 1 of the dialog box.
+== Step 2. Run the Sample Client
 
-. Extract the ZIP file and run the command, in the extracted folder, shown in Step 2 of the above dialog box.
+. Open the Hazelcast Cloud console and click *Connect your Application*.
+
+. Go to the *Go* tab and download the ZIP file.
+
+. Extract the ZIP file, change into the extracted root directory and execute the following command:
++
+```bash
+go mod tidy && go run client_with_ssl.go
+```
 
 You should see log output similar to the following:
 
 image:go-client-log.png[Go client logs that it is connected]
 
-`Connection Successful!` in your logs means that your client application has successfully connected to your cluster in Hazelcast Cloud. The sample code inserts random entries to your cluster as you can see in the logs. In your Hazelcast Cloud console (your cluster's page where you can reach from the "Clusters" top menu), you should see the charts are being populated with metrics of your map, as shown below:
+`Connection Successful!` in your logs means that your client application has successfully connected to your cluster in Hazelcast Cloud. The sample client code adds random entries to a map in your cluster. In your Hazelcast Cloud console, you should see the charts begin to be populated with metrics of your map.
 
-image:map-metrics-client-connection.png[Map metrics that show entries are being added to the map]
+Also, you can see your client listed under *Client Statistics* at the bottom of your cluster's page.
 
 == Client Code
 
-Now, as we have successfully connected and put data into the cluster, let's review and explain the client code you downloaded.
+To help you understand how the client connected to the cluster, this section explains some of the source code. 
 
-Go to the directory (extracted from the ZIP file you downloaded in the Step 3 above) and locate the client sample code. If you had enabled encryption in your cluster, open the `client_with_ssl.go` file. Otherwise, open the `client.go` file. We will explain both files line by line in the following sections.
+TIP: The code for this sample client is hosted on link:https://github.com/hazelcast/hazelcast-cloud-go-sample-client/tree/5.1/client_with_ssl.go[GitHub].
 
-=== client.go
-
-This is the downloaded sample client code when your cluster does not have encryption.
-
+.client_with_ssl.go
 [source,go]
 ----
 package main
 
 import (
-  "fmt"
-  "log"
-  "math/rand"
-  "time"
-
-  hazelcast "github.com/hazelcast/hazelcast-go-client"
-  "github.com/hazelcast/hazelcast-go-client/config"
-  "github.com/hazelcast/hazelcast-go-client/config/property"
+	"context"
+	"crypto/tls"
+	"fmt"
+	"github.com/hazelcast/hazelcast-go-client"
+	"github.com/hazelcast/hazelcast-go-client/types"
+	"log"
+	"math/rand"
+	"os"
+	"path/filepath"
+	"time"
 )
+
 func main() {
+	ctx := context.Background()
+	config := hazelcast.NewConfig()
+	config.Cluster.Name = "YOUR_CLUSTER_NAME" <1>
+	config.Cluster.Cloud.Enabled = true
+	config.Cluster.Cloud.Token = "YOUR_CLUSTER_DISCOVERY_TOKEN" <2>
+	config.Stats.Enabled = true <3>
+	config.Stats.Period = types.Duration(time.Second)
 
-  cfg := hazelcast.NewConfig() // <1>
-  // <2>
-  cfg.GroupConfig().SetName("YOUR_CLUSTER_NAME")
-  cfg.GroupConfig().SetPassword("YOUR_CLUSTER_PASSWORD")
+  <4>
+	caFile, err := filepath.Abs("./ca.pem")
+	if err != nil {
+		panic(err)
+	}
+	certFile, err := filepath.Abs("./cert.pem")
+	if err != nil {
+		panic(err)
+	}
+	keyFile, err := filepath.Abs("./key.pem")
+	if err != nil {
+		panic(err)
+	}
+	config.Cluster.Network.SSL.Enabled = true
+	config.Cluster.Network.SSL.SetTLSConfig(&tls.Config)
+	err = config.Cluster.Network.SSL.SetCAPath(caFile)
+	if err != nil {
+		panic(err)
+	}
+	err = config.Cluster.Network.SSL.AddClientCertAndEncryptedKeyPath(certFile, keyFile, "98fe122d1c4")
+	if err != nil {
+		panic(err)
+	}
+	client, err := hazelcast.StartNewClientWithConfig(ctx, config)
+	if err != nil {
+		panic(err)
+	}
+	defer client.Shutdown(ctx)
 
-  cfg.NetworkConfig().SSLConfig().SetEnabled(false)
-  // <3>
-  discoveryCfg := config.NewCloudConfig()
-  discoveryCfg.SetEnabled(true)
-  discoveryCfg.SetDiscoveryToken("YOUR_CLUSTER_DISCOVERY_TOKEN")
-  cfg.NetworkConfig().SetCloudConfig(discoveryCfg)
-  // <4>
-  cfg.SetProperty(property.StatisticsEnabled.Name(), "true")
-  cfg.SetProperty(property.StatisticsPeriodSeconds.Name(), "1")
+	log.Println("Connection Successful!")
 
-  client, _ := hazelcast.NewClientWithConfig(cfg) // <5>
-  // <6>
-  mp, _ := client.GetMap("map")
-  mp.Put("key", "value")
-  val, _ := mp.Get("key")
-  // <7>
-  if val == "value" {
-    log.Println("Connection Successful!")
-    log.Println("Now, `map` will be filled with random entries.")
-    rand.Seed(time.Now().UTC().UnixNano())
-    for true {
-      randKey := rand.Intn(100000)
-      mp.Put("key"+string(randKey), "value"+string(randKey))
-      if randKey%10 == 0 {
-        size, _ := mp.Size()
-        log.Println(fmt.Sprintf("Map size: %d", size))
-      }
-      time.Sleep(100 * time.Millisecond)
-    }
-  } else {
-    panic("Connection failed, check your configuration.")
-  }
+	log.Println("Now, `map` will be filled with random entries.")
 
-  client.Shutdown()
+  <5>
+	mp, err := client.GetMap(ctx, "map")
+	if err != nil {
+		panic(err)
+	}
+	rand.Seed(time.Now().UTC().UnixNano())
+	iterationCounter := 0
+	for {
+		randKey := string(rune(rand.Intn(100000)))
+		_, err := mp.Put(ctx, "key"+randKey, "value"+randKey)
+		if err != nil {
+			panic(err)
+		}
+		if iterationCounter++; iterationCounter == 10 {
+			iterationCounter = 0
+			size, err := mp.Size(ctx)
+			if err != nil {
+				panic(err)
+			}
+			log.Println(fmt.Sprintf("Map size: %d", size))
+		}
+	}
+
 }
 ----
 
-<1> First, we create an empty client configuration.
-
-<2> Then, we set the cluster name and password via `GroupConfig`.
+<1> Set the cluster name.
 +
-The cluster name and password are unique to your cluster. The client is authenticated using this password.
+The cluster name is unique to your cluster. The client is authenticated using this cluster name.
 
-<3> Then, we set the discovery token.
+<2> Set the discovery token.
 +
 This token is also unique to your cluster and used to discover Hazelcast cluster members.
 
-<4> We enable Hazelcast to send the client statistics to see them in the cluster's page.
+<3> Enable Hazelcast to send the client statistics to the cluster's page.
 
-<5> Now, we create the client with `config`.
-+
-This step creates the connection between your application and the cluster.
+<4> Configure TLS encryption. You already downloaded these certificate and key files with the client code. 
 
-<6> We get/create a map and put a simple entry ("key", "value").
+<5> Add random entries with 100-millisecond intervals.
 
-<7> Then, we check if the entry has been added and let the code throw an exception if the value is not correct. Finally, we add random entries with 100-millisecond intervals.
+== Learn More
 
-=== client_with_ssl.go
-
-This is the downloaded sample client code when your cluster has encryption enabled.
-
-[source,go]
-----
-package main
-
-import (
-  "fmt"
-  "log"
-  "math/rand"
-  "path/filepath"
-  "time"
-
-  hazelcast "github.com/hazelcast/hazelcast-go-client"
-  "github.com/hazelcast/hazelcast-go-client/config"
-  "github.com/hazelcast/hazelcast-go-client/config/property"
-)
-
-func main() {
-  cfg := hazelcast.NewConfig()
-  // <1>
-  sslConfig := cfg.NetworkConfig().SSLConfig()
-  sslConfig.SetEnabled(true)
-  caFile,_ := filepath.Abs("./ca.pem")
-  certFile,_ := filepath.Abs("./cert.pem")
-  keyFile,_ := filepath.Abs("./key.pem")
-  sslConfig.SetCaPath(caFile)
-  sslConfig.AddClientCertAndEncryptedKeyPath(certFile, keyFile, "YOUR_SSL_PASSWORD")
-
-  sslConfig.ServerName = "hazelcast.cloud"
-  cfg.GroupConfig().SetName("YOUR_CLUSTER_NAME")
-  cfg.GroupConfig().SetPassword("YOUR_CLUSTER_PASSWORD")
-  discoveryCfg := config.NewCloudConfig()
-  discoveryCfg.SetEnabled(true)
-  discoveryCfg.SetDiscoveryToken("YOUR_CLUSTER_DISCOVERY_TOKEN")
-  cfg.NetworkConfig().SetCloudConfig(discoveryCfg)
-  cfg.SetProperty(property.StatisticsEnabled.Name(), "true")
-  cfg.SetProperty(property.StatisticsPeriodSeconds.Name(), "1")
-
-  client, _ := hazelcast.NewClientWithConfig(cfg)
-
-  mp, _ := client.GetMap("map")
-  mp.Put("key", "value")
-  val, _ := mp.Get("key")
-  if val == "value" {
-    log.Println("Connection Successful!")
-    log.Println("Now, `map` will be filled with random entries.")
-    rand.Seed(time.Now().UTC().UnixNano())
-    for true {
-      randKey := rand.Intn(100000)
-      mp.Put("key"+string(randKey), "value"+string(randKey))
-      if randKey%10 == 0 {
-        size, _ := mp.Size()
-        log.Println(fmt.Sprintf("Map size: %d", size))
-      }
-      time.Sleep(100 * time.Millisecond)
-    }
-  } else {
-      panic("Connection failed, check your configuration.")
-  }
-  client.Shutdown()
-}
-----
-
-<1> The only difference between this one and the `client.go` is the lines that enable and configure TLS encryption on the client side.
-
-You may want to move the 'pem' files to another directory. Then, you need to set 'ca', 'cert' and 'key' file directories accordingly.
-
-== More Configuration Options
-
-Please refer to the link:{url-github-go}[Hazelcast Go Client Documentation] for further configuration options.
+See the link:{url-github-go}[Hazelcast Go client documentation] for more information about using the Go client.

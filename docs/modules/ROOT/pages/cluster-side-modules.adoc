@@ -1,0 +1,158 @@
+= Working with Cluster-Side Modules in Hazelcast Cloud
+:description: Cluster-side modules are Java classes that a Hazelcast Cloud cluster can execute or store in the cloud. You can write cluster-side modules to execute custom code or store custom objects. This guide describes the workflows and best practices for implementing cluster-side modules for Hazelcast Cloud.
+
+{description}
+
+The basic workflow for any cluster-side module is the following:
+
+. *Build* the Java class and implement any required interfaces.
+. *Test* your implementation on a Serverless development cluster.
+. *Deploy* your Java classes to your Hazelcast Cloud cluster.
+
+Then you can use any client to interact with the cluster-side modules such as querying objects or triggering processes.
+
+image:cluster-side-modules.svg[Workflow for building cluster-side modules]
+
+== What are Cluster-Side Modules
+
+Cluster-side modules include any code that must be deployed as Java code to the cluster, including the following:
+
+.Cluster-side modules
+[cols="1a,2a"]
+|===
+|Module|Description
+
+|link:https://docs.hazelcast.org/docs/latest/javadoc/com/hazelcast/map/MapStore.html[MapStore]
+|Ingest data from an external data source into a Hazelcast map, or add data from a Hazelcast map to an external data source.
+
+|link:https://docs.hazelcast.org/docs/latest/javadoc/com/hazelcast/map/EntryProcessor.html[Entry processor]
+|Atomically execute code on a map entry.
+
+You cannot use a custom name for entry processors in Hazelcast Cloud. You must use the one called `default`.
+
+|link:https://docs.hazelcast.org/docs/latest/javadoc/com/hazelcast/core/IExecutorService.html[Executor]
+|Asynchronously execute tasks, such as database queries, complex calculations, and image rendering.
+
+You cannot use a custom name for executors in Hazelcast Cloud. You must use the one called `default`.
+
+|Custom object class (domain objects)
+|Allow Hazelcast Cloud to store or process domain objects that you use in your applications.
+
+|link:https://docs.hazelcast.org/docs/latest/javadoc/com/hazelcast/jet/pipeline/Pipeline.html[Pipeline]
+|Process streaming or batch data in Hazelcast Cloud, using one or more data sources and sinks.
+
+|===
+
+[[serializers]]
+== Supported Serializers
+
+Cluster-side modules need to be sent to other members in the cluster or one of your client applications. As a result, these modules need to be serialized.
+
+Hazelcast Cloud supports the following serializers. Follow the links to learn more about these serializers in the Hazelcast Platform documentation.
+
+[cols="3,3a,4a,1a"]
+|===
+| Serializer| Advantages| Disadvantages|Client support
+
+| xref:hazelcast:serialization:compact-serialization.adoc[Compact Serialization] [.beta]*Beta*
+|
+
+* Convenient, flexible, and can be used with no configuration
+
+* Does not require a class to implement an interface
+
+* Supports schema evolution
+
+* Partial deserialization is supported during queries and indexing
+
+|* Specific to Hazelcast
+
+* Schema is not part of the data but schema distribution
+may incur costs on short-lived use cases
+
+* The format is in a beta state and no compatibility
+guarantees are given yet
+
+|All clients
+
+| xref:hazelcast:serialization:serializing-json.adoc[Hazelcast JSON]
+| * No member-side coding required
+
+|* Specific to Hazelcast
+
+* Requires extra metadata to be stored on members.
+
+|All clients
+
+| xref:hazelcast:serialization:implementing-java-serializable.adoc[Serializable]
+| * A standard and basic Java interface
+
+* Requires no implementation
+| * More time and CPU usage
+
+* More space occupancy
+
+|Java only
+
+| xref:hazelcast:serialization:implementing-java-serializable.adoc[Externalizable]
+| * A standard Java interface
+
+* More CPU and memory efficient than Serializable
+| * Serialization interface must be implemented
+
+|Java only
+|===
+
+[[prereqs]]
+== Requirements and Limitations
+
+Any Java code in cluster-side modules must meet the following requirements.
+
+=== Java Version
+
+Hazelcast Cloud supports only Java version 11 or earlier. Do not use a Java version greater than version 11.
+
+=== System-Level APIs
+
+No code in cluster-side modules is allowed to access system-level APIs. Hazelcast throws a Java Security Exception if any cluster-side modules try to access these APIs.
+
+=== Package Names
+
+Your package names should not start with `com.hazelcast`. Hazelcast ignores these packages.
+
+=== Package Size
+
+Hazelcast Cloud allows you to upload packaged files up to 500 MB. Larger files are rejected.
+
+=== Dependency Conflicts
+
+The libraries in your project must not conflict with those that are built into Hazelcast Cloud. If your project includes a library that’s already available in Hazelcast Cloud, you may experience conflicts that stop Hazelcast from processing your cluster-side modules. To avoid packaging conflicting libraries in your code, we recommend using one of the following options:
+
+- *Shaded JARs:* When you shade JARs, the classes inside them are relocated and rewritten to create a private copy of them that is bundled alongside your code. To learn more about shaded JARs, see this link:https://softwareengineering.stackexchange.com/questions/297276/what-is-a-shaded-java-dependency[answer on Stack Overflow].
+- *Provided scope:* When you use the provided scope for a JAR, it is available in your classpath during compilation but will not be packaged with your project archive. To learn more about provided scope, see the docs for your build tool:
+
+** link:https://maven.apache.org/guides/introduction/introduction-to-dependency-mechanism.html#Dependency_Scope[Maven]
+** link:https://docs.gradle.org/current/userguide/migrating_from_maven.html#migmvn:declaring_deps[Gradle]
+
+== Testing Cluster-Side Modules
+[.serverless]*Serverless*
+
+Before you go into production with your cluster-side modules, it's best to test them to make sure that they work as expected. To test cluster-side modules, follow these best practices:
+
+- *Use a development cluster:* It's faster to test cluster-side modules in a xref:serverless-cluster.adoc[development cluster]. These clusters include only a single member. Single-member clusters are faster because you don't need to wait for the cluster to replicate your cluster-side modules over other members or create and update backup replicas of your data.
+- *Use the Maven plugin:* The xref:maven-plugin.adoc[Maven plugin] allows you to package and deploy your cluster-side modules in a single command from your IDE.
+
+[[deploy]]
+== Moving to Production
+
+After testing your cluster-side modules, you need to deploy them to production.
+
+For production, you can deploy your cluster-side modules either to a xref:create-serverless-cluster.adoc[Serverless production cluster] or a xref:create-dedicated-cluster.adoc[Dedicated cluster].
+
+NOTE: You need to provide payment details to run more than one Hazelcast Cloud cluster.
+
+== Tutorials
+
+Get hands-on with cluster-side modules by following a tutorial:
+
+- xref:mapstore-mongodb.adoc[]

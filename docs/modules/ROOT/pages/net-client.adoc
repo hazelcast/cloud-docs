@@ -1,35 +1,44 @@
-= .Net Client
+= C# Hello World
 :url-github-net: http://hazelcast.github.io/hazelcast-csharp-client/dev/doc/configuration.html
+:description: This tutorial shows you how to get started with Hazelcast Cloud quickly. You'll create a Hazelcast Serverless cluster, and then use the C# client to add some entries to a map.
 
-== Quick Setup
+{description}
 
 == Before you Begin
 
-. link:https://cloud.hazelcast.com/sign-up[Sign up for a Hazelcast Cloud account].
+You need a xref:create-account.adoc[Hazelcast Cloud account].
 
-. Create a free cluster on the Basic plan. For help creating a cluster, see xref:getting-started.adoc[].
+== Step 1. Start a Hazelcast Cloud Cluster
 
-== Download and Run the Sample Code
+In the Hazelcast Cloud console, do the following:
 
-. Click *Configure Client*.
+include::create-serverless-cluster.adoc[tag=development] 
 
-. Go to the *.Net* tab and download the ZIP file as instructed in Step 1 of the dialog box.
+== Step 2. Run the Sample Client
 
-. Extract the ZIP file and run the command, in the extracted folder, shown in Step 2 of the above dialog box.
+. Open the Hazelcast Cloud console and click *Connect your Application*.
+
+. Go to the *.Net* tab and download the ZIP file.
+
+. Extract the ZIP file, change into the extracted root directory and execute the following command:
++
+```bash
+dotnet run --project ClientWithSsl
+```
 
 You should see log output similar to the following:
 
 image:net-client-log.png[.Net client logs that it is connected]
 
-`Connection Successful!` in your logs means that your client application has successfully connected to your cluster in Hazelcast Cloud. The sample code inserts random entries to your cluster as you can see in the logs. In your Hazelcast Cloud console (your cluster's page where you can reach from the "Clusters" top menu), you should see the charts are being populated with metrics of your map, as shown below:
+`Connection Successful!` in your logs means that your client application has successfully connected to your cluster in Hazelcast Cloud. The sample client code adds random entries to a map in your cluster. In your Hazelcast Cloud console, you should see the charts begin to be populated with metrics of your map.
 
-image:map-metrics-client-connection.png[Map metrics that show entries are being added to the map]
+Also, you can see your client listed under *Client Statistics* at the bottom of your cluster's page.
 
 == Client Code
 
-Now, as we have successfully connected and put data into the cluster, let's review and explain the client code you downloaded.
+To help you understand how the client connected to the cluster, this section explains some of the source code. 
 
-Go to the directory (extracted from the ZIP you downloaded in the Step 3 above) and locate the client sample code. If you had enabled encryption in your cluster, open the `ClientWithSsl/Program.cs` file. Otherwise, open the `Client/Program.cs` file. We will explain both files line by line in the following sections.
+TIP: The code for this sample client is hosted on link:https://github.com/hazelcast/hazelcast-cloud-nodejs-sample-client/tree/5.1/client_with_ssl.js[GitHub].
 
 === Client/Program.cs
 
@@ -106,71 +115,143 @@ This step creates the connection between your application and the cluster.
 
 <6> Then, we check if the entry has been added and let the code throw an exception if the value is not correct. Finally, we add random entries with 100-millisecond intervals.
 
-=== ClientWithSsl/Program.cs
-
-This is the downloaded sample client code when your cluster has encryption enabled.
-
+.ClientWithSsl/Program.cs
 [source,cs]
 ----
 using System;
-using System.Threading;
-using Hazelcast.Client;
-using Hazelcast.Config;
+using System.Security.Authentication;
+using System.Threading.Tasks;
+using Hazelcast;
+using Hazelcast.Networking;
+using Microsoft.Extensions.Logging;
 
-namespace Client
+namespace ClientWithSsl
 {
-  class Program
+  internal static class Program
   {
-    public static void Main(string[] args)
+    private const int IterationCount = 100;
+
+    public static async Task Main(string[] args)
     {
-      Environment.SetEnvironmentVariable("hazelcast.client.statistics.enabled", "true");
-      Environment.SetEnvironmentVariable("hazelcast.client.cloud.url", "YOUR_DISCOVERY_URL");
-      var config = new ClientConfig();
-      config.GetGroupConfig()
-          .SetName("YOUR_CLUSTER_NAME")
-          .SetPassword("YOUR_CLUSTER_PASSWORD");
+      Console.WriteLine();
+      Console.WriteLine("Hazelcast Cloud Client with SSL");
 
-      config.GetNetworkConfig().GetCloudConfig()
-          .SetEnabled(true)
-          .SetDiscoveryToken("YOUR_CLUSTER_DISCOVERY_TOKEN");
-      // <1>
-      config.GetNetworkConfig().GetSSLConfig()
-          .SetEnabled(true)
-          .SetProperty(SSLConfig.ValidateCertificateChain, "false")
-          .SetProperty(SSLConfig.CertificateFilePath, "client.pfx")
-          .SetProperty(SSLConfig.CertificatePassword, "YOUR_SSL_PASSWORD");
+      Console.Write("Build options...");
+      var options = new HazelcastOptionsBuilder()
+        .With(args)
+        .WithConsoleLogger()
+        .With("Logging:LogLevel:Hazelcast", "Information")
+        .Build();
 
-      var client = HazelcastClient.NewHazelcastClient(config);
-      var map = client.GetMap<string, string>("map");
-      map.Put("key", "value");
-      if(map.Get("key").Equals("value"))
+      // log level must be a valid Microsoft.Extensions.Logging.LogLevel value
+      //   Trace | Debug | Information | Warning | Error | Critical | None
+
+      if (args.Length == 0)
       {
-        Console.WriteLine("Connection Successful!");
-        Console.WriteLine("Now, `map` will be filled with random entries.");
+        // it is OK to pass the arguments in the command line
+        // otherwise, they must be specified here
+
+        options.ClusterName = "YOUR-CLUSTER-NAME"; <1>
+
+        options.Networking.Cloud.DiscoveryToken = "YOUR_CLUSTER_DISCOVERY_TOKEN"; <2>
       }
-      else {
-        throw new Exception("Connection failed, check your configuration.");
+
+      // make sure the client stays connected
+      options.Networking.ReconnectMode = ReconnectMode.ReconnectAsync;
+      
+      options.Metrics.Enabled = true; <3>
+
+      <4>
+      options.Networking.Ssl.Enabled = true;
+      options.Networking.Ssl.ValidateCertificateChain = false;
+      options.Networking.Ssl.Protocol = SslProtocols.Tls12;
+      options.Networking.Ssl.CertificatePath = "client.pfx";
+      options.Networking.Ssl.CertificatePassword = "YOUR_KEYSTORE_PASSWORD";
+
+      Console.WriteLine(" ok.");
+
+      Console.Write("Get and connect client...");
+      await using var client = await HazelcastClientFactory.StartNewClientAsync(options);
+      Console.WriteLine(" ok.");
+
+      Console.Write("Get map...");
+      await using var map = await client.GetMapAsync<string, string>("map");
+      Console.WriteLine(" ok.");
+
+      Console.Write("Put value into map...");
+      await map.PutAsync("key", "value");
+      Console.WriteLine(" ok.");
+
+      Console.Write("Get value from map...");
+      var value = await map.GetAsync("key");
+      Console.WriteLine(" ok");
+
+      Console.Write("Validate value...");
+      if (value.Equals("value"))
+      {
+        Console.WriteLine("ok.");
       }
+      else
+      {
+        Console.WriteLine("Error.");
+        Console.WriteLine("Check your configuration.");
+        return;
+      }
+
+      <5>
+      Console.WriteLine("Put/Get values in/from map with random values...");
       var random = new Random();
-      while (true) {
-        var randomKey = random.Next(100_000);
-        map.Put("key" + randomKey, "value" + randomKey);
-        map.Get("key" + random.Next(100_000));
-        if(randomKey % 10 == 0 )
+      var step = IterationCount / 10;
+      for (var i = 0; i < IterationCount; i++)
+      {
+        var randomValue = random.Next(100_000);
+        await map.PutAsync("key_" + randomValue, "value_" + randomValue);
+
+        randomValue = random.Next(100_000);
+        await map.GetAsync("key" + randomValue);
+
+        if (i % step == 0)
         {
-          Console.WriteLine("map size: {0}", map.Size());
+          Console.WriteLine($"[{i:D3}] map size: {await map.GetSizeAsync()}");
         }
-        Thread.Sleep(100);
       }
+
+    Console.WriteLine("Done.");
+  }
+
+  public static HazelcastOptionsBuilder WithConsoleLogger(this HazelcastOptionsBuilder builder)
+  {
+    return builder
+      .With("Logging:LogLevel:Default", "None")
+      .With("Logging:LogLevel:System", "None")
+      .With("Logging:LogLevel:Microsoft", "None")
+      .With((configuration, options) =>
+      {
+        // configure logging factory and add the console provider
+        options.LoggerFactory.Creator = () => LoggerFactory.Create(loggingBuilder =>
+          loggingBuilder
+            .AddConfiguration(configuration.GetSection("logging"))
+            .AddConsole());
+      });
     }
   }
 }
 ----
 
-<1> The only difference between this one and the `Client/Program.cs` is the lines that enable and configure SSL encryption on the client side.
+<1> Set the cluster name.
 +
-You may want to move the `pfx` file to another directory. Then, you need to set `CertificateFilePath` accordingly. 
+The cluster name is unique to your cluster. The client is authenticated using this cluster name.
 
-== More Configuration Options
+<2> Set the discovery token.
++
+This token is also unique to your cluster and used to discover Hazelcast cluster members.
 
-Please refer to the link:{url-github-net}[Hazelcast .Net Client Documentation] for further configuration options.
+<3> Enable Hazelcast to send the client statistics to the cluster's page.
+
+<4> Configure TLS encryption. You already downloaded these certificate and key files with the client code. 
+
+<5> Add random entries with 100-millisecond intervals. 
+
+== Learn More
+
+See the link:{url-github-net}[Hazelcast C# client documentation] for more information about using the C# client.

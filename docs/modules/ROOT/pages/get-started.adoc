@@ -1,0 +1,203 @@
+= Hazelcast Serverless Hello World
+:description: Learn how to create a Serverless development cluster, and use a client to connect to the cluster and add some entries to a map.
+:page-aliases: cpp-client.adoc, getting-started.adoc
+
+
+{description}
+
+== Before you Begin
+
+You need a xref:create-account.adoc[Hazelcast Cloud account].
+
+== Step 1. Start a Serverless Development Cluster
+
+include::serverless-cluster.adoc[tag=development]
+To create a development cluster, do the following in the Hazelcast Cloud console:
+
+include::create-serverless-cluster.adoc[tag=development] 
+
+== Step 2. Connect a Client
+
+To connect to your Serverless cluster, you need a Hazelcast client.
+
+Use one of the following clients to connect to the cluster and add random entries to a map.
+
+. Open the Hazelcast Cloud console and click *Connect your Application*.
++
+[tabs] 
+====
+Java:: 
++ 
+--
+. Go to the *Java* tab and download and extract the ZIP file.
+
+. Change into the extracted root directory and execute the program:
+
+.. Execute the following on Linux and Mac: 
++ 
+```bash
+./mvnw clean compile exec:java@client-with-ssl
+```
+.. Execute the following on Windows: 
++
+```bash
+mvnw.cmd clean compile exec:java@client-with-ssl
+```
+
+You should see something similar to the following in the log output:
+
+image:java-client-log.png[Java client logs that it is connected]
+--
+
+Node.js:: 
++ 
+--
+--
+
+Python:: 
++ 
+--
+--
+
+.Net:: 
++ 
+--
+--
+
+Go:: 
++ 
+--
+--
+
+C++:: 
++ 
+--
+. Go to the *{cpp}* tab and download the ZIP file.
+
+. Extract the ZIP file, change into the extracted root directory, and execute the program:
+
+.. Execute the following on Linux and Mac:
++
+```bash
+vcpkg install "hazelcast-cpp-client[openssl]" && 
+cmake -B build -S . -DCMAKE_TOOLCHAIN_FILE=[path to vcpkg]/scripts/buildsystems/vcpkg.cmake && 
+cmake --build build &&
+./build/client_with_ssl
+```
+
+.. Execute the following on Windows:
++ 
+```bash
+vcpkg install "hazelcast-cpp-client[openssl]" && 
+cmake -B build -S . -DCMAKE_TOOLCHAIN_FILE=[path to vcpkg]/scripts/buildsystems/vcpkg.cmake && 
+cmake --build build &&
+./build/client_with_ssl
+```
++
+If the link:https://wiki.osdev.org/Target_Triplet[target triplet] doesn't match your operating system, you may need to provide a target suffix to the `install` command. For example: `vcpkg install "hazelcast-cpp-client[openssl]:x64-windows"`
++
+The location of the compiled binary may change according to configuration and system defaults.
+
+When the build finishes, you should see something similar to the following in the log output:
+
+image:cpp-client-log.png[.Net client logs that it is connected]
+--
+
+Command-line client:: 
++ 
+--
+--
+
+====
+
+`Connection Successful!` in your logs means that your client application has successfully connected to your cluster in Hazelcast Cloud.
+
+In your Hazelcast Cloud console, you should see the charts begin to be populated with metrics of your map.
+
+Also, you can see your client listed under *Client Statistics* at the bottom of your cluster's page.
+
+== Client Code
+
+To help you understand how the client connected to the cluster, this section explains some of the source code. 
+
+TIP: The code for this sample client is hosted on link:https://github.com/hazelcast/hazelcast-cloud-cpp-sample-client/tree/5.1/client_with_ssl.cpp[GitHub].
+
+.client_with_ssl.cpp
+[source,cpp]
+----
+#include <hazelcast/client/hazelcast_client.h>
+#include <string>
+
+int main(int argc, char **argv) {
+    hazelcast::client::client_config config; <1>
+
+    <2>
+    boost::asio::ssl::context ctx(boost::asio::ssl::context::tlsv12);
+    ctx.set_verify_mode(boost::asio::ssl::verify_peer);
+    ctx.load_verify_file("ca.pem");
+    ctx.use_certificate_file("cert.pem", boost::asio::ssl::context::pem);
+    ctx.set_password_callback([&] (std::size_t max_length, boost::asio::ssl::context::password_purpose purpose) {
+        return "YOUR_KEYSTORE_PASSWORD";
+    });
+    ctx.use_private_key_file("key.pem", boost::asio::ssl::context::pem);
+    config.get_network_config().get_ssl_config().set_context(std::move(ctx));
+
+    config.set_cluster_name("YOUR_CLUSTER_NAME"); <3>
+    config.set_property("hazelcast.client.statistics.enabled", "true"); <4>
+
+    auto &cloud_configuration = config.get_network_config().get_cloud_config();
+    cloud_configuration.enabled = true;
+    cloud_configuration.discovery_token = "YOUR_CLUSTER_DISCOVERY_TOKEN"; <5>
+
+    auto hazelcastClient = hazelcast::new_client(std::move(config)).get(); <6>
+    auto map = hazelcastClient.get_map("map").get(); <7>
+    auto check = map->put<std::string, std::string>("key", "value").get(); <8>
+    map->clear().get();
+    std::cout << "Connection Successful!" << std::endl;
+    std::cout << "Now, 'map' will be filled with random entries." << std::endl;
+
+    int iterationCount = 0;
+    while (true) { <9>
+        int randomKey = rand();
+        std::string randomKeyString = std::to_string(randomKey);
+        try {
+            map->put<std::string, std::string>("key" + randomKeyString, "value" + randomKeyString).get();
+        } catch (std::exception &e) {
+            std::cout << "Put operation failed error:" << e.what() << std::endl;
+        }
+        if (++iterationCount % 10 == 0){
+            std::cout << "Map size:" + std::to_string(map->size().get()) << std::endl;
+        }
+    }
+
+    return 0;
+}
+----
+
+<1> Create an empty client configuration.
+
+<2> Configure TLS encryption. You already downloaded these certificate and key files with the client code.
+
+<3> Set the cluster name.
++
+The cluster name is unique to your cluster. The client is authenticated using this cluster name.
+
+<4> Enable Hazelcast to send the client statistics to the cluster's page.
+
+<5> Set the discovery token.
++
+This token is also unique to your cluster and used to discover Hazelcast cluster members.
+
+<6> Create the client with `config`.
++
+This step creates the connection between your application and the cluster.
+
+<7> Get/create a map and put a simple entry ("key", "value").
+
+<8> Check if the entry has been added successfully and let the code throw an exception if the value is not correct.
+
+<9> Add random entries with 100-millisecond intervals.
+
+== Learn More
+
+- link:{url-github-cpp}[{cpp} client documentation]
