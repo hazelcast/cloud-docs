@@ -7,16 +7,18 @@
 
 == Context
 
-When you build a write-behind or write-through cache, you are responsible for maintaining data integrity. On every write request, the data needs to be updated both in the cache and in the backend data source. You can use the link:https://docs.hazelcast.org/docs/latest/javadoc/com/hazelcast/map/MapStore.html[`MapStore` API] to make sure that when applications write data to a map in Hazelcast Cloud (the cache), Hazelcast also updates the records in the database as well.
+In a write-through cache, data is updated in both the cache and the data source together. This caching pattern is useful when writes to the cache are infrequent. 
+
+To build a write-through cache in Hazelcast, you can use the link:https://docs.hazelcast.org/docs/latest/javadoc/com/hazelcast/map/MapStore.html[`MapStore` API]. The `MapStore` interface includes methods that are triggered when operations are invoked on a map. You can implement your own logic in these methods to connect to an external data store, load data from it, and write data back to it. For example, you can use a MapStore to load data from a MongoDB, MySQL, or PostgreSQL database.
 
 image:maploader.png[A MapStore connecting a database to a Hazelcast Cluster]
 
 In this tutorial, you'll deploy the following to Hazelcast Cloud:
 
-- A MapStore that connects to a MongoDB database.
+- A MapStore that connects to a MongoDB database and is integrated into the lifecycle of a map.
 - A `Person` class that you will use to write `Person` objects to a map.
 
-You'll use SQL to write new `Person` objects to a map, at which point the MapStore will replicate those objects to the MongoDB database. 
+You'll then use SQL to write new `Person` objects to a map, at which point the MapStore will replicate those objects to the MongoDB database. 
 
 TIP: The code in this tutorial is available as a link:{github-directory}[sample app on GitHub].
 
@@ -37,7 +39,7 @@ TIP: The code in this tutorial is available as a link:{github-directory}[sample 
 
 You need a database that Hazelcast Cloud can connect to and store your data in. MongoDB Atlas is a multi-cloud database service that's quick, free, and easy to set up without any payment details.
 
-If you already have a MongoDB database that is accessible to the Internet, you can <<step-two, skip this step>>.
+If you already have a MongoDB database that is accessible to the Internet, you can <<step-two, skip this step>>. Otherwise, see the following instructions.
 
 . link:https://account.mongodb.com/account/register[Sign up to a MongoDB Atlas account] if you don't have one already.
 
@@ -160,7 +162,7 @@ In this step, you'll use the xref:maven-plugin.adoc[Hazelcast Cloud Maven plugin
 +
 [cols="1a,1a"]
 |===
-|Element|Where to find the value
+|Element|Location in Hazelcast Cloud Console
 
 |`<clusterName>`
 |Go to *Connect your Application*. The cluster name is listed in a table at the bottom of the modal window.

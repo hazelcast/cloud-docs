@@ -13,11 +13,19 @@ You need a xref:create-account.adoc[Hazelcast Cloud account].
 
 == Creating a Serverless Cluster in the Cloud Console
 
+include::serverless-cluster.adoc[tag=types]
+
+include::serverless-cluster.adoc[tag=development]
+
+include::serverless-cluster.adoc[tag=production]
+
 [tabs] 
 ====
 Development:: 
 + 
 --
+To create a Serverless development cluster, do the following:
+
 // tag::development[]
 . Click *Plans* in the left navigation.
 . Click *Create cluster* in the *Serverless* tab.
@@ -29,13 +37,15 @@ NOTE: For best performance, use a region that's closest to your client applicati
 
 . Give your cluster a memorable name. This name is a label to help you differentiate clusters in your account.
 
-It takes a few minutes to create a Serverless cluster. During this period, your cluster will be in a pending state. When the cluster state changes to running, you will be able to use it.
+It takes a few minutes to create a Serverless cluster. When the cluster state changes from *Pending* to *Running*, you can start using it.
 // end::development[]
 --
 
 Production:: 
 + 
 --
+To create a Serverless production cluster, do the following:
+
 // tag::production[]
 . Click *Plans* in the left navigation.
 . Click *Create cluster* in the *Serverless* tab.
@@ -46,25 +56,10 @@ NOTE: For best performance, use a region that's closest to your client applicati
 
 . Give your cluster a memorable name. This name is a label to help you differentiate clusters in your account.
 
-It takes a few minutes to create a Serverless cluster. During this period, your cluster will be in a pending state. When the cluster state changes to running, you will be able to use it.
+It takes a few minutes to create a Serverless cluster. When the cluster state changes from *Pending* to *Running*, you can start using it.
 // end::production[]
 --
 ====
-
-== Creating a Production Cluster
-
-. Click *Plans* in the left navigation.
-. Click *Create cluster* in the *Serverless* tab.
-. Click *Create Production Cluster*
-. Select a region.
-+
-[NOTE]
-====
-For best performance, use a region that's closest to your client applications or data stores. The closer your clients and data are to the cluster, the lower the network latency.
-====
-. Give your cluster a memorable name. This name is a label to help you differentiate clusters in your account.
-
-It takes a few minutes to create a Serverless cluster. During this period, your cluster will be in a pending state. When the cluster state changes to running, you will be able to use it.
  
 == Changing your Cluster Name
 
@@ -72,18 +67,25 @@ You cannot change your cluster name after it has been created. To choose a diffe
 
 == Restrictions on Free Serverless Clusters
 
-If you create a Serverless cluster for free and don't connect to it for 16 hours, it will be stopped. Any map entries, JCache entries or jobs in the cluster are persisted for as long as your account is active so that you can resume the cluster from the previous state.
+Development and production clusters are stopped when all of the following conditions are true:
+
+- You don't connect to the cluster for 16 hours.
+- You don't have a payment method set up for your Hazelcast Cloud account.
+
+If you're using a Serverless production cluster, Hazelcast Cloud saves your cluster data so that you can resume the cluster at a later time.
+
+If you're using a Serverless development cluster, all cluster data is lost after the cluster is stopped.
+
+.What is cluster data?
+[%collapsible]
+====
+include::backup-and-restore.adoc[tag=cluster-data]
+====
 
 == Next Steps
 
-Try a hello world tutorial:
+Try the xref:get-started.adoc[hello world tutorial].
 
-* xref:java-client.adoc[Java]
-* xref:nodejs-client.adoc[Node.js]
-* xref:python-client.adoc[Python]
-* xref:go-client.adoc[Go]
-* xref:net-client.adoc[C#]
-* xref:cpp-client.adoc[C++]
-* xref:sql.adoc[SQL]
+Build a xref:mapstore-mongodb.adoc[sample caching app].
 
-Or build a sample caching app: xref:mapstore-mongodb.adoc[].
+xref:connect-to-cluster.adoc[].

@@ -4,7 +4,7 @@
 :url-aws-console: https://us-west-2.console.aws.amazon.com/es/home
 :page-dedicated: true
 
-Amazon provides link:{url-github-elasticsearch}[ElasticSearch] as a service which is called link:{url-amazon-elasticsearch}[ElasticSearch Service]. Basically, you can create ElasticSearch services with some built-in plugins like Kibana. In this tutorial, you will see how easy it is to set up an ElasticSearch service on AWS then ship Hazelcast Cloud Cluster logs to ElasticSearch Service. 
+Amazon provides link:{url-github-elasticsearch}[ElasticSearch] as a service which is called link:{url-amazon-elasticsearch}[ElasticSearch Service]. You can create ElasticSearch services with some built-in plugins like Kibana. In this tutorial, you will see how easy it is to set up an ElasticSearch service on AWS then ship Hazelcast Cloud cluster logs to ElasticSearch. 
 
 == Set Up an ElasticSearch Service Instance
 

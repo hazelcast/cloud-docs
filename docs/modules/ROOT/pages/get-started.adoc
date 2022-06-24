@@ -1,6 +1,7 @@
-= C++ Hello World
-:url-github-cpp: https://github.com/hazelcast/hazelcast-cpp-client/blob/v4.1.0/Reference_Manual.md
-:description: This tutorial shows you how to get started with Hazelcast Cloud quickly. You'll create a Hazelcast Serverless cluster, and then use the {cpp} client to add some entries to a map.
+= Hazelcast Serverless Hello World
+:description: Learn how to create a Serverless development cluster, and use a client to connect to the cluster and add some entries to a map.
+:page-aliases: cpp-client.adoc, getting-started.adoc
+
 
 {description}
 
@@ -8,53 +9,110 @@
 
 You need a xref:create-account.adoc[Hazelcast Cloud account].
 
-== Step 1. Start a Hazelcast Cloud Cluster
+== Step 1. Start a Serverless Development Cluster
 
-In the Hazelcast Cloud console, do the following:
+include::serverless-cluster.adoc[tag=development]
+To create a development cluster, do the following in the Hazelcast Cloud console:
 
 include::create-serverless-cluster.adoc[tag=development] 
 
-== Step 2. Run the Sample Client
+== Step 2. Connect a Client
+
+To connect to your Serverless cluster, you need a Hazelcast client.
+
+Use one of the following clients to connect to the cluster and add random entries to a map.
 
 . Open the Hazelcast Cloud console and click *Connect your Application*.
-
-. Go to the *{cpp}* tab and download the ZIP file.
-
-. Extract the ZIP file, change into the extracted root directory and execute the following command:
 +
 [tabs] 
 ====
-Linux and Mac:: 
+Java:: 
 + 
 --
+. Go to the *Java* tab and download and extract the ZIP file.
+
+. Change into the extracted root directory and execute the program:
+
+.. Execute the following on Linux and Mac: 
++ 
+```bash
+./mvnw clean compile exec:java@client-with-ssl
+```
+.. Execute the following on Windows: 
++
+```bash
+mvnw.cmd clean compile exec:java@client-with-ssl
+```
+
+You should see something similar to the following in the log output:
+
+image:java-client-log.png[Java client logs that it is connected]
+--
+
+Node.js:: 
++ 
+--
+--
+
+Python:: 
++ 
+--
+--
+
+.Net:: 
++ 
+--
+--
+
+Go:: 
++ 
+--
+--
+
+C++:: 
++ 
+--
+. Go to the *{cpp}* tab and download the ZIP file.
+
+. Extract the ZIP file, change into the extracted root directory, and execute the program:
+
+.. Execute the following on Linux and Mac:
++
 ```bash
 vcpkg install "hazelcast-cpp-client[openssl]" && 
 cmake -B build -S . -DCMAKE_TOOLCHAIN_FILE=[path to vcpkg]/scripts/buildsystems/vcpkg.cmake && 
 cmake --build build &&
 ./build/client_with_ssl
 ```
---
-Windows:: 
-+ 
---
-If the link:https://wiki.osdev.org/Target_Triplet[target triplet] doesn't match your operating system, you may need to provide a target suffix to the `install` command. For example: `vcpkg install "hazelcast-cpp-client[openssl]:x64-windows"`
 
+.. Execute the following on Windows:
++ 
+```bash
+vcpkg install "hazelcast-cpp-client[openssl]" && 
+cmake -B build -S . -DCMAKE_TOOLCHAIN_FILE=[path to vcpkg]/scripts/buildsystems/vcpkg.cmake && 
+cmake --build build &&
+./build/client_with_ssl
+```
++
+If the link:https://wiki.osdev.org/Target_Triplet[target triplet] doesn't match your operating system, you may need to provide a target suffix to the `install` command. For example: `vcpkg install "hazelcast-cpp-client[openssl]:x64-windows"`
++
 The location of the compiled binary may change according to configuration and system defaults.
 
-```bash
-vcpkg install "hazelcast-cpp-client[openssl]" && 
-cmake -B build -S . -DCMAKE_TOOLCHAIN_FILE=[path to vcpkg]/scripts/buildsystems/vcpkg.cmake && 
-cmake --build build &&
-./build/client_with_ssl
-```
---
-====
-
-You should see log output similar to the following after build finishes:
+When the build finishes, you should see something similar to the following in the log output:
 
 image:cpp-client-log.png[.Net client logs that it is connected]
+--
 
-`Connection Successful!` in your logs means that your client application has successfully connected to your cluster in Hazelcast Cloud. The sample client code adds random entries to a map in your cluster. In your Hazelcast Cloud console, you should see the charts begin to be populated with metrics of your map.
+Command-line client:: 
++ 
+--
+--
+
+====
+
+`Connection Successful!` in your logs means that your client application has successfully connected to your cluster in Hazelcast Cloud.
+
+In your Hazelcast Cloud console, you should see the charts begin to be populated with metrics of your map.
 
 Also, you can see your client listed under *Client Statistics* at the bottom of your cluster's page.
 
@@ -142,4 +200,4 @@ This step creates the connection between your application and the cluster.
 
 == Learn More
 
-See the link:{url-github-cpp}[{cpp} client documentation] for more information about using the {cpp} client.
+- link:{url-github-cpp}[{cpp} client documentation]

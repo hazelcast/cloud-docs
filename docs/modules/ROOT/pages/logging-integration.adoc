@@ -1,5 +1,5 @@
 = Logging Integrations
-:description: Hazelcast Dedicated allows to integrate your own log management system. With the correct setup, all Hazelcast members send their logs to the configured remote logging integration.
+:description: Hazelcast Dedicated allows to integrate your cluster logs with a remote log management system. With the correct setup, all Hazelcast members send their logs to the configured remote log management system.
 :page-dedicated: true
 
 {description}
@@ -13,17 +13,23 @@ Currently, the following logging solutions are supported:
 - ELK (Elastic Stack)
 - Splunk
 
-See our tutorial on xref:shipping-logs-to-amazon-elasticsearch-service.adoc[Shipping Logs to Amazon ElasticSearch]
+TIP: For a tutorial, see xref:shipping-logs-to-amazon-elasticsearch-service.adoc[]
 
 == Setting up Logging Integration
 
-To set up the logging integration, click on the *Manage Cluster* button in the cluster details page (Hazelcast Cloud console) and select *Settings*. Go to the *Logging* tab of the appeared 'UPDATE CLUSTER' dialog.
+To set up logging integration, do the following:
 
-Select the desired solution in the *Logging Technology* dropdown menu and provide the access parameters. Below is a sample screenshot when "ELK" is selected.
+. Go to  *Manage Cluster* > *Settings* > *Logging*.
 
-Click on the *Create Logging Integration* button. You should receive the Hazelcast member logs in your preferred log management system.
+. Select the desired solution in the *Logging Technology* dropdown menu and provide the access parameters.
 
-You can always remove the defined logging integrations by first clicking on the *Manage Cluster* button in the cluster details page, selecting *Settings* and navigating to the *Logging* tab of the appeared 'UPDATE CLUSTER' dialog.
+. Click *Create Logging Integration*. You should receive the Hazelcast member logs in your preferred log management system.
 
-Click on the *Delete Logging Integration* and the Hazelcast member logs are no longer sent out.
+== Removing Logging Integration
+
+. Go to  *Manage Cluster* > *Settings* > *Logging*.
+
+. Click *Delete Logging Integration*.
+
+The Hazelcast member logs are no longer sent out.
 

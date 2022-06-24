@@ -1,6 +1,5 @@
 = Creating an Account
 :description: Before you create a cluster on Hazelcast Cloud, you must create a Hazelcast Cloud account. You can create an account with your GitHub credentials, Google credentials, or you can provide an email address and password.
-:page-aliases: getting-started.adoc
 :toclevels: 3
 
 {description}
@@ -72,8 +71,4 @@ After you set up your account, you’ll want to keep it safe. Here are some reco
 
 - *Enable multi-factor authentication:* Protect your account from anyone who may know your username and password. With xref:multi-factor-authentication.adoc[multi-factor authentication], you'll need to provide a unique code that's generated on your device as well as your username and password to sign in.
 
-- *Allow only authorized devices to access your cluster:* If you use Hazelcast Serverless, you can xref:ip-white-list.adoc[set up an IP whitelist] to allow only known IP addresses to access your cluster. If you use Hazelcast Dedicated, the cluster is private by default. You'll need to xref:vpc-peering.adoc[set up a VPC connection] to connect to the cluster.
-
-== Next Steps
-
-xref:create-serverless-cluster.adoc[].
+- *Allow only authorized devices to access your cluster:* You can xref:ip-white-list.adoc[set up an IP whitelist] to allow only known IP addresses to access your cluster.

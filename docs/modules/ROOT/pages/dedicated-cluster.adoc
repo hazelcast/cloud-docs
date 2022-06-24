@@ -8,8 +8,10 @@ Dedicated clusters are created and fully managed by the Hazelcast team. You tell
 
 Consider a Dedicated cluster for the following:
 
+// tag::intended-apps[]
 - Explicit resource and configuration requirements
 - Critical production workloads
+// end::intended-apps[]
 
 == Supported Functionality
 

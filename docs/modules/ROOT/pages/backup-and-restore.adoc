@@ -3,14 +3,16 @@
 
 {description}
 
+// tag::cluster-data[]
 Cluster data includes the following:
 
 - Configuration settings
 - Cluster-side modules
 - Jobs
 - Map and JCache data structures
+// end::cluster-data[]
 
-Serverless clusters create a backup automatically once every 24 hours.
+Serverless clusters create a backup automatically once every 24 hours and when they are stopped.
 
 To back up or restore clusters in a team, you must have either an admin or developer role. See xref:teams-and-users.adoc[].
 

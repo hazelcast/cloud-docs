@@ -1,13 +1,13 @@
 = Working with Cluster-Side Modules in Hazelcast Cloud
-:description: Cluster-side modules are Java classes that a Hazelcast Cloud cluster can execute or store. You can write cluster-side modules to execute custom code or store custom objects. This guide describes the workflows and best practices for implementing cluster-side modules for Hazelcast Cloud.
+:description: Cluster-side modules are Java classes that a Hazelcast Cloud cluster can execute or store in the cloud. You can write cluster-side modules to execute custom code or store custom objects. This guide describes the workflows and best practices for implementing cluster-side modules for Hazelcast Cloud.
 
 {description}
 
 The basic workflow for any cluster-side module is the following:
 
 . *Build* the Java class and implement any required interfaces.
-. *Test* your implementation in developer mode for fast deployment and easy access to cluster logs.
-. *Deploy* your Java classes to Hazelcast Cloud.
+. *Test* your implementation on a Serverless development cluster.
+. *Deploy* your Java classes to your Hazelcast Cloud cluster.
 
 Then you can use any client to interact with the cluster-side modules such as querying objects or triggering processes.
 
@@ -23,7 +23,7 @@ Cluster-side modules include any code that must be deployed as Java code to the 
 |Module|Description
 
 |link:https://docs.hazelcast.org/docs/latest/javadoc/com/hazelcast/map/MapStore.html[MapStore]
-|Ingest data from an external data source into a Hazelcast map, or add data from a Hazelcast map to an external data source. xref:mapstore-mongodb.adoc[See a tutorial].
+|Ingest data from an external data source into a Hazelcast map, or add data from a Hazelcast map to an external data source.
 
 |link:https://docs.hazelcast.org/docs/latest/javadoc/com/hazelcast/map/EntryProcessor.html[Entry processor]
 |Atomically execute code on a map entry.
@@ -139,15 +139,20 @@ The libraries in your project must not conflict with those that are built into H
 
 Before you go into production with your cluster-side modules, it's best to test them to make sure that they work as expected. To test cluster-side modules, follow these best practices:
 
-- *Use developer mode:* It's faster to test cluster-side modules in a xref:serverless-cluster.adoc[development cluster]. When you turn on developer mode for a new cluster, that cluster includes only a single member. Single-member clusters are faster because you don't need to wait for the cluster to replicate your cluster-side modules over other members or create and update backup replicas of your data.
-- *Use the Maven plugin:* The xref:maven-plugin.adoc[Maven plugin] allows you to package and deploy your cluster-side modules in a single command.
+- *Use a development cluster:* It's faster to test cluster-side modules in a xref:serverless-cluster.adoc[development cluster]. These clusters include only a single member. Single-member clusters are faster because you don't need to wait for the cluster to replicate your cluster-side modules over other members or create and update backup replicas of your data.
+- *Use the Maven plugin:* The xref:maven-plugin.adoc[Maven plugin] allows you to package and deploy your cluster-side modules in a single command from your IDE.
 
 [[deploy]]
 == Moving to Production
 
 After testing your cluster-side modules, you need to deploy them to production.
 
-. xref:create-serverless-cluster.adoc[Create a new Serverless production cluster].
-+
-You need to provide payment details to run more than one Hazelcast Cloud cluster.
-. Deploy your cluster-side modules to Hazelcast Cloud.
+For production, you can deploy your cluster-side modules either to a xref:create-serverless-cluster.adoc[Serverless production cluster] or a xref:create-dedicated-cluster.adoc[Dedicated cluster].
+
+NOTE: You need to provide payment details to run more than one Hazelcast Cloud cluster.
+
+== Tutorials
+
+Get hands-on with cluster-side modules by following a tutorial:
+
+- xref:mapstore-mongodb.adoc[]

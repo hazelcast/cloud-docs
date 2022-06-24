@@ -1,33 +1,51 @@
 = Serverless Clusters
-:description: Hazelcast Serverless is a fully managed, multi-tenant deployment of a Hazelcast cluster.
+:description: Hazelcast Serverless is a fully managed, multi-tenant deployment of Hazelcast. In Serverless clusters, you pay only for the amount of data that you put in storage, without needing to know what that might be before you start.
 :toc-levels: 3
 :page-serverless: true
 
 {description}
 
-You pay only for the amount of data that you put in storage, without needing to know what that might be before you start. If you use more storage, Hazelcast will allocate more hardware to your cluster to handle the increased load. If you use less storage, then you’ll pay less.
+== When to Use Serverless
 
 Consider a Serverless cluster for the following:
 
+// tag::intended-apps[]
 - Starter projects
-- Development environments
 - Unpredicable scaling requirements
-- Budget constraints
+- Strict budget constraints
+// end::intended-apps[]
 
-Hazelcast Serverless clusters can be one of two types. Both types use TLS to communicate with clients.
+== Cluster Types
 
-- <<dev,Development>>
-- <<prod,Production>>
+// tag::types[]
+Hazelcast Serverless clusters can be one of two types: Development and Production.
+// end::types[]
 
 [[dev]]
-== Serverless Development Clusters
+== Development Clusters
 
-Development clusters include only a single member. Single-member clusters are faster because you don't need to wait for the cluster to replicate your cluster-side modules over other members or create and update backup replicas of your data.
+// tag::development[]
+Development clusters include only a single member for fast, iterative development while you prototype your application.
+// end::development[]
 
-Data is not backed up in development clusters. When the cluster restarts for any reason, you lose cluster data such as maps and cluster-side modules. You cannot currently convert a development cluster to a production cluster.
+=== Limitations
+
+Development clusters have the following limitations:
+
+- Maximum 1 GB of storage
+- No ability to scale up
+- Data is not backed up or persisted
+
+When a development cluster restarts for any reason, you lose cluster data such as maps and cluster-side modules.
+
+NOTE: You cannot currently convert a development cluster to a production cluster.
 
 [[prod]]
-== Serverless Production Clusters
+== Production Clusters
+
+// tag::production[]
+Production clusters are for applications that have already been tested and are ready to be deployed in real-world scenarios.
+// end::production[]
 
 Production clusters automatically scale up and down, depending on the amount of resources you use.
 
@@ -39,7 +57,7 @@ Use this table to learn what is supported in Serverless clusters:
 
 [cols="1a,1a,1a"]
 |===
-|Functionality|Suppor for development clusters|Support for production clusters
+|Functionality|Support for production clusters|Support for development clusters
 
 |xref:create-serverless-cluster.adoc[Create a cluster]
 |Supported
@@ -125,6 +143,7 @@ Use this table to learn what is supported in Serverless clusters:
 
 == Related Resources
 
+- xref:create-serverless-cluster.adoc[]
 - xref:pricing.adoc[]
 - xref:teams-and-users.adoc[]
 - xref:architecture.adoc[]

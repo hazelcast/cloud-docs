@@ -2,6 +2,7 @@
 :page-dedicated: true
 :description: xref:overview.adoc[Dedicated clusters] are created and managed by the Hazelcast team. To create a dedicated cluster, you need to get in contact with the Hazelcast team who will provision a cluster, depending on your resource requirements.
 :page-aliases: enterprise-clusters.adoc, create-enterprise-cluster.adoc
+:page-dedicated: true
 
 {description}
 
@@ -25,14 +26,6 @@ To request more information about creating a dedicated cluster, do the following
 
 == Next Steps
 
-Try a hello world tutorial:
+Try the xref:get-started.adoc[hello world tutorial].
 
-* xref:java-client.adoc[Java]
-* xref:nodejs-client.adoc[Node.js]
-* xref:python-client.adoc[Python]
-* xref:go-client.adoc[Go]
-* xref:net-client.adoc[C#]
-* xref:cpp-client.adoc[C++]
-* xref:sql.adoc[SQL]
-
-Or build a sample caching app: xref:mapstore-mongodb.adoc[].
+Or, build a sample caching app: xref:mapstore-mongodb.adoc[].

@@ -6,6 +6,8 @@
 
 image:serverless-app-server.svg[A Hazelcast client application communicating with a Hazelcast Cloud cluster]
 
+== Cloud Clusters
+
 Hazelcast Cloud comes in two flavors:
 
 [cols="1a,1a"]
@@ -14,15 +16,11 @@ Hazelcast Cloud comes in two flavors:
 
 |xref:serverless-clusters.adoc[Serverless]
 |
-- Starter projects
-- Development environments
-- Unpredicable scaling requirements
-- Budget constraints
+include::serverless-cluster.adoc[tag=intended-apps]
 
 |xref:dedicated-clusters.adoc[Dedicated]
 |
-- Explicit resource and configuration requirements
-- Critical production workloads
+include::dedicated-cluster.adoc[tag=intended-apps]
 |===
 
 == Use Cases
@@ -33,21 +31,20 @@ Explore example use cases for Hazelcast Cloud.
 
 You can use Hazelcast Cloud as a low-latency, high-performance caching or data layer for your microservices. Your in-memory data management or caching solution will be ready in minutes, without needing to deal with its maintenance.
 
-=== State Management for Serverless Functions (AWS Lambda)
+=== State Management for Serverless Functions
 
 Hazelcast Cloud is the perfect solution if you need to keep or access data and state inside your serverless function. We offer:
 
 - Low latency data access
-- Cloud based solution
 - Ease of set up and use
 - Zero maintenance burden
-- Node.js and Python support.
 
 == Getting Started
 
 If you are a first-time user of Hazelcast Cloud, use the following resources to get started:
 
+- xref:get-started.adoc[]
 - xref:create-serverless-cluster.adoc[]
 - xref:developer-guide.adoc[]
 - xref:pricing.adoc[]
-- xref:mapstore-mongodb.adoc[]
+- Tutorial: xref:mapstore-mongodb.adoc[]

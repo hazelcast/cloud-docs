@@ -17,31 +17,7 @@ include::create-serverless-cluster.adoc[tag=development]
 
 . Open the Hazelcast Cloud console and click *Connect your Application*.
 
-. Download and extract the ZIP file.
 
-. Change into the extracted root directory and execute the following command:
-+
-[tabs] 
-====
-Linux and Mac:: 
-+ 
---
-```bash
-./mvnw clean compile exec:java@client-with-ssl
-```
---
-Windows:: 
-+ 
---
-```bash
-mvnw.cmd clean compile exec:java@client-with-ssl
-```
---
-====
-
-You should see log output similar to the following:
-
-image:java-client-log.png[Java client logs that it is connected]
 
 `Connection Successful!` in your logs means that your client application has successfully connected to your cluster in Hazelcast Cloud. The sample client code adds random entries to a map in your cluster. In your Hazelcast Cloud console, you should see the charts begin to be populated with metrics of your map.
 

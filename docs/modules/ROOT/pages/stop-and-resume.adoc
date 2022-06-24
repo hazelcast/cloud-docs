@@ -14,7 +14,15 @@ Stopping your cluster can help minimize your costs during development because yo
 
 To stop a cluster, go to *Manage Cluster* and click *Stop*.
 
-When you stop a cluster, Hazelcast Cloud saves your configuration so that you can resume the cluster at a later time.
+If you're using a Serverless production cluster or a Dedicated cluster, Hazelcast Cloud saves your cluster data so that you can resume the cluster at a later time.
+
+If you're using a Serverless development cluster, all cluster data is lost after the cluster is stopped.
+
+.What is cluster data?
+[%collapsible]
+====
+include::backup-and-restore.adoc[tag=cluster-data]
+====
 
 == Resuming a Cluster
 
