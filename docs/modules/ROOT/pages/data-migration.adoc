@@ -1,39 +1,64 @@
-= Migrate Data to another Cluster
-:description: In this tutorial, you'll use xref:wan-replication.adoc[WAN Replication] to migrate data from one cluster to another.
+= Transfer Data to Another Cluster
+:description: In this tutorial, you'll transfer data from one cluster to another using xref:wan-replication.adoc[WAN Replication]. You'll also learn how to safely delete a cluster after the successful transfer of data.
+
 
 {description}
 
+== Context
+
+WAN replication supports the following use cases:
+
+* Migrate data to a new cluster before decommissioning your original cluster.
+
+* Use WAN replication with a xref:failover-clients-with-hazelcast-cloud.adoc[failover client] as part of your disaster recovery strategy. WAN replication automatically synchronizes data between clusters. If a cluster fails, the failover client can switch to an alternative cluster with minimal interruption to service.
+
 == Before you Begin
 
-You cannot use WAN Replication if your cluster has developer mode turned on.
+* Set up two active clusters with developer mode turned off. Use the same configuration for each cluster. For example, if one cluster
+contains xref:custom-classes-upload.adoc[custom classes] or persistence,
+enable and configure the same options for the other cluster.
 
-You need at least two clusters with the same configuration. For example, if one cluster
-contains xref:custom-classes-upload.adoc[custom classes] or Persistence,
-you should enable and configure these options for the other cluster as well.
+* Decide which cluster you want to:
+** Send or migrate data from. This is the _publisher_ cluster.
+** Receive data. This is the _consumer_ cluster.
 
-== Step 1. Create WAN Replication
+== Step 1. Set Up WAN Replication
 
-In order to create WAN Replication, you can go to *Cluster Detail* > *Settings* > *Wan Replication* and click *Create New Replication*
+Set up WAN replication on the publisher cluster to send data to your consumer cluster.
 
-After setting all these parameters, you can click *Next* to select and configure consumer cluster.
+. Go to *Your Clusters* and select your publisher cluster.
+. Select *MANAGE CLUSTER > SETTINGS*.
+. On the *Cluster Settings* page, select *WAN Replication* and then click *+ CREATE NEW REPLICATION*.
++
+The publisher cluster is set as the *Active* cluster. Any data updates performed on this cluster are automatically copied to the other cluster connected by the WAN replication. In this case, your consumer cluster.
++
+. Update the xref:wan-replication.adoc#creating-wan-replication[other parameters] as required.
+. Click *NEXT >* to configure the consumer cluster.
+. From the *Cluster 2* list, select your consumer cluster.
+. From the *Active/Passive* list, select *Passive* to ensure that your consumer cluster only receives data.
++ 
+If you leave the setting as *Active*, any data updates performed on this cluster are automatically copied to your publisher cluster.
++   
+. Click *Save*. WAN Replication is set up.
+. If you want to synchronize all data between the two clusters, click *Sync*. This option is useful if you intend to decommission the publisher cluster.
 
-Settings on this screen for consumer cluster are same as publisher cluster except *Active/Passive* section. If you set consumer cluster as *Active*, data will be synchronized from/to publisher and consumer. If you set consumer cluster as *Passive*, data will be sent only from publisher to consumer.
-Once you configured settings for consumer, you can click *Save*
+== Step 2. Verify WAN Replication
 
-Within seconds, wan replication will be ready there.
+In this step, you'll check that data updates are copied from the publisher cluster to your consumer cluster.
 
-Once it is finished, you can verify it by going to Management Center *Cluster Detail* > *Management Center* > *Enable*  then *Management Center* > *Open Management Center*.
+. Connect a client to your publisher cluster and write some data to a map. You can skip this step if you've already synched data.
+. Open the Management Center for your consumer cluster. From the dashboard of your consumer cluster, select *MANAGE CLUSTER > MANAGEMENT CENTER*.
+. Go to *Storage > Maps* and make sure that the new map entries have been written to this cluster. Or if you've written or synched other data types, check the relevant section of Management Center.
 
-When you connect publish cluster and try to write some data, you will see data will be replicated to consumer cluster.
+TIP: You can also check the status of WAN replication from the Management Center of your publisher cluster. Go to *Cluster > WAN Replication*.
 
-NOTE: You can synchronize all data by using *Sync* button in the WAN replication settings.
+== Step 2. Delete the Publisher Cluster
 
-== Step 2. Connect to a Cluster
+In this step, you'll learn how to safely delete a cluster that has WAN replication set up. Skip this step if you want to keep WAN replication in place to use with a failover client. 
 
-After migration is done, you can connect to a new cluster with a different client such as the xref:java-client.adoc[Java client].
+Before you start, make sure that you are happy that all the data you need is replicated to the consumer cluster.
 
-== Step 3. Delete the Old Cluster
-
-You can delete your old cluster once migration finished and clients connected to a new cluster.
-
-NOTE: WAN replication must be deleted before cluster deletion
+. Connect a client to the consumer cluster.
+. Return to the dashboard of your publisher cluster, and select *MANAGE CLUSTER > SETTINGS*.
+. On the *Cluster Settings* page, select *WAN Replication* and then click *DELETE*. Confirm the deletion.
+. Return to the cluster dashboard and delete the publisher cluster.
