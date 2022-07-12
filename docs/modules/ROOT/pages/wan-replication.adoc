@@ -1,6 +1,5 @@
 = Synchronizing Data Between Clusters
 :description: You can use WAN replication to synchronize data between two or more clusters, and to transfer data from one cluster to another.
-:page-aliases: data-migration.adoc 
 
 {description}
 
