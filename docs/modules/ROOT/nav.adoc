@@ -22,7 +22,8 @@
 * xref:cluster-side-modules.adoc[Cluster-Side Modules]
 * xref:custom-classes-upload.adoc[Deploy Modules]
 * xref:logging-integration.adoc[Logging]
-* xref:maven-plugin.adoc[Maven Plugin]
+** xref:shipping-logs-to-amazon-elasticsearch-service.adoc[Sending Logs to Amazon OpenSearch]
+** xref:maven-plugin.adoc[Maven Plugin]
 
 .Manage Accounts
 * xref:multi-factor-authentication.adoc[Multi-Factor Authentication]
@@ -54,7 +55,6 @@
 
 .Tutorials
 * xref:mapstore-mongodb.adoc[Write-Through Cache with MongoDB]
-* xref:shipping-logs-to-amazon-elasticsearch-service.adoc[Logging with Amazon OpenSearch]
 * xref:failover-clients-with-hazelcast-cloud.adoc[]
 * xref:data-migration.adoc[]
 
