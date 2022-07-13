@@ -9,7 +9,7 @@ The basic workflow for any cluster-side module is the following:
 . *Test* your implementation on a Serverless development cluster.
 . *Deploy* your Java classes to your {hazelcast-cloud} cluster.
 
-Then you can use any client to interact with the cluster-side modules such as querying objects or triggering processes.
+Then, you can use any client to interact with the cluster-side modules such as querying objects or triggering processes.
 
 image:cluster-side-modules.svg[Workflow for building cluster-side modules]
 
@@ -46,9 +46,7 @@ You cannot use a custom name for executors in {hazelcast-cloud}. You must use th
 [[serializers]]
 == Supported Serializers
 
-Cluster-side modules need to be sent to other members in the cluster or one of your client applications. As a result, these modules need to be serialized.
-
-{hazelcast-cloud} supports the following serializers. Follow the links to learn more about these serializers in the Hazelcast Platform documentation.
+Cluster-side modules must be serialized because they are sent to other members in the cluster and/or your client applications. {hazelcast-cloud} supports the following serializers. Follow the links to learn more about these serializers in the Hazelcast Platform documentation.
 
 [cols="3,3a,4a,1a"]
 |===
@@ -114,11 +112,11 @@ Any Java code in cluster-side modules must meet the following requirements.
 
 === System-Level APIs
 
-No code in cluster-side modules is allowed to access system-level APIs. Hazelcast throws a Java Security Exception if any cluster-side modules try to access these APIs.
+No code in cluster-side modules is allowed to access system-level APIs. Hazelcast throws a Java security exception if any cluster-side modules try to access these APIs.
 
 === Package Names
 
-Your package names should not start with `com.hazelcast`. Hazelcast ignores these packages.
+Your package names must not start with `com.hazelcast`. Hazelcast ignores these packages.
 
 === Package Size
 
@@ -135,12 +133,11 @@ The libraries in your project must not conflict with those that are built into {
 ** link:https://docs.gradle.org/current/userguide/migrating_from_maven.html#migmvn:declaring_deps[Gradle]
 
 == Testing Cluster-Side Modules
-[.serverless]*Serverless*
 
 Before you go into production with your cluster-side modules, it's best to test them on a development cluster to make sure that they work as expected. To test cluster-side modules, follow these best practices:
 
-- *Use a development cluster:* It's faster to test cluster-side modules in a xref:serverless-cluster.adoc[development cluster]. These clusters include only a single member. Single-member clusters are faster because you don't need to wait for the cluster to replicate your cluster-side modules over other members or create and update backup replicas of your data.
-- *Use the Maven plugin:* The xref:maven-plugin.adoc[Maven plugin] allows you to package and deploy your cluster-side modules in a single command from your IDE.
+- Use a xref:serverless-cluster.adoc[Serverless development cluster]: It's faster to test cluster-side modules in a Serverless development cluster.
+- Use the xref:maven-plugin.adoc[{hazelcast-cloud} Maven plugin]: The Maven plugin allows you to package and deploy your cluster-side modules in a single command from your IDE.
 
 [[deploy]]
 == Moving to Production

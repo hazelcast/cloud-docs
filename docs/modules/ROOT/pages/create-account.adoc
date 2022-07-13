@@ -74,3 +74,7 @@ After you set up your account, you’ll want to keep it safe. Here are some reco
 - *Enable multi-factor authentication:* Protect your account from anyone who may know your username and password. With xref:multi-factor-authentication.adoc[multi-factor authentication], you'll need to provide a unique code that's generated on your device as well as your username and password to sign in.
 
 - *Allow only authorized devices to access your cluster:* You can xref:ip-white-list.adoc[set up an IP whitelist] to allow only known IP addresses to access your cluster.
+
+== Next Steps
+
+xref:get-started.adoc[].

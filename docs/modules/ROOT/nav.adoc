@@ -23,6 +23,7 @@
 * xref:tools.adoc[Developer Tools]
 
 .Manage Accounts
+* xref:create-account.adoc[Create]
 * xref:multi-factor-authentication.adoc[Multi-Factor Authentication]
 * xref:teams-and-users.adoc[Teams and Users]
 * xref:developer.adoc[API keys]
@@ -32,8 +33,8 @@
 
 .Manage Clusters
 * xref:create-clusters.adoc[Create]
-** xref:create-serverless-cluster.adoc[Create Serverless]
-** xref:create-dedicated-cluster.adoc[Create Dedicated]
+** xref:create-serverless-cluster.adoc[Create a Serverless Cluster]
+** xref:create-dedicated-cluster.adoc[Create a Dedicated Cluster]
 * xref:connect-to-cluster.adoc[Connect]
 ** xref:connect-to-serverless.adoc[Connect to Serverless]
 ** xref:connect-to-serverless.adoc[Connect to Dedicated]
