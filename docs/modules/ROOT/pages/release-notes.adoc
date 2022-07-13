@@ -2,6 +2,37 @@
 :url-cloud-cli-announcement: https://hazelcast.com/blog/announcing-hazelcast-cloud-cli/
 :url-cloud-sdk-announcement: https://hazelcast.com/blog/announcing-hazelcast-cloud-go-sdk/
 
+== May 6, 2022 - v3.7.0
+
+This release is focused on improving the stability of Hazelcast Cloud, notably occasional failures during cluster lifecycle changes (creation, starting, stopping).
+
+== March 25, 2022 - v3.6.0
+
+*New Features:*
+
+This release introduces Hazelcast 5.1 and the improvements to SQL:
+
+- SQL support for aggregating streams into tumbling and hopping windows, sometimes known as sliding windows.  This then gives you the ability to run functions and aggregations such as sum or count that is snapped to a time window.
+- Ability to create views, create indexes and run troubleshooting explain plans.
+- union, union all, right join, exists and not exists.  
+- JSON records with nested fields can be indexed and queried
+
+== February 10, 2022 - v3.5.0
+
+*New Features:*
+
+- Support for {cpp} apps. Follow our xref:cpp-client.adoc[tutorial] to connect your {cpp} app to the cloud, and use the latest features of Hazelcast!
+
+- A new compact design for the cluster page. 
+
+*Fixes:*
+
+- Fixed issue with resuming multi-zone AWS clusters.
+
+- Fixed UI issues with map configuration.
+
+- Fixed issue with syncing custom classes among cluster members.
+
 == January 20, 2022 - v3.4.0
 
 *New Features:*
