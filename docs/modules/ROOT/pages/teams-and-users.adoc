@@ -7,6 +7,8 @@ NOTE: Serverless clusters for teams do not include the free 2 GB storage.
 
 == Creating a Team
 
+. Sign into the [.console]*link:{page-cloud-console}[{hazelcast-cloud} console]*.
+
 . Click the *Account* icon in the bottom left corner.
 
 . Enter a team name and click *Create Team*.
@@ -46,7 +48,7 @@ In each team, users can have one of the following roles:
 |no
 |no
 
-|xref:payment-methods.adoc[Manage billing settings and redeem credits]
+|xref:payment-methods.adoc[Manage billing settings]
 |yes
 |no
 |yes

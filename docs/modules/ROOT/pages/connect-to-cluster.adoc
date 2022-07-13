@@ -1,40 +1,7 @@
-= Connecting to a Hazelcast Cloud Cluster
-:description: To communicate with a cluster in Hazelcast Cloud, you need a client. Hazelcast offers client libraries in a variety of languages as well as a command-line client.
+= Connecting to {hazelcast-cloud} Clusters
+:description: To communicate with a cluster in {hazelcast-cloud}, you need a client. Hazelcast offers clients in a variety of languages as well as a command-line client for quick prototyping and scripting.
 
 {description}
 
-== Before you Begin
-
-If your cluster is running in a private instance of Hazelcast Dedicated, you need to xref:vpc-peering.adoc[set up a peering connection to the cluster].
-
-== Authenticating a Client with TLS
-
-To use a client, you need to authenticate it with the correct TLS credentials.
-
-To find these credentials, click *Connect your Application* in the Hazelcast Cloud console.
-
-[cols="1a,2a"]
-|===
-|Configuration|Description
-
-|Cluster name
-|A unique name that is given to your cluster. This is not the name that you chose when you created the cluster.
-
-|Discovery token
-|A unique token that maps to the current IP address of the Hazelcast Cloud cluster. Cluster IP addresses may change. This token allows clients to find out the current IP address of the cluster and connect to it.
-
-|Keystore file
-|A file that contains the information that a client needs to authenticate over TLS.
-
-|Keystore password
-|The password that a client can use to access the keystore file.
- 
-|===
-
-You can configure these details, using either a client library API or a client configuration file.
-
-
-
-== Examples of Connecting Clients to Hazelcast Cloud
-
-For examples of using a client, see xref:get-started.adoc[].
+- xref:connect-to-serverless.adoc[]
+- xref:connect-to-dedicated.adoc[]

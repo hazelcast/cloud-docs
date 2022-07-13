@@ -1,13 +1,15 @@
-= Support
+= {hazelcast-cloud} Support Policy
 :url-zendesk-hazelcast: https://support.hazelcast.com
-:description: Hazelcast Cloud has different support options depending on your requirements and your budget.
+:description: {hazelcast-cloud} offers support options with different response times to suit your requirements and budget.
 
 {description}
 
 [cols="1a,1a,1a,1a"]
 |===
 |Support option|Coverage|Support Channel|Response Times
-|*Standard support* [.dedicated]*Dedicated* [.serverless]*Serverless*
+|*Standard support* [.dedicated]*Dedicated*
+
+[.serverless]*Serverless*
 |24 hours a day, 7 days a week, 365 days a year
 |link:{url-zendesk-hazelcast}[Hazelcast Support]
 |Less than one business day.
@@ -20,7 +22,7 @@
 
 == Severity Levels
 
-The Hazelcast support team prioritizes issues by their severity level:
+The Hazelcast Support Team prioritizes issues by their severity level:
 
 - *Severity 1* (production applications are down): We will respond in less than 30 minutes.
 - *Severity 2* (production applications are down and there is a known workaround): We will respond in less than 2 hours.

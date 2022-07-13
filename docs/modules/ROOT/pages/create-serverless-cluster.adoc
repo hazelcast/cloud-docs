@@ -1,41 +1,41 @@
 = Creating a Serverless Cluster
-:description: You can create a free Serverless cluster for xref:serverless-cluster.adoc[development or production].
+:description: You can create a free xref:serverless-cluster.adoc[Serverless cluster] for development or production.
 :page-aliases: create-starter-cluster.adoc, starter-clusters.adoc, create-standard-cluster.adoc, availability-zones.adoc, instance-types.adoc
 :page-serverless: true
 
 {description}
 
+include::serverless-cluster.adoc[tag=development]
+
+include::serverless-cluster.adoc[tag=production]
+
 To create a cluster for a team, you must have either an xref:create-account.adoc#roles[admin or developer role].
 
 == Before you Begin
 
-You need a xref:create-account.adoc[Hazelcast Cloud account].
+You need a xref:create-account.adoc[{hazelcast-cloud} account].
 
-== Creating a Serverless Cluster in the Cloud Console
+To create more than one cluster, you must add a xref:payment-card.adoc[payment card] to your account.
 
-include::serverless-cluster.adoc[tag=types]
-
-include::serverless-cluster.adoc[tag=development]
-
-include::serverless-cluster.adoc[tag=production]
+== Using the {hazelcast-cloud} Console
 
 [tabs] 
 ====
 Development:: 
 + 
 --
-To create a Serverless development cluster, do the following:
+To create a development cluster, do the following:
 
 // tag::development[]
+. Sign into the [.console]*link:{page-cloud-console}[{hazelcast-cloud} console]*.
 . Click *Plans* in the left navigation.
 . Click *Create cluster* in the *Serverless* tab.
 . Click *Create Development Cluster*.
-
 . Select a region.
 +
-NOTE: For best performance, use a region that's closest to your client applications or data stores. The closer your clients and data are to the cluster, the lower the network latency.
+NOTE: For best performance, use a region that's closest to your client application or data stores. The closer your clients and data are to the cluster, the lower the network latency.
 
-. Give your cluster a memorable name. This name is a label to help you differentiate clusters in your account.
+. Give your cluster a memorable name. You cannot change your cluster name after it has been created.
 
 It takes a few minutes to create a Serverless cluster. When the cluster state changes from *Pending* to *Running*, you can start using it.
 // end::development[]
@@ -44,48 +44,35 @@ It takes a few minutes to create a Serverless cluster. When the cluster state ch
 Production:: 
 + 
 --
-To create a Serverless production cluster, do the following:
+To create a production cluster, do the following:
 
 // tag::production[]
+. Sign into the [.console]*link:{page-cloud-console}[{hazelcast-cloud} console]*.
 . Click *Plans* in the left navigation.
 . Click *Create cluster* in the *Serverless* tab.
 . Click *Create Production Cluster*
 . Select a region.
 +
 NOTE: For best performance, use a region that's closest to your client applications or data stores. The closer your clients and data are to the cluster, the lower the network latency.
-
-. Give your cluster a memorable name. This name is a label to help you differentiate clusters in your account.
+. Give your cluster a memorable name. You cannot change your cluster name after it has been created.
 
 It takes a few minutes to create a Serverless cluster. When the cluster state changes from *Pending* to *Running*, you can start using it.
 // end::production[]
 --
 ====
- 
-== Changing your Cluster Name
-
-You cannot change your cluster name after it has been created. To choose a different name, create a new cluster.
-
-== Restrictions on Free Serverless Clusters
-
-Development and production clusters are stopped when all of the following conditions are true:
-
-- You don't connect to the cluster for 16 hours.
-- You don't have a payment method set up for your Hazelcast Cloud account.
-
-If you're using a Serverless production cluster, Hazelcast Cloud saves your cluster data so that you can resume the cluster at a later time.
-
-If you're using a Serverless development cluster, all cluster data is lost after the cluster is stopped.
-
-.What is cluster data?
-[%collapsible]
-====
-include::backup-and-restore.adoc[tag=cluster-data]
-====
 
 == Next Steps
 
+Development and production clusters are stopped when both of these conditions are true:
+
+- You don't connect to the cluster for 24 hours.
+- You don't have a payment method set up for your {hazelcast-cloud} account.
+
+xref:connect-to-serverless.adoc[].
+
+xref:payment-card.adoc[].
+
 Try the xref:get-started.adoc[hello world tutorial].
 
-Build a xref:mapstore-mongodb.adoc[sample caching app].
+Explore all xref:tutorials.adoc[tutorials].
 
-xref:connect-to-cluster.adoc[].

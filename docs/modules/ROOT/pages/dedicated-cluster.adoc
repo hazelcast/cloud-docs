@@ -1,17 +1,68 @@
 = Dedicated Clusters
-:description: Hazelcast Dedicated is a fully managed, single-tenant deployment of a Hazelcast cluster.
+:description: {hazelcast-cloud} Dedicated gives you control over the hardware and resources available to your cluster. When choosing how to host your cluster, you have the option of cloud providers, regions, machine types, and more. Dedicated clusters also offer strict container isolation for projects that require enhanced data security.
 :page-dedicated: true
 
 {description}
 
-Dedicated clusters are created and fully managed by the Hazelcast team. You tell Hazelcast how many resources you need and Hazelcast will provision and deploy the cluster.
+Dedicated clusters are created and fully managed by the Hazelcast team.
 
-Consider a Dedicated cluster for the following:
+[[dedicated]]
+== Pricing for Dedicated Clusters
 
-// tag::intended-apps[]
-- Explicit resource and configuration requirements
-- Critical production workloads
-// end::intended-apps[]
+Dedicated clusters are charged for the following:
+
+- *Provisioned memory:* How many resources you asked for when we created the cluster for you.
+- *Data transfer:* The volume of data going into, out of, and within your clusters.
+- *Cluster data storage:* If you requested persistence for your data, this is the cost of storing your cluster data in cloud storage.
++
+.What is cluster data?
+[%collapsible]
+====
+include::partial$cluster-data.adoc[]
+====
+
+=== Provisioned Memory
+
+Hazelcast charges you a fixed amount, depending on how much memory capacity is reserved for your cluster. If your cluster has 10 GB capacity but you do not use all that memory, you are still charged for the full 10 GB because this amount of memory was reserved for your use.
+
+These examples show the cost per month of three clusters that each have a different memory capacity and uptime:
+
+[cols="a,a,a,a"]
+|===
+|Cluster|Memory|Total uptime per month|Cost
+
+|1
+|10 GB
+|10 hours
+|10 X 10 X $0.10 = $10.00
+
+|2
+|1 GB
+|100 hours
+|1 X 100 X $0.10 = $10.00
+
+|3
+|3 GB
+|50 hours
+|3 X 50 X $0.10 = $15.00
+
+|===
+
+In this scenario, the total cost for the month for all three clusters will be: $10.00 + $10.00 + $15.00 = $35.00
+
+Dedicated clusters also incur charges for data transfer costs and any backup storage costs.
+
+=== Data Transfer
+
+Data transfer costs account for the volume of data going into, out of, and within your clusters.
+
+Your data transfer charges are aggregated over the month and added to your monthly bill.
+
+=== Cluster Data Storage
+
+If persistence is enabled on your cluster, Hazelcast stores your cluster data in cloud storage, which comes with additional costs.
+
+The cost of cluster data storage depend on the cloud providers cost of storing the data in their object store such as S3 on AWS.
 
 == Supported Functionality
 
@@ -85,6 +136,5 @@ Use this table to learn what is supported in Dedicated clusters:
 
 == Related Resources
 
-- xref:pricing.adoc[]
 - xref:teams-and-users.adoc[]
 - xref:architecture.adoc[]

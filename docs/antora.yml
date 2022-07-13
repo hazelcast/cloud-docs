@@ -1,14 +1,15 @@
 name: cloud
-title: Cloud
+title: Viridian
 start_page: overview.adoc
 version: ~
 asciidoc:
   attributes:
     page-toclevels: 3
-    url-github-cloud-cli: https://github.com/hazelcast/hazelcast-cloud-cli
-    url-github-go-sdk: https://github.com/hazelcast/hazelcast-cloud-sdk-go
-    url-cloud-api: https://cloud.hazelcast.com/v1/api/explorer
-    java-hello-world-github: https://github.com/hazelcast/hazelcast-cloud-java-sample-client/blob/2de802aff7f4b1ed0b9b7c18a501f43e4a1fd2cf/src/main/java/com/hazelcast/cloud/ClientWithSsl.java#L25
-    
+    page-url-github-cloud-cli: https://github.com/hazelcast/hazelcast-cloud-cli
+    page-url-github-go-sdk: https://github.com/hazelcast/hazelcast-cloud-sdk-go
+    page-url-cloud-api: https://cloud.hazelcast.com/v1/api/explorer
+    page-code-samples: https://github.com/hazelcast/hazelcast-cloud-code-samples
+    page-cloud-platform-version: 5.1
+    page-cloud-console: https://cloud.hazelcast.com/
 nav:
 - modules/ROOT/nav.adoc

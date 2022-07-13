@@ -3,11 +3,11 @@
 :url-azure-permissions: https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-manage-peering#permissions
 :page-dedicated: true
 
-Since security is vital in Hazelcast Dedicated, your clusters are installed within a private virtual network and can not be accessed unless you choose *Public Access* on cluster creation. So to connect private Azure Hazelcast Clusters, you need to establish a vNet peering connection between your network and Hazelcast Cluster network. 
+Since security is vital in Dedicated, your clusters are installed within a private virtual network and can not be accessed unless you choose *Public Access* on cluster creation. So to connect private Azure Hazelcast Clusters, you need to establish a vNet peering connection between your network and Hazelcast Cluster network. 
 
 == Before you Begin
 
-Download the Hazelcast Cloud CLI from link:{url-github-cloud-cli[Github].
+Download the {hazelcast-cloud} CLI from link:{url-github-cloud-cli[Github].
 
 link:{url-azure-cli}[Download the Azure CLI] and make sure you have the link:{url-azure-permissions}[correct permissions].
 
@@ -31,7 +31,7 @@ Make sure to replace the following placeholders:
 +
 - `YOUR_CLUSTER_ID` with the ID of your cluster.
 +
-To get your cluster ID, use the `hzcloud enterprise-cluster list` command of the Hazelcast Cloud CLI.
+To get your cluster ID, use the `hzcloud enterprise-cluster list` command of the {hazelcast-cloud} CLI.
 - `YOUR_TENANT_ID` with the ID of your tenant which contains your subscription.
 +
 To get your tenant ID, use the `az account list` command of the Azure CLI.
@@ -45,24 +45,22 @@ To get your resource group name, use the `az network vnet list` command of the A
 +
 To get your vnet name, use the `az network vnet list` command of the Azure CLI.
 +
-This command will create a service principal on your account and assign the `Network Contributor` role to it. Then, it will create peering for both sides (Hazelcast's, Your's). This command may take up to 5 minutes to finish.
+This command will create a service principal on your account and assign the `Network Contributor` role to it. Then, it will create peering for both sides. This command may take up to 5 minutes to finish.
 +
-image:azure-peering-cli.png[Create a new peering]
-+
-WARNING: The CIDR of your Hazelcast Dedicated Cluster and the CIDR of your VPC should not be overlapped otherwise, it will fail.
+WARNING: The CIDR of your Dedicated cluster and the CIDR of your VPC should not be overlapped otherwise, it will fail.
 
-. Check for active peerings from the Peerings tab after you select your Virtual Network on Azure for your side of peering. You can filter by its peer, which will be `cl-<CLUSTER_ID>`. On the example below, it is `cl53949` because the cluster ID was `53949`
+. Check for active peerings from the *Peerings* tab after you select your Virtual Network on Azure for your side of peering. You can filter by its peer, which will be `cl-<CLUSTER_ID>`. On the example below, it is `cl53949` because the cluster ID was `53949`
 
 == Listing Peering Connections
 
-You can list Azure vNet peerings on your Enterprise Hazelcast Cluster on Azure from Console by going *Settings* > *vNet* Peering one by one as shown below.
+You can list Azure vNet peerings from the {hazelcast-cloud} console by going to *Settings* > *vNet*.
 You can check where the connection established by checking the name of the vNet with it's CIDR from this list.
 
-Also, you can easily use Hazelcast Cloud SDK, Hazelcast Cloud CLI for listing vNet peerings as shown below.
+Also, you can use Go SDK, {hazelcast-cloud} CLI for listing vNet peerings as shown below.
 
 [tabs] 
 ====
-Hazelcast Cloud CLI:: 
+{hazelcast-cloud} CLI:: 
 + 
 --
 [source,shell]
@@ -70,7 +68,7 @@ Hazelcast Cloud CLI::
 hzcloud azure-peering list --cluster-id={YOUR_CLUSTER_ID}
 ----
 --
-Hazelcast Cloud SDK:: 
+Go SDK:: 
 + 
 --
 [source,go]
@@ -95,7 +93,7 @@ You can delete Azure vNet peerings of your Hazelcast cluster on Azure from the v
 
 [tabs] 
 ====
-Hazelcast Cloud CLI:: 
+{hazelcast-cloud} CLI:: 
 + 
 --
 [source,shell]
@@ -103,7 +101,7 @@ Hazelcast Cloud CLI::
 hzcloud azure-peering delete --peering-id={ID_OF_PEERING}
 ----
 --
-Hazelcast Cloud SDK:: 
+Go SDK:: 
 + 
 --
 [source,go]
