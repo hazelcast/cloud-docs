@@ -1,0 +1,8 @@
+= Viewing Bills and Payments
+:description: You can see how much you've spent in the current month as well as previous months.
+
+{description}
+
+. Sign into the [.console]*link:{page-cloud-console}[{hazelcast-cloud} console]*.
+. Click the *Account* icon in the bottom left corner.
+. Click *Billing & Payments*.

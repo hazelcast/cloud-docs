@@ -1,50 +1,63 @@
-= Deploying Cluster-Side Modules to Hazelcast Cloud
-:description: Before Hazelcast Cloud can execute or store your xref:cluster-side-modules.adoc[cluster-side modules], they need to be packaged into a single file and uploaded to Hazelcast Cloud. You can upload cluster-side modules, using the Hazelcast Cloud console, or the Maven plugin.
+= Deploying Cluster-Side Modules to {hazelcast-cloud} Clusters
+:description: Before clusters can execute or store your xref:cluster-side-modules.adoc[cluster-side modules], they need to be packaged into a single file and uploaded to {hazelcast-cloud} as custom classes. You can upload cluster-side modules, using the {hazelcast-cloud} console, or the Maven plugin.
 
 {description}
 
 == Before you Begin
 
-Check the xref:cluster-side-modules.adoc#prereqs, [requirements and limitations] to make sure that your code is ready to be packaged.
+Check the xref:cluster-side-modules.adoc#prereqs, [requirements and limitations] for cluster-side modules to make sure that your code is ready to be packaged.
 
 [[package]]
 == Uploading Cluster-Side Modules
 
-Hazelcast Cloud expects all classes of cluster-side modules to be packaged into a single ZIP or JAR file. When you’ve built and packaged your cluster-side modules, the final step is to upload the resulting package file to Hazelcast Cloud.
+{hazelcast-cloud} expects all classes of cluster-side modules to be packaged into a single ZIP or JAR file. When you’ve built and packaged your cluster-side modules, the final step is to upload the resulting package file to {hazelcast-cloud}.
 
-[tabs]
-====
-Maven plugin:: 
-+ 
---
+You can upload custom classes, using the following options:
+
+- Maven plugin
+- {hazelcast-cloud} console
+
+=== Using the Maven Plugin
 [.serverless]*Serverless*
 
-. xref:maven-plugin.adoc[Configure the Hazelcast Cloud Maven plugin] in your `pom.xml` file.
+. xref:maven-plugin.adoc[Configure the {hazelcast-cloud} Maven plugin] in your `pom.xml` file.
 
 . Change into your project's root directory.
 
 . Execute the `deploy` goal to package your project into a JAR file and upload it to the configured cluster.
++
+```bash
+mvn clean package hazelcast-cloud:deploy
+```
 
-In the output, you should see that the plugin packaged and deployed your JAR to your Hazelcast Serverless cluster.
---
+In the output, you should see that the plugin packaged and deployed your JAR to your Serverless cluster.
 
-Hazelcast Cloud console:: 
-+ 
---
-You must have either an xref:teams-and-users.adoc[admin or developer role] to upload code to Hazelcast Cloud.
+=== Using the {hazelcast-cloud} Console
+
+You must have either an xref:teams-and-users.adoc[admin or developer role] to upload code to {hazelcast-cloud}.
 
 . Use your build tool such as Gradle or Maven to package the classes into a JAR or ZIP file.
 
-. Go to *Upload Custom Classes* and use the file selector to upload the file to Hazelcast Cloud.
+. Sign into the [.console]*link:{page-cloud-console}[{hazelcast-cloud} console]* and select your cluster.
+
+. Go to *Upload Custom Classes* and use the file selector to upload the file to {hazelcast-cloud}.
 
 When the file is uploaded and ready to use, you will see a success message.
---
-====
 
 == Removing Cluster-Side Modules
 
-To remove cluster-side modules from the cluster, click *Upload Custom Classes*, find your class in the list and click on the delete icon next to it.
+To remove cluster-side modules from the cluster, you must use the {hazelcast-cloud} console.
+
+. Sign into the [.console]*link:{page-cloud-console}[{hazelcast-cloud} console]* and select your cluster.
+
+. Click *Upload Custom Classes* and find your class in the list.
+
+. Click on the delete icon next to the class that you want to delete.
 
 == Downloading Cluster-Side Modules
 
-To download a cluster-side module, click *Upload Custom Classes*, find your class in the *Uploaded Classes* list and click on it.
+To download a cluster-side module, you must use the {hazelcast-cloud} console.
+
+. Sign into the [.console]*link:{page-cloud-console}[{hazelcast-cloud} console]*.
+
+. Click *Upload Custom Classes*, find your class in the *Uploaded Classes* list and click on it.

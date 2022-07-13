@@ -1,0 +1,22 @@
+= Monitoring {hazelcast-cloud} Clusters
+:description: You can use monitoring tools to monitor your cluster for overall health as well as watch for events that require investigation or intervention.
+
+{description}
+
+== {hazelcast-cloud} Console
+
+Monitor basic performance metrics and the status of your cluster, using the {hazelcast-cloud} console.
+
+See xref:charts-and-stats.adoc[].
+
+== Management Center
+
+Monitor your Hazelcast cluster in a purpose-built cluster management tool. Management Center for {hazelcast-cloud} provides a cloud-user with read-only access, allowing you to view insights about cluster state, data structure metrics, and other metrics.
+
+See xref:management-center.adoc[].
+
+== Cluster Logs
+
+Access and monitor your cluster logs.
+
+See xref:logging.adoc[].

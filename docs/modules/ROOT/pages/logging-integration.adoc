@@ -1,35 +1,36 @@
-= Logging Integrations
-:description: Hazelcast Dedicated allows to integrate your cluster logs with a remote log management system. With the correct setup, all Hazelcast members send their logs to the configured remote log management system.
+= Integrating Cluster Logs with Log Management Systems
+:description: You can integrate Dedicated cluster logs with a log management system so that you can query and manage all your logs in one place.
 :page-dedicated: true
 
 {description}
 
-NOTE: For Hazelcast Serverless, you can use the xref:maven-plugin.adoc[Maven plugin] to stream cluster logs back to your local environment. 
-
-== Supported Log Management Systems
-
 Currently, the following logging solutions are supported:
 
-- ELK (Elastic Stack)
+- Elastic Stack (ELK)
 - Splunk
 
-TIP: For a tutorial, see xref:shipping-logs-to-amazon-elasticsearch-service.adoc[]
+== Before you Begin
 
-== Setting up Logging Integration
+You need the following:
+
+- An ELK or Splunk instance that has public access enabled.
+
+== Setting up a Logging Integration
 
 To set up logging integration, do the following:
 
-. Go to  *Manage Cluster* > *Settings* > *Logging*.
-
-. Select the desired solution in the *Logging Technology* dropdown menu and provide the access parameters.
-
-. Click *Create Logging Integration*. You should receive the Hazelcast member logs in your preferred log management system.
-
-== Removing Logging Integration
+. Sign into the [.console]*link:{page-cloud-console}[{hazelcast-cloud} console]* and select your cluster.
 
 . Go to  *Manage Cluster* > *Settings* > *Logging*.
 
-. Click *Delete Logging Integration*.
+. Select your log management system from the *Logging Technology* dropdown menu and provide the access parameters.
 
-The Hazelcast member logs are no longer sent out.
+. Click *Create Logging Integration*.
 
+You should now start receiving cluster logs in your log management system.
+
+== Next Steps
+
+Try a tutorial:
+
+- xref:tutorials:shipping-logs-to-amazon-elasticsearch-service.adoc[Set up a logging integration with Amazon OpenSearch].

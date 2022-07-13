@@ -3,20 +3,15 @@
 
 {description}
 
-// tag::cluster-data[]
-Cluster data includes the following:
-
-- Configuration settings
-- Cluster-side modules
-- Jobs
-- Map and JCache data structures
-// end::cluster-data[]
+include::partial$cluster-data.adoc[]
 
 Serverless clusters create a backup automatically once every 24 hours and when they are stopped.
 
 To back up or restore clusters in a team, you must have either an admin or developer role. See xref:teams-and-users.adoc[].
 
-== Creating a Backups
+== Creating a Backup
+
+. Sign into the [.console]*link:{page-cloud-console}[{hazelcast-cloud} console]* and select your cluster.
 
 . Go to *Manage Cluster* > *Backup And Restore*.
  
@@ -26,10 +21,14 @@ The time it takes to create a backup can vary, according to the size of your clu
 
 You can keep at most 10 backups. The oldest backup will be deleted automatically after the 10th backup.
 
-== Restore a New Cluster from a Backup
+== Restoring a New Cluster from a Backup
 
-Once you have at least one backup, you can easily use it to bootstrap a new cluster by clicking the *Restore* button of the backup you selected. Then, you need to follow nearly the same process as you followed while creating your cluster to create a new cluster with the backup.
+When you have at least one backup, you can use it to bootstrap a new cluster.
 
-Once you click the *Restore Data to New Cluster* button, It will create a new cluster with the data your backup has. 
+. Sign into the [.console]*link:{page-cloud-console}[{hazelcast-cloud} console]* and select your cluster.
+
+. Go to *Manage Cluster* > *Backup And Restore*.
+
+. Click *Restore* in the row of your selected backup.
 
 IMPORTANT: Do not delete the cluster that owns the backup until the new cluster is running.

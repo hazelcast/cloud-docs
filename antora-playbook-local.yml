@@ -11,21 +11,26 @@ content:
   sources: 
   - url: .
     branches: HEAD
-    start_path: docs
-  - url: ../hazelcast-cloud-code-samples
-    branches: HEAD
+    start_path: ./docs
+  - url: https://github.com/hazelcast/hazelcast-cloud-code-samples
+    branches: master
     start_path: mapstore/mapstore-sample-hazelcast5-mongodb/docs
   - url: https://github.com/hazelcast/hazelcast-cloud-maven-plugin
     branches: serverless-mvp-uat
     start_path: docs
+  - url: https://github.com/hazelcast/hz-docs
+    branches: [main, v/*]
+    start_path: docs
 ui: 
   bundle:
-    url: https://github.com/hazelcast/hazelcast-docs-ui/releases/latest/download/ui-bundle.zip
+    url: ../hazelcast-docs-ui/build/ui-bundle.zip
     snapshot: true
 asciidoc:
   attributes:
     page-pagination: true
     idprefix: ''
     idseparator: '-'
+    hazelcast-cloud: Hazelcast Viridian
   extensions:
     - ./lib/tabs-block.js
+    - asciidoctor-kroki
