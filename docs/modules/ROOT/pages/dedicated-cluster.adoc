@@ -6,11 +6,6 @@
 
 Dedicated clusters are created and fully managed by the Hazelcast team.
 
-Consider a Dedicated cluster for the following:
-
-- Explicit resource and configuration requirements
-- Strict data security requirements
-
 [[dedicated]]
 == Pricing for Dedicated Clusters
 
