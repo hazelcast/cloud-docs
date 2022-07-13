@@ -56,7 +56,6 @@
 * xref:mapstore-mongodb.adoc[Write-Through Cache with MongoDB]
 * xref:shipping-logs-to-amazon-elasticsearch-service.adoc[Sending Logs to Amazon OpenSearch]
 * xref:failover-clients-with-hazelcast-cloud.adoc[]
-* xref:data-migration.adoc[]
 
 .Release Notes
 * xref:release-notes.adoc[]
