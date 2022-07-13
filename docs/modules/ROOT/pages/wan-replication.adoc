@@ -24,33 +24,24 @@ WAN replication supports the following use cases:
 
 | _Consumer_ cluster, also known as the _passive_ cluster
 |Receives data from another cluster using WAN replication
-|===
-
-You can set up pairs of clusters to use either one or two-way replication.
-
-[cols="a,a"]
-|===
-|Term|Description
 
 |_Active-Passive_ replication
-|Data updates on a publisher cluster are automatically copied to a consumer cluster. Use this configuration for migrating data between clusters.
+|One-way replication. Data updates on a publisher cluster are automatically copied to a consumer cluster. Use this configuration for migrating data between clusters.
 
 |_Active-Active_ replication
-|Uses a pair of publisher clusters. Data updates on either cluster are automatically copied to the other cluster of the pair. Use this configuration with a failover client.
+|Uses a pair of publisher clusters for two-way replication. Data updates on either cluster are automatically copied to the other cluster of the pair. Use this configuration with a failover client.
 
 |===
 
 == Before you Begin
 
-* You need either two:
-** xref:create-serverless-cluster.adoc[Serverless production clusters]
-** xref:create-dedicated-cluster.adoc[Dedicated clusters].
+* You need two xref:create-serverless-cluster.adoc[Serverless clusters] or two xref:create-dedicated-cluster.adoc[Dedicated clusters]. You cannot synchronize data between one Serverless cluster and one Dedicated cluster.
 
 +
 Make sure that each cluster is configured with the same settings. For example, if one cluster
 contains xref:cluster-side-modules.adoc[cluster-side modules] or persistence, the other cluster must too.
 
-* Decide which type of cluster configuration to use:
+* Decide which configuration to use for your pair of clusters:
 ** Active-Passive
 ** Active-Active
 
@@ -58,7 +49,7 @@ contains xref:cluster-side-modules.adoc[cluster-side modules] or persistence, th
 
 Set up WAN replication between two clusters.
 
-. Go to *Your Clusters* and select the cluster that you want to use as a publisher cluster.
+. Sign into the [.console]*link:{page-cloud-console}[{hazelcast-cloud} console]* and select the cluster that you want to use as a publisher cluster.
 
 +
 NOTE: If you want to set up a pair of clusters in an Active-Active configuration, select either cluster.
@@ -90,14 +81,14 @@ The cluster is set as the *Active* cluster. Any data updates performed on this c
 . Click *Save*. WAN Replication is set up.
 
 +
-TIP: If you want to synchronize all data between the two clusters immediately, click *Sync*. This option is useful when your're migrating data from one cluster to another.
+TIP: If you want to synchronize all data between the two clusters immediately, click *Sync*. This option is useful when your're migrating data from one cluster to another. Otherwise, WAN replication is triggered when a data update is made to a publisher cluster.
 
 == Verify WAN Replication
 
 Check that data is successfully replicated between two clusters connected by WAN replication.
 
 . Connect a client to your publisher cluster and write some data to a map. You can use either cluster in an Active-Active pair.
-. Open the dashboard of the other cluster of the pair and select *Manage Cluster > Management Center*.
+. Open the dashboard of the other cluster of the pair and select *Manage Cluster* > *Management Center*.
 . Go to *Storage* > *Maps* and make sure that the new map entries have been written to this cluster. Or if you've written or synched other data types, check the relevant section of Management Center.
 
 +

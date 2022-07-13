@@ -1,5 +1,5 @@
 = Sending Logs to Amazon OpenSearch
-:description: You can set up a remote logging solution using Amazon OpenSearch Service. Logs from your Dedicated cluster are automatically sent to an Amazon OpenSearch domain. Amazon OpenSearch makes these logs available in Kibana.
+:description: Set up a remote logging solution using Amazon OpenSearch Service. In this tutorial, you'll set up an Amazon OpenSearch domain and configure your {hazelcast-cloud} cluster to automatically send log files to it. You'll also learn how to view these logs in Kibana.
 
 :url-github-elasticsearch: https://github.com/elastic/elasticsearch
 :url-amazon-opensearch: https://aws.amazon.com/opensearch-service
@@ -12,21 +12,20 @@
 link:{url-amazon-elasticsearch}[Amazon OpenSearch Service] is based on link:{url-github-elasticsearch}[Elasticsearch], and allows you to search, analyze and visualize your cluster logs using Kibana.
 
 [[set-up-opensearch-domain]]
-== Set Up an Amazon OpenSearch Domain
+== Step 1. Set Up an Amazon OpenSearch Domain
 
-Create an Amazon OpenSearch domain to receive log files from your Hazelcast Cloud cluster.
+Create an Amazon OpenSearch domain to receive log files from your {hazelcast-cloud} cluster.
 
 . link:{url-aws-signup}[Create an AWS account] if you don't have one already.
 . Sign in as root user.
-. From the list of regions on the top menu, select *US West (N California) us-west-1*.
-// Does the domain need to be in a specific region?
+. From the list of regions on the top menu, select the region that's closest to your {hazelcast-cloud} cluster.
 . Search for and select *Amazon OpenSearch Service*. The Dashboard opens ready for you to start configuration.
 +
 image:aws-openservice-dashboard.png[Dashboard for Amazon OpenSearch Service]
 . Click *Create domain*.
 
 [[configure-opensearch-domain]]
-== Configure Your OpenSearch Domain
+== Step 2. Configure Your OpenSearch Domain
 
 To get a logging solution up and running, update the following domain settings. You can go back and adjust them later to suit your needs.
 
@@ -37,7 +36,7 @@ To get a logging solution up and running, update the following domain settings. 
 ** Select *Enable compatibility mode*.
 // Is this correct or should we use the latest OpenSearch version?
 . In the *Data nodes* section, under *Availability Zones*, select *1-AZ*.
-. In the *Network* section, select *Public access* to use fine-grained access control to secure the OpenSearch domain and data. VPC Peering connections between Hazelcast Cloud clusters and OpenSearch instances are not currently supported.
+. In the *Network* section, select *Public access* to use fine-grained access control to secure the OpenSearch domain and data. VPC Peering connections between {hazelcast-cloud} clusters and OpenSearch instances are not currently supported.
 // Is this still true? 
 
 . In the *Fine-grained access control* section, select *Create Master User* and enter a username and password for the account.
@@ -53,14 +52,14 @@ TIP: Make a note of the master user credentials. You'll need them later to acces
 ** *Domain endpoint*
 
 [[configure-cloud-logging]]
-== Configure Logging Integration in Hazelcast Cloud
+== Step 3. Configure Logging Integration in {hazelcast-cloud}
 
-Configure your Hazelcast Dedicated cluster to send log files to the OpenSearch domain.
+Configure your Dedicated cluster to send log files to the OpenSearch domain.
 
-You'll need the master user credentials and domain endpoint that you created in xref:#configure-opensearch-domain[].
+You'll need the master user credentials and domain endpoint that you created when you <<configure-opensearch-domain, configured OpenSearch>>.
 
-. In Hazelcast Cloud, go to *Your Clusters* and select the cluster that want to integrate with OpenSearch.
-. Select *Manage Cluster* > *Settings*, and on the *Cluster Settings* page select *Logging*.
+. Sign into the [.console]*link:{page-cloud-console}[{hazelcast-cloud} console]* and select the cluster that want to integrate with OpenSearch.
+. Select *Manage Cluster* > *Settings* > *Logging*.
 . From the *Logging Technology* list, select *Elastic Stack (ELK)*.
 . In the *Username* and *Password* fields, enter your master user credentials.
 . In the *URL* field, enter the domain endpoint for your OpenSearch domain followed by port number 443. 
@@ -71,28 +70,28 @@ OpenSearch supports HTTPS over port 443.
 
 . Click *Create Integration*. Within 30 seconds, Hazelcast starts to send log files to OpenSearch, which are made available in Kibana.
 
-== Set Up a Kibana Dashboard
+== Step 1. Set Up a Kibana Dashboard
 
 Create an index pattern to load the logs received from OpenSearch into a Kibana dashboard. 
 
-You'll need the master user credentials and Kibana URL that you created in xref:#configure-opensearch-domain[].
+You'll need the master user credentials and Kibana URL that you created when you <<configure-opensearch-domain, configured OpenSearch>>.
 
 [NOTE]
 ====
-To create log data for viewing, make sure that:
+To create log data for viewing, check for the following:
 
-* Your Hazelcast Cloud cluster is running 
+* Your {hazelcast-cloud} cluster is running 
 * A client is writing data to the cluster.
 ====
 
-. From your domain details page in OpenSearch, click on the *Kibana URL*.
-. Log in to Kibana using your master user credentials.
+. From your domain details page in OpenSearch, click the Kibana URL.
+. Log in to Kibana, using your master user credentials.
 . Select *Explore on my own* to skip onboarding.
 . From the *Select tenant* dialog box, select *Private* and click *Confirm*.
 . From the main menu, select *Kibana* > *Discover* to start your set up.
 . Click *Create index pattern*. An index pattern tells Kibana which indices contain the data that you want to view.
 . In the *Index pattern* field, enter a wildcard `*` to find all log data received from OpenSearch. 
-. When Kibana finds the Hazelcast Cloud logs, click *Next step*.
+. When Kibana finds the {hazelcast-cloud} logs, click *Next step*.
 . From the *Time field* list, select *updated_at* so that you'll be able to filter your log file data by time.
 . Click *Create index pattern*. Your log file data is ready to view. Simply select *Kibana* > *Discover* from the main menu.
 
@@ -100,3 +99,11 @@ To create log data for viewing, make sure that:
 image:kibana-dashboard.png[Log data in Kibana Dashboard]
 
 If necessary, you can now return to your OpenServe domain and increase the number of nodes or availability zones to add resilience to the logging service.
+
+== Summary
+
+In this tutorial, you learned how to do the following:
+
+* Create an Amazon OpenSearch domain to receive log files from your {hazelcast-cloud} cluster.
+* Configure your Dedicated cluster to automatically send log files to the OpenSearch domain.
+* Load log files into a Kibana dashboard using an index pattern.
