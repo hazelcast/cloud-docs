@@ -24,12 +24,9 @@ content:
   - url: https://github.com/hazelcast/hazelcast-cloud-code-samples
     branches: master
     start_path: mapstore/mapstore-sample-hazelcast5-mongodb/docs
-  - url: https://github.com/hazelcast/hazelcast-cloud-maven-plugin
-    branches: serverless-mvp-uat
-    start_path: docs
 ui: 
   bundle:
-    url: ../hazelcast-docs-ui/build/ui-bundle.zip
+    url: https://github.com/hazelcast/hazelcast-docs-ui/releases/latest/download/ui-bundle.zip #../hazelcast-docs-ui/build/ui-bundle.zip
     snapshot: true
 asciidoc:
   attributes:
