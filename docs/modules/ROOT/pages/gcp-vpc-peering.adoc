@@ -12,17 +12,17 @@ There are 2 ways of creating a GCP VPC Peering connection:
 
 To create a peering connection on a team cluster, you must have either an admin or developer role. See xref:teams-and-users.adoc[].
 
-== Using the Hazelcast Cloud CLI
+== Using the {hazelcast-cloud} CLI
 
-This option provides the easiest way of creating GCP VPC Peering with your Enterprise Hazelcast Cloud Cluster.
+This option provides the easiest way of creating GCP VPC Peering with your Dedicated cluster.
  
 === Set Up Your Environment
 
-. Install link:{url-github-cloud-cli}[Hazelcast Cloud CLI].
+. Install link:{page-url-github-cloud-cli}[{hazelcast-cloud} CLI].
 
-. Set the `GOOGLE_APPLICATION_CREDENTIALS` environment variable to the path to your Google Cloud credentials file. 
+. Set the `GOOGLE_APPLICATION_CREDENTIALS` environment variable to the path of your Google Cloud credentials file. 
 +
-NOTE: You can check further details about *Google Application Credentials* in the link:{url-google-cloud-authentication}[Google Cloud documentation].
+NOTE: You can check further details about these credentials in the link:{url-google-cloud-authentication}[Google Cloud documentation].
 
 === Creating a Peering Connection
 
@@ -31,35 +31,33 @@ NOTE: You can check further details about *Google Application Credentials* in th
 [source,shell]
 ----
 hzcloud gcp-peering create \
---cluster-id={YOUR_CLUSTER_ID} \
---project-id={YOUR_PROJECT_ID} \
---network-name={YOUR_VPC_NETWORK_NAME}
+--cluster-id=<YOUR CLUSTER ID> \
+--project-id=<YOUR PROJECT ID> \
+--network-name=<YOUR VPC NETWORK NAME>
 ----
 +
 Make sure to replace the following placeholders:
 +
-- `YOUR_CLUSTER_ID` with the ID of your cluster.
+- `YOUR CLUSTER ID` with the ID of your cluster.
 +
-To get your cluster ID, use the `hzcloud enterprise-cluster list` command of the Hazelcast Cloud CLI.
-- `YOUR_PROJECT_ID` with the ID of your project which contains your network on Google Cloud.
+To get your cluster ID, use the `hzcloud enterprise-cluster list` command of the {hazelcast-cloud} CLI.
+- `YOUR PROJECT ID` with the ID of your project which contains your network on Google Cloud.
 +
 For details about Google Cloud projects, see the link:{url-google-cloud-projects}[Google Cloud documentation].
 - `YOUR_VPC_NETWORK_NAME` with the Name of your VPC network on Google Cloud 
 on your terminal.
 +
 For details about Google Cloud VPC Networks, see the link:{url-google-cloud-vpc}[Google Cloud documentation].
-+
-image:gcp-peering-cli.png[Use the CLI to create a new peering connection]
 
 . Check for active peerings from the VPC Network Peering tab after you select your VPC on Google Cloud Platform for your side of peering.
 +
 image:validate-gcp-peering.png[Check your peering connection on GCP]
 +
-WARNING: Do not overlap the CIDR of your Hazelcast Dedicated cluster and the CIDR of your VPC, otherwise the connection will fail.
+WARNING: Do not overlap the CIDR of your Dedicated cluster and the CIDR of your VPC, otherwise the connection will fail.
 
 == Creating a Manual Connection
 
-You can still create VPC peering without using Hazelcast Cloud CLI. But, you need to handle everything it does properly. This way is more difficult but more configurable.
+You can still create VPC peering without using {hazelcast-cloud} CLI. But, you need to handle everything it does properly. This way is more difficult but more configurable.
 
 In order to create VPC Peering, you need to do the following:
 
@@ -69,8 +67,8 @@ In order to create VPC Peering, you need to do the following:
 
 === Collecting Properties
 
-You need to collect GCP Peering properties for your Enterprise Hazelcast Cloud cluster on GCP in order to create your side of the VPC Peering connection. 
-You can get these properties from the link:{url-cloud-api}[GraphQL API] or the link:{url-github-go-sdk}[Hazelcast Cloud SDK Go] as the following command.
+To create your side of the VPC Peering connection, you need to collect GCP Peering properties for your cluster. 
+You can get these properties from the link:{page-url-cloud-api}[GraphQL API] or the link:{page-url-github-go-sdk}[Go SDK]
 
 [tabs] 
 ====
@@ -87,7 +85,7 @@ query {
 }
 ----
 --
-Hazelcast Cloud SDK:: 
+Go SDK:: 
 + 
 --
 [source,go]
@@ -105,13 +103,13 @@ fmt.Println(properties.NetworkName)
 
 === Creating a Peering Connection
 
-After you successfully collect peering properties, you need to create a peering connection from your VPC to our VPC using values you collected from peering the properties previous step.
+After you successfully collect peering properties, you need to create a peering connection from your VPC to the Hazelcast VPC, using values you collected from peering the properties.
 
-TIP: Learn how to create a VPC Peering Connection on Google Cloud in the link:{url-google-cloud-vpc-peering}[Google Cloud documentation].
+TIP: Learn how to create a VPC Peering connection on Google Cloud in the link:{url-google-cloud-vpc-peering}[Google Cloud documentation].
 
 === Accepting a Peering Connection
 
-After you successfully create a VPC Peering to the Hazelcast Dedicated Cluster, you need to accept that from our side by using the GraphQL API or the Hazelcast Cloud SDK Go as the following commands.
+After you successfully create a VPC Peering to the Dedicated cluster, you need to accept that connection, using the GraphQL API or the Go SDK:
 
 [tabs] 
 ====
@@ -130,7 +128,7 @@ mutation {
 }
 ----
 --
-Hazelcast Cloud SDK:: 
+Go SDK:: 
 + 
 --
 [source,go]
@@ -149,20 +147,21 @@ fmt.Println(result.Status)
 
 === Validating Peering Connections
 
-After you see the status value as `Accepted`, you can check active peerings from the Peerings tab after you select your VPC on Google Cloud Platform for your side of peering. 
+After you see the status value as `Accepted`, you can check active peerings from the *Peerings* tab after you select your VPC on Google Cloud Platform for your side of peering. 
 
-WARNING: The CIDR of your Hazelcast Dedicated Cluster and the CIDR of your VPC *should not be overlapped.* or you can not see peering in this list.
+WARNING: The CIDR of your Dedicated cluster and the CIDR of your VPC must not overlap. Otherwise you will not see peering in this list.
 
 == Listing Peering Connections
 
-You can list Google Cloud Platform peerings on your Enterprise Hazelcast Cluster on GCP from Console by going *Cluster Details > Settings > VPC Peerings* one by one as shown below. 
-You can check where the connection established by checking Project ID and Network Name on the list.
+You can list Google Cloud Platform peerings for your cluster on GCP from the {hazelcast-cloud} console by going to *Cluster Details > Settings > VPC Peerings* one by one.
 
-Also, you can easily use Hazelcast Cloud SDK, Hazelcast Cloud CLI for this.
+You can check where the connection is established by checking Project ID and Network Name on the list.
+
+Also, you can use the Go SDK, {hazelcast-cloud} CLI for this.
 
 [tabs] 
 ====
-Hazelcast Cloud CLI:: 
+{hazelcast-cloud} CLI:: 
 + 
 --
 [source,shell]
@@ -170,7 +169,7 @@ Hazelcast Cloud CLI::
 hzcloud gcp-peering list --cluster-id={YOUR_CLUSTER_ID}
 ----
 --
-Hazelcast Cloud SDK:: 
+Go SDK:: 
 + 
 --
 [source,go]
@@ -191,11 +190,11 @@ for _,peer := range *peerings {
 
 == Deleting Peering Connections
 
-You can delete Google Cloud Platform peerings from your Hazelcast Dedicated cluster in the Hazelcast Cloud console as well as the Hazelcast Cloud SDK and the Hazelcast Cloud CLI.
+You can delete Google Cloud Platform peerings from your Dedicated cluster in the {hazelcast-cloud} console as well as the Go SDK and the {hazelcast-cloud} CLI.
 
 [tabs] 
 ====
-Hazelcast Cloud CLI:: 
+{hazelcast-cloud} CLI:: 
 + 
 --
 [source,shell]
@@ -203,7 +202,7 @@ Hazelcast Cloud CLI::
 hzcloud gcp-peering delete --peeering-id={ID_OF_PEERING}
 ----
 --
-Hazelcast Cloud SDK:: 
+Go SDK:: 
 + 
 --
 [source,go]

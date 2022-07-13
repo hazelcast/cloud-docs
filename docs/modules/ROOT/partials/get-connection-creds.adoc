@@ -1,0 +1,23 @@
+To connect your own client to the cluster, you need your cluster's connection credentials.
+
+. Sign into the [.console]*link:{page-cloud-console}[{hazelcast-cloud} console]* and select your cluster.
+
+. Go to *Connect your Application* > *Advanced Setup*:
++
+[cols="1a,2a"]
+|===
+|Configuration|Description
+
+|Cluster name
+|A unique name for your cluster.
+
+|Discovery token
+|A unique token that maps to the current IP address of the cluster. Cluster IP addresses may change. This token allows clients to find out the current IP address of the cluster and connect to it.
+// tag::tls[]
+|TLS files (keystore file)
+|Files for the certificate authority, certificate, and private key that a client needs to authenticate over TLS.
+
+|TLS password (Keystore and truststore password)
+|The password that a client can use to access the private key file.
+// end::tls[]
+|===

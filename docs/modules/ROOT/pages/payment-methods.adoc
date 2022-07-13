@@ -1,33 +1,17 @@
-= Managing Payments and Billing
-:description: Provide a payment card or redeem credits to create more clusters or use more resources.
+= Payments and Billing
+:description: To create more than one Serverless cluster or give more resources to your Dedicated cluster, you must provide a payment method in your account.
 
-You need to provide payment in the form of credits or a payment card to do the following:
+{description}
+
+- xref:payment-card.adoc[]
+
+- xref:billing.adoc[]
+
+For xref:serverless-cluster.adoc[Serverless clusters], you must provide a payment card to do the following:
 
 - Create two or more Serverless clusters.
-- Use more than 2GB of memory on a Serverless cluster.
-- Set up a Dedicated cluster.
+- Use more than 2 GB of memory in a Serverless cluster.
 
-== Redeeming Credits
+For xref:dedicated-cluster.adoc[Dedicated clusters], you must provide a payment card to pay for new clusters or cluster usage for existing clusters.
 
-If you have a promo code, you can use it to redeem credit. As long as your credit balance is positive, any usage will be deducted from your credit balance. When you are out of credit, and if you do not have any other payment method defined, then your clusters will be stopped.
 
-To manage credits for a team, you must have either an admin or finance role.
-
-. Click the *Account* icon in the bottom left corner.
-. Click *Credits*.
-. Enter a promo code and click *Redeem*.
-
-== Adding a Payment Card
-
-. Click the *Account* icon in the bottom left corner.
-. Click *Payment Methods*.
-. Complete the form with your payment details.
-
-Hazelcast uses a third-party to store payment details and process payments. Payment details are not stored in Hazelcast.
-
-== Viewing Bills and Payments
-
-You can see how much you've spent in the current month as well as previous months.
-
-. Click the *Account* icon in the bottom left corner.
-. Click *Billing & Payments*.

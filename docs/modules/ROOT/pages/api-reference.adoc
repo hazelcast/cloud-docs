@@ -1,15 +1,15 @@
 = API Reference
 :url-graphql: https://graphql.org/
 
-Hazelcast Cloud uses link:{url-graphql}[GraphQL] to provide a public API to consumers.
+{hazelcast-cloud} uses link:{url-graphql}[GraphQL] to provide a public API to consumers.
 
-link:{url-cloud-api}[Go to the GraphQL Explorer]
+link:{page-url-cloud-api}[Go to the GraphQL Explorer]
 
 == Queries
 
 === Cloud Providers
 
-While creating a cluster on Hazelcast Cloud, you need to decide which cloud provider to use. You can make this decision according to where your current infrastructure is. Also, the cloud providers we support change according to the type of product you will use. We support different cloud providers on the Standard and Enterprise plans. So, you need to check available cloud providers before creating a cluster from our GraphQL API with a `query cloudProviders` 
+While creating a cluster on {hazelcast-cloud}, you need to decide which cloud provider to use. You can make this decision according to where your current infrastructure is. Also, the cloud providers we support change according to the type of product you will use. We support different cloud providers on the Standard and Enterprise plans. So, you need to check available cloud providers before creating a cluster from our GraphQL API with a `query cloudProviders` 
 
 [source,shell]
 ----
@@ -39,7 +39,7 @@ query {
 
 === Hazelcast Versions
 
-In order to create or upgrade a version of an Enterprise type of cluster on Hazelcast Cloud, you need to select which Hazelcast version you need. The Hazelcast versions the Hazelcast Cloud supports changes according to the type of the product. So that you need to check available Hazelcast versions for your need with `hazelcastVersion query`
+In order to create or upgrade a version of an Enterprise type of cluster on {hazelcast-cloud}, you need to select which Hazelcast version you need. The Hazelcast versions the {hazelcast-cloud} supports changes according to the type of the product. So that you need to check available Hazelcast versions for your need with `hazelcastVersion query`
 
 [source,shell]
 ----
@@ -53,7 +53,7 @@ query {
 
 === Instance Types
 
-Instance types comprise varying combinations of CPU, memory, storage, and networking capacity and give you the flexibility to choose the appropriate mix of resources for your applications. Instance types changes according to a cloud provider, regions, and the ones we supported. In order to create *Enterprise Cluster on Hazelcast Cloud*, you need to select which instance type you will use with   `query instanceTypes`.
+Instance types comprise varying combinations of CPU, memory, storage, and networking capacity and give you the flexibility to choose the appropriate mix of resources for your applications. Instance types changes according to a cloud provider, regions, and the ones we supported. In order to create *Enterprise Cluster on {hazelcast-cloud}*, you need to select which instance type you will use with   `query instanceTypes`.
 
 [source,shell]
 ----
@@ -67,7 +67,7 @@ query {
 
 === Availability Zones
 
-Availability zones are isolated locations within data center regions from which public cloud services originate and operate. In order to create *Enterprise Cluster on Hazelcast Cloud*, you need to select which availability zones should be used. This availability zones changes according to the cloud provider and region. Also, the number of instances you need, may not be available on this availability zones. So that you need to check available availability zones for your demand with `availabilityZones query`.
+Availability zones are isolated locations within data center regions from which public cloud services originate and operate. In order to create *Enterprise Cluster on {hazelcast-cloud}*, you need to select which availability zones should be used. This availability zones changes according to the cloud provider and region. Also, the number of instances you need, may not be available on this availability zones. So that you need to check available availability zones for your demand with `availabilityZones query`.
 
 [source,shell]
 ----
@@ -147,9 +147,9 @@ query {
 
 == Mutations
 
-=== Create Serverless Cluster
+=== Create Serverless Cluster
 
-You can create a new *Hazelcast Serverless* cluster with the `createStandardCluster` mutation. This mutation needs at least the following inputs; `name, cloud provider, region, cluster type, total memory, and Hazelcast version`. You can optionally provide other properties like data structures etc.
+You can create a new *Serverless* cluster with the `createStandardCluster` mutation. This mutation needs at least the following inputs; `name, cloud provider, region, cluster type, total memory, and Hazelcast version`. You can optionally provide other properties like data structures etc.
 
 [WARNING]
 ====
@@ -180,7 +180,7 @@ mutation {
 
 === Create Dedicated Cluster
 
-You can create a new *Hazelcast Dedicated* cluster with the `createEnterpriseCluster mutation`. This mutation needs at least the following inputs; `name, cloud provider, region, zones, instance type, instance per zone, Hazelcast version, public access value, and CIDR block`.
+You can create a new *Dedicated* cluster with the `createEnterpriseCluster mutation`. This mutation needs at least the following inputs; `name, cloud provider, region, zones, instance type, instance per zone, Hazelcast version, public access value, and CIDR block`.
 
 
 [WARNING]
@@ -189,7 +189,7 @@ You need to collect some inputs from other queries.
 
 In this case, you need to get `cloudProvider` from `cloudProviders query`,  `region` from `regions query`, `zones`  from `availabilityZones query`, instanceType from `instanceTypes query`.
 
-Also, you need to care about if the cloud provider and region are enabled for Hazelcast Dedicated.
+Also, you need to care about if the cloud provider and region are enabled for Dedicated.
 ====
 
 TIP: You can optionally provide other properties such as data structures and Persistence features.
