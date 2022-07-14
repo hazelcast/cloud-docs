@@ -441,8 +441,6 @@ INSERT INTO population2020 VALUES
 (7, 'Istanbul', 14804116),
 (8, 'Ankara', 3517182);
 ----
-SELECT countries FROM cities WHERE LENGTH(cities) >= 11;
-----
 +
 ```
 +--------------------+
@@ -600,7 +598,12 @@ Learn more about Serverless:
 
 Try a xref:tutorials.adoc[tutorial] for {hazelcast-cloud}.
 
-See the xref:hazelcast:sql:sql-statements.adoc[SQL reference].
+Find out more about the SQL statements used in this tutorial:
+
+- xref:hazelcast:sql:create-mapping.adoc[]
+- xref:hazelcast:sql:select.adoc[]
+- xref:hazelcast:sql:expressions.adoc[].
+- xref:hazelcast:sql:sql-statements.adoc[All SQL statements].
 
 Learn more about using clients:
 
