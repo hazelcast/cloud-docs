@@ -24,7 +24,7 @@ Serverless clusters come in two types:
 == Development Clusters
 
 // tag::development[]
-Development clusters are for fast, iterative development while you prototype your application.
+Serverless development clusters are for fast, iterative development while you prototype your application.
 // end::development[]
 
 Development clusters have the following limitations:
