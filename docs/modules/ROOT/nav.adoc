@@ -11,8 +11,6 @@
 .Develop Applications
 * xref:developer-guide.adoc[Developer Guide]
 * xref:connect-to-cluster.adoc[Connect to a Cluster]
-** xref:connect-to-serverless.adoc[Serverless]
-** xref:connect-to-dedicated.adoc[Dedicated]
 * xref:cluster-side-modules.adoc[Cluster-Side Modules]
 ** xref:maploader-and-mapstore.adoc[MapStore]
 ** xref:custom-classes-upload.adoc[Deploy Modules]
@@ -36,8 +34,6 @@
 ** xref:create-serverless-cluster.adoc[Create a Serverless Cluster]
 ** xref:create-dedicated-cluster.adoc[Create a Dedicated Cluster]
 * xref:connect-to-cluster.adoc[Connect]
-** xref:connect-to-serverless.adoc[Connect to Serverless]
-** xref:connect-to-serverless.adoc[Connect to Dedicated]
 ** xref:ip-white-list.adoc[IP Whitelist]
 ** xref:vpc-peering.adoc[VPC Peering and PrivateLink]
 *** xref:aws-vpc-peering.adoc[AWS VPC Peering]
