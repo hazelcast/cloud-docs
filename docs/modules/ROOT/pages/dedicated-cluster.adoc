@@ -1,10 +1,8 @@
 = Dedicated Clusters
-:description: {hazelcast-cloud} Dedicated gives you control over the hardware and resources available to your cluster. When choosing how to host your cluster, you have the option of cloud providers, regions, machine types, and more. Dedicated clusters also offer strict container isolation for projects that require enhanced data security.
+:description: {hazelcast-cloud} Dedicated gives you fine-grained control over the hardware and resources available to your cluster. Dedicated clusters also offer strict container isolation for projects that require enhanced data security.
 :page-dedicated: true
 
 {description}
-
-Dedicated clusters are created and fully managed by the Hazelcast team.
 
 [[dedicated]]
 == Pricing for Dedicated Clusters
@@ -134,7 +132,6 @@ Use this table to learn what is supported in Dedicated clusters:
 
 |===
 
-== Related Resources
+== Next Steps
 
-- xref:teams-and-users.adoc[]
-- xref:architecture.adoc[]
+- xref:create-dedicated-cluster.adoc[]

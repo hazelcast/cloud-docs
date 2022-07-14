@@ -9,10 +9,6 @@ include::serverless-cluster.adoc[tag=development]
 
 include::serverless-cluster.adoc[tag=production]
 
-To create a cluster for a team, you must have either an xref:create-account.adoc#roles[admin or developer role].
-
-== Before you Begin
-
 You need a xref:create-account.adoc[{hazelcast-cloud} account].
 
 To create more than one cluster, you must add a xref:payment-card.adoc[payment card] to your account.
@@ -21,7 +17,7 @@ To create more than one cluster, you must add a xref:payment-card.adoc[payment c
 
 [tabs] 
 ====
-Development:: 
+Development cluster:: 
 + 
 --
 To create a development cluster, do the following:
@@ -41,7 +37,7 @@ It takes a few minutes to create a Serverless cluster. When the cluster state ch
 // end::development[]
 --
 
-Production:: 
+Production cluster:: 
 + 
 --
 To create a production cluster, do the following:
@@ -61,14 +57,17 @@ It takes a few minutes to create a Serverless cluster. When the cluster state ch
 --
 ====
 
-== Next Steps
-
+[NOTE]
+====
 Development and production clusters are stopped when both of these conditions are true:
 
 - You don't connect to the cluster for 24 hours.
 - You don't have a payment method set up for your {hazelcast-cloud} account.
+====
 
-xref:connect-to-serverless.adoc[].
+xref:payment-card.adoc[].
+
+xref:connect-to-cluster.adoc[].
 
 xref:payment-card.adoc[].
 

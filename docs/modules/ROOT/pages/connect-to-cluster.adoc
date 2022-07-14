@@ -1,7 +1,69 @@
 = Connecting to {hazelcast-cloud} Clusters
 :description: To communicate with a cluster in {hazelcast-cloud}, you need a client. Hazelcast offers clients in a variety of languages as well as a command-line client for quick prototyping and scripting.
+:page-aliases: connect-to-private-cluster.adoc
 
 {description}
 
-- xref:connect-to-serverless.adoc[]
-- xref:connect-to-dedicated.adoc[]
+You can do the following to connect to the cluster:
+
+- Download a <<download, preconfigured sample client>>.
+- Use <<advanced, advanced setup>> to configure your own client.
+- Use the <<sql,SQL browser>> in Management Center.
+
+== Before you Begin
+
+If you're using a Dedicated cluster, you need to xref:authorize-connections.adoc[authorize] clients to allow them to connect to your cluster.
+
+[[download]]
+== Using a Preconfigured Client
+
+Your cluster comes with a downloadable client that's preconfigured to connect to your cluster.
+
+. Sign into the [.console]*link:{page-cloud-console}[{hazelcast-cloud} console]*.
+. Click *Connect your Application*.
+. Select a client from the dropdown.
+. Follow the on-screen instructions.
+
+For a complete tutorial, see xref:get-started.adoc[].
+
+[[advanced]]
+== Using Advanced Setup
+
+Hazelcast offers a variety of link:https://hazelcast.com/clients/[clients] that you can download and configure yourself. After downloading a client, you'll need to configure it with your connection credentials.
+
+include::partial$get-connection-creds.adoc[]
+
+[[sql]]
+== Using the SQL Browser
+
+In Management Center, you can open a SQL shell in your cluster and submit SQL queries directly from your web browser.
+
+. Sign into the [.console]*link:{page-cloud-console}[{hazelcast-cloud} console]* and select your cluster.
+
+. Click *Management Center*.
+
+. In the top toolbar, click *SQL Browser*.
+
+. Enter your SQL queries.
+
+== Next Steps
+
+xref:developer-guide.adoc[].
+
+== Related Resources
+
+- xref:hazelcast:clients:java.adoc#configuring-java-client[Java client]
+
+- link:https://github.com/hazelcast/hazelcast-nodejs-client#configuration[Node.js client]
+
+- link:https://github.com/hazelcast/hazelcast-python-client#142-configuring-hazelcast-python-client[Python client]
+
+- link:https://github.com/hazelcast/hazelcast-go-client#3-configuration-overview[Go client]
+
+- link:http://hazelcast.github.io/hazelcast-csharp-client/dev/doc/configuration.html[.NET client]
+
+- link:https://github.com/hazelcast/hazelcast-cpp-client/blob/v4.1.0/Reference_Manual.md[{cpp} client]
+
+- link:https://github.com/hazelcast/hazelcast-packaging[CLI client]
+
+- xref:management-center:tools:sql-browser.adoc[SQL Browser].

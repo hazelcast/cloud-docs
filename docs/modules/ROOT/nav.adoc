@@ -11,8 +11,6 @@
 .Develop Applications
 * xref:developer-guide.adoc[Developer Guide]
 * xref:connect-to-cluster.adoc[Connect to a Cluster]
-** xref:connect-to-serverless.adoc[Serverless]
-** xref:connect-to-dedicated.adoc[Dedicated]
 * xref:cluster-side-modules.adoc[Cluster-Side Modules]
 ** xref:maploader-and-mapstore.adoc[MapStore]
 ** xref:custom-classes-upload.adoc[Deploy Modules]
@@ -35,15 +33,14 @@
 * xref:create-clusters.adoc[Create]
 ** xref:create-serverless-cluster.adoc[Create a Serverless Cluster]
 ** xref:create-dedicated-cluster.adoc[Create a Dedicated Cluster]
-* xref:connect-to-cluster.adoc[Connect]
-** xref:connect-to-serverless.adoc[Connect to Serverless]
-** xref:connect-to-serverless.adoc[Connect to Dedicated]
+* xref:authorize-connections.adoc[Authorize]
 ** xref:ip-white-list.adoc[IP Whitelist]
 ** xref:vpc-peering.adoc[VPC Peering and PrivateLink]
 *** xref:aws-vpc-peering.adoc[AWS VPC Peering]
-*** xref:gcp-vpc-peering.adoc[GCP VPC Peering].
-*** xref:azure-vnet-peering.adoc[].
+*** xref:gcp-vpc-peering.adoc[GCP VPC Peering]
+*** xref:azure-vnet-peering.adoc[]
 *** xref:aws-private-link.adoc[]
+* xref:connect-to-cluster.adoc[Connect]
 * xref:stop-and-resume.adoc[Stop and Resume]
 * xref:deleting-a-cluster.adoc[Delete]
 * xref:scale-up-down.adoc[Scale]

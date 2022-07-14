@@ -1,6 +1,6 @@
 = Creating a Dedicated Cluster
 :page-dedicated: true
-:description: You can create a xref:overview.adoc[Dedicated cluster] by providing your resource requirements
+:description: You can create a xref:overview.adoc[Dedicated cluster] by providing your resource requirements. When choosing how to host your cluster, you have the option of cloud providers, regions, machine types, and more.
 :page-aliases: enterprise-clusters.adoc, create-enterprise-cluster.adoc
 
 {description}
@@ -26,6 +26,4 @@ To request a Dedicated cluster, do the following:
 
 == Next Steps
 
-Try the xref:get-started.adoc[hello world tutorial].
-
-Or, build a sample app: xref:tutorials.adoc[].
+xref:connect-to-cluster.adoc[].

@@ -1,10 +1,6 @@
 = {hazelcast-cloud} Hello World
-:description: Learn how to create a Serverless cluster, connect to it, cache some entries in a map, and query the cache.
-:url-github-go: https://github.com/hazelcast/hazelcast-go-client
-:url-github-net: http://hazelcast.github.io/hazelcast-csharp-client/dev/doc/configuration.html
-:url-github-nodejs: https://github.com/hazelcast/hazelcast-nodejs-client
-:url-github-python: https://github.com/hazelcast/hazelcast-python-client
-:page-aliases: cpp-client.adoc, getting-started.adoc, go-client.adoc, net-client.adoc
+:description: In this tutorial, you'll learn to connect a client to a {hazelcast-cloud} cluster and query data with SQL.
+:page-aliases: cpp-client.adoc, getting-started.adoc, go-client.adoc, net-client.adoc, nodejs-client.adoc, python-client.adoc, sql.adoc
 
 {description}
 
@@ -18,38 +14,50 @@ You need the following:
 == Step 1. Start a Serverless Development Cluster
 
 include::serverless-cluster.adoc[tag=development]
-To create a development cluster, do the following in the {hazelcast-cloud} console:
+To create a development cluster, do the following:
 
 include::create-serverless-cluster.adoc[tag=development] 
 
-== Step 2. Connect a Client and Cache Data
+== Step 2. Run a Sample Client
 
-To connect to your Serverless cluster, you need a Hazelcast client. {hazelcast-cloud} comes with sample clients that are pre-confgured to connect to your cluster.
+To connect to your Serverless cluster, you need a Hazelcast client. {hazelcast-cloud} comes with sample clients that are preconfigured to connect to your cluster and add some sample data to it. Choose a client and follow the instructions.
 
-Choose a client and follow the instructions to connect to the cluster and cache cities and their captials in a map.
-
-. Sign into the [.console]*link:{page-cloud-console}[{hazelcast-cloud} console]*.
-. Click *Connect your Application*.
-+
 [tabs] 
 ====
 Java:: 
 + 
 --
-. Go to the *Java* tab, download the ZIP file.
+. Make sure that you have Java 8-17 installed and the `JAVA_HOME` environment variable is set to the location of your JRE.
 
-. Extract the ZIP file, change into the extracted root directory and execute the program:
+. Sign into the [.console]*link:{page-cloud-console}[{hazelcast-cloud} console]*.
 
-.. Execute the following on Linux and Mac: 
+. Click *Connect your Application*.
+
+. Go to the *Java* tab and download the ZIP file.
+
+. Extract the ZIP file and change into the extracted directory.
+
+. Execute the application from your command prompt:
++
+When you see `Connection Successful!` in the output, the application is finished.
+
+.. Execute the following if you use Linux or Mac: 
 + 
 ```bash
 ./mvnw clean compile exec:java@client-with-ssl
 ```
-.. Execute the following on Windows: 
+.. Execute the following if you use Windows: 
 +
 ```bash
 mvnw.cmd clean compile exec:java@client-with-ssl
 ```
+
+. In the {hazelcast-cloud} console, go to *Manage Cluster* > *Management Center* and click *SQL Browser* in the top toolbar.
+
+. Continue to the <<step-3, next step>> to query your sample data in the SQL browser.
+
+TIP: Take a moment, to read the code in the link:https://github.com/hazelcast/hazelcast-cloud-java-sample-client/blob/5.1/src/main/java/com/hazelcast/cloud/ClientWithSsl.java[`ClientWithSSL.java`] file to understand how the client connected. The client comes with some other examples that are commented out. To try those examples, you can uncomment them and run the application again.
+
 --
 
 Node.js:: 
@@ -64,6 +72,14 @@ Node.js::
 ```bash
 npm run client_with_ssl
 ```
++
+When you see `Connection Successful!` in the output, the application is finished.
+
+. In the {hazelcast-cloud} console, go to *Manage Cluster* > *Management Center* and click *SQL Browser* in the top toolbar.
+
+. Continue to the <<step-3, next step>> to query your sample data in the SQL browser.
+
+TIP: Take a moment, to read the code in the link:https://github.com/hazelcast/hazelcast-cloud-nodejs-sample-client/blob/5.1/client_with_ssl.js[`client_with_ssl.js`] file to understand how the client connected. The client comes with some other examples that are commented out. To try those examples, you can uncomment them and run the application again.
 
 --
 
@@ -79,6 +95,14 @@ Python::
 ```bash
 pip install -r requirements.txt && python client_with_ssl.py
 ```
++
+When you see `Connection Successful!` in the output, the application is finished.
+
+. In the {hazelcast-cloud} console, go to *Manage Cluster* > *Management Center* and click *SQL Browser* in the top toolbar.
+
+. Continue to the <<step-3, next step>> to query your sample data in the SQL browser.
+
+TIP: Take a moment, to read the code in the link:https://github.com/hazelcast/hazelcast-cloud-python-sample-client/blob/5.1/client_with_ssl.py[`client_with_ssl.py`] file to understand how the client connected. The client comes with some other examples that are commented out. To try those examples, you can uncomment them and run the application again.
 --
 
 .NET:: 
@@ -88,11 +112,19 @@ pip install -r requirements.txt && python client_with_ssl.py
 
 . Go to the *.Net* tab and download the ZIP file.
 
-. Extract the ZIP file, change into the extracted root directory and execute the following command:
+. Extract the ZIP file, change into the extracted directory and execute the following command:
 +
 ```bash
 dotnet run --project ClientWithSsl
 ```
++
+When you see `Connection Successful!` in the output, the application is finished.
+
+. In the {hazelcast-cloud} console, go to *Manage Cluster* > *Management Center* and click *SQL Browser* in the top toolbar.
+
+. Continue to the <<step-3, next step>> to query your sample data in the SQL browser.
+
+TIP: Take a moment, to read the code in the link:https://github.com/hazelcast/hazelcast-cloud-csharp-sample-client/blob/5.1/ClientWithSsl/Program.cs[`program.cs`] file to understand how the client connected. The client comes with some other examples that are commented out. To try those examples, you can uncomment them and run the application again.
 --
 
 Go:: 
@@ -102,11 +134,19 @@ Go::
 
 . Go to the *Go* tab and download the ZIP file.
 
-. Extract the ZIP file, change into the extracted root directory and execute the following command:
+. Extract the ZIP file, change into the extracted directory and execute the following command:
 +
 ```bash
 go mod tidy && go run client_with_ssl.go
 ```
++
+When you see `Connection Successful!` in the output, the application is finished.
+
+. In the {hazelcast-cloud} console, go to *Manage Cluster* > *Management Center* and click *SQL Browser* in the top toolbar.
+
+. Continue to the <<step-3, next step>> to query your sample data in the SQL browser.
+
+TIP: Take a moment, to read the code in the link:https://github.com/hazelcast/hazelcast-cloud-go-sample-client/blob/5.1/client_with_ssl.go[`client_with_ssl.go`] file to understand how the client connected. The client comes with some other examples that are commented out. To try those examples, you can uncomment them and run the application again.
 --
 
 C++:: 
@@ -115,9 +155,11 @@ C++::
 . link:https://vcpkg.io/en/getting-started.html[Install vcpkg].
 . Go to the *{cpp}* tab and download the ZIP file.
 
-. Extract the ZIP file, change into the extracted root directory, and execute the program:
+. Extract the ZIP file, change into the extracted directory, and execute the program:
++
+When you see `Connection Successful!` in the output, the application is finished.
 
-.. Execute the following on Linux and Mac:
+.. Execute the following if you use Linux or Mac:
 +
 ```bash
 vcpkg install "hazelcast-cpp-client[openssl]" && 
@@ -126,7 +168,7 @@ cmake --build build &&
 ./build/client_with_ssl
 ```
 
-.. Execute the following on Windows:
+.. Execute the following if you use Windows:
 + 
 ```bash
 vcpkg install "hazelcast-cpp-client[openssl]" && 
@@ -138,19 +180,18 @@ cmake --build build &&
 If the link:https://wiki.osdev.org/Target_Triplet[target triplet] doesn't match your operating system, you may need to provide a target suffix to the `install` command. For example: `vcpkg install "hazelcast-cpp-client[openssl]:x64-windows"`
 +
 The location of the compiled binary may change according to configuration and system defaults.
+
+
+. In the {hazelcast-cloud} console, go to *Manage Cluster* > *Management Center* and click *SQL Browser* in the top toolbar.
+
+. Continue to the <<step-3, next step>> to query your sample data in the SQL browser.
+
+TIP: Take a moment, to read the code in the link:https://github.com/hazelcast/hazelcast-cloud-cpp-sample-client/blob/5.1/client_with_ssl.cpp[`client_with_ssl.cpp`] file to understand how the client connected. The client comes with some other examples that are commented out. To try those examples, you can uncomment them and run the application again.
 --
 
-SQL:: 
+SQL (CLI):: 
 + 
 --
-. Go to the *SQL* tab and download the ZIP file.
-
-. Extract the ZIP file.
-+
-This file contains the credentials that allow the CLI to connect to your {hazelcast-cloud} cluster.
-
-. Make a note of where you extracted the client configuration file.
-
 . Install the Hazelcast CLI client. Use one of the following methods, depending on your operating system.
 +
 .Mac
@@ -177,7 +218,7 @@ sudo yum install hazelcast-enterprise
 ----
 +
 .Windows
-At the moment, Hazelcast does not support any Windows package managers. The easiest way to use the CLI on Windows is to install the Hazelcast Docker image. The Docker container comes with the `hz-cli` client. See xref:hazelcast:getting-started:install-hazelcast.adoc[]
+At the moment, Hazelcast does not support any Windows package managers. The easiest way to use the CLI on Windows is to install the Hazelcast Enterprise Docker image. The Docker container comes with the `hz-cli` client. See xref:hazelcast:getting-started:install-enterprise.adoc[].
 
 . Check that the CLI client is installed.
 +
@@ -188,15 +229,23 @@ hz-cli -V
 +
 You should see your installed version of the CLI client.
 
-. Change into the directory where you extracted the client configuration file.
+. Sign into the [.console]*link:{page-cloud-console}[{hazelcast-cloud} console]*.
+
+. Click *Connect your Application*.
+
+. Go to the *SQL* tab and download the ZIP file.
+
+. Extract the ZIP file.
++
+This file contains the credentials that allow the CLI to connect to your {hazelcast-cloud} cluster.
+
+. Change into the directory where you extracted the ZIP file.
 
 . Connect to the SQL shell on your {hazelcast-cloud} cluster.
 +
 ```bash
 hz-cli -f hazelcast-client-with-ssl.yml sql
 ```
-+
-The `-f` flag passes the configuration file to the CLI client so that the cluster can authenticate the client, using the credentials.
 +
 You should see the SQL prompt:
 +
@@ -229,12 +278,13 @@ INSERT INTO cities VALUES
 (7, 'Brazil', 'Sao Paulo'),
 (8, 'Brazil', 'Rio de Janeiro');
 ----
-+
-The first argument of the `VALUES` command is the key of the map entry and the second argument is the value.
 --
 ====
 
+[[step-3]]
 == Step 3. Query the Cache with SQL
+
+Now that you have some data in your cluster, you can query it, using SQL.
 
 . Use the `SELECT` statement to query all data in the map.
 +
@@ -242,8 +292,6 @@ The first argument of the `VALUES` command is the key of the map entry and the s
 ----
 SELECT * FROM cities;
 ----
-+
-You should see the following:
 +
 [source,shell]
 ----
@@ -306,9 +354,7 @@ SELECT cities FROM cities;
 +--------------------+
 ```
 
-. Change the output to display cities first in alphabetical order. The `AS` command renames the columns to the given aliases.
-+
-NOTE: This clause does not rename the column in the table.
+. Change the output to display cities first in alphabetical order.
 +
 [source,sql]
 ----
@@ -366,7 +412,11 @@ WHERE cities LIKE 'L%' AND LENGTH(cities) > 6;
 +--------------------+
 ```
 
-. Configure the map connector to create a new map table called `population2020`.
+== Step 4. Create a New Dataset with SQL
+
+As well as querying data in your cluster, you can use SQL to add new data to the cluster. When you have two datasets, you can use more advanced SQL queries to combine results from both datasets.
+
+. Configure the map connector to create a new map table called `population2020` in your cluster.
 +
 [source,sql]
 ----
@@ -391,8 +441,17 @@ INSERT INTO population2020 VALUES
 (7, 'Istanbul', 14804116),
 (8, 'Ankara', 3517182);
 ----
++
+```
++--------------------+
+|countries           |
++--------------------+
+|Brazil              |
+|United States       |
++--------------------+
+```
 
-. Use the `JOIN` clause to merge results from the `cities` and `population2020` tables so you can see which countries had the most populated captial cities in 2020.
+. Merge results from the `cities` and `population2020` tables so you can see which countries had the most populated captial cities in 2020.
 +
 [source,sql]
 ---- 
@@ -417,7 +476,7 @@ ON cities.cities = population2020.cities;
 +--------------------+--------------------+------------+
 ```
 
-. Use the `ORDER BY` clause to order the results by population, largest first.
+. Order the results by population, largest first.
 +
 [source,sql]
 ----
@@ -443,7 +502,7 @@ ORDER BY population2020.population DESC;
 +--------------------+--------------------+------------+
 ```
 
-. Use the `SUM()` function to find the total population of all the cities in 2020.
+. Find the total population of all the cities in 2020.
 +
 [source,sql]
 ----
@@ -525,8 +584,10 @@ GROUP BY cities.countries HAVING SUM(population2020.population) > 15000000;
 |Brazil              |            19171933|
 +--------------------+--------------------+
 ```
-+
-The `HAVING` clause allows you to filter aggregations like you would with the `WHERE` clause for non-aggregated queries.
+
+== Summary
+
+You learned how to connect to a cluster and use SQL to query data in the cluster and add new data to it.
 
 == Next Steps
 
@@ -535,13 +596,30 @@ Learn more about Serverless:
 - xref:serverless-cluster.adoc[]
 - xref:developer-guide.adoc[]
 
-Try a xref:tutorials.adoc[tutorial].
+Try a xref:tutorials.adoc[tutorial] for {hazelcast-cloud}.
+
+Find out more about the SQL statements used in this tutorial:
+
+- xref:hazelcast:sql:create-mapping.adoc[]
+- xref:hazelcast:sql:select.adoc[]
+- xref:hazelcast:sql:expressions.adoc[].
+- xref:hazelcast:sql:sql-statements.adoc[All SQL statements].
 
 Learn more about using clients:
 
-- xref:hazelcast:clients:java.adoc[Java client]
-- link:{url-github-nodejs}[Node.js client]
-- link:{url-github-python}[Python client]
-- link:{url-github-net}[C# client]
-- link:{url-github-go}[Go client]
+- xref:hazelcast:clients:java.adoc#configuring-java-client[Java client]
+
+- link:https://github.com/hazelcast/hazelcast-nodejs-client#configuration[Node.js client]
+
+- link:https://github.com/hazelcast/hazelcast-python-client#142-configuring-hazelcast-python-client[Python client]
+
+- link:https://github.com/hazelcast/hazelcast-go-client#3-configuration-overview[Go client]
+
+- link:http://hazelcast.github.io/hazelcast-csharp-client/dev/doc/configuration.html[.NET client]
+
+- link:https://github.com/hazelcast/hazelcast-cpp-client/blob/v4.1.0/Reference_Manual.md[{cpp} client]
+
+- link:https://github.com/hazelcast/hazelcast-packaging[CLI client]
+
+- xref:management-center:tools:sql-browser.adoc[SQL Browser].
 
