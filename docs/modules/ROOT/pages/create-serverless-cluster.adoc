@@ -5,9 +5,9 @@
 
 {description}
 
-To create a cluster for a team, you must have either an xref:create-account.adoc#roles[admin or developer role].
+include::serverless-cluster.adoc[tag=development]
 
-== Before you Begin
+include::serverless-cluster.adoc[tag=production]
 
 You need a xref:create-account.adoc[{hazelcast-cloud} account].
 
@@ -65,7 +65,7 @@ Development and production clusters are stopped when both of these conditions ar
 - You don't have a payment method set up for your {hazelcast-cloud} account.
 ====
 
-== Next Steps
+xref:payment-card.adoc[].
 
 xref:connect-to-cluster.adoc[].
 

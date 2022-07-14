@@ -11,6 +11,8 @@
 .Develop Applications
 * xref:developer-guide.adoc[Developer Guide]
 * xref:connect-to-cluster.adoc[Connect to a Cluster]
+** xref:connect-to-serverless.adoc[Serverless]
+** xref:connect-to-dedicated.adoc[Dedicated]
 * xref:cluster-side-modules.adoc[Cluster-Side Modules]
 ** xref:maploader-and-mapstore.adoc[MapStore]
 ** xref:custom-classes-upload.adoc[Deploy Modules]

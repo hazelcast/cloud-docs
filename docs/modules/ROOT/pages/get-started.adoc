@@ -441,6 +441,17 @@ INSERT INTO population2020 VALUES
 (7, 'Istanbul', 14804116),
 (8, 'Ankara', 3517182);
 ----
+SELECT countries FROM cities WHERE LENGTH(cities) >= 11;
+----
++
+```
++--------------------+
+|countries           |
++--------------------+
+|Brazil              |
+|United States       |
++--------------------+
+```
 
 . Merge results from the `cities` and `population2020` tables so you can see which countries had the most populated captial cities in 2020.
 +
