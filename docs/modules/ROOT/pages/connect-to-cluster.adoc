@@ -12,12 +12,7 @@ You can do the following to connect to the cluster:
 
 == Before you Begin
 
-If you're using a Dedicated cluster, you need to authorize your network to allow clients to connect to your cluster. Dedicated clusters are private by default to prevent attacks such as denial of service. To authorize your network, you can do the following:
-
-- Add client IP addresses to a xref:ip-white-list.adoc[whitelist].
-- Set up xref:vpc-peering.adoc[PrivateLink or VPC peering].
-
-TIP: You should use PrivateLink or VPC peering if your clients' IP addresses are not static or if you want to limit your cluster's exposure to the Internet.
+If you're using a Dedicated cluster, you need to xref:authorize-connections.adoc[authorize] clients to allow them to connect to your cluster.
 
 [[download]]
 == Using a Preconfigured Client

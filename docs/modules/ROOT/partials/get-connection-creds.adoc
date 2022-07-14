@@ -21,3 +21,5 @@ To connect your own client to the cluster, you need your cluster's connection cr
 |The password that a client can use to access the private key file.
 // end::tls[]
 |===
++
+NOTE: The TLS credentials are necessary only if your cluster has TLS enabled. You can find out if your cluster has TLS enabled in the *Cluster Details* section of your dashboard.
