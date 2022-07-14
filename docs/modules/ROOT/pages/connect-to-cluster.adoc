@@ -31,8 +31,6 @@ For a complete tutorial, see xref:get-started.adoc[].
 
 Hazelcast offers a variety of link:https://hazelcast.com/clients/[clients] that you can download and configure yourself. After downloading a client, you'll need to configure it with your connection credentials.
 
-The TLS credentials are necessary only if your cluster has TLS enabled. You can find out if your cluster has TLS enabled in the *Cluster Details* section of your dashboard.
-
 include::partial$get-connection-creds.adoc[]
 
 [[sql]]
