@@ -11,7 +11,7 @@ content:
   sources: 
   - url: .
     branches: HEAD
-    start_path: ./docs
+    start_paths: [./docs, ./tutorials]
   - url: https://github.com/hazelcast/hazelcast-cloud-code-samples
     branches: master
     start_path: mapstore/mapstore-sample-hazelcast5-mongodb/docs
@@ -21,9 +21,6 @@ content:
   - url: https://github.com/hazelcast/hz-docs
     branches: [main, v/*]
     start_path: docs
-  - url: https://github.com/hazelcast/hazelcast-cloud-code-samples
-    branches: master
-    start_path: mapstore/mapstore-sample-hazelcast5-mongodb/docs
 ui: 
   bundle:
     url: https://github.com/hazelcast/hazelcast-docs-ui/releases/download/v3.1-beta/ui-bundle.zip #../hazelcast-docs-ui/build/ui-bundle.zip
