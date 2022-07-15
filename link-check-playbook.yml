@@ -5,7 +5,7 @@ content:
   sources: 
   - url: .
     branches: HEAD
-    start_path: ./docs
+    start_paths: [./docs, ./tutorials]
   - url: https://github.com/hazelcast/imdg-docs
     branches: [master, v/*]
     start_path: docs

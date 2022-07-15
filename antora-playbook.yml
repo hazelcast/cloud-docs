@@ -11,7 +11,7 @@ content:
   sources: 
   - url: .
     branches: HEAD
-    start_path: ./docs
+    start_paths: [./docs, ./tutorials]
   - url: https://github.com/hazelcast/hazelcast-cloud-code-samples
     branches: master
     start_path: mapstore/mapstore-sample-hazelcast5-mongodb/docs
