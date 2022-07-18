@@ -1,5 +1,5 @@
 = Serverless Clusters
-:description: {hazelcast-cloud} Serverless offers a simple pricing model with the option of creating a cluster for free, without a payment card. Serverless clusters dynamically scale, depending on the amount of data you store, and you pay only for the amount of data that you store in RAM.
+:description: {hazelcast-cloud} Serverless clusters dynamically scale, depending on the amount of data you store, and you pay only for the amount of data that you store in RAM. Serverless offers a simple pricing model with the option of creating a cluster for free, without a payment card.
 :toc-levels: 3
 :page-serverless: true
 

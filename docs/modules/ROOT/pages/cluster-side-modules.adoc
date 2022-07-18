@@ -132,12 +132,12 @@ The libraries in your project must not conflict with those that are built into {
 ** link:https://maven.apache.org/guides/introduction/introduction-to-dependency-mechanism.html#Dependency_Scope[Maven]
 ** link:https://docs.gradle.org/current/userguide/migrating_from_maven.html#migmvn:declaring_deps[Gradle]
 
-== Testing Cluster-Side Modules
+== Best Practices for Testing
 
 Before you go into production with your cluster-side modules, it's best to test them on a development cluster to make sure that they work as expected. To test cluster-side modules, follow these best practices:
 
 - Use a xref:serverless-cluster.adoc[Serverless development cluster]: It's faster to test cluster-side modules in a Serverless development cluster.
-- Use the xref:maven-plugin.adoc[{hazelcast-cloud} Maven plugin]: The Maven plugin allows you to package and deploy your cluster-side modules in a single command from your IDE.
+- Use the xref:maven-plugin.adoc[{hazelcast-cloud} Maven plugin]: The Maven plugin allows you to package and deploy your cluster-side modules in a single command from your IDE. You can also debug you cluster-side modules by streaming cluster logs after deployment.
 
 [[deploy]]
 == Moving to Production

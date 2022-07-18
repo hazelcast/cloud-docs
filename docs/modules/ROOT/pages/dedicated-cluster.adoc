@@ -1,5 +1,5 @@
 = Dedicated Clusters
-:description: {hazelcast-cloud} Dedicated gives you fine-grained control over the hardware and resources available to your cluster. Dedicated clusters also offer strict container isolation for projects that require enhanced data security.
+:description: {hazelcast-cloud} Dedicated gives you fine-grained control over the hardware and resources available to your cluster. It's your responsibility to scale your clusters when you need more resources. Dedicated clusters also offer strict container isolation for projects that require enhanced data security.
 :page-dedicated: true
 
 {description}
