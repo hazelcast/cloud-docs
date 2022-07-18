@@ -26,7 +26,7 @@ See the documentation on link:{page-url-github-cloud-cli}[GitHub].
 
 Hazelcast Command-Line Client (CLC) is a command-line tool for connecting to {hazelcast-cloud} clusters, creating and managing data structures, and monitoring clusters.
 
-See xref:clc:overview.adoc[].
+See the documentation on link:https://github.com/hazelcast/hazelcast-commandline-client[GitHub].
 
 == {hazelcast-cloud} Go SDK
 
