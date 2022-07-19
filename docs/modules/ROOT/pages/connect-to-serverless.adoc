@@ -1,0 +1,136 @@
+= Connecting to a Serverless Cluster
+:page-serverless: true
+:description: To connect to a Serverless cluster, you need a client that can authenticate with a valid TLS certificate.
+
+{description}
+
+You can do the following to connect to the cluster:
+
+- Download a <<download, preconfigured sample client>>.
+- Use <<advanced, advanced setup>> to configure your own client.
+- Use the <<sql,SQL browser>> in Management Center.
+
+== Before you Begin
+
+xref:create-serverless-cluster.adoc[Create a Serverless cluster].
+
+[[download]]
+== Using a Preconfigured Client
+
+Your cluster comes with a downloadable client that's preconfigured to connect to your cluster.
+
+. Sign into the [.console]*link:{page-cloud-console}[{hazelcast-cloud} console]*.
+. Click *Connect your Application*.
+. Select a client from the dropdown.
+. Follow the on-screen instructions.
+
+For a complete tutorial, see xref:get-started.adoc[].
+
+[[advanced]]
+== Using Advanced Setup
+
+Hazelcast offers a variety of clients that you can download and configure yourself. Before you download a client, you'll need your connection credentials.
+
+include::partial$get-connection-creds.adoc[]
+
+=== Using the Java Client
+
+. Download and install a xref:hazelcast:deploy:supported-jvms.adoc[supported JDK].
+
+. Add the following to your `pom.xml` file:
++
+[source,xml,subs="attributes+"]
+----
+<repositories>
+    <repository>
+        <id>private-repository</id>
+        <name>Hazelcast Private Repository</name>
+        <url>https://repository.hazelcast.com/release/</url>
+        <releases>
+            <enabled>true</enabled>
+        </releases>
+        <snapshots>
+            <enabled>false</enabled>
+        </snapshots>
+    </repository>
+</repositories>
+
+<dependencies>
+    <dependency>
+        <groupId>com.hazelcast</groupId>
+        <artifactId>hazelcast-enterprise</artifactId>
+        <version>{page-cloud-platform-version}</version>
+    </dependency>
+</dependencies>
+----
+
+. Configure the Java client with your connection credentials. Replace any placeholder strings that are wrapped in angle brackets (`<>`).
++
+[source,java]
+----
+import java.util.Properties;
+
+import com.hazelcast.client.HazelcastClient;
+import com.hazelcast.client.config.ClientConfig;
+import com.hazelcast.config.SSLConfig;
+import com.hazelcast.core.HazelcastInstance;
+
+public class ClientWithSsl {
+
+  public static void main(String[] args) throws Exception {
+    ClassLoader classLoader = ClientWithSsl.class.getClassLoader();
+    Properties props = new Properties();
+    props.setProperty("javax.net.ssl.keyStore", classLoader.getResource("client.keystore").toURI().getPath());
+    props.setProperty("javax.net.ssl.keyStorePassword", "<YOUR_SSL_PASSWORD>");
+    props.setProperty("javax.net.ssl.trustStore",
+      classLoader.getResource("client.truststore").toURI().getPath());
+    props.setProperty("javax.net.ssl.trustStorePassword", "<YOUR_SSL_PASSWORD>");
+    ClientConfig config = new ClientConfig();
+    config.getNetworkConfig().setRedoOperation(true);
+    config.getNetworkConfig().setSSLConfig(new SSLConfig().setEnabled(true).setProperties(props));
+    config.getNetworkConfig().getCloudConfig()
+      .setDiscoveryToken("YOUR_CLUSTER_DISCOVERY_TOKEN")
+      .setEnabled(true);
+    config.setClusterName("<YOUR_CLUSTER_NAME>");
+
+    HazelcastInstance client = HazelcastClient.newHazelcastClient(config);
+
+    System.out.println("Connection Successful!");
+  }
+}
+----
+
+[[sql]]
+== Using the SQL Browser
+
+In Management Center, you can open a SQL shell in your cluster and submit SQL queries directly from your web browser.
+
+. Sign into the [.console]*link:{page-cloud-console}[{hazelcast-cloud} console]* and select your cluster.
+
+. Click *Management Center*.
+
+. In the top toolbar, click *SQL Browser*.
+
+. Enter your SQL queries.
+
+== Next Steps
+
+xref:developer-guide.adoc[].
+
+== Related Resources
+
+- xref:hazelcast:clients:java.adoc#configuring-java-client[Java client]
+
+- link:https://github.com/hazelcast/hazelcast-nodejs-client#configuration[Node.js client]
+
+- link:https://github.com/hazelcast/hazelcast-python-client#142-configuring-hazelcast-python-client[Python client]
+
+- link:https://github.com/hazelcast/hazelcast-go-client#3-configuration-overview[Go client]
+
+- link:http://hazelcast.github.io/hazelcast-csharp-client/dev/doc/configuration.html[.NET client]
+
+- link:https://github.com/hazelcast/hazelcast-cpp-client/blob/v4.1.0/Reference_Manual.md[{cpp} client]
+
+- link:https://github.com/hazelcast/hazelcast-packaging[CLI client]
+
+- xref:management-center:tools:sql-browser.adoc[SQL Browser].

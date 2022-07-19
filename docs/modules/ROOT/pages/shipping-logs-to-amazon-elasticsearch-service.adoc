@@ -41,10 +41,8 @@ To get a logging solution up and running, update the following domain settings. 
 . In the *Network* section, select *Public access* to use fine-grained access control to secure the OpenSearch domain and data. VPC Peering connections between {hazelcast-cloud} clusters and OpenSearch instances are not currently supported.
 
 . In the *Fine-grained access control* section, select *Create Master User* and enter a username and password for the account.
-
 +
 TIP: Make a note of the master user credentials. You'll need them later to access Kibana, and to make any configuration changes to your OpenSearch domain.
-+
 
 . In the *Access policy* section, select *Only use fine-grained access control*.
 . Click *Create* to build your domain. You'll need to wait until your OpenSearch environment and the following URLs are created. You need both URLs to complete your logging setup.

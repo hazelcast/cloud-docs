@@ -41,7 +41,7 @@ This release introduces Hazelcast 5.1 and the improvements to SQL:
 
 - Lots of improvements in the UI.
 
-- Improved Hazelcast 5 support. Hazelcast Cloud now runs on the latest 5.0.2 version. 
+- Improved Hazelcast 5 support. {hazelcast-cloud} now runs on the latest 5.0.2 version. 
 
 - You can no longer create Hazelcast 3 clusters in the Cloud as they reached the end of support. Existing clusters are unaffected.
 
@@ -59,7 +59,7 @@ This release introduces Hazelcast 5.1 and the improvements to SQL:
 
 *New Features:*
 
-- We've changed our pricing model and introduced three plans: Basic, Standard, and Enterprise. See xref:pricing.adoc[] for details.
+- We've changed our pricing model and introduced three plans: Basic, Standard, and Enterprise.
 
 - You can now stop and resume clusters on the Enterprise plan. When a cluster is resumed, any persisted data is restored from disk. See xref:stop-and-resume.adoc[].
 
@@ -133,7 +133,7 @@ This release introduces Hazelcast 5.1 and the improvements to SQL:
 
 *New Features:*
 
-- Introduced Social Sign-On with Google and GitHub. You can now start using Hazelcast Cloud with a few clicks.
+- Introduced Social Sign-On with Google and GitHub. You can now start using {hazelcast-cloud} with a few clicks.
 - Hazelcast 4.1 in the cloud now
 
 *Fixes:*
@@ -170,8 +170,8 @@ This release introduces Hazelcast 5.1 and the improvements to SQL:
 *New Features:*
 
 - Introduced GCP Cloud Provider support, now you can create an Enterprise cluster on GCP
-- Official link:{url-cloud-cli-announcement[Hazelcast Cloud CLI] is released
-- Official link:{url-cloud-sdk-announcement[Hazelcast Cloud Golang SDK] is released
+- Official link:{url-cloud-cli-announcement[{hazelcast-cloud} CLI] is released
+- Official link:{url-cloud-sdk-announcement[{hazelcast-cloud} Golang SDK] is released
 - Unified VPC Peering flow. Now you can handle VPC Peering flow by using hzcloud cli for all cloud providers
 
 *Fixes:*
@@ -279,16 +279,16 @@ Hazelcast version has been updated to 3.12.2.
 - Custom map config dialog moves row height on error
 - Credit card icon is distorted on Firefox
 
-== March 19, 2019 - Hazelcast Cloud 1.0
+== March 19, 2019 - {hazelcast-cloud} 1.0
 
-- Completed the Beta stage and launched Hazelcast Cloud 1.0 GA.
+- Completed the Beta stage and launched {hazelcast-cloud} 1.0 GA.
 - New UI for login and registration.
 
 == March 15, 2019
 
 *New Features:*
 
-- Enabled the xref:hazelcast:clusters:deploying-code-on-member.adoc[User code deployment feature] for Hazelcast Cloud. You can now run the executor service, entry processor and queries with custom objects.
+- Enabled the xref:hazelcast:clusters:deploying-code-on-member.adoc[User code deployment feature] for {hazelcast-cloud}. You can now run the executor service, entry processor and queries with custom objects.
 
 *Fixes:*
 
@@ -323,7 +323,7 @@ Hazelcast version has been updated to 3.12.2.
 
 *Enhancements:*
 
-- Introduced a page with maintenance warning to be shown during the Hazelcast Cloud's maintenance works.
+- Introduced a page with maintenance warning to be shown during the {hazelcast-cloud}'s maintenance works.
 - Improved the message for the resetting password operations requested by the users.
 - Introduced a mechanism to clean up all the resources (map configurations, secrets, network policies, etc.) after a cluster is deleted.
 - Added the allowed IP's field into the cluster details page.

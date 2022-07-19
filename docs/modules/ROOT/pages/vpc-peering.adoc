@@ -1,7 +1,6 @@
 = Setting Up a Peering Connection to a Private Dedicated Cluster
-:description: To connect to a private Dedicated cluster, you need to set up a VPC peering connection. Hazelcast Dedicated offers different options for setting up VPC peering connections, depending on the cloud provider that you chose to host your cluster.
+:description: To connect to a private Dedicated cluster, you can set up a VPC peering connection. Hazelcast Dedicated offers different options for setting up VPC peering connections, depending on the cloud provider that you chose to host your cluster.
 :page-dedicated: true
-:page-aliases: connect-to-private-cluster.adoc
 
 {description}
 

@@ -1,0 +1,15 @@
+= Redeeming Credits
+:description: You can use promo codes to redeem credits and use them to pay for your cluster usage. As long as your credit balance is positive, any payments will be deducted from your credit balance.
+:page-dedicated: true
+
+{description}
+
+To manage credits for a team, you must have either an xref:create-account.adoc#roles[admin or finance role].
+
+. Click the *Account* icon in the bottom left corner.
+. Click *Credits*.
+. Enter a promo code and click *Redeem*.
+
+When you are running low on credits you will receive an email notification.
+
+When you have no credits, and no payment method set up in your account, your clusters will be stopped.

@@ -1,0 +1,7 @@
+= Creating {hazelcast-cloud} Clusters
+:description: You can create new Serverless clusters or Dedicated clusters.
+
+{description}
+
+- xref:create-serverless-cluster.adoc[]
+- xref:create-dedicated-cluster.adoc[]

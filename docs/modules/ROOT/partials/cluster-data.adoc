@@ -1,0 +1,6 @@
+Cluster data includes the following:
+
+- Configuration settings
+- Cluster-side modules
+- Jobs
+- Map and JCache data structures

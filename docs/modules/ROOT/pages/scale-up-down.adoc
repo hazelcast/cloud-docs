@@ -1,5 +1,5 @@
 = Scaling a Dedicated Cluster
-:description: Scaling clusters is useful when you need more memory or you aren't using as much memory as you thought and want to save on the monthly costs. You can easily scale Hazelcast Dedicated clusters up or down, using a sliding scale that adds or removes cluster members.
+:description: Scaling clusters is useful when you need to scale up for more memory or when you aren't using as much memory as you thought and want to scale down to save on the monthly costs. You can easily scale Dedicated clusters up or down, using a sliding scale that adds or removes cluster members.
 :page-dedicated: true
 
 {description}
@@ -16,6 +16,7 @@ TIP: If your data structures have backups, include those in your calculations. F
 
 When data in a cluster occupies 80% of all available memory, we send a warning email to the account or team owner. At this point, we recommend scaling up the cluster, which adds more members and therefore more resources such as memory. When you scale up a cluster, client applications do not experience any downtime. However, the cluster may temporarily experience lower throughput while members migrate their partitions.
 
+. Sign into the [.console]*link:{page-cloud-console}[{hazelcast-cloud} console]* and select your cluster.
 . Go to *Manage Cluster* > *Settings* > *Scale Up/Down*.
 +
 - *Instance Count Per Zone*: Number of members you have in each availability zone. 
@@ -26,7 +27,7 @@ When data in a cluster occupies 80% of all available memory, we send a warning e
 
 Click on the *Update* button to apply your change.
 
-NOTE: Scaling an Enterprise cluster may take up to 8 or 10 minutes.
+NOTE: Scaling a cluster may take up to 8 or 10 minutes.
 
 == Scaling Down
 
@@ -34,6 +35,7 @@ If you're using fewer resources than you thought you would when you created the 
 
 WARNING: If you scale down to a size that's smaller than your actual data size, some of your data will be removed.
 
+. Sign into the [.console]*link:{page-cloud-console}[{hazelcast-cloud} console]* and select your cluster.
 . Go to *Manage Cluster* > *Settings* > *Scale Up/Down*.
 +
 - *Instance Count Per Zone*: Number of members you have in each availability zone. 

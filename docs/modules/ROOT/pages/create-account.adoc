@@ -1,16 +1,16 @@
 = Creating an Account
-:description: Before you create a cluster on Hazelcast Cloud, you must create a Hazelcast Cloud account. You can create an account with your GitHub credentials, Google credentials, or you can provide an email address and password.
+:description: Before you create a cluster, you must create a {hazelcast-cloud} account. You can create an account with your GitHub credentials, Google credentials, or you can provide an email address and password.
 :toclevels: 3
 
 {description}
 
 == Creating a New Account
 
-To create a new account, go to the link:https://console-uat.hazelcast.cloud/sign-in[Hazelcast Cloud sign-up page].
+To create a new account, go to the link:{page-cloud-console}[{hazelcast-cloud} sign-up page].
 
 [tabs] 
 ====
-Email:: 
+Email::
 + 
 --
 . Enter your name, email address, and a password.
@@ -27,7 +27,7 @@ Google::
 . Select a Google account.
 . Sign into Google if you haven't already.
 
-A confirmation email will be sent to your registered email address and you will be signed into Hazelcast Cloud.
+A confirmation email will be sent to your registered email address and you will be signed into {hazelcast-cloud}.
 --
 GitHub:: 
 + 
@@ -36,14 +36,15 @@ GitHub::
 . Sign into GitHub if you haven't already.
 . Click *Authorize hazelcast*.
 
-A confirmation email will be sent to your registered email address and you will be signed into Hazelcast Cloud.
+A confirmation email will be sent to your registered email address and you will be signed into {hazelcast-cloud}.
 --
 ====
 
 == Changing your Profile
 
-When you first sign into Hazelcast Cloud, you are prompted to provide your company name and location. You can update these details at any time.
+When you first sign into {hazelcast-cloud}, you are prompted to provide your company name and location. You can update these details at any time.
 
+. Sign into the [.console]*link:{page-cloud-console}[{hazelcast-cloud} console]*.
 . Click the *Account* icon in the bottom left corner.
 . Click *Profile*.
 . Enter your details and click *Update my details*.
@@ -52,6 +53,7 @@ When you first sign into Hazelcast Cloud, you are prompted to provide your compa
 
 If you registered with an email address, you can change your account password:
 
+. Sign into the [.console]*link:{page-cloud-console}[{hazelcast-cloud} console]*.
 . Click the *Account* icon in the bottom left corner.
 . Click *Password*.
 . Click *Reset*.
@@ -72,3 +74,7 @@ After you set up your account, you’ll want to keep it safe. Here are some reco
 - *Enable multi-factor authentication:* Protect your account from anyone who may know your username and password. With xref:multi-factor-authentication.adoc[multi-factor authentication], you'll need to provide a unique code that's generated on your device as well as your username and password to sign in.
 
 - *Allow only authorized devices to access your cluster:* You can xref:ip-white-list.adoc[set up an IP whitelist] to allow only known IP addresses to access your cluster.
+
+== Next Steps
+
+xref:get-started.adoc[].

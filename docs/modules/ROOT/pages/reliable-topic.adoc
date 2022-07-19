@@ -1,13 +1,13 @@
 = Reliable Topic
 
 Reliable Topic uses the same ITopic interface. The main difference is that it is backed up by
-Hazelcast Ringbuffer data structure. Reliable Topic messages are stored in the Ringbuffer Configuration element's name is "reliable-topic". It has the optional attribute "name" with which you
+Hazelcast Ringbuffer data structure. Reliable Topic messages are stored in the Ringbuffer Configuration element's named `reliable-topic`. It has the optional attribute "name" with which you
 can specify the name of your Reliable Topic, which is the same name you give to your Ringbuffer.
-This attribute's default value is "default". 
+This attribute's default value is default. 
 
 == Reliable Topic Name
 
-You can give to custom name to your Reliable Topic structure.
+You can give a custom name to your Reliable Topic structure.
 
 == Reliable Topic Batch Size
 
