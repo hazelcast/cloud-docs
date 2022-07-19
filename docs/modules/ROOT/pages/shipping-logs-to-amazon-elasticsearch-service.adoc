@@ -18,7 +18,7 @@ link:{url-amazon-elasticsearch}[Amazon OpenSearch Service] is based on link:{url
 Create an Amazon OpenSearch domain to receive log files from your {hazelcast-cloud} cluster.
 
 . link:{url-aws-signup}[Create an AWS account] if you don't have one already.
-. For testing purposes, you can sign in as root user but we recommend that you sign in with an link:{url-aws-iam-user}[IAM account] for Production use.
+. For testing purposes, you can sign in as root user, but we recommend that you sign in with an link:{url-aws-iam-user}[IAM account] for Production use.
 +
 TIP: Amazon provides a link:{url-aws-managed-policy}[managed policy] for its OpenSearch service. 
 . From the list of regions on the top menu, select the region that's closest to your {hazelcast-cloud} cluster.
