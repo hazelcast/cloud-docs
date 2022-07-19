@@ -5,6 +5,8 @@
 :url-amazon-opensearch: https://aws.amazon.com/opensearch-service
 :url-aws-signup: https://portal.aws.amazon.com/billing/signup 
 :url-aws-console: https://us-west-2.console.aws.amazon.com/es/home
+:url-aws-managed-policy: https://docs.aws.amazon.com/opensearch-service/latest/developerguide/ac-managed.html 
+:url-aws-iam-user: https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_create.html
 
 {description}
 
@@ -16,7 +18,9 @@ link:{url-amazon-elasticsearch}[Amazon OpenSearch Service] is based on link:{url
 Create an Amazon OpenSearch domain to receive log files from your {hazelcast-cloud} cluster.
 
 . link:{url-aws-signup}[Create an AWS account] if you don't have one already.
-. Sign in as root user.
+. For testing purposes, you can sign in as root user but we recommend that you sign in with an link:{url-aws-iam-user}[IAM account] for Production use.
++
+TIP: Amazon provides a link:{url-aws-managed-policy}[managed policy] for its OpenSearch service. 
 . From the list of regions on the top menu, select the region that's closest to your {hazelcast-cloud} cluster.
 . Search for and select *Amazon OpenSearch Service*. The Dashboard opens ready for you to start configuration.
 +
@@ -32,11 +36,9 @@ To get a logging solution up and running, update the following domain settings. 
 . In the *Deployment type* section:
 ** For testing purposes, select *Development and testing* as the deployment type.
 ** From the *Version* list, select *Elasticsearch* > *7.10*.
-** Select *Enable compatibility mode*.
-// Is this correct or should we use the latest OpenSearch version?
+** Select *Include older versions*.
 . In the *Data nodes* section, under *Availability Zones*, select *1-AZ*.
 . In the *Network* section, select *Public access* to use fine-grained access control to secure the OpenSearch domain and data. VPC Peering connections between {hazelcast-cloud} clusters and OpenSearch instances are not currently supported.
-// Is this still true? See related links at the bottom of this topic.
 
 . In the *Fine-grained access control* section, select *Create Master User* and enter a username and password for the account.
 

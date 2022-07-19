@@ -1,5 +1,5 @@
-= Synchronizing Data Between Clusters
-:description: You can use WAN replication to synchronize data between two or more clusters, and to transfer data from one cluster to another.
+= Replicating Data Between Clusters
+:description: You can use WAN replication to automatically copy data between two or more clusters, and to transfer data from one cluster to another.
 :page-aliases: data-migration.adoc
 
 {description}
@@ -82,18 +82,17 @@ The cluster is set as the *Active* cluster. Any data updates performed on this c
 . Click *Save*. WAN Replication is set up.
 
 +
-TIP: If you want to synchronize all data between the two clusters immediately, click *Sync*. This option is useful when your're migrating data from one cluster to another. Otherwise, WAN replication is triggered when a data update is made to a publisher cluster.
+TIP: If you want to replicate all data between the two clusters immediately, click *Sync*. This option is useful when you're migrating data from one cluster to another. Otherwise, WAN replication is triggered when a data update is made to a publisher cluster.
 
 == Verify WAN Replication
 
 Check that data is successfully replicated between two clusters connected by WAN replication.
 
 . Connect a client to your publisher cluster and write some data to a map. You can use either cluster in an Active-Active pair.
-. Open the dashboard of the other cluster of the pair and select *Manage Cluster* > *Management Center*.
-. Go to *Storage* > *Maps* and make sure that the new map entries have been written to this cluster. Or if you've written or synched other data types, check the relevant section of Management Center.
+. Open the dashboard of the other cluster and scroll down to *Map Metrics*. Check the *Entry Count* chart for new map entries. If you've written or synched other data types, check the relevant section of Management Center.
 
 +
-TIP: You can also check the status of WAN replication from Management Center for your publisher cluster. Go to *Cluster* > *WAN Replication*.
+TIP: You can check the status of WAN replication from Management Center for your publisher cluster. From the dashboard of your cluster select *Manage Cluster* > *Management Center*, then go to *Cluster* > *WAN Replication*.
 
 == Delete a Cluster Using WAN Replication
 
