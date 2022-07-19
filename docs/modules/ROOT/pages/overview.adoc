@@ -1,20 +1,10 @@
 = {hazelcast-cloud}
-:description: {hazelcast-cloud} is a managed cloud service that simplifies Hazelcast cluster deployments, allowing you to focus on building applications for stream processing, low-latency querying, and quick caching.
+:description: {hazelcast-cloud} is a managed cloud service that simplifies Hazelcast cluster deployments, allowing you to focus on building applications for stream processing, low-latency querying, and caching.
 :page-aliases: use-cases.adoc, faq.adoc, pricing.adoc, preface.adoc
 
 {description}
 
 {hazelcast-cloud} abstracts away the manual effort of managing physical servers or servers in the cloud so that you can focus on what matters: Building your application.
-
-Take the electricity in your home as an example. Imagine that you’ve built your own green energy system out of some solar panels and you’re using that energy to power your home. That’s great. You’re in complete control over the electricity supply to your house. But, now you need to maintain that system, which may include:
-
-- Fixing existing equipment.
-- Buying new equipment when it breaks.
-- Setting up a generator for days where it’s cloudy and you don’t produce enough energy to power your home.
-
-What you could do instead is plug into the energy grid and use the existing infrastructure. A further step would be to install a smart meter so even the billing is done based on what you use rather than average estimates. This is {hazelcast-cloud}.
-
-You can think of {hazelcast-cloud} as the energy grid. Hazelcast hosts the servers that run the clusters and guarantees that your data is always available.
 
 == Application Topology
 
@@ -22,7 +12,7 @@ You can think of {hazelcast-cloud} as the energy grid. Hazelcast hosts the serve
 
 - {hazelcast-cloud} clusters are the servers that are responsible for storing and processing your data.
 
-- You can use clients to connect to your cluster to request processing results, add data to storage, or request the contents of storage.
+- You can use clients to connect to your cluster to request processing results, add data to storage, or query data.
 
 image:ROOT:serverless-app-server.svg[A Hazelcast client application communicating with a {hazelcast-cloud} cluster]
 
