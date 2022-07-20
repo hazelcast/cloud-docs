@@ -11,7 +11,7 @@ See xref:charts-and-stats.adoc[].
 
 == Management Center
 
-Monitor your Hazelcast cluster in a purpose-built cluster management tool. Management Center for {hazelcast-cloud} provides a cloud-user with read-only access, allowing you to view insights about cluster state, data structure metrics, and other metrics.
+Monitor your Hazelcast cluster in a purpose-built cluster management tool. Management Center for {hazelcast-cloud} provides view-only access, allowing you to view insights about cluster state, data structure metrics, and other metrics.
 
 See xref:management-center.adoc[].
 

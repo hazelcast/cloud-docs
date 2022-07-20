@@ -6,9 +6,3 @@
 . Sign into the [.console]*link:{page-cloud-console}[{hazelcast-cloud} console]*.
 . Click the *Account* icon in the bottom left corner.
 . Click *Billing & Payments*.
-
-== Removing a Card from your Account
-
-You cannot remove payment cards from your account, using the {hazelcast-cloud} console.
-
-To remove a payment card from your account, contact us at mailto:support@hazelcast.com[].

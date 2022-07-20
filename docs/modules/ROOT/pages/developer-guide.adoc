@@ -1,4 +1,4 @@
-= Developer Guide {hazelcast-cloud}
+= Developer Guide for {hazelcast-cloud}
 :description: Learn how to develop apps for {hazelcast-cloud} and find resources to help you build your app.
 
 {description}
