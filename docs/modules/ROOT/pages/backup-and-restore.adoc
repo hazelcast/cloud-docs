@@ -13,7 +13,7 @@ To back up or restore clusters in a team, you must have either an admin or devel
 
 . Sign into the [.console]*link:{page-cloud-console}[{hazelcast-cloud} console]* and select your cluster.
 
-. Go to *Manage Cluster* > *Backup And Restore*.
+. Go to *Manage* > *Backup And Restore*.
  
 . Click *Create a Snapshot*.
 
@@ -27,7 +27,7 @@ When you have at least one backup, you can use it to bootstrap a new cluster.
 
 . Sign into the [.console]*link:{page-cloud-console}[{hazelcast-cloud} console]* and select your cluster.
 
-. Go to *Manage Cluster* > *Backup And Restore*.
+. Go to *Manage* > *Backup And Restore*.
 
 . Click *Restore* in the row of your selected backup.
 

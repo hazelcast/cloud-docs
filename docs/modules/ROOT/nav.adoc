@@ -51,6 +51,10 @@
 ** xref:charts-and-stats.adoc[Dashboard]
 ** xref:management-center.adoc[Management Center]
 
+.Tutorials
+* xref:shipping-logs-to-amazon-elasticsearch-service.adoc[Sending Logs to Amazon OpenSearch]
+* xref:failover-clients-with-hazelcast-cloud.adoc[]
+
 .Migrate
 * xref:migrate-to-cloud.adoc[Embedded to Cloud]
 
