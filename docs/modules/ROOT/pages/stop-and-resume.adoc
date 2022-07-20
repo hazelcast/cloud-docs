@@ -15,7 +15,7 @@ Stopping your cluster can help minimize your costs during development because yo
 . Sign into the [.console]*link:{page-cloud-console}[{hazelcast-cloud} console]* and select your cluster.
 . Go to *Manage Cluster* and click *Stop*.
 
-If you're using a Serverless production cluster or a Dedicated cluster, {hazelcast-cloud} saves your cluster data so that you can resume the cluster at a later time.
+If you're using a production Serverless cluster or a Dedicated cluster, {hazelcast-cloud} saves your cluster data so that you can resume the cluster at a later time.
 
 .What is cluster data?
 [%collapsible]
@@ -23,7 +23,7 @@ If you're using a Serverless production cluster or a Dedicated cluster, {hazelca
 include::partial$cluster-data.adoc[]
 ====
 
-If you're using a Serverless development cluster, all cluster data is lost after the cluster is stopped.
+If you're using a development Serverless cluster, all cluster data is lost after the cluster is stopped.
 
 == Resuming a Cluster
 

@@ -9,7 +9,7 @@
 
 {hazelcast-cloud} Serverless is in beta while we continue to add new features.
 
-Despite its beta state, you can use <<cluster-types, Serverless production clusters>> for production applications.
+Despite its beta state, you can use <<cluster-types, production Serverless clusters>> for production applications.
 
 == Choosing a Cluster Type
 
@@ -24,7 +24,7 @@ Serverless clusters come in two types:
 == Development Clusters
 
 // tag::development[]
-Serverless development clusters are for fast, iterative development while you prototype your application.
+Development Serverless clusters are for fast, iterative development while you prototype your application.
 // end::development[]
 
 Development clusters have the following limitations:
@@ -43,10 +43,10 @@ NOTE: You cannot convert a development cluster to a production cluster.
 == Production Clusters
 
 // tag::production[]
-Serverless production clusters are for applications that have already been tested and are ready to be deployed in real-world scenarios.
+Production Serverless clusters are for applications that have already been tested and are ready to be deployed in real-world scenarios.
 // end::production[]
 
-Serverless production clusters automatically scale up and down, depending on the amount of resources you use.
+Production Serverless clusters automatically scale up and down, depending on the amount of resources you use.
 
 Your cluster data is persisted on disk so that you can pause and resume your clusters when you want, without losing your data. Cluster data is persisted in the following scenarios:
 
@@ -62,7 +62,7 @@ include::partial$cluster-data.adoc[]
 
 === Backups
 
-By default, data in Serverless production clusters is backed up on one other Hazelcast member in the cluster.
+By default, data in production Serverless clusters is backed up on one other Hazelcast member in the cluster.
 
 Although you can configure some xref:data-structures.adoc[data structures] with a custom backup count, the effective backup count is limited by the number of members in your cluster. For example, if you configure a map with 5 backups, but your cluster has only 2 members, you will have one effective backup. You cannot scale up Serverless clusters. If you add enough data to the cluster so that it automatically scales up the number of members, more backups will be added, up to your configured count of 5.
 
@@ -87,9 +87,9 @@ Development and production clusters are stopped when both of these conditions ar
 - You don't connect to the cluster for 24 hours.
 - You don't have a payment method set up for your {hazelcast-cloud} account.
 
-If you're using a Serverless production cluster, Hazelcast saves your cluster data so that you can resume the cluster at a later time.
+If you're using a production Serverless cluster, Hazelcast saves your cluster data so that you can resume the cluster at a later time.
 
-If you're using a Serverless development cluster, all cluster data is lost after the cluster is stopped.
+If you're using a development Serverless cluster, all cluster data is lost after the cluster is stopped.
 
 === Billing Examples
 

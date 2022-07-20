@@ -11,7 +11,7 @@ You need the following:
 - A xref:create-account.adoc[{hazelcast-cloud} account].
 - Access to a command prompt such as Terminal for Mac or Powershell for Windows.
 
-== Step 1. Start a Serverless Development Cluster
+== Step 1. Start a Development Serverless Cluster
 
 include::serverless-cluster.adoc[tag=development]
 To create a development cluster, do the following:
