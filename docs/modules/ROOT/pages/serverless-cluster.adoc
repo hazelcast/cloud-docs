@@ -66,21 +66,7 @@ By default, data in production Serverless clusters is backed up on one other Haz
 
 Although you can configure some xref:data-structures.adoc[data structures] with a custom backup count, the effective backup count is limited by the number of members in your cluster. For example, if you configure a map with 5 backups, but your cluster has only 2 members, you will have one effective backup. You cannot scale up Serverless clusters. If you add enough data to the cluster so that it automatically scales up the number of members, more backups will be added, up to your configured count of 5.
 
-== Pricing for Serverless Clusters
-
-You pay only for what you store in RAM. Any data that is stored on disk or in backups is free of charge. As a result, 'storage' is synonymous with RAM in Serverless clusters.
-
-Serverless clusters are billed monthly only for the amount of used storage. The *first 2 GiB of storage in your account is free*. If you use more than 2 GiB across all your clusters, you are charged $0.10 per hour for every additional GiB of used storage, not including the first 2 GiB.
-
-As well as the data that you add to data structures, you are charged for any additional memory usage, excluding backups. *Backups are free*. Additional memory usage may include the following:
-
-- Indexes that you create
-- Stateful jobs
-- Serialization overhead
-
-For example, the xref:cluster-side-modules.adoc#serializers[`HazelcastJsonValue` serializer] includes metadata to allow the cluster to query JSON fields and values. You are charged for this metadata. As a result, the amount of used memory in your cluster may be more than the amount of data that you added to a data structure.
-
-=== Restrictions on Free Serverless Clusters
+== Restrictions on Free Serverless Clusters
 
 Development and production clusters are stopped when both of these conditions are true:
 
@@ -90,6 +76,20 @@ Development and production clusters are stopped when both of these conditions ar
 If you're using a production Serverless cluster, Hazelcast saves your cluster data so that you can resume the cluster at a later time.
 
 If you're using a development Serverless cluster, all cluster data is lost after the cluster is stopped.
+
+== Pricing for Serverless Clusters
+
+You pay only for what you store in RAM. Any data that is stored on disk or in backups is free of charge. As a result, 'storage' is synonymous with RAM in Serverless clusters.
+
+Serverless clusters are billed monthly only for the amount of used storage. The *first 2 GiB of storage in your account is free*. If you use more than 2 GiB across all your clusters, you are charged $0.10 per hour for every additional GiB of used storage, not including the first 2 GiB.
+
+As well as the data that you add to data structures such as maps, you are charged for any additional memory usage, excluding backups. *Backups are free*. Additional memory usage may include the following:
+
+- Indexes that you create
+- Stateful jobs
+- Serialization overhead
+
+For example, the xref:cluster-side-modules.adoc#serializers[`HazelcastJsonValue` serializer] includes metadata to allow the cluster to query JSON fields and values. You are charged for this metadata. As a result, the amount of used memory in your cluster may be more than the amount of data that you added to a data structure.
 
 === Billing Examples
 
