@@ -8,7 +8,7 @@
 
 WAN replication supports the following use cases:
 
-* Use WAN replication with a xref:failover-clients-with-hazelcast-cloud.adoc[failover client] as part of your disaster recovery strategy. WAN replication automatically synchronizes data between clusters. If a cluster fails, the failover client can switch to an alternative cluster with minimal disruption to service.
+* Use WAN replication with a xref:failover-clients-with-hazelcast-cloud.adoc[failover client] as part of your disaster recovery strategy. WAN replication automatically replicates data between clusters. If a cluster fails, the failover client can switch to an alternative cluster with minimal disruption to service.
 
 * Migrate data to a new cluster before decommissioning your original cluster.
 
