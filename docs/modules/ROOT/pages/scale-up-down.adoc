@@ -17,7 +17,7 @@ TIP: If your data structures have backups, include those in your calculations. F
 When data in a cluster occupies 80% of all available memory, we send a warning email to the account or team owner. At this point, we recommend scaling up the cluster, which adds more members and therefore more resources such as memory. When you scale up a cluster, client applications do not experience any downtime. However, the cluster may temporarily experience lower throughput while members migrate their partitions.
 
 . Sign into the [.console]*link:{page-cloud-console}[{hazelcast-cloud} console]* and select your cluster.
-. Go to *Manage Cluster* > *Settings* > *Scale Up/Down*.
+. Go to *Manage* > *Settings* > *Scale Up/Down*.
 +
 - *Instance Count Per Zone*: Number of members you have in each availability zone. 
 - *Total Instance Count*: Total number of members you have for all availability zones.
@@ -36,7 +36,7 @@ If you're using fewer resources than you thought you would when you created the 
 WARNING: If you scale down to a size that's smaller than your actual data size, some of your data will be removed.
 
 . Sign into the [.console]*link:{page-cloud-console}[{hazelcast-cloud} console]* and select your cluster.
-. Go to *Manage Cluster* > *Settings* > *Scale Up/Down*.
+. Go to *Manage* > *Settings* > *Scale Up/Down*.
 +
 - *Instance Count Per Zone*: Number of members you have in each availability zone. 
 - *Total Instance Count*: Total number of members you have for all availability zones.

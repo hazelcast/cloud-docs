@@ -55,7 +55,7 @@ To allow Hazelcast to access the `trades` topic that you created in your Conflue
 
 . Sign into the [.console]*link:{page-cloud-console}[{hazelcast-cloud} console]* and select your cluster.
 
-. Go to *Manage Cluster* > *Management Center* > *SQL Browser*.
+. Go to *Management Center* > *SQL Browser*.
 
 . Create the mapping. Paste the connection configurations that you copied from Confluent Cloud below the `valueFormat` option. Make sure to format the configuration as necessary. For example:
 +

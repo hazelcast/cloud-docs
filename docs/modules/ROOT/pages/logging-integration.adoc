@@ -21,7 +21,7 @@ To set up logging integration, do the following:
 
 . Sign into the [.console]*link:{page-cloud-console}[{hazelcast-cloud} console]* and select your cluster.
 
-. Go to  *Manage Cluster* > *Settings* > *Logging*.
+. Go to  *Manage* > *Settings* > *Logging*.
 
 . Select your log management system from the *Logging Technology* dropdown menu and provide the access parameters.
 
