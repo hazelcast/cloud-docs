@@ -2,7 +2,7 @@ To connect your own client to the cluster, you need your cluster's connection cr
 
 . Sign into the [.console]*link:{page-cloud-console}[{hazelcast-cloud} console]* and select your cluster.
 
-. Go to *Connect your Application* > *Advanced Setup*:
+. Go to *Connect Client* > *Advanced Setup*:
 +
 [cols="1a,2a"]
 |===
