@@ -47,7 +47,7 @@ image:confluent-cloud-breadcrumbs.png[Breadcrumbs that display the cluster name]
 
 . Click *Download and continue*. The configuration snippet now includes your API key and secret.
 
-. Copy your configuraton snippet from the top until `session.timeout.ms=45000`. You won't use the Schema Registry in this tutorial.
+. Copy the code in your configuration snippet from the top to `session.timeout.ms=45000`. You won't use the Schema Registry in this tutorial.
 
 == Step 2. Create a Mapping to the Confluent Cloud Cluster
 
@@ -131,7 +131,7 @@ The result is an empty table. You don't see any results because, by default, Con
 
 . Stop the streaming query by pressing kbd:[Ctrl + C] to close the connection to the SQL prompt.
 
-. Back in the SQL browser in Management Center, create the mapping to the topic again, but this time, add the `'auto.offset.reset'='earliest'` configuration. This configuration tells the Kafka consumer to read all data in the topic from the beginning, not just the latest.
+. Back in the SQL browser in Management Center, create the mapping to the topic again, but this time add the `'auto.offset.reset'='earliest'` configuration. This configuration tells the Kafka consumer to read all data in the topic from the beginning, not just from the latest offset.
 +
 [source,sql]
 ----
