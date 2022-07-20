@@ -6,6 +6,8 @@
 
 To stop clusters in a team, you must have either an admin or developer role. See xref:teams-and-users.adoc[].
 
+You cannot stop a Dedicated cluster if it's hosted on Google Cloud Platform (GCP).
+
 == Stopping a Cluster
 
 Stopping your cluster can help minimize your costs during development because you are only charged for running clusters.
