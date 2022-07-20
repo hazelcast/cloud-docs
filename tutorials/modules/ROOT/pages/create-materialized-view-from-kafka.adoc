@@ -11,17 +11,19 @@
 
 Streaming data is data that is continuously generated in small sizes. Streaming data includes a wide variety of sources such as retail purchases, financial trades, or telemetry from connected vehicles. This data isn't often useful by itself because of its size. It must be enriched with contextual data that is often stored in a database.
 
-Hazelcast allows you to connect to streaming data sources such as Confluent Cloud Kafka clusters as well as cache contextual data in your Hazelcast cluster so that you can process your data in one place and store the results in a materialized view. 
+Hazelcast allows you to connect to streaming data sources such as Confluent Cloud Kafka clusters as well as cache contextual data in your Hazelcast cluster so that you can process all your data in one place and store the results in a materialized view. 
 
 Materialized views are useful for speeding up queries that are repeated. Instead of performing resource-intensive queries against large datasets in different sources, your applications can query a materialized view and retrieve a precomputed result.
 
 == Before you Begin
 
-You need a {hazelcast-cloud} cluster. This tutorial assumes that you have a xref:cloud:ROOT:create-serverless-cluster.adoc[Serverless production cluster].
+You need the following:
 
-You also need the Hazelcast CLI tool to be able to open multiple connections to the SQL shell of your {hazelcast-cloud} cluster. Follow the instructions for SQL in xref:cloud:ROOT:get-started.adoc[] until you see the SQL prompt.
+- A {hazelcast-cloud} cluster. This tutorial assumes that you have a production cluster for xref:cloud:ROOT:create-serverless-cluster.adoc[{hazelcast-cloud} Serverless].
 
-You should have a basic understanding of link:https://hazelcast.com/glossary/kafka/[Kafka].
+- Hazelcast CLI for opening connections to the SQL shell of your {hazelcast-cloud} cluster. You can follow the instructions for SQL in xref:cloud:ROOT:get-started.adoc[] until you see the SQL prompt.
+
+- A basic understanding of link:https://hazelcast.com/glossary/kafka/[Kafka].
 
 == Step 1. Create a Free Confluent Cloud Kafka Cluster
 
@@ -230,7 +232,7 @@ You should see that Hazelcast is executing the streaming query.
 
 == Step 4. Create a Materialized View
 
-You can set up an automated job to continuously run the streaming query and cache the results in a Hazelcast map.
+You can set up an automated job to continuously run the streaming query and cache the results in a Hazelcast map. This map is the materialized
 
 . Open the SQL browser in Management Center.
 
@@ -296,10 +298,8 @@ You should see that the query results are being stored in your map.
 |        1|SORG     |Example Startup Organization     |          10|
 +---------+---------+----------+----------------------+------------+
 ```
-+
-Leave this query running.
 
-. In the SQL prompt, publish some more trades to the topic.
+. Publish some more trades to the topic.
 +
 [source,sql]
 ----
@@ -308,13 +308,19 @@ INSERT INTO trades VALUES
   (4, 'EORG', 12, 54);
 ----
 +
-Your query in Management Center should now display the results, including your new trades. Your materialized view will continue to be updated for each new trade that's added to the topic in the Kafka cluster.
+Your materialized view will continue to be updated for each new trade that's added to the topic in the Kafka cluster.
 
-. Click *Stop Query* in Management Center.
+. Query your materialized view to see that results have been added to it.
++
+```sql
+SELECT * FROM trade_map;
+```
 
-== Step 5. Cancel the Job
+== Step 5. Clean Up
 
-. To stop your job, use the `DROP` statement to cancel it.
+Your running job is consuming resources in your cluster. When you don't need a job anymore, it's important to cancel it.
+
+. To cancel your job, use the `DROP` statement to cancel it.
 +
 ```sql
 DROP JOB ingest_trades;

@@ -33,4 +33,4 @@ You should now start receiving cluster logs in your log management system.
 
 Try a tutorial:
 
-- xref:tutorials:shipping-logs-to-amazon-elasticsearch-service.adoc[Set up a logging integration with Amazon OpenSearch].
+- xref:tutorials:shipping-logs-to-amazon-elasticsearch-service.adoc[].
