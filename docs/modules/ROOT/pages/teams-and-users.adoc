@@ -3,7 +3,7 @@
 
 {description}
 
-NOTE: Serverless clusters for teams do not include the free 2 GB storage.
+NOTE: Serverless clusters for teams do not include the free 2 GiB storage.
 
 == Creating a Team
 

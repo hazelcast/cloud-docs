@@ -11,6 +11,6 @@ NOTE: You cannot delete a cluster that is using WAN Replication.
 
 . Sign into the [.console]*link:{page-cloud-console}[{hazelcast-cloud} console]* and select your cluster.
 
-. Go to *Manage Cluster* > *Delete*.
+. Go to *Manage* > *Delete*.
 
 When you delete a cluster, all data related to the cluster, including the configuration is removed. You cannot recover any data from a deleted cluster.

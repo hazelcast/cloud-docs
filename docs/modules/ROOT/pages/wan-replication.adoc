@@ -1,54 +1,115 @@
-= Synchronizing Clusters
-:description: To synchronize data between two or more clusters, you can use WAN Replication.
+= Replicating Data Between Clusters
+:description: You can use WAN replication to automatically copy data between two or more clusters, and to transfer data from one cluster to another.
+:page-aliases: data-migration.adoc
 
 {description}
 
-WAN Replication is a tool that can do *Active-Active* and *Active-Passive* replication. You can also configure WAN Replication parameters according to your use-case.
+== Use Cases
 
-For a complete reference of this feature, see the xref:hazelcast:wan:wan.adoc[Hazelcast Platform documentation].
+WAN replication supports the following use cases:
+
+* Use WAN replication with a xref:failover-clients-with-hazelcast-cloud.adoc[failover client] as part of your disaster recovery strategy. WAN replication automatically replicates data between clusters. If a cluster fails, the failover client can switch to an alternative cluster with minimal disruption to service.
+
+* Migrate data to a new cluster before decommissioning your original cluster.
+
+
 
 == Terminology
 
-[cols="e,a"]
+[cols="a,a"]
 |===
-|Term|Definition
+|Term|Description
 
-|Publisher Cluster
-|The cluster that sends data within WAN Replication
+| _Publisher_ cluster, also known as the _active_ cluster
+|Sends or transfers data to another cluster using WAN replication
 
-|Consumer Cluster
-|The cluster that receives data from publisher within WAN Replication
+| _Consumer_ cluster, also known as the _passive_ cluster
+|Receives data from another cluster using WAN replication
+
+|_Active-Passive_ replication
+|One-way replication. Data updates on a publisher cluster are automatically copied to a consumer cluster. Use this configuration for migrating data between clusters.
+
+|_Active-Active_ replication
+|Uses a pair of publisher clusters for two-way replication. Data updates on either cluster are automatically copied to the other cluster of the pair. Use this configuration with a failover client.
+
 |===
 
 == Before you Begin
 
-You need at least two active clusters.
+* You need two xref:create-serverless-cluster.adoc[Serverless clusters] or two xref:create-dedicated-cluster.adoc[Dedicated clusters]. You cannot synchronize data between one Serverless cluster and one Dedicated cluster.
 
-[WARNING]
-====
-If clusters are hosted on the *same* cloud provider, you can create WAN Replication between *public <-> public*, *public <-> private*, and *private <-> private* clusters.
++
+Make sure that each cluster is configured with the same settings. For example, if one cluster
+contains xref:cluster-side-modules.adoc[cluster-side modules] or persistence, the other cluster must too.
 
-If clusters are hosted on *different* cloud providers, you can create WAN Replication only between *public <-> public* clusters.
-====
+* Decide which configuration to use for your pair of clusters:
+** Active-Passive
+** Active-Active
 
-== Creating WAN Replication
+== Set Up WAN Replication
 
-In order to create WAN Replication, you can go to *Cluster Detail* > *Settings* > *Wan Replication* and click *Create New Replication* 
+Set up WAN replication between two clusters.
 
-You will see current cluster as Active cluster and also you can see additional parameters:
+. Sign into the [.console]*link:{page-cloud-console}[{hazelcast-cloud} console]* and select the cluster that you want to use as a publisher cluster.
 
-- *Queue Full Behavior:* WAN Replication uses Hazelcast Queue within its architecture to manage data replication events. This parameter  lets you to decide what to do next if this queue is full. 
-- *Queue Capacity:* Capacity of queue and if queue us full, the criteria in first item will be applied.
-- *Batch Size:* You can define the size of batch operation for data replication with this param
-- *Batch Max Delay Millis:* Even data replication events is not reached to batch size amount, data will be replicated to consumer cluster when you reach this delay limit.
++
+NOTE: If you want to set up a pair of clusters in an Active-Active configuration, select either cluster.
 
-After setting all this parameters, you can click *Next* to select and configure consumer cluster.
+. Select *Manage Cluster* > *Settings*.
+. On the *Cluster Settings* page, select *WAN Replication* and then click *+ Create New Replication*.
 
-Settings on this screen for consumer cluster are same as publisher cluster except *Active/Passive* section. If you set consumer cluster as *Active*, data will be synchronized from/to publisher and consumer. If you set consumer cluster as *Passive*, data will be sent only from publisher to consumer. 
-Once you configured settings for consumer, you can click *Save* 
++
+The cluster is set as the *Active* cluster. Any data updates performed on this cluster are automatically copied to the other cluster of the pair.
 
-Within seconds, wan replication will be ready there. 
+. Either leave the default options for the following parameters, or update them to suit your use case.
 
-Once it is finished, you can verify it by going to Management Center *Cluster Detail* > *Management Center* > *Enable*  then *Management Center* > *Open Management Center*. 
+* *Queue Full Behavior*: Lets you decide what to do when the replication events queue is full. 
 
-When you connect publish cluster and try to write some data, you will see data will be replicated to consumer cluster
+** `THROW AN EXCEPTION`: Throws a `WanReplicationQueueFullException` when the queue is full. Processing of replication events stops until action is taken.
+** `THROW AN EXCEPTION ONLY IF REPLICATION ACTIVE`: As above, but this option is only triggered when both clusters connected by WAN replication are active.
+** `NONE`: Discards replication events when the queue is full. This option is only suitable for non-critical data. 
+
+* *Queue Capacity*: Sets the maximum size for the replication events queue. When this limit is reached, the *Queue Full Behavior* is triggered.
+* *Batch Size*: Sets the maximum size of replication events that are sent in a single batch.
+* *Batch Max Delay Millis*: By default, all replication events are delayed by one second (1000 milliseconds) before they are sent to the other cluster of the pair, unless they exceed the *Batch Size*.
+
+. Click *Next >* to configure the other cluster of the pair.
+. From the *Active/Passive* list, select the correct behavior for your second cluster: 
+
+* *Passive*: Receives only data updates.
+* *Active*: Sends and receives data updates. 
+
+. Click *Save*. WAN Replication is set up.
+
++
+TIP: If you want to replicate all data between the two clusters immediately, click *Sync*. This option is useful when you're migrating data from one cluster to another. Otherwise, WAN replication is triggered when a data update is made to a publisher cluster.
+
+== Verify WAN Replication
+
+Check that data is successfully replicated between two clusters connected by WAN replication.
+
+. Connect a client to your publisher cluster and write some data to a map. You can use either cluster in an Active-Active pair.
+. Open the dashboard of the other cluster and scroll down to *Map Metrics*. Check the *Entry Count* chart for new map entries. If you've written or synched other data types, check the relevant section of Management Center.
+
++
+TIP: You can check the status of WAN replication from Management Center for your publisher cluster. From the dashboard of your cluster select *Manage Cluster* > *Management Center*, then go to *Cluster* > *WAN Replication*.
+
+== Delete a Cluster Using WAN Replication
+
+Learn how to delete a cluster that has WAN replication set up. 
+
+Before you start, check that all the data you need has been replicated to another cluster.
+
+To delete a consumer cluster:
+
+. Identify the connected publisher cluster. From the dashboard of the consumer cluster, go to *Manage Cluster* > *Settings*. On the *Cluster Settings* page, select *WAN Replication* and look for the ID of publisher cluster.
+. Open the dashboard of the publisher cluster.
+. Go to *Manage Cluster* > *Settings*. 
+. Remove WAN replication. On the *Cluster Settings* page, select *WAN Replication* and then click *Delete*. Confirm your deletion.
+. Return to the dashboard of the consumer cluster and delete the cluster.
+
+To delete a publisher cluster:
+
+. Follow steps 2 to 4 as for the consumer cluster.
+. Go to the dashboard of your publisher cluster and delete the cluster.
+

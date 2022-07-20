@@ -1,61 +1,43 @@
 = {hazelcast-cloud}
-:description: {hazelcast-cloud} is a managed cloud service that simplifies Hazelcast cluster deployments, allowing you to focus on building applications for low-latency querying, aggregation, and stateful computations.
+:description: {hazelcast-cloud} is a managed cloud service that simplifies Hazelcast cluster deployments, allowing you to focus on building applications for stream processing, low-latency querying, and caching.
 :page-aliases: use-cases.adoc, faq.adoc, pricing.adoc, preface.adoc
 
 {description}
 
-== Cluster Flavors
+{hazelcast-cloud} abstracts away the manual effort of managing physical servers or servers in the cloud so that you can focus on what matters: Building your application.
+
+== Application Topology
+
+{hazelcast-cloud} runs in a client/server topology:
+
+- {hazelcast-cloud} clusters are the servers that are responsible for storing and processing your data.
+
+- You can use clients to connect to your cluster to request processing results, add data to storage, or query data.
+
+image:ROOT:serverless-app-server.svg[A Hazelcast client application communicating with a {hazelcast-cloud} cluster]
+
+== {hazelcast-cloud} Clusters
 
 {hazelcast-cloud} offers two flavors of clusters: Serverless and Dedicated.
 
-[cols="1a,1a,2a"]
+[cols="1a,2a,2a"]
 |===
-|Flavor|Intended applications|Pricing
+|Flavor|Description|Pricing
 
 |xref:serverless-cluster.adoc[Serverless (beta)]
-|
-- Unpredicable scaling requirements
-- Strict budget constraints
-|Free to store up to 2 GB in one Serverless cluster in your account, then $0.10 USD per GB.
+|Serverless clusters dynamically scale, depending on the amount of data you store.
+|Free to store up to 2 GiB in any Serverless cluster in your account, then $0.10 USD per GiB.
 
 |xref:dedicated-cluster.adoc[Dedicated]
-|
-- Explicit resource and configuration requirements
-- Strict data security requirements
-|Depends on the size of the chosen cloud instance.
+|Dedicated clusters give you fine-grained control over the hardware and resources available to your cluster. It's your responsibility to scale Dedicated clusters when you need more resources.
+|Depends on multiple factors such as the size of your chosen cloud instance.
 |===
-
-== Development Workflow
-
-{hazelcast-cloud} runs as the server in a client/server topology.
-
-You can run Java code in {hazelcast-cloud} to process batch or streaming data as well as cache your custom objects in distributed data structures, or ingest data from databases.
-
-The Java code that you run in {hazelcast-cloud} is called a _cluster-side module_. You develop and test these modules before deploying them to a {hazelcast-cloud} cluster.
-
-After deploying a cluster-side module, you can use clients to interact with the cluster. For example, you can use a client to connect to the cluster's SQL shell and query your data.
-
-== Use Cases
-
-These are just a few examples of use cases for {hazelcast-cloud}.
-
-=== Caching Layer for your Applications
-
-You can use {hazelcast-cloud} as a low-latency, high-performance caching or data layer for your applications.
-
-See xref:tutorials.adoc[]
-
-=== Stream Processing and Data Enrichment
-
-{hazelcast-cloud} is the perfect solution if you need to process streaming data and enrich it with data in a cache.
-
-See xref:tutorials.adoc[]
 
 == Getting Started
 
-If you are a first-time user of {hazelcast-cloud}, use the following resources to get started:
+If you are a first-time user of {hazelcast-cloud}, see xref:get-started.adoc[].
 
-- xref:get-started.adoc[]
-- xref:create-serverless-cluster.adoc[]
-- xref:developer-guide.adoc[]
-- xref:tutorials.adoc[]
+If you're ready to get started with a real use case, see xref:tutorials.adoc[].
+
+If you want to get an overview of the use cases and advantages of {hazelcast-viridian}, see the link:https://hazelcast.com/products/cloud/[Hazelcast website].
+

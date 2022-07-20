@@ -10,7 +10,7 @@
 For xref:serverless-cluster.adoc[Serverless clusters], you must provide a payment card to do the following:
 
 - Create two or more Serverless clusters.
-- Use more than 2 GB of memory in a Serverless cluster.
+- Use more than 2 GiB of memory in a Serverless cluster.
 
 For xref:dedicated-cluster.adoc[Dedicated clusters], you must provide a payment card to pay for new clusters or cluster usage for existing clusters.
 
