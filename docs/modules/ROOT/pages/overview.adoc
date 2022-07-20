@@ -26,7 +26,7 @@ image:ROOT:serverless-app-server.svg[A Hazelcast client application communicatin
 
 |xref:serverless-cluster.adoc[Serverless (beta)]
 |Serverless clusters dynamically scale, depending on the amount of data you store.
-|Free to store up to 2 GB in any Serverless cluster in your account, then $0.10 USD per GB.
+|Free to store up to 2 GiB in any Serverless cluster in your account, then $0.10 USD per GiB.
 
 |xref:dedicated-cluster.adoc[Dedicated]
 |Dedicated clusters give you fine-grained control over the hardware and resources available to your cluster. It's your responsibility to scale Dedicated clusters when you need more resources.

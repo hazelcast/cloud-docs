@@ -21,7 +21,7 @@ include::partial$cluster-data.adoc[]
 
 === Provisioned Memory
 
-Hazelcast charges you a fixed amount, depending on how much memory capacity is reserved for your cluster. If your cluster has 10 GB capacity but you do not use all that memory, you are still charged for the full 10 GB because this amount of memory was reserved for your use.
+Hazelcast charges you a fixed amount, depending on how much memory capacity is reserved for your cluster. If your cluster has 10 GiB capacity but you do not use all that memory, you are still charged for the full 10 GiB because this amount of memory was reserved for your use.
 
 These examples show the cost per month of three clusters that each have a different memory capacity and uptime:
 
@@ -30,17 +30,17 @@ These examples show the cost per month of three clusters that each have a differ
 |Cluster|Memory|Total uptime per month|Cost
 
 |1
-|10 GB
+|10 GiB
 |10 hours
 |10 X 10 X $0.10 = $10.00
 
 |2
-|1 GB
+|1 GiB
 |100 hours
 |1 X 100 X $0.10 = $10.00
 
 |3
-|3 GB
+|3 GiB
 |50 hours
 |3 X 50 X $0.10 = $15.00
 
