@@ -11,7 +11,7 @@
 
 Despite its beta state, you can use <<cluster-types, production Serverless clusters>> for production applications.
 
-== Choosing a Cluster Type
+== Serverless Cluster Types
 
 // tag::types[]
 Serverless clusters come in two types:
