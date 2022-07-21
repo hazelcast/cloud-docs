@@ -146,7 +146,7 @@ After testing your cluster-side modules, you need to deploy them to production.
 
 For production, you can deploy your cluster-side modules either to a xref:create-serverless-cluster.adoc[production Serverless cluster] or a xref:create-dedicated-cluster.adoc[Dedicated cluster].
 
-NOTE: You need to provide payment details to run more than one {hazelcast-cloud} cluster.
+NOTE: You must provide a payment card to run more than one {hazelcast-cloud} cluster.
 
 == Tutorials
 

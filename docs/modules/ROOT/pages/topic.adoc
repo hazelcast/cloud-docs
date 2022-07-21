@@ -11,4 +11,4 @@ You can also use wildcards to associate your configuration with multiple topic n
 
 Global ordering enables all receivers to receive all messages from all sources with the same order.
 
-NOTE: The default value is false.
+The default value is false.

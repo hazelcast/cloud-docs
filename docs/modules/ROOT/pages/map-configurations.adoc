@@ -21,7 +21,7 @@ Time To Live (TTL) is the maximum time in seconds for each entry to stay in the 
 
 Maximum time in seconds for each entry to stay idle in the map. It limits the lifetime of the entries relative to the time of the last read or write access performed on them. The entries whose idle period exceeds this limit are expired and evicted automatically. An entry is idle if no `get`, `put` or `containsKey` is called on it. Valid values are integers between 0 and Integer.MAX_VALUE. Its default value is 0, which means infinite.
 
-NOTE: Both Time-to-Live and Max Idle Seconds may be used simultaneously on the map entries. In that case, the entry is considered expired if at least one of the policies marks it as expired.
+Both Time-to-Live and Max Idle Seconds can be used simultaneously on the map entries. In that case, the entry is considered expired if at least one of the policies marks it as expired.
 
 == Eviction Policy
 

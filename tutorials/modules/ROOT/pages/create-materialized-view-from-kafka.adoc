@@ -53,7 +53,7 @@ image:confluent-cloud-breadcrumbs.png[Breadcrumbs that display the cluster name]
 
 To allow Hazelcast to access the `trades` topic that you created in your Confluent Cloud Kafka cluster, you need to create a mapping to it.
 
-. Sign into the [.console]*link:{page-cloud-console}[{hazelcast-cloud} console]* and select your cluster.
+. Sign into the link:{page-cloud-console}[{hazelcast-cloud} console] and select your cluster.
 
 . Go to *Management Center* > *SQL Browser*.
 

@@ -25,8 +25,6 @@ This chart shows the number of clients that are connected to your cluster.
 
 Below the Cluster Metrics, you see the *Map Metrics* where the charts specific to maps are displayed. You can select the map that you want to monitor from the drop down just under the Map Metrics heading. 
 
-NOTE: If you are not connected to the cluster via a client and have not created a map, the Map Metrics part will be empty.
-
 In the *Map Metrics* part of the Cluster Details page, you can see the charts described in the below sections.
 
 === Map Used Memory Chart

@@ -23,13 +23,13 @@ Development cluster::
 To create a development cluster, do the following:
 
 // tag::development[]
-. Sign into the [.console]*link:{page-cloud-console}[{hazelcast-cloud} console]*.
+. Sign into the link:{page-cloud-console}[{hazelcast-cloud} console].
 . Click *Plans* in the left navigation.
 . Click *Create cluster* in the *Serverless* tab.
 . Click *Create Development Cluster*.
 . Select a region.
 +
-NOTE: For best performance, use a region that's closest to your client application or data stores. The closer your clients and data are to the cluster, the lower the network latency.
+TIP: For best performance, use a region that's closest to your client application or data stores. The closer your clients and data are to the cluster, the lower the network latency.
 
 . Give your cluster a memorable name. You cannot change your cluster name after it has been created.
 
@@ -43,7 +43,7 @@ Production cluster::
 To create a production cluster, do the following:
 
 // tag::production[]
-. Sign into the [.console]*link:{page-cloud-console}[{hazelcast-cloud} console]*.
+. Sign into the link:{page-cloud-console}[{hazelcast-cloud} console].
 . Click *Plans* in the left navigation.
 . Click *Create cluster* in the *Serverless* tab.
 . Click *Create Production Cluster*
