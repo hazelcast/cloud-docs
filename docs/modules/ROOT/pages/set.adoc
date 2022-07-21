@@ -14,7 +14,7 @@ You can also use wildcards to associate your configuration with multiple set nam
 
 You can set a maximum number of entries for the set you are creating with setting this value. This value can be any integer between 0 Integer.MAX_VALUE. 
 
-NOTE: If you set this value to zero, no capacity constraint will be applied.
+If you set this value to zero, no capacity constraint will be applied.
 
 == Backup Count
 

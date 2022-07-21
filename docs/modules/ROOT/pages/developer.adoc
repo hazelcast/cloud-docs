@@ -11,7 +11,7 @@ To manage API keys for a team's cluster, you must have either an xref:create-acc
 // tag::create[]
 To create a new set of API credentials, do the following:
 
-. Sign into the [.console]*link:{page-cloud-console}[{hazelcast-cloud} console]*.
+. Sign into the link:{page-cloud-console}[{hazelcast-cloud} console].
 . Click the *Account* icon in the bottom left corner.
 . Click *Developer*.
 . Click *Generate new API Key*.

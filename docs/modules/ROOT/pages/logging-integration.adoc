@@ -19,7 +19,7 @@ You need the following:
 
 To set up logging integration, do the following:
 
-. Sign into the [.console]*link:{page-cloud-console}[{hazelcast-cloud} console]* and select your cluster.
+. Sign into the link:{page-cloud-console}[{hazelcast-cloud} console] and select your cluster.
 
 . Go to  *Manage* > *Settings* > *Logging*.
 

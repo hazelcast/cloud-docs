@@ -3,7 +3,7 @@
 
 {description}
 
-. Sign into the [.console]*link:{page-cloud-console}[{hazelcast-cloud} console]*.
+. Sign into the link:{page-cloud-console}[{hazelcast-cloud} console].
 . Click the *Account* icon in the bottom left corner.
 . Click *Billing & Payments*.
 

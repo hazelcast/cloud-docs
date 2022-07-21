@@ -12,7 +12,7 @@ You cannot stop a Dedicated cluster if it's hosted on Google Cloud Platform (GCP
 
 Stopping your cluster can help minimize your costs during development because you are only charged for running clusters.
 
-. Sign into the [.console]*link:{page-cloud-console}[{hazelcast-cloud} console]* and select your cluster.
+. Sign into the link:{page-cloud-console}[{hazelcast-cloud} console] and select your cluster.
 . Click *Stop*.
 
 If you're using a production Serverless cluster or a Dedicated cluster, {hazelcast-cloud} saves your cluster data so that you can resume the cluster at a later time.
@@ -27,5 +27,5 @@ If you're using a development Serverless cluster, all cluster data is lost after
 
 == Resuming a Cluster
 
-. Sign into the [.console]*link:{page-cloud-console}[{hazelcast-cloud} console]* and select your cluster.
+. Sign into the link:{page-cloud-console}[{hazelcast-cloud} console] and select your cluster.
 . Click *Resume*.

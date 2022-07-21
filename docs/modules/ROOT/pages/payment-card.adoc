@@ -5,7 +5,7 @@
 
 Hazelcast uses a third-party to store payment details and process payments. Payment details are not stored in Hazelcast.
 
-. Sign into the [.console]*link:{page-cloud-console}[{hazelcast-cloud} console]*.
+. Sign into the link:{page-cloud-console}[{hazelcast-cloud} console].
 . Click the *Account* icon in the bottom left corner.
 . Click *Payment Methods*.
 . Complete the form by filling in your payment details.

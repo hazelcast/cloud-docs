@@ -4,7 +4,7 @@
 
 {description}
 
-. Sign into the [.console]*link:{page-cloud-console}[{hazelcast-cloud} console]* and select your cluster.
+. Sign into the link:{page-cloud-console}[{hazelcast-cloud} console] and select your cluster.
 
 . In *Cluster Details*, click *Download Logs* to download a ZIP file that contains all logs of members in your cluster.
 
