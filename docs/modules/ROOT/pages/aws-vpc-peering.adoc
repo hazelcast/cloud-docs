@@ -28,7 +28,7 @@ This option provides the easiest way of creating an AWS VPC Peering with your En
 +
 These parameters will be used in order to create a peering connection from your side with {hazelcast-cloud} CLI.
 +
-NOTE: For information about setting environment variables in AWS, see the link:{url-aws-cli}[AWS CLI documentation].
+For information about setting environment variables in AWS, see the link:{url-aws-cli}[AWS CLI documentation].
 
 === Creating a Peering Connection
 

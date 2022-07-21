@@ -20,7 +20,7 @@ If you give your {hazelcast-cloud} cluster too few resources, your cluster may f
 
 To request a Dedicated cluster, do the following:
 
-. Sign into the [.console]*link:{page-cloud-console}[{hazelcast-cloud} console]*.
+. Sign into the link:{page-cloud-console}[{hazelcast-cloud} console].
 . Go to *Plans* > *Dedicated* in the left navigation.
 . Complete the form and click *Get in touch*.
 

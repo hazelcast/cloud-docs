@@ -47,7 +47,7 @@ Before you can configure the MapStore, you need to deploy it by packaging your c
 
 To use a MapStore, it must be configured for a specific map in {hazelcast-cloud}. When a map is configured with a MapStore, Hazelcast plugs the MapStore implementation into the lifecycle of the map so that the MapStore is triggered when certain map operations are invoked.
 
-. Sign into the [.console]*link:{page-cloud-console}[{hazelcast-cloud} console]* and select your cluster.
+. Sign into the link:{page-cloud-console}[{hazelcast-cloud} console] and select your cluster.
 . Go to *Data Structure Config* > *Add New Configuration*.
 . Configure the map.
 . In the bottom left corner, select *Enable MapStore*.

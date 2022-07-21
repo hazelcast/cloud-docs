@@ -7,7 +7,7 @@ NOTE: Serverless clusters for teams do not include the free 2 GiB storage.
 
 == Creating a Team
 
-. Sign into the [.console]*link:{page-cloud-console}[{hazelcast-cloud} console]*.
+. Sign into the link:{page-cloud-console}[{hazelcast-cloud} console].
 
 . Click the *Account* icon in the bottom left corner.
 
