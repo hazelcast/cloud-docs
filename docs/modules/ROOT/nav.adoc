@@ -4,7 +4,7 @@
 ** xref:dedicated-cluster.adoc[]
 ** xref:architecture.adoc[]
 * xref:get-started.adoc[Hello World]
-* xref:tutorials.adoc[Build a Sample App]
+* xref:tutorials.adoc[Tutorials]
 * xref:support.adoc[Support]
 * xref:release-notes.adoc[Release Notes]
 
@@ -21,7 +21,7 @@
 * xref:tools.adoc[Developer Tools]
 
 .Manage Accounts
-* xref:create-account.adoc[Create]
+* xref:create-account.adoc[Create an Account]
 * xref:multi-factor-authentication.adoc[Multi-Factor Authentication]
 * xref:teams-and-users.adoc[Teams and Users]
 * xref:developer.adoc[API keys]
@@ -46,7 +46,7 @@
 * xref:scale-up-down.adoc[Scale]
 * xref:hazelcast-version.adoc[Upgrade]
 * xref:backup-and-restore.adoc[Backup and Restore]
-* xref:wan-replication.adoc[Replicate]
+* xref:wan-replication.adoc[Replicate Data]
 * xref:monitor-clusters.adoc[Monitor]
 ** xref:charts-and-stats.adoc[Dashboard]
 ** xref:management-center.adoc[Management Center]
