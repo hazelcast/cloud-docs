@@ -152,4 +152,4 @@ NOTE: You must provide a payment card to run more than one {hazelcast-cloud} clu
 
 Get hands-on with cluster-side modules by following a tutorial:
 
-- xref:tutorials.adoc[]
+- xref:tutorials:write-through-cache-serverless-mapstore.adoc[]
