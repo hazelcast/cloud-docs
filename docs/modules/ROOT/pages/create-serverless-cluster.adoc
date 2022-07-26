@@ -5,13 +5,11 @@
 
 {description}
 
-include::serverless-cluster.adoc[tag=development]
-
-include::serverless-cluster.adoc[tag=production]
+== Before you Begin
 
 You need a xref:create-account.adoc[{hazelcast-cloud} account].
 
-To create more than one cluster, you must add a xref:payment-card.adoc[payment card] to your account.
+To create more than one cluster, you must add a xref:payment-methods.adoc[payment card] to your account.
 
 == Using the {hazelcast-cloud} Console
 
@@ -23,13 +21,13 @@ Development cluster::
 To create a development cluster, do the following:
 
 // tag::development[]
-. Sign into the [.console]*link:{page-cloud-console}[{hazelcast-cloud} console]*.
+. Sign into the link:{page-cloud-console}[{hazelcast-cloud} console].
 . Click *Plans* in the left navigation.
 . Click *Create cluster* in the *Serverless* tab.
 . Click *Create Development Cluster*.
 . Select a region.
 +
-NOTE: For best performance, use a region that's closest to your client application or data stores. The closer your clients and data are to the cluster, the lower the network latency.
+TIP: For best performance, use a region that's closest to your client application or data stores. The closer your clients and data are to the cluster, the lower the network latency.
 
 . Give your cluster a memorable name. You cannot change your cluster name after it has been created.
 
@@ -43,7 +41,7 @@ Production cluster::
 To create a production cluster, do the following:
 
 // tag::production[]
-. Sign into the [.console]*link:{page-cloud-console}[{hazelcast-cloud} console]*.
+. Sign into the link:{page-cloud-console}[{hazelcast-cloud} console].
 . Click *Plans* in the left navigation.
 . Click *Create cluster* in the *Serverless* tab.
 . Click *Create Production Cluster*
@@ -65,11 +63,7 @@ Development and production clusters are stopped when both of these conditions ar
 - You don't have a payment method set up for your {hazelcast-cloud} account.
 ====
 
-xref:payment-card.adoc[].
-
-xref:connect-to-cluster.adoc[].
-
-xref:payment-card.adoc[].
+== Next Steps
 
 Try the xref:get-started.adoc[hello world tutorial].
 

@@ -19,8 +19,8 @@ If you're using a Dedicated cluster, you need to xref:authorize-connections.adoc
 
 Your cluster comes with a downloadable client that's preconfigured to connect to your cluster.
 
-. Sign into the [.console]*link:{page-cloud-console}[{hazelcast-cloud} console]*.
-. Click *Connect your Application*.
+. Sign into the link:{page-cloud-console}[{hazelcast-cloud} console].
+. Click *Connect Client*.
 . Select a client from the dropdown.
 . Follow the on-screen instructions.
 
@@ -38,7 +38,7 @@ include::partial$get-connection-creds.adoc[]
 
 In Management Center, you can open a SQL shell in your cluster and submit SQL queries directly from your web browser.
 
-. Sign into the [.console]*link:{page-cloud-console}[{hazelcast-cloud} console]* and select your cluster.
+. Sign into the link:{page-cloud-console}[{hazelcast-cloud} console] and select your cluster.
 
 . Click *Management Center*.
 

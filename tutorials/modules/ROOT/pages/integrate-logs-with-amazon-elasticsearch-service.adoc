@@ -1,12 +1,18 @@
 = Send Logs of Dedicated Clusters to Amazon OpenSearch
 :description: Set up a remote logging solution using Amazon OpenSearch Service. In this tutorial, you'll set up an Amazon OpenSearch domain and configure your {hazelcast-cloud} cluster to automatically send log files to it. You'll also learn how to view these logs in Kibana.
 :page-dedicated: true
+:page-layout: tutorial
+:page-product: cloud
+:page-categories: Logging
+:page-est-time: 20 mins
+:page-dedicated: true
 :url-github-elasticsearch: https://github.com/elastic/elasticsearch
 :url-amazon-opensearch: https://aws.amazon.com/opensearch-service
 :url-aws-signup: https://portal.aws.amazon.com/billing/signup 
 :url-aws-console: https://us-west-2.console.aws.amazon.com/es/home
 :url-aws-managed-policy: https://docs.aws.amazon.com/opensearch-service/latest/developerguide/ac-managed.html 
 :url-aws-iam-user: https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_create.html
+:page-aliases: cloud:shipping-logs-to-amazon-elasticsearch-service.adoc
 
 {description}
 
@@ -57,7 +63,7 @@ Configure your Dedicated cluster to send log files to the OpenSearch domain.
 
 You'll need the master user credentials and domain endpoint that you created when you <<configure-opensearch-domain, configured OpenSearch>>.
 
-. Sign into the [.console]*link:{page-cloud-console}[{hazelcast-cloud} console]* and select the cluster that want to integrate with OpenSearch.
+. Sign into the link:{page-cloud-console}[{hazelcast-cloud} console] and select the cluster that want to integrate with OpenSearch.
 . Select *Manage Cluster* > *Settings* > *Logging*.
 . From the *Logging Technology* list, select *Elastic Stack (ELK)*.
 . In the *Username* and *Password* fields, enter your master user credentials.
@@ -79,7 +85,7 @@ You'll need the master user credentials and Kibana URL that you created when you
 ====
 To create log data for viewing, check for the following:
 
-* Your {hazelcast-cloud} cluster is running 
+* Your {hazelcast-cloud} cluster is running.
 * A client is writing data to the cluster.
 ====
 
@@ -111,8 +117,8 @@ In this tutorial, you learned how to do the following:
 
 Use these resources to continue learning:
 
-- xref:connect-to-cluster.adoc[].
+- xref:cloud:ROOT:connect-to-cluster.adoc[].
 
-- xref:aws-vpc-peering.adoc[].
+- xref:cloud:ROOT:aws-vpc-peering.adoc[].
 
-- xref:aws-private-link.adoc[].
+- xref:cloud:ROOT:aws-private-link.adoc[].

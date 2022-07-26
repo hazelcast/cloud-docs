@@ -22,7 +22,7 @@ This option provides the easiest way of creating GCP VPC Peering with your Dedic
 
 . Set the `GOOGLE_APPLICATION_CREDENTIALS` environment variable to the path of your Google Cloud credentials file. 
 +
-NOTE: You can check further details about these credentials in the link:{url-google-cloud-authentication}[Google Cloud documentation].
+You can check further details about these credentials in the link:{url-google-cloud-authentication}[Google Cloud documentation].
 
 === Creating a Peering Connection
 

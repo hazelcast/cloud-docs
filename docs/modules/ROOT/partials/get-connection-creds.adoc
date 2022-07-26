@@ -1,8 +1,8 @@
 To connect your own client to the cluster, you need your cluster's connection credentials.
 
-. Sign into the [.console]*link:{page-cloud-console}[{hazelcast-cloud} console]* and select your cluster.
+. Sign into the link:{page-cloud-console}[{hazelcast-cloud} console] and select your cluster.
 
-. Go to *Connect your Application* > *Advanced Setup*:
+. Go to *Connect Client* > *Advanced Setup*:
 +
 [cols="1a,2a"]
 |===
@@ -22,4 +22,4 @@ To connect your own client to the cluster, you need your cluster's connection cr
 // end::tls[]
 |===
 +
-NOTE: The TLS credentials are necessary only if your cluster has TLS enabled. You can find out if your cluster has TLS enabled in the *Cluster Details* section of your dashboard.
+The TLS credentials are necessary only if your cluster has TLS enabled. You can find out if your cluster has TLS enabled in the *Cluster Details* section of your dashboard.

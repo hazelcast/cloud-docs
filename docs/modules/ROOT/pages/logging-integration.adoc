@@ -19,9 +19,9 @@ You need the following:
 
 To set up logging integration, do the following:
 
-. Sign into the [.console]*link:{page-cloud-console}[{hazelcast-cloud} console]* and select your cluster.
+. Sign into the link:{page-cloud-console}[{hazelcast-cloud} console] and select your cluster.
 
-. Go to  *Manage Cluster* > *Settings* > *Logging*.
+. Go to  *Manage* > *Settings* > *Logging*.
 
 . Select your log management system from the *Logging Technology* dropdown menu and provide the access parameters.
 
@@ -33,4 +33,4 @@ You should now start receiving cluster logs in your log management system.
 
 Try a tutorial:
 
-- xref:tutorials:shipping-logs-to-amazon-elasticsearch-service.adoc[Set up a logging integration with Amazon OpenSearch].
+- xref:tutorials:integrate-logs-with-amazon-elasticsearch-service.adoc[].

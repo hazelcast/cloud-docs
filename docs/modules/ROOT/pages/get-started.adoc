@@ -11,7 +11,7 @@ You need the following:
 - A xref:create-account.adoc[{hazelcast-cloud} account].
 - Access to a command prompt such as Terminal for Mac or Powershell for Windows.
 
-== Step 1. Start a Serverless Development Cluster
+== Step 1. Start a Development Serverless Cluster
 
 include::serverless-cluster.adoc[tag=development]
 To create a development cluster, do the following:
@@ -29,9 +29,9 @@ Java::
 --
 . Make sure that you have Java 8-17 installed and the `JAVA_HOME` environment variable is set to the location of your JRE.
 
-. Sign into the [.console]*link:{page-cloud-console}[{hazelcast-cloud} console]*.
+. Sign into the link:{page-cloud-console}[{hazelcast-cloud} console].
 
-. Click *Connect your Application*.
+. Click *Connect Client*.
 
 . Go to the *Java* tab and download the ZIP file.
 
@@ -52,7 +52,7 @@ When you see `Connection Successful!` in the output, the application is finished
 mvnw.cmd clean compile exec:java@client-with-ssl
 ```
 
-. In the {hazelcast-cloud} console, go to *Manage Cluster* > *Management Center* and click *SQL Browser* in the top toolbar.
+. In the {hazelcast-cloud} console, go to *Management Center* and click *SQL Browser* in the top toolbar.
 
 . Continue to the <<step-3, next step>> to query your sample data in the SQL browser.
 
@@ -75,7 +75,7 @@ npm run client_with_ssl
 +
 When you see `Connection Successful!` in the output, the application is finished.
 
-. In the {hazelcast-cloud} console, go to *Manage Cluster* > *Management Center* and click *SQL Browser* in the top toolbar.
+. In the {hazelcast-cloud} console, go to *Management Center* and click *SQL Browser* in the top toolbar.
 
 . Continue to the <<step-3, next step>> to query your sample data in the SQL browser.
 
@@ -98,7 +98,7 @@ pip install -r requirements.txt && python client_with_ssl.py
 +
 When you see `Connection Successful!` in the output, the application is finished.
 
-. In the {hazelcast-cloud} console, go to *Manage Cluster* > *Management Center* and click *SQL Browser* in the top toolbar.
+. In the {hazelcast-cloud} console, go to *Management Center* and click *SQL Browser* in the top toolbar.
 
 . Continue to the <<step-3, next step>> to query your sample data in the SQL browser.
 
@@ -120,7 +120,7 @@ dotnet run --project ClientWithSsl
 +
 When you see `Connection Successful!` in the output, the application is finished.
 
-. In the {hazelcast-cloud} console, go to *Manage Cluster* > *Management Center* and click *SQL Browser* in the top toolbar.
+. In the {hazelcast-cloud} console, go to *Management Center* and click *SQL Browser* in the top toolbar.
 
 . Continue to the <<step-3, next step>> to query your sample data in the SQL browser.
 
@@ -142,7 +142,7 @@ go mod tidy && go run client_with_ssl.go
 +
 When you see `Connection Successful!` in the output, the application is finished.
 
-. In the {hazelcast-cloud} console, go to *Manage Cluster* > *Management Center* and click *SQL Browser* in the top toolbar.
+. In the {hazelcast-cloud} console, go to *Management Center* and click *SQL Browser* in the top toolbar.
 
 . Continue to the <<step-3, next step>> to query your sample data in the SQL browser.
 
@@ -182,7 +182,7 @@ If the link:https://wiki.osdev.org/Target_Triplet[target triplet] doesn't match 
 The location of the compiled binary may change according to configuration and system defaults.
 
 
-. In the {hazelcast-cloud} console, go to *Manage Cluster* > *Management Center* and click *SQL Browser* in the top toolbar.
+. In the {hazelcast-cloud} console, go to *Management Center* and click *SQL Browser* in the top toolbar.
 
 . Continue to the <<step-3, next step>> to query your sample data in the SQL browser.
 
@@ -229,9 +229,9 @@ hz-cli -V
 +
 You should see your installed version of the CLI client.
 
-. Sign into the [.console]*link:{page-cloud-console}[{hazelcast-cloud} console]*.
+. Sign into the link:{page-cloud-console}[{hazelcast-cloud} console].
 
-. Click *Connect your Application*.
+. Click *Connect Client*.
 
 . Go to the *SQL* tab and download the ZIP file.
 

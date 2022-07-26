@@ -12,7 +12,7 @@ You need a xref:create-account.adoc[{hazelcast-cloud} account].
 Consider the following requirements:
 
 - *Resources:* You need to know how many resources your application needs.
-- *Cost:* You are charged by the number of GB that you choose to give the cluster at creation. Even if you don't use all available storage, you are charged the same.
+- *Cost:* You are charged by the number of GiB that you choose to give the cluster at creation. Even if you don't use all available storage, you are charged the same.
 
 If you give your {hazelcast-cloud} cluster too few resources, your cluster may fail under heavy load and cause an outage. If you give your cluster too many resources, you waste money on servers that are just sitting idle.
 
@@ -20,7 +20,7 @@ If you give your {hazelcast-cloud} cluster too few resources, your cluster may f
 
 To request a Dedicated cluster, do the following:
 
-. Sign into the [.console]*link:{page-cloud-console}[{hazelcast-cloud} console]*.
+. Sign into the link:{page-cloud-console}[{hazelcast-cloud} console].
 . Go to *Plans* > *Dedicated* in the left navigation.
 . Complete the form and click *Get in touch*.
 
