@@ -5,13 +5,11 @@
 
 {description}
 
-include::serverless-cluster.adoc[tag=development]
-
-include::serverless-cluster.adoc[tag=production]
+== Before you Begin
 
 You need a xref:create-account.adoc[{hazelcast-cloud} account].
 
-To create more than one cluster, you must add a xref:payment-card.adoc[payment card] to your account.
+To create more than one cluster, you must add a xref:payment-methods.adoc[payment card] to your account.
 
 == Using the {hazelcast-cloud} Console
 
@@ -65,11 +63,7 @@ Development and production clusters are stopped when both of these conditions ar
 - You don't have a payment method set up for your {hazelcast-cloud} account.
 ====
 
-xref:payment-card.adoc[].
-
-xref:connect-to-cluster.adoc[].
-
-xref:payment-card.adoc[].
+== Next Steps
 
 Try the xref:get-started.adoc[hello world tutorial].
 

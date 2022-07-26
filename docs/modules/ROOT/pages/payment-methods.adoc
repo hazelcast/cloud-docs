@@ -1,11 +1,7 @@
-= Payments and Billing
-:description: To create more than one Serverless cluster or give more resources to your Dedicated cluster, you must provide a payment method in your account.
+= Billing and Payments
+:description: From the {hazelcast-cloud} console, you can add payment cards to your account to pay for usage as well as view how much you've spent.
 
 {description}
-
-- xref:payment-card.adoc[]
-
-- xref:billing.adoc[]
 
 For xref:serverless-cluster.adoc[Serverless clusters], you must provide a payment card to do the following:
 
@@ -13,5 +9,45 @@ For xref:serverless-cluster.adoc[Serverless clusters], you must provide a paymen
 - Use more than 2 GiB of memory in a Serverless cluster.
 
 For xref:dedicated-cluster.adoc[Dedicated clusters], you must provide a payment card to pay for new clusters or cluster usage for existing clusters.
+
+== Adding a Payment Card
+
+To set up automatic payments for your usage, add a payment card to your account.
+
+NOTE: Hazelcast uses a third-party to store payment details and process payments. Payment details are not stored in Hazelcast.
+
+. Sign into the link:{page-cloud-console}[{hazelcast-cloud} console].
+. Click the *Account* icon in the bottom left corner.
+. Click *Billing & Payments*.
+. Click *Add Payment Method*.
+. Complete the form by filling in your payment details.
+
+You can add only one payment card to your account. To change the payment card, update it.
+
+== Updating a Payment Card
+
+. Sign into the link:{page-cloud-console}[{hazelcast-cloud} console].
+. Click the *Account* icon in the bottom left corner.
+. Click *Billing & Payments*.
+. Click *Update Payment Method*.
+. Complete the form by filling in your payment details.
+
+Your updated card is charged for future payments.
+
+== Removing a Card from your Account
+
+You cannot remove payment cards from your account, using the {hazelcast-cloud} console.
+
+To remove a payment card from your account, contact us at mailto:support@hazelcast.com[].
+
+== Viewing Bills
+
+You can see how much you've spent in the current month as well as previous invoices.
+
+. Sign into the link:{page-cloud-console}[{hazelcast-cloud} console].
+. Click the *Account* icon in the bottom left corner.
+. Click *Billing & Payments*.
+
+You can see how much you've spent in the current month as well as how much you spent in previous months.
 
 
