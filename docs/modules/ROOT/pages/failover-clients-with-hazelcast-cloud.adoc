@@ -1,110 +1,170 @@
-= Failover Clients with {hazelcast-cloud}
-:description: In this tutorial, you'll configure the Hazelcast Java client to connect to a failover cluster when it cannot connect to the primary cluster.
+= Configuring a Failover Client
+:url-code-sample-client-failover: https://github.com/hazelcast/hazelcast-cloud-code-samples/tree/master/client-failover
+:description: In this tutorial, you'll update the code in a Java client to automatically connect to a secondary, failover cluster if it cannot connect its original, primary cluster. You'll also run a simple test to make sure that your configuration is correct and then adjust it to include exception handling.
 
 {description}
 
 == Context
 
-Failover is an important feature of systems that rely on near-constant availability. Hazelcast fault tolerance automatically and transparently redirects your connection from one cluster that has problems to the second running cluster.
+Failover is an important feature of systems that rely on near-constant availability. In Hazelcast, a failover client automatically redirects your connection from one cluster that has problems to a second running cluster.
 
-== Before you Begin
+Consider using a failover client with xref:wan-replication.adoc[WAN replication] as part of your disaster recovery strategy.
 
-You need to xref:create-serverless-cluster.adoc[create more than one cluster] on {hazelcast-cloud}.
+[[step-1-setup]]
+== Step 1. Cluster and Client Setup
 
-== Create the Client Configuration
+Create two Serverless clusters that you'll use as your primary and secondary clusters and then download and connect sample Java clients to them.
 
-You need to create a client configuration for each cluster you want to use.
-In order to do that you should have the following:
+. xref:create-serverless-cluster.adoc[Create the Serverless cluster] that you'll use as your primary cluster. When the cluster is ready to use, setup details for the Java client are displayed.
+. Follow the instructions in *Java Client Quick Setup* to download, extract, and connect the preconfigured Java client to your primary cluster.
+. xref:create-serverless-cluster.adoc[Create the Serverless cluster] that you'll use as your secondary cluster. 
+. This time when the setup details for the Java client are displayed, from the *Java Client Advanced Setup* section record the following connection details:
 
-- Cluster Name
-- Discovery Token
-- Password
+** *Cluster name*
+** *Discovery token*
+** *Keystore and truststore password*.
 
-You can get this information from a popup that opens when you click the *Connect your Application*.
+. Repeat step 2 for your secondary cluster. You have two running clusters with connected Java clients.
+. Now that you have checked that both Java clients can connect, shut them down. Either press kbd:[Ctrl+C] or type `exit` at the console. 
 
-As soon as you successfully collect needed information for every cluster, you are ready to create your client configurations as shown below for different Hazelcast Versions.
+[[step-2-configuration]]
+== Step 2. Configure a Failover Client
 
-[tabs] 
-====
-Hazelcast 4.x:: 
-+ 
---
+To create a failover client, update the configuration and code of the Java client for your primary cluster. 
+
+Start by adding the keystore files from the Java client of your secondary cluster.
+
+.	Go to the directory where you extracted the Java client for your secondary cluster and then navigate to `src/main/resources`.
+. Rename the `client.keystore` and `client.trustore` files so they don't overwrite the files in your primary cluster keystore. 
+. Copy both files over to the `src/main/resources` directory of your primary cluster.
+
+Update the code in the Java client (`ClientwithSsl.java`) of your primary cluster to include a failover class and the connection details for your secondary cluster. You'll need the connection details that you recorded in <<step-1-setup, Step 1>>.
+
+. Go to the directory where you extracted the Java client for your primary cluster and then navigate to `src/main/java/com/hazelcast/cloud`.
+. Open the Java client (`ClientwithSsl.java`) and make the following updates. An link:{url-code-sample-client-failover}[example failover client] is also available for download.
+
+.ClientwithSsl.java
 [source,java]
 ----
-public static ClientConfig getPrimaryClientConfig() {
-  String discoveryToken = "CLUSTER_DISCOVERY_TOKEN";
-  String clusterName = "YOUR_CLUSTER_NAME";
 
-  ClientNetworkConfig clientNetworkConfig = new ClientNetworkConfig();
-  ClientCloudConfig cloudConfig = new ClientCloudConfig()
-    .setDiscoveryToken(discoveryToken)
-    .setEnabled(true);
-  clientNetworkConfig.setCloudConfig(cloudConfig);
+import com.hazelcast.client.config.ClientFailoverConfig; // <1>
 
-  ClientConfig config = new ClientConfig();
-  config.setNetworkConfig(clientNetworkConfig);
-  config.setClusterName(clusterName);
-  config.setProperty(STATISTICS_ENABLED.getName(), "true");
-  return config;
+public class ClientWithSsl {
+
+  public static void main(String[] args) throws Exception {
+
+    ClientFailoverConfig clientFailoverConfig = new ClientFailoverConfig(); // <2>
+    clientFailoverConfig.addClientConfig(getPrimaryClientConfig());
+    clientFailoverConfig.addClientConfig(getSecondaryClientConfig());
+
+    HazelcastInstance client = HazelcastClient.newHazelcastFailoverClient(clientFailoverConfig);
+
+    System.out.println("Connection Successful!");
+  }
+  private static ClientConfig getPrimaryClientConfig() throws Exception { // <3>
+    ClassLoader classLoader = ClientWithSsl.class.getClassLoader(); 
+    Properties props = new Properties(); 
+    props.setProperty("javax.net.ssl.keyStore", classLoader.getResource("client.keystore").toURI().getPath());
+    props.setProperty("javax.net.ssl.keyStorePassword", "YOUR_KEYSTORE_PASSWORD");
+    props.setProperty("javax.net.ssl.trustStore",
+       classLoader.getResource("client.truststore").toURI().getPath());
+    props.setProperty("javax.net.ssl.trustStorePassword", "YOUR_KEYSTORE_PASSWORD");
+    ClientConfig config = new ClientConfig();
+    config.getNetworkConfig().setRedoOperation(true);
+    config.getNetworkConfig().setSSLConfig(new SSLConfig().setEnabled(true).setProperties(props));
+    config.getNetworkConfig().getCloudConfig()
+       .setDiscoveryToken("YOUR_DISCOVERY_TOKEN")
+       .setEnabled(true);
+    config.setProperty("hazelcast.client.cloud.url", "YOUR_CLIENT_URL");
+    config.setClusterName("YOUR_CLUSTER_ID");
+    config.getConnectionStrategyConfig().getConnectionRetryConfig().setClusterConnectTimeoutMillis(10000); // <4> 
+    return config;
+    }
+
+  private static ClientConfig getSecondaryClientConfig() throws Exception {
+    ClassLoader classLoader = ClientWithSsl.class.getClassLoader(); // <5>
+    Properties props = new Properties();
+    props.setProperty("javax.net.ssl.keyStore", classLoader.getResource("client2.keystore").toURI().getPath()); // <6>
+    props.setProperty("javax.net.ssl.keyStorePassword", "YOUR_KEYSTORE_PASSWORD"); <7>
+    props.setProperty("javax.net.ssl.trustStore",
+       classLoader.getResource("client2.truststore").toURI().getPath()); // <6>
+    props.setProperty("javax.net.ssl.trustStorePassword", "YOUR_KEYSTORE_PASSWORD");
+    ClientConfig config = new ClientConfig();
+    config.getNetworkConfig().setRedoOperation(true);
+    config.getNetworkConfig().setSSLConfig(new SSLConfig().setEnabled(true).setProperties(props));
+    config.getNetworkConfig().getCloudConfig()
+       .setDiscoveryToken("YOUR_DISCOVERY_TOKEN")
+       .setEnabled(true);
+    config.setProperty("hazelcast.client.cloud.url", "YOUR_CLIENT_URL");
+    config.setClusterName("YOUR_CLUSTER_ID");
+    config.getConnectionStrategyConfig().getConnectionRetryConfig().setClusterConnectTimeoutMillis(10000);
+    return config;
+    }
 }
+
 ----
---
-Hazelcast 3.x:: 
-+ 
---
+<1> Add import for the `ClientFailoverConfig` class.
+<2> Create a `ClientFailoverConfig` object.
+<3> Add a private static method for `getPrimaryClientConfig`. This creates the config object for the primary cluster. 
+<4> For testing purposes, set `setClusterConnectTimeoutMillis` to `10000` milliseconds or ten seconds. This reduces the timeout period before the failover client tries to connect to an alternative cluster.   
+<5> Add a private static method for `getSecondaryClientConfig` with connection details for your secondary cluster.
+<6> Rename keystore files from the Java client of your secondary cluster. 
+
+[[step-3-testing]]
+== Step 3. Verify Failover
+
+Check that your failover client automatically connects to the secondary cluster when your primary cluster is stopped.
+
+. Make sure that both Serverless clusters are running.
+. Connect your failover client to the primary cluster in the same way as you did in <<step-1-setup, Step 1>>.
+. Stop your primary cluster. From the dashboard of your primary cluster, select *Manage Cluster* > *Stop*. On the console, you'll see the following messages in order:
+
+** `CLIENT_DISCONNECTED`
+** `CLIENT_CONNECTED`
+** `CLIENT_CHANGED_CLUSTER`  
+
+If you're using the `mapExample` in the sample Java client, your client stops. This is expected because write operations are not retryable when a cluster is disconnected. The client has sent a put request to the cluster but has not received a response, and so the result of the request is unknown. To prevent the client from overwriting more recent write operations, this write operation is stopped and an exception is thrown. 
+
+[[step-4-exception-handling]]
+== Step 4. Exception Handling
+
+Update the `mapExample` in your failover client to trap the exception that is thrown when the primary cluster disconnects.
+
+. Add the following try-catch block to your failover client.
+
+.mapExample
 [source,java]
+
 ----
-public static ClientConfig getPrimaryClientConfig() {
-  String clusterName = "YOUR_CLUSTER_NAME";
-  String clusterPassword = "YOUR_CLUSTER_PASSWORD";
-  String discoveryToken = "YOUR_CLUSTER_DISCOVERY_TOKEN";
+while (true) {
+  int randomKey = random.nextInt(100_000);
+  try {
+      map.put("key-" + randomKey, "value-" + randomKey);
+  } catch (Exception e) {
+      // Captures exception from the disconnected client
+      System.out.println("Exception (" + e.getClass().getCanonicalName() + ") " + e.getMessage());
+  }
 
-  ClientConfig config = new ClientConfig();
-  config.setGroupConfig(new GroupConfig(clusterName, clusterPassword));
-
-  ClientNetworkConfig clientNetworkConfig = new ClientNetworkConfig();
-  ClientCloudConfig cloudConfig = new ClientCloudConfig()
-    .setDiscoveryToken(discoveryToken)
-    .setEnabled(true);
-  clientNetworkConfig.setCloudConfig(cloudConfig);
-
-  config.setNetworkConfig(clientNetworkConfig);
-  config.setProperty("hazelcast.client.statistics.enabled", "true");
-  return config;
-}
-----
---
-==== 
-
-== Create Failover Client
-
-You can create a failover client by providing every client configuration for different {hazelcast-cloud} clusters.
-
-[source,java]
-----
-ClientFailoverConfig clientFailoverConfig = new ClientFailoverConfig();
-//First Cluster
-clientFailoverConfig.addClientConfig(getPrimaryClientConfig());
-//Second Cluster
-clientFailoverConfig.addClientConfig(getSecondaryClientConfig());
-//Other Clusters Optionally
-.
-.
-.
-  
-HazelcastInstance client = HazelcastClient
-  .newHazelcastFailoverClient(clientFailoverConfig);
 ----
 
-== Check Failover In Action
+[start=2]
+. Repeat <<step-3-testing, Step 3>>. This time the client continues to write map entries after it connects to the secondary cluster.
 
-When you complete all the steps above, you are ready to go and try failover with {hazelcast-cloud}.
-You can easily simulate a failover by stopping or deleting one of the clusters that you provided in the failover configuration. After you do that, you will see that your client will try to connect the other clusters one by. You will see a message on your console that says it will use a different cluster.
+== Summary
 
-```
-INFO: hz.client_1 [my-primary-cluster] [4.0] Unable to connect to any address from the cluster with name: my-primary-cluster. The following addresses were tried: [[-], [-]]
+In this tutorial, you learned how to do the following:
 
-INFO: hz.client_1 [my-primary-cluster] [4.0] Resetting local state of the client, because of a cluster change 
+* Collect all the resources that you need to create a failover client for a primary and secondary cluster.
+* Create a failover client based on the sample Java client.
+* Test failover.
+* Add exception handling for operations that are not retryable.
 
-INFO: hz.client_1 [my-secondary-cluster] [4.0] Trying to connect to next cluster: my-secondary-cluster
-```
+== Learn More
+
+Use these resources to continue learning:
+
+- xref:wan-replication.adoc[].
+
+- xref:charts-and-stats.adoc[].
+
+- xref:management-center.adoc[].
