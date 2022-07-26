@@ -2,7 +2,6 @@
 * xref:overview.adoc[]
 ** xref:serverless-cluster.adoc[]
 ** xref:dedicated-cluster.adoc[]
-** xref:architecture.adoc[]
 * xref:get-started.adoc[Hello World]
 * xref:tutorials.adoc[Tutorials]
 * xref:support.adoc[Support]
@@ -48,10 +47,6 @@
 * xref:monitor-clusters.adoc[Monitor]
 ** xref:charts-and-stats.adoc[Dashboard]
 ** xref:management-center.adoc[Management Center]
-
-.Tutorials
-* xref:shipping-logs-to-amazon-elasticsearch-service.adoc[Sending Logs to Amazon OpenSearch]
-* xref:failover-clients-with-hazelcast-cloud.adoc[]
 
 .Migrate
 * xref:migrate-to-cloud.adoc[Embedded to Cloud]
