@@ -1,6 +1,10 @@
 = Configuring a Failover Client
 :url-code-sample-client-failover: https://github.com/hazelcast/hazelcast-cloud-code-samples/tree/master/client-failover
 :description: In this tutorial, you'll update the code in a Java client to automatically connect to a secondary, failover cluster if it cannot connect its original, primary cluster. You'll also run a simple test to make sure that your configuration is correct and then adjust it to include exception handling.
+:page-layout: tutorial
+:page-product: cloud
+:page-categories: Manage Clusters
+:page-est-time: 30 mins
 
 {description}
 
@@ -8,16 +12,16 @@
 
 Failover is an important feature of systems that rely on near-constant availability. In Hazelcast, a failover client automatically redirects your connection from one cluster that has problems to a second running cluster.
 
-Consider using a failover client with xref:wan-replication.adoc[WAN replication] as part of your disaster recovery strategy.
+Consider using a failover client with xref:cloud:ROOT:wan-replication.adoc[WAN replication] as part of your disaster recovery strategy.
 
 [[step-1-setup]]
 == Step 1. Cluster and Client Setup
 
 Create two Serverless clusters that you'll use as your primary and secondary clusters and then download and connect sample Java clients to them.
 
-. xref:create-serverless-cluster.adoc[Create the Serverless cluster] that you'll use as your primary cluster. When the cluster is ready to use, setup details for the Java client are displayed.
+. xref:cloud:ROOT:create-serverless-cluster.adoc[Create the Serverless cluster] that you'll use as your primary cluster. When the cluster is ready to use, setup details for the Java client are displayed.
 . Follow the instructions in *Java Client Quick Setup* to download, extract, and connect the preconfigured Java client to your primary cluster.
-. xref:create-serverless-cluster.adoc[Create the Serverless cluster] that you'll use as your secondary cluster. 
+. xref:cloud:ROOT:create-serverless-cluster.adoc[Create the Serverless cluster] that you'll use as your secondary cluster. 
 . This time when the setup details for the Java client are displayed, from the *Java Client Advanced Setup* section record the following connection details:
 
 ** *Cluster name*
@@ -163,8 +167,8 @@ In this tutorial, you learned how to do the following:
 
 Use these resources to continue learning:
 
-- xref:wan-replication.adoc[].
+- xref:cloud:ROOT:wan-replication.adoc[].
 
-- xref:charts-and-stats.adoc[].
+- xref:cloud:ROOT:charts-and-stats.adoc[].
 
-- xref:management-center.adoc[].
+- xref:cloud:ROOT:management-center.adoc[].
