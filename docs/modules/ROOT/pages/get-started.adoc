@@ -1,5 +1,5 @@
 = {hazelcast-cloud} Hello World
-:description: In this tutorial, you'll learn to connect a client to a {hazelcast-cloud} cluster and query data with SQL.
+:description: In this tutorial, you'll learn to connect a client to a {hazelcast-cloud} cluster and query data in it, using SQL.
 :page-aliases: cpp-client.adoc, getting-started.adoc, go-client.adoc, net-client.adoc, nodejs-client.adoc, python-client.adoc, sql.adoc
 
 {description}
@@ -20,7 +20,11 @@ include::create-serverless-cluster.adoc[tag=development]
 
 == Step 2. Run a Sample Client
 
-To connect to your Serverless cluster, you need a Hazelcast client. {hazelcast-cloud} comes with sample clients that are preconfigured to connect to your cluster and add some sample data to it. Choose a client and follow the instructions.
+To connect to your Serverless cluster, you need a Hazelcast client. {hazelcast-cloud} comes with sample clients that are preconfigured to connect to your cluster and add some sample data to a map.
+
+TIP: A map is an in-memory, key/value data structure that is often used as a cache.
+
+Choose a client and follow the instructions.
 
 [tabs] 
 ====
@@ -54,6 +58,18 @@ mvnw.cmd clean compile exec:java@client-with-ssl
 
 . In the {hazelcast-cloud} console, go to *Management Center* and click *SQL Browser* in the top toolbar.
 
+. Enter the following in the SQL Browser to create a mapping to the `cities` map. The sample client that you just executed created this map for you and filled it with data.
++
+[source,sql]
+----
+CREATE OR REPLACE MAPPING cities (
+__key VARCHAR, 
+country VARCHAR, 
+city VARCHAR,
+population INT)
+type IMap OPTIONS('keyFormat'='varchar', 'valueFormat'='json-flat');
+----
+
 . Continue to the <<step-3, next step>> to query your sample data in the SQL browser.
 
 TIP: Take a moment, to read the code in the link:https://github.com/hazelcast/hazelcast-cloud-java-sample-client/blob/5.1/src/main/java/com/hazelcast/cloud/ClientWithSsl.java[`ClientWithSSL.java`] file to understand how the client connected. The client comes with some other examples that are commented out. To try those examples, you can uncomment them and run the application again.
@@ -76,6 +92,18 @@ npm run client_with_ssl
 When you see `Connection Successful!` in the output, the application is finished.
 
 . In the {hazelcast-cloud} console, go to *Management Center* and click *SQL Browser* in the top toolbar.
+
+. Enter the following in the SQL Browser to create a mapping to the `cities` map. The sample client that you just executed created this map for you and filled it with data.
++
+[source,sql]
+----
+CREATE OR REPLACE MAPPING cities (
+__key VARCHAR, 
+country VARCHAR, 
+city VARCHAR,
+population INT)
+type IMap OPTIONS('keyFormat'='varchar', 'valueFormat'='json-flat');
+----
 
 . Continue to the <<step-3, next step>> to query your sample data in the SQL browser.
 
@@ -100,6 +128,18 @@ When you see `Connection Successful!` in the output, the application is finished
 
 . In the {hazelcast-cloud} console, go to *Management Center* and click *SQL Browser* in the top toolbar.
 
+. Enter the following in the SQL Browser to create a mapping to the `cities` map. The sample client that you just executed created this map for you and filled it with data.
++
+[source,sql]
+----
+CREATE OR REPLACE MAPPING cities (
+__key VARCHAR, 
+country VARCHAR, 
+city VARCHAR,
+population INT)
+type IMap OPTIONS('keyFormat'='varchar', 'valueFormat'='json-flat');
+----
+
 . Continue to the <<step-3, next step>> to query your sample data in the SQL browser.
 
 TIP: Take a moment, to read the code in the link:https://github.com/hazelcast/hazelcast-cloud-python-sample-client/blob/5.1/client_with_ssl.py[`client_with_ssl.py`] file to understand how the client connected. The client comes with some other examples that are commented out. To try those examples, you can uncomment them and run the application again.
@@ -122,6 +162,18 @@ When you see `Connection Successful!` in the output, the application is finished
 
 . In the {hazelcast-cloud} console, go to *Management Center* and click *SQL Browser* in the top toolbar.
 
+. Enter the following in the SQL Browser to create a mapping to the `cities` map. The sample client that you just executed created this map for you and filled it with data.
++
+[source,sql]
+----
+CREATE OR REPLACE MAPPING cities (
+__key VARCHAR, 
+country VARCHAR, 
+city VARCHAR,
+population INT)
+type IMap OPTIONS('keyFormat'='varchar', 'valueFormat'='json-flat');
+----
+
 . Continue to the <<step-3, next step>> to query your sample data in the SQL browser.
 
 TIP: Take a moment, to read the code in the link:https://github.com/hazelcast/hazelcast-cloud-csharp-sample-client/blob/5.1/ClientWithSsl/Program.cs[`program.cs`] file to understand how the client connected. The client comes with some other examples that are commented out. To try those examples, you can uncomment them and run the application again.
@@ -143,6 +195,18 @@ go mod tidy && go run client_with_ssl.go
 When you see `Connection Successful!` in the output, the application is finished.
 
 . In the {hazelcast-cloud} console, go to *Management Center* and click *SQL Browser* in the top toolbar.
+
+. Enter the following in the SQL Browser to create a mapping to the `cities` map. The sample client that you just executed created this map for you and filled it with data.
++
+[source,sql]
+----
+CREATE OR REPLACE MAPPING cities (
+__key VARCHAR, 
+country VARCHAR, 
+city VARCHAR,
+population INT)
+type IMap OPTIONS('keyFormat'='varchar', 'valueFormat'='json-flat');
+----
 
 . Continue to the <<step-3, next step>> to query your sample data in the SQL browser.
 
@@ -183,6 +247,18 @@ The location of the compiled binary may change according to configuration and sy
 
 
 . In the {hazelcast-cloud} console, go to *Management Center* and click *SQL Browser* in the top toolbar.
+
+. Enter the following in the SQL Browser to create a mapping to the `cities` map. The sample client that you just executed created this map for you and filled it with data.
++
+[source,sql]
+----
+CREATE OR REPLACE MAPPING cities (
+__key VARCHAR, 
+country VARCHAR, 
+city VARCHAR,
+population INT)
+type IMap OPTIONS('keyFormat'='varchar', 'valueFormat'='json-flat');
+----
 
 . Continue to the <<step-3, next step>> to query your sample data in the SQL browser.
 
@@ -257,26 +333,27 @@ sql>
 +
 [source,sql]
 ----
-CREATE MAPPING cities (
-__key INT, 
-countries VARCHAR, 
-cities VARCHAR)
-type IMap OPTIONS('keyFormat'='int', 'valueFormat'='json-flat');
+CREATE OR REPLACE MAPPING cities (
+__key VARCHAR, 
+country VARCHAR, 
+city VARCHAR,
+population INT)
+type IMap OPTIONS('keyFormat'='varchar', 'valueFormat'='json-flat');
 ----
 
-. Add some countries and their capital cities to the map.
+. Add some data to the map.
 +
 [source,sql]
 ----
 INSERT INTO cities VALUES
-(1, 'United Kingdom','London'),
-(2, 'United Kingdom','Manchester'),
-(3, 'United States', 'New York'),
-(4, 'United States', 'Los Angeles'),
-(5, 'Turkey', 'Ankara'),
-(6, 'Turkey', 'Istanbul'),
-(7, 'Brazil', 'Sao Paulo'),
-(8, 'Brazil', 'Rio de Janeiro');
+(1, 'United Kingdom','London', 9_540_576),
+(2, 'United Kingdom','Manchester', 2_770_434),
+(3, 'United States', 'New York', 19_223_191),
+(4, 'United States', 'Los Angeles', 3_985_520),
+(5, 'Turkey', 'Ankara', 5_309_690),
+(6, 'Turkey', 'Istanbul', 15_636_243),
+(7, 'Brazil', 'Sao Paulo', 22_429_800),
+(8, 'Brazil', 'Rio de Janeiro', 13_634_274);
 ----
 --
 ====
@@ -284,7 +361,7 @@ INSERT INTO cities VALUES
 [[step-3]]
 == Step 3. Query the Cache with SQL
 
-Now that you have some data in your cluster, you can query it, using SQL.
+Now that you have some data in your cluster, you can query it, using SQL. If you're using the CLI, enter the following  queries in the SQL prompt. If you're using a client library, enter the following queries in the SQL Browser.
 
 . Use the `SELECT` statement to query all data in the map.
 +
@@ -293,33 +370,42 @@ Now that you have some data in your cluster, you can query it, using SQL.
 SELECT * FROM cities;
 ----
 +
-[source,shell]
-----
-+------------+--------------------+--------------------+
-|       __key|countries           |cities              |
-+------------+--------------------+--------------------+
-|           2|United Kingdom      |Manchester          |
-|           6|Turkey              |Ankara              |
-|           1|United Kingdom      |London              |
-|           7|Brazil              |Sao Paulo           |
-|           8|Brazil              |Rio de Janeiro      |
-|           5|Turkey              |Istanbul            |
-|           4|United States       |Los Angeles         |
-|           3|United States       |New York            |
-+------------+--------------------+--------------------+
+```
++------------+--------------------+--------------------+--------------+
+|       __key|country             |city                |population    |
++------------+--------------------+--------------------+--------------+
+|           2|United Kingdom      |Manchester          |2770434       |
+|           6|Turkey              |Ankara              |5309690       |
+|           1|United Kingdom      |London              |9540576       |
+|           7|Brazil              |Sao Paulo           |22429800      |
+|           8|Brazil              |Rio de Janeiro      |13634274      |
+|           5|Turkey              |Istanbul            |15636243      |
+|           4|United States       |Los Angeles         |3985520       |
+|           3|United States       |New York            |19223191      |
++------------+--------------------+--------------------+--------------+
+```
++
+The results are in a random order because the data is distributed across the {hazelcast-cloud} cluster. Whenever a cluster member has the result, it returns it to the client.
 
+. Order the results by the key.
++
+[source,sql]
 ----
+SELECT * FROM cities ORDER BY __key;
+----
++
+Now you see the results start from key 1 and end with key 8.
 
 . Query only the countries by filtering on the `countries` column.
 +
 [source,sql]
 ----
-SELECT countries FROM cities;
+SELECT country FROM cities;
 ----
 +
 ```
 +--------------------+
-|countries           |
+|country             |
 +--------------------+
 |United Kingdom      |
 |Turkey              |
@@ -336,12 +422,12 @@ SELECT countries FROM cities;
 +
 [source,sql]
 ----
-SELECT cities FROM cities;
+SELECT city FROM cities;
 ----
 +
 ```
 +--------------------+
-|cities              |
+|city                |
 +--------------------+
 |Manchester          |
 |Ankara              |
@@ -358,14 +444,14 @@ SELECT cities FROM cities;
 +
 [source,sql]
 ----
-SELECT cities AS City, countries AS Country
+SELECT city, country
 FROM cities
-ORDER BY cities;
+ORDER BY city;
 ----
 +
 ```
 +--------------------+--------------------+
-|City                |Country             |
+|city                |country             |
 +--------------------+--------------------+
 |Ankara              |Turkey              |
 |Istanbul            |Turkey              |
@@ -383,12 +469,12 @@ ORDER BY cities;
 +
 [source,sql]
 ----
-SELECT countries FROM cities WHERE LENGTH(cities) >= 11;
+SELECT country FROM cities WHERE LENGTH(city) >= 11;
 ----
 +
 ```
 +--------------------+
-|countries           |
+|country             |
 +--------------------+
 |Brazil              |
 |United States       |
@@ -399,9 +485,9 @@ SELECT countries FROM cities WHERE LENGTH(cities) >= 11;
 +
 [source,sql]
 ----
-SELECT cities AS City
+SELECT city
 FROM cities
-WHERE cities LIKE 'L%' AND LENGTH(cities) > 6;
+WHERE city LIKE 'L%' AND LENGTH(city) > 6;
 ----
 +
 ```
@@ -412,182 +498,9 @@ WHERE cities LIKE 'L%' AND LENGTH(cities) > 6;
 +--------------------+
 ```
 
-== Step 4. Create a New Dataset with SQL
-
-As well as querying data in your cluster, you can use SQL to add new data to the cluster. When you have two datasets, you can use more advanced SQL queries to combine results from both datasets.
-
-. Configure the map connector to create a new map table called `population2020` in your cluster.
-+
-[source,sql]
-----
-CREATE MAPPING population2020 (
-__key INT,
-cities VARCHAR,
-population INT)
-TYPE IMap OPTIONS ('keyFormat'='int', 'valueFormat'='json-flat');
-----
-
-. Add the 2020 populations of the following cities.
-+
-[source,sql]
-----
-INSERT INTO population2020 VALUES
-(1, 'London', 9304016),
-(2, 'Manchester', 2730076),
-(3, 'New York', 8622357),
-(4, 'Los Angeles', 4085014),
-(5, 'Sao Paulo', 12396372),
-(6, 'Rio de Janeiro', 6775561),
-(7, 'Istanbul', 14804116),
-(8, 'Ankara', 3517182);
-----
-+
-```
-+--------------------+
-|countries           |
-+--------------------+
-|Brazil              |
-|United States       |
-+--------------------+
-```
-
-. Merge results from the `cities` and `population2020` tables so you can see which countries had the most populated captial cities in 2020.
-+
-[source,sql]
----- 
-SELECT cities.countries AS country, cities.cities AS city, population2020.population AS population
-FROM cities
-JOIN population2020
-ON cities.cities = population2020.cities;
-----
-+
-```
-+--------------------+--------------------+------------+
-|country             |city                |  population|
-+--------------------+--------------------+------------+
-|United Kingdom      |Manchester          |     2730076|
-|Turkey              |Ankara              |     3517182|
-|United Kingdom      |London              |     9304016|
-|Brazil              |Sao Paulo           |    12396372|
-|Brazil              |Rio de Janeiro      |     6775561|
-|Turkey              |Istanbul            |    14804116|
-|United States       |Los Angeles         |     4085014|
-|United States       |New York            |     8622357|
-+--------------------+--------------------+------------+
-```
-
-. Order the results by population, largest first.
-+
-[source,sql]
-----
-SELECT cities.countries AS country, cities.cities AS city, population2020.population AS population
-FROM cities
-JOIN population2020
-ON cities.cities = population2020.cities
-ORDER BY population2020.population DESC;
-----
-+
-```
-+--------------------+--------------------+------------+
-|country             |city                |  population|
-+--------------------+--------------------+------------+
-|Turkey              |Istanbul            |    14804116|
-|Brazil              |Sao Paulo           |    12396372|
-|United Kingdom      |London              |     9304016|
-|United States       |New York            |     8622357|
-|Brazil              |Rio de Janeiro      |     6775561|
-|United States       |Los Angeles         |     4085014|
-|Turkey              |Ankara              |     3517182|
-|United Kingdom      |Manchester          |     2730076|
-+--------------------+--------------------+------------+
-```
-
-. Find the total population of all the cities in 2020.
-+
-[source,sql]
-----
-SELECT SUM(population2020.population) AS total_population
-FROM population2020;
-----
-+  
-You should see the following:
-+
-```
-+--------------------+
-|    total_population|
-+--------------------+
-|            62234694|
-+--------------------+
-
-```
-
-. Filter for cities that had a population of more than 5,000,000 in 2020.
-+
-[source,sql]
-----
-SELECT population2020.cities AS large_cities
-FROM population2020
-WHERE population2020.population > 5000000;
-----
-+
-```
-+--------------------+
-|large_cities        |
-+--------------------+
-|New York            |
-|Rio de Janeiro      |
-|London              |
-|Istanbul            |
-|Sao Paulo           |
-+--------------------+
-```
-
-. Display the names of countries and the sum of the city populations. Order by population in ascending order.
-+
-[source,sql]
-----
-SELECT cities.countries AS country, SUM(population2020.population) AS total_population
-FROM cities
-JOIN population2020
-ON cities.cities = population2020.cities
-GROUP BY cities.countries
-ORDER by sum(population2020.population);
-----
-+
-```
-+--------------------+--------------------+
-|country             |    total_population|
-+--------------------+--------------------+
-|United Kingdom      |            12034092|
-|United States       |            12707371|
-|Turkey              |            18321298|
-|Brazil              |            19171933|
-+--------------------+--------------------+
-```
-
-. Display the names of countries and the sum of the city populations where the sum is > 15000000.
-+
-[source,sql]
-----
-SELECT cities.countries AS country, sum(population2020.population) AS total_population
-FROM cities
-JOIN population2020
-ON cities.cities = population2020.cities
-GROUP BY cities.countries HAVING SUM(population2020.population) > 15000000;
-----
-+
-```
-+--------------------+--------------------+
-|country             |    total_population|
-+--------------------+--------------------+
-|Turkey              |            18321298|
-|Brazil              |            19171933|
-+--------------------+--------------------+
-```
-
 == Summary
 
-You learned how to connect to a cluster and use SQL to query data in the cluster and add new data to it.
+You learned how to connect to a cluster and use SQL to query data in the cluster.
 
 == Next Steps
 
