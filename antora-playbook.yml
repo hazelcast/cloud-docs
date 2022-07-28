@@ -18,6 +18,10 @@ content:
   - url: https://github.com/hazelcast/hazelcast-cloud-maven-plugin
     branches: serverless-mvp-uat
     start_path: docs
+  - url: https://github.com/hazelcast/hazelcast-cloud-code-samples
+    branches: master
+    start_paths: client-failover/client-failover-sample-hazelcast5/docs
+
 ui: 
   bundle:
     url: https://github.com/hazelcast/hazelcast-docs-ui/releases/download/v3.1-beta/ui-bundle.zip #../hazelcast-docs-ui/build/ui-bundle.zip
