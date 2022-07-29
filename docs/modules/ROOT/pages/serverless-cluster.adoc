@@ -1,9 +1,11 @@
 = Serverless Clusters
-:description: {hazelcast-cloud} Serverless clusters dynamically scale, depending on the amount of resources you use. Serverless offers a simple pricing model based on storage consumption with the option of creating a cluster for free, without a payment card.
+:description: {hazelcast-cloud} Serverless is a fully-managed cloud service that offers a simple pay-as-you-go pricing model for clusters. Serverless clusters scale dynamically to provide the resources that your application needs, and you pay for the resources that your application consumes. You can start by creating a cluster for free, without a payment card.
 :toc-levels: 3
 :page-serverless: true
 
 {description}
+
+Serverless means that Hazelcast manages the cloud infrastructure for you. Each Serverless cluster is an independent deployment of Hazelcast running in isolation on a Kubernetes container. This design guarantees resource isolation (memory and CPU), and prevents resource stealing, as well as providing isolated network access.
 
 == Beta Release
 
