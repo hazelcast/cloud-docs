@@ -12,7 +12,7 @@ You can design a Hazelcast topology that meets your specific compliance and serv
 
 
 - Service design
-** Specify the memory capacity and the number of nodes for all provisioned clusters. You decide when to scale your clusters if they need more resources.  
+** Specify the memory capacity and the number of members for all provisioned clusters. You decide when to scale your clusters if they need more resources.  
 ** Deploy clusters to specific regions or cloud providers as part of your organization's cloud strategy.  To reduce network latency, you can deploy clusters in regions that are closest to the location of your users' locations.
 ** Benefit from Hazelcast support and predictable monthly billing.
 
