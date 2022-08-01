@@ -1,11 +1,11 @@
 = Serverless Clusters
-:description: {hazelcast-cloud} Serverless is a fully-managed cloud service that offers a simple pay-as-you-go pricing model for clusters. Serverless clusters scale dynamically to provide the resources that your application needs, and you pay for the resources that your application consumes. You can start by creating a cluster for free, without a payment card.
+:description: {hazelcast-cloud} Serverless is a managed cloud service that offers a pay-as-you-go pricing model. Serverless clusters scale to provide the resources that your application needs. You pay only for the resources that your application consumes.
 :toc-levels: 3
 :page-serverless: true
 
 {description}
 
-Serverless means that Hazelcast manages the cloud infrastructure for you. Each Serverless cluster is an independent deployment of Hazelcast running in isolation on a Kubernetes container. This design guarantees resource isolation (memory and CPU), and prevents resource stealing, as well as providing isolated network access.
+Serverless means that Hazelcast manages the cloud infrastructure for you. Each Serverless cluster is an independent deployment of Hazelcast in a Kubernetes container. This design guarantees resource isolation, prevents resource stealing, and provides isolated network access.
 
 == Beta Release
 
@@ -48,7 +48,7 @@ NOTE: You cannot convert a development cluster to a production cluster.
 Production Serverless clusters are for applications that have already been tested and are ready to be deployed in real-world scenarios.
 // end::production[]
 
-Production Serverless clusters automatically scale up and down, depending on the amount of resources you use.
+Production Serverless clusters automatically scale out and in, depending on the amount of resources you use.
 
 Your cluster data is persisted on disk so that you can pause and resume your clusters when you want, without losing your data. Cluster data is persisted in the following scenarios:
 
@@ -66,7 +66,7 @@ include::partial$cluster-data.adoc[]
 
 By default, data in production Serverless clusters is backed up on one other Hazelcast member in the cluster.
 
-Although you can configure some xref:data-structures.adoc[data structures] with a custom backup count, the effective backup count is limited by the number of members in your cluster. For example, if you configure a map with 5 backups, but your cluster has only 2 members, you will have one effective backup. You cannot scale up Serverless clusters. If you add enough data to the cluster so that it automatically scales up the number of members, more backups will be added, up to your configured count of 5.
+Although you can configure some xref:data-structures.adoc[data structures] with a custom backup count, the effective backup count is limited by the number of members in your cluster. For example, if you configure a map with 5 backups, but your cluster has only 2 members, you will have one effective backup. You cannot scale out Serverless clusters. If you add enough data to the cluster so that it automatically scales up the number of members, more backups will be added, up to your configured count of 5.
 
 == Restrictions on Free Serverless Clusters
 

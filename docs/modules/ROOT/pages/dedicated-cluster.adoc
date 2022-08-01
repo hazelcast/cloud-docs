@@ -1,21 +1,20 @@
 = Dedicated Clusters
-:description: {hazelcast-cloud} Dedicated is a fully-managed cloud service that allows you to maintain control over the hardware, resources, and deployment options that are available to your cluster. Dedicated means you get specific servers (cloud instances) all to yourself. 
+:description: {hazelcast-cloud} Dedicated is a managed cloud service that allows you to maintain control over the hardware, resources, and deployment options that are available to your cluster. Dedicated means you get specific servers (cloud instances) all to yourself. 
 :page-dedicated: true
 
 {description}
 
 You can design a Hazelcast topology that meets your specific compliance and service design needs.
 
-[discrete] 
-==== Data and Security Regulations
-- Deploy your clusters to specific regions to comply with data residency laws.
-- Benefit from strict container isolation for projects that require enhanced security. {hazelcast-cloud} Dedicated is SOC 2 and ISO 27001 compliant.
+- Data and security regulations
+** Deploy your clusters to specific regions to comply with data residency laws.
+** Benefit from strict container isolation for projects that require enhanced security. {hazelcast-cloud} Dedicated is SOC 2 and ISO 27001 compliant.
 
-[discrete] 
-==== Service Design
-- Specify the memory capacity and number of nodes for all provisioned clusters. You decide when to scale your clusters if they need more resources.  
-- Deploy clusters to specific regions or Cloud providers as part of your organization's Cloud strategy.  To reduce network latency, you can deploy clusters in regions that are closest to the location of your users.
-- Benefit from Hazelcast support and predictable monthly billing.
+
+- Service design
+** Specify the memory capacity and the number of nodes for all provisioned clusters. You decide when to scale your clusters if they need more resources.  
+** Deploy clusters to specific regions or cloud providers as part of your organization's cloud strategy.  To reduce network latency, you can deploy clusters in regions that are closest to the location of your users' locations.
+** Benefit from Hazelcast support and predictable monthly billing.
 
 Dedicated clusters are suitable for lightweight or production-critical applications where the workload is generally predictable.
 

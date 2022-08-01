@@ -319,7 +319,7 @@ Hazelcast version has been updated to 3.12.2.
 *New Features:*
 
 - IP Whitelisting: Introduced xref:ip-white-list.adoc[IP whitelisting] that allows you to restrict the clients that can connect to your cluster.
-- Autoscaling: Introduced xref:scale-up-down.adoc[automatic scaling] (up or down) of your cluster depending on the memory utilization.
+- Autoscaling: Introduced xref:scale-up-down.adoc[automatic scaling] (out or in) of your cluster depending on the memory utilization.
 
 *Enhancements:*
 
