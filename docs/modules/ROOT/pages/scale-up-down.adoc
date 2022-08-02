@@ -4,7 +4,7 @@
 
 {description}
 
-Dedicated clusters scale horizontally, which means that you can adjust the resources available to your application, such as memory, by adding members (scaling out) or removing members (scaling in). Each dedicated cluster is a network of a minimum of three instances or _members_, with a fixed set of resources allocated to each one.
+Dedicated clusters scale horizontally, which means that you can adjust the resources available to your application, such as memory, by adding members (scaling out) or removing members (scaling in). Each Dedicated cluster is a network of at least three instances or _members_, with a fixed set of resources allocated to each one.
 
 To scale a team's cluster, you must have either an xref:teams-and-users.adoc[admin or developer role].
 
