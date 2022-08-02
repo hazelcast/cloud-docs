@@ -16,7 +16,7 @@
 
 {description}
 
-link:{url-amazon-elasticsearch}[Amazon OpenSearch Service] is based on link:{url-github-elasticsearch}[Elasticsearch], and allows you to search, analyze and visualize your cluster logs using Kibana.
+link:{url-amazon-opensearch}[Amazon OpenSearch Service] is based on link:{url-github-elasticsearch}[Elasticsearch], and allows you to search, analyze and visualize your cluster logs using Kibana.
 
 [[set-up-opensearch-domain]]
 == Step 1. Set Up an Amazon OpenSearch Domain
