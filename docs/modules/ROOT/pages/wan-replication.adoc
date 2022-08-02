@@ -36,7 +36,7 @@ WAN replication supports the following use cases:
 
 == Before you Begin
 
-* You need two xref:create-serverless-cluster.adoc[Serverless clusters] or two xref:create-dedicated-cluster.adoc[Dedicated clusters]. You cannot synchronize data between one Serverless cluster and one Dedicated cluster.
+* You need two xref:create-serverless-cluster.adoc[Serverless clusters] or two xref:create-dedicated-cluster.adoc[Dedicated clusters]. You cannot replicate data between one Serverless cluster and one Dedicated cluster.
 
 +
 Make sure that each cluster is configured with the same settings. For example, if one cluster
