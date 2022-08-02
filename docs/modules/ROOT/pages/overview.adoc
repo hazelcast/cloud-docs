@@ -39,5 +39,5 @@ If you are a first-time user of {hazelcast-cloud}, see xref:get-started.adoc[].
 
 If you're ready to get started with a real use case, see xref:tutorials.adoc[].
 
-If you want to get an overview of the use cases and advantages of {hazelcast-viridian}, see the link:https://hazelcast.com/products/cloud/[Hazelcast website].
+If you want to get an overview of the use cases and advantages of {hazelcast-cloud}, see the link:https://hazelcast.com/products/cloud/[Hazelcast website].
 

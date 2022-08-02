@@ -94,4 +94,4 @@ If the name of your MapStore class is the different to the one that you want to 
 
 For sample projects that use a MapStore in {hazelcast-cloud}, see this link:{url-code-sample-mapstore}[GitHub repository].
 
-Or, follow a xref:tutorials:write-through-cache-serverless-mapstore.adoc[tutorial].
+Or, follow a xref:tutorials:ROOT:write-through-cache-serverless-mapstore.adoc[tutorial].

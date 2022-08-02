@@ -11,6 +11,8 @@ NOTE: Serverless clusters for teams do not include the free 2 GiB storage.
 
 . Click the *Account* icon in the bottom left corner.
 
+. Click *Teams & Users*.
+
 . Enter a team name and click *Create Team*.
 
 Now that you've created a team, you can invite users to it and assign them roles.
@@ -18,6 +20,12 @@ Now that you've created a team, you can invite users to it and assign them roles
 == Inviting Users to a Team
 
 If you've created one or more teams, you can invite users to them and assign those users a role.
+
+. Sign into the link:{page-cloud-console}[{hazelcast-cloud} console].
+
+. Click the *Account* icon in the bottom left corner.
+
+. Click *Teams & Users*.
 
 . Select an existing team from the dropdown.
 
@@ -29,9 +37,7 @@ The user will receive an email invitation. When the user accepts the invitation,
 
 == Viewing your Team's Clusters
 
-To see the teams that you are in and the role that you have in that team, click the *Account* icon in the bottom left corner and use the dropdown next to your name.
-
-Select a team to see only clusters that are owned by that team.
+To see the teams that you are in and the role that you have in that team, click the *Account* icon in the bottom left corner and use the dropdown next to your name. Select a team to see only clusters that are owned by that team.
 
 [[roles]]
 == Team Roles

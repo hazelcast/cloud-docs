@@ -15,7 +15,7 @@ To create a peering connection on a team cluster, you must have either an admin 
 
 == Using the {hazelcast-cloud} CLI
 
-This option provides the easiest way of creating an AWS VPC Peering with your Enterprise {hazelcast-cloud} cluster.
+This option provides the easiest way of creating an AWS VPC Peering with your {hazelcast-cloud} cluster.
 
 === Setting Up Your Environment
 
@@ -80,7 +80,7 @@ In order to create AWS VPC Peering, you need to do the following:
 
 === Collecting Properties
 
-You need to collect AWS VPC Peering properties for your Enterprise {hazelcast-cloud} cluster on AWS in order to create your side of the AWS VPC Peering connection. 
+You need to collect AWS VPC Peering properties for your {hazelcast-cloud} cluster on AWS in order to create your side of the AWS VPC Peering connection. 
 You can get these properties from the link:{page-url-cloud-api}[GraphQL API] or the link:{page-url-github-go-sdk}[Go SDK] as the following command.
 
 [tabs] 
