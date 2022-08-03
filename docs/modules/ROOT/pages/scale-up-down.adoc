@@ -1,20 +1,22 @@
 = Scaling a Dedicated Cluster
-:description: Scaling clusters is useful when you need to scale up for more memory or when you aren't using as much memory as you thought and want to scale down to save on the monthly costs. You can easily scale Dedicated clusters up or down, using a sliding scale that adds or removes cluster members.
+:description: Scaling clusters is useful when you need to increase available memory to handle higher than normal workloads. You can also control monthly costs by reducing memory when you expect lower loads. 
 :page-dedicated: true
 
 {description}
+
+Dedicated clusters scale horizontally, which means that you can adjust the resources available to your application, such as memory, by adding members (scaling out) or removing members (scaling in). Each Dedicated cluster is a network of at least three instances or _members_, with a fixed set of resources allocated to each one.
 
 To scale a team's cluster, you must have either an xref:teams-and-users.adoc[admin or developer role].
 
 == Before you Begin
 
-Calculate how much memory your cluster needs before scaling up or down. If your data structures have backups, include those in your calculations. For example, if a map has a backup count of 1 (default) and the size of its entries equal 5 MB, then the map's total data size is 10 MB (primary entries + backup entries).
+Calculate how much memory your cluster needs before scaling out or in. If your data structures have backups, include those in your calculations. For example, if a map has a backup count of 1 (default) and the size of its entries equal 5 MB, then the map's total data size is 10 MB (primary entries + backup entries).
 
 Scaling a cluster may take up to 8 or 10 minutes.
 
-== Scaling Up
+== Scaling Out
 
-When data in a cluster occupies 80% of all available memory, we send a warning email to the account or team owner. At this point, we recommend scaling up the cluster, which adds more members and therefore more resources such as memory. When you scale up a cluster, client applications do not experience any downtime. However, the cluster may temporarily experience lower throughput while members migrate their partitions.
+When data in a cluster occupies 80% of all available memory, we send a warning email to the account or team owner. At this point, we recommend scaling out the cluster, which adds more members and therefore more resources such as memory. When you scale out a cluster, client applications do not experience any downtime. However, the cluster may temporarily experience lower throughput while members migrate their partitions.
 
 . Sign into the link:{page-cloud-console}[{hazelcast-cloud} Console] and select your cluster.
 . Go to *Manage* > *Settings* > *Scale Up/Down*.
@@ -27,11 +29,11 @@ When data in a cluster occupies 80% of all available memory, we send a warning e
 
 Click on the *Update* button to apply your change.
 
-== Scaling Down
+== Scaling In
 
-If you're using fewer resources than you thought you would when you created the cluster, you can scale down the cluster.
+If you're using fewer resources than you thought you would when you created the cluster, you can scale in the cluster.
 
-WARNING: If you scale down to a size that's smaller than your actual data size, some of your data will be removed.
+WARNING: If you scale in to a size that's smaller than your actual data size, some of your data will be removed.
 
 . Sign into the link:{page-cloud-console}[{hazelcast-cloud} console] and select your cluster.
 . Go to *Manage* > *Settings* > *Scale Up/Down*.

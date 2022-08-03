@@ -15,7 +15,7 @@ In the *Cluster Metrics* part of the *Cluster Details* page, you can see the cha
 
 === Cluster Memory Chart
 
-This chart shows your cluster's memory capacity (`Cluster Max Memory`, the blue line) and the size of currently used memory (`Cluster Used Memory`, the orange line). As the orange line approaches the blue line, you should think about scaling up. Note that `Cluster Used Memory` is the total amount of memory used for both primary and backup entries. 
+This chart shows your cluster's memory capacity (`Cluster Max Memory`, the blue line) and the size of currently used memory (`Cluster Used Memory`, the orange line). As the orange line approaches the blue line, you should think about scaling out. Note that `Cluster Used Memory` is the total amount of memory used for both primary and backup entries. 
 
 === Client Count Chart
 
