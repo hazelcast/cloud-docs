@@ -2,37 +2,48 @@
 :url-cloud-cli-announcement: https://hazelcast.com/blog/announcing-hazelcast-cloud-cli/
 :url-cloud-sdk-announcement: https://hazelcast.com/blog/announcing-hazelcast-cloud-go-sdk/
 
+
+== August 5, 2022 - v3.11.0
+
+*New Features*
+
+- Sample client applications now include examples of real-time processing.
+
+*Fixes*
+
+- Multiple UI updates and fixes.
+
 == July 12, 2022 - v3.10.0
 
 *New Features*
 
-- The Hazelcast Cloud Maven Plugin is now publicly available in the central maven repository
+- The Hazelcast Cloud Maven Plugin is now publicly available in the central maven repository.
 
 *Fixes*
 
-- UI updates for customer billing and cluster management screens
-- Standard clusters no longer fail while autoscaling 
-- Clusters can now be restored from backups after autoscaling
+- UI updates for customer billing and cluster management screens.
+- Standard clusters no longer fail while autoscaling.
+- Clusters can now be restored from backups after autoscaling.
 
 == June 15, 2022 - v3.9.0
 
 *New Features*
 
-- The Hazelcast Cloud CLI now supports commands for working with custom classes in Enterprise clusters 
+- The Hazelcast Cloud CLI now supports commands for working with custom classes in Enterprise clusters .
 
 *Fixes*
 
-- Multiple improvements to WAN replication performance and stability 
-- Various UI updates for cluster management processes
-- Data in Enterprise clusters is no longer overwritten when the memory limit is reached 
-- .NET clients can now connect to clusters without an issue
+- Multiple improvements to WAN replication performance and stability.
+- Various UI updates for cluster management processes.
+- Data in Enterprise clusters is no longer overwritten when the memory limit is reached.
+- .NET clients can now connect to clusters without an issue.
 
 == Jun 01, 2022 - v3.8.0
 
 *Fixes*
 
-- Multiple UI updates and fixes
-- Standard clusters no longer fail to resume after being stopped 
+- Multiple UI updates and fixes.
+- Standard clusters no longer fail to resume after being stopped.
 
 == May 6, 2022 - v3.7.0
 
