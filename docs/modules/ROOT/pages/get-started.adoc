@@ -20,9 +20,7 @@ include::create-serverless-cluster.adoc[tag=development]
 
 == Step 2. Run a Sample Client
 
-To connect to your Serverless cluster, you need a Hazelcast client. {hazelcast-cloud} comes with sample clients that are preconfigured to connect to your cluster and add some sample data to a map.
-
-TIP: A map is an in-memory, key/value data structure that is often used as a cache.
+To connect to your Serverless cluster, you need a Hazelcast client. {hazelcast-cloud} comes with sample clients that are preconfigured to connect to your cluster and add some sample data to a map. A map is an in-memory, key/value data structure that is often used as a cache.
 
 Choose a client and follow the instructions.
 
