@@ -25,7 +25,7 @@ You need the following:
 
 - A basic understanding of link:https://hazelcast.com/glossary/kafka/[Kafka].
 
-== Step 1. Create a Free Confluent Cloud Kafka Cluster
+== Step {counter:cnt-step}. Create a Free Confluent Cloud Kafka Cluster
 
 . link:https://confluent.cloud/signup[Create a Confluent Cloud account] if you don't have one already.
 
@@ -49,7 +49,7 @@ image:confluent-cloud-breadcrumbs.png[Breadcrumbs that display the cluster name]
 
 . Copy the code in your configuration snippet from the top to `session.timeout.ms=45000`. You won't use the Schema Registry in this tutorial.
 
-== Step 2. Create a Mapping to the Confluent Cloud Cluster
+== Step {counter:cnt-step}. Create a Mapping to the Confluent Cloud Cluster
 
 To allow Hazelcast to access the `trades` topic that you created in your Confluent Cloud Kafka cluster, you need to create a mapping to it.
 
@@ -121,13 +121,17 @@ SELECT ticker, price_usd, amount
   WHERE price_usd * amount > 100;
 ----
 +
+.Result
+[%collapsible]
+====
 The result is an empty table. You don't see any results because, by default, Confluent Cloud consumers read messages, starting from the latest offset. The trades that you published already happened, and so they are not included.
-+
+
 ```
 +------------+----------------------+-------------------+
 |ticker      |           price_usd  |          amount   |
 +------------+----------------------+-------------------+
 ```
+====
 
 . Stop the streaming query by pressing kbd:[Ctrl + C] to close the connection to the SQL prompt.
 
@@ -171,18 +175,22 @@ SELECT ticker, price_usd, amount
   WHERE price_usd * amount > 100;
 ----
 +
+.Result
+[%collapsible]
+====
 Hazelcast executes the query and filters the results, using your previous trades:
-+
+
 ```
 +-----------------+----------------------+-------------------+
 |ticker           |       price_usd      |       amount      |
 +-----------------+----------------------+-------------------+
 |EORG             |                  14  |               20  |
 ```
+====
 
 . Stop the streaming query by pressing kbd:[Ctrl + C] to close the connection to the SQL prompt.
 
-== Step 3. Enrich the Data in the Kafka Messages
+== Step {counter:cnt-step}. Enrich the Data in the Kafka Messages
 
 To reduce network latency, Kafka messages are often small and contain minimal data. For example, the `trades` topic does not contain any information about the company that's associated with a given ticker. To get deeper insights from data in Kafka topics, you can join query results with contextual data.
 
@@ -219,8 +227,11 @@ JOIN companies
 ON companies.ticker = trades.ticker;
 ```
 +
+.Result
+[%collapsible]
+====
 Hazelcast is executing the streaming query.
-+
+
 ```
 +------------+-------------------------------+--------------+
 |ticker      |company                        |amount        |
@@ -228,11 +239,12 @@ Hazelcast is executing the streaming query.
 |SORG        |Example Startup Organization   |10            |
 |EORG        |Example Enterprise Organization|20            |
 ```
+====
 
 . Click *Stop Query*.
 
 
-== Step 4. Create a Materialized View
+== Step {counter:cnt-step}. Create a Materialized View
 
 You can set up an automated job to continuously run the streaming query and cache the results in a Hazelcast map.
 
@@ -274,8 +286,11 @@ A job will run indefinitely until it is explicitly canceled or the cluster is sh
 SHOW JOBS;
 ```
 +
+.Result
+[%collapsible]
+====
 A job called `ingest_trades` is running.
-+
+
 ```
 +--------------------+
 |name                |
@@ -283,6 +298,7 @@ A job called `ingest_trades` is running.
 |ingest_trades       |
 +--------------------+
 ```
+====
 
 . Query your materialized view to see that results have been added to it.
 +
@@ -290,8 +306,11 @@ A job called `ingest_trades` is running.
 SELECT * FROM trade_map;
 ```
 +
+.Result
+[%collapsible]
+====
 The query results are being stored in your map.
-+
+
 ```
 +---------+---------+---------------------------------+------------+
 |       id|ticker   |   company                       |      amount|
@@ -300,6 +319,7 @@ The query results are being stored in your map.
 |        1|SORG     |Example Startup Organization     |          10|
 +---------+---------+----------+----------------------+------------+
 ```
+====
 
 . Publish some more trades to the topic.
 +
@@ -318,7 +338,7 @@ Your materialized view will continue to be updated for each new trade that's add
 SELECT * FROM trade_map;
 ```
 
-== Step 5. Clean Up
+== Step {counter:cnt-step}. Clean Up
 
 Your running job is consuming resources in your cluster. When you don't need a job anymore, it's important to cancel it.
 
