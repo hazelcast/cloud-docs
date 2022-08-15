@@ -18,12 +18,8 @@ content:
     - spring-sample/docs
     - client-failover/client-failover-sample-hazelcast5/docs
     - mapstore/mapstore-sample-hazelcast5-mongodb/docs
-  - url: https://github.com/hazelcast/hazelcast-cloud-code-samples
-    branches: aws-tutorial
-    start_path: serverless-fraud-detection/docs
-  - url: https://github.com/hazelcast/hazelcast-cloud-code-samples
-    branches: standard-deviation
-    start_path: compute/standard-deviation/docs 
+    - serverless-fraud-detection/docs
+    - compute/standard-deviation/docs
   - url: https://github.com/hazelcast/hazelcast-cloud-maven-plugin
     branches: serverless-mvp-uat
     start_path: docs

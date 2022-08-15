@@ -14,8 +14,6 @@
 
 - You can use clients to connect to your cluster to request processing results, add data to storage, or query data.
 
-image:ROOT:serverless-app-server.svg[A Hazelcast client application communicating with a {hazelcast-cloud} cluster]
-
 == {hazelcast-cloud} Clusters
 
 {hazelcast-cloud} offers two flavors of clusters: Serverless and Dedicated.
