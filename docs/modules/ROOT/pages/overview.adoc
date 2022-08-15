@@ -14,16 +14,16 @@
 
 - You can use clients to connect to your cluster to request processing results, add data to storage, or query data.
 
-== {hazelcast-cloud} Clusters
+== {hazelcast-cloud} Editions
 
-{hazelcast-cloud} offers two flavors of clusters: Serverless and Dedicated.
+{hazelcast-cloud} offers two editions: Serverless and Dedicated.
 
 [cols="1a,2a,2a"]
 |===
-|Flavor|Description|Pricing
+|Edition|Description|Pricing
 
 |xref:serverless-cluster.adoc[Serverless (beta)]
-|Serverless clusters dynamically scale, depending on the amount of data you store.
+|Serverless clusters auto-scale, depending on the amount of data you store.
 |Free to store up to 2 GiB in any Serverless cluster in your account, then $0.10 USD per GiB.
 
 |xref:dedicated-cluster.adoc[Dedicated]
