@@ -1,0 +1,99 @@
+= Hazelcast Cloud CLI
+
+Hazelcast Cloud CLI is known as `hzcloud` is a command line tool to make actions on Hazelcast Cloud easily. Hazelcast Cloud offers the leading in-memory computing platform, Hazelcast IMDG, as a fully managed service that integrates with your existing virtual private cloud.
+
+== Installing `hzcloud`
+=== Using a Package Manager (Homebrew)
+
+[source,sh]
+----
+brew tap hazelcast/hz
+brew install hzcloud
+----
+=== Downloading a Release from GitHub
+Visit the https://github.com/hazelcast/hazelcast-cloud-cli/releases[Releases page] for the
+https://github.com/hazelcast/hazelcast-cloud-cli[`hzcloud` GitHub project], and find the version for your operating system and architecture. Then place it into your directory with name `hzcloud` or `hzcloud.exe` for Windows.
+
+**Linux**
+
+[source,sh]
+----
+wget https://github.com/hazelcast/hazelcast-cloud-cli/releases/latest/download/hzcloud-linux-amd64 -O /usr/local/bin/hzcloud && chmod +x /usr/local/bin/hzcloud
+----
+**Windows**
+
+[source,sh]
+----
+curl -o hzcloud.exe `
+  https://github.com/hazelcast/hazelcast-cloud-cli/releases/latest/download/hzcloud-windows-amd64
+----
+On Windows, in order to use `hzcloud` on everywhere you need to put `hzcloud.exe` into your PATH.
+
+**MacOS**
+
+[source,sh]
+----
+wget https://github.com/hazelcast/hazelcast-cloud-cli/releases/latest/download/hzcloud-darwin-amd64 -O /usr/local/bin/hzcloud && chmod +x /usr/local/bin/hzcloud
+----
+== Authentication with Hazelcast Cloud
+After a successful installation, in order to use, you need to authenticate with Hazelcast Cloud by providing access tokens, which can be created from `Developers` tab in https://cloud.hazelcast.com/settings/developer[Hazelcast Cloud]. You can check how to generate API Key and API Secret following the https://docs.cloud.hazelcast.com/docs/developer[Hazelcast Cloud Documentation].
+
+=== Using Environment Variables (Option 1)
+You can pass your API Key as `HZ_CLOUD_API_KEY` and API Secret as `HZ_CLOUD_API_SECRET` on your environment variables. `hzcloud` will use these them to authenticate with Hazelcast Cloud
+
+=== Using Login Command (Option 2)
+You can use login command to provide your API Key and Secret from `hzcloud`.
+
+[source,sh]
+----
+$ hzcloud login
+-  Api Key: SAMPLE_API_KEY
+-  Api Secret: SAMPLE_API_SECRET
+----
+
+==  Examples
+You can use `hzcloud` to interact with resources on **Hazelast Cloud**. You can find some examples to begin with.
+
+- **Create a Cluster**
+
+[source,sh]
+----
+hzcloud serverless-cluster create --name testcluster  --region us-west-2
+
+----
+Also, you can check other parameters with help command
+
+[source,sh]
+----
+hzcloud serverless-cluster --help
+----
+
+
+[source,text]
+----
+This command allows you to make actions on your serverless clusters like: create, delete, get, list, stop or resume.
+
+Usage:
+  hzcloud serverless-cluster [command]
+
+Aliases:
+  serverless-cluster, slc
+
+Available Commands:
+  create         This command allows you to create a serverless Hazelcast cluster.
+  custom-classes This command allows you to manage custom classes on your serverless cluster like: list, upload, delete.
+  delete         This command allows you to delete a serverless Hazelcast cluster.
+  get            This command get detailed configuration of a serverless Hazelcast cluster.
+  list           This command allows you to create a serverless Hazelcast cluster.
+  resume         This command allows you to resume a serverless Hazelcast cluster.
+  stop           This command allows you to stop a serverless Hazelcast cluster.
+
+Flags:
+  -h, --help   help for serverless-cluster
+
+Global Flags:
+  -o, --output string   --output json (default "default")
+
+Use "hzcloud serverless-cluster [command] --help" for more information about a command.
+----
+

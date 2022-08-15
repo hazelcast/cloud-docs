@@ -15,6 +15,7 @@
 *** xref:net-client.adoc[C#]
 *** xref:cpp-client.adoc[C++]
 *** xref:sql.adoc[SQL]
+** xref:cli.adoc[CLI]
 ** https://github.com/hazelcast/hazelcast-cloud-code-samples[Code Samples]
 
 .Account Management
