@@ -1,6 +1,7 @@
 = Serverless Clusters
-:description: {hazelcast-cloud} Serverless is a managed cloud service that offers a pay-as-you-go pricing model. Serverless clusters scale to provide the resources that your application needs. You pay only for the resources that your application consumes.
+:description: {hazelcast-cloud} Serverless is a managed cloud service that offers a pay-as-you-go pricing model. Serverless clusters auto-scale to provide the resources that your application needs. You pay only for the resources that your application consumes.
 :toc-levels: 3
+:page-aliases: architecture.adoc
 :page-serverless: true
 
 {description}

@@ -1,28 +1,28 @@
-= Ringbuffer
+= Ringbuffer Configuration
 :url-github-sample-ringbuffer: https://github.com/hazelcast/hazelcast-code-samples/blob/master/org-website-samples/src/main/java/client/RingBufferSample.java
 
-Hazelcast *Ringbuffer* is a replicated but not partitioned data structure that stores its data in a ring-like structure. You can think of it as a circular array with a given capacity. Each Ringbuffer has a tail and a head. The tail is where the items are added and the head is where the items are overwritten or expired. You can reach each element in a Ringbuffer using a sequence ID, which is mapped to the elements between the head and tail (inclusive) of the Ringbuffer.
+Ringbuffer is a replicated but non-partitioned data structure that stores its data in a ring-like structure. You can think of it as a circular array with a given capacity. Each ringbuffer has a tail and a head. The tail is where the items are added and the head is where the items are overwritten or expired. You can reach each element in a ringbuffer using a sequence ID, which is mapped to the elements between the head and tail (inclusive) of the ringbuffer.
 
 == RingBuffer Name
 
-You can give to custom name to your *RingBuffer* structure.
+You can give to custom name to your ringbuffer structure.
 
 == Capacity
 
-By default, a Ringbuffer is configured with a *capacity* of *10000* items. This creates an array with a size of 10000. If a time-to-live is configured, then an array of longs is also created that stores the expiration time for every item. In a lot of cases, you may want to change this *capacity* number to something that better fits your needs.
+By default, a ringbuffer is configured with a capacity of 10000 items. This creates an array with a size of 10000. If a time-to-live is configured, then an array of longs is also created that stores the expiration time for every item. In a lot of cases, you may want to change this capacity number to something that better fits your needs.
 
 == Time To Live
 
-You can configure Hazelcast Ringbuffer with a time-to-live in seconds. Using this setting, you can control how long the items remain in the Ringbuffer before they are expired. By default, the time-to-live is set to 0, meaning that unless the item is overwritten, it will remain in the Ringbuffer indefinitely. If you set a time-to-live and an item is added, then, depending on the Overflow Policy, either the oldest item is overwritten, or the call is rejected.
+You can configure Hazelcast Ringbuffer with a time-to-live in seconds. Using this setting, you can control how long the items remain in the ringbuffer before they are expired. By default, the time-to-live is set to 0, meaning that unless the item is overwritten, it will remain in the ringbuffer indefinitely. If you set a time-to-live and an item is added, then, depending on the overflow policy, either the oldest item is overwritten, or the call is rejected.
 
 == In Memory Format
 
-You can configure Hazelcast Ringbuffer with an in-memory format that controls the format of the Ringbuffer’s stored items. By default, *BINARY* in-memory format is used, meaning that the object is stored in a serialized form. You can select the *OBJECT* in-memory format, which is useful when filtering is applied or when the *OBJECT* in-memory format has a smaller memory footprint than *BINARY*.
+You can configure Hazelcast Ringbuffer with an in-memory format that controls the format of the ringbuffer’s stored items. By default, *BINARY* in-memory format is used, meaning that the object is stored in a serialized form. You can select the *OBJECT* in-memory format, which is useful when filtering is applied or when the *OBJECT* in-memory format has a smaller memory footprint than *BINARY*.
 
 == Backup Count
 
 The number of synchronous backups. 
-For example, if it is set to 1, then the Ringbuffer items are copied to one other member for fail-safety. Its default value is *1*.
+For example, if it is set to 1, then the ringbuffer items are copied to one other member for fail-safety. Its default value is *1*.
 
 == Asynchronous Backup Count
 

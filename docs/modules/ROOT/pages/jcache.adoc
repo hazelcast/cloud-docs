@@ -1,8 +1,8 @@
-= JCache
+= JCache Configuration
 
 == JCache Name
 
-In Hazelcast, you can create custom jcache configurations associated with the names of jcaches. The jcaches that do not have any configuration defined use the default configuration. If you want to set a configuration that is valid for all jcaches, you can name your configuration as `default`. A user-defined `default` configuration applies to every jcache that does not have a specific custom jcache configuration defined with the jcache's name. 
+You can create custom cache configurations associated with the names of JCache. The JCache data structures that do not have any configuration defined use the default configuration. If you want to set a configuration that is valid for all jcaches, you can name your configuration as `default`. A user-defined `default` configuration applies to every JCache that does not have a specific custom JCache configuration defined with the jcache's name. 
 You can also use wildcards to associate your configuration with multiple jcache names. See the xref:hazelcast:configuration:using-wildcards.adoc[configuration documentation] for more information about wildcards.
 
 == Backup Count

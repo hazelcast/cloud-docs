@@ -1,5 +1,4 @@
 = Creating API Keys
-:url-cloud-developers: https://cloud.hazelcast.com/settings/developer
 :description: To connect a client to your {hazelcast-cloud} account, you need an API key and an API secret. These credentials authenticate clients to your account. You can manage these credentials in your account settings in {hazelcast-cloud}.
 
 {description}

@@ -1,17 +1,16 @@
-= Reliable Topic
+= Reliable Topic Configuration
 
-Reliable Topic uses the same ITopic interface. The main difference is that it is backed up by
-Hazelcast Ringbuffer data structure. Reliable Topic messages are stored in the Ringbuffer Configuration element's named `reliable-topic`. It has the optional attribute "name" with which you
-can specify the name of your Reliable Topic, which is the same name you give to your Ringbuffer.
+Reliable topic is backed up by a ringbuffer data structure. Reliable Topic messages are stored in the ringbuffer configuration element's named `reliable-topic`. It has the optional attribute "name" with which you
+can specify the name of your reliable topic, which is the same name you give to your ringbuffer.
 This attribute's default value is default. 
 
 == Reliable Topic Name
 
-You can give a custom name to your Reliable Topic structure.
+You can give a custom name to your reliable topic structure.
 
 == Reliable Topic Batch Size
 
-The minimum number of messages that Reliable Topic tries to read in batches. Its default value is 10.
+The minimum number of messages that reliable topic tries to read in batches. Its default value is 10.
 
 If the *readBatchSize* is *10* and there are *50* messages available, 10 items are retrieved and processed consecutively before the thread goes back to the pool and helps out with the processing of other messages. 
 If the *readBatchSize* is *10* and there are *2* items available, *2* items are retrieved and processed consecutively. 

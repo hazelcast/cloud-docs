@@ -1,11 +1,11 @@
-= Multimap
+= Multimap Configuration
 :url-github-sample-multimap: https://github.com/hazelcast/hazelcast-code-samples/blob/master/org-website-samples/src/main/java/member/MultiMapSample.java
 
-*Multimap* is a specialized Hazelcast map. It is a distributed data structure where you can store multiple values for a single key.
+Multimap is a specialized map, in which you can store multiple values for a single key.
 
 == Multimap Name
 
-You can give to custom name to your MultiMap structure.
+You can give to custom name to your multimap structure.
 
 [source,java]
 ----
@@ -14,7 +14,7 @@ MultiMap<String , String > customerMap = hazelcastInstance.getMultiMap("customer
 
 == Value Collection Type
 
-When using MultiMap, the collection type of values can be either `Set` or `List`. 
+When using multimap, the collection type of values can be either `Set` or `List`. 
 The default value is `Set`.
 If you choose `Set`, duplicate and null values are not allowed in your collection and ordering is irrelevant.
 If you choose `List`, ordering is relevant and your collection can include duplicate and null values.
