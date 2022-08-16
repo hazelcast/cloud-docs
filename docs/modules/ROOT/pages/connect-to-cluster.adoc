@@ -20,7 +20,7 @@ If you're using a Dedicated cluster, you need to xref:authorize-connections.adoc
 Your cluster comes with a downloadable client that's preconfigured to connect to your cluster.
 
 . Sign into the link:{page-cloud-console}[{hazelcast-cloud} console].
-. Click *Connect Client*.
+. Click *Connect Your Application*.
 . Select a client from the dropdown.
 . Follow the on-screen instructions.
 

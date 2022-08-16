@@ -33,7 +33,7 @@ Java::
 
 . Sign into the link:{page-cloud-console}[{hazelcast-cloud} console].
 
-. Click *Connect Client*.
+. Click *Connect Your Application*.
 
 . Go to the *Java* tab and download the ZIP file.
 
@@ -305,7 +305,7 @@ You should see your installed version of the CLI client.
 
 . Sign into the link:{page-cloud-console}[{hazelcast-cloud} console].
 
-. Click *Connect Client*.
+. Click *Connect Your Application*.
 
 . Go to the *SQL* tab and download the ZIP file.
 
