@@ -54,7 +54,7 @@ When you see `Connection Successful!` in the output, the application is finished
 mvnw.cmd clean compile exec:java@client-with-ssl
 ```
 
-. In the {hazelcast-cloud} console, go to *Management Center* and click *SQL Browser* in the top toolbar.
+. In the {hazelcast-cloud} console, go to *Manage Cluster* > *Management Center* and click *SQL Browser* in the top toolbar.
 
 . Enter the following in the SQL Browser to create a mapping to the `cities` map. The sample client that you just executed created this map for you and filled it with data.
 +
@@ -89,7 +89,7 @@ npm run client_with_ssl
 +
 When you see `Connection Successful!` in the output, the application is finished.
 
-. In the {hazelcast-cloud} console, go to *Management Center* and click *SQL Browser* in the top toolbar.
+. In the {hazelcast-cloud} console, go to *Manage Cluster* > *Management Center* and click *SQL Browser* in the top toolbar.
 
 . Enter the following in the SQL Browser to create a mapping to the `cities` map. The sample client that you just executed created this map for you and filled it with data.
 +
@@ -124,7 +124,7 @@ pip install -r requirements.txt && python client_with_ssl.py
 +
 When you see `Connection Successful!` in the output, the application is finished.
 
-. In the {hazelcast-cloud} console, go to *Management Center* and click *SQL Browser* in the top toolbar.
+. In the {hazelcast-cloud} console, go to *Manage Cluster* > *Management Center* and click *SQL Browser* in the top toolbar.
 
 . Enter the following in the SQL Browser to create a mapping to the `cities` map. The sample client that you just executed created this map for you and filled it with data.
 +
@@ -158,7 +158,7 @@ dotnet run --project ClientWithSsl
 +
 When you see `Connection Successful!` in the output, the application is finished.
 
-. In the {hazelcast-cloud} console, go to *Management Center* and click *SQL Browser* in the top toolbar.
+. In the {hazelcast-cloud} console, go to *Manage Cluster* > *Management Center* and click *SQL Browser* in the top toolbar.
 
 . Enter the following in the SQL Browser to create a mapping to the `cities` map. The sample client that you just executed created this map for you and filled it with data.
 +
@@ -192,7 +192,7 @@ go mod tidy && go run client_with_ssl.go
 +
 When you see `Connection Successful!` in the output, the application is finished.
 
-. In the {hazelcast-cloud} console, go to *Management Center* and click *SQL Browser* in the top toolbar.
+. In the {hazelcast-cloud} console, go to *Manage Cluster* > *Management Center* and click *SQL Browser* in the top toolbar.
 
 . Enter the following in the SQL Browser to create a mapping to the `cities` map. The sample client that you just executed created this map for you and filled it with data.
 +
@@ -244,7 +244,7 @@ If the link:https://wiki.osdev.org/Target_Triplet[target triplet] doesn't match 
 The location of the compiled binary may change according to configuration and system defaults.
 
 
-. In the {hazelcast-cloud} console, go to *Management Center* and click *SQL Browser* in the top toolbar.
+. In the {hazelcast-cloud} console, go to *Manage Cluster* > *Management Center* and click *SQL Browser* in the top toolbar.
 
 . Enter the following in the SQL Browser to create a mapping to the `cities` map. The sample client that you just executed created this map for you and filled it with data.
 +

@@ -40,7 +40,7 @@ In Management Center, you can open a SQL shell in your cluster and submit SQL qu
 
 . Sign into the link:{page-cloud-console}[{hazelcast-cloud} console] and select your cluster.
 
-. Click *Management Center*.
+. Go to *Manage Cluster* > *Management Center*.
 
 . In the top toolbar, click *SQL Browser*.
 
