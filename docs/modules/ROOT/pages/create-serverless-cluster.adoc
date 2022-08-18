@@ -1,4 +1,4 @@
-= Creating a Hazelcast {hazelcast-cloud} Serverless Cluster
+= Creating a {hazelcast-cloud} Serverless Cluster
 :description: You can create a free cluster for development or production.
 :page-aliases: create-starter-cluster.adoc, starter-clusters.adoc, create-standard-cluster.adoc, availability-zones.adoc, instance-types.adoc
 :page-serverless: true
