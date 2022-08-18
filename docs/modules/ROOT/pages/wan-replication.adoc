@@ -8,11 +8,9 @@
 
 WAN replication supports the following use cases:
 
-* Use WAN replication with a xref:tutorials:failover-clients-with-hazelcast-cloud.adoc[failover client] as part of your disaster recovery strategy. WAN replication automatically replicates data between clusters. If a cluster fails, the failover client can switch to an alternative cluster with minimal disruption to service.
+* Use WAN replication with a xref:tutorials:ROOT:failover-clients-with-hazelcast-cloud.adoc[failover client] as part of your disaster recovery strategy. WAN replication automatically replicates data between clusters. If a cluster fails, the failover client can switch to an alternative cluster with minimal disruption to service.
 
 * Migrate data to a new cluster before decommissioning your original cluster.
-
-
 
 == Terminology
 
@@ -94,13 +92,13 @@ Check that data is successfully replicated between two clusters connected by WAN
 +
 TIP: You can check the status of WAN replication from Management Center for your publisher cluster. From the dashboard of your cluster select *Manage Cluster* > *Management Center*, then go to *Cluster* > *WAN Replication*.
 
-== Delete a Cluster Using WAN Replication
+== Delete a Cluster that uses WAN Replication
 
 Learn how to delete a cluster that has WAN replication set up. 
 
 Before you start, check that all the data you need has been replicated to another cluster.
 
-To delete a consumer cluster:
+To delete a consumer cluster, do the following:
 
 . Identify the connected publisher cluster. From the dashboard of the consumer cluster, go to *Manage Cluster* > *Settings*. On the *Cluster Settings* page, select *WAN Replication* and look for the ID of publisher cluster.
 . Open the dashboard of the publisher cluster.
@@ -108,7 +106,7 @@ To delete a consumer cluster:
 . Remove WAN replication. On the *Cluster Settings* page, select *WAN Replication* and then click *Delete*. Confirm your deletion.
 . Return to the dashboard of the consumer cluster and delete the cluster.
 
-To delete a publisher cluster:
+To delete a publisher cluster, do the following:
 
 . Follow steps 2 to 4 as for the consumer cluster.
 . Go to the dashboard of your publisher cluster and delete the cluster.
