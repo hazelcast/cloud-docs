@@ -9,10 +9,9 @@ You can use any available client library to connect to Hazelcast {hazelcast-clou
 
 See link:https://hazelcast.com/clients/[Clients and Languages].
 
-== Maven Plugin for Hazelcast {hazelcast-cloud}
-[.serverless]*Serverless*
+== Maven Plugin for {hazelcast-cloud} Serverless
 
-The Maven plugin for Hazelcast {hazelcast-cloud} is a Java development tool for testing and deploying cluster-side modules for Hazelcast Serverless.
+The Maven plugin for {hazelcast-cloud} Serverless is a Java development tool for testing and deploying cluster-side modules on {hazelcast-cloud} Serverless clusters.
 
 See xref:maven-plugin-hazelcast.adoc[].
 
@@ -36,6 +35,6 @@ See the documentation on link:{page-url-github-go-sdk}[GitHub].
 
 == GraphQL API
 
-Hazelcast {hazelcast-cloud} uses GraphQL to provide a public API to consumers such as the Hazelcast {hazelcast-cloud} Go SDK.
+Hazelcast {hazelcast-cloud} provides a public GraphQL API.
 
 See xref:api-reference.adoc[].
