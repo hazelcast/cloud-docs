@@ -1,6 +1,2 @@
 name: tutorials
-version: ~
-asciidoc:
-  attributes:
-    hazelcast-cloud: Viridian
-    page-cloud-console: https://viridian.hazelcast.com/
+version: ~ 
