@@ -1,4 +1,4 @@
-= Hazelcast Hazelcast {hazelcast-cloud} Cloud Managed Services
+= Hazelcast {hazelcast-cloud} Cloud Managed Services
 :description: Hazelcast cloud managed services simplify deployments of Hazelcast Platform, allowing you to focus on building applications for stream and batch processing, low-latency querying, and caching.
 :page-aliases: use-cases.adoc, faq.adoc, pricing.adoc, preface.adoc
 
