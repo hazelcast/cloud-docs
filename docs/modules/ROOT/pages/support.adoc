@@ -7,14 +7,14 @@
 [cols="1a,1a,1a,1a"]
 |===
 |Support option|Coverage|Support Channel|Response Times
-|*Standard support* [.dedicated]*{hazelcast-cloud} Dedicated*
+|*Standard support* [.dedicated]*Dedicated*
 
-[.serverless]*{hazelcast-cloud} Serverless*
+[.serverless]*Serverless*
 |24 hours a day, 7 days a week, 365 days a year
 |link:{url-zendesk-hazelcast}[Hazelcast Support]
 |Less than one business day.
 
-|*Enterprise support* [.dedicated]*{hazelcast-cloud} Dedicated*
+|*Enterprise support* [.dedicated]*Dedicated*
 |24 hours a day, 7 days a week, 365 days a year
 |link:{url-zendesk-hazelcast}[Hazelcast Support], Emergency Telephone Number
 |Response times vary, depending on the <<severity, severity level>>.
