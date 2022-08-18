@@ -1,17 +1,16 @@
 = Creating AWS PrivateLink Connections
 :page-dedicated: true
 
-AWS Private Link simplifies connectivity of services across different accounts and VPCs so that your data will be shared between services without exposure of data to the public internet. In addition to xref:aws-vpc-peering.adoc[AWS VPC peering], Dedicated provides AWS Private Link connection strategy and in this new strategy, Hazelcast Clusters are like AWS Marketplace Items that you can connect to your own clusters by subscribing them with a couple of clicks via {hazelcast-cloud} Console.
+AWS Private Link simplifies connectivity of services across different accounts and VPCs so that your data will be shared between services without exposure of data to the public internet. In addition to xref:aws-vpc-peering.adoc[AWS VPC peering], {hazelcast-cloud} Dedicated provides AWS Private Link connection strategy and in this new strategy, Hazelcast Clusters are like AWS Marketplace Items that you can connect to your own clusters by subscribing them with a couple of clicks via the Hazelcast {hazelcast-cloud} console.
 
 == AWS PrivateLink Workflow
 
-To connect to {hazelcast-cloud} with AWS Private Link, use the following workflow:
+To connect to a {hazelcast-cloud} Dedicated cluster with AWS Private Link, use the following workflow:
 
-. Create a cluster.
-. Enable AWS Private Link for running cluster.
-. Download CloudFormation template from the console and upload it to your AWS account to create necessary stacks (subscribe to service on Dedicated privately)
-. Download sample project from Client Configuration popup in cluster detail and upload it to your machines under VPC/Subnet that you have used during CloudFormation stack creation
-. Run project
+. Enable AWS Private Link for the cluster.
+. Download the CloudFormation template from the console and upload it to your AWS account to create necessary stacks (subscribe to service on {hazelcast-cloud} Dedicated privately).
+. Download a preconfigured client from the cluster dashboard and upload it to your machines under VPC/Subnet that you have used during CloudFormation stack creation.
+. Run the client.
 
 == Enabling AWS PrivateLink
 
@@ -31,11 +30,11 @@ When you click upload button, you will be redirected to Cloud Formation stack cr
 
 image:aws-private-link-template.png[Upload a CloudFormation template]
 
-*VPC* and *Subnet* selection is important here since this details should be related to your instance location that your actual applications is running in. As an example; if you want to connect from your microservice pool to Dedicated cluster, you need to specify VPC and Subnet that contains your microservice pool.
+*VPC* and *Subnet* selection is important here since this details should be related to your instance location that your application is running in. As an example; if you want to connect from your microservice pool to a {hazelcast-cloud} Dedicated cluster, you need to specify VPC and Subnet that contains your microservice pool.
 
 image:aws-private-link-subnets.png[Specify the subnet that contains your microservices pool]
 
-In order to eliminate all the manual stuff we introduce this Cloud Formation template methodology and you can see it actually also create an AWS Lambda function to automate all VPC Endpoint create and subscribe operation in a controlled way. You can see the entire log inside Cloud Watch
+In order to eliminate the manual stuff we introduce this Cloud Formation template methodology and you can see it actually also create an AWS Lambda function to automate all VPC Endpoint create and subscribe operation in a controlled way. You can see the entire log inside Cloud Watch
 
 image:cloud-watch-log.png[Cloud Watch log output]
 
@@ -45,8 +44,8 @@ image:aws-vpc-endpoint.png[VPC endpoint]
 
 == Connecting to Hazelcast Cluster
 
-In order to connect your cluster, you can just go to *Client Configuration* popup in cluster detail page and download sample project by selecting the proper option in the select box.
+In order to connect your cluster, you can just go to *Connect Your Cluster* popup in cluster detail page and download sample project by selecting the proper option in the select box.
 
-WARNING: What you see in the options as in the image, is the ID of VPC Endpoint that created on your account. You need to be careful about this selection if you made multiple connection to Hazelcast Enterprise Cluster from different sources.
+WARNING: What you see in the options is the ID of VPC Endpoint for your account. You need to be careful about this selection if you made multiple connections to the {hazelcast-cloud} Dedicated cluster from different sources.
 
 After you download sample project, you can upload it to an instance that located inside VPC and Subnet that you selected during Cloud Formation stack creation

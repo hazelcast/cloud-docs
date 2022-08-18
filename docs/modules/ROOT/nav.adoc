@@ -53,7 +53,7 @@
 
 .Reference
 * xref:api-reference.adoc[GraphQL API]
-* xref:maven-plugin.adoc[Maven Plugin]
+* xref:maven-plugin-hazelcast.adoc[Maven Plugin]
 * xref:data-structures.adoc[Data Structure Configuration]
 ** xref:map-configurations.adoc[]
 ** xref:jcache.adoc[]

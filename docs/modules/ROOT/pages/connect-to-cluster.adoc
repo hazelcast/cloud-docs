@@ -1,5 +1,5 @@
-= Connecting to {hazelcast-cloud} Clusters
-:description: To communicate with a cluster in {hazelcast-cloud}, you need a client. Hazelcast offers clients in a variety of languages as well as a command-line client for quick prototyping and scripting.
+= Connecting to Hazelcast {hazelcast-cloud} Clusters
+:description: To communicate with a cluster, you need a client. Hazelcast offers clients in a variety of languages as well as a command-line client for quick prototyping and scripting.
 :page-aliases: connect-to-private-cluster.adoc
 
 {description}
@@ -12,14 +12,14 @@ You can do the following to connect to the cluster:
 
 == Before you Begin
 
-If you're using a Dedicated cluster, you need to xref:authorize-connections.adoc[authorize] clients to allow them to connect to your cluster.
+If you're using a {hazelcast-cloud} Dedicated cluster, you need to xref:authorize-connections.adoc[authorize] clients to allow them to connect to your cluster.
 
 [[download]]
 == Using a Preconfigured Client
 
 Your cluster comes with a downloadable client that's preconfigured to connect to your cluster.
 
-. Sign into the link:{page-cloud-console}[{hazelcast-cloud} console].
+. Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console].
 . Click *Connect Your Application*.
 . Select a client from the dropdown.
 . Follow the on-screen instructions.
@@ -38,7 +38,7 @@ include::partial$get-connection-creds.adoc[]
 
 In Management Center, you can open a SQL shell in your cluster and submit SQL queries directly from your web browser.
 
-. Sign into the link:{page-cloud-console}[{hazelcast-cloud} console] and select your cluster.
+. Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console] and select your cluster.
 
 . Go to *Manage Cluster* > *Management Center*.
 

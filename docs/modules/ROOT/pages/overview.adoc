@@ -1,41 +1,41 @@
-= {hazelcast-cloud}
-:description: {hazelcast-cloud} is a managed cloud service that simplifies Hazelcast cluster deployments, allowing you to focus on building applications for stream processing, low-latency querying, and caching.
+= Hazelcast Hazelcast {hazelcast-cloud} Cloud Managed Services
+:description: Hazelcast cloud managed services simplify deployments of Hazelcast Platform, allowing you to focus on building applications for stream and batch processing, low-latency querying, and caching.
 :page-aliases: use-cases.adoc, faq.adoc, pricing.adoc, preface.adoc
 
 {description}
 
-{hazelcast-cloud} abstracts away the manual effort of managing physical servers or servers in the cloud so that you can focus on what matters: Building your application.
+Hazelcast {hazelcast-cloud} abstracts away the manual effort of managing physical servers or servers in the cloud so that you can focus on what matters: Building your application.
 
 == Application Topology
 
-{hazelcast-cloud} runs in a client/server topology:
+Hazelcast {hazelcast-cloud} runs in a client/server topology:
 
 - {hazelcast-cloud} clusters are the servers that are responsible for storing and processing your data.
 
 - You can use clients to connect to your cluster to request processing results, add data to storage, or query data.
 
-== {hazelcast-cloud} Editions
+== Editions
 
-{hazelcast-cloud} offers two editions: Serverless and Dedicated.
+Hazelcast {hazelcast-cloud} offers two editions: {hazelcast-cloud} Serverless and {hazelcast-cloud} Dedicated.
 
 [cols="1a,2a,2a"]
 |===
 |Edition|Description|Pricing
 
-|xref:serverless-cluster.adoc[Serverless (beta)]
-|Serverless clusters auto-scale, depending on the amount of data you store.
-|Free to store up to 2 GiB in any Serverless cluster in your account, then $0.10 USD per GiB.
+|xref:serverless-cluster.adoc[{hazelcast-cloud} Serverless (beta)]
+|{hazelcast-cloud} Serverless clusters auto-scale, depending on the amount of data you store.
+|Free to store up to 2 GiB in any {hazelcast-cloud} Serverless cluster in your account, then $0.10 USD per GiB.
 
-|xref:dedicated-cluster.adoc[Dedicated]
-|Dedicated clusters give you fine-grained control over the hardware and resources available to your cluster. It's your responsibility to scale Dedicated clusters when you need more resources.
+|xref:dedicated-cluster.adoc[{hazelcast-cloud} Dedicated]
+|{hazelcast-cloud} Dedicated clusters give you fine-grained control over the hardware and resources available to your cluster. It's your responsibility to scale {hazelcast-cloud} Dedicated clusters when you need more resources.
 |Depends on multiple factors such as the size of your chosen cloud instance.
 |===
 
 == Getting Started
 
-If you are a first-time user of {hazelcast-cloud}, see xref:get-started.adoc[].
+If you are a first-time user of Hazelcast {hazelcast-cloud}, see xref:get-started.adoc[].
 
 If you're ready to get started with a real use case, see xref:tutorials.adoc[].
 
-If you want to get an overview of the use cases and advantages of {hazelcast-cloud}, see the link:https://hazelcast.com/products/cloud/[Hazelcast website].
+If you want to get an overview of the use cases and advantages of Hazelcast {hazelcast-cloud}, see the link:https://hazelcast.com/products/cloud/[Hazelcast website].
 

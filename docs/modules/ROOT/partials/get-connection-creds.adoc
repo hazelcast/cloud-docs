@@ -1,6 +1,6 @@
 To connect your own client to the cluster, you need your cluster's connection credentials.
 
-. Sign into the link:{page-cloud-console}[{hazelcast-cloud} console] and select your cluster.
+. Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console] and select your cluster.
 
 . Go to *Connect Your Application* > *Advanced setup*:
 +

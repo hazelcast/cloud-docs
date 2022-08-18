@@ -1,5 +1,5 @@
 = Configuring Data Structures
-:description: You can configure data strutures in the {hazelcast-cloud} console. Use these references to learn what settings you can configure.
+:description: You can configure data strutures in the console. Use these references to learn what settings you can configure.
 
 {description}
 

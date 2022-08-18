@@ -1,9 +1,9 @@
-= Developer Guide for {hazelcast-cloud}
-:description: Learn how to develop apps for {hazelcast-cloud} and find resources to help you build your app.
+= Developer Guide for Hazelcast {hazelcast-cloud}
+:description: Use these topics to learn how to build applications, using APIs and tools.
 
 {description}
 
-To start developing applications for {hazelcast-cloud}, see the following topics:
+To start developing applications for Hazelcast {hazelcast-cloud}, see the following topics:
 
 * xref:connect-to-cluster.adoc[]
 * xref:cluster-side-modules.adoc[]

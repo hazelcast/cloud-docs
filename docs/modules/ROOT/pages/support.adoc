@@ -1,20 +1,20 @@
-= {hazelcast-cloud} Support Policy
+= Hazelcast {hazelcast-cloud} Support Policy
 :url-zendesk-hazelcast: https://support.hazelcast.com
-:description: {hazelcast-cloud} offers support options with different response times to suit your requirements and budget.
+:description: Hazelcast offers support options with different response times to suit your requirements and budget.
 
 {description}
 
 [cols="1a,1a,1a,1a"]
 |===
 |Support option|Coverage|Support Channel|Response Times
-|*Standard support* [.dedicated]*Dedicated*
+|*Standard support* [.dedicated]*{hazelcast-cloud} Dedicated*
 
-[.serverless]*Serverless*
+[.serverless]*{hazelcast-cloud} Serverless*
 |24 hours a day, 7 days a week, 365 days a year
 |link:{url-zendesk-hazelcast}[Hazelcast Support]
 |Less than one business day.
 
-|*Enterprise support* [.dedicated]*Dedicated*
+|*Enterprise support* [.dedicated]*{hazelcast-cloud} Dedicated*
 |24 hours a day, 7 days a week, 365 days a year
 |link:{url-zendesk-hazelcast}[Hazelcast Support], Emergency Telephone Number
 |Response times vary, depending on the <<severity, severity level>>.

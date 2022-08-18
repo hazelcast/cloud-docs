@@ -1,24 +1,24 @@
 = Developer Tools
-:description: {hazelcast-cloud} provides a variety of developer tools for creating, testing and debugging applications.
+:description: Hazelcast provides a variety of developer tools for creating, testing and debugging applications.
 
 {description}
 
 == Client Libraries
 
-You can use any available client library to connect to {hazelcast-cloud} clusters.
+You can use any available client library to connect to Hazelcast {hazelcast-cloud} clusters.
 
 See link:https://hazelcast.com/clients/[Clients and Languages].
 
-== Maven Plugin for {hazelcast-cloud}
+== Maven Plugin for Hazelcast {hazelcast-cloud}
 [.serverless]*Serverless*
 
-The Maven plugin for {hazelcast-cloud} is a Java development tool for testing and deploying cluster-side modules for Hazelcast Serverless.
+The Maven plugin for Hazelcast {hazelcast-cloud} is a Java development tool for testing and deploying cluster-side modules for Hazelcast Serverless.
 
-See xref:maven-plugin.adoc[].
+See xref:maven-plugin-hazelcast.adoc[].
 
-== {hazelcast-cloud} CLI
+== Hazelcast {hazelcast-cloud} CLI
 
-{hazelcast-cloud} CLI is a command-line tool for creating and managing {hazelcast-cloud} clusters.
+Hazelcast {hazelcast-cloud} CLI is a command-line tool for creating and managing {hazelcast-cloud} clusters.
 
 See the documentation on link:{page-url-github-cloud-cli}[GitHub].
 
@@ -28,14 +28,14 @@ Hazelcast Command-Line Client (CLC) is a command-line tool for connecting to {ha
 
 See the documentation on link:https://github.com/hazelcast/hazelcast-commandline-client[GitHub].
 
-== {hazelcast-cloud} Go SDK
+== Hazelcast {hazelcast-cloud} Go SDK
 
-{hazelcast-cloud} Go SDK is a Go library for creating and managing {hazelcast-cloud} clusters.
+Hazelcast {hazelcast-cloud} Go SDK is a Go library for creating and managing {hazelcast-cloud} clusters.
 
 See the documentation on link:{page-url-github-go-sdk}[GitHub].
 
 == GraphQL API
 
-{hazelcast-cloud} uses GraphQL to provide a public API to consumers such as the {hazelcast-cloud} Go SDK.
+Hazelcast {hazelcast-cloud} uses GraphQL to provide a public API to consumers such as the Hazelcast {hazelcast-cloud} Go SDK.
 
 See xref:api-reference.adoc[].

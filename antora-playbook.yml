@@ -32,7 +32,6 @@ asciidoc:
     page-pagination: true
     idprefix: ''
     idseparator: '-'
-    hazelcast-cloud: Hazelcast Viridian
   extensions:
     - ./lib/tabs-block.js
     - asciidoctor-kroki

@@ -1,5 +1,5 @@
-= Dedicated Clusters
-:description: {hazelcast-cloud} Dedicated is a managed cloud service that allows you to maintain control over the hardware, resources, and deployment options that are available to your cluster. Dedicated means you get specific servers (cloud instances) all to yourself. 
+= {hazelcast-cloud} Dedicated Clusters
+:description: Dedicated is a managed cloud service that allows you to maintain control over the hardware, resources, and deployment options that are available to your cluster. Dedicated means you get specific servers (cloud instances) all to yourself. 
 :page-dedicated: true
 
 {description}
@@ -16,12 +16,12 @@ You can design a Hazelcast topology that meets your specific compliance and serv
 ** Deploy clusters to specific regions or cloud providers as part of your organization's cloud strategy.  To reduce network latency, you can deploy clusters in regions that are closest to your users' locations.
 ** Benefit from Hazelcast support and predictable monthly billing.
 
-Dedicated clusters are suitable for lightweight or production-critical applications where the workload is generally predictable.
+{hazelcast-cloud} Dedicated clusters are suitable for lightweight or production-critical applications where the workload is generally predictable.
 
 [[dedicated]]
-== Pricing for Dedicated Clusters
+== Pricing for {hazelcast-cloud} Dedicated Clusters
 
-Dedicated clusters are charged for the following:
+{hazelcast-cloud} Dedicated clusters are charged for the following:
 
 - *Provisioned memory:* How many resources you asked for when we created the cluster for you.
 - *Data transfer:* The volume of data going into, out of, and within your clusters.
@@ -62,7 +62,7 @@ These examples show the cost per month of three clusters that each have a differ
 
 In this scenario, the total cost for the month for all three clusters will be: $10.00 + $10.00 + $15.00 = $35.00
 
-Dedicated clusters also incur charges for data transfer costs and any backup storage costs.
+{hazelcast-cloud} Dedicated clusters also incur charges for data transfer costs and any backup storage costs.
 
 === Data Transfer
 
@@ -78,7 +78,7 @@ The cost of cluster data storage depend on the cloud providers cost of storing t
 
 == Supported Functionality
 
-Use this table to learn what is supported in Dedicated clusters:
+Use this table to learn what is supported in {hazelcast-cloud} Dedicated clusters:
 
 [cols="1a,1a"]
 |===

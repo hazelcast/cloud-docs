@@ -36,7 +36,7 @@ WAN replication supports the following use cases:
 
 == Before you Begin
 
-* You need two xref:create-serverless-cluster.adoc[Serverless clusters] or two xref:create-dedicated-cluster.adoc[Dedicated clusters]. You cannot replicate data between one Serverless cluster and one Dedicated cluster.
+* You need two xref:create-serverless-cluster.adoc[{hazelcast-cloud} Serverless clusters] or two xref:create-dedicated-cluster.adoc[{hazelcast-cloud} Dedicated clusters]. You cannot replicate data between one {hazelcast-cloud} Serverless cluster and one {hazelcast-cloud} Dedicated cluster.
 
 +
 Make sure that each cluster is configured with the same settings. For example, if one cluster
@@ -50,7 +50,7 @@ contains xref:cluster-side-modules.adoc[cluster-side modules] or persistence, th
 
 Set up WAN replication between two clusters.
 
-. Sign into the link:{page-cloud-console}[{hazelcast-cloud} console] and select the cluster that you want to use as a publisher cluster.
+. Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console] and select the cluster that you want to use as a publisher cluster.
 
 +
 NOTE: If you want to set up a pair of clusters in an Active-Active configuration, select either cluster.

@@ -3,13 +3,13 @@
 
 {description}
 
-== Serverless
+== {hazelcast-cloud} Serverless
 
-If you're using a Serverless cluster, you can add your client IP addresses to a xref:ip-white-list.adoc[whitelist].
+If you're using a {hazelcast-cloud} Serverless cluster, you can add your client IP addresses to a xref:ip-white-list.adoc[whitelist].
 
-== Dedicated
+== {hazelcast-cloud} Dedicated
 
-If you're using a Dedicated cluster, you must authorize your clients to connect to your cluster. Dedicated clusters are private by default to prevent attacks such as denial of service. To authorize clients, you can do the following:
+If you're using a {hazelcast-cloud} Dedicated cluster, you must authorize your clients to connect to your cluster. {hazelcast-cloud} Dedicated clusters are private by default to prevent attacks such as denial of service. To authorize clients, you can do the following:
 
 - Add client IP addresses to a xref:ip-white-list.adoc[whitelist].
 - Set up xref:vpc-peering.adoc[PrivateLink or VPC peering].

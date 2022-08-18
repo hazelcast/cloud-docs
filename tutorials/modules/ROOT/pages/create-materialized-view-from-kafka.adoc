@@ -1,5 +1,5 @@
 = Query Streams from Confluent Cloud
-:description: In this tutorial, you'll learn how to connect your {hazelcast-cloud} cluster to Confluent Cloud, using SQL. You'll also learn how to build a materialized view from streaming data and contextual data in Hazelcast.
+:description: In this tutorial, you'll learn how to connect your cluster to Confluent Cloud, using SQL. You'll also learn how to build a materialized view from streaming data and contextual data in Hazelcast.
 :page-layout: tutorial
 :page-product: cloud
 :page-categories: SQL, Streaming, Materialized Views
@@ -19,7 +19,7 @@ Materialized views are useful for speeding up queries that are repeated. Instead
 
 You need the following:
 
-- A {hazelcast-cloud} cluster. This tutorial assumes that you have a production cluster for xref:cloud:ROOT:create-serverless-cluster.adoc[{hazelcast-cloud} Serverless].
+- A Hazelcast {hazelcast-cloud} cluster. This tutorial assumes that you have a production cluster for xref:cloud:ROOT:create-serverless-cluster.adoc[{hazelcast-cloud} Serverless].
 
 - Hazelcast CLI for opening connections to the SQL shell of your {hazelcast-cloud} cluster. You can follow the instructions for SQL in xref:cloud:ROOT:get-started.adoc[] until you see the SQL prompt.
 
@@ -43,7 +43,7 @@ image:confluent-cloud-breadcrumbs.png[Breadcrumbs that display the cluster name]
 
 . Click *Data integration* and select *Java*. Hazelcast uses a Java client to connect to Kafka clusters, so you need the configuration for a Java client.
 
-. Click *Create Kafka cluster API key* and enter the name of your {hazelcast-cloud} cluster in the description. This name helps you remember that {hazelcast-cloud} is using that API key the next time you view them in Confluent Cloud.
+. Click *Create Kafka cluster API key* and enter the name of your {hazelcast-cloud} cluster in the description. This name helps you remember that your cluster is using that API key the next time you view them in Confluent Cloud.
 
 . Click *Download and continue*. The configuration snippet now includes your API key and secret.
 
@@ -53,7 +53,7 @@ image:confluent-cloud-breadcrumbs.png[Breadcrumbs that display the cluster name]
 
 To allow Hazelcast to access the `trades` topic that you created in your Confluent Cloud Kafka cluster, you need to create a mapping to it.
 
-. Sign into the link:{page-cloud-console}[{hazelcast-cloud} console] and select your cluster.
+. Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console] and select your cluster.
 
 . Go to *Manage Cluster* > *Management Center* > *SQL Browser*.
 
@@ -358,7 +358,7 @@ The table is empty table, which means your job is no longer running.
 
 == Summary
 
-You've learned how to connect {hazelcast-cloud} to a Confluent Cloud Kafka cluster as well as the following:
+You've learned how to connect Hazelcast {hazelcast-cloud} to a Confluent Cloud Kafka cluster as well as the following:
 
 - How to query streaming data from a Kafka topic.
 - How to enrich streaming data with contextual data and save the results to a materialized view.

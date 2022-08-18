@@ -1,11 +1,11 @@
-= {hazelcast-cloud} Tutorials
-:description: Tutorials provide you with the sample code you need to learn how to achieve a specific goal with {hazelcast-cloud}.
+= Hazelcast {hazelcast-cloud} Tutorials
+:description: Tutorials provide you with the sample code you need to learn how to achieve a specific goal.
 :page-include-tutorial-list: true
 
 {description}
 
-More tutorials will be added to this list when they're available for {hazelcast-cloud}.
+More tutorials will be added to this list when they're available for Hazelcast {hazelcast-cloud}.
 
-// The page-include-tutorial-list signals to the UI to insert a list of tutorials that apply to Hazelcast Viridian here. This list is inserted automatically when the docs are built.
+// The page-include-tutorial-list signals to the UI to insert a list of tutorials that apply to Hazelcast {hazelcast-cloud} here. This list is inserted automatically when the docs are built.
 
 

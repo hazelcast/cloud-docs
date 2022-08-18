@@ -1,7 +1,7 @@
 = API Reference
 :url-graphql: https://graphql.org/
 
-{hazelcast-cloud} uses link:{url-graphql}[GraphQL] to provide a public API to consumers.
+Hazelcast {hazelcast-cloud} uses link:{url-graphql}[GraphQL] to provide a public API to consumers.
 
 link:{page-url-cloud-api}[Go to the GraphQL Explorer]
 
@@ -9,7 +9,7 @@ link:{page-url-cloud-api}[Go to the GraphQL Explorer]
 
 === Cloud Providers
 
-While creating a cluster on {hazelcast-cloud}, you need to decide which cloud provider to use. You can make this decision according to where your current infrastructure is. Also, the cloud providers we support change according to the type of product you will use. We support different cloud providers on the Standard and Enterprise plans. So, you need to check available cloud providers before creating a cluster from our GraphQL API with a `query cloudProviders` 
+While creating a cluster on Hazelcast {hazelcast-cloud}, you need to decide which cloud provider to use. You can make this decision according to where your current infrastructure is. Also, the cloud providers we support change according to the type of product you will use. We support different cloud providers on the Standard and Enterprise plans. So, you need to check available cloud providers before creating a cluster from our GraphQL API with a `query cloudProviders` 
 
 [source,shell]
 ----
@@ -39,7 +39,7 @@ query {
 
 === Hazelcast Versions
 
-In order to create or upgrade a version of an Enterprise type of cluster on {hazelcast-cloud}, you need to select which Hazelcast version you need. The Hazelcast versions the {hazelcast-cloud} supports changes according to the type of the product. So that you need to check available Hazelcast versions for your need with `hazelcastVersion query`
+To create or upgrade the Hazelcast Platform version of a {hazelcast-cloud} Dedicated cluster, you need to select which Hazelcast version you need. To check available Hazelcast Platform versions, use the `hazelcastVersions` query.
 
 [source,shell]
 ----
@@ -53,7 +53,7 @@ query {
 
 === Instance Types
 
-Instance types comprise varying combinations of CPU, memory, storage, and networking capacity and give you the flexibility to choose the appropriate mix of resources for your applications. Instance types changes according to a cloud provider, regions, and the ones we supported. In order to create *Enterprise Cluster on {hazelcast-cloud}*, you need to select which instance type you will use with   `query instanceTypes`.
+Instance types comprise varying combinations of CPU, memory, storage, and networking capacity and give you the flexibility to choose the appropriate mix of resources for your applications. Instance types changes according to a cloud provider, regions, and the ones we supported. In order to create a {hazelcast-cloud} Dedicated Cluster, you need to select which instance type you will use with `query instanceTypes`.
 
 [source,shell]
 ----
@@ -147,7 +147,7 @@ query {
 
 == Mutations
 
-=== Create Serverless Cluster
+=== Create a {hazelcast-cloud} Serverless Cluster
 
 You can create a new *Serverless* cluster with the `createStandardCluster` mutation. This mutation needs at least the following inputs; `name, cloud provider, region, cluster type, total memory, and Hazelcast version`. You can optionally provide other properties like data structures etc.
 
@@ -178,7 +178,7 @@ mutation {
 }
 ----
 
-=== Create Dedicated Cluster
+=== Create a {hazelcast-cloud} Dedicated Cluster
 
 You can create a new *Dedicated* cluster with the `createEnterpriseCluster mutation`. This mutation needs at least the following inputs; `name, cloud provider, region, zones, instance type, instance per zone, Hazelcast version, public access value, and CIDR block`.
 

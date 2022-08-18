@@ -7,9 +7,9 @@ To delete clusters in a team, you must have either an xref:teams-and-users.adoc[
 
 You cannot delete a cluster that is using WAN Replication.
 
-== Using the {hazelcast-cloud} Console
+== Using the Hazelcast {hazelcast-cloud} Console
 
-. Sign into the link:{page-cloud-console}[{hazelcast-cloud} console] and select your cluster.
+. Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console] and select your cluster.
 
 . Go to *Manage* > *Delete*.
 

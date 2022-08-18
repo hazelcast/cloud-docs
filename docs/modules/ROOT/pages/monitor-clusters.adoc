@@ -3,15 +3,15 @@
 
 {description}
 
-== {hazelcast-cloud} Console
+== Hazelcast {hazelcast-cloud} Console
 
-Monitor basic performance metrics and the status of your cluster, using the {hazelcast-cloud} console.
+Monitor basic performance metrics and the status of your cluster, using the Hazelcast {hazelcast-cloud} console.
 
 See xref:charts-and-stats.adoc[].
 
 == Management Center
 
-Monitor your Hazelcast cluster in a purpose-built cluster management tool. Management Center for {hazelcast-cloud} provides view-only access, allowing you to view insights about cluster state, data structure metrics, and other metrics.
+Monitor your Hazelcast cluster in a purpose-built cluster management tool. Management Center provides view-only access, allowing you to view insights about cluster state, data structure metrics, and other metrics.
 
 See xref:management-center.adoc[].
 

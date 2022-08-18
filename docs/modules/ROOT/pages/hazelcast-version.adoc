@@ -1,12 +1,12 @@
-= Upgrading a Dedicated Cluster
-:description: In Dedicated clusters, you can manually upgrade your clusters to newer versions of Hazelcast.
+= Upgrading a {hazelcast-cloud} Dedicated Cluster
+:description: You can manually upgrade your clusters to newer versions of Hazelcast Platform.
 :page-dedicated: true
 
 {description}
 
 To update the version of a team's cluster, you must have either an xref:teams-and-users.adoc[admin or developer role].
 
-. Sign into the link:{page-cloud-console}[{hazelcast-cloud} console] and select your cluster.
+. Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console] and select your cluster.
 . Go to *Manage* > *Settings* > *Hazelcast Version*.
 . Select a new version from the dropdown.
 . Click *Update*.

@@ -1,5 +1,5 @@
 = Integrating Cluster Logs with Log Management Systems
-:description: You can integrate Dedicated cluster logs with a log management system so that you can query and manage all your logs in one place.
+:description: You can integrate cluster logs with a log management system so that you can query and manage all your logs in one place.
 :page-dedicated: true
 
 {description}
@@ -19,7 +19,7 @@ You need the following:
 
 To set up logging integration, do the following:
 
-. Sign into the link:{page-cloud-console}[{hazelcast-cloud} console] and select your cluster.
+. Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console] and select your cluster.
 
 . Go to  *Manage* > *Settings* > *Logging*.
 

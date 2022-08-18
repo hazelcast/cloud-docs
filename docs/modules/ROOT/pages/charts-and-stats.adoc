@@ -1,5 +1,5 @@
 = Charts and Statistics
-:description: You can monitor the performance metrics and status of your clusters, using the {hazelcast-cloud} console.
+:description: You can monitor the performance metrics and status of your clusters, using the console.
 
 {description}
 

@@ -1,5 +1,5 @@
-= {hazelcast-cloud} Hello World
-:description: In this tutorial, you'll learn to connect a client to a {hazelcast-cloud} cluster and query data in it, using SQL.
+= Hazelcast {hazelcast-cloud} Hello World
+:description: In this tutorial, you'll learn how to connect a client to a cluster and use SQL to query data in the cluster.
 :page-aliases: cpp-client.adoc, getting-started.adoc, go-client.adoc, net-client.adoc, nodejs-client.adoc, python-client.adoc, sql.adoc
 
 {description}
@@ -8,10 +8,10 @@
 
 You need the following:
 
-- A xref:create-account.adoc[{hazelcast-cloud} account].
+- A xref:create-account.adoc[Hazelcast {hazelcast-cloud} account].
 - Access to a command prompt such as Terminal for Mac or Powershell for Windows.
 
-== Step 1. Start a Development Serverless Cluster
+== Step 1. Start a {hazelcast-cloud} Serverless Development Cluster
 
 include::serverless-cluster.adoc[tag=development]
 To create a development cluster, do the following:
@@ -20,7 +20,7 @@ include::create-serverless-cluster.adoc[tag=development]
 
 == Step 2. Run a Sample Client
 
-To connect to your Serverless cluster, you need a Hazelcast client. {hazelcast-cloud} comes with sample clients that are preconfigured to connect to your cluster and add some sample data to a map. A map is an in-memory, key/value data structure that is often used as a cache.
+To connect to your {hazelcast-cloud} Serverless cluster, you need a Hazelcast client. The cluster comes with sample clients that are preconfigured to connect to your cluster and add some sample data to a map. A map is an in-memory, key/value data structure that is often used as a cache.
 
 Choose a client and follow the instructions.
 
@@ -31,7 +31,7 @@ Java::
 --
 . Make sure that you have Java 8-17 installed and the `JAVA_HOME` environment variable is set to the location of your JRE.
 
-. Sign into the link:{page-cloud-console}[{hazelcast-cloud} console].
+. Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console].
 
 . Click *Connect Your Application*.
 
@@ -54,7 +54,7 @@ When you see `Connection Successful!` in the output, the application is finished
 mvnw.cmd clean compile exec:java@client-with-ssl
 ```
 
-. In the {hazelcast-cloud} console, go to *Manage Cluster* > *Management Center* and click *SQL Browser* in the top toolbar.
+. In the Hazelcast {hazelcast-cloud} console, go to *Manage Cluster* > *Management Center* and click *SQL Browser* in the top toolbar.
 
 . Enter the following in the SQL Browser to create a mapping to the `cities` map. The sample client that you just executed created this map for you and filled it with data.
 +
@@ -89,7 +89,7 @@ npm run client_with_ssl
 +
 When you see `Connection Successful!` in the output, the application is finished.
 
-. In the {hazelcast-cloud} console, go to *Manage Cluster* > *Management Center* and click *SQL Browser* in the top toolbar.
+. In the Hazelcast {hazelcast-cloud} console, go to *Manage Cluster* > *Management Center* and click *SQL Browser* in the top toolbar.
 
 . Enter the following in the SQL Browser to create a mapping to the `cities` map. The sample client that you just executed created this map for you and filled it with data.
 +
@@ -124,7 +124,7 @@ pip install -r requirements.txt && python client_with_ssl.py
 +
 When you see `Connection Successful!` in the output, the application is finished.
 
-. In the {hazelcast-cloud} console, go to *Manage Cluster* > *Management Center* and click *SQL Browser* in the top toolbar.
+. In the Hazelcast {hazelcast-cloud} console, go to *Manage Cluster* > *Management Center* and click *SQL Browser* in the top toolbar.
 
 . Enter the following in the SQL Browser to create a mapping to the `cities` map. The sample client that you just executed created this map for you and filled it with data.
 +
@@ -158,7 +158,7 @@ dotnet run --project ClientWithSsl
 +
 When you see `Connection Successful!` in the output, the application is finished.
 
-. In the {hazelcast-cloud} console, go to *Manage Cluster* > *Management Center* and click *SQL Browser* in the top toolbar.
+. In the Hazelcast {hazelcast-cloud} console, go to *Manage Cluster* > *Management Center* and click *SQL Browser* in the top toolbar.
 
 . Enter the following in the SQL Browser to create a mapping to the `cities` map. The sample client that you just executed created this map for you and filled it with data.
 +
@@ -192,7 +192,7 @@ go mod tidy && go run client_with_ssl.go
 +
 When you see `Connection Successful!` in the output, the application is finished.
 
-. In the {hazelcast-cloud} console, go to *Manage Cluster* > *Management Center* and click *SQL Browser* in the top toolbar.
+. In the Hazelcast {hazelcast-cloud} console, go to *Manage Cluster* > *Management Center* and click *SQL Browser* in the top toolbar.
 
 . Enter the following in the SQL Browser to create a mapping to the `cities` map. The sample client that you just executed created this map for you and filled it with data.
 +
@@ -244,7 +244,7 @@ If the link:https://wiki.osdev.org/Target_Triplet[target triplet] doesn't match 
 The location of the compiled binary may change according to configuration and system defaults.
 
 
-. In the {hazelcast-cloud} console, go to *Manage Cluster* > *Management Center* and click *SQL Browser* in the top toolbar.
+. In the Hazelcast {hazelcast-cloud} console, go to *Manage Cluster* > *Management Center* and click *SQL Browser* in the top toolbar.
 
 . Enter the following in the SQL Browser to create a mapping to the `cities` map. The sample client that you just executed created this map for you and filled it with data.
 +
@@ -303,7 +303,7 @@ hz-cli -V
 +
 You should see your installed version of the CLI client.
 
-. Sign into the link:{page-cloud-console}[{hazelcast-cloud} console].
+. Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console].
 
 . Click *Connect Your Application*.
 
@@ -311,11 +311,11 @@ You should see your installed version of the CLI client.
 
 . Extract the ZIP file.
 +
-This file contains the credentials that allow the CLI to connect to your {hazelcast-cloud} cluster.
+This file contains the credentials that allow the CLI to connect to your cluster.
 
 . Change into the directory where you extracted the ZIP file.
 
-. Connect to the SQL shell on your {hazelcast-cloud} cluster.
+. Connect to the SQL shell on your cluster.
 +
 ```bash
 hz-cli -f hazelcast-client-with-ssl.yml sql
@@ -383,7 +383,7 @@ SELECT * FROM cities;
 +------------+--------------------+--------------------+--------------+
 ```
 +
-The results are in a random order because the data is distributed across the {hazelcast-cloud} cluster. Whenever a cluster member has the result, it returns it to the client.
+The results are in a random order because the data is distributed across the cluster. Whenever a cluster member has the result, it returns it to the client.
 
 . Order the results by the key.
 +
@@ -507,7 +507,7 @@ Learn more about Serverless:
 - xref:serverless-cluster.adoc[]
 - xref:developer-guide.adoc[]
 
-Try a xref:tutorials.adoc[tutorial] for {hazelcast-cloud}.
+Try a xref:tutorials.adoc[tutorial].
 
 Find out more about the SQL statements used in this tutorial:
 

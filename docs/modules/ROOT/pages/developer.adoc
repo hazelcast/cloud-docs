@@ -1,16 +1,16 @@
 = Creating API Keys
-:description: To connect a client to your {hazelcast-cloud} account, you need an API key and an API secret. These credentials authenticate clients to your account. You can manage these credentials in your account settings in {hazelcast-cloud}.
+:description: To connect a client to your account, you need an API key and an API secret. These credentials authenticate clients to your account. You can manage these credentials in your account settings.
 
 {description}
 
 To manage API keys for a team's cluster, you must have either an xref:create-account.adoc#roles[admin or developer role].
 
-== Using the {hazelcast-cloud} Console
+== Using the Hazelcast {hazelcast-cloud} Console
 
 // tag::create[]
 To create a new set of API credentials, do the following:
 
-. Sign into the link:{page-cloud-console}[{hazelcast-cloud} console].
+. Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console].
 . Click the *Account* icon in the bottom left corner.
 . Click *Developer*.
 . Click *Generate new API Key*.
