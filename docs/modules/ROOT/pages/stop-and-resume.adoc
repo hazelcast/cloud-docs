@@ -1,5 +1,5 @@
 = Stopping and Resuming Clusters
-:description: Stopping a cluster saves your cluster's configuration and stops charges accumulating in your account.
+:description: You can avoid charges accumulating in your account by stopping clusters when you arent using them.
 :page-aliases: manage-the-cluster.adoc
 
 {description}
@@ -10,7 +10,7 @@ You cannot stop a {hazelcast-cloud} Dedicated cluster if it's hosted on Google C
 
 == Stopping a Cluster
 
-Stopping your cluster can help minimize your costs during development because you are only charged for running clusters.
+Stopping your cluster can help minimize your costs because you are charged only for running clusters.
 
 . Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console] and select your cluster.
 . Click *Stop*.

@@ -8,11 +8,11 @@ Hazelcast {hazelcast-cloud} abstracts away the manual effort of managing physica
 
 == Application Topology
 
-Hazelcast {hazelcast-cloud} runs in a client/server topology:
+Hazelcast {hazelcast-cloud} applications run in a client/server topology:
 
 - {hazelcast-cloud} clusters are the servers that are responsible for storing and processing your data.
 
-- You can use clients to connect to your cluster to request processing results, add data to storage, or query data.
+- Clients connect to your cluster to submit new processing jobs, request processing results, add data to storage, or query data.
 
 == Editions
 

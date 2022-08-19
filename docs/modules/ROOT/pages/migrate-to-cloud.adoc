@@ -13,7 +13,7 @@ Applications in Hazelcast {hazelcast-cloud} are split into two parts:
 
 - The client that calls APIs on cluster.
 
-image:ROOT:serverless-app-server.svg[A Hazelcast client application communicating with a Hazelcast {hazelcast-cloud} cluster]
+image::ROOT:serverless-app-server.svg[A Hazelcast client application communicating with a Hazelcast {hazelcast-cloud} cluster]
 
 To separate your embedded application into these two parts, see the following checklist:
 

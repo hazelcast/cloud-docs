@@ -1,4 +1,4 @@
-= Hazelcast {hazelcast-cloud} Tutorials
+= Tutorials
 :description: Tutorials provide you with the sample code you need to learn how to achieve a specific goal.
 :page-include-tutorial-list: true
 
