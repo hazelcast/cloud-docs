@@ -2,6 +2,48 @@
 :url-cloud-cli-announcement: https://hazelcast.com/blog/announcing-hazelcast-cloud-cli/
 :url-cloud-sdk-announcement: https://hazelcast.com/blog/announcing-hazelcast-cloud-go-sdk/
 
+== August 5, 2022 - v3.11.0
+
+*New Features*
+
+- Sample client applications now include examples of real-time processing.
+
+*Fixes*
+
+- Multiple UI updates and fixes.
+
+== July 12, 2022 - v3.10.0
+
+*New Features*
+
+- The xref:maven-plugin-hazelcast.adoc[Hazelcast Maven Plugin] is now publicly available in the central maven repository.
+
+*Fixes*
+
+- UI updates for customer billing and cluster management screens.
+- Standard clusters no longer fail while autoscaling.
+- Clusters can now be restored from backups after autoscaling.
+
+== June 15, 2022 - v3.9.0
+
+*New Features*
+
+- The Hazelcast Cloud CLI now supports commands for working with custom classes in Enterprise clusters.
+
+*Fixes*
+
+- Multiple improvements to WAN replication performance and stability.
+- Various UI updates for cluster management processes.
+- Data in Enterprise clusters is no longer overwritten when the memory limit is reached.
+- .NET clients can now connect to clusters without errors.
+
+== Jun 01, 2022 - v3.8.0
+
+*Fixes*
+
+- Multiple UI updates and fixes.
+- Standard clusters no longer fail to resume after being stopped.
+
 == May 6, 2022 - v3.7.0
 
 This release is focused on improving the stability of Hazelcast Cloud, notably occasional failures during cluster lifecycle changes (creation, starting, stopping).
@@ -21,7 +63,7 @@ This release introduces Hazelcast 5.1 and the improvements to SQL:
 
 *New Features:*
 
-- Support for {cpp} apps. Follow our xref:cpp-client.adoc[tutorial] to connect your {cpp} app to the cloud, and use the latest features of Hazelcast!
+- Support for {cpp} apps. Follow our xref:get-started.adoc[tutorial] to connect your {cpp} app to the cloud, and use the latest features of Hazelcast!
 
 - A new compact design for the cluster page. 
 
@@ -37,7 +79,7 @@ This release introduces Hazelcast 5.1 and the improvements to SQL:
 
 *New Features:*
 
-- Introducing SQL for Python and Node.js. xref:ROOT:sql.adoc[Try the new SQL features] from your Python and Node.js apps.
+- Introducing SQL for Python and Node.js. xref:get-started.adoc[Try the new SQL features] from your Python and Node.js apps.
 
 - Lots of improvements in the UI.
 
@@ -49,7 +91,7 @@ This release introduces Hazelcast 5.1 and the improvements to SQL:
 
 *New Features:*
 
-- Support for Hazelcast Platform 5.0. xref:ROOT:sql.adoc[Try the new SQL features].
+- Support for Hazelcast Platform 5.0. xref:get-started.adoc[Try the new SQL features].
 
 - Contextual help to guide you through the process of configuring data structures.
 
