@@ -1,16 +1,16 @@
 = Replicating Data Between Clusters
-:description: You can use WAN replication to automatically copy data between two or more clusters, and to transfer data from one cluster to another.
+:description: You can use the WAN Replication feature to automatically replicate data in map or cache data structures from one cluster to another.
 :page-aliases: data-migration.adoc
 
 {description}
 
 == Use Cases
 
-WAN replication supports the following use cases:
+WAN Replication supports the following use cases:
 
-* Use WAN replication with a xref:tutorials:ROOT:failover-clients-with-hazelcast-cloud.adoc[failover client] as part of your disaster recovery strategy. WAN replication automatically replicates data between clusters. If a cluster fails, the failover client can switch to an alternative cluster with minimal disruption to service.
+* Set up a disaster recovery strategy, using a failover client. If one cluster fails, the failover client can switch to an alternative cluster with minimal disruption to service.
 
-* Migrate data to a new cluster before decommissioning your original cluster.
+* Migrate data to a new cluster before shutting down your original cluster.
 
 == Terminology
 
@@ -19,10 +19,10 @@ WAN replication supports the following use cases:
 |Term|Description
 
 | _Publisher_ cluster, also known as the _active_ cluster
-|Sends or transfers data to another cluster using WAN replication
+|Sends or transfers data to another cluster, using WAN Replication
 
 | _Consumer_ cluster, also known as the _passive_ cluster
-|Receives data from another cluster using WAN replication
+|Receives data from another cluster, using WAN Replication
 
 |_Active-Passive_ replication
 |One-way replication. Data updates on a publisher cluster are automatically copied to a consumer cluster. Use this configuration for migrating data between clusters.
@@ -40,13 +40,9 @@ WAN replication supports the following use cases:
 Make sure that each cluster is configured with the same settings. For example, if one cluster
 contains xref:cluster-side-modules.adoc[cluster-side modules] or persistence, the other cluster must too.
 
-* Decide which configuration to use for your pair of clusters:
-** Active-Passive
-** Active-Active
-
 == Set Up WAN Replication
 
-Set up WAN replication between two clusters.
+Set up WAN Replication between two clusters.
 
 . Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console] and select the cluster that you want to use as a publisher cluster.
 
@@ -80,21 +76,21 @@ The cluster is set as the *Active* cluster. Any data updates performed on this c
 . Click *Save*. WAN Replication is set up.
 
 +
-TIP: If you want to replicate all data between the two clusters immediately, click *Sync*. This option is useful when you're migrating data from one cluster to another. Otherwise, WAN replication is triggered when a data update is made to a publisher cluster.
+TIP: If you want to replicate all data between the two clusters immediately, click *Sync*. This option is useful when you're migrating data from one cluster to another. Otherwise, WAN Replication is triggered when a data update is made to a publisher cluster.
 
 == Verify WAN Replication
 
-Check that data is successfully replicated between two clusters connected by WAN replication.
+Check that data is successfully replicated between two clusters that are connected by WAN Replication.
 
 . Connect a client to your publisher cluster and write some data to a map. You can use either cluster in an Active-Active pair.
 . Open the dashboard of the other cluster and scroll down to *Map Metrics*. Check the *Entry Count* chart for new map entries. If you've written or synched other data types, check the relevant section of Management Center.
 
 +
-TIP: You can check the status of WAN replication from Management Center for your publisher cluster. From the dashboard of your cluster select *Manage Cluster* > *Management Center*, then go to *Cluster* > *WAN Replication*.
+TIP: You can check the status of WAN Replication from Management Center for your publisher cluster. From the dashboard of your cluster select *Manage Cluster* > *Management Center*, then go to *Cluster* > *WAN Replication*.
 
 == Delete a Cluster that uses WAN Replication
 
-Learn how to delete a cluster that has WAN replication set up. 
+Learn how to delete a cluster that has WAN Replication set up. 
 
 Before you start, check that all the data you need has been replicated to another cluster.
 
@@ -103,7 +99,7 @@ To delete a consumer cluster, do the following:
 . Identify the connected publisher cluster. From the dashboard of the consumer cluster, go to *Manage Cluster* > *Settings*. On the *Cluster Settings* page, select *WAN Replication* and look for the ID of publisher cluster.
 . Open the dashboard of the publisher cluster.
 . Go to *Manage Cluster* > *Settings*. 
-. Remove WAN replication. On the *Cluster Settings* page, select *WAN Replication* and then click *Delete*. Confirm your deletion.
+. Remove WAN Replication. On the *Cluster Settings* page, select *WAN Replication* and then click *Delete*. Confirm your deletion.
 . Return to the dashboard of the consumer cluster and delete the cluster.
 
 To delete a publisher cluster, do the following:
@@ -111,3 +107,6 @@ To delete a publisher cluster, do the following:
 . Follow steps 2 to 4 as for the consumer cluster.
 . Go to the dashboard of your publisher cluster and delete the cluster.
 
+== Related Resources
+
+- xref:tutorials:ROOT:failover-clients-with-hazelcast-cloud.adoc[]
