@@ -2,6 +2,22 @@
 :url-cloud-cli-announcement: https://hazelcast.com/blog/announcing-hazelcast-cloud-cli/
 :url-cloud-sdk-announcement: https://hazelcast.com/blog/announcing-hazelcast-cloud-go-sdk/
 
+== August 26, 2022 - v3.12.1
+
+This release included improvements to our backend email services.
+
+== August 24, 2022 - v3.12.0
+
+*Fixes*
+
+- The quickstart guides for sample clients now provide the correct commands for clusters that have TLS enabled.
+
+- The *Stop* button is no longer hidden on the dashboard of Enterprise clusters that are hosted on AWS or Azure.
+
+- When you delete a WAN Replication configuration, the configuration is now deleted instead of being paused and resumed when you try to add a new configuration.
+
+- When a cluster has WAN Replication and fails, you can now delete the active or passive cluster that is connected to that cluster.
+
 == August 5, 2022 - v3.11.0
 
 *New Features*
