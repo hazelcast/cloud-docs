@@ -2,6 +2,7 @@
 :description: In this tutorial, you'll learn how to connect your cluster to Confluent Cloud, using SQL. You'll also learn how to build a materialized view from streaming data and contextual data in Hazelcast.
 :page-layout: tutorial
 :page-product: cloud
+:page-lang: sql
 :page-categories: SQL, Streaming, Materialized Views
 :page-est-time: 20 mins
 
