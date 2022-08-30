@@ -3,7 +3,7 @@
 :page-layout: tutorial
 :page-product: cloud
 :page-lang: sql
-:page-categories: SQL, Streaming, Materialized Views
+:page-categories: Stream Processing, Materialized Views
 :page-est-time: 20 mins
 
 {description}
