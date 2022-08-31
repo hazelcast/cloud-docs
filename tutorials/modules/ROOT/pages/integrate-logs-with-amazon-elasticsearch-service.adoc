@@ -64,7 +64,7 @@ Configure your {hazelcast-cloud} Dedicated cluster to send log files to the Open
 You'll need the master user credentials and domain endpoint that you created when you <<configure-opensearch-domain, configured OpenSearch>>.
 
 . Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console] and select the cluster that want to integrate with OpenSearch.
-. Select *Manage Cluster* > *Settings* > *Logging*.
+. Select *Manage* > *Logging*.
 . From the *Logging Technology* list, select *Elastic Stack (ELK)*.
 . In the *Username* and *Password* fields, enter your master user credentials.
 . In the *URL* field, enter the domain endpoint for your OpenSearch domain followed by port number 443. 

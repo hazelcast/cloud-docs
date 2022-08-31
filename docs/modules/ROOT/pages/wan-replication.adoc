@@ -49,8 +49,7 @@ Set up WAN Replication between two clusters.
 +
 NOTE: If you want to set up a pair of clusters in an Active-Active configuration, select either cluster.
 
-. Select *Manage Cluster* > *Settings*.
-. On the *Cluster Settings* page, select *WAN Replication* and then click *+ Create New Replication*.
+. Go to *Manage* > *WAN Replication* and then click *+ Create New Replication*.
 
 +
 The cluster is set as the *Active* cluster. Any data updates performed on this cluster are automatically copied to the other cluster of the pair.
@@ -86,7 +85,7 @@ Check that data is successfully replicated between two clusters that are connect
 . Open the dashboard of the other cluster and scroll down to *Map Metrics*. Check the *Entry Count* chart for new map entries. If you've written or synched other data types, check the relevant section of Management Center.
 
 +
-TIP: You can check the status of WAN Replication from Management Center for your publisher cluster. From the dashboard of your cluster select *Manage Cluster* > *Management Center*, then go to *Cluster* > *WAN Replication*.
+TIP: You can check the status of WAN Replication from Management Center for your publisher cluster. From the dashboard of your cluster select *Management Center*, then go to *Cluster* > *WAN Replication*.
 
 == Delete a Cluster that uses WAN Replication
 
@@ -96,9 +95,9 @@ Before you start, check that all the data you need has been replicated to anothe
 
 To delete a consumer cluster, do the following:
 
-. Identify the connected publisher cluster. From the dashboard of the consumer cluster, go to *Manage Cluster* > *Settings*. On the *Cluster Settings* page, select *WAN Replication* and look for the ID of publisher cluster.
+. Identify the connected publisher cluster. From the dashboard of the consumer cluster, go to *Manage* > *WAN Replication* and look for the ID of publisher cluster.
 . Open the dashboard of the publisher cluster.
-. Go to *Manage Cluster* > *Settings*. 
+. Go to *Manage* > *WAN Replication*. 
 . Remove WAN Replication. On the *Cluster Settings* page, select *WAN Replication* and then click *Delete*. Confirm your deletion.
 . Return to the dashboard of the consumer cluster and delete the cluster.
 
