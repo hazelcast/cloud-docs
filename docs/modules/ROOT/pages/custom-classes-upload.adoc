@@ -40,7 +40,7 @@ You must have either an xref:teams-and-users.adoc[admin or developer role] to up
 
 . Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console] and select your cluster.
 
-. Go to *Upload Custom Classes* and use the file selector to upload the file to Hazelcast {hazelcast-cloud}.
+. Go to *Manage* > *Custom Classes* and use the file selector to upload the file to Hazelcast {hazelcast-cloud}.
 
 When the file is uploaded and ready to use, you will see a success message.
 
@@ -50,7 +50,7 @@ To remove cluster-side modules from the cluster, you must use the Hazelcast {haz
 
 . Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console] and select your cluster.
 
-. Click *Upload Custom Classes* and find your class in the list.
+. Go to *Manage* > *Custom Classes* and find your class in the list.
 
 . Click on the delete icon next to the class that you want to delete.
 
@@ -60,4 +60,4 @@ To download a cluster-side module, you must use the Hazelcast {hazelcast-cloud} 
 
 . Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console].
 
-. Click *Upload Custom Classes*, find your class in the *Uploaded Classes* list and click on it.
+. Go to *Manage* > *Custom Classes*, find your class in the *Uploaded Classes* list and click on it.
