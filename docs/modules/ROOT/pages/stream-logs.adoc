@@ -9,7 +9,7 @@
 . Execute the following:
 +
 ```bash
-mvn hazelcast-cloud:stream
+mvn hazelcast-cloud:stream-logs
 ```
 
 You'll see the latest 1,000 lines of logs for a single member in your cluster.
