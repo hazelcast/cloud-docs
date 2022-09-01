@@ -1,7 +1,7 @@
 = Creating AWS PrivateLink Connections
 :page-dedicated: true
 
-AWS Private Link simplifies connectivity of services across different accounts and VPCs so that your data will be shared between services without exposure of data to the public internet. In addition to xref:aws-vpc-peering.adoc[AWS VPC peering], {hazelcast-cloud} Dedicated provides AWS Private Link connection strategy and in this new strategy, Hazelcast Clusters are like AWS Marketplace Items that you can connect to your own clusters by subscribing them with a couple of clicks via the Hazelcast {hazelcast-cloud} console.
+AWS Private Link simplifies connectivity of services across different accounts and VPCs so that your data will be shared between services without exposure of data to the public Internet. In addition to xref:aws-vpc-peering.adoc[AWS VPC peering], {hazelcast-cloud} Dedicated provides AWS Private Link connection strategy and in this new strategy, Hazelcast Clusters are like AWS Marketplace Items that you can connect to your own clusters by subscribing them with a couple of clicks via the Hazelcast {hazelcast-cloud} console.
 
 == AWS PrivateLink Workflow
 
