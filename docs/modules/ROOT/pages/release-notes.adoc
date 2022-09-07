@@ -2,6 +2,56 @@
 :url-cloud-cli-announcement: https://hazelcast.com/blog/announcing-hazelcast-cloud-cli/
 :url-cloud-sdk-announcement: https://hazelcast.com/blog/announcing-hazelcast-cloud-go-sdk/
 
+== September 9, 2022 - v4.0 BETA
+
+This release introduces a BETA version of the xref:serverless-cluster.adoc[Hazelcast {hazelcast-cloud} Serverless] edition of Hazelcast {hazelcast-cloud} Cloud Managed Services. xref:tutorials.adoc[Tutorials] and xref:serverless-cluster.adoc[documentation] for Hazelcast {hazelcast-cloud} are also available.
+
+*New Features*
+
+- Development and production clusters for Hazelcast {hazelcast-cloud} Serverless. 
+
+- Microsoft Authenticator is officially supported for multi-factor authentication.
+
+- Event tracking is enabled to gather cluster usage metrics.
+
+*Fixes and Improvements*
+
+All bug fixes and improvements are for the Hazelcast {hazelcast-cloud} Serverless edition of Hazelcast {hazelcast-cloud} Cloud Managed Services unless otherwise stated.
+
+- Multiple UI improvements, including usability improvements to graphs showing cluster metrics and customer emails.
+
+- To optimize resource consumption, idle Hazelcast {hazelcast-cloud} Serverless clusters are paused after 24 hours and an email is sent to the account holder.
+
+- When you download log files from the console, the file name now includes the cluster name and the date/time of download.
+
+- When you stop WAN Replication on a cluster, replication no longer restarts after autoscaling.
+
+- When WAN replication is configured for a pair of clusters, metrics for map replications on both clusters are now displayed.
+
+- To avoid issues with WAN Replication, any configuration changes that update network policies are now checked to make sure they do not restrict access between the publisher and the consumer cluster.
+
+- When you stop and resume a cluster, the current figure for data usage is displayed immediately.
+
+- When you stop a cluster, you can no longer add or remove IP address from the allow list because this change cannot be applied.
+
+- When you delete a cluster, the confirmation message is no longer displayed before the deletion is complete.
+
+- Backups of clusters with custom classes uploaded no longer fail to restore.
+
+- Adding an IP address to the allow list no longer triggers a Java exception error.
+
+- With MapStore enabled, you can now successfully upload MapStore classes from the *Custom Data Configuration* screen.
+
+- Clusters no longer remain in the _Updating Cluster Config_ state for a long time while custom classes are uploaded.
+
+- Configuring WAN replication for Enterprise clusters using Google Cloud Platform no longer incorrectly removes existing ConfigMaps.
+
+- On the console of an Enterprise cluster with TLS disabled, the *Connect Your Application* button is no longer enabled until a peering connection is set up. 
+
+== September 1, 2022 - v3.12.2
+
+This release included improvements to cluster metrics for our support teams.
+
 == August 26, 2022 - v3.12.1
 
 This release included improvements to our backend email services.
