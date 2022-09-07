@@ -14,15 +14,20 @@ This release introduces a BETA version of the xref:serverless-cluster.adoc[Hazel
 
 - Event tracking is enabled to gather cluster usage metrics.
 
-*Fixes and Improvements*
+*Enhancements*
 
-All bug fixes and improvements are for the Hazelcast {hazelcast-cloud} Serverless edition of Hazelcast {hazelcast-cloud} Cloud Managed Services unless otherwise stated.
+All enhancements are for the Hazelcast {hazelcast-cloud} Serverless edition of Hazelcast {hazelcast-cloud} Cloud Managed Services unless otherwise stated.
 
 - Multiple UI improvements, including usability improvements to graphs showing cluster metrics and customer emails.
 
 - To optimize resource consumption, idle Hazelcast {hazelcast-cloud} Serverless clusters are paused after 24 hours and an email is sent to the account holder.
 
 - When you download log files from the console, the file name now includes the cluster name and the date/time of download.
+
+
+*Fixes*
+
+All bug fixes are for the Hazelcast {hazelcast-cloud} Serverless edition of Hazelcast {hazelcast-cloud} Cloud Managed Services unless otherwise stated.
 
 - When you stop WAN Replication on a cluster, replication no longer restarts after autoscaling.
 
