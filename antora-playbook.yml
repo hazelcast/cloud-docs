@@ -40,7 +40,7 @@ asciidoc:
     idprefix: ''
     idseparator: '-'
     hazelcast-cloud: Viridian
-    page-cloud-console: https://viridian.hazelcast.cloud/
+    page-cloud-console: https://viridian.hazelcast.com/
   extensions:
     - ./lib/tabs-block.js
     - asciidoctor-kroki
