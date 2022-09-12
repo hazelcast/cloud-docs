@@ -30,7 +30,7 @@ content:
     branches: master
     start_paths: docs
   - url: https://github.com/hazelcast/hazelcast-cloud-maven-plugin
-    branches: serverless-mvp-uat
+    branches: main
     start_path: docs
 ui: 
   bundle:
