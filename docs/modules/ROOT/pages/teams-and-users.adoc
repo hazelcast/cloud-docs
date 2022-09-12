@@ -1,60 +1,17 @@
-= Managing Teams and Users
-:description: By default, accounts include a single owner. If you want to collaborate with other team members, you can allow them to access specific clusters by inviting them to a team and assigning them roles based on what actions they need to perform on the team's clusters.
+= Teams and User Roles
+:description: To collaborate with other team members, you can allow them to access specific clusters by inviting them to a team and assigning them roles based on what actions they need to perform on the team's clusters.
 
 {description}
 
-== Team Roles
-
-In each team, users can have one of the following roles:
-
-[cols="2a,1a,1a,1a,1a"]
-|===
-||Admin|Developer|Finance|View only
-
-|Creating new clusters for the team
-|yes
-|yes
-|no
-|no
-
-|Managing billing settings
-|yes
-|no
-|yes
-|no
-
-|Redeeming credits
-|yes
-|no
-|yes
-|no
-
-|Managing API keys
-|yes
-|yes
-|no
-|no
-
-|Updating cluster settings
-|yes
-|yes
-|no
-|no
-
-|Viewing charts and metrics
-|yes
-|yes
-|yes
-|yes
-
-
-|===
+NOTE: {hazelcast-cloud} Serverless clusters for teams do not include the free 2 GiB storage.
 
 == Creating a Team
 
-. Go to *Settings* > *Team & Users*.
-+
-image:teams-and-users.png[Create a new team]
+. Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console].
+
+. Click the *Account* icon in the bottom left corner.
+
+. Click *Teams & Users*.
 
 . Enter a team name and click *Create Team*.
 
@@ -64,20 +21,55 @@ Now that you've created a team, you can invite users to it and assign them roles
 
 If you've created one or more teams, you can invite users to them and assign those users a role.
 
+. Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console].
+
+. Click the *Account* icon in the bottom left corner.
+
+. Click *Teams & Users*.
+
 . Select an existing team from the dropdown.
-+
-image:choose-team.png[Choose an existing team]
 
 . Enter the email address of the team member that you want to add and assign them a role from the dropdown.
 
 . Click *Invite*.
-+
+
 The user will receive an email invitation. When the user accepts the invitation, the user's status will change to *Active*.
 
 == Viewing your Team's Clusters
 
-You can see the teams that you are in by clicking your name in the top-right corner.
- 
-image:your-teams.png[A menu that displays an example user account and a team called Developers]
+To see the teams that you are in and the role that you have in that team, click the *Account* icon in the bottom left corner and use the dropdown next to your name. Select a team to see only clusters that are owned by that team.
 
-Select a team to see only clusters that are owned by that team.
+[[roles]]
+== Team Roles
+
+In each team, users can have one of the following roles:
+
+[cols="2a,1a,1a,1a,1a"]
+|===
+|Roles ->|Admin|Developer|Finance|View only
+
+|xref:create-serverless-cluster.adoc[Create and manage new clusters for the team]
+|yes
+|yes
+|no
+|no
+
+|xref:payment-methods.adoc[Manage billing settings]
+|yes
+|no
+|yes
+|no
+
+|xref:developer.adoc[Manage API keys]
+|yes
+|yes
+|no
+|no
+
+|xref:charts-and-stats.adoc[View charts and metrics]
+|yes
+|yes
+|yes
+|yes
+
+|===

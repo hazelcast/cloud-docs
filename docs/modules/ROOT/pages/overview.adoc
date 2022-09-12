@@ -1,0 +1,41 @@
+= Hazelcast {hazelcast-cloud} Cloud Managed Services
+:description: Hazelcast cloud managed services simplify deployments of Hazelcast Platform, allowing you to focus on building applications for stream and batch processing, low-latency querying, and caching.
+:page-aliases: use-cases.adoc, faq.adoc, pricing.adoc, preface.adoc
+
+{description}
+
+Hazelcast {hazelcast-cloud} abstracts away the manual effort of managing physical servers or servers in the cloud so that you can focus on what matters: Building your application.
+
+== Application Topology
+
+Hazelcast {hazelcast-cloud} applications run in a client/server topology:
+
+- {hazelcast-cloud} clusters are the servers that are responsible for storing and processing your data.
+
+- Clients connect to your cluster to submit new processing jobs, request processing results, add data to storage, or query data.
+
+== Editions
+
+Hazelcast {hazelcast-cloud} offers two editions: {hazelcast-cloud} Serverless and {hazelcast-cloud} Dedicated.
+
+[cols="1a,2a,2a"]
+|===
+|Edition|Description|Pricing
+
+|xref:serverless-cluster.adoc[{hazelcast-cloud} Serverless (beta)]
+|{hazelcast-cloud} Serverless clusters auto-scale, depending on the amount of data you store.
+|Free to store up to 2 GiB in any {hazelcast-cloud} Serverless cluster in your account, then $0.10 USD per GiB.
+
+|xref:dedicated-cluster.adoc[{hazelcast-cloud} Dedicated] (coming soon)
+|{hazelcast-cloud} Dedicated clusters give you fine-grained control over the hardware and resources available to your cluster. It's your responsibility to scale {hazelcast-cloud} Dedicated clusters when you need more resources.
+|Depends on multiple factors such as the size of your chosen cloud instance.
+|===
+
+== Getting Started
+
+If you are a first-time user of Hazelcast {hazelcast-cloud}, see xref:get-started.adoc[].
+
+If you're ready to get started with a real use case, see xref:tutorials.adoc[].
+
+If you want to get an overview of the use cases and advantages of Hazelcast {hazelcast-cloud}, see the link:https://hazelcast.com/products/cloud/[Hazelcast website].
+

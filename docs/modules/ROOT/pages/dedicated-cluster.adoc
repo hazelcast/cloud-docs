@@ -1,0 +1,151 @@
+= {hazelcast-cloud} Dedicated Clusters
+:description: Dedicated is a managed cloud service that allows you to maintain control over the hardware, resources, and deployment options that are available to your cluster. Dedicated means you get specific servers (cloud instances) all to yourself. 
+:page-dedicated: true
+
+{description}
+
+You can design a Hazelcast topology that meets your specific compliance and service design needs.
+
+- Data and security regulations
+** Deploy your clusters to specific regions to comply with data residency laws.
+** Benefit from strict container isolation for projects that require enhanced security. {hazelcast-cloud} Dedicated is SOC 2 and ISO 27001 compliant.
+
+
+- Service design
+** Specify the number of members in your clusters as well as their memory capacity. You decide when to xref:scale-up-down.adoc[scale your clusters] if they need more resources.  
+** Deploy clusters to specific regions or cloud providers as part of your organization's cloud strategy.  To reduce network latency, you can deploy clusters in regions that are closest to your users' locations.
+** Benefit from Hazelcast support and predictable monthly billing.
+
+{hazelcast-cloud} Dedicated clusters are suitable for lightweight or production-critical applications where the workload is generally predictable.
+
+[[dedicated]]
+== Pricing for {hazelcast-cloud} Dedicated Clusters
+
+{hazelcast-cloud} Dedicated clusters are charged for the following:
+
+- *Provisioned memory:* How many resources you asked for when we created the cluster for you.
+- *Data transfer:* The volume of data going into, out of, and within your clusters.
+- *Cluster data storage:* If you requested persistence for your data, this is the cost of storing your cluster data in cloud storage.
++
+.What is cluster data?
+[%collapsible]
+====
+include::partial$cluster-data.adoc[]
+====
+
+=== Provisioned Memory
+
+Hazelcast charges you a fixed amount, depending on how much memory capacity is reserved for your cluster. If your cluster has 10 GiB capacity but you do not use all that memory, you are still charged for the full 10 GiB because this amount of memory was reserved for your use.
+
+These examples show the cost per month of three clusters that each have a different memory capacity and uptime:
+
+[cols="a,a,a,a"]
+|===
+|Cluster|Memory|Total uptime per month|Cost
+
+|1
+|10 GiB
+|10 hours
+|10 X 10 X $0.10 = $10.00
+
+|2
+|1 GiB
+|100 hours
+|1 X 100 X $0.10 = $10.00
+
+|3
+|3 GiB
+|50 hours
+|3 X 50 X $0.10 = $15.00
+
+|===
+
+In this scenario, the total cost for the month for all three clusters will be: $10.00 + $10.00 + $15.00 = $35.00
+
+{hazelcast-cloud} Dedicated clusters also incur charges for data transfer costs and any backup storage costs.
+
+=== Data Transfer
+
+Data transfer costs account for the volume of data going into, out of, and within your clusters.
+
+Your data transfer charges are aggregated over the month and added to your monthly bill.
+
+=== Cluster Data Storage
+
+If persistence is enabled on your cluster, Hazelcast stores your cluster data in cloud storage, which comes with additional costs.
+
+The cost of cluster data storage depend on the cloud providers cost of storing the data in their object store such as S3 on AWS.
+
+== Supported Functionality
+
+Use this table to learn what is supported in {hazelcast-cloud} Dedicated clusters:
+
+[cols="1a,1a"]
+|===
+|Functionality|Support
+
+|xref:create-dedicated-cluster.adoc[Create a cluster]
+|Supported
+
+|xref:deleting-a-cluster.adoc[Delete a cluster]
+|Supported
+
+|xref:stop-and-resume.adoc[Stop and resume the cluster]
+|Supported
+
+|xref:connect-to-cluster.adoc[Connect to the cluster]
+|Supported
+
+|xref:charts-and-stats.adoc[Read metrics]
+|Supported
+
+|xref:scale-up-down.adoc[Manually scale the cluster]
+|Supported
+
+|Auto scaling
+|Not Supported
+
+|xref:custom-classes-upload.adoc[Custom class upload]
+|Supported
+
+|xref:map-configurations.adoc[Add data structure configuration]
+|Supported
+
+|xref:map-configurations.adoc[Edit map configuration]
+|Supported
+
+|Delete data structure configuration
+|Not supported
+
+|Automated daily backups
+|Not supported
+
+|xref:backup-and-restore.adoc[Manual backups]
+|Supported
+
+|xref:ip-white-list.adoc[IP whitelisting]
+|Supported
+
+|xref:management-center.adoc[Management Center]
+|Supported
+
+|xref:wan-replication.adoc[WAN replication]
+|
+
+|xref:hazelcast-version.adoc[Choose a version of Hazelcast member software]
+|Supported
+
+|xref:logging-integration.adoc[Integrate with an external logging service]
+|Supported
+
+|xref:vpc-peering.adoc[VPC peering]
+|Supported
+
+|xref:aws-private-link.adoc[AWS PrivateLink]
+|Supported
+
+|===
+
+== Next Steps
+
+- xref:create-dedicated-cluster.adoc[]

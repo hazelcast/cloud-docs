@@ -1,28 +1,25 @@
-= Scaling a Cluster
-:description: You can easily scale clusters up or down, using a sliding scale that adds or removes cluster members. Scaling clusters is useful when you need more memory or you aren't using as much memory as you thought and want to save on the monthly costs.
+= Scaling a {hazelcast-cloud} Dedicated Cluster
+:description: Scaling clusters is useful when you need to increase available memory to handle higher than normal workloads. You can also control monthly costs by reducing memory when you expect lower loads. 
+:page-dedicated: true
 
 {description}
 
+{hazelcast-cloud} Dedicated clusters scale horizontally, which means that you can adjust the resources available to your application, such as memory, by adding members (scaling out) or removing members (scaling in). Each {hazelcast-cloud} Dedicated cluster is a network of at least three instances or _members_, with a fixed set of resources allocated to each one.
+
+To scale a team's cluster, you must have either an xref:teams-and-users.adoc[admin or developer role].
+
 == Before you Begin
 
-Calculate how much memory your cluster needs before scaling up or down.
+Calculate how much memory your cluster needs before scaling out or in. If your data structures have backups, include those in your calculations. For example, if a map has a backup count of 1 (default) and the size of its entries equal 5 MB, then the map's total data size is 10 MB (primary entries + backup entries).
 
-TIP: If your data structures have backups, include those in your calculations. For example, if a map has a backup count of 1 (default) and the size of its entries equal 5 MB, then the map's total data size is 10 MB (primary entries + backup entries).
+Scaling a cluster may take up to 8 or 10 minutes.
 
-To scale a team's cluster, you must have either an admin or developer role. See xref:teams-and-users.adoc[].
+== Scaling Out
 
-== Scaling Up
+When data in a cluster occupies 80% of all available memory, we send a warning email to the account or team owner. At this point, we recommend scaling out the cluster, which adds more members and therefore more resources such as memory. When you scale out a cluster, client applications do not experience any downtime. However, the cluster may temporarily experience lower throughput while members migrate their partitions.
 
-When data in a cluster occupies 80% of all available memory, we send a warning email to the account or team owner. At this point, we recommend scaling up the cluster, which adds more members and therefore more resources such as memory. When you scale up a cluster, client applications do not experience any downtime. However, the cluster may temporarily experience lower throughput while members migrate their partitions.
-
-[tabs] 
-====
-Enterprise:: 
-+ 
---
-. Go to *Manage Cluster* > *Settings* > *Scale Up/Down*.
-+
-image:cluster-settings-instance-count.png[Choose a number of cluster members]
+. Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console] and select your cluster.
+. Go to *Manage* > *Scale Up/Down*.
 +
 - *Instance Count Per Zone*: Number of members you have in each availability zone. 
 - *Total Instance Count*: Total number of members you have for all availability zones.
@@ -32,32 +29,14 @@ image:cluster-settings-instance-count.png[Choose a number of cluster members]
 
 Click on the *Update* button to apply your change.
 
-NOTE: Scaling an Enterprise cluster may take up to 8 or 10 minutes.
---
+== Scaling In
 
-Standard:: 
-+ 
---
-Click *Manage Memory* and move the slider to the new number of members (nodes) that you want.
+If you're using fewer resources than you thought you would when you created the cluster, you can scale in the cluster.
 
-image:manage-memory.png[Slide the bar to choose how much memory to allocate the cluster]
---
-====
+WARNING: If you scale in to a size that's smaller than your actual data size, some of your data will be removed.
 
-== Scaling Down
-
-If you're using fewer resources than you thought you would when you created the cluster, you can scale down the cluster.
-
-WARNING: If you scale down to a size that's smaller than your actual data size, some of your data will be removed.
-
-[tabs] 
-====
-Enterprise:: 
-+ 
---
-. Go to *Manage Cluster* > *Settings* > *Scale Up/Down*.
-+
-image:cluster-settings-instance-count.png[Choose a number of cluster members]
+. Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console] and select your cluster.
+. Go to *Manage* > *Scale Up/Down*.
 +
 - *Instance Count Per Zone*: Number of members you have in each availability zone. 
 - *Total Instance Count*: Total number of members you have for all availability zones.
@@ -66,29 +45,3 @@ image:cluster-settings-instance-count.png[Choose a number of cluster members]
 . Select a new count of instances for each availability zone. You can select an instance count between 1 and 10. As you select the count, the *Total Instance Count Will Be* field will show you the new count of total instances in your cluster.
 
 Click on the *Update* button to apply your change.
-
-NOTE: Scaling an Enterprise cluster may take up to 8 or 10 minutes.
---
-
-Standard:: 
-+ 
---
-Click *Manage Memory* and move the slider to the new number of nodes (members) that you want.
-
-image:manage-memory.png[Slide the bar to choose how much memory to allocate the cluster]
---
-====
-
-== Auto-Scaling
-
-If you're on the Standard plan, you can configure your cluster to scale up or down automatically, depending on your total used resources.
-
-NOTE: Auto-scaling is not available to clusters on the Basic or Enterprise plans.
-
-To enable or disable auto-scaling in a running cluster, click *Manage Memory* and use the *Enable Auto-Scaling* checkbox.
-
-image:manage-memory.png[Allow the cluster to scale its own memory size]
-
-When auto-scaling is enabled, your cluster starts with the minimum size for the cluster type you selected such as 2 GB for a Small cluster. Then, if memory usage exceeds 80%, the cluster is scaled up. Or, if memory usage drops below 40%, the cluster is scaled down.
-
-Hazelcast scales up or down in increments, depending on the cluster type that you selected while creating the cluster: 1 GB for Small clusters and 5 GB for Medium clusters. For example, for a Small cluster whose memory is 5 GB, Hazelcast will scale it to 6 GB when the used memory reaches 4 GB (80%).

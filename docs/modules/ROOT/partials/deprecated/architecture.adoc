@@ -1,0 +1,37 @@
+= Hazelcast {hazelcast-cloud} Architecture
+
+image:architecture.png[Cloud architecture]
+
+- Designed for Cloud Native applications.
+- Built on containerization and orchestration technologies: Docker and Kubernetes.
+- Minimal Docker images are used for the sake of simplicity and security. 
+- User clusters are isolated from each other on the orchestration level.
+- Resources (memory, CPU) are limited on the container level, so resource stealing is prevented.
+- All accesses to Kubernetes clusters are closed by default, with the exception of client endpoints.
+- All client endpoints to Kubernetes clusters and all endpoints to Hazelcast {hazelcast-cloud} console are encrypted via TLS.
+- Authentication of Hazelcast {hazelcast-cloud} console is performed via the JSON Web Token (JWT) standard.
+- No one, including Hazelcast staff, has access to customer data inside the Hazelcast clusters.
+- Persistence is optional. When enabled, persistence is delivered using the Hazelcast Enterprise Persistence feature. Enabling persistence will cause a notable drop in the cluster throughput.
+- Clusters can be upgraded via Rolling Upgrades without any downtime.
+- Internal server logs and some cluster metrics are aggregated to Prometheus. The Hazelcast operations team receives alerts in case of any unusual metrics or exception logs. This ensures issues are handled proactively before causing any instability to your users.
+- The overall system is periodically audited and tested by third-party security consultancies.
+
+== Components
+
+{hazelcast-cloud} Dedicated creates a subaccount for each customer. Under this subaccount, the following components are created in the given order when you create a cluster:
+
+- Virtual Private Cloud (VPC)
+  * Kubernetes cluster
+    ** Prometheus for system metrics
+    ** Management Center for Hazelcast metrics
+    ** Hazelcast cluster
+
+image:enterprise-architecture.png[{hazelcast-cloud} Dedicated architecture]
+
+As you can see in the above schema, there are two types of access to the customer data plane (where the Hazelcast cluster is hosted): Hazelcast control plane and customer client applications.
+
+Hazelcast control plane orchestrates your cluster. Within this plane, you can manage your cluster using a web console application (Hazelcast {hazelcast-cloud} console).
+
+The Hazelcast clusters are in isolated VPCs, so the user clients cannot connect to the cluster by default. You need to set up VPC Peering between the Hazelcast cluster's VPC and user client application's VPC. You can set up the required peering in an automated way in the Hazelcast {hazelcast-cloud} console.
+
+image:enterprise-communication.png[Enterprise communication protocols]

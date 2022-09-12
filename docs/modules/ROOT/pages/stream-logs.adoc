@@ -1,0 +1,19 @@
+= Streaming Cluster Logs
+:page-serverless: true
+:description: You can stream the last 1,000 lines of your cluster logs, using the Maven plugin.
+
+{description}
+
+. xref:maven-plugin-hazelcast.adoc[Configure the Maven plugin] to connect to your cluster.
+
+. Execute the following:
++
+```bash
+mvn hazelcast-cloud:stream-logs
+```
+
+You'll see the latest 1,000 lines of logs for a single member in your cluster.
+
+== Next Steps
+
+To see the logs of all members in your cluster, see xref:download-logs.adoc[].

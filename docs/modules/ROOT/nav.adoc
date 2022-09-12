@@ -1,59 +1,59 @@
-.Quickstart
-** xref:sql.adoc[]
-
 .Get Started
-** xref:preface.adoc[]
-** xref:architecture.adoc[]
-** xref:use-cases.adoc[]
-** xref:pricing.adoc[]
-** xref:getting-started.adoc[]
-** Connect a Client
-*** xref:java-client.adoc[Java]
-*** xref:nodejs-client.adoc[Node.js]
-*** xref:python-client.adoc[Python]
-*** xref:go-client.adoc[Go]
-*** xref:net-client.adoc[C#]
-*** xref:cpp-client.adoc[C++]
-*** xref:sql.adoc[SQL]
-** https://github.com/hazelcast/hazelcast-cloud-code-samples[Code Samples]
+* xref:overview.adoc[]
+** xref:serverless-cluster.adoc[]
+** xref:dedicated-cluster.adoc[]
+* xref:get-started.adoc[Hello World]
+* xref:tutorials.adoc[Tutorials]
+* xref:support.adoc[Support]
+* xref:release-notes.adoc[Release Notes]
 
-.Account Management
-** xref:account-security.adoc[]
-** xref:teams-and-users.adoc[]
-** xref:payment-methods.adoc[]
-** xref:credits.adoc[]
-** xref:developer.adoc[]
+.Develop Applications
+* xref:developer-guide.adoc[Developer Guide]
+* xref:connect-to-cluster.adoc[Connect to a Cluster]
+* xref:cluster-side-modules.adoc[Cluster-Side Modules]
+** xref:maploader-and-mapstore.adoc[MapStore]
+** xref:custom-classes-upload.adoc[Deploy Modules]
+* xref:logging.adoc[Logging]
+** xref:stream-logs.adoc[Stream Logs]
+** xref:download-logs.adoc[Download Logs]
+** xref:logging-integration.adoc[Integrate Logs]
+* xref:tools.adoc[Developer Tools]
 
-.Standard and Enterprise Clusters
-** link:{page-plans}[Standard vs Enterprise^]
-** xref:create-standard-cluster.adoc[]
-** xref:create-enterprise-cluster.adoc[]
+.Manage Accounts
+* xref:create-account.adoc[Create an Account]
+* xref:multi-factor-authentication.adoc[Multi-Factor Authentication]
+* xref:teams-and-users.adoc[Teams and Users]
+* xref:developer.adoc[API keys]
+* xref:payment-methods.adoc[Billing and Payments]
 
-.Cluster Management
-** xref:scale-up-down.adoc[]
-** xref:hazelcast-version.adoc[]
-** xref:custom-classes-upload.adoc[]
-** xref:maploader-and-mapstore.adoc[]
-** xref:wan-replication.adoc[]
-** xref:backup-and-restore.adoc[]
-** xref:manage-the-cluster.adoc[]
-** xref:deleting-a-cluster.adoc[]
-
-.Monitoring
-** xref:charts-and-stats.adoc[]
-** xref:management-center.adoc[]
-** xref:logging-integration.adoc[]
-
-.Security
-** xref:ip-white-list.adoc[]
-** xref:encryption.adoc[]
-** xref:connect-to-private-cluster.adoc[]
-*** xref:aws-vpc-peering.adoc[]
-*** xref:aws-private-link.adoc[]
+.Manage Clusters
+* xref:create-clusters.adoc[Create]
+** xref:create-serverless-cluster.adoc[Create a Serverless Cluster]
+** xref:create-dedicated-cluster.adoc[Create a Dedicated Cluster]
+* xref:authorize-connections.adoc[Authorize]
+** xref:ip-white-list.adoc[IP Whitelist]
+** xref:vpc-peering.adoc[VPC Peering and PrivateLink]
+*** xref:aws-vpc-peering.adoc[AWS VPC Peering]
+*** xref:gcp-vpc-peering.adoc[GCP VPC Peering]
 *** xref:azure-vnet-peering.adoc[]
-*** xref:gcp-vpc-peering.adoc[]
+*** xref:aws-private-link.adoc[]
+* xref:connect-to-cluster.adoc[Connect]
+* xref:stop-and-resume.adoc[Stop and Resume]
+* xref:deleting-a-cluster.adoc[Delete]
+* xref:scale-up-down.adoc[Scale]
+* xref:hazelcast-version.adoc[Upgrade]
+* xref:backup-and-restore.adoc[Backup and Restore]
+* xref:wan-replication.adoc[Replicate Data]
+* xref:monitor-clusters.adoc[Monitor]
+** xref:charts-and-stats.adoc[Dashboard]
+** xref:management-center.adoc[Management Center]
 
-.Data Structure Configuration
+.Migrate
+* xref:migrate-to-cloud.adoc[Embedded to Cloud]
+
+.Reference
+* xref:maven-plugin-hazelcast.adoc[Maven Plugin]
+* xref:data-structures.adoc[Data Structure Configuration]
 ** xref:map-configurations.adoc[]
 ** xref:jcache.adoc[]
 ** xref:queue.adoc[]
@@ -64,17 +64,3 @@
 ** xref:multimap.adoc[]
 ** xref:ringbuffer.adoc[]
 ** xref:reliable-topic.adoc[]
-
-.Tutorials
-** xref:shipping-logs-to-amazon-elasticsearch-service.adoc[]
-** xref:failover-clients-with-hazelcast-cloud.adoc[]
-** xref:data-migration.adoc[]
-
-.API Reference
-** xref:api-reference.adoc[GraphQL]
-
-.Resources
-** xref:faq.adoc[]
-** xref:support.adoc[]
-** xref:release-notes.adoc[]
-** https://github.com/hazelcast/hazelcast-cloud-code-samples[Code Samples]

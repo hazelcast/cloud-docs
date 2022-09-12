@@ -1,35 +1,36 @@
-= Logging Integration
+= Integrating Cluster Logs with Log Management Systems
+:description: You can integrate cluster logs with a log management system so that you can query and manage all your logs in one place.
+:page-dedicated: true
 
-Hazelcast Cloud Enterprise allows to integrate your own log management system. With the correct setup, all Hazelcast members send their logs to the configured remote logging solution.
-
-== Before you Begin
-
-Your cluster must be on the link:{page-plans}[Enterprise plan] to use this feature.
-
-== Supported Log Management Systems
+{description}
 
 Currently, the following logging solutions are supported:
 
-- ELK (Elastic Stack)
+- Elastic Stack (ELK)
 - Splunk
 
-See our tutorial on xref:shipping-logs-to-amazon-elasticsearch-service.adoc[Shipping Logs to Amazon ElasticSearch]
+== Before you Begin
 
-== Setting up Logging Integration
+You need the following:
 
-To set up the logging integration, click on the *Manage Cluster* button in the cluster details page (Hazelcast Cloud console) and select *Settings*. Go to the *Logging* tab of the appeared 'UPDATE CLUSTER' dialog.
+- An ELK or Splunk instance that has public access enabled.
 
-image:logging-tab.png[Logging tab in the cluster settings]
+== Setting up a Logging Integration
 
-Select the desired solution in the *Logging Technology* dropdown menu and provide the access parameters. Below is a sample screenshot when "ELK" is selected.
+To set up logging integration, do the following:
 
-image:logging-tech.png[Creating a logging integration]
+. Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console] and select your cluster.
 
-Click on the *Create Logging Integration* button. You should receive the Hazelcast member logs in your preferred log management system.
+. Go to  *Manage* > *Logging*.
 
-You can always remove the defined logging integrations by first clicking on the *Manage Cluster* button in the cluster details page, selecting *Settings* and navigating to the *Logging* tab of the appeared 'UPDATE CLUSTER' dialog.
+. Select your log management system from the *Logging Technology* dropdown menu and provide the access parameters.
 
-image:delete-logging.png[Deleting a logging integration]
+. Click *Create Logging Integration*.
 
-Click on the *Delete Logging Integration* and the Hazelcast member logs are no longer sent out.
+You should now start receiving cluster logs in your log management system.
 
+== Next Steps
+
+Try a tutorial:
+
+- xref:tutorials:ROOT:integrate-logs-with-amazon-elasticsearch-service.adoc[].

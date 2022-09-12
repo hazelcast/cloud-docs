@@ -1,18 +1,12 @@
-= Upgrading a Cluster
-:description: In Hazelcast Cloud Enterprise, you can choose a Hazelcast version while creating a Hazelcast cluster and then later update to newer versions.
+= Upgrading a {hazelcast-cloud} Dedicated Cluster
+:description: You can manually upgrade your clusters to newer versions of Hazelcast Platform.
+:page-dedicated: true
 
 {description}
 
-== Before you Begin
+To update the version of a team's cluster, you must have either an xref:teams-and-users.adoc[admin or developer role].
 
-Your cluster must be on the link:{page-plans}[Enterprise plan] to use this feature.
-
-To update the version of a team's cluster, you must have either an admin or developer role. See xref:teams-and-users.adoc[].
-
-== Updating to a New Version of Hazelcast
-
-. Go to *Manage Cluster* > *Settings* > *Hazelcast Version*.
+. Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console] and select your cluster.
+. Go to *Manage* > *Hazelcast Version*.
 . Select a new version from the dropdown.
 . Click *Update*.
-
-image:hazelcast-version-update.png[Updating the version of Hazelcast on an existing cluster]

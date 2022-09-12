@@ -1,0 +1,20 @@
+= Peering Connections for Private {hazelcast-cloud} Dedicated Clusters
+:description: To connect to a private cluster, you can set up a VPC peering connection. Hazelcast offers different options for setting up VPC peering connections, depending on the cloud provider that you chose to host your cluster.
+:page-dedicated: true
+
+{description}
+
+== AWS
+
+For clusters hosted on AWS, use one of the following options:
+
+- xref:aws-vpc-peering.adoc[]
+- xref:aws-private-link.adoc[]
+
+== GCP
+
+For clusters hosted on GCP, see xref:gcp-vpc-peering.adoc[].
+
+== Azure
+
+For clusters hosted on Azure, see xref:azure-vnet-peering.adoc[].

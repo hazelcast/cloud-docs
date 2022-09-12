@@ -1,0 +1,18 @@
+= Authorizing Client Connections
+:description: You can restrict access to your cluster to allow only authorized clients to connect to it.
+
+{description}
+
+== {hazelcast-cloud} Serverless
+
+If you're using a {hazelcast-cloud} Serverless cluster, you can add your client IP addresses to a xref:ip-white-list.adoc[whitelist].
+
+== {hazelcast-cloud} Dedicated
+
+If you're using a {hazelcast-cloud} Dedicated cluster, you must authorize your clients to connect to your cluster. {hazelcast-cloud} Dedicated clusters are private by default to prevent attacks such as denial of service. To authorize clients, you can do the following:
+
+- Add client IP addresses to a xref:ip-white-list.adoc[whitelist].
+- Set up xref:vpc-peering.adoc[PrivateLink or VPC peering].
+
+TIP: You should use PrivateLink or VPC peering if your clients' IP addresses are not static or if you want to limit your cluster's exposure to the public Internet.
+

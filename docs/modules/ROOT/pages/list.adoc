@@ -1,6 +1,6 @@
-= List
+= List Configuration
 
-Hazelcast List (*IList*) is similar to Hazelcast Set, but it also allows duplicate elements. This data structure also preserves the order of elements. It is a non-partitioned data structure where values and each backup are represented by their own single partition.
+A list allows duplicate elements and preserves the order of elements. It is a non-partitioned data structure, so all the data belongs to a set lives on one single partition in that member. 
 
 == List Name
 
@@ -12,7 +12,7 @@ You can also use wildcards to associate your configuration with multiple list na
 You can set a maximum number of entries for the List you are creating with setting this value.
 This value can be any integer between 0 and Integer.MAX_VALUE.
 
-NOTE: If you set this value to zero, no capacity constraint will be applied.
+If you set this value to zero, no capacity constraint will be applied.
 
 == Backup Count
 

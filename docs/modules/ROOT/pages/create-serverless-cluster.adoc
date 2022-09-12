@@ -1,0 +1,71 @@
+= Creating a {hazelcast-cloud} Serverless Cluster
+:description: You can create a free cluster for development or production.
+:page-aliases: create-starter-cluster.adoc, starter-clusters.adoc, create-standard-cluster.adoc, availability-zones.adoc, instance-types.adoc
+:page-serverless: true
+
+{description}
+
+== Before you Begin
+
+You need a xref:create-account.adoc[Hazelcast {hazelcast-cloud} account].
+
+To create more than one cluster, you must add a xref:payment-methods.adoc[payment card] to your account.
+
+== Using the Hazelcast {hazelcast-cloud} Console
+
+[tabs] 
+====
+Development cluster:: 
++ 
+--
+To create a development cluster, do the following:
+
+// tag::development[]
+. Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console].
+. Click *Plans* in the left navigation.
+. Click *Create cluster* in the *Serverless* tab.
+. Click *Create Development Cluster*.
+. Select a region.
++
+TIP: For best performance, use a region that's closest to your client application or data stores. The closer your clients and data are to the cluster, the lower the network latency.
+
+. Give your cluster a memorable name. You cannot change your cluster name after it has been created.
+
+It takes a few minutes to create a {hazelcast-cloud} Serverless cluster. When the cluster state changes from *Pending* to *Running*, you can start using it.
+// end::development[]
+--
+
+Production cluster:: 
++ 
+--
+To create a production cluster, do the following:
+
+// tag::production[]
+. Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console].
+. Click *Plans* in the left navigation.
+. Click *Create cluster* in the *Serverless* tab.
+. Click *Create Production Cluster*
+. Select a region.
++
+TIP: For best performance, use a region that's closest to your client applications or data stores. The closer your clients and data are to the cluster, the lower the network latency.
+. Give your cluster a memorable name. You cannot change your cluster name after it has been created.
+
+It takes a few minutes to create a {hazelcast-cloud} Serverless cluster. When the cluster state changes from *Pending* to *Running*, you can start using it.
+// end::production[]
+--
+====
+
+[NOTE]
+====
+Development and production clusters are stopped when both of these conditions are true:
+
+- You don't connect to the cluster for 24 hours.
+- You don't have a payment method set up for your Hazelcast {hazelcast-cloud} account.
+====
+
+== Next Steps
+
+Try the xref:get-started.adoc[hello world tutorial].
+
+Explore all xref:tutorials.adoc[tutorials].
+

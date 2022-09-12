@@ -1,0 +1,31 @@
+= Stopping and Resuming Clusters
+:description: You can avoid charges accumulating in your account by stopping clusters when you arent using them.
+:page-aliases: manage-the-cluster.adoc
+
+{description}
+
+To stop clusters in a team, you must have either an admin or developer role. See xref:teams-and-users.adoc[].
+
+You cannot stop a {hazelcast-cloud} Dedicated cluster if it's hosted on Google Cloud Platform (GCP).
+
+== Stopping a Cluster
+
+Stopping your cluster can help minimize your costs because you are charged only for running clusters.
+
+. Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console] and select your cluster.
+. Click *Stop*.
+
+If you're using a {hazelcast-cloud} Serverless production cluster or a {hazelcast-cloud} Dedicated cluster, Hazelcast saves your cluster data so that you can resume the cluster at a later time.
+
+.What is cluster data?
+[%collapsible]
+====
+include::partial$cluster-data.adoc[]
+====
+
+If you're using a {hazelcast-cloud} Serverless development cluster, all cluster data is lost after the cluster is stopped.
+
+== Resuming a Cluster
+
+. Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console] and select your cluster.
+. Click *Resume*.

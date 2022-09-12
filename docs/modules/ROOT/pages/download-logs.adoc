@@ -1,0 +1,11 @@
+= Downloading Cluster Logs
+:page-serverless: true
+:description: You can download the logs of all members in your cluster.
+
+{description}
+
+. Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console] and select your cluster.
+
+. Click *Download Logs* to download a ZIP file that contains all logs of members in your cluster.
+
+. Extract the ZIP file. Inside the extracted directory, you have one log file for each member in your cluster.

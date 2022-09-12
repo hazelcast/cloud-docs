@@ -1,0 +1,17 @@
+= Logging
+:description: Cluster logs are useful for monitoring your cluster or troubleshooting issues. Depending on your cluster edition, you can stream cluster logs directly to your IDE, download them, or integrate with a log management system.
+
+{description}
+
+== Logs for {hazelcast-cloud} Serverless Clusters
+
+To view logs for {hazelcast-cloud} Serverless clusters, you can use the following options:
+
+- xref:stream-logs.adoc[Stream logs from a single cluster].
+- xref:download-logs.adoc[Download logs from all clusters].
+
+== Logs for {hazelcast-cloud} Dedicated Clusters
+
+To view logs for {hazelcast-cloud} Dedicated clusters, you can use the following:
+
+- xref:logging-integration.adoc[]

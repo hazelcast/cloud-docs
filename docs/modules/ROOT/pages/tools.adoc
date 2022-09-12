@@ -1,0 +1,44 @@
+= Developer Tools
+:description: Hazelcast provides a variety of developer tools for creating, testing and debugging applications.
+
+{description}
+
+== Client Libraries
+
+You can use any available client library to connect to Hazelcast {hazelcast-cloud} clusters.
+
+See link:https://hazelcast.com/clients/[Clients and Languages].
+
+== Hazelcast {hazelcast-cloud} CLI
+
+Hazelcast {hazelcast-cloud} CLI is a command-line tool for creating and managing {hazelcast-cloud} clusters.
+
+See the documentation on link:{page-url-github-cloud-cli}[GitHub].
+
+== Maven Plugin for {hazelcast-cloud} Serverless
+[.beta]*Beta*
+
+The Maven plugin for {hazelcast-cloud} Serverless is a Java development tool for testing and deploying cluster-side modules on {hazelcast-cloud} Serverless clusters.
+
+See xref:maven-plugin-hazelcast.adoc[].
+
+== Hazelcast CLC
+[.beta]*Beta*
+
+Hazelcast Command-Line Client (CLC) is a command-line tool for connecting to {hazelcast-cloud} clusters, creating and managing data structures, and monitoring clusters.
+
+See the documentation on link:https://github.com/hazelcast/hazelcast-commandline-client[GitHub].
+
+== Hazelcast {hazelcast-cloud} Go SDK (deprecated)
+
+Hazelcast {hazelcast-cloud} Go SDK is a Go library for creating and managing {hazelcast-cloud} clusters.
+
+The Go SDK is deprecated and no longer maintained.
+
+See the legacy documentation on link:{page-url-github-go-sdk}[GitHub].
+
+== GraphQL API (deprecated)
+
+The GraphQL API is deprecated and no longer maintained.
+
+See the legacy documentation: xref:api-reference.adoc[].

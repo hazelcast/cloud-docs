@@ -1,0 +1,536 @@
+= Hazelcast {hazelcast-cloud} Hello World
+:description: In this tutorial, you'll learn how to connect a client to a cluster and use SQL to query data in the cluster.
+:page-aliases: cpp-client.adoc, getting-started.adoc, go-client.adoc, net-client.adoc, nodejs-client.adoc, python-client.adoc, sql.adoc
+
+{description}
+
+== Before you Begin
+
+You need the following:
+
+- A xref:create-account.adoc[Hazelcast {hazelcast-cloud} account].
+- Access to a command prompt such as Terminal for Mac or Powershell for Windows.
+
+== Step 1. Start a {hazelcast-cloud} Serverless Development Cluster
+
+include::serverless-cluster.adoc[tag=development]
+To create a development cluster, do the following:
+
+include::create-serverless-cluster.adoc[tag=development] 
+
+== Step 2. Run a Sample Client
+
+To connect to your {hazelcast-cloud} Serverless cluster, you need a Hazelcast client. The cluster comes with sample clients that are preconfigured to connect to your cluster and add some sample data to a map. A map is an in-memory, key/value data structure that is often used as a cache.
+
+Choose a client and follow the instructions.
+
+[tabs] 
+====
+Java:: 
++ 
+--
+. Make sure that you have Java 8-17 installed and the `JAVA_HOME` environment variable is set to the location of your JRE.
+
+. Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console].
+
+. Click *Connect Client*.
+
+. Go to the *Java* tab and download the ZIP file.
+
+. Extract the ZIP file and change into the extracted directory.
+
+. Execute the application from your command prompt:
++
+When you see `Connection Successful!` in the output, the application is finished.
+
+.. Execute the following if you use Linux or Mac: 
++ 
+```bash
+./mvnw clean compile exec:java@client-with-ssl
+```
+.. Execute the following if you use Windows: 
++
+```bash
+mvnw.cmd clean compile exec:java@client-with-ssl
+```
+
+. In the Hazelcast {hazelcast-cloud} console, go to *Management Center* and click *SQL Browser* in the top toolbar.
+
+. Enter the following in the SQL Browser to create a mapping to the `cities` map. The sample client that you just executed created this map for you and filled it with data.
++
+[source,sql]
+----
+CREATE OR REPLACE MAPPING cities (
+__key VARCHAR, 
+country VARCHAR, 
+city VARCHAR,
+population INT)
+type IMap OPTIONS('keyFormat'='varchar', 'valueFormat'='json-flat');
+----
+
+. Continue to the <<step-3, next step>> to query your sample data in the SQL browser.
+
+TIP: Take a moment, to read the code in the link:https://github.com/hazelcast/hazelcast-cloud-java-sample-client/blob/5.1/src/main/java/com/hazelcast/cloud/ClientWithSsl.java[`ClientWithSSL.java`] file to understand how the client connected. The client comes with some other examples that are commented out. To try those examples, you can uncomment them and run the application again.
+
+--
+
+Node.js:: 
++ 
+--
+. link:https://nodejs.org/en/download/[Install Node.js 10 or newer].
+
+. Go to the *Node.js* tab and download the ZIP file.
+
+. Extract the ZIP file, change into the extracted root directory and execute the following command:
++
+```bash
+npm run client_with_ssl
+```
++
+When you see `Connection Successful!` in the output, the application is finished.
+
+. In the Hazelcast {hazelcast-cloud} console, go to *Management Center* and click *SQL Browser* in the top toolbar.
+
+. Enter the following in the SQL Browser to create a mapping to the `cities` map. The sample client that you just executed created this map for you and filled it with data.
++
+[source,sql]
+----
+CREATE OR REPLACE MAPPING cities (
+__key VARCHAR, 
+country VARCHAR, 
+city VARCHAR,
+population INT)
+type IMap OPTIONS('keyFormat'='varchar', 'valueFormat'='json-flat');
+----
+
+. Continue to the <<step-3, next step>> to query your sample data in the SQL browser.
+
+TIP: Take a moment, to read the code in the link:https://github.com/hazelcast/hazelcast-cloud-nodejs-sample-client/blob/5.1/client_with_ssl.js[`client_with_ssl.js`] file to understand how the client connected. The client comes with some other examples that are commented out. To try those examples, you can uncomment them and run the application again.
+
+--
+
+Python:: 
++ 
+--
+. link:https://www.python.org/downloads/[Install Python 3.6 or newer].
+
+. Go to the *Python* tab and download the ZIP file.
+
+. Extract the ZIP file, change into the extracted root directory and execute the following command:
++
+```bash
+python3 -m pip install -r requirements.txt && python client_with_ssl.py
+```
++
+When you see `Connection Successful!` in the output, the application is finished.
+
+. In the Hazelcast {hazelcast-cloud} console, go to *Management Center* and click *SQL Browser* in the top toolbar.
+
+. Enter the following in the SQL Browser to create a mapping to the `cities` map. The sample client that you just executed created this map for you and filled it with data.
++
+[source,sql]
+----
+CREATE OR REPLACE MAPPING cities (
+__key VARCHAR, 
+country VARCHAR, 
+city VARCHAR,
+population INT)
+type IMap OPTIONS('keyFormat'='varchar', 'valueFormat'='json-flat');
+----
+
+. Continue to the <<step-3, next step>> to query your sample data in the SQL browser.
+
+TIP: Take a moment, to read the code in the link:https://github.com/hazelcast/hazelcast-cloud-python-sample-client/blob/5.1/client_with_ssl.py[`client_with_ssl.py`] file to understand how the client connected. The client comes with some other examples that are commented out. To try those examples, you can uncomment them and run the application again.
+--
+
+.NET:: 
++ 
+--
+. link:https://dotnet.microsoft.com/en-us/download/dotnet/3.1[Install .NET].
+
+. Go to the *.Net* tab and download the ZIP file.
+
+. Extract the ZIP file, change into the extracted directory and execute the following command:
++
+```bash
+dotnet run --project ClientWithSsl
+```
++
+When you see `Connection Successful!` in the output, the application is finished.
+
+. In the Hazelcast {hazelcast-cloud} console, go to *Management Center* and click *SQL Browser* in the top toolbar.
+
+. Enter the following in the SQL Browser to create a mapping to the `cities` map. The sample client that you just executed created this map for you and filled it with data.
++
+[source,sql]
+----
+CREATE OR REPLACE MAPPING cities (
+__key VARCHAR, 
+country VARCHAR, 
+city VARCHAR,
+population INT)
+type IMap OPTIONS('keyFormat'='varchar', 'valueFormat'='json-flat');
+----
+
+. Continue to the <<step-3, next step>> to query your sample data in the SQL browser.
+
+TIP: Take a moment, to read the code in the link:https://github.com/hazelcast/hazelcast-cloud-csharp-sample-client/blob/5.1/ClientWithSsl/Program.cs[`program.cs`] file to understand how the client connected. The client comes with some other examples that are commented out. To try those examples, you can uncomment them and run the application again.
+--
+
+Go:: 
++ 
+--
+. link:https://go.dev/doc/install[Install Go].
+
+. Go to the *Go* tab and download the ZIP file.
+
+. Extract the ZIP file, change into the extracted directory and execute the following command:
++
+```bash
+go mod tidy && go run client_with_ssl.go
+```
++
+When you see `Connection Successful!` in the output, the application is finished.
+
+. In the Hazelcast {hazelcast-cloud} console, go to *Management Center* and click *SQL Browser* in the top toolbar.
+
+. Enter the following in the SQL Browser to create a mapping to the `cities` map. The sample client that you just executed created this map for you and filled it with data.
++
+[source,sql]
+----
+CREATE OR REPLACE MAPPING cities (
+__key VARCHAR, 
+country VARCHAR, 
+city VARCHAR,
+population INT)
+type IMap OPTIONS('keyFormat'='varchar', 'valueFormat'='json-flat');
+----
+
+. Continue to the <<step-3, next step>> to query your sample data in the SQL browser.
+
+TIP: Take a moment, to read the code in the link:https://github.com/hazelcast/hazelcast-cloud-go-sample-client/blob/5.1/client_with_ssl.go[`client_with_ssl.go`] file to understand how the client connected. The client comes with some other examples that are commented out. To try those examples, you can uncomment them and run the application again.
+--
+
+C++:: 
++ 
+--
+. link:https://vcpkg.io/en/getting-started.html[Install vcpkg].
+. Go to the *{cpp}* tab and download the ZIP file.
+
+. Extract the ZIP file, change into the extracted directory, and execute the program:
++
+When you see `Connection Successful!` in the output, the application is finished.
+
+.. Execute the following if you use Linux or Mac:
++
+```bash
+vcpkg install "hazelcast-cpp-client[openssl]" && 
+cmake -B build -S . -DCMAKE_TOOLCHAIN_FILE=[path to vcpkg]/scripts/buildsystems/vcpkg.cmake && 
+cmake --build build &&
+./build/client_with_ssl
+```
+
+.. Execute the following if you use Windows:
++ 
+```bash
+vcpkg install "hazelcast-cpp-client[openssl]" && 
+cmake -B build -S . -DCMAKE_TOOLCHAIN_FILE=[path to vcpkg]/scripts/buildsystems/vcpkg.cmake && 
+cmake --build build &&
+./build/client_with_ssl
+```
++
+If the link:https://wiki.osdev.org/Target_Triplet[target triplet] doesn't match your operating system, you may need to provide a target suffix to the `install` command. For example: `vcpkg install "hazelcast-cpp-client[openssl]:x64-windows"`
++
+The location of the compiled binary may change according to configuration and system defaults.
+
+
+. In the Hazelcast {hazelcast-cloud} console, go to *Management Center* and click *SQL Browser* in the top toolbar.
+
+. Enter the following in the SQL Browser to create a mapping to the `cities` map. The sample client that you just executed created this map for you and filled it with data.
++
+[source,sql]
+----
+CREATE OR REPLACE MAPPING cities (
+__key VARCHAR, 
+country VARCHAR, 
+city VARCHAR,
+population INT)
+type IMap OPTIONS('keyFormat'='varchar', 'valueFormat'='json-flat');
+----
+
+. Continue to the <<step-3, next step>> to query your sample data in the SQL browser.
+
+TIP: Take a moment, to read the code in the link:https://github.com/hazelcast/hazelcast-cloud-cpp-sample-client/blob/5.1/client_with_ssl.cpp[`client_with_ssl.cpp`] file to understand how the client connected. The client comes with some other examples that are commented out. To try those examples, you can uncomment them and run the application again.
+--
+
+SQL (CLI):: 
++ 
+--
+. Install the Hazelcast CLI client. Use one of the following methods, depending on your operating system.
++
+.Mac
+[source,bash]
+----
+brew tap hazelcast/hz
+brew install hazelcast-enterprise
+----
++
+.Linux Debian
+[source,shell]
+----
+wget -qO - https://repository.hazelcast.com/api/gpg/key/public | sudo apt-key add -
+echo "deb https://repository.hazelcast.com/debian stable main" | sudo tee -a /etc/apt/sources.list
+sudo apt update && sudo apt install hazelcast-enterprise
+----
++
+.Linux RPM
+[source,shell]
+----
+wget https://repository.hazelcast.com/rpm/hazelcast-rpm.repo -O hazelcast-rpm.repo
+sudo mv hazelcast-rpm.repo /etc/yum.repos.d/
+sudo yum install hazelcast-enterprise
+----
++
+.Windows
+At the moment, Hazelcast does not support any Windows package managers. The easiest way to use the CLI on Windows is to install the Hazelcast Enterprise Docker image. The Docker container comes with the `hz-cli` client. See xref:hazelcast:getting-started:install-enterprise.adoc[].
+
+. Check that the CLI client is installed.
++
+[source,shell]
+----
+hz-cli -V
+----
++
+You should see your installed version of the CLI client.
+
+. Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console].
+
+. Click *Connect Client*.
+
+. Go to the *SQL* tab and download the ZIP file.
+
+. Extract the ZIP file.
++
+This file contains the credentials that allow the CLI to connect to your cluster.
+
+. Change into the directory where you extracted the ZIP file.
+
+. Connect to the SQL shell on your cluster.
++
+```bash
+hz-cli -f hazelcast-client-with-ssl.yml sql
+```
++
+You should see the SQL prompt:
++
+```
+sql>
+```
+
+. Create a mapping to a new map called `cities`.
++
+[source,sql]
+----
+CREATE OR REPLACE MAPPING cities (
+__key VARCHAR, 
+country VARCHAR, 
+city VARCHAR,
+population INT)
+type IMap OPTIONS('keyFormat'='varchar', 'valueFormat'='json-flat');
+----
+
+. Add some data to the map.
++
+[source,sql]
+----
+INSERT INTO cities VALUES
+(1, 'United Kingdom','London', 9_540_576),
+(2, 'United Kingdom','Manchester', 2_770_434),
+(3, 'United States', 'New York', 19_223_191),
+(4, 'United States', 'Los Angeles', 3_985_520),
+(5, 'Turkey', 'Ankara', 5_309_690),
+(6, 'Turkey', 'Istanbul', 15_636_243),
+(7, 'Brazil', 'Sao Paulo', 22_429_800),
+(8, 'Brazil', 'Rio de Janeiro', 13_634_274);
+----
+--
+====
+
+[[step-3]]
+== Step 3. Query the Cache with SQL
+
+Now that you have some data in your cluster, you can query it, using SQL. If you're using the CLI, enter the following  queries in the SQL prompt. If you're using a client library, enter the following queries in the SQL Browser.
+
+. Use the `SELECT` statement to query all data in the map.
++
+[source,sql]
+----
+SELECT * FROM cities;
+----
++
+```
++------------+--------------------+--------------------+--------------+
+|       __key|country             |city                |population    |
++------------+--------------------+--------------------+--------------+
+|           2|United Kingdom      |Manchester          |2770434       |
+|           6|Turkey              |Ankara              |5309690       |
+|           1|United Kingdom      |London              |9540576       |
+|           7|Brazil              |Sao Paulo           |22429800      |
+|           8|Brazil              |Rio de Janeiro      |13634274      |
+|           5|Turkey              |Istanbul            |15636243      |
+|           4|United States       |Los Angeles         |3985520       |
+|           3|United States       |New York            |19223191      |
++------------+--------------------+--------------------+--------------+
+```
++
+The results are in a random order because the data is distributed across the cluster. Whenever a cluster member has the result, it returns it to the client.
+
+. Order the results by the key.
++
+[source,sql]
+----
+SELECT * FROM cities ORDER BY __key;
+----
++
+Now you see the results start from key 1 and end with key 8.
+
+. Query only the countries by filtering on the `countries` column.
++
+[source,sql]
+----
+SELECT country FROM cities;
+----
++
+```
++--------------------+
+|country             |
++--------------------+
+|United Kingdom      |
+|Turkey              |
+|United Kingdom      |
+|Brazil              |
+|Brazil              |
+|Turkey              |
+|United States       |
+|United States       |
++--------------------+
+```
+
+. Query only the cities by filtering on the `cities` column.
++
+[source,sql]
+----
+SELECT city FROM cities;
+----
++
+```
++--------------------+
+|city                |
++--------------------+
+|Manchester          |
+|Ankara              |
+|London              |
+|Sao Paulo           |
+|Rio de Janeiro      |
+|Istanbul            |
+|Los Angeles         |
+|New York            |
++--------------------+
+```
+
+. Change the output to display cities first in alphabetical order.
++
+[source,sql]
+----
+SELECT city, country
+FROM cities
+ORDER BY city;
+----
++
+```
++--------------------+--------------------+
+|city                |country             |
++--------------------+--------------------+
+|Ankara              |Turkey              |
+|Istanbul            |Turkey              |
+|London              |United Kingdom      |
+|Los Angeles         |United States       |
+|Manchester          |United Kingdom      |
+|New York            |United States       |
+|Rio de Janeiro      |Brazil              |
+|Sao Paulo           |Brazil              |
++--------------------+--------------------+
+
+```
+
+. Use a filter to display only countries where the name of the city is at least 11 characters long.
++
+[source,sql]
+----
+SELECT country FROM cities WHERE LENGTH(city) >= 11;
+----
++
+```
++--------------------+
+|country             |
++--------------------+
+|Brazil              |
+|United States       |
++--------------------+
+```
+
+. Use another filter to display only cities beginning with the letter 'L' where the length is greater than 6.
++
+[source,sql]
+----
+SELECT city
+FROM cities
+WHERE city LIKE 'L%' AND LENGTH(city) > 6;
+----
++
+```
++--------------------+
+|City                |
++--------------------+
+|Los Angeles         |
++--------------------+
+```
+
+== Summary
+
+You learned how to connect to a cluster and use SQL to query data in the cluster.
+
+== Next Steps
+
+Learn more about Serverless:
+
+- xref:serverless-cluster.adoc[]
+- xref:developer-guide.adoc[]
+
+Try a xref:tutorials.adoc[tutorial].
+
+Find out more about the SQL statements used in this tutorial:
+
+- xref:hazelcast:sql:create-mapping.adoc[]
+- xref:hazelcast:sql:select.adoc[]
+- xref:hazelcast:sql:expressions.adoc[].
+- xref:hazelcast:sql:sql-statements.adoc[All SQL statements].
+
+Learn more about using clients:
+
+- xref:hazelcast:clients:java.adoc#configuring-java-client[Java client]
+
+- link:https://github.com/hazelcast/hazelcast-nodejs-client#configuration[Node.js client]
+
+- link:https://github.com/hazelcast/hazelcast-python-client#142-configuring-hazelcast-python-client[Python client]
+
+- link:https://github.com/hazelcast/hazelcast-go-client#3-configuration-overview[Go client]
+
+- link:http://hazelcast.github.io/hazelcast-csharp-client/dev/doc/configuration.html[.NET client]
+
+- link:https://github.com/hazelcast/hazelcast-cpp-client/blob/v4.1.0/Reference_Manual.md[{cpp} client]
+
+- link:https://github.com/hazelcast/hazelcast-packaging[CLI client]
+
+- xref:management-center:tools:sql-browser.adoc[SQL Browser].
+

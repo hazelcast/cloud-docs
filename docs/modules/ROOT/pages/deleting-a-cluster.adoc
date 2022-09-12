@@ -3,12 +3,14 @@
 
 {description}
 
-== Before you Begin
+To delete clusters in a team, you must have either an xref:teams-and-users.adoc[admin or developer role].
 
-To delete clusters in a team, you must have either an admin or developer role. See xref:teams-and-users.adoc[].
+You cannot delete a cluster that is using WAN Replication.
 
-== Delete a Cluster
+== Using the Hazelcast {hazelcast-cloud} Console
 
-To delete a cluster, go to *Manage Cluster* and click *Delete*.
+. Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console] and select your cluster.
 
-When you delete a cluster, all the data related to the cluster, including the configuration and actual cluster data, are removed. There is no way of recovering any data from a deleted cluster. Think twice before clicking *Delete*.
+. Click *Delete* and confirm your choice.
+
+When you delete a cluster, all data related to the cluster, including the configuration is removed. You cannot recover any data from a deleted cluster.

@@ -1,4 +1,4 @@
-= Topic
+= Topic Configuration
 
 Hazelcast provides a distribution mechanism for publishing messages that are delivered to multiple subscribers. This is also known as a publish/subscribe (pub/sub) messaging model. Publishing and subscribing operations are cluster-wide. When a member subscribes to a topic, it is actually registering for messages published by any member in the cluster, including the new members that joined after you add the listener.
 
@@ -9,6 +9,6 @@ You can also use wildcards to associate your configuration with multiple topic n
 
 == Global Ordering
 
-Global ordering enables, all receivers will receive all messages from all sources with the same order.
+Global ordering enables all receivers to receive all messages from all sources with the same order.
 
-NOTE: The default value is false.
+The default value is false.
