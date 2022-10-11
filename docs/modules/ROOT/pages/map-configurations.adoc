@@ -5,7 +5,7 @@ image:map-configuration.png[Map configuration]
 == Map Name
 
 In Hazelcast, you can create custom map configurations associated with the names of maps. The maps that do not have any configuration defined use the default configuration. If you want to set a configuration that is valid for all maps, you can name your configuration as `default`. A user-defined `default` configuration applies to every map that does not have a specific custom map configuration defined with the map's name. 
-You can also use wildcards to associate your configuration with multiple map names. See the xref:hazelcast:configuration:using-wildcards.adoc[configuration documentation] for more information about wildcards.
+You can also use wildcards to associate your configuration with multiple map names. See the configuration documentation] for more information about wildcards.
 
 == Backup Count
 
@@ -17,7 +17,7 @@ Hazelcast distributes the map entries onto multiple cluster members. Each member
  
 == Time To Live
 
-Time To Live (TTL) is the maximum time in seconds for each entry to stay in the map. It limits the lifetime of the entries relative to the time of the last write access performed on them. If it is not 0, the entries whose lifetime exceeds this period (without any write access performed on them during this period) are expired and evicted automatically. An individual entry may have its own lifetime limit by using one of the methods accepting a TTL. See xref:hazelcast:data-structures:map.adoc#evicting-specific-entries[Evicting Specific Entries section] in the Hazelcast map documentation. If there is no TTL value provided for the individual entry, it inherits the value set for this element. Valid values are integers between 0 and Integer.MAX VALUE. Its default value is 0, which means infinite (no expiration and eviction). If it is not 0, entries are evicted regardless of the set eviction policy described below.
+Time To Live (TTL) is the maximum time in seconds for each entry to stay in the map. It limits the lifetime of the entries relative to the time of the last write access performed on them. If it is not 0, the entries whose lifetime exceeds this period (without any write access performed on them during this period) are expired and evicted automatically. An individual entry may have its own lifetime limit by using one of the methods accepting a TTL. See Evicting Specific Entries section in the Hazelcast map documentation. If there is no TTL value provided for the individual entry, it inherits the value set for this element. Valid values are integers between 0 and Integer.MAX VALUE. Its default value is 0, which means infinite (no expiration and eviction). If it is not 0, entries are evicted regardless of the set eviction policy described below.
 
 == Max Idle Seconds
 

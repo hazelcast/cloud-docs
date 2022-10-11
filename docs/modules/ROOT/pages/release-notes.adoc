@@ -331,7 +331,7 @@ Hazelcast version has been updated to 3.12.2.
 
 *New Features:*
 
-- Enabled the xref:hazelcast:clusters:deploying-code-on-member.adoc[User code deployment feature] for Hazelcast Cloud. You can now run the executor service, entry processor and queries with custom objects.
+- Enabled the User code deployment feature] for Hazelcast Cloud. You can now run the executor service, entry processor and queries with custom objects.
 
 *Fixes:*
 

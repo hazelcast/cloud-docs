@@ -55,7 +55,6 @@ Connect to your cluster, using one of the following clients:
 - xref:python-client.adoc[Python]
 - xref:go-client.adoc[Go]
 - xref:sql.adoc[SQL]
-- xref:command-line-client.adoc[Command-Line Client]
 
 See a link:{page-plans}[feature comparison of all cluster plans].
 

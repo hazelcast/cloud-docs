@@ -3,38 +3,6 @@
 
 {description}
 
-To run a Hazelcast cluster on your local machine instead, see xref:hazelcast:getting-started:quickstart.adoc[].
-
-++++
-<script type="application/ld+json">
-{
-"@context": "http://schema.org",
-"@type": "HowTo",
-"name": "Hazelcast Cloud Quickstart",
-"description": "Follow this five-minute tutorial to set up a Hazelcast cluster in the cloud. In five minutes, you will learn how to create a cluster, connect to the SQL shell, and use SQL to write data to memory and query that data.",
-"totalTime": "PT5M",
-"step":[
-    {
-        "@type": "HowToStep",
-        "text": "Create a Cluster."
-    },
-    {
-        "@type": "HowToStep",
-        "text": "Download the CLI Client."
-    }, {
-        "@type": "HowToStep",
-        "text": "Connect to the SQL shell."
-    }, {
-        "@type": "HowToStep",
-        "text": "Create a Mapping."
-    }, {
-        "@type": "HowToStep",
-        "text": "Run Queries."
-    }]
-}
-</script>
-++++
-
 == Step 1. Create a Cluster
 
 . link:https://cloud.hazelcast.com/sign-up[Sign up for a Hazelcast Cloud account].
@@ -117,7 +85,7 @@ Windows::
 --
 At the moment, Hazelcast does not support any Windows package managers.
 
-The easiest way to use the CLI on Windows is to install the Hazelcast Docker image. The Docker container comes with the `hz-cli` client. See xref:hazelcast:getting-started:install-hazelcast.adoc[]
+The easiest way to use the CLI on Windows is to install the Hazelcast Docker image. The Docker container comes with the `hz-cli` client.
 --
 ====
 
@@ -483,11 +451,3 @@ Build an application with one of our clients:
 - xref:net-client.adoc[.NET]
 - xref:python-client.adoc[Python]
 - xref:go-client.adoc[Go]
-
-Find out more about the statements used in this tutorial:
-
-- xref:hazelcast:sql:create-mapping.adoc[]
-- xref:hazelcast:sql:select.adoc[]
-- xref:hazelcast:sql:expressions.adoc[].
-
-Explore xref:hazelcast:sql:sql-statements.adoc[all available SQL statements].

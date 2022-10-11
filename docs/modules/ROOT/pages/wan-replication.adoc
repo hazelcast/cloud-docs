@@ -5,7 +5,7 @@
 
 WAN Replication is a tool that can do *Active-Active* and *Active-Passive* replication. You can also configure WAN Replication parameters according to your use-case.
 
-For a complete reference of this feature, see xref:hazelcast:wan:wan.adoc[].
+For a complete reference of this feature, see the Hazelcast Platform documentation.
 
 == Terminology
 

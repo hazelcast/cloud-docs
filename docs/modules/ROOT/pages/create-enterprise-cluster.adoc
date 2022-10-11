@@ -34,7 +34,7 @@ For details about the cost of instances, see xref:pricing.adoc[].
 
 . Choose whether to host your instances in a single availability zone or in a multi-zone environment (three zones within a region), and select the number of instances that you want in each zone.
 +
-Hosting a cluster in a multi-zone environment prevents data loss after a zone failure. To make sure that all data is available after a single zone failure, Hazelcast, backups are stored in different availability zones, using the xref:hazelcast:clusters:partition-group-configuration.adoc[ZONE_AWARE partition grouping] feature of Hazelcast.
+Hosting a cluster in a multi-zone environment prevents data loss after a zone failure. To make sure that all data is available after a single zone failure, Hazelcast, backups are stored in different availability zones, using the ZONE_AWARE partition grouping] feature of Hazelcast.
 
 . To encrypt communications between clients and your cluster, turn on TLS Encryption.
 +
@@ -50,7 +50,7 @@ You cannot change this selection after the cluster is created.
 +
 If you turn on this feature, you will be charged for the extra storage costs. See xref:pricing.adoc[].
 +
-WARNING: Persisting data can degrade throughput by up to 40%. For details about persistence, see xref:hazelcast:storage:persistence.adoc[].
+WARNING: Persisting data can degrade throughput by up to 40%.
 
 . If you store custom objects in Hazelcast and you want to query or process them, click *Edit* in the Custom Classes field and add those classes to your cluster.
 +

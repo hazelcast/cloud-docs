@@ -36,7 +36,7 @@ You cannot change this selection after the cluster is created.
 +
 You cannot change this selection after the cluster is created.
 +
-WARNING: Persisting data can degrade throughput by up to 40%. For details about what is persisted and how to configure Persistence, see xref:hazelcast:storage:persistence.adoc[].
+WARNING: Persisting data can degrade throughput by up to 40%.
 
 . If you want to back up persisted data in cloud storage, turn on Hot Backup.
 +
