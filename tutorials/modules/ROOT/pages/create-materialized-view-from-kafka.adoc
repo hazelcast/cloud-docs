@@ -270,7 +270,7 @@ OPTIONS (
 ```sql
 CREATE JOB ingest_trades
 OPTIONS (
-  'processingGuarantee' = 'exactlyOnce',
+  'processingGuarantee' = 'exactlyOnce'
 ) AS
 SINK INTO trade_map
 SELECT trades.id, trades.ticker, companies.company, trades.amount
