@@ -332,11 +332,11 @@ sql>
 [source,sql]
 ----
 CREATE OR REPLACE MAPPING cities (
-__key VARCHAR, 
+__key INT, 
 country VARCHAR, 
 city VARCHAR,
 population INT)
-type IMap OPTIONS('keyFormat'='varchar', 'valueFormat'='json-flat');
+type IMap OPTIONS('keyFormat'='int', 'valueFormat'='json-flat');
 ----
 
 . Add some data to the map.
@@ -344,14 +344,14 @@ type IMap OPTIONS('keyFormat'='varchar', 'valueFormat'='json-flat');
 [source,sql]
 ----
 INSERT INTO cities VALUES
-(1, 'United Kingdom','London', 9_540_576),
-(2, 'United Kingdom','Manchester', 2_770_434),
-(3, 'United States', 'New York', 19_223_191),
-(4, 'United States', 'Los Angeles', 3_985_520),
-(5, 'Turkey', 'Ankara', 5_309_690),
-(6, 'Turkey', 'Istanbul', 15_636_243),
-(7, 'Brazil', 'Sao Paulo', 22_429_800),
-(8, 'Brazil', 'Rio de Janeiro', 13_634_274);
+(1, 'United Kingdom','London', 9540576),
+(2, 'United Kingdom','Manchester', 2770434),
+(3, 'United States', 'New York', 19223191),
+(4, 'United States', 'Los Angeles', 3985520),
+(5, 'Turkey', 'Ankara', 5309690),
+(6, 'Turkey', 'Istanbul', 15636243),
+(7, 'Brazil', 'Sao Paulo', 22429800),
+(8, 'Brazil', 'Rio de Janeiro', 13634274);
 ----
 --
 ====
