@@ -1,5 +1,7 @@
 = API Reference
 :url-graphql: https://graphql.org/
+:cloud-category: Favorites
+:cloud-order: 0
 
 IMPORTANT: The GraphQL API is deprecated and no longer maintained. You can continue to use it with legacy clusters, but it does not support Hazelcast {hazelcast-cloud} clusters.
 
