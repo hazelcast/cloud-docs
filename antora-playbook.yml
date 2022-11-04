@@ -8,29 +8,29 @@ site:
     docsearch_api: 'ef7bd9485eafbd75d6e8425949eda1f5'
     docsearch_index: 'prod_hazelcast_docs'
 content:
-  sources: 
-  - url: .
-    branches: HEAD
-    start_paths: [./docs, ./tutorials]
-  - url: https://github.com/hazelcast-guides/client-failover
-    branches: master
-    start_paths: docs
-  - url: https://github.com/hazelcast-guides/spring-boot-sample
-    branches: master
-    start_paths: docs
-  - url: https://github.com/hazelcast-guides/serverless-fraud-detection
-    branches: master
-    start_paths: docs
-  - url: https://github.com/hazelcast-guides/write-through-cache-mongodb-mapstore
-    branches: master
-    start_paths: docs
-  - url: https://github.com/hazelcast-guides/standard-deviation-parallel-processing
-    branches: master
-    start_paths: docs
-  - url: https://github.com/hazelcast/hazelcast-cloud-maven-plugin
-    branches: main
-    start_path: docs
-ui: 
+  sources:
+    - url: .
+      branches: HEAD
+      start_paths: [ ./docs, ./tutorials ]
+    - url: https://github.com/hazelcast-guides/client-failover
+      branches: master
+      start_paths: docs
+    - url: https://github.com/hazelcast-guides/spring-boot-sample
+      branches: master
+      start_paths: docs
+    - url: https://github.com/hazelcast-guides/serverless-fraud-detection
+      branches: master
+      start_paths: docs
+    - url: https://github.com/hazelcast-guides/write-through-cache-mongodb-mapstore
+      branches: master
+      start_paths: docs
+    - url: https://github.com/hazelcast-guides/standard-deviation-parallel-processing
+      branches: master
+      start_paths: docs
+    - url: https://github.com/hazelcast/hazelcast-cloud-maven-plugin
+      branches: main
+      start_path: docs
+ui:
   bundle:
     url: https://github.com/hazelcast/hazelcast-docs-ui/releases/latest/download/ui-bundle.zip #../hazelcast-docs-ui/build/ui-bundle.zip
     snapshot: true
@@ -44,3 +44,7 @@ asciidoc:
   extensions:
     - ./lib/tabs-block.js
     - asciidoctor-kroki
+
+antora:
+  extensions:
+    - require: ./lib/json.js
