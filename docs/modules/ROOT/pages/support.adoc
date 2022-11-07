@@ -1,6 +1,9 @@
 = Hazelcast {hazelcast-cloud} Support Policy
 :url-zendesk-hazelcast: https://support.hazelcast.com
 :description: Hazelcast offers support options with different response times to suit your requirements and budget.
+:cloud-category: Get Started
+:cloud-title: Support
+:cloud-order: 5
 
 {description}
 

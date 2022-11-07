@@ -59,3 +59,14 @@ asciidoc:
 antora:
   extensions:
     - require: ./lib/json.js
+      categories:
+        - Favorites
+        - Get Started
+        - Videos
+        - Whitepapers
+        - Use cases
+        - Case studies
+        - Documentation
+        - Develop Applications
+        - Manage Accounts
+        - Manage Clusters

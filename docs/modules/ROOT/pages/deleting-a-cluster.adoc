@@ -1,5 +1,8 @@
 = Deleting a Cluster
 :description: If you no longer need a cluster, you can delete it.
+:cloud-category: Manage Clusters
+:cloud-title: Deleting Clusters
+:cloud-order: 24
 
 {description}
 

@@ -1,5 +1,7 @@
 = Developer Tools
 :description: Hazelcast provides a variety of developer tools for creating, testing and debugging applications.
+:cloud-category: Develop Applications
+:cloud-order: 11
 
 {description}
 

@@ -1,5 +1,8 @@
 = Working with Cluster-Side Modules in Hazelcast {hazelcast-cloud}
 :description: Cluster-side modules are Java classes that a cluster can execute or store in the cloud. You can write cluster-side modules to execute custom code or store custom objects. This guide describes the workflows and best practices for implementing cluster-side modules.
+:cloud-category: Develop Applications
+:cloud-title: Building Cluster-Side Modules
+:cloud-order: 9
 
 {description}
 

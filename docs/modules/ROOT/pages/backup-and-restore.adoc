@@ -1,5 +1,7 @@
 = Backing up and Restoring Data
 :description: You can create a backup of your cluster data and later restore new clusters from that backup.
+:cloud-category: Manage Clusters
+:cloud-order: 25
 
 {description}
 

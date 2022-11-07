@@ -1,6 +1,9 @@
 = Connecting to Hazelcast {hazelcast-cloud} Clusters
 :description: To communicate with a cluster, you need a client. Hazelcast offers clients in a variety of languages as well as a command-line client for quick prototyping and scripting.
 :page-aliases: connect-to-private-cluster.adoc
+:cloud-category: Develop Applications | Manage Clusters
+:cloud-title: Connecting to Hazelcast Viridian Clusters | Connecting to Clusters
+:cloud-order: 8 | 16
 
 {description}
 

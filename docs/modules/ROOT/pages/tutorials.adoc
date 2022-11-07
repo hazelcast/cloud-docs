@@ -1,6 +1,9 @@
 = Tutorials
 :description: Tutorials provide you with the sample code you need to learn how to achieve a specific goal.
 :page-include-tutorial-list: true
+:cloud-category: Get Started
+:cloud-title: Tutorials
+:cloud-order: 4
 
 {description}
 

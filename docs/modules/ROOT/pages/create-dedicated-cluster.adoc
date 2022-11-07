@@ -2,6 +2,9 @@
 :page-dedicated: true
 :description: You can create a Dedicated cluster by providing your resource requirements and choosing how to host your cluster. You have the option of cloud providers, regions, machine types, and more.
 :page-aliases: enterprise-clusters.adoc, create-enterprise-cluster.adoc
+:cloud-category: Manage Clusters
+:cloud-title: Creating Dedicated Clusters
+:cloud-order: 21
 
 {description}
 
