@@ -3,7 +3,7 @@
 :page-include-tutorial-list: true
 :cloud-category: Get Started
 :cloud-title: Tutorials
-:cloud-order: 4
+:cloud-order: 14
 
 {description}
 

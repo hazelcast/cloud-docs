@@ -4,7 +4,7 @@
 :page-serverless: true
 :cloud-category: Manage Clusters
 :cloud-title: Creating Serverless Clusters
-:cloud-order: 20
+:cloud-order: 51
 
 {description}
 

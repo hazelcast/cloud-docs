@@ -4,7 +4,7 @@
 :page-aliases: enterprise-clusters.adoc, create-enterprise-cluster.adoc
 :cloud-category: Manage Clusters
 :cloud-title: Creating Dedicated Clusters
-:cloud-order: 21
+:cloud-order: 52
 
 {description}
 

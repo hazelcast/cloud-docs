@@ -61,8 +61,8 @@ antora:
     - require: ./lib/json.js
       categories:
         - Favorites
-        - Get Started
         - Videos
+        - Get Started
         - Whitepapers
         - Use cases
         - Case studies
@@ -70,3 +70,19 @@ antora:
         - Develop Applications
         - Manage Accounts
         - Manage Clusters
+      data:
+        - title: What is Viridian Serverless?
+          url: https://www.youtube.com/embed/5bLjl-iqFaU'
+          type: video
+          order: 7
+          categories: Videos, Get Started
+        - title: What is client?
+          url: https://www.youtube.com/embed/lkQEAdgxvbE
+          type: video
+          order: 8
+          categories: Videos, Get Started
+        - title: What is the Hazelcast Platform?
+          url: https://www.youtube.com/embed/UpIgHzKbMp0
+          type: video
+          order: 9
+          categories: Videos, Get Started

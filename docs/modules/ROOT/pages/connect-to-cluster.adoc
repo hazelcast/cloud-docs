@@ -3,7 +3,7 @@
 :page-aliases: connect-to-private-cluster.adoc
 :cloud-category: Develop Applications | Manage Clusters
 :cloud-title: Connecting to Hazelcast Viridian Clusters | Connecting to Clusters
-:cloud-order: 8 | 16
+:cloud-order: 21 | 50
 
 {description}
 

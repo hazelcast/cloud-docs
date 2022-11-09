@@ -3,7 +3,7 @@
 :page-aliases: manage-the-cluster.adoc
 :cloud-category: Manage Clusters
 :cloud-title: Creating Dedicated Clusters
-:cloud-order: 23
+:cloud-order: 54
 
 {description}
 

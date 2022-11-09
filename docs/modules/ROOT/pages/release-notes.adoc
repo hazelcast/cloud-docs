@@ -2,7 +2,7 @@
 :url-cloud-cli-announcement: https://hazelcast.com/blog/announcing-hazelcast-cloud-cli/
 :url-cloud-sdk-announcement: https://hazelcast.com/blog/announcing-hazelcast-cloud-go-sdk/
 :cloud-category: Get Started
-:cloud-order: 6
+:cloud-order: 16
 
 == September 9, 2022 - v4.0 BETA
 

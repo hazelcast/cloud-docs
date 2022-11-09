@@ -5,7 +5,7 @@
 :page-serverless: true
 :cloud-category: Get Started
 :cloud-title: About Serverless
-:cloud-order: 1
+:cloud-order: 11
 
 {description}
 

@@ -3,7 +3,7 @@
 :page-aliases: use-cases.adoc, faq.adoc, pricing.adoc, preface.adoc
 :cloud-category: Get Started
 :cloud-title: Hazelcast Viridian Overview
-:cloud-order: 0
+:cloud-order: 10
 
 {description}
 

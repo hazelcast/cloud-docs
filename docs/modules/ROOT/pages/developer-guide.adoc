@@ -2,7 +2,7 @@
 :description: Use these topics to learn how to build applications, using APIs and tools.
 :cloud-category: Develop Applications
 :cloud-title: Developer Guide
-:cloud-order: 7
+:cloud-order: 20
 
 {description}
 

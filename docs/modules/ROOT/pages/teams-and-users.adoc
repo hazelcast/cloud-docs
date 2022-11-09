@@ -2,7 +2,7 @@
 :description: To collaborate with other team members, you can allow them to access specific clusters by inviting them to a team and assigning them roles based on what actions they need to perform on the team's clusters.
 :cloud-category: Manage Accounts
 :cloud-title: Teams and Users
-:cloud-order: 13
+:cloud-order: 31
 
 {description}
 

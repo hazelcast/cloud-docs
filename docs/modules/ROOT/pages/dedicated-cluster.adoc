@@ -3,7 +3,7 @@
 :page-dedicated: true
 :cloud-category: Get Started
 :cloud-title: About Dedicated
-:cloud-order: 2
+:cloud-order: 12
 
 {description}
 

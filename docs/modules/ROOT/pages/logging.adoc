@@ -2,7 +2,7 @@
 :description: Cluster logs are useful for monitoring your cluster or troubleshooting issues. Depending on your cluster edition, you can stream cluster logs directly to your IDE, download them, or integrate with a log management system.
 :cloud-category: Develop Applications
 :cloud-title: Logging
-:cloud-order: 10
+:cloud-order: 23
 
 {description}
 

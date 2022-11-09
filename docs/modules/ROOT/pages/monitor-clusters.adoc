@@ -2,7 +2,7 @@
 :description: You can use monitoring tools to monitor your cluster for overall health as well as watch for events that require investigation or intervention.
 :cloud-category: Manage Clusters
 :cloud-title: Monitoring Clusters
-:cloud-order: 26
+:cloud-order: 57
 
 {description}
 

@@ -6,7 +6,7 @@
   "license": "ISC",
   "scripts": {
     "build": "antora --to-dir docs --fetch antora-playbook.yml && cp robots.txt docs",
-    "build-local": "antora --to-dir test --fetch antora-playbook-local.yml",
+    "build-local": "antora --to-dir test --fetch antora-playbook-local.yml --stacktrace",
     "check-links-local": "antora --fetch --generator @antora/xref-validator link-check-playbook.yml",
     "serve": "serve test",
     "expose": "ngrok http 5000"
