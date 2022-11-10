@@ -2,7 +2,7 @@
 :description: You can create a free cluster for development or production.
 :page-aliases: create-starter-cluster.adoc, starter-clusters.adoc, create-standard-cluster.adoc, availability-zones.adoc, instance-types.adoc
 :page-serverless: true
-:cloud-category: Manage Clusters
+:cloud-tags: Manage Clusters
 :cloud-title: Creating Serverless Clusters
 :cloud-order: 51
 

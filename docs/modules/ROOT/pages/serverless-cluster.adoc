@@ -3,7 +3,7 @@
 :toc-levels: 3
 :page-aliases: architecture.adoc
 :page-serverless: true
-:cloud-category: Get Started
+:cloud-tags: Get Started
 :cloud-title: About Serverless
 :cloud-order: 11
 

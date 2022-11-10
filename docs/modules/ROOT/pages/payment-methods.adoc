@@ -1,6 +1,6 @@
 = Billing and Payments
 :description: From the console, you can add payment cards to your account to pay for usage as well as view how much you've spent.
-:cloud-category: Manage Accounts | Manage Accounts | Manage Accounts
+:cloud-tags: Manage Accounts | Manage Accounts | Manage Accounts
 :cloud-title: Payments and Billing | Add Payment Card | View Bills
 :cloud-order: 33 | 34 | 35
 :cloud-anchor: | adding-a-payment-card | viewing-bills

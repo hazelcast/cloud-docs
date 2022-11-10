@@ -1,7 +1,7 @@
 = Stopping and Resuming Clusters
 :description: You can avoid charges accumulating in your account by stopping clusters when you arent using them.
 :page-aliases: manage-the-cluster.adoc
-:cloud-category: Manage Clusters
+:cloud-tags: Manage Clusters
 :cloud-title: Creating Dedicated Clusters
 :cloud-order: 54
 

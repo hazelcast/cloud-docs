@@ -61,7 +61,7 @@ asciidoc:
 antora:
   extensions:
     - require: ./lib/json.js
-      categories:
+      tags:
         - Favorites
         - Videos
         - Get Started
@@ -77,14 +77,14 @@ antora:
           url: https://www.youtube.com/embed/5bLjl-iqFaU'
           type: video
           order: 7
-          categories: Videos, Get Started
+          tags: Videos, Get Started
         - title: What is client?
           url: https://www.youtube.com/embed/lkQEAdgxvbE
           type: video
           order: 8
-          categories: Videos, Get Started
+          tags: Videos, Get Started
         - title: What is the Hazelcast Platform?
           url: https://www.youtube.com/embed/UpIgHzKbMp0
           type: video
           order: 9
-          categories: Videos, Get Started
+          tags: Videos, Get Started

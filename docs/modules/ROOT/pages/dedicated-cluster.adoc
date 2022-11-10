@@ -1,7 +1,7 @@
 = {hazelcast-cloud} Dedicated Clusters
 :description: Dedicated is a managed cloud service that allows you to maintain control over the hardware, resources, and deployment options that are available to your cluster. Dedicated means you get specific servers (cloud instances) all to yourself. 
 :page-dedicated: true
-:cloud-category: Get Started
+:cloud-tags: Get Started
 :cloud-title: About Dedicated
 :cloud-order: 12
 
