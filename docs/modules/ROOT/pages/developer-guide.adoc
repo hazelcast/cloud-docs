@@ -1,5 +1,8 @@
 = Developer Guide for Hazelcast {hazelcast-cloud}
 :description: Use these topics to learn how to build applications, using APIs and tools.
+:cloud-tags: Develop Applications
+:cloud-title: Developer Guide
+:cloud-order: 20
 
 {description}
 

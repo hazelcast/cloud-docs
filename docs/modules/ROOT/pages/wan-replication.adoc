@@ -1,6 +1,8 @@
 = Replicating Data Between Clusters
 :description: You can use the WAN Replication feature to automatically replicate data in map or cache data structures from one cluster to another.
 :page-aliases: data-migration.adoc
+:cloud-tags: Favorites
+:cloud-order: 2
 
 {description}
 

@@ -1,6 +1,9 @@
 = Hazelcast {hazelcast-cloud} Hello World
 :description: In this tutorial, you'll learn how to connect a client to a cluster and use SQL to query data in the cluster.
 :page-aliases: cpp-client.adoc, getting-started.adoc, java-client.adoc, go-client.adoc, net-client.adoc, nodejs-client.adoc, python-client.adoc, sql.adoc
+:cloud-tags: Get Started | Favorites
+:cloud-title: Hello World | Hazelcast Viridian Hello World
+:cloud-order: 13 | 0
 
 {description}
 

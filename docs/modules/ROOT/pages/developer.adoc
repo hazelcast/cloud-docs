@@ -1,5 +1,8 @@
 = Creating API Keys
 :description: To connect a client to your account, you need an API key and an API secret. These credentials authenticate clients to your account. You can manage these credentials in your account settings.
+:cloud-tags: Manage Accounts
+:cloud-title: API keys
+:cloud-order: 32
 
 {description}
 

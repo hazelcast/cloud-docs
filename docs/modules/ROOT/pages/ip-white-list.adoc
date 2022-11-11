@@ -1,5 +1,7 @@
 = IP Whitelisting
 :description: If your clusters are exposed to the Internet, they allow any authenticated client to connect to them by default. To grant access only to specific clients, you can add their IP addresses to a whitelist.
+:cloud-tags: Manage Clusters
+:cloud-order: 53
 
 {description}
 

@@ -1,6 +1,8 @@
 = Multi-Factor Authentication
 :description: Multi-factor authentication (MFA) makes your account more secure by adding an extra step to the sign-in process. Instead of just entering a password, MFA allows you to use a trusted device to generate a secure digital pin for authentication.
 :page-aliases: account-security.adoc
+:cloud-tags: Manage Accounts
+:cloud-order: 30
 
 {description}
 
