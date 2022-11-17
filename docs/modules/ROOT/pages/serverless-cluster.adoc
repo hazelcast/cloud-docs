@@ -74,14 +74,14 @@ Although you can configure some xref:data-structures.adoc[data structures] with 
 
 == Restrictions on Free {hazelcast-cloud} Serverless Clusters
 
-Development and production clusters are stopped when both of these conditions are true:
+Development and production clusters are xref:stop-and-resume.adoc#pausing-a-cluster[paused] when both of these conditions are true:
 
 - You don't connect to the cluster for 24 hours.
 - You don't have a payment method set up for your Hazelcast {hazelcast-cloud} account.
 
 If you're using a production cluster, Hazelcast saves your cluster data so that you can resume the cluster at a later time.
 
-If you're using a development cluster, all cluster data is lost after the cluster is stopped.
+If you're using a development cluster, all cluster data is lost after the cluster is paused.
 
 == Pricing for {hazelcast-cloud} Serverless Clusters
 
@@ -135,7 +135,7 @@ Use this table to learn what is supported in {hazelcast-cloud} Serverless cluste
 |Supported
 |Supported
 
-|xref:stop-and-resume.adoc[Stop and resume the cluster]
+|xref:stop-and-resume.adoc[Pause and resume the cluster]
 |Supported
 |Supported
 

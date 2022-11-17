@@ -38,7 +38,7 @@
 *** xref:azure-vnet-peering.adoc[]
 *** xref:aws-private-link.adoc[]
 * xref:connect-to-cluster.adoc[Connect]
-* xref:stop-and-resume.adoc[Stop and Resume]
+* xref:stop-and-resume.adoc[Pause and Resume]
 * xref:deleting-a-cluster.adoc[Delete]
 * xref:scale-up-down.adoc[Scale]
 * xref:hazelcast-version.adoc[Upgrade]

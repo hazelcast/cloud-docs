@@ -93,7 +93,7 @@ Use this table to learn what is supported in {hazelcast-cloud} Dedicated cluster
 |xref:deleting-a-cluster.adoc[Delete a cluster]
 |Supported
 
-|xref:stop-and-resume.adoc[Stop and resume the cluster]
+|xref:stop-and-resume.adoc[Pause and resume the cluster]
 |Supported
 
 |xref:connect-to-cluster.adoc[Connect to the cluster]
