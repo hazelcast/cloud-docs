@@ -60,7 +60,7 @@ It takes a few minutes to create a {hazelcast-cloud} Serverless cluster. When th
 
 [NOTE]
 ====
-Development and production clusters are stopped when both of these conditions are true:
+Development and production clusters are xref:stop-and-resume.adoc#pausing-a-cluster[paused] when both of these conditions are true:
 
 - You don't connect to the cluster for 24 hours.
 - You don't have a payment method set up for your Hazelcast {hazelcast-cloud} account.

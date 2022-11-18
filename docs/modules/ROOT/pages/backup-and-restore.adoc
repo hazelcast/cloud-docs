@@ -7,7 +7,7 @@
 
 include::partial$cluster-data.adoc[]
 
-{hazelcast-cloud} Serverless clusters create a backup automatically once every 24 hours and when they are stopped.
+{hazelcast-cloud} Serverless clusters create a backup automatically once every 24 hours and when they are xref:stop-and-resume.adoc#pausing-a-cluster[paused].
 
 To back up or restore clusters in a team, you must have either an admin or developer role. See xref:teams-and-users.adoc[].
 
