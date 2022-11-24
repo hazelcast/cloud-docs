@@ -64,7 +64,7 @@ mvnw.cmd clean compile exec:java@client-with-ssl
 [source,sql]
 ----
 CREATE OR REPLACE MAPPING cities (
-__key VARCHAR, 
+__key INT,
 country VARCHAR, 
 city VARCHAR,
 population INT)
@@ -99,7 +99,7 @@ When you see `Connection Successful!` in the output, the application is finished
 [source,sql]
 ----
 CREATE OR REPLACE MAPPING cities (
-__key VARCHAR, 
+__key INT,
 country VARCHAR, 
 city VARCHAR,
 population INT)
@@ -134,7 +134,7 @@ When you see `Connection Successful!` in the output, the application is finished
 [source,sql]
 ----
 CREATE OR REPLACE MAPPING cities (
-__key VARCHAR, 
+__key INT,
 country VARCHAR, 
 city VARCHAR,
 population INT)
@@ -168,7 +168,7 @@ When you see `Connection Successful!` in the output, the application is finished
 [source,sql]
 ----
 CREATE OR REPLACE MAPPING cities (
-__key VARCHAR, 
+__key INT,
 country VARCHAR, 
 city VARCHAR,
 population INT)
@@ -202,7 +202,7 @@ When you see `Connection Successful!` in the output, the application is finished
 [source,sql]
 ----
 CREATE OR REPLACE MAPPING cities (
-__key VARCHAR, 
+__key INT,
 country VARCHAR, 
 city VARCHAR,
 population INT)
@@ -254,7 +254,7 @@ The location of the compiled binary may change according to configuration and sy
 [source,sql]
 ----
 CREATE OR REPLACE MAPPING cities (
-__key VARCHAR, 
+__key INT,
 country VARCHAR, 
 city VARCHAR,
 population INT)
@@ -335,8 +335,8 @@ sql>
 [source,sql]
 ----
 CREATE OR REPLACE MAPPING cities (
-__key INT, 
-country VARCHAR, 
+__key INT,
+country VARCHAR,
 city VARCHAR,
 population INT)
 type IMap OPTIONS('keyFormat'='int', 'valueFormat'='json-flat');
