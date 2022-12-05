@@ -42,7 +42,7 @@ image:confluent-cloud-breadcrumbs.png[Breadcrumbs that display the cluster name]
 
 . Click *Topics* > *Create Topic* and enter *trades* in the *Topic name* field. Confluent Cloud won't create a topic if you try to insert data into a topic that doesn't exist.
 
-. Click *Data integration* and select *Java*. Hazelcast uses a Java client to connect to Kafka clusters, so you need the configuration for a Java client.
+. Click *Clients* and select *Java*. Hazelcast uses a Java client to connect to Kafka clusters, so you need the configuration for a Java client.
 
 . Click *Create Kafka cluster API key* and enter the name of your {hazelcast-cloud} cluster in the description. This name helps you remember that your cluster is using that API key the next time you view them in Confluent Cloud.
 
