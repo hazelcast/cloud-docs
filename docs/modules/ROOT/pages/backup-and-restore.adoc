@@ -13,7 +13,7 @@ To back up or restore clusters in a team, you must have either an admin or devel
 
 == Creating a Backup
 
-. Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console] and select your cluster.
+. Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console,window=_blank] and select your cluster.
 
 . Click *Create a backup*.
  
@@ -27,7 +27,7 @@ You can keep at most 10 backups. The oldest backup will be deleted automatically
 
 When you have at least one backup, you can use it to bootstrap a new cluster.
 
-. Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console] and select your cluster.
+. Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console,window=_blank] and select your cluster.
 
 . Click *Create a backup*.
 

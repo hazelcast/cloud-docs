@@ -18,7 +18,7 @@ Scaling a cluster may take up to 8 or 10 minutes.
 
 When data in a cluster occupies 80% of all available memory, we send a warning email to the account or team owner. At this point, we recommend scaling out the cluster, which adds more members and therefore more resources such as memory. When you scale out a cluster, client applications do not experience any downtime. However, the cluster may temporarily experience lower throughput while members migrate their partitions.
 
-. Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console] and select your cluster.
+. Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console,window=_blank] and select your cluster.
 . Go to *Manage* > *Scale Up/Down*.
 +
 - *Instance Count Per Zone*: Number of members you have in each availability zone. 
@@ -35,7 +35,7 @@ If you're using fewer resources than you thought you would when you created the 
 
 WARNING: If you scale in to a size that's smaller than your actual data size, some of your data will be removed.
 
-. Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console] and select your cluster.
+. Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console,window=_blank] and select your cluster.
 . Go to *Manage* > *Scale Up/Down*.
 +
 - *Instance Count Per Zone*: Number of members you have in each availability zone. 

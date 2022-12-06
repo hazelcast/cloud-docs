@@ -46,7 +46,7 @@ contains xref:cluster-side-modules.adoc[cluster-side modules] or persistence, th
 
 Set up WAN Replication between two clusters.
 
-. Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console] and select the cluster that you want to use as a publisher cluster.
+. Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console,window=_blank] and select the cluster that you want to use as a publisher cluster.
 
 +
 NOTE: If you want to set up a pair of clusters in an Active-Active configuration, select either cluster.

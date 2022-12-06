@@ -7,7 +7,7 @@
 
 To add IP addresses to the whitelist of a team's cluster, you must have either an xref:teams-and-users.adoc[admin or developer role].
 
-. Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console] and select your cluster.
+. Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console,window=_blank] and select your cluster.
 
 . Click *IP Whitelisting*.
 

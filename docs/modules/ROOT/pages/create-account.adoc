@@ -44,7 +44,7 @@ A confirmation email will be sent to your registered email address and you will 
 
 When you first sign into the Hazelcast {hazelcast-cloud} console, you are prompted to provide your company name and location. You can update these details at any time.
 
-. Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console].
+. Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console,window=_blank].
 . Click the *Account* icon in the bottom left corner.
 . Click *Profile*.
 . Enter your details and click *Update my details*.
@@ -53,7 +53,7 @@ When you first sign into the Hazelcast {hazelcast-cloud} console, you are prompt
 
 If you registered with an email address, you can change your account password:
 
-. Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console].
+. Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console,window=_blank].
 . Click the *Account* icon in the bottom left corner.
 . Click *Password*.
 . Click *Reset*.

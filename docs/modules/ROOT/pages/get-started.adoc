@@ -35,7 +35,7 @@ Java::
 Before you begin:
 
 * Install Java 8-17 and set the `JAVA_HOME` environment variable to the location of your JRE.
-* If you've followed the onscreen *Quick Connection Guide*, jump straight to step 6.
+* If you've followed the onscreen *Quick Connection Guide*, jump straight to <<step-6, step 6>>.
 
 []
 . In the *Quick Connection Guide* on your cluster, click on the Java icon and then click *Download*.
@@ -54,16 +54,14 @@ Before you begin:
 .. If you use Windows, execute: 
 +
 ```bash
-./mvnw.cmd clean compile exec:java@client-with-ssl
+mvnw.cmd clean compile exec:java@client-with-ssl
 ```
 +
 When you see `Connection Successful!` in the output, the client is successfully connected to your Serverless cluster and populates a `cities` map with data.
 
-To query data in the `cities` map, you need to create a mapping to it.
+. To query data in the `cities` map, you need to create a mapping to it. In step 3 of the *Quick Connection Guide* on your cluster, click *Dashboard*.
 
-. In step 3 of the *Quick Connection Guide* on your cluster, click *Dashboard*.
-
-. In *Cluster Details*, click *Management Center*, and then from the top toolbar click *SQL Browser*.
+. [[step-6]]In *Cluster Details*, click *Management Center*, and then from the top toolbar click *SQL Browser*.
 
 . Paste the following command into the SQL Browser and execute it.
 
@@ -71,7 +69,7 @@ To query data in the `cities` map, you need to create a mapping to it.
 [source,sql]
 ----
 CREATE OR REPLACE MAPPING cities (
-__key INT,
+__key VARCHAR,
 country VARCHAR, 
 city VARCHAR,
 population INT)
@@ -90,7 +88,7 @@ Node.js::
 Before you begin:
 
 * link:https://nodejs.org/en/download/[Install Node.js 10 or newer].
-* If you've followed the onscreen *Quick Connection Guide*, jump straight to step 6.
+* If you've followed the onscreen *Quick Connection Guide*, jump straight to <<step-6n, step 6>>.
 
 []
 . In the *Quick Connection Guide*, click on the NodeJS icon and then click *Download*.
@@ -107,18 +105,16 @@ npm run client_with_ssl
 +
 When you see `Connection Successful!` in the output, the client is successfully connected to your Serverless cluster and populates a `cities` map with data.
 
-To query data in the `cities` map, you need to create a mapping to it.
+. To query data in the `cities` map, you need to create a mapping to it. In step 3 of the *Quick Connection Guide* on your cluster, click *Dashboard*.
 
-. In step 3 of the *Quick Connection Guide* on your cluster, click *Dashboard*.
-
-. In *Cluster Details*, click *Management Center*, and then from the top toolbar click *SQL Browser*.
+. [[step-6n]]In *Cluster Details*, click *Management Center*, and then from the top toolbar click *SQL Browser*.
 
 . Paste the following command into the SQL Browser and execute it.
 +
 [source,sql]
 ----
 CREATE OR REPLACE MAPPING cities (
-__key INT,
+__key VARCHAR,
 country VARCHAR, 
 city VARCHAR,
 population INT)
@@ -137,7 +133,7 @@ Python::
 Before you begin:
 
 * link:https://www.python.org/downloads/[Install Python 3.6 or newer].
-* If you've followed the onscreen *Quick Connection Guide*, jump straight to step 6.
+* If you've followed the onscreen *Quick Connection Guide*, jump straight to <<step-6py, step 6>>.
 
 []
 . In the *Quick Connection Guide*, click on the Python icon and then click *Download*.
@@ -158,14 +154,14 @@ To query data in the `cities` map, you need to create a mapping to it.
 
 . In step 3 of the *Quick Connection Guide* on your cluster, click *Dashboard*.
 
-. In *Cluster Details*, click *Management Center*, and then from the top toolbar click *SQL Browser*.
+. [[step-6py]]In *Cluster Details*, click *Management Center*, and then from the top toolbar click *SQL Browser*.
 
 . Paste the following command into the SQL Browser and execute it.
 +
 [source,sql]
 ----
 CREATE OR REPLACE MAPPING cities (
-__key INT,
+__key VARCHAR,
 country VARCHAR, 
 city VARCHAR,
 population INT)
@@ -182,8 +178,8 @@ TIP: Take a moment, to read the code in the link:https://github.com/hazelcast/ha
 --
 Before you begin:
 
-* link:https://dotnet.microsoft.com/en-us/download/dotnet/3.1[Install .NET].
-* If you've followed the onscreen *Quick Connection Guide*, jump straight to step 6.
+* link:https://dotnet.microsoft.com/en-us/download/dotnet/6.0[Install .NET].
+* If you've followed the onscreen *Quick Connection Guide*, jump straight to <<step-6net, step 6>>.
 
 []
 . In the *Quick Connection Guide*, click on the .NET icon and then click *Download*.
@@ -204,14 +200,14 @@ To query data in the `cities` map, you need to create a mapping to it.
 
 . In step 3 of the *Quick Connection Guide* on your cluster, click *Dashboard*.
 
-. In *Cluster Details*, click *Management Center*, and then from the top toolbar click *SQL Browser*.
+. [[step-6net]]In *Cluster Details*, click *Management Center*, and then from the top toolbar click *SQL Browser*.
 
 . Paste the following command into the SQL Browser and execute it.
 +
 [source,sql]
 ----
 CREATE OR REPLACE MAPPING cities (
-__key INT,
+__key VARCHAR,
 country VARCHAR, 
 city VARCHAR,
 population INT)
@@ -229,7 +225,7 @@ C++::
 Before you begin:
 
 * link:https://vcpkg.io/en/getting-started.html[Install vcpkg].
-* If you've followed the onscreen *Quick Connection Guide*, jump straight to step 6.
+* If you've followed the onscreen *Quick Connection Guide*, jump straight to <<step-6cpp, step 6>>.
 
 []
 . In the *Quick Connection Guide*, click on the C++ icon and then click *Download*.
@@ -268,7 +264,7 @@ To query data in the `cities` map, you need to create a mapping to it.
 
 . In step 3 of the *Quick Connection Guide* on your cluster, click *Dashboard*.
 
-. In *Cluster Details*, click *Management Center*, and then from the top toolbar click *SQL Browser*.
+. [[step-6cpp]]In *Cluster Details*, click *Management Center*, and then from the top toolbar click *SQL Browser*.
 
 . Paste the following command into the SQL Browser and execute it.
 +
@@ -293,7 +289,7 @@ Go::
 Before you begin:
 
 * link:https://go.dev/doc/install[Install Go].
-* If you've followed the onscreen *Quick Connection Guide*, jump straight to step 6.
+* If you've followed the onscreen *Quick Connection Guide*, jump straight to <<step-6go, step 6>>.
 
 []
 . In the *Quick Connection Guide*, click on the C++ icon and then click *Download*.
@@ -314,14 +310,14 @@ To query data in the `cities` map, you need to create a mapping to it.
 
 . In step 3 of the *Quick Connection Guide* on your cluster, click *Dashboard*.
 
-. In *Cluster Details*, click *Management Center*, and then from the top toolbar click *SQL Browser*.
+. [[step-6go]]In *Cluster Details*, click *Management Center*, and then from the top toolbar click *SQL Browser*.
 
 . Paste the following command into the SQL Browser and execute it.
 +
 [source,sql]
 ----
 CREATE OR REPLACE MAPPING cities (
-__key INT,
+__key VARCHAR,
 country VARCHAR, 
 city VARCHAR,
 population INT)
@@ -336,7 +332,7 @@ TIP: Take a moment, to read the code in the link:https://github.com/hazelcast/ha
 SQL (CLI):: 
 + 
 --
-If you've followed the onscreen *Quick Connection Guide*, jump straight to step 7.
+If you've followed the onscreen *Quick Connection Guide*, jump straight to <<step-7, step 7>>.
 
 []
 . Install the Hazelcast CLI client for your operating system.
@@ -382,7 +378,7 @@ You should see your installed version of the CLI client.
 
 . From a command prompt, change into the root directory where you extracted the ZIP file.
 
-. Execute the following command to connect to the SQL shell to your cluster.
+. Execute the following command to connect to the SQL shell to your cluster. You may need add a path to the hz-cli program.
 +
 ```bash
 hz-cli -f hazelcast-client-with-ssl.yml sql
@@ -396,7 +392,7 @@ sql>
 +
 The Hazelcast CLI client is successfully connected to your Serverless cluster.
 
-. Create a mapping to a new map called `cities`.
+. [[step-7]]Create a mapping to a new map called `cities`.
 +
 [source,sql]
 ----
@@ -431,7 +427,7 @@ INSERT INTO cities VALUES
 
 Now that you have some data in your cluster, you can query it, using SQL. If you're using the CLI, enter the following  queries in the SQL prompt. If you're using a client library, enter the following queries in the SQL Browser.
 
-. Use the `SELECT` statement to query all data in the map.
+. Execute the following `SELECT` statement to query all data in the map.
 +
 [source,sql]
 ----
