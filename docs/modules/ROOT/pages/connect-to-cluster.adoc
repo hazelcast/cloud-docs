@@ -57,16 +57,16 @@ xref:developer-guide.adoc[].
 
 - xref:hazelcast:clients:java.adoc#configuring-java-client[Java client]
 
-- link:https://github.com/hazelcast/hazelcast-nodejs-client#configuration[Node.js client]
+- link:https://github.com/hazelcast/hazelcast-nodejs-client/blob/master/DOCUMENTATION.md#3-configuration[Node.js client^]
 
-- link:https://github.com/hazelcast/hazelcast-python-client#142-configuring-hazelcast-python-client[Python client]
+- link:https://hazelcast.readthedocs.io/en/stable/configuration_overview.html[Python client^]
 
-- link:https://github.com/hazelcast/hazelcast-go-client#3-configuration-overview[Go client]
+- link:https://pkg.go.dev/github.com/hazelcast/hazelcast-go-client#hdr-Configuration[Go client^]
 
 - link:http://hazelcast.github.io/hazelcast-csharp-client/dev/doc/configuration.html[.NET client]
 
-- link:https://github.com/hazelcast/hazelcast-cpp-client/blob/v4.1.0/Reference_Manual.md[{cpp} client]
+- link:https://github.com/hazelcast/hazelcast-cpp-client/blob/v4.1.0/Reference_Manual.md#142-configuring-hazelcast-c-client[{cpp} client^]
 
-- link:https://github.com/hazelcast/hazelcast-packaging[CLI client]
+- xref:hazelcast:clients:clc.adoc#configuring-the-hazelcast-clc[CLI client]
 
 - xref:management-center:tools:sql-browser.adoc[SQL Browser].
