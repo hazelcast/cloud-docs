@@ -38,7 +38,7 @@ You must have either an xref:teams-and-users.adoc[admin or developer role] to up
 
 . Use your build tool such as Gradle or Maven to package the classes into a JAR or ZIP file.
 
-. Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console] and select your cluster.
+. Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console,window=_blank] and select your cluster.
 
 . Go to *Manage* > *Custom Classes* and use the file selector to upload the file to Hazelcast {hazelcast-cloud}.
 
@@ -48,7 +48,7 @@ When the file is uploaded and ready to use, you will see a success message.
 
 To remove cluster-side modules from the cluster, you must use the Hazelcast {hazelcast-cloud} console.
 
-. Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console] and select your cluster.
+. Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console,window=_blank] and select your cluster.
 
 . Go to *Manage* > *Custom Classes* and find your class in the list.
 
@@ -58,6 +58,6 @@ To remove cluster-side modules from the cluster, you must use the Hazelcast {haz
 
 To download a cluster-side module, you must use the Hazelcast {hazelcast-cloud} console.
 
-. Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console].
+. Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console,window=_blank].
 
 . Go to *Manage* > *Custom Classes*, find your class in the *Uploaded Classes* list and click on it.

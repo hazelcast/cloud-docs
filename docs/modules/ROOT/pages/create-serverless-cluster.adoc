@@ -24,17 +24,12 @@ Development cluster::
 To create a development cluster, do the following:
 
 // tag::development[]
-. Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console].
-. Click *Plans* in the left navigation.
-. Click *Create cluster* in the *Serverless* tab.
+. Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console,window=_blank].
+. Click *Create New Cluster*.
 . Click *Create Development Cluster*.
-. Select a region.
-+
-TIP: For best performance, use a region that's closest to your client application or data stores. The closer your clients and data are to the cluster, the lower the network latency.
-
-. Give your cluster a memorable name. You cannot change your cluster name after it has been created.
-
-It takes a few minutes to create a {hazelcast-cloud} Serverless cluster. When the cluster state changes from *Pending* to *Running*, you can start using it.
+. Update the cluster name if you want to. You cannot change the cluster name after the cluster is created.
+. Click *Create Cluster*. 
+. Wait while your cluster is created. When the cluster is up and running, a *Quick Connection Guide* is displayed with instructions for connecting a sample client to it.
 // end::development[]
 --
 
@@ -44,16 +39,13 @@ Production cluster::
 To create a production cluster, do the following:
 
 // tag::production[]
-. Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console].
-. Click *Plans* in the left navigation.
-. Click *Create cluster* in the *Serverless* tab.
-. Click *Create Production Cluster*
+. Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console, window=blank].
+. Click *Create New Cluster*.
+. Click *Create Production Cluster*.
+. Update the cluster name if you want to. You cannot change the cluster name after the cluster is created.
+. Click *Create Cluster*
 . Select a region.
-+
-TIP: For best performance, use a region that's closest to your client applications or data stores. The closer your clients and data are to the cluster, the lower the network latency.
-. Give your cluster a memorable name. You cannot change your cluster name after it has been created.
-
-It takes a few minutes to create a {hazelcast-cloud} Serverless cluster. When the cluster state changes from *Pending* to *Running*, you can start using it.
+. Wait while your cluster is created. When the cluster is up and running, a *Quick Connection Guide* is displayed with instructions for connecting a sample client to it.
 // end::production[]
 --
 ====

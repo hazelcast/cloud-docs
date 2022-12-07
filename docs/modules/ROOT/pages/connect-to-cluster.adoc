@@ -22,9 +22,9 @@ If you're using a {hazelcast-cloud} Dedicated cluster, you need to xref:authoriz
 
 Your cluster comes with a downloadable client that's preconfigured to connect to your cluster.
 
-. Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console].
+. Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console,window=_blank].
 . Click *Connect Client*.
-. Select a client from the dropdown.
+. Select a client.
 . Follow the on-screen instructions.
 
 For a complete tutorial, see xref:get-started.adoc[].
@@ -41,7 +41,7 @@ include::partial$get-connection-creds.adoc[]
 
 In Management Center, you can open a SQL shell in your cluster and submit SQL queries directly from your web browser.
 
-. Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console] and select your cluster.
+. Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console,window=_blank] and select your cluster.
 
 . Go to *Management Center*.
 
@@ -57,15 +57,15 @@ xref:developer-guide.adoc[].
 
 - xref:hazelcast:clients:java.adoc#configuring-java-client[Java client]
 
-- link:https://github.com/hazelcast/hazelcast-nodejs-client#configuration[Node.js client]
+- link:https://github.com/hazelcast/hazelcast-nodejs-client/blob/master/DOCUMENTATION.md#3-configuration[Node.js client]
 
-- link:https://github.com/hazelcast/hazelcast-python-client#142-configuring-hazelcast-python-client[Python client]
+- link:https://hazelcast.readthedocs.io/en/stable/configuration_overview.html[Python client]
 
-- link:https://github.com/hazelcast/hazelcast-go-client#3-configuration-overview[Go client]
+- link:https://pkg.go.dev/github.com/hazelcast/hazelcast-go-client#hdr-Configuration[Go client]
 
 - link:http://hazelcast.github.io/hazelcast-csharp-client/dev/doc/configuration.html[.NET client]
 
-- link:https://github.com/hazelcast/hazelcast-cpp-client/blob/v4.1.0/Reference_Manual.md[{cpp} client]
+- link:https://github.com/hazelcast/hazelcast-cpp-client/blob/v4.1.0/Reference_Manual.md#142-configuring-hazelcast-c-client[{cpp} client]
 
 - link:https://github.com/hazelcast/hazelcast-packaging[CLI client]
 

@@ -9,7 +9,7 @@
 == Enabling Multi-Factor Authentication
 
 . Install an authenticator app such as Google Authenticator on your device.
-. Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console].
+. Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console,window=_blank].
 . Click the *Account* icon in the bottom left corner.
 . Click *Security*.
 . Open your authenticator app and scan the QR code that is displayed in the Hazelcast {hazelcast-cloud} console. 
@@ -25,7 +25,7 @@ Verification codes are specific to a particular device and cannot be transferred
 
 If you've enabled MFA, you can disable it so that you can sign in without an authenticator app.
 
-. Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console].
+. Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console,window=_blank].
 . Click the *Account* icon in the bottom left corner.
 . Click *Security*.
 . Click *Disable*.

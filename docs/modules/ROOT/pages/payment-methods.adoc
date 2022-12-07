@@ -20,7 +20,7 @@ To set up automatic payments for your usage, add a payment card to your account.
 
 NOTE: Hazelcast uses a third-party to store payment details and process payments. Payment details are not stored in Hazelcast.
 
-. Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console].
+. Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console,window=_blank].
 . Click the *Account* icon in the bottom left corner.
 . Click *Billing & Payments*.
 . Click *Add Payment Method*.
@@ -30,7 +30,7 @@ You can add only one payment card to your account. To change the payment card, u
 
 == Updating a Payment Card
 
-. Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console].
+. Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console,window=_blank].
 . Click the *Account* icon in the bottom left corner.
 . Click *Billing & Payments*.
 . Click *Update Payment Method*.
@@ -48,7 +48,7 @@ To remove a payment card from your account, contact us at mailto:support@hazelca
 
 You can see how much you've spent in the current month as well as previous invoices.
 
-. Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console].
+. Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console,window=_blank].
 . Click the *Account* icon in the bottom left corner.
 . Click *Billing & Payments*.
 

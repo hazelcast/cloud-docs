@@ -9,7 +9,7 @@ Management Center is enabled for {hazelcast-cloud} Serverless clusters, but disa
 
 To open Management Center, do the following:
 
-. Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console] and select your cluster.
+. Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console,window=_blank] and select your cluster.
 
 . Go to *Management Center*.
 
@@ -18,7 +18,7 @@ To open Management Center, do the following:
 
 To use Management Center in a {hazelcast-cloud} Dedicated cluster, you need to enable it.
 
-. Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console] and select your cluster.
+. Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud,window=_blank} console,window=_blank] and select your cluster.
 
 . Go to *Management Center* and select *Enable*.
 
@@ -34,7 +34,7 @@ If your IP address is included in the whitelist, you should see a read-only view
 
 == Disabling Management Center for {hazelcast-cloud} Dedicated Clusters
 
-. Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console] and select your cluster.
+. Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console,window=_blank] and select your cluster.
 . Go to *Management Center* > *Configure Access* and uncheck the checkbox.
 
 == Related Resources

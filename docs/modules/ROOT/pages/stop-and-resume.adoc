@@ -15,7 +15,7 @@ You cannot pause a {hazelcast-cloud} Dedicated cluster if it's hosted on Google 
 
 Pausing your cluster can help minimize your costs because you are charged only for running clusters.
 
-. Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console] and select your cluster.
+. Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console,window=_blank] and select your cluster.
 . Click *Pause*.
 
 If you're using a {hazelcast-cloud} Serverless production cluster, Hazelcast saves your cluster data so that you can resume the cluster at a later time.
@@ -30,5 +30,5 @@ If you're using a {hazelcast-cloud} Serverless development cluster, all cluster 
 
 == Resuming a Cluster
 
-. Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console] and select your cluster.
+. Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console,window=_blank] and select your cluster.
 . Click *Resume*.
