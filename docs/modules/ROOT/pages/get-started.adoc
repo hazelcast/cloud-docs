@@ -378,7 +378,7 @@ You should see your installed version of the CLI client.
 
 . From a command prompt, change into the root directory where you extracted the ZIP file.
 
-. Execute the following command to connect to the SQL shell to your cluster. You may need add a path to the hz-cli program.
+. Execute the following command to connect the SQL shell to your cluster. You may need add a path to the hz-cli program.
 +
 ```bash
 hz-cli -f hazelcast-client-with-ssl.yml sql

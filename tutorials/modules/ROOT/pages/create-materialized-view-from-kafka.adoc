@@ -5,6 +5,7 @@
 :page-lang: sql
 :page-categories: Stream Processing, Materialized Views
 :page-est-time: 20 mins
+:experimental: true
 
 {description}
 
@@ -22,9 +23,100 @@ You need the following:
 
 - A Hazelcast {hazelcast-cloud} cluster. This tutorial assumes that you have a production cluster for xref:cloud:ROOT:create-serverless-cluster.adoc[{hazelcast-cloud} Serverless].
 
-- Hazelcast CLI for opening connections to the SQL shell of your {hazelcast-cloud} cluster. You can follow the instructions for SQL in xref:cloud:ROOT:get-started.adoc[] until you see the SQL prompt.
-
 - A basic understanding of link:https://hazelcast.com/glossary/kafka/[Kafka].
+
+== Step {counter:cnt-step}. Set Up the Hazelcast CLI
+
+You need to use the Hazelcast CLI in later steps to open connections to the SQL shell of your {hazelcast-cloud} cluster.
+
+. Install the Hazelcast CLI client for your operating system. Although the Hazelcast CLI client is included in Hazelcast Enterprise, you don't need a license to run it.
++
+[tabs] 
+====
+Mac:: 
++ 
+--
+[source,bash]
+----
+brew tap hazelcast/hz
+brew install hazelcast-enterprise
+----
+--
+Linux:: 
++ 
+--
+.Linux Debian
+[source,shell]
+----
+wget -qO - https://repository.hazelcast.com/api/gpg/key/public | sudo apt-key add -
+echo "deb https://repository.hazelcast.com/debian stable main" | sudo tee -a /etc/apt/sources.list
+sudo apt update && sudo apt install hazelcast-enterprise
+----
+.Linux RPM
+[source,shell]
+----
+wget https://repository.hazelcast.com/rpm/hazelcast-rpm.repo -O hazelcast-rpm.repo
+sudo mv hazelcast-rpm.repo /etc/yum.repos.d/
+sudo yum install hazelcast-enterprise
+----
+--
+Windows:: 
++ 
+--
+At the moment, Hazelcast does not support any Windows package managers. You can link:https://hazelcast.com/get-started/download/[download the latest version as a ZIP file instead and extract the files to your local machine].
+--
+====
+
+. From a command prompt, change into the root directory where Hazelcast Enterprise is installed.
+
+. Execute one of the following commands to check that the Hazelcast CLI client is installed.
+
+.. For Linux and Mac OS:
++
+[source,shell]
+----
+bin/hz-cli -V
+----
+.. For Windows:
++
+[source,command]
+----
+bin\hz-cli -V
+----
+
+Next, you need to add the credentials that allow the Hazelcast CLI to connect to your cluster.
+
+. Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console, window=blank].
+
+. Select the production cluster that you want to use for this tutorial.
+
+. In *Cluster Details*, click *Connect Client*.
+
+. In the *Quick Connection Guide*, click the SQL icon and then click *Download*.
+
+. Extract the ZIP file and copy all the files into the root directory where Hazelcast Enterprise is installed.
+
+. From a command prompt, still in the root directory, execute one of the following commands to connect to your cluster.
+
+.. For Linux and Mac OS:
++
+[source,shell]
+```bash
+bin/hz-cli -f hazelcast-client-with-ssl.yml sql
+```
+.. For Windows:
++
+[source,command]
+```bash
+bin\hz-cli -f hazelcast-client-with-ssl.yml sql
+```
+A SQL prompt is displayed:
++
+```
+sql>
+```
++
+The Hazelcast CLI client is successfully connected to your {hazelcast-cloud} cluster ready for later steps in this tutorial.
 
 == Step {counter:cnt-step}. Create a Free Confluent Cloud Kafka Cluster
 
@@ -40,7 +132,9 @@ You need the following:
 +
 image:confluent-cloud-breadcrumbs.png[Breadcrumbs that display the cluster name]
 
-. Click *Topics* > *Create Topic* and enter *trades* in the *Topic name* field. Confluent Cloud won't create a topic if you try to insert data into a topic that doesn't exist.
+. Click *Topics* > *Create Topic* and enter *trades* in the *Topic name* field. 
+
+. Click *Create with defaults*. Confluent Cloud won't create a topic if you try to insert data into a topic that doesn't exist.
 
 . Click *Clients* and select *Java*. Hazelcast uses a Java client to connect to Kafka clusters, so you need the configuration for a Java client.
 
