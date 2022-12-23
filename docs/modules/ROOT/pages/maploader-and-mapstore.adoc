@@ -52,7 +52,7 @@ To use a MapStore, it must be configured for a specific map in Hazelcast {hazelc
 . In the bottom left corner, select *Enable MapStore*.
 . Select a classname from the dropdown. If you don't see a classname, you need to deploy the MapStore to the cluster.
 . Configure the fields, depending on your requirements.
-.. To configure a write-through cache, leave the *Write Delay Seconds* field set to `0``.
+.. To configure a write-through cache, leave the *Write Delay Seconds* field set to `0`.
 .. To configure a write-behind cache, set the *Write Delay Seconds* field to the number of seconds that you want to wait before adding entries to the data store.
 . Click *Save Configuration*.
 
