@@ -44,7 +44,6 @@ To create a production cluster, do the following:
 . Click *Create Production Cluster*.
 . Update the cluster name if you want to. You cannot change the cluster name after the cluster is created.
 . Click *Create Cluster*
-. Select a region.
 . Wait while your cluster is created. When the cluster is up and running, a *Quick Connection Guide* is displayed with instructions for connecting a sample client to it.
 // end::production[]
 --

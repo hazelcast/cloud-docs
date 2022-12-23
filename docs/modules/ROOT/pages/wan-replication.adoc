@@ -51,30 +51,31 @@ Set up WAN Replication between two clusters.
 +
 NOTE: If you want to set up a pair of clusters in an Active-Active configuration, select either cluster.
 
-. Go to *Manage* > *WAN Replication* and then click *+ Create New Replication*.
+. Go to *Manage* > *WAN Replications* and then click *+ Create New Replication*.
 
 +
-The cluster is set as the *Active* cluster. Any data updates performed on this cluster are automatically copied to the other cluster of the pair.
+The details of the cluster you selected appear on the left side of the page. This is the *Active* cluster. Any data updates performed on this cluster are automatically copied to the other cluster of the pair.
 
-. Either leave the default options for the following parameters, or update them to suit your use case.
+. Click *Advanced Settings*. Either leave the default options for the following parameters, or update them to suit your use case.
 
 * *Queue Full Behavior*: Lets you decide what to do when the replication events queue is full. 
 
-** `THROW AN EXCEPTION`: Throws a `WanReplicationQueueFullException` when the queue is full. Processing of replication events stops until action is taken.
-** `THROW AN EXCEPTION ONLY IF REPLICATION ACTIVE`: As above, but this option is only triggered when both clusters connected by WAN replication are active.
-** `NONE`: Discards replication events when the queue is full. This option is only suitable for non-critical data. 
+** `THROW_EXCEPTION`: Throws a `WanReplicationQueueFullException` when the queue is full. Processing of replication events stops until action is taken.
+** `THROW_EXCEPTION_ONLY_IF_REPLICATION_ACTIVE`: As above, but this option is only triggered when both clusters connected by WAN replication are active.
+** `DISCARD_AFTER_MUTATION`: Discards replication events when the queue is full. This option is only suitable for non-critical data. 
 
 * *Queue Capacity*: Sets the maximum size for the replication events queue. When this limit is reached, the *Queue Full Behavior* is triggered.
 * *Batch Size*: Sets the maximum size of replication events that are sent in a single batch.
 * *Batch Max Delay Millis*: By default, all replication events are delayed by one second (1000 milliseconds) before they are sent to the other cluster of the pair, unless they exceed the *Batch Size*.
 
-. Click *Next >* to configure the other cluster of the pair.
-. From the *Active/Passive* list, select the correct behavior for your second cluster: 
+. Now configure the other cluster of the pair on the right side of the page.
+. From the *2nd Cluster Name* list, select the correct cluster.
+. From the *Replication Type* list, select the correct behavior for your second cluster: 
 
+* *Active*: Sends and receives data updates.
 * *Passive*: Receives only data updates.
-* *Active*: Sends and receives data updates. 
-
-. Click *Save*. WAN Replication is set up.
+ 
+. Click *Save This Replication*. WAN Replication is set up.
 
 +
 TIP: If you want to replicate all data between the two clusters immediately, click *Sync*. This option is useful when you're migrating data from one cluster to another. Otherwise, WAN Replication is triggered when a data update is made to a publisher cluster.
@@ -95,18 +96,11 @@ Learn how to delete a cluster that has WAN Replication set up.
 
 Before you start, check that all the data you need has been replicated to another cluster.
 
-To delete a consumer cluster, do the following:
-
-. Identify the connected publisher cluster. From the dashboard of the consumer cluster, go to *Manage* > *WAN Replication* and look for the ID of publisher cluster.
-. Open the dashboard of the publisher cluster.
-. Go to *Manage* > *WAN Replication*. 
-. Remove WAN Replication. On the *Cluster Settings* page, select *WAN Replication* and then click *Delete*. Confirm your deletion.
-. Return to the dashboard of the consumer cluster and delete the cluster.
-
-To delete a publisher cluster, do the following:
-
-. Follow steps 2 to 4 as for the consumer cluster.
-. Go to the dashboard of your publisher cluster and delete the cluster.
+. Select the cluster that you want to delete.
+. Go to *Manage* > *WAN Replications*.
+. Click *Delete* and confirm your deletion.
+. When the deletion is complete, go to the dashboard of your cluster.
+. Click *Delete* and confirm your deletion of your cluster. 
 
 == Related Resources
 

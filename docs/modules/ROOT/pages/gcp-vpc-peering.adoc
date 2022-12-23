@@ -10,8 +10,6 @@ There are 2 ways of creating a GCP VPC Peering connection:
 - Use the CLI (recommended)
 - Create a manual connection
 
-To create a peering connection on a team cluster, you must have either an admin or developer role. See xref:teams-and-users.adoc[].
-
 == Using the Hazelcast {hazelcast-cloud} CLI
 
 This option provides the easiest way of creating GCP VPC Peering with your {hazelcast-cloud} Dedicated cluster.

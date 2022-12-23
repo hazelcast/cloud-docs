@@ -10,8 +10,6 @@ You can create an AWS VPC peering connection, using one of the following option:
 - Use the CLI (recommended)
 - Create a manual connection
 
-To create a peering connection on a team cluster, you must have either an admin or developer role. See xref:teams-and-users.adoc[].
-
 == Using the Hazelcast {hazelcast-cloud} CLI
 
 This option provides the easiest way of creating an AWS VPC Peering with your Hazelcast {hazelcast-cloud} cluster.

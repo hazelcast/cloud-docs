@@ -22,7 +22,7 @@ If you're using a {hazelcast-cloud} Dedicated cluster, you need to xref:authoriz
 
 Your cluster comes with a downloadable client that's preconfigured to connect to your cluster.
 
-. Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console,window=_blank].
+. Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console,window=_blank] and select your cluster.
 . Click *Connect Client*.
 . Select a client.
 . Follow the on-screen instructions.
@@ -39,14 +39,11 @@ include::partial$get-connection-creds.adoc[]
 [[sql]]
 == Using the SQL Browser
 
-In Management Center, you can open a SQL shell in your cluster and submit SQL queries directly from your web browser.
+You can open a SQL shell in your cluster and submit SQL queries directly from your web browser.
 
 . Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console,window=_blank] and select your cluster.
 
-. Go to *Management Center*.
-
-. In the top toolbar, click *SQL Browser*.
-
+. Go to *SQL*.
 . Enter your SQL queries.
 
 == Next Steps

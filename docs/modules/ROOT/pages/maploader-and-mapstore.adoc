@@ -20,8 +20,6 @@ The following steps describe the workflow for developing a MapStore:
 . <<deploy, Deploy>>
 . <<configure, Configure>>
 
-To use this feature, you must have either an admin or developer role. See xref:teams-and-users.adoc[].
-
 [[implement]]
 == Implementing a MapStore
 
@@ -48,12 +46,13 @@ Before you can configure the MapStore, you need to deploy it by packaging your c
 To use a MapStore, it must be configured for a specific map in Hazelcast {hazelcast-cloud}. When a map is configured with a MapStore, Hazelcast plugs the MapStore implementation into the lifecycle of the map so that the MapStore is triggered when certain map operations are invoked.
 
 . Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console,window=_blank] and select your cluster.
-. Go to *Data Structure Config* > *Add New Configuration*.
+. Go to *Manage* > *Data Structures*.
+. Click *Add New Configuration*.
 . Configure the map.
 . In the bottom left corner, select *Enable MapStore*.
 . Select a classname from the dropdown. If you don't see a classname, you need to deploy the MapStore to the cluster.
 . Configure the fields, depending on your requirements.
-.. To configure a write-through cache, leave the *Write Delay Seconds* field set to 0.
+.. To configure a write-through cache, leave the *Write Delay Seconds* field set to `0`.
 .. To configure a write-behind cache, set the *Write Delay Seconds* field to the number of seconds that you want to wait before adding entries to the data store.
 . Click *Save Configuration*.
 
@@ -67,7 +66,7 @@ The following are the descriptions of MapStore configuration elements and attrib
 
 - *Write Batch Size*: Used to create batch chunks when writing map store. In default mode, all map entries are tried to be written in one go. To create batch chunks, the minimum meaningful value for write-batch-size is 2. For values smaller than 2, it works as in default mode.
 
-- *Write Coalescing*: In write-behind mode, Hazelcast coalesces updates on a specific key by default; it applies only the last update on it. You can set this element to false to store all updates performed on a key to the data store.
+- *Write Coalescing*: In write-behind mode, Hazelcast coalesces updates on a specific key by default; it applies only the last update on it. Clear the *Write Coalescing* checkbox to store all updates performed on a key to the data store.
 
 - *Initial Mode*: Sets the initial load mode. *Lazy* is the default load mode, where the load is asynchronous. *Eager* means the load is blocked till all partitions are loaded. 
 

@@ -6,8 +6,6 @@
 
 {hazelcast-cloud} Dedicated clusters scale horizontally, which means that you can adjust the resources available to your application, such as memory, by adding members (scaling out) or removing members (scaling in). Each {hazelcast-cloud} Dedicated cluster is a network of at least three instances or _members_, with a fixed set of resources allocated to each one.
 
-To scale a team's cluster, you must have either an xref:teams-and-users.adoc[admin or developer role].
-
 == Before you Begin
 
 Calculate how much memory your cluster needs before scaling out or in. If your data structures have backups, include those in your calculations. For example, if a map has a backup count of 1 (default) and the size of its entries equal 5 MB, then the map's total data size is 10 MB (primary entries + backup entries).

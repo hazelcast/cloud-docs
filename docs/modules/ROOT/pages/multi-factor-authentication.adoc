@@ -10,10 +10,9 @@
 
 . Install an authenticator app such as Google Authenticator on your device.
 . Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console,window=_blank].
-. Click the *Account* icon in the bottom left corner.
-. Click *Security*.
+. Go to *Account* > *Security*.
 . Open your authenticator app and scan the QR code that is displayed in the Hazelcast {hazelcast-cloud} console. 
-. Enter the 6 digit verification code into the input box in the Hazelcast {hazelcast-cloud} console and click *Enable two factor authentication*.
+. Enter the six digit verification code into the input box in the Hazelcast {hazelcast-cloud} console and click *Enable MFA*.
 . Sign out and try signing in again.
 
 After entering your username and password, you will be asked to enter the verification code, using the authenticator app.
@@ -26,8 +25,7 @@ Verification codes are specific to a particular device and cannot be transferred
 If you've enabled MFA, you can disable it so that you can sign in without an authenticator app.
 
 . Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console,window=_blank].
-. Click the *Account* icon in the bottom left corner.
-. Click *Security*.
+. Go to *Account* > *Security*.
 . Click *Disable*.
 
 You'll receive an email to confirm that MFA is disabled.
