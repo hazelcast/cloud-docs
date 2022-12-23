@@ -63,7 +63,7 @@ When you see `Connection Successful!` in the output, the client is successfully 
 
 . [[step-6]]In *Cluster Details*, click *Management Center*, and then from the top toolbar click *SQL Browser*.
 
-. Paste the following command into the SQL Browser and execute it.
+. Paste the following command into the SQL browser and execute it.
 
 +
 [source,sql]
@@ -109,7 +109,7 @@ When you see `Connection Successful!` in the output, the client is successfully 
 
 . [[step-6n]]In *Cluster Details*, click *Management Center*, and then from the top toolbar click *SQL Browser*.
 
-. Paste the following command into the SQL Browser and execute it.
+. Paste the following command into the SQL browser and execute it.
 +
 [source,sql]
 ----
@@ -156,7 +156,7 @@ To query data in the `cities` map, you need to create a mapping to it.
 
 . [[step-6py]]In *Cluster Details*, click *Management Center*, and then from the top toolbar click *SQL Browser*.
 
-. Paste the following command into the SQL Browser and execute it.
+. Paste the following command into the SQL browser and execute it.
 +
 [source,sql]
 ----
@@ -202,7 +202,7 @@ To query data in the `cities` map, you need to create a mapping to it.
 
 . [[step-6net]]In *Cluster Details*, click *Management Center*, and then from the top toolbar click *SQL Browser*.
 
-. Paste the following command into the SQL Browser and execute it.
+. Paste the following command into the SQL browser and execute it.
 +
 [source,sql]
 ----
@@ -266,7 +266,7 @@ To query data in the `cities` map, you need to create a mapping to it.
 
 . [[step-6cpp]]In *Cluster Details*, click *Management Center*, and then from the top toolbar click *SQL Browser*.
 
-. Paste the following command into the SQL Browser and execute it.
+. Paste the following command into the SQL browser and execute it.
 +
 [source,sql]
 ----
@@ -312,7 +312,7 @@ To query data in the `cities` map, you need to create a mapping to it.
 
 . [[step-6go]]In *Cluster Details*, click *Management Center*, and then from the top toolbar click *SQL Browser*.
 
-. Paste the following command into the SQL Browser and execute it.
+. Paste the following command into the SQL browser and execute it.
 +
 [source,sql]
 ----
@@ -425,7 +425,7 @@ INSERT INTO cities VALUES
 [[step-3]]
 == Step 3. Query the Cache with SQL
 
-Now that you have some data in your cluster, you can query it, using SQL. If you're using the CLI, enter the following  queries in the SQL prompt. If you're using a client library, enter the following queries in the SQL Browser.
+Now that you have some data in your cluster, you can query it, using SQL. If you're using the CLI, enter the following  queries in the SQL prompt. If you're using a client library, enter the following queries in the SQL browser.
 
 . Execute the following `SELECT` statement to query all data in the map.
 +
@@ -598,5 +598,5 @@ Learn more about using clients:
 
 - link:https://github.com/hazelcast/hazelcast-packaging[CLI client]
 
-- xref:management-center:tools:sql-browser.adoc[SQL Browser].
+- xref:management-center:tools:sql-browser.adoc[SQL browser].
 

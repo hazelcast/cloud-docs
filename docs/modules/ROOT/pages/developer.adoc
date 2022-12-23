@@ -6,17 +6,14 @@
 
 {description}
 
-To manage API keys for a team's cluster, you must have either an xref:create-account.adoc#roles[admin or developer role].
-
 == Using the Hazelcast {hazelcast-cloud} Console
 
 // tag::create[]
 To create a new set of API credentials, do the following:
 
 . Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console,window=_blank].
-. Click the *Account* icon in the bottom left corner.
-. Click *Developer*.
-. Click *Generate new API Key*.
+. Go to *Account* > *Developer*.
+. Click *Generate New API Key*.
 // end::create[]
 
 You can use these credentials in your applications to manage all clusters in your account. Currently, you can only create one API key and secret pair on your account.

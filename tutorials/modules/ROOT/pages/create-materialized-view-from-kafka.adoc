@@ -150,7 +150,7 @@ To allow Hazelcast to access the `trades` topic that you created in your Conflue
 
 . Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console,window=_blank] and select your cluster.
 
-. Go to *Management Center* > *SQL Browser*.
+. Go to *SQL* in the left navigation to open the SQL browser.
 
 . Create the mapping. Paste the connection configurations that you copied from Confluent Cloud below the `valueFormat` option. Make sure to format the configuration as necessary. For example:
 +
@@ -230,7 +230,7 @@ The result is an empty table. You don't see any results because, by default, Con
 
 . Stop the streaming query by pressing kbd:[Ctrl + C] to close the connection to the SQL prompt.
 
-. Back in the SQL browser in Management Center, create the mapping to the topic again, but this time add the `'auto.offset.reset'='earliest'` configuration. This configuration tells the Kafka consumer to read all data in the topic from the beginning, not just from the latest offset.
+. Back in the SQL browser, create the mapping to the topic again, but this time add the `'auto.offset.reset'='earliest'` configuration. This configuration tells the Kafka consumer to read all data in the topic from the beginning, not just from the latest offset.
 +
 [source,sql]
 ----
@@ -289,7 +289,7 @@ Hazelcast executes the query and filters the results, using your previous trades
 
 To reduce network latency, Kafka messages are often small and contain minimal data. For example, the `trades` topic does not contain any information about the company that's associated with a given ticker. To get deeper insights from data in Kafka topics, you can join query results with contextual data.
 
-. Open the SQL browser in Management Center.
+. Open the SQL browser.
 
 . Create a mapping to a new map called `companies` in Hazelcast. The new map is for storing the company information that you'll use to enrich results from the `trades` topic.
 +
@@ -343,7 +343,7 @@ Hazelcast is executing the streaming query.
 
 You can set up an automated job to continuously run the streaming query and cache the results in a Hazelcast map.
 
-. Open the SQL browser in Management Center.
+. Open the SQL browser.
 
 . Create a mapping to a new map called `trade_map`. This map is your materialized view, which caches the enriched results of the streaming query.
 +

@@ -11,8 +11,6 @@ Download the Hazelcast {hazelcast-cloud} CLI from link:{url-github-cloud-cli[Git
 
 link:{url-azure-cli}[Download the Azure CLI] and make sure you have the link:{url-azure-permissions}[correct permissions].
 
-To create a peering connection on a team cluster, you must have either an admin or developer role. See xref:teams-and-users.adoc[].
-
 == Creating a Peering Connection
 
 . Create the peering connection.

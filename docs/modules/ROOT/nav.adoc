@@ -22,7 +22,6 @@
 .Manage Accounts
 * xref:create-account.adoc[Create an Account]
 * xref:multi-factor-authentication.adoc[Multi-Factor Authentication]
-* xref:teams-and-users.adoc[Teams and Users]
 * xref:developer.adoc[API keys]
 * xref:payment-methods.adoc[Billing and Payments]
 

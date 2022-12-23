@@ -3,19 +3,26 @@
 
 {description}
 
-To monitor a cluster, click on your cluster's name on the *Clusters* page to see the cluster details. On this *Cluster Details* page, these charts are grouped into cluster and map metrics, and client statistics.
+To monitor a cluster:
 
+. Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console,window=_blank] and select your cluster.
+. Below the *Cluster details* section, charts are grouped into two sections:
+
+** *Cluster metrics*: Charts for both cluster and client metrics.
+** *Map metrics*: Charts for monitoring maps.
+
++
 Charts are updated every 5 seconds. When you hover your mouse cursor onto any chart area, you can see the related value corresponding to the cursor's location.
 
 NOTE: Metrics may not represent the current state of the cluster. The displayed metrics are sometimes 5-10 seconds older than the current state of the cluster because of the latency between the cluster reporting the metrics and the charts reading and displaying them.
 
 == Cluster Metrics
 
-In the *Cluster Metrics* part of the *Cluster Details* page, you can see the charts described in the below sections.
+In the *Cluster Metrics* section, you can see the following charts.
 
 === Cluster Memory Chart
 
-This chart shows your cluster's memory capacity (`Cluster Max Memory`, the blue line) and the size of currently used memory (`Cluster Used Memory`, the orange line). As the orange line approaches the blue line, you should think about scaling out. Note that `Cluster Used Memory` is the total amount of memory used for both primary and backup entries. 
+This chart shows your cluster's memory capacity (`Cluster Max Memory`, the blue line) and the size of currently used memory (`Cluster Used Memory`, the green line). As the green line approaches the blue line, you should think about scaling out. Note that `Cluster Used Memory` is the total amount of memory used for both primary and backup entries. 
 
 === Client Count Chart
 

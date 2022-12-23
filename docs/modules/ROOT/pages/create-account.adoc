@@ -6,7 +6,7 @@
 
 == Creating a New Account
 
-To create a new account, go to the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} sign-up page].
+To create a new account, go to the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} sign-up page, window=_blank].
 
 [tabs] 
 ====
@@ -45,31 +45,23 @@ A confirmation email will be sent to your registered email address and you will 
 When you first sign into the Hazelcast {hazelcast-cloud} console, you are prompted to provide your company name and location. You can update these details at any time.
 
 . Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console,window=_blank].
-. Click the *Account* icon in the bottom left corner.
-. Click *Profile*.
-. Enter your details and click *Update my details*.
+. Go to *Account* > *Profile*.
+. Enter your details and click *Update My Details*.
 
 == Changing your Password
 
 If you registered with an email address, you can change your account password:
 
 . Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console,window=_blank].
-. Click the *Account* icon in the bottom left corner.
-. Click *Password*.
-. Click *Reset*.
-+
-You will be sent an email.
-. Open the email and click *Reset your password*.
-. Enter your new password.
-. Click *Reset password*.
+. Go to *Account* > *Password*.
+. Enter your current password and then enter and confirm a new password.
+. Click *Change*.
 
 == Keeping your Account Safe
 
-After you set up your account, you’ll want to keep it safe. Here are some recommendations:
+After you set up your account, you'll want to keep it safe. Here are some recommendations:
 
 - *Keep private information secure:* Keep your password and any xref:developer.adoc[API keys] private.
-
-- *Use teams to provide others with access to your account:* Don't give anyone access to your account. To allow others to work with your clusters, you can xref:teams-and-users.adoc[invite others to a team] so they can log in and take certain actions, but with limited access.
 
 - *Enable multi-factor authentication:* Protect your account from anyone who may know your username and password. With xref:multi-factor-authentication.adoc[multi-factor authentication], you'll need to provide a unique code that's generated on your device as well as your username and password to sign in.
 

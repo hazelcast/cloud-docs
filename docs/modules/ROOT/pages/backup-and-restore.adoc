@@ -1,5 +1,5 @@
 = Backing up and Restoring Data
-:description: You can create a backup of your cluster data and later restore new clusters from that backup.
+:description: You can create a backup of your data on a production cluster and later restore new clusters from that backup.
 :cloud-tags: Manage Clusters
 :cloud-order: 56
 
@@ -7,15 +7,13 @@
 
 include::partial$cluster-data.adoc[]
 
-{hazelcast-cloud} Serverless clusters create a backup automatically once every 24 hours and when they are xref:stop-and-resume.adoc#pausing-a-cluster[paused].
-
-To back up or restore clusters in a team, you must have either an admin or developer role. See xref:teams-and-users.adoc[].
+{hazelcast-cloud} Serverless production clusters create a backup automatically once every 24 hours, and when they are xref:stop-and-resume.adoc#pausing-a-cluster[paused].
 
 == Creating a Backup
 
 . Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console,window=_blank] and select your cluster.
 
-. Click *Create a backup*.
+. Go to *Manage* > *Backups*.
  
 . Click *Create Manual Backup*.
 
@@ -29,8 +27,14 @@ When you have at least one backup, you can use it to bootstrap a new cluster.
 
 . Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console,window=_blank] and select your cluster.
 
-. Click *Create a backup*.
+. Go to *Manage* > *Backups*.
+
+. Click *Create Manual Backup*.
 
 . Click *Restore* in the row of your selected backup.
+
+. When the details of your new cluster are displayed, you can update its deployment region or cluster name.
+
+. Click *Restore Data to a New Cluster* to deploy your new cluster.
 
 IMPORTANT: Do not delete the cluster that owns the backup until the new cluster is running.
