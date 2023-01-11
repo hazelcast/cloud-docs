@@ -24,6 +24,7 @@
 * xref:multi-factor-authentication.adoc[Multi-Factor Authentication]
 * xref:developer.adoc[API keys]
 * xref:payment-methods.adoc[Billing and Payments]
+* xref:set-budget.adoc[Set a Budget]
 
 .Manage Clusters
 * xref:create-clusters.adoc[Create]
