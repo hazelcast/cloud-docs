@@ -1,21 +1,23 @@
 = Setting a Budget
-:description: Use the Budget Tracker to help you to monitor and control your spending in Hazelcast Viridian.
+:description: Use the Budget Tracker to monitor and control your spending.
 :cloud-tags: Manage Accounts
 :cloud-title: Setting a Budget
 :cloud-order: 58
 
 {description}
 
-Set a budget and you'll receive an email alert when your costs reach 80% of your budget, and again when you hit your budget. You can use this information to take action to limit your spending or to gain insights into your resource usage.
+Set a budget and you'll receive an email and onscreen alert when your costs reach 80% of your budget, and again when you hit your budget. Use this information to limit your spending or to gain insights into your resource usage.
 
-== Setting Your Budget
+== Budget Types
 
 You can set a daily and/or monthly budget.
 
-- Daily budgets: Track your spending from 12 AM (UTC-0) each day.
-- Monthly budgets: Track your spending from the first day of each calendar month. This means that if, for example, you set your budget halfway through a month, your costs are still calculated from the start of the month and compared against your budget for the entire month. Your budget and spending are reset at the start of the next calendar month.
+- Daily budgets: Track your spending against budget from 12 AM (UTC-0) each day.
+- Monthly budgets: Track your spending against budget from the first day of each calendar month. If you set your budget halfway through the month, your total spend is still calculated for the entire month. Both your costs and budget are reset at the start of every month.
 
-Budgets are set per account and include the cost of resources used by all clusters attached to your account. 
+== Setting Your Budget
+
+Budgets are set per account. Your spending includes the resource costs for all clusters attached to your account.
 
 . Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console,window=_blank].
 . Go to *Account* > *Billing & Payments*.
@@ -24,11 +26,11 @@ Budgets are set per account and include the cost of resources used by all cluste
 . In the *Monthly Alert* box, enter your monthly budget. Or, set the toggle to *OFF* to only set a monthly budget.
 . Click *Save Configuration* to start tracking your budget.
 
-WARNING: The Budget Tracker _does not_ automatically limit your spending. When your costs reach your budget amount, you must pause your clusters to prevent additional charges.
+WARNING: The Budget Tracker *_does not_* automatically limit your spending. When your costs reach your budget amount, you must pause your clusters to prevent additional charges.
 
 == Managing Your Costs
 
-As well as using the Budget Tracker to monitor your spending, consider taking the following actions to manage your costs:
+As well as using the Budget Tracker, take the following actions to manage your costs:
 
 - Pause test clusters between test cycles.
 - Pause non-production clusters outside of working hours.
