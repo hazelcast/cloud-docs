@@ -23,7 +23,7 @@ Budgets are set per account. Your spending includes the resource costs for all c
 . Go to *Account* > *Billing & Payments*.
 . In the *Budget Tracker*, click on an edit icon.
 . In the *Daily Alert* box, enter your daily budget. Or, set the toggle to *OFF* to only set a monthly budget.
-. In the *Monthly Alert* box, enter your monthly budget. Or, set the toggle to *OFF* to only set a monthly budget.
+. In the *Monthly Alert* box, enter your monthly budget. Or, set the toggle to *OFF* to only set a daily budget.
 . Click *Save Configuration* to start tracking your budget.
 
 WARNING: The Budget Tracker *_does not_* automatically limit your spending. When your costs reach your budget amount, you must pause your clusters to prevent additional charges.
