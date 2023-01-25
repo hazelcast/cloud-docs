@@ -1,0 +1,39 @@
+= Setting a Budget
+:description: Use the Budget Tracker to monitor and control your spending.
+:cloud-tags: Manage Accounts
+:cloud-title: Setting a Budget
+:cloud-order: 58
+
+{description}
+
+Set a budget and you'll receive an email and onscreen alert when your costs reach 80% of your budget, and again when you hit your budget. Use this information to limit your spending or to gain insights into your resource usage.
+
+== Budget Types
+
+You can set a daily and/or monthly budget.
+
+- Daily budgets: Track your spending against budget from 12 AM (UTC-0) each day.
+- Monthly budgets: Track your spending against budget from the first day of each calendar month. If you set your budget halfway through the month, your total spend is still calculated for the entire month. Both your costs and budget are reset at the start of every month.
+
+== Setting Your Budget
+
+Budgets are set per account. Your spending includes the resource costs for all clusters attached to your account.
+
+. Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console,window=_blank].
+. Go to *Account* > *Billing & Payments*.
+. In the *Budget Tracker*, click on an edit icon.
+. In the *Daily Alert* box, enter your daily budget. Or, set the toggle to *OFF* to only set a monthly budget.
+. In the *Monthly Alert* box, enter your monthly budget. Or, set the toggle to *OFF* to only set a daily budget.
+. Click *Save Configuration* to start tracking your budget.
+
+WARNING: The Budget Tracker *_does not_* automatically limit your spending. When your costs reach your budget amount, you must pause your clusters to prevent additional charges.
+
+== Managing Your Costs
+
+As well as using the Budget Tracker, take the following actions to manage your costs:
+
+- Pause test clusters between test cycles.
+- Pause non-production clusters outside of working hours.
+- Identify idle or unused clusters and pause or delete them.
+- xref:monitor-clusters.adoc[Monitor your resource usage] to fine-tune your application.
+- Reduce the xref:serverless-cluster.adoc#backups[backup count for data structures that you have customized], and/or remove backups that are no longer required. After the first backup, you are charged for every additional backup of these data structures.  
