@@ -26,7 +26,6 @@ All enhancements are for the Hazelcast {hazelcast-cloud} Serverless edition of H
 
 - When you download log files from the console, the file name now includes the cluster name and the date/time of download.
 
-
 *Fixes*
 
 All bug fixes are for the Hazelcast {hazelcast-cloud} Serverless edition of Hazelcast {hazelcast-cloud} Cloud Managed Services unless otherwise stated.
@@ -463,3 +462,4 @@ Hazelcast version has been updated to 3.12.2.
 - Fixed the issues in the Go client sample that caused indentation defects.
 - Fixed an issue where the cluster details were still accessible for the deleted clusters.
 - Fixed an issue where the "Cost this month" field under "Billing & Payment" page was not resetting.
+

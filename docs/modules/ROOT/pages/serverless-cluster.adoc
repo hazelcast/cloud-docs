@@ -11,12 +11,6 @@
 
 Serverless means that Hazelcast manages the cloud infrastructure for you. Each {hazelcast-cloud} Serverless cluster is an independent deployment of Hazelcast Platform in a Kubernetes container. This design guarantees resource isolation, prevents resource stealing, and provides isolated network access.
 
-== Beta Release
-
-{hazelcast-cloud} Serverless is in beta while we continue to add new features.
-
-Despite its beta state, you can use <<cluster-types, {hazelcast-cloud} Serverless production clusters>> for production applications.
-
 == {hazelcast-cloud} Serverless Cluster Types
 
 // tag::types[]

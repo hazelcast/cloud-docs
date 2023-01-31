@@ -55,7 +55,7 @@ Cluster-side modules must be serialized because they are sent to other members i
 |===
 | Serializer| Advantages| Disadvantages|Client support
 
-| xref:hazelcast:serialization:compact-serialization.adoc[Compact Serialization] [.beta]*Beta*
+| xref:hazelcast:serialization:compact-serialization.adoc[Compact Serialization]
 |
 
 * Convenient, flexible, and can be used with no configuration
@@ -69,10 +69,7 @@ Cluster-side modules must be serialized because they are sent to other members i
 |* Specific to Hazelcast
 
 * Schema is not part of the data but schema distribution
-may incur costs on short-lived use cases
-
-* The format is in a beta state and no compatibility
-guarantees are given yet
+may incur costs on short-lived use cases.
 
 |All clients
 
