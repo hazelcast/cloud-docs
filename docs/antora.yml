@@ -9,7 +9,7 @@ asciidoc:
     page-url-github-go-sdk: https://github.com/hazelcast/hazelcast-cloud-sdk-go
     page-url-cloud-api: https://cloud.hazelcast.com/v1/api/explorer
     page-code-samples: https://github.com/hazelcast/hazelcast-cloud-code-samples
-    page-cloud-platform-version: 5.1
+    page-cloud-platform-version: 5.2
     page-cloud-console: https://viridian.hazelcast.com/
 nav:
 - modules/ROOT/nav.adoc

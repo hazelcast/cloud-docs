@@ -27,20 +27,7 @@ See xref:maven-plugin-hazelcast.adoc[].
 == Hazelcast CLC
 [.beta]*Beta*
 
-Hazelcast Command-Line Client (CLC) is a command-line tool for connecting to {hazelcast-cloud} clusters, creating and managing data structures, and monitoring clusters.
+Hazelcast Command-Line Client (CLC) is a command-line tool for connecting to {hazelcast-cloud} Serverless, local, and remote clusters. The Hazelcast CLC also allows you to create and manage data structures, and monitor your clusters.
 
-See the documentation on link:https://github.com/hazelcast/hazelcast-commandline-client[GitHub].
+See xref:clc:ROOT:overview.adoc[the documentation] for installation and configuration details, and a full list of commands.
 
-== Hazelcast {hazelcast-cloud} Go SDK (deprecated)
-
-Hazelcast {hazelcast-cloud} Go SDK is a Go library for creating and managing {hazelcast-cloud} clusters.
-
-The Go SDK is deprecated and no longer maintained.
-
-See the legacy documentation on link:{page-url-github-go-sdk}[GitHub].
-
-== GraphQL API (deprecated)
-
-The GraphQL API is deprecated and no longer maintained.
-
-See the legacy documentation: xref:api-reference.adoc[].
