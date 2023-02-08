@@ -9,3 +9,5 @@
 . Click *Logs* to download a ZIP file that contains all logs of members in your cluster.
 
 . Extract the ZIP file. Inside the extracted directory, you have one log file for each member in your cluster.
+
+NOTE: You cannot download logs when a cluster is resuming.
