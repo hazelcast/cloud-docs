@@ -1,7 +1,9 @@
 = Configuring Data Structures
-:description: You can configure data strutures in the console. Use these references to learn what settings you can configure.
+:description: You can configure data structures in the console. Use these references to learn what settings you can configure.
 
 {description}
+
+WARNING: Serverless clusters have a 1 GB heap memory limit per cluster member. Exceeding this limit can lead to cluster failure. Be aware that the following operations use heap memory: writing, caching, or replicating data to data structures other than IMap and JCache. 
 
 * xref:map-configurations.adoc[]
 * xref:jcache.adoc[]

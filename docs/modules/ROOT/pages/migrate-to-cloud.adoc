@@ -18,9 +18,16 @@ image::ROOT:serverless-app-server.svg[A Hazelcast client application communicati
 To separate your embedded application into these two parts, see the following checklist:
 
 - [ ] Deploy xref:cluster-side-modules.adoc[cluster-side modules] to Hazelcast {hazelcast-cloud}. If you use classes such as MapStore or an entry processor, or if you store custom objects in Hazelcast, you need to add those classes to the classpath of the cluster by deploying them as cluster-side modules.
+
 - [ ] Copy any data structure configuration over to Hazelcast {hazelcast-cloud}. Data structures are configured in the Hazelcast {hazelcast-cloud} console.
+
++
+WARNING: Serverless clusters have a 1 GB heap memory limit per cluster member. Exceeding this limit can lead to cluster failure. Be aware that the following operations use heap memory: writing, caching, or replicating data to data structures other than IMap and JCache.
+
 - [ ] Remove member configuration from your code. Hazelcast configures the cluster for the best possible performance. All you need to do is configure the client and any data structures.
+
 - [ ] If you use the executor service, make sure that you are using the ‘default’ service in both uploaded executor services and client code. You cannot access named executor services in Hazelcast {hazelcast-cloud}. 
+
 - [ ] Replace any instance of
 `HazelcastInstance
 newHazelcastInstance` with a client. `newHazelcastInstance` creates an instance of a Hazelcast member. Instead, you need to configure a client to xref:connect-to-cluster.adoc[connect to the cluster].
