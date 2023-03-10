@@ -22,7 +22,20 @@ To separate your embedded application into these two parts, see the following ch
 - [ ] Copy any data structure configuration over to Hazelcast {hazelcast-cloud}. Data structures are configured in the Hazelcast {hazelcast-cloud} console.
 
 +
-WARNING: Serverless clusters have a 1 GB heap memory limit per cluster member. Exceeding this limit can lead to cluster failure. Be aware that the following operations use heap memory: writing, caching, or replicating data to data structures other than IMap and JCache.
+[WARNING]
+.Heap memory limits
+====
+{hazelcast-cloud} Serverless clusters have the following heap memory limits:
+
+* Production clusters: 1 GB memory per cluster member
+* Development clusters: 300 MB per cluster
+
+Exceeding these limits can lead to cluster failure. 
+
+Be aware that the following operations use heap memory: writing, caching, or replicating data to data structures other than IMap an JCache. 
+
+See xref:serverless-cluster.adoc#heap-memory-limits-of-viridian-serverless-clusters[Heap Memory Limits of {hazelcast-cloud} Serverless Clusters] for further details.
+====
 
 - [ ] Remove member configuration from your code. Hazelcast configures the cluster for the best possible performance. All you need to do is configure the client and any data structures.
 

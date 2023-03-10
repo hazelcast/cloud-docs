@@ -3,7 +3,21 @@
 
 {description}
 
-WARNING: Serverless clusters have a 1 GB heap memory limit per cluster member. Exceeding this limit can lead to cluster failure. Be aware that the following operations use heap memory: writing, caching, or replicating data to data structures other than IMap and JCache. 
+[WARNING]
+.Heap memory limits
+====
+{hazelcast-cloud} Serverless clusters have the following heap memory limits:
+
+* Production clusters: 1 GB memory per cluster member
+* Development clusters: 300 MB per cluster
+
+Exceeding these limits can lead to cluster failure. 
+
+Be aware that the following operations use heap memory: writing, caching, or replicating data to data structures other than IMap an JCache. 
+
+See xref:serverless-cluster.adoc#heap-memory-limits-of-viridian-serverless-clusters[Heap Memory Limits of {hazelcast-cloud} Serverless Clusters] for further details.
+====
+
 
 * xref:map-configurations.adoc[]
 * xref:jcache.adoc[]
