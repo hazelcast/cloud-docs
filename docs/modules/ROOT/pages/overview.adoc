@@ -31,7 +31,7 @@ Hazelcast {hazelcast-cloud} offers two editions: {hazelcast-cloud} Serverless an
 
 |xref:dedicated-cluster.adoc[{hazelcast-cloud} Dedicated] (coming soon)
 |{hazelcast-cloud} Dedicated clusters give you fine-grained control over the hardware and resources available to your cluster. It's your responsibility to scale {hazelcast-cloud} Dedicated clusters when you need more resources.
-|Depends on multiple factors such as the size of your chosen cloud instance.
+|Depends on multiple factors, such as the size of your chosen cloud instance.
 |===
 
 == Getting Started
