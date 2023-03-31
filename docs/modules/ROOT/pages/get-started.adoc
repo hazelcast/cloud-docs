@@ -59,27 +59,13 @@ mvnw.cmd clean compile exec:java@client-with-ssl
 +
 When you see `Connection Successful!` in the output, the client is successfully connected to your Serverless cluster and populates a `cities` map with data.
 
-. To query data in the `cities` map, you need to create a mapping to it. In step 3 of the *Quick Connection Guide* on your cluster, click *Dashboard*.
+. To query data in the `cities` map:
 
-. [[step-6]]In *Cluster Details*, click *Management Center*, and then from the top toolbar click *SQL Browser*.
+.. [[step-6]]In *Cluster Details*, click *Management Center*, and then from the top toolbar click *SQL Browser*.
 
-. Paste the following command into the SQL browser and execute it.
+.. Continue to the <<step-3, next step>> to query your sample data in the SQL browser.
 
-+
-[source,sql]
-----
-CREATE OR REPLACE MAPPING cities (
-__key VARCHAR,
-country VARCHAR, 
-city VARCHAR,
-population INT)
-type IMap OPTIONS('keyFormat'='varchar', 'valueFormat'='json-flat');
-----
-
-. Continue to the <<step-3, next step>> to query your sample data in the SQL browser.
-
-TIP: Take a moment, to read the code in the link:https://github.com/hazelcast/hazelcast-cloud-java-sample-client/blob/5.1/src/main/java/com/hazelcast/cloud/ClientWithSsl.java[`ClientWithSSL.java`] file to understand how the client connected. The client comes with some other examples that are commented out. To try those examples, you can uncomment them and run the application again.
-
+TIP: Take a moment, to read the code in the link:https://github.com/hazelcast/hazelcast-cloud-java-sample-client/blob/5.1/src/main/java/com/hazelcast/cloud/ClientWithSsl.java[`ClientWithSSL.java`] file to understand how the client connected. 
 --
 
 Node.js:: 
@@ -105,26 +91,13 @@ npm run client_with_ssl
 +
 When you see `Connection Successful!` in the output, the client is successfully connected to your Serverless cluster and populates a `cities` map with data.
 
-. To query data in the `cities` map, you need to create a mapping to it. In step 3 of the *Quick Connection Guide* on your cluster, click *Dashboard*.
+. To query data in the `cities` map:
 
-. [[step-6n]]In *Cluster Details*, click *Management Center*, and then from the top toolbar click *SQL Browser*.
+.. [[step-6n]]In *Cluster Details*, click *Management Center*, and then from the top toolbar click *SQL Browser*.
 
-. Paste the following command into the SQL browser and execute it.
-+
-[source,sql]
-----
-CREATE OR REPLACE MAPPING cities (
-__key VARCHAR,
-country VARCHAR, 
-city VARCHAR,
-population INT)
-type IMap OPTIONS('keyFormat'='varchar', 'valueFormat'='json-flat');
-----
+.. Continue to the <<step-3, next step>> to query your sample data in the SQL browser.
 
-. Continue to the <<step-3, next step>> to query your sample data in the SQL browser.
-
-TIP: Take a moment, to read the code in the link:https://github.com/hazelcast/hazelcast-cloud-nodejs-sample-client/blob/5.1/client_with_ssl.js[`client_with_ssl.js`] file to understand how the client connected. The client comes with some other examples that are commented out. To try those examples, you can uncomment them and run the application again.
-
+TIP: Take a moment, to read the code in the link:https://github.com/hazelcast/hazelcast-cloud-nodejs-sample-client/blob/5.1/client_with_ssl.js[`client_with_ssl.js`] file to understand how the client connected. 
 --
 
 Python:: 
@@ -150,27 +123,15 @@ python3 -m pip install -r requirements.txt && python client_with_ssl.py
 +
 When you see `Connection Successful!` in the output, the client is successfully connected to your Serverless cluster and populates a `cities` map with data.
 
-To query data in the `cities` map, you need to create a mapping to it.
+. To query data in the `cities` map:
 
-. In step 3 of the *Quick Connection Guide* on your cluster, click *Dashboard*.
+.. In step 3 of the *Quick Connection Guide* on your cluster, click *Dashboard*.
 
-. [[step-6py]]In *Cluster Details*, click *Management Center*, and then from the top toolbar click *SQL Browser*.
+.. [[step-6py]]In *Cluster Details*, click *Management Center*, and then from the top toolbar click *SQL Browser*.
 
-. Paste the following command into the SQL browser and execute it.
-+
-[source,sql]
-----
-CREATE OR REPLACE MAPPING cities (
-__key VARCHAR,
-country VARCHAR, 
-city VARCHAR,
-population INT)
-type IMap OPTIONS('keyFormat'='varchar', 'valueFormat'='json-flat');
-----
+.. Continue to the <<step-3, next step>> to query your sample data in the SQL browser.
 
-. Continue to the <<step-3, next step>> to query your sample data in the SQL browser.
-
-TIP: Take a moment, to read the code in the link:https://github.com/hazelcast/hazelcast-cloud-python-sample-client/blob/5.1/client_with_ssl.py[`client_with_ssl.py`] file to understand how the client connected. The client comes with some other examples that are commented out. To try those examples, you can uncomment them and run the application again.
+TIP: Take a moment, to read the code in the link:https://github.com/hazelcast/hazelcast-cloud-python-sample-client/blob/5.1/client_with_ssl.py[`client_with_ssl.py`] file to understand how the client connected. 
 --
 
 .NET:: 
@@ -196,27 +157,15 @@ dotnet run --project ClientWithSsl
 +
 When you see `Connection Successful!` in the output, the client is successfully connected to your Serverless cluster and populates a `cities` map with data.
 
-To query data in the `cities` map, you need to create a mapping to it.
+. To query data in the `cities` map:
 
-. In step 3 of the *Quick Connection Guide* on your cluster, click *Dashboard*.
+.. In step 3 of the *Quick Connection Guide* on your cluster, click *Dashboard*.
 
-. [[step-6net]]In *Cluster Details*, click *Management Center*, and then from the top toolbar click *SQL Browser*.
+.. [[step-6net]]In *Cluster Details*, click *Management Center*, and then from the top toolbar click *SQL Browser*.
 
-. Paste the following command into the SQL browser and execute it.
-+
-[source,sql]
-----
-CREATE OR REPLACE MAPPING cities (
-__key VARCHAR,
-country VARCHAR, 
-city VARCHAR,
-population INT)
-type IMap OPTIONS('keyFormat'='varchar', 'valueFormat'='json-flat');
-----
+.. Continue to the <<step-3, next step>> to query your sample data in the SQL browser.
 
-. Continue to the <<step-3, next step>> to query your sample data in the SQL browser.
-
-TIP: Take a moment, to read the code in the link:https://github.com/hazelcast/hazelcast-cloud-csharp-sample-client/blob/5.1/ClientWithSsl/Program.cs[`program.cs`] file to understand how the client connected. The client comes with some other examples that are commented out. To try those examples, you can uncomment them and run the application again.
+TIP: Take a moment, to read the code in the link:https://github.com/hazelcast/hazelcast-cloud-csharp-sample-client/blob/5.1/ClientWithSsl/Program.cs[`program.cs`] file to understand how the client connected. 
 --
 
 C++:: 
@@ -260,27 +209,15 @@ The location of the compiled binary may change according to configuration and sy
 +
 When you see `Connection Successful!` in the output, the client is successfully connected to your Serverless cluster and populates a `cities` map with data.
 
-To query data in the `cities` map, you need to create a mapping to it.
+. To query data in the `cities` map:
 
-. In step 3 of the *Quick Connection Guide* on your cluster, click *Dashboard*.
+.. In step 3 of the *Quick Connection Guide* on your cluster, click *Dashboard*.
 
-. [[step-6cpp]]In *Cluster Details*, click *Management Center*, and then from the top toolbar click *SQL Browser*.
+.. [[step-6cpp]]In *Cluster Details*, click *Management Center*, and then from the top toolbar click *SQL Browser*.
 
-. Paste the following command into the SQL browser and execute it.
-+
-[source,sql]
-----
-CREATE OR REPLACE MAPPING cities (
-__key VARCHAR,
-country VARCHAR, 
-city VARCHAR,
-population INT)
-type IMap OPTIONS('keyFormat'='varchar', 'valueFormat'='json-flat');
-----
+.. Continue to the <<step-3, next step>> to query your sample data in the SQL browser.
 
-. Continue to the <<step-3, next step>> to query your sample data in the SQL browser.
-
-TIP: Take a moment, to read the code in the link:https://github.com/hazelcast/hazelcast-cloud-cpp-sample-client/blob/5.1/client_with_ssl.cpp[`client_with_ssl.cpp`] file to understand how the client connected. The client comes with some other examples that are commented out. To try those examples, you can uncomment them and run the application again.
+TIP: Take a moment, to read the code in the link:https://github.com/hazelcast/hazelcast-cloud-cpp-sample-client/blob/5.1/client_with_ssl.cpp[`client_with_ssl.cpp`] file to understand how the client connected. 
 --
 
 Go:: 
@@ -306,27 +243,15 @@ go mod tidy && go run client_with_ssl.go
 +
 When you see `Connection Successful!` in the output, the client is successfully connected to your Serverless cluster and populates a `cities` map with data.
 
-To query data in the `cities` map, you need to create a mapping to it.
+. To query data in the `cities` map:
 
-. In step 3 of the *Quick Connection Guide* on your cluster, click *Dashboard*.
+.. In step 3 of the *Quick Connection Guide* on your cluster, click *Dashboard*.
 
-. [[step-6go]]In *Cluster Details*, click *Management Center*, and then from the top toolbar click *SQL Browser*.
+.. [[step-6go]]In *Cluster Details*, click *Management Center*, and then from the top toolbar click *SQL Browser*.
 
-. Paste the following command into the SQL browser and execute it.
-+
-[source,sql]
-----
-CREATE OR REPLACE MAPPING cities (
-__key VARCHAR,
-country VARCHAR, 
-city VARCHAR,
-population INT)
-type IMap OPTIONS('keyFormat'='varchar', 'valueFormat'='json-flat');
-----
+.. Continue to the <<step-3, next step>> to query your sample data in the SQL browser.
 
-. Continue to the <<step-3, next step>> to query your sample data in the SQL browser.
-
-TIP: Take a moment, to read the code in the link:https://github.com/hazelcast/hazelcast-cloud-go-sample-client/blob/5.1/client_with_ssl.go[`client_with_ssl.go`] file to understand how the client connected. The client comes with some other examples that are commented out. To try those examples, you can uncomment them and run the application again.
+TIP: Take a moment, to read the code in the link:https://github.com/hazelcast/hazelcast-cloud-go-sample-client/blob/5.1/client_with_ssl.go[`client_with_ssl.go`] file to understand how the client connected.
 --
 
 SQL (CLI):: 
