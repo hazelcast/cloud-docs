@@ -14,16 +14,17 @@
 Deleting an account _removes_ all of the following:
 
 - Clusters linked to the account, including any associated data, such as data structures, custom classes, backups, and configuration.
-- Account and payment details, excluding your email address.
+- Account and payment details.  
 - Billing information.
 
 We recommend that you copy any data or details that you might need in the future. You cannot recover any data from a deleted account.
+
+NOTE: You may still receive marketing communications from time to time. See our link:https://hazelcast.com/privacy/[privacy policy] for more details.  
 
 [[outstanding-payments]]
 == Outstanding Payments
 
 All outstanding payments are taken during the deletion process. For this reason, we suggest that you pause or delete all clusters before you proceed, so that you know the amount you need to pay.
-
 
 == Deleting your Account
 
@@ -33,13 +34,3 @@ Before you start, read the <<outstanding-payments, Outstanding Payments>> and <<
 . Go to *Account* > *Password*
 . Scroll down to the *Danger Zone* and click *Delete This Account*.
 . Enter your email address and confirm the deletion.
-
-
-
-
-
-
-
-
-
-
