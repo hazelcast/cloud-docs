@@ -1,0 +1,45 @@
+= Deleting an Account
+:description: pass:q[If you no longer need to access your clusters, you can delete your account. If want to avoid additional charges while your clusters are not in use, consider xref:stop-and-resume.adoc[pausing] them instead.]
+:cloud-tags: Manage Accounts
+:cloud-title: Deleting an Account
+:cloud-order: 60
+:toclevels: 3
+
+{description}
+
+
+[[cluster-and-data-deletion]]
+== Cluster and Data Deletion
+
+Deleting an account _removes_ all of the following:
+
+- Clusters linked to the account, including any associated data, such as data structures, custom classes, backups, and configuration.
+- Account and payment details, excluding your email address.
+- Billing information.
+
+We recommend that you copy any data or details that you might need in the future. You cannot recover any data from a deleted account.
+
+[[outstanding-payments]]
+== Outstanding Payments
+
+All outstanding payments are taken during the deletion process. For this reason, we suggest that you pause or delete all clusters before you proceed, so that you know the amount you need to pay.
+
+
+== Deleting your Account
+
+Before you start, read the <<outstanding-payments, Outstanding Payments>> and <<cluster-and-data-deletion, Cluster and Data Deletion>> sections carefully. 
+
+. Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console,window=_blank].
+. Go to *Account* > *Password*
+. Scroll down to the *Danger Zone* and click *Delete This Account*.
+. Enter your email address and confirm the deletion.
+
+
+
+
+
+
+
+
+
+
