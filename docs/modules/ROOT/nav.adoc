@@ -21,6 +21,7 @@
 
 .Manage Accounts
 * xref:create-account.adoc[Create an Account]
+* xref:delete-account.adoc[Delete an Account]
 * xref:multi-factor-authentication.adoc[Multi-Factor Authentication]
 * xref:developer.adoc[API keys]
 * xref:payment-methods.adoc[Billing and Payments]
