@@ -32,6 +32,7 @@ To create a development cluster, do the following:
 . Wait while your cluster is created. When the cluster is up and running, a *Quick Connection Guide* is displayed with instructions for connecting a sample client to it.
 // end::development[]
 --
+NOTE: Development clusters are xref:stop-and-resume.adoc#pausing-a-cluster[paused] automatically when you don't connect to the cluster for 6 hours. 
 
 Production cluster:: 
 + 
@@ -47,14 +48,7 @@ To create a production cluster, do the following:
 . Wait while your cluster is created. When the cluster is up and running, a *Quick Connection Guide* is displayed with instructions for connecting a sample client to it.
 // end::production[]
 --
-====
-
-[NOTE]
-====
-Development and production clusters are xref:stop-and-resume.adoc#pausing-a-cluster[paused] when both of these conditions are true:
-
-- You don't connect to the cluster for 24 hours.
-- You don't have a payment method set up for your Hazelcast {hazelcast-cloud} account.
+NOTE: Production clusters are xref:stop-and-resume.adoc#pausing-a-cluster[paused] automatically if you don't have a payment method set up _and_ you don't connect to your cluster for 24 hours. 
 ====
 
 == Next Steps
