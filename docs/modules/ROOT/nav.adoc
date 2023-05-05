@@ -5,7 +5,6 @@
 * xref:get-started.adoc[Hello World]
 * xref:tutorials.adoc[Tutorials]
 * xref:support.adoc[Support]
-* xref:release-notes.adoc[Release Notes]
 
 .Develop Applications
 * xref:developer-guide.adoc[Developer Guide]
@@ -65,3 +64,6 @@
 ** xref:multimap.adoc[]
 ** xref:ringbuffer.adoc[]
 ** xref:reliable-topic.adoc[]
+
+.Releases
+* xref:release-notes.adoc[Release Notes]
