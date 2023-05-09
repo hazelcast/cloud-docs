@@ -35,6 +35,6 @@ When you have at least one backup, you can use it to bootstrap a new cluster. Th
 
 . When the details of your new cluster are displayed, you can update its cluster name.
 
-. Click *Restore Data to a New Cluster* to deploy your new cluster. To check the Hazelcast version of the new cluster, go to the dashboard and view the *Cluster Details*.
+. Click *Restore Data to a New Cluster* to deploy your new cluster. To check the Hazelcast version of the new cluster after it is created, go to the dashboard and view the *Cluster Details*.
 
 IMPORTANT: Do not delete the cluster that owns the backup until the new cluster is running.
