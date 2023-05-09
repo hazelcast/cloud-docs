@@ -23,7 +23,7 @@ You can keep at most 10 backups. The oldest backup will be deleted automatically
 
 == Restoring a New Cluster from a Backup
 
-When you have at least one backup, you can use it to bootstrap a new cluster. The new cluster is created using the current Hazelcast version. To see the Hazelcast version in use, either look at the xref:release-notes.adoc[release notes] or go to the dashboard of an existing cluster and view the *Cluster Details*.
+When you have at least one backup, you can use it to bootstrap a new cluster. The new cluster is created using the xref:release-notes.adoc[current Hazelcast version]. All versions are backwardly compatible.
 
 . Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console,window=_blank] and select your cluster.
 
@@ -33,8 +33,8 @@ When you have at least one backup, you can use it to bootstrap a new cluster. Th
 
 . Click *Restore* in the row of your selected backup.
 
-. When the details of your new cluster are displayed, you can update its deployment region or cluster name.
+. When the details of your new cluster are displayed, you can update its cluster name.
 
-. Click *Restore Data to a New Cluster* to deploy your new cluster.
+. Click *Restore Data to a New Cluster* to deploy your new cluster. To check the Hazelcast version of the new cluster, go to the dashboard and view the *Cluster Details*.
 
 IMPORTANT: Do not delete the cluster that owns the backup until the new cluster is running.
