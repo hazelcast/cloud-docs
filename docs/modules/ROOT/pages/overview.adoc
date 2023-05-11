@@ -27,7 +27,7 @@ Hazelcast {hazelcast-cloud} offers two editions: {hazelcast-cloud} Serverless an
 
 |xref:serverless-cluster.adoc[{hazelcast-cloud} Serverless]
 |{hazelcast-cloud} Serverless clusters auto-scale, depending on the amount of data you store.
-|Free to store up to 2 GiB in any {hazelcast-cloud} Serverless cluster in your account, then $0.10 USD per GiB.
+|$0.10 USD per GiB of data stored on any {hazelcast-cloud} Serverless cluster in your account.
 
 |xref:dedicated-cluster.adoc[{hazelcast-cloud} Dedicated] (coming soon)
 |{hazelcast-cloud} Dedicated clusters give you fine-grained control over the hardware and resources available to your cluster. It's your responsibility to scale {hazelcast-cloud} Dedicated clusters when you need more resources.

@@ -40,6 +40,12 @@ A confirmation email will be sent to your registered email address and you will 
 --
 ====
 
+After signing in, you can choose from the following options:
+
+- Begin a free 14-day trial
+- Create your own Hazelcast {hazelcast-cloud} Serverless clusters, which requires a xref:payment-methods.adoc[payment method].  
+
+
 == Changing your Profile
 
 When you first sign into the Hazelcast {hazelcast-cloud} console, you are prompted to provide your company name and location. You can update these details at any time.

@@ -2,6 +2,7 @@
 * xref:overview.adoc[]
 ** xref:serverless-cluster.adoc[]
 ** xref:dedicated-cluster.adoc[]
+* xref:free-trial.adoc[Free 14-Day Trial]
 * xref:get-started.adoc[Hello World]
 * xref:tutorials.adoc[Tutorials]
 * xref:support.adoc[Support]

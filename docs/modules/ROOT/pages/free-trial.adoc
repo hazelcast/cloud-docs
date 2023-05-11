@@ -1,0 +1,32 @@
+= Free 14-Day Trial
+:description: When you sign up for a Hazelcast {hazelcast-cloud} account, you can start a 14-day free trial. The free trial allows you to explore and evaluate Hazelcast {hazelcast-cloud} without entering payment details.
+
+{description}
+
+== What Can I Do During My Free Trial?
+
+Your free trial gives you access to a single development cluster running Hazelcast {full-version}. During the trial, you can use all the xref:serverless-cluster.adoc#supported-functionality[supported functionality] of a development cluster, but you won't be able to create or delete additional clusters. You can also connect to the cluster using one of the preconfigured sample clients: Java, SQL, or Python.
+
+Development clusters have certain limitations as they are designed for fast, iterative prototyping. These include:
+
+- Maximum 0.5 GiB of storage
+- Only a single member
+- No cluster scaling
+- No data backups
+- No cluster data persistence
+- Paused after 6 hours without development activity 
+
+NOTE: When a development cluster restarts for any reason, you lose all cluster data, such as maps and cluster-side modules.
+
+== Is Any Support Available During the Free Trial?
+
+You can get support from our team at any point during your trial, either from within the trial environment or by sending an email to mailto:viridian@hazelcast.com[].
+
+You'll also receive emails from Hazelcast with useful resources to help you get up and running with your first cluster.
+
+== What Happens at the End of the Trial?
+
+At the end of the 14-day trial period, two things happen:
+
+- Your account is automatically suspended. This means that although you can still access the trial environment, your cluster is stopped and cannot be restarted.
+- Seven days later, we will delete your cluster, including all data that you created during the trial.
