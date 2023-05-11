@@ -29,4 +29,4 @@ You'll also receive emails from Hazelcast with useful resources to help you get 
 At the end of the 14-day trial period, two things happen:
 
 - Your account is automatically suspended. This means that although you can still access the trial environment, your cluster is stopped and cannot be restarted.
-- Seven days later, we will delete your cluster, including all data that you created during the trial.
+- Seven days later, your cluster is deleted, including all data that you created during the trial.
