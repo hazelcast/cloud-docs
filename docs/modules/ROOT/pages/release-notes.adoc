@@ -6,4 +6,4 @@
 
 Hazelcast Platform releases are deployed to Hazelcast {hazelcast-cloud} shortly after general release.
 
-link:.htmhttps://docs.hazelcast.com/hazelcast/latest/release-notes/releases[Hazelcast Platform {full-version}] is currently in use.
+link:https://docs.hazelcast.com/hazelcast/latest/release-notes/releases[Hazelcast Platform {full-version}] is currently in use.
