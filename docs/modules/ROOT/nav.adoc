@@ -43,7 +43,6 @@
 * xref:scale-up-down.adoc[Scale]
 * xref:hazelcast-version.adoc[Upgrade]
 * xref:backup-and-restore.adoc[Backup and Restore]
-* xref:wan-replication.adoc[Replicate Data]
 * xref:monitor-clusters.adoc[Monitor]
 ** xref:charts-and-stats.adoc[Dashboard]
 ** xref:management-center.adoc[Management Center]

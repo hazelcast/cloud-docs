@@ -74,9 +74,6 @@ Use this table to learn what is supported in {hazelcast-cloud} Dedicated cluster
 |xref:management-center.adoc[Management Center]
 |Supported
 
-|xref:wan-replication.adoc[WAN replication]
-|
-
 |xref:hazelcast-version.adoc[Choose a version of Hazelcast member software]
 |Supported
 

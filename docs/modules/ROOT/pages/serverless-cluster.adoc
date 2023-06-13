@@ -1,7 +1,7 @@
 = {hazelcast-cloud} Serverless Clusters
 :description: Serverless is a managed cloud service that offers a pay-as-you-go pricing model. Serverless clusters auto-scale to provide the resources that your application needs. You pay only for the resources that your application consumes.
 :toc-levels: 3
-:page-aliases: architecture.adoc
+:page-aliases: architecture.adoc, wan-replication.adoc
 :page-serverless: true
 :cloud-tags: Get Started
 :cloud-title: About Serverless
@@ -249,10 +249,6 @@ Use this table to learn what is supported in {hazelcast-cloud} Serverless cluste
 |xref:management-center.adoc[Management Center]
 |Supported
 |Supported
-
-|xref:wan-replication.adoc[WAN replication]
-|Supported
-|Not supported
 
 |Choose a version of Hazelcast member software
 |Not supported (always uses the latest version)

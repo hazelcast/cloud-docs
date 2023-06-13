@@ -48,9 +48,4 @@ newHazelcastInstance` with a client. `newHazelcastInstance` creates an instance 
 [[migrate]]
 == Migrating Stateful Data
 
-If you have existing data stored in Hazelcast, consider one of the following ways to migrate that data to your Hazelcast {hazelcast-cloud} cluster:
-
-- Use xref:wan-replication.adoc[WAN Replication].
-+
-NOTE: To use WAN Replication, your need the Hazelcast Enterprise JAR. 
-- Reingest data, using one of the available xref:hazelcast:ingest:overview.adoc[APIs/tools].
+If you have existing data stored in Hazelcast, consider using one of the available xref:hazelcast:ingest:overview.adoc[APIs/tools] to re-ingest data.
