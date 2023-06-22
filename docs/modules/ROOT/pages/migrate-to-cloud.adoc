@@ -1,5 +1,6 @@
 = Migrating an Embedded Application to Hazelcast {hazelcast-cloud}
 :description: To migrate an existing application from embedded Hazelcast, you need to <<refactor, refactor your code>> as well as consider how you <<migrate, migrate any existing data to the cloud>>.
+:page-aliases: data-migration.adoc
 
 {description}
 
