@@ -7,11 +7,9 @@
 
 {description}
 
-You cannot pause a {hazelcast-cloud} Dedicated cluster if it's hosted on Google Cloud Platform (GCP).
-
 == Pausing a Cluster
 
-Pausing your cluster can help minimize your costs because you are charged only for running clusters. Development clusters are paused automatically when you don't connect to the cluster for 6 hours. 
+Pausing your cluster can help minimize your costs because you are charged only for running clusters. Development clusters are paused automatically when you don't connect to the cluster for 24 hours. 
 
 . Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console,window=_blank] and select your cluster.
 . Click *Pause* and confirm your choice.

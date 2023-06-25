@@ -4,7 +4,6 @@
 ** xref:dedicated-cluster.adoc[]
 * xref:get-started.adoc[Hello World]
 * xref:tutorials.adoc[Tutorials]
-* xref:support.adoc[Support]
 
 .Develop Applications
 * xref:developer-guide.adoc[Developer Guide]
@@ -15,7 +14,6 @@
 * xref:logging.adoc[Logging]
 ** xref:stream-logs.adoc[Stream Logs]
 ** xref:download-logs.adoc[Download Logs]
-** xref:logging-integration.adoc[Integrate Logs]
 * xref:tools.adoc[Developer Tools]
 
 .Manage Accounts
@@ -24,7 +22,6 @@
 * xref:multi-factor-authentication.adoc[Multi-Factor Authentication]
 * xref:developer.adoc[API keys]
 * xref:payment-methods.adoc[Billing and Payments]
-* xref:set-budget.adoc[Set a Budget]
 
 .Manage Clusters
 * xref:create-clusters.adoc[Create]
@@ -32,16 +29,11 @@
 ** xref:create-dedicated-cluster.adoc[Create a Dedicated Cluster]
 * xref:authorize-connections.adoc[Authorize]
 ** xref:ip-white-list.adoc[IP Whitelist]
-** xref:vpc-peering.adoc[VPC Peering and PrivateLink]
-*** xref:aws-vpc-peering.adoc[AWS VPC Peering]
-*** xref:gcp-vpc-peering.adoc[GCP VPC Peering]
-*** xref:azure-vnet-peering.adoc[]
-*** xref:aws-private-link.adoc[]
+//** VPC Peering
+//*** xref:aws-vpc-peering.adoc[AWS VPC Peering]
 * xref:connect-to-cluster.adoc[Connect]
 * xref:stop-and-resume.adoc[Pause and Resume]
 * xref:deleting-a-cluster.adoc[Delete]
-* xref:scale-up-down.adoc[Scale]
-* xref:hazelcast-version.adoc[Upgrade]
 * xref:backup-and-restore.adoc[Backup and Restore]
 * xref:wan-replication.adoc[Replicate Data]
 * xref:monitor-clusters.adoc[Monitor]
