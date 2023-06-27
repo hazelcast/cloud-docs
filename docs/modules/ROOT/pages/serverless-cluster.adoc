@@ -74,7 +74,7 @@ For example, if you configure a map with five backups, but your cluster has only
 
 {hazelcast-cloud} Serverless clusters have the following heap memory limits:
 
-- Production clusters: 0.5 GiB memory per cluster member
+- Production clusters: 1 GB memory per cluster member
 - Development clusters: 300 MB per cluster
 
 Exceeding these limits can lead to cluster failure. 

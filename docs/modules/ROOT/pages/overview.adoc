@@ -28,8 +28,8 @@ Hazelcast {hazelcast-cloud} offers two editions: {hazelcast-cloud} Serverless an
 |xref:serverless-cluster.adoc[{hazelcast-cloud} Serverless]
 |{hazelcast-cloud} Serverless clusters auto-scale, depending on the amount of data you store.
 
-|xref:dedicated-cluster.adoc[{hazelcast-cloud} Dedicated] (coming soon)
-|{hazelcast-cloud} Dedicated clusters give you fine-grained control over the hardware and resources available to your cluster. It's your responsibility to scale {hazelcast-cloud} Dedicated clusters when you need more resources.
+|xref:dedicated-cluster.adoc[{hazelcast-cloud} Dedicated]
+|To maximize security whilst minimizing latency, {hazelcast-cloud} Dedicated clusters expose only private Hazelcast endpoints. For consistent performance and throughput, {hazelcast-cloud} Dedicated clusters do not share endpoints with any other customers.
 |===
 
 == Getting Started
