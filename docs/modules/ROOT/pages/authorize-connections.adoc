@@ -9,5 +9,5 @@ If you're using a {hazelcast-cloud} Serverless cluster, you can add your client 
 
 == {hazelcast-cloud} Dedicated
 
- {hazelcast-cloud} Dedicated clusters are private by default to prevent attacks such as denial of service. To authorize clients to connect to your clusters, you must use VPC peering. Contact the support team for full details.
+{hazelcast-cloud} Dedicated clusters are private by default to prevent attacks such as denial of service. To authorize clients to connect to your clusters, you must set up VPC peering. Contact the support team for full details.
 

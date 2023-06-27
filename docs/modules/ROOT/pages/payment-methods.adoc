@@ -13,7 +13,7 @@ For xref:serverless-cluster.adoc[{hazelcast-cloud} Serverless clusters], you mus
 - Create two or more {hazelcast-cloud} Serverless clusters.
 - Use more than 2 GiB of memory in a {hazelcast-cloud} Serverless cluster.
 
-For xref:dedicated-cluster.adoc[{hazelcast-cloud} Dedicated clusters], a wider range of payment options are available, including:
+For xref:dedicated-cluster.adoc[{hazelcast-cloud} Dedicated clusters], a wider range of payment options is available, including:
 
 - Card payments
 - Purchase orders

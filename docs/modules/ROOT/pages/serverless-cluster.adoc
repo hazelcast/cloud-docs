@@ -16,7 +16,7 @@ Serverless means that Hazelcast manages the cloud infrastructure for you. Each {
 // tag::types[]
 {hazelcast-cloud} Serverless clusters come in two types:
 
-- *Development:* Capped storage. You can store at most 1 GiB of data.
+- *Development:* Capped storage. You can store at most 0.5 GiB of data.
 - *Production:* Uncapped storage. The cluster scales as you add or remove data.
 // end::types[]
 
@@ -29,7 +29,7 @@ Development clusters are for fast, iterative development while you prototype you
 
 Development clusters have the following limitations:
 
-- Maximum 1 GiB of storage
+- Maximum 0.5 GiB of storage
 - Only a single member
 - No cluster scaling
 - No data backups
