@@ -1,41 +1,15 @@
 = Management Center for Hazelcast {hazelcast-cloud}
-:description: You can use Management Center to monitor your cluster. Management Center provides a cloud-user with read-only access, allowing you to view insights about cluster state, data structure metrics, and other metrics.
+:description: You can use Management Center to monitor your cluster. Management Center allows you to view insights about cluster state, data structure metrics, and other metrics.
 
 {description}
 
 == Opening Management Center
-
-Management Center is enabled for {hazelcast-cloud} Serverless clusters, but disabled by default for {hazelcast-cloud} Dedicated clusters. If you're using a {hazelcast-cloud} Dedicated cluster, <<enable, enable Management Center>> first.
 
 To open Management Center, do the following:
 
 . Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console,window=_blank] and select your cluster.
 
 . In *Cluster details*, click *Management Center*.
-
-[[enable]]
-== Enabling Management Center for {hazelcast-cloud} Dedicated Clusters
-
-To use Management Center in a {hazelcast-cloud} Dedicated cluster, you need to enable it.
-
-. Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud,window=_blank} console,window=_blank] and select your cluster.
-
-. Go to *Management Center* and select *Enable*.
-
-. Click *Enable Management Center*.
-+
-Management Center is available only to a set of whitelisted IP addresses, which is initially empty.
-
-. Add the IP address that you want to authorize to access Management Center for your cluster. You can use CIDR notation.
-
-. Go to *Management Center* > *Open Management Center*.
-+
-If your IP address is included in the whitelist, you should see a read-only view of Management Center.
-
-== Disabling Management Center for {hazelcast-cloud} Dedicated Clusters
-
-. Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console,window=_blank] and select your cluster.
-. Go to *Management Center* > *Configure Access* and uncheck the checkbox.
 
 == Related Resources
 
