@@ -5,6 +5,20 @@
 You can create custom queue configurations associated with the names of queues. The queues that do not have any configuration defined use the default configuration. If you want to set a configuration that is valid for all queues, you can name your configuration as `default`. A user-defined `default` configuration applies to every queue that does not have a specific custom queue configuration defined with the queue's name. 
 You can also use wildcards to associate your configuration with multiple queue names. See the xref:hazelcast:configuration:using-wildcards.adoc[configuration documentation] for more information about wildcards.
 
+[WARNING]
+.Heap memory limits
+====
+{hazelcast-cloud} Serverless clusters have the following heap memory limits:
+
+* Production clusters: 1 GB memory per cluster member
+* Development clusters: 300 MB per cluster
+
+Exceeding these limits can lead to cluster failure. 
+
+Be aware that the following operations use heap memory: writing, caching, or replicating data to data structures _other than_ IMap an JCache. 
+
+====
+
 == Time To Live
 
 Used to purge unused or empty queues. If you define a value (time in seconds) for this element, then your queue will be destroyed if it stays empty or unused for that time.

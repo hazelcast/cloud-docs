@@ -1,31 +1,44 @@
-= Configuring Data Structures
-:description: You can configure data structures in the console. Use these references to learn what settings you can configure.
+= Configuring Distributed Data Structures
+:description: Hazelcast offers distributed implementations of common data structures. From the Hazelcast {hazelcast-cloud} console, you can create new custom configurations or modify the default configuration for these data structures.
+:page-aliases: list.adoc, multimap.adoc, reliable-topic.adoc, replicated-map.adoc, ringbuffer.adoc, set.adoc, topic.adoc
 
 {description}
 
-[WARNING]
-.Heap memory limits
-====
-{hazelcast-cloud} Serverless clusters have the following heap memory limits:
+Consider using the following data structures when building your application.
 
-* Production clusters: 1 GB memory per cluster member
-* Development clusters: 300 MB per cluster
+[cols="20%a,40%a,20%a,20%a"]
+|===
+|Data structure |Description|Settings|Default Configuration
 
-Exceeding these limits can lead to cluster failure. 
+|xref:map-configurations.adoc[Map]
+|Key-value pairs that are distributed across partitions in a cluster. Distributed maps, also known as IMaps or maps, make it easier to scale your applications while protecting against member failures. Maps support SQL-like queries.
+|See xref:map-configurations.adoc[Map Configuration]
+|See xref:hazelcast:data-structures:map-config.adoc#hazelcast-map-configuration-defaults[Hazelcast Map Configuration Defaults]
 
-Be aware that the following operations use heap memory: writing, caching, or replicating data to data structures other than IMap an JCache. 
+|xref:jcache.adoc[JCache]
+|Hazelcast's specification-compliant JCache implementation. JCache allows you to store frequently accessed data in memory and to access, update, and delete the data efficiently across partitions in a cluster.
+|See xref:jcache-configuration.adoc[JCache Configuration]
+|See xref:hazelcast:jcache:setup.adoc#configuring-for-jcache[Configuring JCache]
 
-See xref:serverless-cluster.adoc#heap-memory-limits-of-viridian-serverless-clusters[Heap Memory Limits of {hazelcast-cloud} Serverless Clusters] for further details.
-====
+|xref:queue.adoc[Queue]
+|All clients and cluster members can interact with a queue. Add an item to the queue in one cluster member and remove it from another member with another client. 
+|See xref:queue.adoc[Queue Configuration]
+|See xref:hazelcast:data-structures:queue.adoc#configuring-queue[Configuring Queue]
+
+|===
 
 
-* xref:map-configurations.adoc[]
-* xref:jcache.adoc[]
-* xref:queue.adoc[]
-* xref:replicated-map.adoc[]
-* xref:set.adoc[]
-* xref:list.adoc[]
-* xref:topic.adoc[]
-* xref:multimap.adoc[]
-* xref:ringbuffer.adoc[]
-* xref:reliable-topic.adoc[]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
