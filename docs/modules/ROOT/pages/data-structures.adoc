@@ -17,7 +17,7 @@ Consider using the following data structures when building your application.
 
 |xref:jcache.adoc[JCache]
 |Hazelcast's specification-compliant JCache implementation. JCache allows you to store frequently accessed data in memory and to access, update, and delete the data efficiently across partitions in a cluster.
-|See xref:jcache-configuration.adoc[JCache Configuration]
+|See xref:jcache.adoc[JCache Configuration]
 |See xref:hazelcast:jcache:setup.adoc#configuring-for-jcache[Configuring JCache]
 
 |xref:queue.adoc[Queue]
@@ -26,19 +26,3 @@ Consider using the following data structures when building your application.
 |See xref:hazelcast:data-structures:queue.adoc#configuring-queue[Configuring Queue]
 
 |===
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
