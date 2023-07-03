@@ -5,7 +5,7 @@
 
 == What Can I Do During My Trial?
 
-Your trial gives you access to a fully functional Hazelcast environment. During the trial, you can use all the xref:serverless-cluster.adoc#supported-functionality[features of a development cluster]. You can also connect to the cluster using one of the preconfigured sample clients: Java, SQL, or Python.
+Your trial gives you access to a fully functional Hazelcast environment. During the trial, you can use all the features of a development cluster. You can also connect to the cluster using one of the preconfigured sample clients: Java, Python or CLI.
 
 Development clusters have certain limitations as they are designed for fast, iterative prototyping. These include:
 
@@ -14,7 +14,7 @@ Development clusters have certain limitations as they are designed for fast, ite
 - No cluster scaling
 - No data backups
 - No cluster data persistence
-- Paused after 6 hours without development activity 
+- Paused after 24 hours without development activity 
 
 NOTE: When a development cluster restarts for any reason, you lose all cluster data, such as maps and cluster-side modules.
 
@@ -29,4 +29,4 @@ You'll also receive emails from Hazelcast with useful resources to help you get 
 At the end of the 14-day trial period, two things happen:
 
 - Your account is automatically suspended. This means that although you can still access the trial environment, your cluster is stopped and cannot be restarted.
-- Your trial environment will be deleted, including all data that you created during the trial.
+- Your trial environment, including all data, will be automatically deleted.

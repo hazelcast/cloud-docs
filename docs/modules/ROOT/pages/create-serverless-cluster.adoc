@@ -26,13 +26,14 @@ To create a development cluster, do the following:
 // tag::development[]
 . Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console,window=_blank].
 . Click *Create New Cluster*.
-. Click *Create Development Cluster*.
+. Click *Create Cluster*.
+. Select *Development*.
 . Update the cluster name if you want to. You cannot change the cluster name after the cluster is created.
-. Click *Create Cluster*. 
+. Click *Start Development Cluster*. 
 . Wait while your cluster is created. When the cluster is up and running, a *Quick Connection Guide* is displayed with instructions for connecting a sample client to it.
 // end::development[]
 --
-NOTE: Development clusters are xref:stop-and-resume.adoc#pausing-a-cluster[paused] automatically when you don't connect to the cluster for 6 hours. 
+NOTE: Development clusters are xref:stop-and-resume.adoc#pausing-a-cluster[paused] automatically when you don't connect to the cluster for 24 hours. 
 
 Production cluster:: 
 + 
@@ -42,9 +43,10 @@ To create a production cluster, do the following:
 // tag::production[]
 . Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console, window=blank].
 . Click *Create New Cluster*.
-. Click *Create Production Cluster*.
+. Click *Create Cluster*.
+. Click *Production*.
 . Update the cluster name if you want to. You cannot change the cluster name after the cluster is created.
-. Click *Create Cluster*
+. Click *Start Production Cluster*
 . Wait while your cluster is created. When the cluster is up and running, a *Quick Connection Guide* is displayed with instructions for connecting a sample client to it.
 // end::production[]
 --

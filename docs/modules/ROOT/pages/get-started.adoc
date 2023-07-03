@@ -14,13 +14,25 @@ You need the following:
 - A xref:create-account.adoc[Hazelcast {hazelcast-cloud} account].
 - Access to a command prompt such as Terminal for Mac or Powershell for Windows.
 
-== Step 1. Start a {hazelcast-cloud} Serverless Development Cluster
+== Step 1. Start a {hazelcast-cloud} Serverless Cluster
 
-include::serverless-cluster.adoc[tag=development]
-To create a development cluster, do the following. Or, if you already have a development cluster, jump straight to step 2.
+If you already have a {hazelcast-cloud} Serverless cluster.
+
+. Sign in to the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console,window=_blank]
+
+. Check that your cluster is running. If it is paused, you'll see the following at the top of the dashboard.
++
+image:ROOT:paused-cluster.png[This]
+
+. If you need to restart the cluster, in the *Cluster Details* panel, click *Resume*.
+
+. Click *Connect Client* and go to <<step-2, step 2>>.
+
+To create a new development cluster.
 
 include::create-serverless-cluster.adoc[tag=development] 
 
+[[step-2]]
 == Step 2. Connect a Sample Client
 
 To connect to your {hazelcast-cloud} Serverless cluster, you need a Hazelcast client. The cluster comes with sample clients that are preconfigured to connect to your cluster and add some sample data to a map. A map is an in-memory, key/value data structure that is often used as a cache.

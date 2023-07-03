@@ -86,7 +86,7 @@ Additionally, Management Center has a heap memory limit of 3.7 GB shared between
 
 == Pricing for {hazelcast-cloud} Serverless Clusters
 
-You pay only for what you store in RAM. Any data that is stored on disk or in backups to disk is free of charge. As a result, 'storage' is synonymous with RAM in {hazelcast-cloud} Serverless clusters.
+You pay for all artifacts that are stored, which includes data, metadata, and custom code.
 
 {hazelcast-cloud} Serverless clusters are billed monthly only for the amount of storage that you use. You are charged $0.10 per hour for every GiB of used storage.
 
