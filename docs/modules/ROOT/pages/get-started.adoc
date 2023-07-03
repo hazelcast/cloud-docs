@@ -114,6 +114,40 @@ When you see `Connection Successful!` in the output, the client is successfully 
 TIP: Take a moment, to read the code in the link:https://github.com/hazelcast/hazelcast-cloud-python-sample-client/blob/5.1/client_with_ssl.py[`client_with_ssl.py`] file to understand how the client connected. 
 --
 
+.NET:: 
++ 
+--
+Before you begin:
+
+* link:https://dotnet.microsoft.com/en-us/download/dotnet/6.0[Install .NET].
+* If you've followed the onscreen *Quick Connection Guide*, jump straight to <<step-5net, step 5>>.
+
+[]
+. In the *Quick Connection Guide*, click on the .NET icon and then click *Download*.
+
+. Extract the ZIP file.
+
+. From a command prompt, change into the root directory of the extracted files.
+
+. Execute the following command to run your client:
++
+```bash
+dotnet run --project ClientWithSsl
+```
++
+When you see `Connection Successful!` in the output, the client is successfully connected to your Serverless cluster and populates a `cities` map with data.
+
+. To query data in the `cities` map:
+
+.. In step 3 of the *Quick Connection Guide* on your cluster, click *Dashboard*.
+
+.. [[step-5net]]In *Cluster Details*, click *Management Center*, and then from the top toolbar click *SQL Browser*.
+
+.. Continue to the <<step-3, next step>> to query your sample data in the SQL browser.
+
+TIP: Take a moment, to read the code in the link:https://github.com/hazelcast/hazelcast-cloud-csharp-sample-client/blob/5.1/ClientWithSsl/Program.cs[`program.cs`] file to understand how the client connected. 
+--
+
 SQL (CLI):: 
 + 
 --
@@ -372,6 +406,8 @@ Learn more about using clients:
 - xref:hazelcast:clients:java.adoc#configuring-java-client[Java client]
 
 - link:https://hazelcast.readthedocs.io/en/stable/configuration_overview.html[Python client]
+
+- link:http://hazelcast.github.io/hazelcast-csharp-client/latest/doc/index.html[.NET client]
 
 - link:https://github.com/hazelcast/hazelcast-packaging[CLI client]
 
