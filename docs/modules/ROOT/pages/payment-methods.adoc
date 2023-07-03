@@ -4,12 +4,17 @@
 :cloud-title: Payments and Billing | Add Payment Card | View Bills
 :cloud-order: 33 | 34 | 35
 :cloud-anchor: | adding-a-payment-card | viewing-bills
+:page-aliases: set-budget.adoc 
 
 {description}
 
 For xref:serverless-cluster.adoc[{hazelcast-cloud} Serverless clusters], you must provide a payment card to create new clusters.
 
-For xref:dedicated-cluster.adoc[{hazelcast-cloud} Dedicated clusters], you must provide a payment card to pay for new clusters or cluster usage for existing clusters.
+For xref:dedicated-cluster.adoc[{hazelcast-cloud} Dedicated clusters], a wider range of payment options is available, including:
+
+- Card payments
+- Purchase orders
+- Buying the service link:https://aws.amazon.com/marketplace/pp/prodview-olxywxtjninay[direct from AWS Marketplace].
 
 == Adding a Payment Card
 

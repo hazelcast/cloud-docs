@@ -29,7 +29,7 @@ Development clusters are for fast, iterative development while you prototype you
 
 Development clusters have the following limitations:
 
-- Maximum 1 GiB of storage
+- Maximum 0.5 GiB of storage
 - Only a single member
 - No cluster scaling
 - No data backups
@@ -84,11 +84,19 @@ Be aware that the following operations use heap memory: writing, caching, or rep
 
 Additionally, Management Center has a heap memory limit of 3.7 GB shared between all clusters in an account. Running several streaming jobs with high workloads, or one uncontrolled streaming job, can lead to the temporary loss of metrics data.
 
-== Pricing for {hazelcast-cloud} Serverless Clusters
+== Restrictions on {hazelcast-cloud} Serverless Clusters
+
+Development and Production clusters are xref:stop-and-resume.adoc#pausing-a-cluster[paused] when you don't connect to the cluster for 24 hours.
+
+If you're using a production cluster, Hazelcast saves your cluster data so that you can resume the cluster at a later time.
+
+If you're using a development cluster, all cluster data is lost after the cluster is paused.
+
+== Charges for {hazelcast-cloud} Serverless Clusters
 
 You pay for all artifacts that are stored, which includes data, metadata, and custom code.
 
-{hazelcast-cloud} Serverless clusters are billed monthly only for the amount of storage that you use. You are charged $0.10 per hour for every GiB of used storage.
+{hazelcast-cloud} Serverless clusters are billed monthly only for the amount of storage that you use. The *first 2 GiB of storage in your account is free*.
 
 As well as the data that you add to data structures, such as maps, you are charged if you configure more than one backup of a data structure. Only the first backup is free.
 
@@ -100,164 +108,7 @@ Additional memory usage is also charged for, and may include the following:
 
 For example, the xref:cluster-side-modules.adoc#serializers[`HazelcastJsonValue` serializer] includes metadata to allow the cluster to query JSON fields and values. You are charged for this metadata. As a result, the amount of used memory in your cluster may be more than the amount of data that you added to a data structure.
 
-=== Billing Examples
-
-The following examples show the cost of using different resources.
-
-==== Scenario 1: Data Only
-
-You have an empty cluster. You create a map on the cluster, using the default configuration. You then ingest 3 GiB of data into the cluster, run a query, and remove the data. 
-
-For one hour, your cluster stored 3 GiB data, and then the cluster remained empty for the rest of the month.
-
-[cols="a,a,a"]
-|===
-|Total Storage|Time|Cost
-
-|3 GiB (data)
-|1 hour
-|$0.30
-
-|===
-
-==== Scenario 2: Data and Cluster Backup to Disk
-
-You have two empty clusters managed from the same account. You create maps on both clusters, using the default configuration. You then ingest 3 GiB of data into each cluster. You run the same query on the two clusters, take manual backups, and remove the data from both.
-
-For one hour, each of your clusters stored 3 GiB of data.
-
-
-[frame=sides,grid=cols,cols="a,a,a,a"]
-|===
-|Storage Per Cluster|Total Storage|Time|Cost
-
-|*Cluster 1:* 3 GiB (data)
-.2+<.^|6 GiB (data)
-.2+<.^|1 hour
-.2+<.^|$0.60
-
-|*Cluster 2:* 3 GiB (data)
-|
-|
-| 
-
-|===
-
-NOTE: The 3 GiB manual backup of each cluster is saved to disk and so is free of charge.
-
-==== Scenario 3: Data and Data Structure Backup
-
-You have two empty clusters managed from the same account. You create maps on both clusters. This time, you update the default map configuration on Cluster 2 to use a backup count of 2. You ingest 3 GiB of data into each cluster. You run the same query on both clusters and remove the data from both. 
-
-For one hour, data was stored on each cluster.
-
-[cols="2a,2a,a,a"]
-|===
-|Storage Per Cluster|Total Storage|Time|Cost
-
-|*Cluster 1:* 3 GiB (data)
-.2+<.^|12 GiB - 3 GiB (1x free backup) = 9 GiB
-.2+<.^|1 hour
-.2+<.^|$0.90
-
-|*Cluster 2:* 3 GiB (data) + 6 GiB (2x backup)
-|
-|
-|
-
-|===
-
 NOTE: As some resources are free of charge, your total resource usage on a cluster dashboard may not match the resources that you are billed for.
-
-== Supported Functionality
-
-Use this table to learn what is supported in {hazelcast-cloud} Serverless clusters:
-
-[cols="1a,1a,1a"]
-|===
-|Functionality|Production clusters|Development clusters
-
-|xref:create-serverless-cluster.adoc[Create a cluster]
-|Supported
-|Supported
-
-|xref:deleting-a-cluster.adoc[Delete a cluster]
-|Supported
-|Supported
-
-|xref:stop-and-resume.adoc[Pause and resume the cluster]
-|Supported
-|Supported
-
-|xref:connect-to-cluster.adoc[Connect to the cluster]
-|Supported
-|Supported
-
-|xref:charts-and-stats.adoc[Read metrics]
-|Supported
-|Supported
-
-|Manually scale the cluster
-|Not supported (autoscales)
-|Not supported (autoscales)
-
-|Auto scaling
-|Supported (always enabled)
-|Not supported
-
-|xref:custom-classes-upload.adoc[Custom class upload]
-|Supported
-|Supported
-
-|xref:map-configurations.adoc[Add data structure configuration]
-|Supported
-|Supported
-
-|Edit map configuration
-|Not Supported
-|Not Supported
-
-|Delete data structure configuration
-|Not supported
-|Not supported
-
-|Automated daily backups
-|Supported (always enabled)
-|Not supported
-
-|xref:backup-and-restore.adoc[Manual backups]
-|Supported
-|Not supported
-
-|xref:ip-white-list.adoc[IP whitelisting]
-|Supported
-|Supported
-
-|xref:management-center.adoc[Management Center]
-|Supported
-|Supported
-
-|xref:wan-replication.adoc[WAN replication]
-|Supported
-|Not supported
-
-|Choose a version of Hazelcast member software
-|Not supported (always uses the latest version)
-|Not supported (always uses the latest version)
-
-|Integrate with an external logging service
-|Not supported
-|Not supported
-
-|VPC peering
-|Not supported
-|Not supported
-
-|AWS PrivateLink
-|Not supported
-|Not supported
-
-|===
 
 == Next Steps
 

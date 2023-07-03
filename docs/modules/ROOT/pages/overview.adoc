@@ -1,6 +1,6 @@
 = Hazelcast {hazelcast-cloud} Cloud Managed Services
 :description: Hazelcast cloud managed services simplify deployments of Hazelcast Platform, allowing you to focus on building applications for stream and batch processing, low-latency querying, and caching.
-:page-aliases: use-cases.adoc, faq.adoc, pricing.adoc, preface.adoc
+:page-aliases: use-cases.adoc, faq.adoc, pricing.adoc, preface.adoc, support.adoc
 :cloud-tags: Get Started
 :cloud-title: Hazelcast Viridian Overview
 :cloud-order: 10
@@ -21,17 +21,15 @@ Hazelcast {hazelcast-cloud} applications run in a client/server topology:
 
 Hazelcast {hazelcast-cloud} offers two editions: {hazelcast-cloud} Serverless and {hazelcast-cloud} Dedicated.
 
-[cols="1a,2a,2a"]
+[cols="1a,2a"]
 |===
-|Edition|Description|Pricing
+|Edition|Description
 
 |xref:serverless-cluster.adoc[{hazelcast-cloud} Serverless]
 |{hazelcast-cloud} Serverless clusters auto-scale, depending on the amount of data you store.
-|$0.10 USD per GiB of data stored on any {hazelcast-cloud} Serverless cluster in your account.
 
-|xref:dedicated-cluster.adoc[{hazelcast-cloud} Dedicated] (coming soon)
-|{hazelcast-cloud} Dedicated clusters give you fine-grained control over the hardware and resources available to your cluster. It's your responsibility to scale {hazelcast-cloud} Dedicated clusters when you need more resources.
-|Depends on multiple factors, such as the size of your chosen cloud instance.
+|xref:dedicated-cluster.adoc[{hazelcast-cloud} Dedicated]
+|To maximize security whilst minimizing latency, {hazelcast-cloud} Dedicated clusters expose only private Hazelcast endpoints. For consistent performance and throughput, {hazelcast-cloud} Dedicated clusters do not share infrastructure with any other customers.
 |===
 
 == Getting Started
