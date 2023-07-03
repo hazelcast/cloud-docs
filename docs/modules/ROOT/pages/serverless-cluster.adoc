@@ -94,9 +94,7 @@ If you're using a development cluster, all cluster data is lost after the cluste
 
 == Charges for {hazelcast-cloud} Serverless Clusters
 
-You pay for all artifacts that are stored, which includes data, metadata, and custom code.
-
-{hazelcast-cloud} Serverless clusters are billed monthly only for the amount of storage that you use. The *first 2 GiB of storage in your account is free*.
+{hazelcast-cloud} Serverless clusters are billed monthly only for the amount of storage that you use. You pay for all artifacts that are stored, which includes data, metadata, and custom code. 
 
 As well as the data that you add to data structures, such as maps, you are charged if you configure more than one backup of a data structure. Only the first backup is free.
 
