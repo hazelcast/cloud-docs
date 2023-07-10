@@ -35,7 +35,6 @@
 * xref:stop-and-resume.adoc[Pause and Resume]
 * xref:deleting-a-cluster.adoc[Delete]
 * xref:backup-and-restore.adoc[Backup and Restore]
-* xref:wan-replication.adoc[Replicate Data]
 * xref:monitor-clusters.adoc[Monitor]
 ** xref:charts-and-stats.adoc[Dashboard]
 ** xref:management-center.adoc[Management Center]
