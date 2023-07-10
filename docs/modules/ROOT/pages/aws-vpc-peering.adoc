@@ -4,6 +4,7 @@
 :url-aws-vpc-peering: https://docs.aws.amazon.com/vpc/latest/peering/create-vpc-peering-connection.html
 :url-aws-vpc-routing: https://docs.aws.amazon.com/vpc/latest/peering/vpc-peering-routing.html
 :page-dedicated: true
+:page-aliases: gcp-vpc-peering.adoc, azure-vnet-peering.adoc, aws-private-link.adoc
 
 You can create an AWS VPC peering connection, using one of the following option:
 
