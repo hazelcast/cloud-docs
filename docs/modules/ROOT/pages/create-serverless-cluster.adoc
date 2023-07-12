@@ -26,7 +26,8 @@ To create a development cluster, do the following:
 // tag::development[]
 . Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console,window=_blank].
 . Click *Create New Cluster*.
-. Click *Create Development Cluster*.
+. Click *Create Cluster*.
+. Select *Development*.
 . Update the cluster name if you want to. You cannot change the cluster name after the cluster is created.
 . Click *Create Cluster*. 
 . Wait while your cluster is created. When the cluster is up and running, a *Quick Connection Guide* is displayed with instructions for connecting a sample client to it.
