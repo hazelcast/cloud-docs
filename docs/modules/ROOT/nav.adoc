@@ -40,7 +40,7 @@
 ** xref:management-center.adoc[Management Center]
 
 .Migrate
-* xref:migrate-to-cloud.adoc[Embedded to Cloud]
+* xref:migrate-to-cloud.adoc[Embedded to Client-Server]
 
 .Reference
 * xref:maven-plugin-hazelcast.adoc[Maven Plugin]

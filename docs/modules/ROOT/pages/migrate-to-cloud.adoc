@@ -4,7 +4,7 @@
 
 {description}
 
-TIP: For the benefits of migrating your application from an embedded topology to a client/server topology, see this link:https://hazelcast.com/blog/from-embedded-to-client-server/[blog].
+TIP: For the benefits of migrating your application from an embedded topology to a client-server topology, see this link:https://hazelcast.com/blog/from-embedded-to-client-server/[blog].
 
 == Refactoring Code for the Cloud
 
