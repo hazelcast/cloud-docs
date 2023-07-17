@@ -48,13 +48,6 @@
 ** xref:map-configurations.adoc[]
 ** xref:jcache.adoc[]
 ** xref:queue.adoc[]
-** xref:replicated-map.adoc[]
-** xref:set.adoc[]
-** xref:list.adoc[]
-** xref:topic.adoc[]
-** xref:multimap.adoc[]
-** xref:ringbuffer.adoc[]
-** xref:reliable-topic.adoc[]
 
 .Releases
 * xref:release-notes.adoc[Release Notes]
