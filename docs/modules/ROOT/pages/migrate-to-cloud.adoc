@@ -1,11 +1,6 @@
-<<<<<<< HEAD
-= Migrating from Embedded to Client-Server
-:description: To migrate an existing application from embedded Hazelcast to Hazelcast {hazelcast-cloud}, you need to <<refactor, refactor your code>> to use a client-server topology. You also need to consider how to <<migrate, migrate any existing data to the cloud>>.
-=======
 = Migrating an Embedded Application to Hazelcast {hazelcast-cloud}
 :description: To migrate an existing application from embedded Hazelcast, you need to <<refactor, refactor your code>> as well as consider how you <<migrate, migrate any existing data to the cloud>>.
 :page-aliases: data-migration.adoc
->>>>>>> main
 
 {description}
 
