@@ -5,7 +5,7 @@
 
 == What Can I Do During My Trial?
 
-Your trial gives you access to a fully functional Hazelcast environment. During the trial, you can use all the features of a development cluster. You can also connect to the cluster using one of the preconfigured sample clients: Java, Python or CLI.
+Your trial gives you access to a fully functional Hazelcast environment. During the trial, you can use all the features of a single development cluster. You can also connect to the cluster using one of the preconfigured sample clients: Java, Python, .NET or (SQL)CLI.
 
 Development clusters have certain limitations as they are designed for fast, iterative prototyping. These include:
 
@@ -20,7 +20,7 @@ NOTE: When a development cluster restarts for any reason, you lose all cluster d
 
 == Is Any Support Available During the Free Trial?
 
-You can get support from our team at any point during your trial, either from within the trial environment or by sending an email to mailto:viridian@hazelcast.com[].
+You can get support from our team at any point during your trial by sending an email to mailto:viridian@hazelcast.com[].
 
 You'll also receive emails from Hazelcast with useful resources to help you get up and running with your first cluster.
 
