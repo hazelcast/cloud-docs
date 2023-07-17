@@ -71,22 +71,9 @@ Although you can configure some xref:data-structures.adoc[data structures] with 
 
 For example, if you configure a map with five backups, but your cluster has only two members, you will have one effective backup. You need to add enough data to the cluster so that it automatically scales up the number of members and backups to your configured count of five. 
 
-== Heap Memory Limits of {hazelcast-cloud} Serverless Clusters 
-
-{hazelcast-cloud} Serverless clusters have the following heap memory limits:
-
-- Production clusters: 1 GB memory per cluster member
-- Development clusters: 300 MB per cluster
-
-Exceeding these limits can lead to cluster failure. 
-
-Be aware that the following operations use heap memory: writing, caching, or replicating data to data structures other than IMap an JCache. 
-
-Additionally, Management Center has a heap memory limit of 3.7 GB shared between all clusters in an account. Running several streaming jobs with high workloads, or one uncontrolled streaming job, can lead to the temporary loss of metrics data.
-
 == Restrictions on {hazelcast-cloud} Serverless Clusters
 
-Development and Production clusters are xref:stop-and-resume.adoc#pausing-a-cluster[paused] when you don't connect to the cluster for 24 hours.
+Development clusters and production clusters are xref:stop-and-resume.adoc#pausing-a-cluster[paused] when you don't connect to them cluster for 24 hours.
 
 If you're using a production cluster, Hazelcast saves your cluster data so that you can resume the cluster at a later time.
 

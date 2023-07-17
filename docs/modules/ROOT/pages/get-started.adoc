@@ -47,7 +47,7 @@ Java::
 Before you begin:
 
 * Install Java 8-17 and set the `JAVA_HOME` environment variable to the location of your JRE.
-* If you've followed the onscreen *Quick Connection Guide*, jump straight to <<step-6, step 5>>.
+* If you've followed the onscreen *Quick Connection Guide*, jump straight to <<step-5, step 5>>.
 
 []
 . In the *Quick Connection Guide* on your cluster, click on the Java icon and then click *Download*.
@@ -71,9 +71,9 @@ mvnw.cmd clean compile exec:java@client-with-ssl
 +
 When you see `Connection Successful!` in the output, the client is successfully connected to your Serverless cluster and populates a `cities` map with data.
 
-. To query data in the `cities` map:
+. [[step-5]]To query data in the `cities` map:
 
-.. [[step-6]]In *Cluster Details*, click *Management Center*, and then from the top toolbar click *SQL Browser*.
+.. In *Cluster Details*, click *Management Center*, and then from the top toolbar click *SQL Browser*.
 
 .. Continue to the <<step-3, next step>> to query your sample data in the SQL browser.
 

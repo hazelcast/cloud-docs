@@ -1,9 +1,10 @@
 = Migrating an Embedded Application to Hazelcast {hazelcast-cloud}
 :description: To migrate an existing application from embedded Hazelcast, you need to <<refactor, refactor your code>> as well as consider how you <<migrate, migrate any existing data to the cloud>>.
+:page-aliases: data-migration.adoc
 
 {description}
 
-TIP: For the benefits of migrating your application from an embedded topology to a client/server topology, see this link:https://hazelcast.com/blog/from-embedded-to-client-server/[blog].
+TIP: For the benefits of migrating your application from an embedded topology to a client-server topology, see this link:https://hazelcast.com/blog/from-embedded-to-client-server/[blog].
 
 == Refactoring Code for the Cloud
 
@@ -48,9 +49,4 @@ newHazelcastInstance` with a client. `newHazelcastInstance` creates an instance 
 [[migrate]]
 == Migrating Stateful Data
 
-If you have existing data stored in Hazelcast, consider one of the following ways to migrate that data to your Hazelcast {hazelcast-cloud} cluster:
-
-- Use xref:wan-replication.adoc[WAN Replication].
-+
-NOTE: To use WAN Replication, your need the Hazelcast Enterprise JAR. 
-- Reingest data, using one of the available xref:hazelcast:ingest:overview.adoc[APIs/tools].
+If you have existing data stored in Hazelcast, consider using one of the available xref:hazelcast:ingest:overview.adoc[APIs/tools] to re-ingest data.

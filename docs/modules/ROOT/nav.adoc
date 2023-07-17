@@ -36,13 +36,12 @@
 * xref:stop-and-resume.adoc[Pause and Resume]
 * xref:deleting-a-cluster.adoc[Delete]
 * xref:backup-and-restore.adoc[Backup and Restore]
-* xref:wan-replication.adoc[Replicate Data]
 * xref:monitor-clusters.adoc[Monitor]
 ** xref:charts-and-stats.adoc[Dashboard]
 ** xref:management-center.adoc[Management Center]
 
 .Migrate
-* xref:migrate-to-cloud.adoc[Embedded to Cloud]
+* xref:migrate-to-cloud.adoc[Embedded to Client-Server]
 
 .Reference
 * xref:maven-plugin-hazelcast.adoc[Maven Plugin]
@@ -50,13 +49,6 @@
 ** xref:map-configurations.adoc[]
 ** xref:jcache.adoc[]
 ** xref:queue.adoc[]
-** xref:replicated-map.adoc[]
-** xref:set.adoc[]
-** xref:list.adoc[]
-** xref:topic.adoc[]
-** xref:multimap.adoc[]
-** xref:ringbuffer.adoc[]
-** xref:reliable-topic.adoc[]
 
 .Releases
 * xref:release-notes.adoc[Release Notes]
