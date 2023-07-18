@@ -86,7 +86,7 @@ Python::
 Before you begin:
 
 * link:https://www.python.org/downloads/[Install Python 3.6 or newer].
-* If you've followed the onscreen *Quick Connection Guide*, jump straight to <<step-6py, step 5>>.
+* If you've followed the onscreen *Quick Connection Guide*, jump straight to <<step-5py, step 5>>.
 
 []
 . In the *Quick Connection Guide*, click on the Python icon and then click *Download*.
@@ -107,7 +107,7 @@ When you see `Connection Successful!` in the output, the client is successfully 
 
 .. In step 3 of the *Quick Connection Guide* on your cluster, click *Dashboard*.
 
-.. [[step-6py]]In *Cluster Details*, click *Management Center*, and then from the top toolbar click *SQL Browser*.
+.. [[step-5py]]In *Cluster Details*, click *Management Center*, and then from the top toolbar click *SQL Browser*.
 
 .. Continue to the <<step-3, next step>> to query your sample data in the SQL browser.
 
