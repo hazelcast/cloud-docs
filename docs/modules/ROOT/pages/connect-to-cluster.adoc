@@ -10,7 +10,6 @@
 You can do the following to connect to the cluster:
 
 - Download a <<download, preconfigured sample client>>.
-- Use <<advanced, advanced setup>> to configure your own client.
 - Use the <<sql,SQL browser>> in Management Center.
 
 == Before you Begin
@@ -28,21 +27,6 @@ Your cluster comes with a downloadable client that's preconfigured to connect to
 . Follow the on-screen instructions.
 
 For a complete tutorial, see xref:get-started.adoc[].
-
-[[advanced]]
-== Using Advanced Setup
-
-You can download and configure the following clients yourself:
-
-- xref:hazelcast:clients:java.adoc#configuring-java-client[Java client]
-
-- link:https://hazelcast.readthedocs.io/en/stable/configuration_overview.html[Python client]
-
-- link:http://hazelcast.github.io/hazelcast-csharp-client/latest/doc/index.html[.NET client]
-
-- link:https://github.com/hazelcast/hazelcast-packaging[CLI client]
-
-include::partial$get-connection-creds.adoc[]
 
 [[sql]]
 == Using the SQL Browser
