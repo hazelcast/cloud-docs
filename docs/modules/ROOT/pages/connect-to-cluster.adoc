@@ -32,7 +32,15 @@ For a complete tutorial, see xref:get-started.adoc[].
 [[advanced]]
 == Using Advanced Setup
 
-Hazelcast offers a variety of link:https://hazelcast.com/clients/[clients] that you can download and configure yourself. After downloading a client, you'll need to configure it with your connection credentials.
+You can download and configure the following clients yourself:
+
+- xref:hazelcast:clients:java.adoc#configuring-java-client[Java client]
+
+- link:https://hazelcast.readthedocs.io/en/stable/configuration_overview.html[Python client]
+
+- link:http://hazelcast.github.io/hazelcast-csharp-client/latest/doc/index.html[.NET client]
+
+- link:https://github.com/hazelcast/hazelcast-packaging[CLI client]
 
 include::partial$get-connection-creds.adoc[]
 
@@ -56,7 +64,7 @@ xref:developer-guide.adoc[].
 
 - link:https://hazelcast.readthedocs.io/en/stable/configuration_overview.html[Python client]
 
-- link:link:http://hazelcast.github.io/hazelcast-csharp-client/latest/doc/index.html[.NET client]
+- link:http://hazelcast.github.io/hazelcast-csharp-client/latest/doc/index.html[.NET client]
 
 - link:https://github.com/hazelcast/hazelcast-packaging[CLI client]
 
