@@ -34,7 +34,6 @@ Development clusters have the following limitations:
 - No cluster scaling
 - No data backups
 - No cluster data persistence
-- Paused after 6 hours without development activity
 
 When a development cluster restarts for any reason, you lose all cluster data, such as maps and cluster-side modules. For example, when you manually xref:stop-and-resume.adoc[resume] a cluster after a period of inactivity.
 
