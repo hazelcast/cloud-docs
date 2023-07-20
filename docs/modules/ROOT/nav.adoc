@@ -4,6 +4,7 @@
 ** xref:dedicated-cluster.adoc[]
 * xref:get-started.adoc[Hello World]
 * xref:tutorials.adoc[Tutorials]
+* xref:support.adoc[Support]
 
 .Develop Applications
 * xref:developer-guide.adoc[Developer Guide]

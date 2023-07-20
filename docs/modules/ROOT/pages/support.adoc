@@ -1,0 +1,40 @@
+= Hazelcast {hazelcast-cloud} Support Policy
+:url-zendesk-hazelcast: https://support.hazelcast.com
+:description: Hazelcast offers support options with different response times to suit your requirements and budget.
+:cloud-tags: Get Started
+:cloud-title: Support
+:cloud-order: 40
+
+{description}
+
+[cols="1a,1a,1a,1a"]
+|===
+|Support option|Coverage|Support Channel|Response Times
+|*Standard support* [.dedicated]*Dedicated*
+
+[.serverless]*Serverless*
+|24 hours a day, 7 days a week, 365 days a year
+|link:{url-zendesk-hazelcast}[Hazelcast Support]
+|Less than one business day.
+
+|*Enterprise support* [.dedicated]*Dedicated*
+|24 hours a day, 7 days a week, 365 days a year
+|link:{url-zendesk-hazelcast}[Hazelcast Support], Emergency Telephone Number
+|Response times vary, depending on the <<severity, severity level>>.
+|===
+
+== Severity Levels
+
+The Hazelcast Support Team prioritizes issues by their severity level:
+
+- *Severity 1* (production applications are down): We will respond in less than 30 minutes.
+- *Severity 2* (production applications are down and there is a known workaround): We will respond in less than 2 hours.
+- *Severity 3* (low impact on applications): We will respond in less than 4 hours.
+- *Severity 4* (insignificant issue with little to no impact): We will respond in less than one business day.
+
+== Contact Hazelcast
+
+To raise your first support request, send an email to mailto:viridian@hazelcast.com[]. 
+
+If you have a question or you're interested in Enterprise support, contact us at mailto:sales@hazelcast.com[].
+
