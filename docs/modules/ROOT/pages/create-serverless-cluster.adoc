@@ -1,5 +1,5 @@
 = Creating a {hazelcast-cloud} Serverless Cluster
-:description: You can create a free cluster for development or production.
+:description: You can create a cluster for development or production.
 :page-aliases: create-starter-cluster.adoc, starter-clusters.adoc, create-standard-cluster.adoc, availability-zones.adoc, instance-types.adoc
 :page-serverless: true
 :cloud-tags: Manage Clusters
@@ -12,7 +12,7 @@
 
 You need a xref:create-account.adoc[Hazelcast {hazelcast-cloud} account].
 
-To create more than one cluster, you must add a xref:payment-methods.adoc[payment card] to your account.
+To create a cluster, you must add a xref:payment-methods.adoc[payment card] to your account.
 
 == Using the Hazelcast {hazelcast-cloud} Console
 

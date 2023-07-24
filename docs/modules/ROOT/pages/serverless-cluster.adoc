@@ -80,9 +80,7 @@ If you're using a development cluster, all cluster data is lost after the cluste
 
 == Charges for {hazelcast-cloud} Serverless Clusters
 
-{hazelcast-cloud} Serverless clusters are billed monthly only for the amount of storage that you use. You pay for all artifacts that are stored, which includes data, metadata, and custom code. 
-
-As well as the data that you add to data structures, such as maps, you are charged if you configure more than one backup of a data structure. Only the first backup is free.
+{hazelcast-cloud} Serverless clusters are billed monthly only for the amount of storage that you use. You pay for all artifacts that are stored, which includes data, metadata, and custom code. For example, as well as the data that you add to data structures, such as maps, you are charged for backups and metadata.
 
 Additional memory usage is also charged for, and may include the following:
 
@@ -91,8 +89,6 @@ Additional memory usage is also charged for, and may include the following:
 - Serialization overhead
 
 For example, the xref:cluster-side-modules.adoc#serializers[`HazelcastJsonValue` serializer] includes metadata to allow the cluster to query JSON fields and values. You are charged for this metadata. As a result, the amount of used memory in your cluster may be more than the amount of data that you added to a data structure.
-
-NOTE: As some resources are free of charge, your total resource usage on a cluster dashboard may not match the resources that you are billed for.
 
 == Next Steps
 

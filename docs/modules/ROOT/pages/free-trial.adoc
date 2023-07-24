@@ -1,7 +1,9 @@
 = {hazelcast-cloud} Trial
-:description: Explore the capabilities of Hazelcast {hazelcast-cloud} with a 14-day trial. Start your trial by signing up for a Hazelcast {hazelcast-cloud} account.
+:description: Explore the capabilities of Hazelcast Viridian with a 14-day trial. 
 
 {description}
+
+Start your trial by signing up for a link:{page-cloud-console}[Hazelcast {hazelcast-cloud} account, window=_blank].
 
 == What Can I Do During My Trial?
 
