@@ -110,7 +110,7 @@ bin/hz-cli -f hazelcast-client-with-ssl.yml sql
 ```bash
 bin\hz-cli -f hazelcast-client-with-ssl.yml sql
 ```
-A SQL prompt is displayed:
+An SQL prompt is displayed:
 +
 ```
 sql>
@@ -449,7 +449,7 @@ DROP JOB ingest_trades;
 SHOW JOBS;
 ```
 
-The table is empty table, which means your job is no longer running.
+The table is empty, which means your job is no longer running.
 
 == Summary
 

@@ -30,7 +30,7 @@ This chart shows the number of clients that are connected to your cluster.
 
 == Map Metrics
 
-Below the Cluster Metrics, you see the *Map Metrics* where the charts specific to maps are displayed. You can select the map that you want to monitor from the drop down just under the Map Metrics heading. 
+Below the Cluster Metrics, you see the *Map Metrics* where the charts specific to maps are displayed. You can select the map that you want to monitor from the drop-down just under the Map Metrics heading.
 
 In the *Map Metrics* part of the Cluster Details page, you can see the charts described in the below sections.
 

@@ -47,7 +47,7 @@ include::partial$get-connection-creds.adoc[]
 [[sql]]
 == Using the SQL Browser
 
-You can open a SQL shell in your cluster and submit SQL queries directly from your web browser.
+You can open an SQL shell in your cluster and submit SQL queries directly from your web browser.
 
 . Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console,window=_blank] and select your cluster.
 

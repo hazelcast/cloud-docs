@@ -82,7 +82,7 @@ If the name of your MapStore class is the same as the one that you want to updat
 . Optional: <<test-mapstore, Test your new MapStore>>.
 . <<deploy, Deploy>> the new version of your MapStore.
 
-If the name of your MapStore class is the different to the one that you want to update, do the following:
+If the name of your MapStore class is different to the one that you want to update, do the following:
 
 . Click *Upload Custom Classes* and remove the file that contains your MapStore.
 . Optional: <<test-mapstore, Test your new MapStore>>.
