@@ -110,7 +110,7 @@ bin/hz-cli -f hazelcast-client-with-ssl.yml sql
 ```bash
 bin\hz-cli -f hazelcast-client-with-ssl.yml sql
 ```
-An SQL prompt is displayed:
+A SQL prompt is displayed:
 +
 ```
 sql>
