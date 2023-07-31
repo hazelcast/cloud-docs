@@ -1,0 +1,34 @@
+= {hazelcast-cloud} Trial
+:description: Explore the capabilities of Hazelcast Viridian with a 14-day trial. 
+
+{description}
+
+Start your trial by signing up for a link:{page-cloud-console}[Hazelcast {hazelcast-cloud} account, window=_blank].
+
+== What Can I Do During My Trial?
+
+Your trial gives you access to a fully functional Hazelcast environment. During the trial, you can use all the features of a single development cluster. You can also connect to the cluster using one of the preconfigured sample clients: Java, Python, .NET or (SQL) CLI.
+
+Development clusters have certain limitations as they are designed for fast, iterative prototyping. These include:
+
+- Maximum 0.5 GiB of storage
+- Only a single member
+- No cluster scaling
+- No data backups
+- No cluster data persistence
+- Paused after 24 hours without development activity 
+
+NOTE: When a development cluster restarts for any reason, you lose all cluster data, such as maps and cluster-side modules.
+
+== Is Any Support Available During the Free Trial?
+
+You can get support from our team at any point during your trial by sending an email to mailto:viridian@hazelcast.com[].
+
+You'll also receive emails from Hazelcast with useful resources to help you get up and running with your first cluster.
+
+== What Happens at the End of the Trial?
+
+At the end of the 14-day trial period, two things happen:
+
+- Your account is automatically suspended. This means that although you can still access the trial environment, your cluster is stopped and cannot be restarted.
+- Your trial environment, including all data, will be automatically deleted.

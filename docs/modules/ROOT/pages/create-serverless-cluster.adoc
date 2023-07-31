@@ -1,5 +1,5 @@
 = Creating a {hazelcast-cloud} Serverless Cluster
-:description: You can create a free cluster for development or production.
+:description: You can create a cluster for development or production.
 :page-aliases: create-starter-cluster.adoc, starter-clusters.adoc, create-standard-cluster.adoc, availability-zones.adoc, instance-types.adoc
 :page-serverless: true
 :cloud-tags: Manage Clusters
@@ -12,7 +12,7 @@
 
 You need a xref:create-account.adoc[Hazelcast {hazelcast-cloud} account].
 
-To create more than one cluster, you must add a xref:payment-methods.adoc[payment card] to your account.
+To create a cluster, you must add a xref:payment-methods.adoc[payment card] to your account.
 
 == Using the Hazelcast {hazelcast-cloud} Console
 
@@ -29,11 +29,11 @@ To create a development cluster, do the following:
 . Click *Create Cluster*.
 . Select *Development*.
 . Update the cluster name if you want to. You cannot change the cluster name after the cluster is created.
-. Click *Create Cluster*. 
+. Click *Start Development Cluster*. 
 . Wait while your cluster is created. When the cluster is up and running, a *Quick Connection Guide* is displayed with instructions for connecting a sample client to it.
 // end::development[]
 --
-NOTE: Development clusters are xref:stop-and-resume.adoc#pausing-a-cluster[paused] automatically when you don't connect to the cluster for 6 hours. 
+NOTE: Development clusters are xref:stop-and-resume.adoc#pausing-a-cluster[paused] automatically when you don't connect to the cluster for 24 hours. 
 
 Production cluster:: 
 + 
@@ -43,9 +43,10 @@ To create a production cluster, do the following:
 // tag::production[]
 . Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console, window=blank].
 . Click *Create New Cluster*.
-. Click *Create Production Cluster*.
+. Click *Create Cluster*.
+. Click *Production*.
 . Update the cluster name if you want to. You cannot change the cluster name after the cluster is created.
-. Click *Create Cluster*
+. Click *Start Production Cluster*
 . Wait while your cluster is created. When the cluster is up and running, a *Quick Connection Guide* is displayed with instructions for connecting a sample client to it.
 // end::production[]
 --

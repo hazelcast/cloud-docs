@@ -35,7 +35,7 @@ Development clusters have the following limitations:
 - No data backups
 - No cluster data persistence
 
-When a development cluster restarts for any reason, you lose cluster data, such as maps and cluster-side modules.
+When a development cluster restarts for any reason, you lose all cluster data, such as maps and cluster-side modules. For example, when you manually xref:stop-and-resume.adoc[resume] a cluster after a period of inactivity.
 
 NOTE: You cannot convert a development cluster to a production cluster.
 
@@ -46,7 +46,7 @@ NOTE: You cannot convert a development cluster to a production cluster.
 Production clusters are for applications that have already been tested and are ready for deployment in real-world scenarios.
 // end::production[]
 
-Production clusters automatically scale out and in, depending on the amount of resources that you use.
+Production clusters automatically scale out and in, depending on the amount of resources that you use. If you xref:stop-and-resume.adoc[pause] a production cluster, Hazelcast saves your cluster data so that you can resume the cluster at a later time.
 
 === Backups to Disk
 
@@ -70,14 +70,9 @@ Although you can configure some xref:data-structures.adoc[data structures] with 
 
 For example, if you configure a map with five backups, but your cluster has only two members, you will have one effective backup. You need to add enough data to the cluster so that it automatically scales up the number of members and backups to your configured count of five. 
 
-== Restrictions on Free {hazelcast-cloud} Serverless Clusters
+== Restrictions on {hazelcast-cloud} Serverless Clusters
 
-Development clusters are xref:stop-and-resume.adoc#pausing-a-cluster[paused] when you don't connect to the cluster for 24 hours.
-
-Production clusters are only xref:stop-and-resume.adoc#pausing-a-cluster[paused] when both of these conditions are true:
-
-- You don't connect to the cluster for 24 hours.
-- You don't have a payment method set up for your Hazelcast {hazelcast-cloud} account.
+Development clusters and production clusters are xref:stop-and-resume.adoc#pausing-a-cluster[paused] when you don't connect to them cluster for 24 hours.
 
 If you're using a production cluster, Hazelcast saves your cluster data so that you can resume the cluster at a later time.
 
@@ -85,11 +80,7 @@ If you're using a development cluster, all cluster data is lost after the cluste
 
 == Charges for {hazelcast-cloud} Serverless Clusters
 
-You pay only for what you store in RAM. Any data that is stored on disk or in backups to disk is free of charge. As a result, 'storage' is synonymous with RAM in {hazelcast-cloud} Serverless clusters.
-
-{hazelcast-cloud} Serverless clusters are billed monthly only for the amount of storage that you use. The *first 2 GiB of storage in your account is free*.
-
-As well as the data that you add to data structures, such as maps, you are charged if you configure more than one backup of a data structure. Only the first backup is free.
+{hazelcast-cloud} Serverless clusters are billed monthly only for the amount of storage that you use. You pay for all artifacts that are stored, which includes data, metadata, and custom code. For example, as well as the data that you add to data structures, such as maps, you are charged for backups and metadata.
 
 Additional memory usage is also charged for, and may include the following:
 
@@ -98,8 +89,6 @@ Additional memory usage is also charged for, and may include the following:
 - Serialization overhead
 
 For example, the xref:cluster-side-modules.adoc#serializers[`HazelcastJsonValue` serializer] includes metadata to allow the cluster to query JSON fields and values. You are charged for this metadata. As a result, the amount of used memory in your cluster may be more than the amount of data that you added to a data structure.
-
-NOTE: As some resources are free of charge, your total resource usage on a cluster dashboard may not match the resources that you are billed for.
 
 == Next Steps
 
