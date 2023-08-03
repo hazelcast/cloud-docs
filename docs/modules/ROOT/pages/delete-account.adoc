@@ -31,6 +31,6 @@ All outstanding payments are taken during the deletion process. For this reason,
 Before you start, read the <<outstanding-payments, Outstanding Payments>> and <<cluster-and-data-deletion, Cluster and Data Deletion>> sections carefully. 
 
 . Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console,window=_blank].
-. Go to *Account* > *Password*
+. Go to *Account* > *Password*.
 . Scroll down to the *Danger Zone* and click *Delete This Account*.
 . Enter your email address and confirm the deletion.

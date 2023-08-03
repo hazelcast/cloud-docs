@@ -26,7 +26,7 @@ image:ROOT:paused-cluster.png[This]
 
 . If you need to restart the cluster, in the *Cluster Details* panel, click *Resume*.
 
-. Click *Connect Client* and go to <<step-2, step 2>>.
+. Next to *Connect Client*, click the client you want to try and go to <<step-2, step 2>>.
 
 To create a new development cluster.
 
@@ -71,11 +71,7 @@ mvnw.cmd clean compile exec:java@client-with-ssl
 +
 When you see `Connection Successful!` in the output, the client is successfully connected to your Serverless cluster and populates a `cities` map with data.
 
-. [[step-5]]To query data in the `cities` map:
-
-.. In *Cluster Details*, click *Management Center*, and then from the top toolbar click *SQL Browser*.
-
-.. Continue to the <<step-3, next step>> to query your sample data in the SQL browser.
+. [[step-5]]Continue to the <<step-3, next step>> to query data in the `cities` map.
 
 TIP: Take a moment, to read the code in the link:https://github.com/hazelcast/hazelcast-cloud-java-sample-client/blob/5.1/src/main/java/com/hazelcast/cloud/ClientWithSsl.java[`ClientWithSSL.java`] file to understand how the client connected. 
 --
@@ -103,13 +99,7 @@ python3 -m pip install -r requirements.txt && python client_with_ssl.py
 +
 When you see `Connection Successful!` in the output, the client is successfully connected to your Serverless cluster and populates a `cities` map with data.
 
-. To query data in the `cities` map:
-
-.. In step 3 of the *Quick Connection Guide* on your cluster, click *Dashboard*.
-
-.. [[step-5py]]In *Cluster Details*, click *Management Center*, and then from the top toolbar click *SQL Browser*.
-
-.. Continue to the <<step-3, next step>> to query your sample data in the SQL browser.
+. [[step-5py]]Continue to the <<step-3, next step>> to query data in the `cities` map.
 
 TIP: Take a moment, to read the code in the link:https://github.com/hazelcast/hazelcast-cloud-python-sample-client/blob/5.1/client_with_ssl.py[`client_with_ssl.py`] file to understand how the client connected. 
 --
@@ -137,13 +127,7 @@ dotnet run --project ClientWithSsl
 +
 When you see `Connection Successful!` in the output, the client is successfully connected to your Serverless cluster and populates a `cities` map with data.
 
-. To query data in the `cities` map:
-
-.. In step 3 of the *Quick Connection Guide* on your cluster, click *Dashboard*.
-
-.. [[step-5net]]In *Cluster Details*, click *Management Center*, and then from the top toolbar click *SQL Browser*.
-
-.. Continue to the <<step-3, next step>> to query your sample data in the SQL browser.
+. [[step-5net]]Continue to the <<step-3, next step>> to query data in the `cities` map.
 
 TIP: Take a moment, to read the code in the link:https://github.com/hazelcast/hazelcast-cloud-csharp-sample-client/blob/5.1/ClientWithSsl/Program.cs[`program.cs`] file to understand how the client connected. 
 --
@@ -180,16 +164,16 @@ sudo yum install hazelcast-enterprise
 ----
 +
 .Windows
-At the moment, Hazelcast does not support any Windows package managers. The easiest way to use the CLI on Windows is to install the Hazelcast Enterprise Docker image. The Docker container comes with the `hz-cli` client. See xref:hazelcast:getting-started:install-enterprise.adoc[].
+At the moment, Hazelcast does not support any Windows package managers. The easiest way to use the Hazelcast CLI on Windows is to install the Hazelcast Enterprise Docker image. The Docker container comes with the `hz-cli` client. See xref:hazelcast:getting-started:install-enterprise.adoc[].
 
-. Check that the CLI client is installed.
+. Check that the Hazelcast CLI client is installed.
 +
 [source,shell]
 ----
 hz-cli -V
 ----
 +
-You should see your installed version of the CLI client.
+You should see your installed version of the Hazelcast CLI client.
 
 . In the *Quick Connection Guide*, click the SQL icon and then click *Download*.
 
@@ -239,12 +223,89 @@ INSERT INTO cities VALUES
 ----
 . Continue to the <<step-3, next step>> to query your sample data in the SQL browser.
 --
+CLI (CLC):: 
++ 
+--
+If you've followed the onscreen *Quick Connection Guide*, jump straight to <<step-5clc, step 6>>.
+
+. xref:clc:ROOT:install-clc.adoc[Install the Hazelcast CLC client] for your operating system.
+
+. Run the following command to check that the Hazelcast CLC client is installed.
++
+[source,shell]
+----
+clc version
+----
++
+You should see your installed version of the Hazelcast CLC client.
+
+. In the *Quick Connection Guide*, go to step 2 and run the curl command to import the configuration of your {hazelcast-cloud} cluster.
+
+. Now execute one of the following commands to connect the Hazelcast CLC to your cluster.
+** For {hazelcast-cloud} Trial:
++
+```bash
+clc -c viridian
+```
+
+** For other environments, run the following command replacing the placeholder `$CLUSTER_ID`. You can find the cluster ID on the dashboard of your cluster under *Cluster Details*.
++
+```bash
+clc -c de-$CLUSTER_ID
+```
++
+A CLC prompt is displayed:
++
+```
+CLC>
+```
++
+The Hazelcast CLC client is successfully connected to your cluster.
+
+. [[step-5clc]]Quit the Hazelcast CLC before you continue.
+
++
+```
+\exit
+```
+. [[step-x]]Create a mapping to a new map called `cities`.
++
+[source,bash]
+----
+clc sql -c de-$CLUSTER_ID "CREATE OR REPLACE MAPPING cities (
+__key INT,
+country VARCHAR,
+city VARCHAR,
+population INT)
+type IMap OPTIONS('keyFormat'='int', 'valueFormat'='json-flat');"
+----
+
+. Add some data to the map.
++
+[source,sql]
+----
+clc sql -c de-$CLUSTER_ID "INSERT INTO cities VALUES
+(1, 'United Kingdom','London', 9540576),
+(2, 'United Kingdom','Manchester', 2770434),
+(3, 'United States', 'New York', 19223191),
+(4, 'United States', 'Los Angeles', 3985520),
+(5, 'Turkey', 'Ankara', 5309690),
+(6, 'Turkey', 'Istanbul', 15636243),
+(7, 'Brazil', 'Sao Paulo', 22429800),
+(8, 'Brazil', 'Rio de Janeiro', 13634274);"
+----
+. Continue to the <<step-3, next step>> to query your sample data in the SQL browser.
+--
 ====
 
 [[step-3]]
 == Step 3. Query the Cache with SQL
 
-Now that you have some data in your cluster, you can query it, using SQL. If you're using the CLI, enter the following  queries in the SQL prompt. If you're using a client library, enter the following queries in the SQL browser.
+Now that you have some data in your cluster, you can query it, using SQL by entering the following queries in the SQL browser.
+
+NOTE: The functionality in the following steps is not currently available for {hazelcast-cloud} Trial.
+
+. From the cluster dashboard, in *Cluster Details*, click *Management Center*, and then from the top toolbar click *SQL Browser*.
 
 . Execute the following `SELECT` statement to query all data in the map.
 +
@@ -380,7 +441,6 @@ WHERE city LIKE 'L%' AND LENGTH(city) > 6;
 |Los Angeles         |
 +--------------------+
 ```
-
 == Summary
 
 You learned how to connect to a cluster and use SQL to query data in the cluster.
@@ -409,7 +469,9 @@ Learn more about using clients:
 
 - link:http://hazelcast.github.io/hazelcast-csharp-client/latest/doc/index.html[.NET client]
 
-- link:https://github.com/hazelcast/hazelcast-packaging[CLI client]
+- link:https://github.com/hazelcast/hazelcast-packaging[SQL (CLI) client]
+
+- xref:clc:ROOT:overview.adoc[CLI (CLC) client] 
 
 - xref:management-center:tools:sql-browser.adoc[SQL browser].
 
