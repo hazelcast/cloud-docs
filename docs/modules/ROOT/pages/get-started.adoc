@@ -251,7 +251,7 @@ clc -c viridian
 ** For other environments, run the following command replacing the placeholder `$CLUSTER_ID`. You can find the cluster ID on the dashboard of your cluster under *Cluster Details*.
 +
 ```bash
-clc -c de-$CLUSTER_ID
+clc -c pr-$CLUSTER_ID
 ```
 +
 A CLC prompt is displayed:
@@ -272,7 +272,7 @@ The Hazelcast CLC client is successfully connected to your cluster.
 +
 [source,bash]
 ----
-clc sql -c de-$CLUSTER_ID "CREATE OR REPLACE MAPPING cities (
+clc sql -c pr-$CLUSTER_ID "CREATE OR REPLACE MAPPING cities (
 __key INT,
 country VARCHAR,
 city VARCHAR,
@@ -284,7 +284,7 @@ type IMap OPTIONS('keyFormat'='int', 'valueFormat'='json-flat');"
 +
 [source,sql]
 ----
-clc sql -c de-$CLUSTER_ID "INSERT INTO cities VALUES
+clc sql -c pr-$CLUSTER_ID "INSERT INTO cities VALUES
 (1, 'United Kingdom','London', 9540576),
 (2, 'United Kingdom','Manchester', 2770434),
 (3, 'United States', 'New York', 19223191),
