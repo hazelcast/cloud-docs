@@ -239,16 +239,9 @@ clc version
 +
 You should see your installed version of the Hazelcast CLC client.
 
-. In the *Quick Connection Guide*, go to step 2 and run the curl command to import the configuration of your {hazelcast-cloud} cluster.
+. In the *Quick Connection Guide*, go to step 2 and run the `clc config import` command to import the configuration of your {hazelcast-cloud} cluster.
 
-. Now execute one of the following commands to connect the Hazelcast CLC to your cluster.
-** For {hazelcast-cloud} Trial:
-+
-```bash
-clc -c viridian
-```
-
-** For other environments, run the following command replacing the placeholder `$CLUSTER_ID`. You can find the cluster ID on the dashboard of your cluster under *Cluster Details*.
+. Now execute the following command to connect the Hazelcast CLC to your cluster. Replace the placeholder `$CLUSTER_ID`. You can find the cluster ID on the dashboard of your cluster under *Cluster Details*.
 +
 ```bash
 clc -c pr-$CLUSTER_ID
@@ -282,7 +275,7 @@ type IMap OPTIONS('keyFormat'='int', 'valueFormat'='json-flat');"
 
 . Add some data to the map.
 +
-[source,sql]
+[source,bash]
 ----
 clc sql -c pr-$CLUSTER_ID "INSERT INTO cities VALUES
 (1, 'United Kingdom','London', 9540576),
@@ -302,8 +295,6 @@ clc sql -c pr-$CLUSTER_ID "INSERT INTO cities VALUES
 == Step 3. Query the Cache with SQL
 
 Now that you have some data in your cluster, you can query it, using SQL by entering the following queries in the SQL browser.
-
-NOTE: The functionality in the following steps is not currently available for {hazelcast-cloud} Trial.
 
 . From the cluster dashboard, in *Cluster Details*, click *Management Center*, and then from the top toolbar click *SQL Browser*.
 
