@@ -39,6 +39,8 @@ To connect to your {hazelcast-cloud} Serverless cluster, you need a Hazelcast cl
 
 Choose a client and follow the instructions.
 
+include::deprecation-notice-cli.adoc[tag=deprecation-notice-cli]
+
 [tabs] 
 ====
 Java:: 
@@ -148,7 +150,7 @@ When you see `Connection Successful!` in the output, the client is successfully 
 TIP: Take a moment, to read the code in the link:https://github.com/hazelcast/hazelcast-cloud-csharp-sample-client/blob/5.1/ClientWithSsl/Program.cs[`program.cs`] file to understand how the client connected. 
 --
 
-SQL (CLI):: 
+SQL (CLI)::
 + 
 --
 If you've followed the onscreen *Quick Connection Guide*, jump straight to <<step-7, step 7>>.
