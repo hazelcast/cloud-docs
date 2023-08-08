@@ -7,9 +7,13 @@
 
 == Client Libraries
 
-You can use any available client library to connect to Hazelcast {hazelcast-cloud} clusters.
+You can use any of the following clients to connect to Hazelcast {hazelcast-cloud} clusters: Java, Python, .NET, (CLC) CLI or (SQL) CLI.
 
-See link:https://hazelcast.com/clients/[Clients and Languages].
+See link:https://hazelcast.com/clients/[Clients and Languages] for available libraries.
+
+== Hazelcast Command-Line Client
+
+The xref:clc:ROOT:overview.adoc[Hazelcast Command-Line Client (CLC)] introduces a new set of commands specially designed for connecting to and managing your {hazelcast-cloud} clusters. 
 
 == Hazelcast {hazelcast-cloud} CLI
 

@@ -7,7 +7,7 @@ Start your trial by signing up for a link:{page-cloud-console}[Hazelcast {hazelc
 
 == What Can I Do During My Trial?
 
-Your trial gives you access to a fully functional Hazelcast environment. During the trial, you can use all the features of a single development cluster. You can also connect to the cluster using one of the preconfigured sample clients: Java, Python, .NET or (SQL) CLI.
+Your trial gives you access to a fully functional Hazelcast environment. During the trial, you can use all the features of a single development cluster. You can also connect to the cluster using one of the preconfigured sample clients: Java, Python, .NET, (CLC) CLI or (SQL) CLI.
 
 Development clusters have certain limitations as they are designed for fast, iterative prototyping. These include:
 
