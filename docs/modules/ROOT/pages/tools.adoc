@@ -11,6 +11,12 @@ You can use any available client library to connect to Hazelcast {hazelcast-clou
 
 See link:https://hazelcast.com/clients/[Clients and Languages].
 
+== Connector Wizard for {hazelcast-cloud}
+
+Hazelcast {hazelcast-cloud} has a built-in connector wizard, which simplifies the process of connecting to external data sources.
+
+See xref:connector-wizard.adoc[Connector Wizard].
+
 == Hazelcast {hazelcast-cloud} CLI
 
 Hazelcast {hazelcast-cloud} CLI is a command-line tool for creating and managing {hazelcast-cloud} clusters.

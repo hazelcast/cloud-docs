@@ -1,0 +1,13 @@
+= Managing Data Connections to PostgreSQL Sources or Sinks
+:description: To query data in a PostgreSQL source or sink using SQL, you need to xref:create-postgres-connection.adoc[create a data connection] from your Hazelcast {hazelcast-cloud} cluster to the database instance, and a mapping to the data you want to query. The easiest way to do this is to use the connector wizard.
+:cloud-tags: Manage Data
+:cloud-title: Managing Data Connections to PostgreSQL
+:cloud-order: 66
+
+{description}
+
+Use these topics to create and maintain data connections and associated mappings:
+
+* xref:create-postgres-connection.adoc[Creating a Data Connection to PostgreSQL]
+* xref:add-postgres-mapping.adoc[Adding a Mapping to a PostgreSQL Data Connection]
+* xref:delete-postgres-connection.adoc[Deleting a Data Connection to PostgreSQL]
