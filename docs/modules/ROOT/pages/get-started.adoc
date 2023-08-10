@@ -228,6 +228,8 @@ CLI (CLC)::
 --
 If you've followed the onscreen *Quick Connection Guide*, jump straight to <<step-5clc, step 6>>.
 
+NOTE: We do not recommend this part of the tutorial for customers using {hazelcast-cloud} Trial. 
+
 . xref:clc:ROOT:install-clc.adoc[Install the Hazelcast CLC client] for your operating system.
 
 . Run the following command to check that the Hazelcast CLC client is installed.
