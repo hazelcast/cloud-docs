@@ -6,7 +6,7 @@
 :page-dedicated: true
 :page-aliases: gcp-vpc-peering.adoc, azure-vnet-peering.adoc, aws-private-link.adoc
 
-You can create an AWS VPC peering connection, using one of the following option:
+You can create an AWS VPC peering connection, using one of the following options:
 
 - Use the CLI (recommended)
 - Create a manual connection
@@ -19,7 +19,7 @@ This option provides the easiest way of creating an AWS VPC Peering with your Ha
 
 . Install the link:{page-url-github-cloud-cli}[Hazelcast {hazelcast-cloud} CLI].
 
-. Set the following AWS envrionment variables:
+. Set the following AWS environment variables:
 
 ** `AWS_ACCESS_KEY_ID`: Your access key ID.
 ** `AWS_SECRET_ACCESS_KEY`: Your secret access key.
@@ -195,7 +195,7 @@ WARNING: The CIDR of your {hazelcast-cloud} Dedicated cluster and the CIDR of yo
 == Listing Peering Connections
 
 You can list VPC peerings on your cluster by going to *Cluster Details > *Settings* > *VPC Peering* one by one as shown below. 
-You can check where the connection established by checking VPC ID and Subnet from the list.
+You can check where the connection is established by checking VPC ID and Subnet from the list.
 
 Also, you can easily use the Go SDK or Hazelcast {hazelcast-cloud} CLI for this.
 

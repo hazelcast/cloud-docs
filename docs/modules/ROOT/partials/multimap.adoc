@@ -5,7 +5,7 @@ Multimap is a specialized map, in which you can store multiple values for a sing
 
 == Multimap Name
 
-You can give to custom name to your multimap structure.
+You can give a custom name to your multimap structure.
 
 [source,java]
 ----

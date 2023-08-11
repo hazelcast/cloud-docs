@@ -77,7 +77,7 @@ When you see `Connection Successful!` in the output, the client is successfully 
 
 .. Continue to the <<step-3, next step>> to query your sample data in the SQL browser.
 
-TIP: Take a moment, to read the code in the link:https://github.com/hazelcast/hazelcast-cloud-java-sample-client/blob/5.1/src/main/java/com/hazelcast/cloud/ClientWithSsl.java[`ClientWithSSL.java`] file to understand how the client connected. 
+TIP: Take a moment to read the code in the link:https://github.com/hazelcast/hazelcast-cloud-java-sample-client/blob/5.1/src/main/java/com/hazelcast/cloud/ClientWithSsl.java[`ClientWithSSL.java`] file to understand how the client connected.
 --
 
 Python:: 
@@ -111,7 +111,7 @@ When you see `Connection Successful!` in the output, the client is successfully 
 
 .. Continue to the <<step-3, next step>> to query your sample data in the SQL browser.
 
-TIP: Take a moment, to read the code in the link:https://github.com/hazelcast/hazelcast-cloud-python-sample-client/blob/5.1/client_with_ssl.py[`client_with_ssl.py`] file to understand how the client connected. 
+TIP: Take a moment to read the code in the link:https://github.com/hazelcast/hazelcast-cloud-python-sample-client/blob/5.1/client_with_ssl.py[`client_with_ssl.py`] file to understand how the client connected.
 --
 
 .NET:: 
@@ -145,7 +145,7 @@ When you see `Connection Successful!` in the output, the client is successfully 
 
 .. Continue to the <<step-3, next step>> to query your sample data in the SQL browser.
 
-TIP: Take a moment, to read the code in the link:https://github.com/hazelcast/hazelcast-cloud-csharp-sample-client/blob/5.1/ClientWithSsl/Program.cs[`program.cs`] file to understand how the client connected. 
+TIP: Take a moment to read the code in the link:https://github.com/hazelcast/hazelcast-cloud-csharp-sample-client/blob/5.1/ClientWithSsl/Program.cs[`program.cs`] file to understand how the client connected.
 --
 
 SQL (CLI):: 
@@ -197,7 +197,7 @@ You should see your installed version of the CLI client.
 
 . From a command prompt, change into the root directory where you extracted the ZIP file.
 
-. Execute the following command to connect the SQL shell to your cluster. You may need add a path to the hz-cli program.
+. Execute the following command to connect the SQL shell to your cluster. You may need to add a path to the hz-cli program.
 +
 ```bash
 hz-cli -f hazelcast-client-with-ssl.yml sql

@@ -7,11 +7,11 @@ You can also use wildcards to associate your configuration with multiple jcache 
 
 == Backup Count
 
-Number of synchronous backups/replications. The higher number the more highly available cluster but performance decreases and memory cost of each entry increases. Synchronous backup operations have a blocking cost which may cause the higher latencies.
+Number of synchronous backups/replications. The higher the number, the more highly available cluster but performance decreases and memory cost of each entry increases. Synchronous backup operations have a blocking cost which may cause higher latencies.
 
 == Asynchronous Backup Count
 
-Number of asynchronous backups/replications. The higher number the more highly available cluster but performance decreases and memory cost of each entry increases. Asynchronous backups are fire & forget and do not require the acknowledgements.
+Number of asynchronous backups/replications. The higher the number, the more highly available cluster but performance decreases and memory cost of each entry increases. Asynchronous backups are fire & forget and do not require acknowledgements.
 
 == Key Type
 
@@ -27,7 +27,7 @@ Eviction policy that compares values to find the best matching eviction candidat
 
 == Max Size Policy
 
-Maximum size policy. If maximum size is reached, the cache is evicted based on the eviction policy. 
+Maximum size policy. If the maximum size is reached, the cache is evicted based on the eviction policy.
 
 == Maximum Size
 

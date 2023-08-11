@@ -449,7 +449,7 @@ DROP JOB ingest_trades;
 SHOW JOBS;
 ```
 
-The table is empty table, which means your job is no longer running.
+The table is empty, which means your job is no longer running.
 
 == Summary
 

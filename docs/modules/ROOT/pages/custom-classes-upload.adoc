@@ -10,7 +10,7 @@ Check the xref:cluster-side-modules.adoc#prereqs, [requirements and limitations]
 [[package]]
 == Uploading Cluster-Side Modules
 
-Clusters expect all modules to be packaged into a single ZIP or JAR file. When you’ve built and packaged your cluster-side modules, the final step is to upload the resulting package file to the cluster.
+Clusters expect all modules to be packaged into a single ZIP or JAR file. When you've built and packaged your cluster-side modules, the final step is to upload the resulting package file to the cluster.
 
 You can upload custom classes, using the following options:
 

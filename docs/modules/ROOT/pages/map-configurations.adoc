@@ -11,7 +11,7 @@ Hazelcast distributes the map entries onto multiple cluster members. Each member
 
 * *Backup Count 0:* This means entries are not replicated to any member other than the primary one. This is the most cost-effective and best-performing option, but also the least safe. It is cost-effective because 100% of the total memory is reserved for your entries. So, set the backup count to 0 if you can tolerate data loss at some level (example use cases may include caching).
 * *Backup Count 1:* This means entries are replicated to one member in addition to the primary one. 50% of the total memory is reserved for your entries. If you have a cluster with 10 GiB and your backup count is 1, then you can keep up to 5 GiB of entries because the other half of the cluster memory is used for the backups of those entries. This is the default option for Hazelcast maps and recommended for most use cases where you cannot tolerate data loss.
-* *Backup Count 2:* This means entries are replicated to two member in addition to the primary one. 33.3% of the total memory is reserved for your entries. If you have a cluster with 30 GiB and your backup count is 2, then you can keep entries up to 10 GiB because the remaining cluster memory is used for two backups of those entries. This is recommended for the use cases where you keep mission-critical data with high data safety requirements. Note that this is the least cost-effective setup with the biggest performance overhead, but also has the highest data redundancy.
+* *Backup Count 2:* This means entries are replicated to two members in addition to the primary one. 33.3% of the total memory is reserved for your entries. If you have a cluster with 30 GiB and your backup count is 2, then you can keep entries up to 10 GiB because the remaining cluster memory is used for two backups of those entries. This is recommended for the use cases where you keep mission-critical data with high data safety requirements. Note that this is the least cost-effective setup with the biggest performance overhead, but also has the highest data redundancy.
  
 == Time To Live
 
@@ -25,7 +25,7 @@ Both Time-to-Live and Max Idle Seconds can be used simultaneously on the map ent
 
 == Eviction Policy
 
-Eviction policy to be applied when the size of map grows larger than the value specified by the Max Size element described below. Valid values are as follows:
+Eviction policy to be applied when the size of the map grows larger than the value specified by the Max Size element described below. Valid values are as follows:
 
 - NONE: Default policy. If set, no items are evicted and the property Max Size described below will be ignored. You still can combine it with TTL and Max Idle Seconds.
 - LRU: Least Recently Used.

@@ -1,4 +1,4 @@
-= Creating an Account
+ Creating an Account
 :description: Before you create a cluster, you must create an account. You can create an account with your GitHub credentials, Google credentials, or you can provide an email address and password.
 :toclevels: 3
 

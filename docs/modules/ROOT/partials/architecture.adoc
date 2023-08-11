@@ -6,7 +6,7 @@ image:architecture.png[Cloud architecture]
 - Built on containerization and orchestration technologies: Docker and Kubernetes.
 - Minimal Docker images are used for the sake of simplicity and security. 
 - User clusters are isolated from each other on the orchestration level.
-- Resources (memory, CPU) are limited on the container level, so resource stealing is prevented.
+- Resources (memory, CPU) are limited at the container level, so resource stealing is prevented.
 - All accesses to Kubernetes clusters are closed by default, with the exception of client endpoints.
 - All client endpoints to Kubernetes clusters and all endpoints to Hazelcast {hazelcast-cloud} console are encrypted via TLS.
 - Authentication of Hazelcast {hazelcast-cloud} console is performed via the JSON Web Token (JWT) standard.
@@ -18,7 +18,7 @@ image:architecture.png[Cloud architecture]
 
 == Components
 
-{hazelcast-cloud} Dedicated creates a subaccount for each customer. Under this subaccount, the following components are created in the given order when you create a cluster:
+{hazelcast-cloud} Dedicated creates a sub account for each customer. Under this sub account, the following components are created in the given order when you create a cluster:
 
 - Virtual Private Cloud (VPC)
   * Kubernetes cluster

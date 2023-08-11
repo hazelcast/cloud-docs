@@ -20,7 +20,7 @@ For xref:dedicated-cluster.adoc[{hazelcast-cloud} Dedicated clusters], a wider r
 
 To set up automatic payments for your usage, add a payment card to your account. For {hazelcast-cloud} Serverless clusters, you are prompted to add your payment details after signing in for the first time. 
 
-NOTE: Hazelcast uses a third-party to store payment details and process payments. Payment details are not stored in Hazelcast.
+NOTE: Hazelcast uses a third party to store payment details and process payments. Payment details are not stored in Hazelcast.
 
 . Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console,window=_blank].
 . Go to *Account* > *Billing & Payments*.

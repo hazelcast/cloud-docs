@@ -12,4 +12,4 @@
 
 . Click *Delete* and confirm your choice.
 
-When you delete a cluster, all data related to the cluster, including the configuration is removed. You cannot recover any data from a deleted cluster.
+When you delete a cluster, all data related to the cluster, including the configuration, is removed. You cannot recover any data from a deleted cluster.
