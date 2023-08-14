@@ -1,5 +1,5 @@
 = Managing Data Connections to Kafka Sources or Sinks
-:description: To query data in a Kafka source or sink using SQL, you need to xref:create-kafka-connection.adoc[create a data connection] from your Hazelcast {hazelcast-cloud} cluster to your Kafka broker, and a mapping to the topic data you want to query. The easiest way to do this is to use the connector wizard.
+:description: To query data in a Kafka source or sink using SQL, you need to xref:create-kafka-connection.adoc[create a data connection] from your {hazelcast-cloud} cluster to your Kafka broker, and a mapping to the topic data you want to query. The easiest way to do this is to use the connector wizard.
 :cloud-tags: Manage Data
 :cloud-title: Managing Data Connections to PostgreSQL
 :cloud-order: 62

@@ -11,7 +11,7 @@
 
 Before you start, make sure that the data connection is no longer in use.
 
-. Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console, window=blank].
+. Sign into the link:{page-cloud-console}[{hazelcast-cloud} console, window=blank].
 . Select the cluster where you set up the data connection that you need to delete.
 . In the left navigation, select *SQL* to open the SQL browser.
 . To find the exact name of the data connection, in the *Data Explorer* click *Connector Wizard* and then select the *Existing Connections* tab.

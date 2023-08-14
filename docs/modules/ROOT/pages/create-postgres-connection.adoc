@@ -14,7 +14,7 @@ Once you have created the data connection, you cannot update it using the connec
 // tag::open-wizard[]
 To open the connector wizard do the following:
 
-. Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console, window=blank].
+. Sign into the link:{page-cloud-console}[{hazelcast-cloud} console, window=blank].
 . Select the cluster where you want to create the data connection.
 . In the left navigation, select *SQL* to open the SQL browser.
 // end::open-wizard[]

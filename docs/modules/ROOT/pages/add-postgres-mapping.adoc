@@ -9,7 +9,7 @@
 == Adding a New Mapping to a Data Connection
 
 // tag::new-mapping-start[]
-. Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console, window=blank].
+. Sign into the link:{page-cloud-console}[{hazelcast-cloud} console, window=blank].
 . Select the cluster where the existing data connection is saved.
 . In the left navigation, select *SQL* to open the SQL browser.
 . In the *Data Explorer*, click *Connector Wizard*.
