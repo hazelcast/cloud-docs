@@ -1,8 +1,8 @@
 .Get Started
 * xref:overview.adoc[]
-** xref:serverless-cluster.adoc[]
-** xref:dedicated-cluster.adoc[]
-* xref:free-trial.adoc[Viridian Trial]
+** xref:free-trial.adoc[Trial]
+** xref:serverless-cluster.adoc[Standard]
+** xref:dedicated-cluster.adoc[Dedicated]
 * xref:get-started.adoc[Hello World]
 * xref:tutorials.adoc[Tutorials]
 
@@ -26,7 +26,7 @@
 
 .Manage Clusters
 * xref:create-clusters.adoc[Create]
-** xref:create-serverless-cluster.adoc[Create a Serverless Cluster]
+** xref:create-serverless-cluster.adoc[Create a Standard Cluster]
 ** xref:create-dedicated-cluster.adoc[Create a Dedicated Cluster]
 * xref:authorize-connections.adoc[Authorize]
 ** xref:ip-white-list.adoc[IP Whitelist]

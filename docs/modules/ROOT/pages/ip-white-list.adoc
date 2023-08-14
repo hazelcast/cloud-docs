@@ -5,7 +5,7 @@
 
 {description}
 
-. Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console,window=_blank] and select your cluster.
+. Sign into the link:{page-cloud-console}[{hazelcast-cloud} console,window=_blank] and select your cluster.
 
 . Go to *Manage* > *IP Whitelisting*.
 

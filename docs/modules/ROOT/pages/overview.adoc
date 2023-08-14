@@ -1,8 +1,8 @@
-= Hazelcast {hazelcast-cloud} Cloud Managed Services
-:description: Hazelcast cloud managed services simplify deployments of Hazelcast Platform, allowing you to focus on building applications for stream and batch processing, low-latency querying, and caching.
+= Hazelcast {hazelcast-cloud}
+:description: Hazelcast {hazelcast-cloud} simplifies deployments of Hazelcast Platform to the cloud. Hazelcast manages the underlying infrastructure allowing you to focus on building applications for stream and batch processing, low-latency querying, and caching.
 :page-aliases: use-cases.adoc, faq.adoc, pricing.adoc, preface.adoc, wan-replication.adoc, support.adoc
 :cloud-tags: Get Started
-:cloud-title: Hazelcast Viridian Overview
+:cloud-title: Hazelcast Viridian Cloud Overview
 :cloud-order: 10
 
 {description}
@@ -11,7 +11,7 @@ Hazelcast {hazelcast-cloud} abstracts away the manual effort of managing physica
 
 == Application Topology
 
-Hazelcast {hazelcast-cloud} applications run in a client/server topology:
+{hazelcast-cloud} applications run in a client/server topology:
 
 - {hazelcast-cloud} clusters are the servers that are responsible for storing and processing your data.
 
@@ -19,14 +19,17 @@ Hazelcast {hazelcast-cloud} applications run in a client/server topology:
 
 == Editions
 
-Hazelcast {hazelcast-cloud} offers two editions: {hazelcast-cloud} Serverless and {hazelcast-cloud} Dedicated.
+Hazelcast {hazelcast-cloud} has two editions: {hazelcast-cloud} Standard and {hazelcast-cloud} Dedicated.
+
+xref:free-trial.adoc[{hazelcast-cloud} Trial] offers the capabilities of {hazelcast-cloud} Standard for a 14-day trial period.
+
 
 [cols="1a,2a"]
 |===
 |Edition|Description
 
-|xref:serverless-cluster.adoc[{hazelcast-cloud} Serverless]
-|{hazelcast-cloud} Serverless clusters auto-scale, depending on the amount of data you store.
+|xref:serverless-cluster.adoc[{hazelcast-cloud} Standard]
+|{hazelcast-cloud} Standard clusters auto-scale, depending on the amount of data you store. 
 
 |xref:dedicated-cluster.adoc[{hazelcast-cloud} Dedicated]
 |To maximize security whilst minimizing latency, {hazelcast-cloud} Dedicated clusters expose only private Hazelcast endpoints. For consistent performance and throughput, {hazelcast-cloud} Dedicated clusters do not share infrastructure with any other customers.

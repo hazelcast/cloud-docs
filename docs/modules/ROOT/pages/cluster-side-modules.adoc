@@ -1,4 +1,4 @@
-= Working with Cluster-Side Modules in Hazelcast {hazelcast-cloud}
+= Working with Cluster-Side Modules in {hazelcast-cloud}
 :description: Cluster-side modules are Java classes that a cluster can execute or store in the cloud. You can write cluster-side modules to execute custom code or store custom objects. This guide describes the workflows and best practices for implementing cluster-side modules.
 :cloud-tags: Develop Applications
 :cloud-title: Building Cluster-Side Modules
@@ -9,7 +9,7 @@
 The basic workflow for any cluster-side module is the following:
 
 . *Build* the Java class and implement any required interfaces.
-. *Test* your implementation on a {hazelcast-cloud} Serverless development cluster.
+. *Test* your implementation on a development cluster.
 . *Deploy* your Java classes to your cluster.
 
 Then, you can use any client to interact with the cluster-side modules such as querying objects or triggering processes.
@@ -31,25 +31,25 @@ Cluster-side modules include any code that must be deployed as Java code to the 
 |link:https://docs.hazelcast.org/docs/latest/javadoc/com/hazelcast/map/EntryProcessor.html[Entry processor]
 |Atomically execute code on a map entry.
 
-You cannot use a custom name for entry processors in Hazelcast {hazelcast-cloud}. You must use the one called `default`.
+You cannot use a custom name for entry processors in {hazelcast-cloud}. You must use the one called `default`.
 
 |link:https://docs.hazelcast.org/docs/latest/javadoc/com/hazelcast/core/IExecutorService.html[Executor]
 |Asynchronously execute tasks, such as database queries, complex calculations, and image rendering.
 
-You cannot use a custom name for executors in Hazelcast {hazelcast-cloud}. You must use the one called `default`.
+You cannot use a custom name for executors in {hazelcast-cloud}. You must use the one called `default`.
 
 |Custom object class (domain objects)
 |Allow clusters to store or process domain objects that you use in your applications.
 
 |link:https://docs.hazelcast.org/docs/latest/javadoc/com/hazelcast/jet/pipeline/Pipeline.html[Pipeline]
-|Process streaming or batch data in Hazelcast {hazelcast-cloud}, using one or more data sources and sinks.
+|Process streaming or batch data in {hazelcast-cloud}, using one or more data sources and sinks.
 
 |===
 
 [[serializers]]
 == Supported Serializers
 
-Cluster-side modules must be serialized because they are sent to other members in the cluster and/or your client applications. Hazelcast {hazelcast-cloud} supports the following serializers. Follow the links to learn more about these serializers in the Hazelcast Platform documentation.
+Cluster-side modules must be serialized because they are sent to other members in the cluster and/or your client applications. {hazelcast-cloud} supports the following serializers. Follow the links to learn more about these serializers in the Hazelcast Platform documentation.
 
 [cols="3,3a,4a,1a"]
 |===
@@ -108,7 +108,7 @@ Any Java code in cluster-side modules must meet the following requirements.
 
 === Java Version
 
-Hazelcast {hazelcast-cloud} supports only Java version 11 or earlier. Do not use a Java version greater than version 11.
+{hazelcast-cloud} supports only Java version 11 or earlier. Do not use a Java version greater than version 11.
 
 === System-Level APIs
 
@@ -120,11 +120,11 @@ Your package names must not start with `com.hazelcast`. Hazelcast ignores these 
 
 === Package Size
 
-Hazelcast {hazelcast-cloud} allows you to upload packaged files up to 500 MB. Larger files are rejected.
+{hazelcast-cloud} allows you to upload packaged files up to 500 MB. Larger files are rejected.
 
 === Dependency Conflicts
 
-The libraries in your project must not conflict with those that are built into Hazelcast {hazelcast-cloud}. If your project includes a library that’s already available in Hazelcast {hazelcast-cloud}, you may experience conflicts that stop Hazelcast from processing your cluster-side modules. To avoid packaging conflicting libraries in your code, we recommend using one of the following options:
+The libraries in your project must not conflict with those that are built into {hazelcast-cloud}. If your project includes a library that's already available in {hazelcast-cloud}, you may experience conflicts that stop Hazelcast from processing your cluster-side modules. To avoid packaging conflicting libraries in your code, we recommend using one of the following options:
 
 - *Shaded JARs:* When you shade JARs, the classes inside them are relocated and rewritten to create a private copy of them that is bundled alongside your code. To learn more about shaded JARs, see this link:https://softwareengineering.stackexchange.com/questions/297276/what-is-a-shaded-java-dependency[answer on Stack Overflow].
 - *Provided scope:* When you use the provided scope for a JAR, it is available in your classpath during compilation but will not be packaged with your project archive. To learn more about provided scope, see the docs for your build tool:
@@ -136,15 +136,15 @@ The libraries in your project must not conflict with those that are built into H
 
 Before you go into production with your cluster-side modules, it's best to test them on a development cluster to make sure that they work as expected. To test cluster-side modules, follow these best practices:
 
-- Use a xref:serverless-cluster.adoc[{hazelcast-cloud} Serverless development cluster]: It's faster to test cluster-side modules in a development cluster.
-- Use the xref:maven-plugin-hazelcast.adoc[Hazelcast {hazelcast-cloud} Maven plugin]: The Maven plugin allows you to package and deploy your cluster-side modules in a single command from your IDE. You can also debug your cluster-side modules by streaming cluster logs after deployment.
+- Use a xref:serverless-cluster.adoc[development cluster]: It's faster to test cluster-side modules in a development cluster.
+- Use the xref:maven-plugin-hazelcast.adoc[{hazelcast-cloud} Maven plugin]: The Maven plugin allows you to package and deploy your cluster-side modules in a single command from your IDE. You can also debug your cluster-side modules by streaming cluster logs after deployment.
 
 [[deploy]]
 == Moving to Production
 
 After testing your cluster-side modules, you need to deploy them to production.
 
-For production, you can deploy your cluster-side modules either to a xref:create-serverless-cluster.adoc[{hazelcast-cloud} Serverless production cluster] or a xref:create-dedicated-cluster.adoc[{hazelcast-cloud} Dedicated cluster].
+For production, you can deploy your cluster-side modules to a production cluster on either xref:create-serverless-cluster.adoc[{hazelcast-cloud} Standard] or xref:create-dedicated-cluster.adoc[{hazelcast-cloud} Dedicated].
 
 NOTE: You must provide a xref:payment-methods.adoc[payment card or other payment method] to run more than one {hazelcast-cloud} cluster.
 

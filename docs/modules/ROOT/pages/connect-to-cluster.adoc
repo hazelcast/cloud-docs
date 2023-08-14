@@ -1,8 +1,8 @@
-= Connecting to Hazelcast {hazelcast-cloud} Clusters
+= Connecting to {hazelcast-cloud} Clusters
 :description: To communicate with a cluster, you need a client. Hazelcast offers clients in a variety of languages as well as a command-line client for quick prototyping and scripting.
 :page-aliases: connect-to-private-cluster.adoc
 :cloud-tags: Develop Applications | Manage Clusters
-:cloud-title: Connecting to Hazelcast Viridian Clusters | Connecting to Clusters
+:cloud-title: Connecting to Viridian Cloud Clusters | Connecting to Clusters
 :cloud-order: 21 | 50
 
 {description}
@@ -15,14 +15,14 @@ You can do the following to connect to the cluster:
 
 == Before you Begin
 
-If you're using a {hazelcast-cloud} Dedicated cluster, you need to xref:authorize-connections.adoc[authorize] clients to allow them to connect to your cluster.
+If you're using a cluster on {hazelcast-cloud} Dedicated, you need to xref:authorize-connections.adoc[authorize] clients to allow them to connect to your cluster.
 
 [[download]]
 == Using a Preconfigured Client
 
 Your cluster comes with a downloadable client that's preconfigured to connect to your cluster.
 
-. Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console,window=_blank] and select your cluster.
+. Sign into the link:{page-cloud-console}[{hazelcast-cloud} console,window=_blank] and select your cluster.
 . Click *Connect Client*.
 . Select a client.
 . Follow the on-screen instructions.
@@ -42,6 +42,8 @@ You can download and configure the following clients yourself:
 
 - link:https://github.com/hazelcast/hazelcast-packaging[CLI client]
 
+- link:https://docs.hazelcast.com/clc/latest/overview[CLC client]
+
 include::partial$get-connection-creds.adoc[]
 
 [[sql]]
@@ -49,7 +51,7 @@ include::partial$get-connection-creds.adoc[]
 
 You can open a SQL shell in your cluster and submit SQL queries directly from your web browser.
 
-. Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console,window=_blank] and select your cluster.
+. Sign into the link:{page-cloud-console}[{hazelcast-cloud} console,window=_blank] and select your cluster.
 
 . Go to *SQL*.
 . Enter your SQL queries.
@@ -67,5 +69,7 @@ xref:developer-guide.adoc[].
 - link:http://hazelcast.github.io/hazelcast-csharp-client/latest/doc/index.html[.NET client]
 
 - link:https://github.com/hazelcast/hazelcast-packaging[CLI client]
+
+- link:https://docs.hazelcast.com/clc/latest/overview[CLC client]
 
 - xref:management-center:tools:sql-browser.adoc[SQL Browser].

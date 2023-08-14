@@ -1,20 +1,19 @@
-= Creating a {hazelcast-cloud} Serverless Cluster
+= Creating a {hazelcast-cloud} Standard Cluster
 :description: You can create a cluster for development or production.
 :page-aliases: create-starter-cluster.adoc, starter-clusters.adoc, create-standard-cluster.adoc, availability-zones.adoc, instance-types.adoc
-:page-serverless: true
 :cloud-tags: Manage Clusters
-:cloud-title: Creating Serverless Clusters
+:cloud-title: Creating Standard Clusters
 :cloud-order: 51
 
 {description}
 
 == Before you Begin
 
-You need a xref:create-account.adoc[Hazelcast {hazelcast-cloud} account].
+You need a xref:create-account.adoc[{hazelcast-cloud} account].
 
 To create a cluster, you must add a xref:payment-methods.adoc[payment card] to your account.
 
-== Using the Hazelcast {hazelcast-cloud} Console
+== Using the {hazelcast-cloud} Console
 
 [tabs] 
 ====
@@ -24,7 +23,7 @@ Development cluster::
 To create a development cluster, do the following:
 
 // tag::development[]
-. Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console,window=_blank].
+. Sign into the link:{page-cloud-console}[{hazelcast-cloud} console,window=_blank].
 . Click *Create New Cluster*.
 . Click *Create Cluster*.
 . Select *Development*.
@@ -41,7 +40,7 @@ Production cluster::
 To create a production cluster, do the following:
 
 // tag::production[]
-. Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console, window=blank].
+. Sign into the link:{page-cloud-console}[{hazelcast-cloud} console, window=blank].
 . Click *Create New Cluster*.
 . Click *Create Cluster*.
 . Click *Production*.

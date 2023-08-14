@@ -1,6 +1,5 @@
 = Streaming Cluster Logs
-:page-serverless: true
-:description: You can stream the last 1,000 lines of your cluster logs, using the Maven plugin.
+:description: From a {hazelcast-cloud} Standard cluster, you can stream the last 1,000 lines of your cluster logs, using the Maven plugin.
 
 {description}
 

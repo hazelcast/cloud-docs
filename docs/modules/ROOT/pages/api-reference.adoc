@@ -1,7 +1,7 @@
 = API Reference
 :url-graphql: https://graphql.org/
 
-IMPORTANT: The GraphQL API is deprecated and no longer maintained. You can continue to use it with legacy clusters, but it does not support Hazelcast {hazelcast-cloud} clusters.
+IMPORTANT: The GraphQL API is deprecated and no longer maintained. You can continue to use it with legacy clusters, but it does not support {hazelcast-cloud} clusters.
 
 link:{page-url-cloud-api}[Go to the GraphQL Explorer]
 
@@ -24,7 +24,7 @@ query {
 
 === Regions
 
-Regions are geographic locations of where your cloud resources are located. Different cloud providers support different regions. Also, there may be some regions that we don't support yet. So that you need to check available regions before creating a Hazelcast Cluster on Hazelcast Cloud from our GraphQL API with `query regions`.
+Regions are geographic locations of where your cloud resources are located. Different cloud providers support different regions. Also, there may be some regions that we don't support yet. So that you need to check available regions before creating a cluster on {hazelcast-cloud} from our GraphQL API with `query regions`.
 
 [source,shell]
 ----

@@ -1,4 +1,4 @@
-= Migrating an Embedded Application to Hazelcast {hazelcast-cloud}
+= Migrating an Embedded Application to {hazelcast-cloud}
 :description: To migrate an existing application from embedded Hazelcast, you need to <<refactor, refactor your code>> as well as consider how you <<migrate, migrate any existing data to the cloud>>.
 :page-aliases: data-migration.adoc
 
@@ -8,25 +8,25 @@ TIP: For the benefits of migrating your application from an embedded topology to
 
 == Refactoring Code for the Cloud
 
-Applications in Hazelcast {hazelcast-cloud} are split into two parts:
+Applications in {hazelcast-cloud} are split into two parts:
 
-- The cluster that runs on the Hazelcast {hazelcast-cloud} Managed Services.
+- The cluster that runs on the Hazelcast {hazelcast-cloud}.
 
 - The client that calls APIs on cluster.
 
-image::ROOT:serverless-app-server.svg[A Hazelcast client application communicating with a Hazelcast {hazelcast-cloud} cluster]
+image::ROOT:serverless-app-server.svg[A Hazelcast client application communicating with a {hazelcast-cloud} cluster]
 
 To separate your embedded application into these two parts, see the following checklist:
 
-- [ ] Deploy xref:cluster-side-modules.adoc[cluster-side modules] to Hazelcast {hazelcast-cloud}. If you use classes such as MapStore or an entry processor, or if you store custom objects in Hazelcast, you need to add those classes to the classpath of the cluster by deploying them as cluster-side modules.
+- [ ] Deploy xref:cluster-side-modules.adoc[cluster-side modules] to {hazelcast-cloud}. If you use classes such as MapStore or an entry processor, or if you store custom objects in Hazelcast, you need to add those classes to the classpath of the cluster by deploying them as cluster-side modules.
 
-- [ ] Copy any data structure configuration over to Hazelcast {hazelcast-cloud}. Data structures are configured in the Hazelcast {hazelcast-cloud} console.
+- [ ] Copy any data structure configuration over to {hazelcast-cloud}. Data structures are configured in the Hazelcast {hazelcast-cloud} console.
 
 +
 [WARNING]
 .Heap memory limits
 ====
-{hazelcast-cloud} Serverless clusters have the following heap memory limits:
+{hazelcast-cloud} Standard clusters have the following heap memory limits:
 
 * Production clusters: 1 GB memory per cluster member
 * Development clusters: 300 MB per cluster
@@ -35,12 +35,12 @@ Exceeding these limits can lead to cluster failure.
 
 Be aware that the following operations use heap memory: writing, caching, or replicating data to data structures other than IMap an JCache. 
 
-See xref:serverless-cluster.adoc#heap-memory-limits-of-viridian-serverless-clusters[Heap Memory Limits of {hazelcast-cloud} Serverless Clusters] for further details.
+See xref:serverless-cluster.adoc#heap-memory-limits-of-viridian-serverless-clusters[Heap Memory Limits of {hazelcast-cloud} Standard Clusters] for further details.
 ====
 
 - [ ] Remove member configuration from your code. Hazelcast configures the cluster for the best possible performance. All you need to do is configure the client and any data structures.
 
-- [ ] If you use the executor service, make sure that you are using the ‘default’ service in both uploaded executor services and client code. You cannot access named executor services in Hazelcast {hazelcast-cloud}. 
+- [ ] If you use the executor service, make sure that you are using the 'default' service in both uploaded executor services and client code. You cannot access named executor services in {hazelcast-cloud}. 
 
 - [ ] Replace any instance of
 `HazelcastInstance

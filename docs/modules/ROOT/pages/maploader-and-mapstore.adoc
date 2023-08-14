@@ -23,12 +23,12 @@ The following steps describe the workflow for developing a MapStore:
 [[implement]]
 == Implementing a MapStore
 
-To implement a MapStore for Hazelcast {hazelcast-cloud}, you can mostly xref:hazelcast:data-structures:working-with-external-data.adoc[follow the reference in the Hazelcast Platform documentation]. However, you must make sure to manage the lifecycle of the MapStore. When the cluster loads the MapStore, it makes a connection to the external data store. If open connections are left open, these connections will consume unnecessary resources. To manage this connection, make sure to implement the link:https://docs.hazelcast.org/docs/latest/javadoc/com/hazelcast/map/MapLoaderLifecycleSupport.html[`MapLoaderLifeCycleSupport` interface] to allow the cluster to close connections to the data store on a graceful shutdown.
+To implement a MapStore for {hazelcast-cloud}, you can mostly xref:hazelcast:data-structures:working-with-external-data.adoc[follow the Hazelcast Platform documentation]. However, you must make sure to manage the lifecycle of the MapStore. When the cluster loads the MapStore, it makes a connection to the external data store. If open connections are left open, these connections will consume unnecessary resources. To manage this connection, make sure to implement the link:https://docs.hazelcast.org/docs/latest/javadoc/com/hazelcast/map/MapLoaderLifecycleSupport.html[`MapLoaderLifeCycleSupport` interface] to allow the cluster to close connections to the data store on a graceful shutdown.
 
 [[test]]
 == Testing a MapStore
 
-Before you deploy the MapStore to Hazelcast {hazelcast-cloud}, you should test the MapStore for the following:
+Before you deploy the MapStore to {hazelcast-cloud}, you should test the MapStore for the following:
 
 - The MapStore connects to the data store without errors. Your data source should accept incoming connections from your {hazelcast-cloud} cluster.
 - Operations on the map trigger your MapStore implementations. For a list of operations that trigger the MapStore, see the xref:hazelcast:data-structures:working-with-external-data.adoc#map-mapstore[Hazelcast Platform documentation]. You can xref:connect-to-cluster.adoc[use one of the available clients] to invoke map operations.
@@ -43,9 +43,9 @@ Before you can configure the MapStore, you need to deploy it by packaging your c
 [[configure]]
 == Configuring a MapStore
 
-To use a MapStore, it must be configured for a specific map in Hazelcast {hazelcast-cloud}. When a map is configured with a MapStore, Hazelcast plugs the MapStore implementation into the lifecycle of the map so that the MapStore is triggered when certain map operations are invoked.
+To use a MapStore, it must be configured for a specific map in {hazelcast-cloud}. When a map is configured with a MapStore, Hazelcast plugs the MapStore implementation into the lifecycle of the map so that the MapStore is triggered when certain map operations are invoked.
 
-. Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console,window=_blank] and select your cluster.
+. Sign into the link:{page-cloud-console}[{hazelcast-cloud} console,window=_blank] and select your cluster.
 . Go to *Manage* > *Data Structures*.
 . Click *Add New Configuration*.
 . Configure the map.
@@ -91,6 +91,6 @@ If the name of your MapStore class is different to the one that you want to upda
 
 == Next Steps
 
-For sample projects that use a MapStore in Hazelcast {hazelcast-cloud}, see this link:{url-code-sample-mapstore}[GitHub repository].
+For sample projects that use a MapStore in {hazelcast-cloud}, see this link:{url-code-sample-mapstore}[GitHub repository].
 
 Or, follow a xref:tutorials:ROOT:write-through-cache-serverless-mapstore.adoc[tutorial].

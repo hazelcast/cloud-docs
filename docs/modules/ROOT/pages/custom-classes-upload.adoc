@@ -15,12 +15,12 @@ Clusters expect all modules to be packaged into a single ZIP or JAR file. When y
 You can upload custom classes, using the following options:
 
 - Maven plugin
-- Hazelcast {hazelcast-cloud} console
+- {hazelcast-cloud} console
 
 === Using the Maven Plugin
-[.serverless]*Hazelcast {hazelcast-cloud} Serverless*
+[.serverless]*{hazelcast-cloud} Standard*
 
-. xref:maven-plugin-hazelcast.adoc[Configure the Hazelcast {hazelcast-cloud} Maven plugin] in your `pom.xml` file.
+. xref:maven-plugin-hazelcast.adoc[Configure the {hazelcast-cloud} Maven plugin] in your `pom.xml` file.
 
 . Change into your project's root directory.
 
@@ -30,25 +30,25 @@ You can upload custom classes, using the following options:
 mvn clean package hazelcast-cloud:deploy
 ```
 
-In the output, you should see that the plugin packaged and deployed your JAR to your {hazelcast-cloud} Serverless cluster.
+In the output, you should see that the plugin packaged and deployed your JAR to your {hazelcast-cloud} Standard cluster.
 
-=== Using the Hazelcast {hazelcast-cloud} Console
+=== Using the {hazelcast-cloud} Console
 
-To upload code to Hazelcast {hazelcast-cloud}:
+To upload code to {hazelcast-cloud}:
 
 . Use your build tool such as Gradle or Maven to package the classes into a JAR or ZIP file.
 
-. Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console,window=_blank] and select your cluster.
+. Sign into the link:{page-cloud-console}[{hazelcast-cloud} console,window=_blank] and select your cluster.
 
-. Go to *Manage* > *Custom Classes* and upload your file to Hazelcast {hazelcast-cloud}.
+. Go to *Manage* > *Custom Classes* and upload your file to {hazelcast-cloud}.
 
 When the file is uploaded and ready to use, you will see a success message.
 
 == Removing Cluster-Side Modules
 
-To remove cluster-side modules from the cluster, you must use the Hazelcast {hazelcast-cloud} console.
+To remove cluster-side modules from the cluster, you must use the {hazelcast-cloud} console.
 
-. Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console,window=_blank] and select your cluster.
+. Sign into the link:{page-cloud-console}[{hazelcast-cloud} console,window=_blank] and select your cluster.
 
 . Go to *Manage* > *Custom Classes* and find your class in the list.
 
@@ -56,8 +56,8 @@ To remove cluster-side modules from the cluster, you must use the Hazelcast {haz
 
 == Downloading Cluster-Side Modules
 
-To download a cluster-side module, you must use the Hazelcast {hazelcast-cloud} console.
+To download a cluster-side module, you must use the {hazelcast-cloud} console.
 
-. Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console,window=_blank].
+. Sign into the link:{page-cloud-console}[{hazelcast-cloud} console,window=_blank].
 
 . Go to *Manage* > *Custom Classes*, find your class in the *Uploaded Classes* list and click on it.

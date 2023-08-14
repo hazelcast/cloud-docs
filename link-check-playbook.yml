@@ -51,7 +51,7 @@ asciidoc:
     page-pagination: true
     idprefix: ''
     idseparator: '-'
-    hazelcast-cloud: Viridian
+    hazelcast-cloud: Viridian Cloud
     page-cloud-console: https://viridian.hazelcast.com/
   extensions:
     - ./lib/tabs-block.js
