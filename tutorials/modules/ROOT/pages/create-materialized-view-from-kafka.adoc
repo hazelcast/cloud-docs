@@ -21,7 +21,7 @@ Materialized views are useful for speeding up queries that are repeated. Instead
 
 You need the following:
 
-- A Hazelcast {hazelcast-cloud} cluster. This tutorial assumes that you have a production cluster for xref:cloud:ROOT:create-serverless-cluster.adoc[{hazelcast-cloud} Serverless].
+- A Hazelcast {hazelcast-cloud} cluster. This tutorial assumes that you have a production cluster for xref:cloud:ROOT:create-serverless-cluster.adoc[{hazelcast-cloud} Standard].
 
 - A basic understanding of link:https://hazelcast.com/glossary/kafka/[Kafka].
 
@@ -86,7 +86,7 @@ bin\hz-cli -V
 
 Next, you need to add the credentials that allow the Hazelcast CLI to connect to your cluster.
 
-. Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console, window=blank].
+. Sign into the link:{page-cloud-console}[{hazelcast-cloud} console, window=blank].
 
 . Select the production cluster that you want to use for this tutorial.
 
@@ -148,7 +148,7 @@ image:confluent-cloud-breadcrumbs.png[Breadcrumbs that display the cluster name]
 
 To allow Hazelcast to access the `trades` topic that you created in your Confluent Cloud Kafka cluster, you need to create a mapping to it.
 
-. Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console,window=_blank] and select your cluster.
+. Sign into the link:{page-cloud-console}[{hazelcast-cloud} console,window=_blank] and select your cluster.
 
 . Go to *SQL* in the left navigation to open the SQL browser.
 
@@ -453,7 +453,7 @@ The table is empty, which means your job is no longer running.
 
 == Summary
 
-You've learned how to connect Hazelcast {hazelcast-cloud} to a Confluent Cloud Kafka cluster as well as the following:
+You've learned how to connect {hazelcast-cloud} to a Confluent Cloud Kafka cluster as well as the following:
 
 - How to query streaming data from a Kafka topic.
 - How to enrich streaming data with contextual data and save the results to a materialized view.

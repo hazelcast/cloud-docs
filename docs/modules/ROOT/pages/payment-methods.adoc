@@ -1,5 +1,5 @@
 = Billing and Payments
-:description: When you sign up for a Hazelcast {hazelcast-cloud} account, you need to add a payment card to pay for usage as well as to view how much you've spent.
+:description: When you sign up for a {hazelcast-cloud} account, you need to add a payment card to pay for usage as well as to view how much you've spent.
 :cloud-tags: Manage Accounts | Manage Accounts | Manage Accounts
 :cloud-title: Payments and Billing | Add Payment Card | View Bills
 :cloud-order: 33 | 34 | 35
@@ -8,7 +8,7 @@
 
 {description}
 
-For xref:serverless-cluster.adoc[{hazelcast-cloud} Serverless clusters], you must provide a payment card to create new clusters.
+For xref:serverless-cluster.adoc[{hazelcast-cloud} Standard clusters], you must provide a payment card to create new clusters.
 
 For xref:dedicated-cluster.adoc[{hazelcast-cloud} Dedicated clusters], a wider range of payment options is available, including:
 
@@ -18,11 +18,11 @@ For xref:dedicated-cluster.adoc[{hazelcast-cloud} Dedicated clusters], a wider r
 
 == Adding a Payment Card
 
-To set up automatic payments for your usage, add a payment card to your account. For {hazelcast-cloud} Serverless clusters, you are prompted to add your payment details after signing in for the first time. 
+To set up automatic payments for your usage, add a payment card to your account. For {hazelcast-cloud} Standard clusters, you are prompted to add your payment details after signing in for the first time. 
 
 NOTE: Hazelcast uses a third party to store payment details and process payments. Payment details are not stored in Hazelcast.
 
-. Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console,window=_blank].
+. Sign into the link:{page-cloud-console}[{hazelcast-cloud} console,window=_blank].
 . Go to *Account* > *Billing & Payments*.
 . Click *Add Payment Method*.
 . Complete the form by filling in your payment details.
@@ -31,7 +31,7 @@ You can add only one payment card to your account. To change the payment card, u
 
 == Updating a Payment Card
 
-. Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console,window=_blank].
+. Sign into the link:{page-cloud-console}[{hazelcast-cloud} console,window=_blank].
 . Go to *Account* > *Billing & Payments*.
 . Click *Update Payment Method*.
 . Complete the form by filling in your payment details.
@@ -40,7 +40,7 @@ Your updated card is charged for future payments.
 
 == Removing a Card from your Account
 
-You cannot remove payment cards from your account, using the Hazelcast {hazelcast-cloud} console.
+You cannot remove payment cards from your account, using the {hazelcast-cloud} console.
 
 To remove a payment card from your account, contact us at mailto:support@hazelcast.com[].
 
@@ -48,5 +48,5 @@ To remove a payment card from your account, contact us at mailto:support@hazelca
 
 You can see how much you've spent in the current month as well as how much you spent in previous months.
 
-. Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console,window=_blank].
+. Sign into the link:{page-cloud-console}[{hazelcast-cloud} console,window=_blank].
 . Go to *Account* > *Billing & Payments*.

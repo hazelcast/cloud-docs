@@ -17,7 +17,7 @@ This option provides the easiest way of creating an AWS VPC Peering with your Ha
 
 === Setting Up Your Environment
 
-. Install the link:{page-url-github-cloud-cli}[Hazelcast {hazelcast-cloud} CLI].
+. Install the link:{page-url-github-cloud-cli}[{hazelcast-cloud} CLI].
 
 . Set the following AWS environment variables:
 

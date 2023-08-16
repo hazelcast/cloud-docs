@@ -1,8 +1,8 @@
-= Hazelcast {hazelcast-cloud} Hello World
+= {hazelcast-cloud} Hello World
 :description: In this tutorial, you'll learn how to connect a client to a cluster and use SQL to query data in the cluster.
 :page-aliases: cpp-client.adoc, getting-started.adoc, java-client.adoc, go-client.adoc, net-client.adoc, nodejs-client.adoc, python-client.adoc, sql.adoc
 :cloud-tags: Get Started | Favorites
-:cloud-title: Hello World | Hazelcast Viridian Hello World
+:cloud-title: Hello World | Viridian Cloud Hello World
 :cloud-order: 13 | 0
 
 {description}
@@ -11,31 +11,31 @@
 
 You need the following:
 
-- A xref:create-account.adoc[Hazelcast {hazelcast-cloud} account].
+- A xref:create-account.adoc[{hazelcast-cloud} account].
 - Access to a command prompt such as Terminal for Mac or Powershell for Windows.
 
-== Step 1. Start a {hazelcast-cloud} Serverless Cluster
+== Step 1. Start a Cluster on {hazelcast-cloud} Standard or Trial
 
-If you already have a {hazelcast-cloud} Serverless cluster.
+If you already have a cluster.
 
-. Sign in to the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console,window=_blank]
+. Sign in to the link:{page-cloud-console}[{hazelcast-cloud} console,window=_blank]
 
 . Check that your cluster is running. If it is paused, you'll see the following at the top of the dashboard.
 +
-image:ROOT:paused-cluster.png[This]
+image:ROOT:paused-cluster.png[Paused cluster symbol]
 
 . If you need to restart the cluster, in the *Cluster Details* panel, click *Resume*.
 
 . Click *Connect Client* and go to <<step-2, step 2>>.
 
-To create a new development cluster.
+To create a new development cluster on {hazelcast-cloud} Standard.
 
 include::create-serverless-cluster.adoc[tag=development] 
 
 [[step-2]]
 == Step 2. Connect a Sample Client
 
-To connect to your {hazelcast-cloud} Serverless cluster, you need a Hazelcast client. The cluster comes with sample clients that are preconfigured to connect to your cluster and add some sample data to a map. A map is an in-memory, key/value data structure that is often used as a cache.
+To connect to your {hazelcast-cloud} Standard or Trial cluster, you need a Hazelcast client. The cluster comes with sample clients that are preconfigured to connect to your cluster and add some sample data to a map. A map is an in-memory, key/value data structure that is often used as a cache.
 
 Choose a client and follow the instructions.
 
@@ -69,7 +69,7 @@ Before you begin:
 mvnw.cmd clean compile exec:java@client-with-ssl
 ```
 +
-When you see `Connection Successful!` in the output, the client is successfully connected to your Serverless cluster and populates a `cities` map with data.
+When you see `Connection Successful!` in the output, the client is successfully connected to your cluster on {hazelcast-cloud} and populates a `cities` map with data.
 
 . [[step-5]]To query data in the `cities` map:
 
@@ -101,7 +101,7 @@ Before you begin:
 python3 -m pip install -r requirements.txt && python client_with_ssl.py
 ```
 +
-When you see `Connection Successful!` in the output, the client is successfully connected to your Serverless cluster and populates a `cities` map with data.
+When you see `Connection Successful!` in the output, the client is successfully connected to your cluster on {hazelcast-cloud} and populates a `cities` map with data.
 
 . To query data in the `cities` map:
 
@@ -135,7 +135,7 @@ Before you begin:
 dotnet run --project ClientWithSsl
 ```
 +
-When you see `Connection Successful!` in the output, the client is successfully connected to your Serverless cluster and populates a `cities` map with data.
+When you see `Connection Successful!` in the output, the client is successfully connected to your cluster on {hazelcast-cloud} and populates a `cities` map with data.
 
 . To query data in the `cities` map:
 
@@ -209,7 +209,7 @@ A SQL prompt is displayed:
 sql>
 ```
 +
-The Hazelcast CLI client is successfully connected to your Serverless cluster.
+The Hazelcast CLI client is successfully connected to your cluster on {hazelcast-cloud}.
 
 . [[step-7]]Create a mapping to a new map called `cities`.
 +
@@ -387,7 +387,7 @@ You learned how to connect to a cluster and use SQL to query data in the cluster
 
 == Next Steps
 
-Learn more about Serverless:
+Learn more about {hazelcast-cloud}:
 
 - xref:serverless-cluster.adoc[]
 - xref:developer-guide.adoc[]

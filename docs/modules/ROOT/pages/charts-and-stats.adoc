@@ -1,15 +1,15 @@
 = Charts and Statistics
-:description: You can monitor the performance metrics and status of your clusters, using the console.
+:description: You can monitor the performance metrics and status of your clusters from the cluster dashboard.
 
 {description}
 
 To monitor a cluster:
 
-. Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console,window=_blank] and select your cluster.
+. Sign into the link:{page-cloud-console}[{hazelcast-cloud} console,window=_blank] and select your cluster.
 . Below the *Cluster details* section, charts are grouped into two sections:
 
 ** *Cluster metrics*: Charts for both cluster and client metrics.
-** *Map metrics*: Charts for monitoring maps.
+** *Map metrics*: Charts for monitoring maps. Map metrics are only displayed when a map has been populated.
 
 +
 Charts are updated every 5 seconds. When you hover your mouse cursor onto any chart area, you can see the related value corresponding to the cursor's location.
@@ -20,9 +20,9 @@ NOTE: Metrics may not represent the current state of the cluster. The displayed 
 
 In the *Cluster Metrics* section, you can see the following charts.
 
-=== Cluster Memory Chart
+=== Cluster Used Memory Chart
 
-This chart shows your cluster's memory capacity (`Cluster Max Memory`, the blue line) and the size of currently used memory (`Cluster Used Memory`, the green line). As the green line approaches the blue line, you should think about scaling out. Note that `Cluster Used Memory` is the total amount of memory used for both primary and backup entries. 
+The green line on this chart shows the size of currently used memory. `Cluster Used Memory` is the total amount of memory used for both primary and backup entries. 
 
 === Client Count Chart
 
@@ -30,7 +30,7 @@ This chart shows the number of clients that are connected to your cluster.
 
 == Map Metrics
 
-Below the Cluster Metrics, you see the *Map Metrics* where the charts specific to maps are displayed. You can select the map that you want to monitor from the drop-down just under the Map Metrics heading.
+Below the *Cluster Metrics*, you see the *Map Metrics* where the charts specific to maps are displayed. You can select the map that you want to monitor from the list just under the Map Metrics heading.
 
 In the *Map Metrics* part of the Cluster Details page, you can see the charts described in the below sections.
 

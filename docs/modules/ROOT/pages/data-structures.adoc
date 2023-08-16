@@ -1,5 +1,5 @@
 = Configuring Distributed Data Structures
-:description: Hazelcast offers distributed implementations of common data structures. From the Hazelcast {hazelcast-cloud} console, you can create new custom configurations or modify the default configuration for these data structures.
+:description: Hazelcast offers distributed implementations of common data structures. From the {hazelcast-cloud} console, you can create new custom configurations or modify the default configuration for these data structures.
 :page-aliases: list.adoc, multimap.adoc, reliable-topic.adoc, replicated-map.adoc, ringbuffer.adoc, set.adoc, topic.adoc
 
 {description}

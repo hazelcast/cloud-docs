@@ -1,4 +1,4 @@
-= Management Center for Hazelcast {hazelcast-cloud}
+= Management Center for {hazelcast-cloud}
 :description: You can use Management Center to monitor your cluster. Management Center allows you to view insights about cluster state, data structure metrics, and other metrics.
 
 {description}
@@ -7,7 +7,7 @@
 
 To open Management Center, do the following:
 
-. Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console,window=_blank] and select your cluster.
+. Sign into the link:{page-cloud-console}[{hazelcast-cloud} console,window=_blank] and select your cluster.
 
 . In *Cluster details*, click *Management Center*.
 
