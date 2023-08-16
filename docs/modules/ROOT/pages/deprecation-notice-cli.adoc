@@ -3,7 +3,7 @@
 .CLI Client is Changing
 ====
 
-From 21 August 2023, the xref:clc:ROOT:overview.adoc[Hazelcast Command-Line Client (CLC)] will replace Hazelcast CLI in all Hazelcast {hazelcast-cloud} environments. Hazelcast CLC introduces a new set of commands specially designed for connecting to and managing your {hazelcast-cloud} clusters.
+From 31 August 2023, the xref:clc:ROOT:overview.adoc[Hazelcast Command-Line Client (CLC)] will replace Hazelcast CLI in all Hazelcast {hazelcast-cloud} environments. Hazelcast CLC introduces a new set of commands specially designed for connecting to and managing your {hazelcast-cloud} clusters.
 
 ==== 
 
