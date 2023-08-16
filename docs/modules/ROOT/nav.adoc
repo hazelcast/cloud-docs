@@ -8,6 +8,16 @@
 
 .Develop Applications
 * xref:developer-guide.adoc[Developer Guide]
+* xref:connector-wizard.adoc[Connector Wizard]
+** xref:kafka-connections.adoc[Kafka Data Connections]
+*** xref:create-kafka-connection.adoc[Create a Data Connection]
+*** xref:add-kafka-mapping.adoc[Add a Mapping]
+*** xref:delete-kafka-connection.adoc[Delete a Data Connection]
+** xref:postgres-connections.adoc[PostgreSQL Data Connections]
+*** xref:create-postgres-connection.adoc[Create a Data Connection]
+*** xref:add-postgres-mapping.adoc[Add a Mapping]
+*** xref:delete-postgres-connection.adoc[Delete a Data Connection]
+** xref:imap-connections.adoc[IMap Mappings]
 * xref:connect-to-cluster.adoc[Connect to a Cluster]
 * xref:cluster-side-modules.adoc[Cluster-Side Modules]
 ** xref:maploader-and-mapstore.adoc[MapStore]
