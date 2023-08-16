@@ -70,6 +70,8 @@ mvnw.cmd clean compile exec:java@client-with-ssl
 ```
 +
 When you see `Connection Successful!` in the output, the client is successfully connected to your cluster on {hazelcast-cloud} and populates a `cities` map with data.
++
+NOTE: The functionality described in the following steps is not currently available in {hazelcast-cloud} Trial.
 
 . [[step-5]]To query data in the `cities` map:
 
@@ -102,6 +104,8 @@ python3 -m pip install -r requirements.txt && python client_with_ssl.py
 ```
 +
 When you see `Connection Successful!` in the output, the client is successfully connected to your cluster on {hazelcast-cloud} and populates a `cities` map with data.
++
+NOTE: The functionality described in the following steps is not currently available in {hazelcast-cloud} Trial.
 
 . To query data in the `cities` map:
 
@@ -136,6 +140,8 @@ dotnet run --project ClientWithSsl
 ```
 +
 When you see `Connection Successful!` in the output, the client is successfully connected to your cluster on {hazelcast-cloud} and populates a `cities` map with data.
++
+NOTE: The functionality described in the following steps is not currently available in {hazelcast-cloud} Trial.
 
 . To query data in the `cities` map:
 
