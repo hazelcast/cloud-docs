@@ -1,6 +1,6 @@
 = Creating a Data Connection to PostgreSQL
 :description: You can create a data connection to any cloud-based PostgreSQL database instance. 
-:cloud-tags: Manage Data
+:cloud-tags: Develop Applications
 :cloud-title: Creating a Data Connection to Kafka
 :cloud-order: 67
 

@@ -1,6 +1,6 @@
 = Adding a Mapping to a Kafka Data Connection
 :description: You can only add a new mapping to an existing Kafka data connection. You cannot update an existing mapping or data connection using the connector wizard.
-:cloud-tags: Manage Data
+:cloud-tags: Develop Applications
 :cloud-title: Adding a Mapping to a Kafka Data Connection
 :cloud-order: 64
 
