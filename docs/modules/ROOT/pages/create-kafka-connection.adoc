@@ -1,6 +1,6 @@
 = Creating a Data Connection to Kafka
 :description: You can create a data connection to a Kafka topic on any cloud-based Kafka cluster.
-:cloud-tags: Manage Data
+:cloud-tags: Develop Applications
 :cloud-title: Creating a Data Connection to Kafka
 :cloud-order: 63
 

@@ -1,6 +1,6 @@
 = Connector Wizard for {hazelcast-cloud}
 :description: Hazelcast {hazelcast-cloud} has a built-in connector wizard, which simplifies the process of connecting to external data sources. For supported platforms, the connector wizard removes the need to write or install a platform-specific connector.
-:cloud-tags: Manage Data
+:cloud-tags: Develop Applications
 :cloud-title: About the Connector Wizard
 :cloud-order: 61
 
