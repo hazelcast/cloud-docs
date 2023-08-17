@@ -22,7 +22,3 @@ You can also set up your own data connections to the following platforms in SQL 
 
 * xref:hazelcast:data-connections:data-connections-configuration.adoc#JDBC[MySQL using a JDBC connection]
 * xref:hazelcast:data-connections:data-connections-configuration.adoc#Mongo[MongoDB]
-
-
-
-- xref:hazelcast:clients:java.adoc#configuring-java-client[Java client]
