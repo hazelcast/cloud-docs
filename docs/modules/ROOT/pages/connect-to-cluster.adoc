@@ -13,6 +13,8 @@ You can do the following to connect to the cluster:
 - Use <<advanced, advanced setup>> to configure your own client.
 - Use the <<sql,SQL browser>> in Management Center.
 
+include::deprecation-notice-cli.adoc[tag=deprecation-notice-cli]
+
 == Before you Begin
 
 If you're using a cluster on {hazelcast-cloud} Dedicated, you need to xref:authorize-connections.adoc[authorize] clients to allow them to connect to your cluster.
