@@ -90,9 +90,9 @@ Next, you need to add the credentials that allow the Hazelcast CLI to connect to
 
 . Select the production cluster that you want to use for this tutorial.
 
-. In *Cluster Details*, click *Connect Client*.
+. In *Cluster Details*, click the SQL icon next to *Connect Client*.
 
-. In the *Quick Connection Guide*, click the SQL icon and then click *Download*.
+. In the *Quick Connection Guide*, click *Download*.
 
 . Extract the ZIP file and copy all the files into the root directory where Hazelcast Enterprise is installed.
 
