@@ -20,5 +20,9 @@ The connector wizard currently supports connections to the following platforms:
 
 You can also set up your own data connections to the following platforms in SQL or programmatically:
 
-* xref:hazelcast:data-connections:data-connections-configurations.adoc#JDBC[MySQL using a JDBC connection]
-* xref:hazelcast:data-connections:data-connections-configurations.adoc#Mongo[MongoDB]
+* xref:hazelcast:data-connections:data-connections-configuration.adoc#JDBC[MySQL using a JDBC connection]
+* xref:hazelcast:data-connections:data-connections-configuration.adoc#Mongo[MongoDB]
+
+
+
+- xref:hazelcast:clients:java.adoc#configuring-java-client[Java client]
