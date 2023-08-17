@@ -10,5 +10,6 @@ To start developing applications for {hazelcast-cloud}, see the following topics
 
 * xref:connect-to-cluster.adoc[]
 * xref:cluster-side-modules.adoc[]
+* xref:connector-wizard.adoc[]
 * xref:logging.adoc[]
 * xref:tools.adoc[]
