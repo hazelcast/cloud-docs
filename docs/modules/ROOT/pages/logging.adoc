@@ -7,9 +7,9 @@
 
 {description}
 
-== Logs for {hazelcast-cloud} Serverless Clusters
+== Logs for {hazelcast-cloud} Standard Clusters
 
-To view logs for {hazelcast-cloud} Serverless clusters, you can use the following options:
+To view logs for {hazelcast-cloud} Standard clusters, you can use the following options:
 
 - xref:stream-logs.adoc[Stream logs from a single cluster].
 - xref:download-logs.adoc[Download logs from all clusters].

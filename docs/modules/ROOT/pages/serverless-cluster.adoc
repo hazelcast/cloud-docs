@@ -1,20 +1,19 @@
-= {hazelcast-cloud} Serverless Clusters
-:description: Serverless is a managed cloud service that offers a pay-as-you-go pricing model. Serverless clusters auto-scale to provide the resources that your application needs. You pay only for the resources that your application consumes.
+= {hazelcast-cloud} Standard Clusters
+:description: {hazelcast-cloud} Standard is a managed cloud service that offers a pay-as-you-go pricing model. Standard clusters auto-scale to provide the resources that your application needs. You pay only for the resources that your application consumes.
 :toc-levels: 3
 :page-aliases: architecture.adoc
-:page-serverless: true
 :cloud-tags: Get Started
-:cloud-title: About Serverless
+:cloud-title: About Standard
 :cloud-order: 11
 
 {description}
 
-Serverless means that Hazelcast manages the cloud infrastructure for you. Each {hazelcast-cloud} Serverless cluster is an independent deployment of Hazelcast Platform in a Kubernetes container. This design guarantees resource isolation, prevents resource stealing, and provides isolated network access.
+Standard means that Hazelcast manages the cloud infrastructure for you. Each {hazelcast-cloud} Standard cluster is an independent deployment of Hazelcast Platform in a Kubernetes container. This design guarantees resource isolation, prevents resource stealing, and provides isolated network access.
 
-== {hazelcast-cloud} Serverless Cluster Types
+== {hazelcast-cloud} Standard Cluster Types
 
 // tag::types[]
-{hazelcast-cloud} Serverless clusters come in two types:
+{hazelcast-cloud} Standard clusters come in two types:
 
 - *Development:* Capped storage. You can store at most 0.5 GiB of data.
 - *Production:* Uncapped storage. The cluster scales as you add or remove data.
@@ -70,7 +69,7 @@ Although you can configure some xref:data-structures.adoc[data structures] with 
 
 For example, if you configure a map with five backups, but your cluster has only two members, you will have one effective backup. You need to add enough data to the cluster so that it automatically scales up the number of members and backups to your configured count of five. 
 
-== Restrictions on {hazelcast-cloud} Serverless Clusters
+== Restrictions on {hazelcast-cloud} Standard Clusters
 
 Development clusters and production clusters are xref:stop-and-resume.adoc#pausing-a-cluster[paused] when you don't connect to them cluster for 24 hours.
 
@@ -78,9 +77,9 @@ If you're using a production cluster, Hazelcast saves your cluster data so that 
 
 If you're using a development cluster, all cluster data is lost after the cluster is paused.
 
-== Charges for {hazelcast-cloud} Serverless Clusters
+== Charges for {hazelcast-cloud} Standard Clusters
 
-{hazelcast-cloud} Serverless clusters are billed monthly only for the amount of storage that you use. You pay for all artifacts that are stored, which includes data, metadata, and custom code. For example, as well as the data that you add to data structures, such as maps, you are charged for backups and metadata.
+{hazelcast-cloud} Standard clusters are billed monthly only for the amount of storage that you use. You pay for all artifacts that are stored, which includes data, metadata, and custom code. For example, as well as the data that you add to data structures, such as maps, you are charged for backups and metadata.
 
 Additional memory usage is also charged for, and may include the following:
 

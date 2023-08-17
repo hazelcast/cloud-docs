@@ -1,13 +1,23 @@
 .Get Started
 * xref:overview.adoc[]
-** xref:serverless-cluster.adoc[]
-** xref:dedicated-cluster.adoc[]
-* xref:free-trial.adoc[Viridian Trial]
+** xref:free-trial.adoc[Trial]
+** xref:serverless-cluster.adoc[Standard]
+** xref:dedicated-cluster.adoc[Dedicated]
 * xref:get-started.adoc[Hello World]
 * xref:tutorials.adoc[Tutorials]
 
 .Develop Applications
 * xref:developer-guide.adoc[Developer Guide]
+* xref:connector-wizard.adoc[Connector Wizard]
+** xref:kafka-connections.adoc[Kafka Data Connections]
+*** xref:create-kafka-connection.adoc[Create a Data Connection]
+*** xref:add-kafka-mapping.adoc[Add a Mapping]
+*** xref:delete-kafka-connection.adoc[Delete a Data Connection]
+** xref:postgres-connections.adoc[PostgreSQL Data Connections]
+*** xref:create-postgres-connection.adoc[Create a Data Connection]
+*** xref:add-postgres-mapping.adoc[Add a Mapping]
+*** xref:delete-postgres-connection.adoc[Delete a Data Connection]
+** xref:imap-connections.adoc[IMap Mappings]
 * xref:connect-to-cluster.adoc[Connect to a Cluster]
 * xref:cluster-side-modules.adoc[Cluster-Side Modules]
 ** xref:maploader-and-mapstore.adoc[MapStore]
@@ -26,7 +36,7 @@
 
 .Manage Clusters
 * xref:create-clusters.adoc[Create]
-** xref:create-serverless-cluster.adoc[Create a Serverless Cluster]
+** xref:create-serverless-cluster.adoc[Create a Standard Cluster]
 ** xref:create-dedicated-cluster.adoc[Create a Dedicated Cluster]
 * xref:authorize-connections.adoc[Authorize]
 ** xref:ip-white-list.adoc[IP Whitelist]

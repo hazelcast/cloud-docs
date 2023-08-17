@@ -1,0 +1,31 @@
+= Adding a Mapping to a PostgreSQL Data Connection
+:description: You can only add a new mapping to an existing PostgreSQL data connection. You cannot update an existing mapping or data connection using the connector wizard.
+:cloud-tags: Develop Applications
+:cloud-title: Adding a Mapping to a PostgreSQL Data Connection
+:cloud-order: 68
+
+{description}
+
+== Adding a New Mapping to a Data Connection
+
+// tag::new-mapping-start[]
+. Sign into the link:{page-cloud-console}[{hazelcast-cloud} console, window=blank].
+. Select the cluster where the existing data connection is saved.
+. In the left navigation, select *SQL* to open the SQL browser.
+. In the *Data Explorer*, click *Connector Wizard*.
+. Select the *Existing Connections* tab and find the data connection you need to update.
+. Click *Create a New Mapping* next to it.
+. Enter a unique name for your mapping.
+// end::new-mapping-start[]
+. From the *Choose Table* list, select the database table that you want to query. All table names are listed using the following format: “schema”.”table name”.
+. Click *Next Step*.
+. Enter the field names and associated data types from the database table that you might want to query. Choose the most appropriate data type if an exact match is not available.
+// tag::new-mapping-end[]
+. Click *Generate Mapping Command* to generate the SQL required to create the new mapping and to add it to your data connection.
+. Click *Confirm & Run* to start to query your data in the SQL browser.  
+// end::new-mapping-end[]
+
+== Related Resources
+
+* xref:create-postgres-connection.adoc[Creating a Data Connection to PostgreSQL]
+* xref:delete-postgres-connection.adoc[Deleting a Data Connection to PostgreSQL]

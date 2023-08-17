@@ -1,0 +1,24 @@
+= Connector Wizard for {hazelcast-cloud}
+:description: Hazelcast {hazelcast-cloud} has a built-in connector wizard, which simplifies the process of connecting to external data sources. For supported platforms, the connector wizard removes the need to write or install a platform-specific connector.
+:cloud-tags: Develop Applications
+:cloud-title: About the Connector Wizard
+:cloud-order: 61
+
+{description}
+
+The connector wizard helps you to set up, test, and save a secure data connection to a data source or sink from a {hazelcast-cloud} cluster. It also guides you through the process of creating a mapping to selected data resources. The mapping allows you to query any of the selected data using SQL.
+
+From the connector wizard, you can also add mappings to existing data connections.
+
+== Supported Connections
+
+The connector wizard currently supports connections to the following platforms:
+
+* xref:kafka-connections.adoc[Kafka]
+* xref:postgres-connections.adoc[PostgreSQL]
+* xref:imap-connections.adoc[Hazelcast IMap] - This connector makes it easier to create mappings to IMaps already  written to a {hazelcast-cloud} cluster.
+
+You can also set up your own data connections to the following platforms in SQL or programmatically:
+
+* xref:hazelcast:data-connections:data-connections-configurations.adoc#JDBC[MySQL using a JDBC connection]
+* xref:hazelcast:data-connections:data-connections-configurations.adoc#Mongo[MongoDB]

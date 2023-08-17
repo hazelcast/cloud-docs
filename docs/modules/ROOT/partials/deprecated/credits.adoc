@@ -10,6 +10,6 @@ To manage credits for a team, you must have either an xref:create-account.adoc#r
 . Click *Credits*.
 . Enter a promo code and click *Redeem*.
 
-When you are running low on credits you will receive an email notification.
+When you are running low on credits, you will receive an email notification.
 
 When you have no credits, and no payment method set up in your account, your clusters will be stopped.

@@ -1,0 +1,13 @@
+= Deleting a Data Connection to Kafka
+:description: You can delete a data connection if you no longer need it, or if you need to recreate the data connection with different details. This functionality is not currently available in the connector wizard but you can use SQL instead.
+:cloud-tags: Develop Applications
+:cloud-title: Deleting a Data Connection to Kafka
+:cloud-order: 65
+
+{description}
+
+include::delete-postgres-connection.adoc[tag=delete-connection]
+
+== Related Resources
+- xref:create-kafka-connection.adoc[Creating a Data Connection to Kafka]
+- xref:add-kafka-mapping.adoc[Adding a Mapping to a Kafka Data Connection]

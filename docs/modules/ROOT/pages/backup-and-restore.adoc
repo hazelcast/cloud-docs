@@ -7,11 +7,11 @@
 
 include::partial$cluster-data.adoc[]
 
-{hazelcast-cloud} Serverless production clusters create a backup automatically once every 24 hours, and when they are xref:stop-and-resume.adoc#pausing-a-cluster[paused].
+Production clusters on {hazelcast-cloud} Standard create a backup automatically once every 24 hours, and when they are xref:stop-and-resume.adoc#pausing-a-cluster[paused].
 
 == Creating a Backup
 
-. Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console,window=_blank] and select your cluster.
+. Sign into the link:{page-cloud-console}[{hazelcast-cloud} console,window=_blank] and select your cluster.
 
 . Go to *Manage* > *Backups*.
  
@@ -25,7 +25,7 @@ You can keep at most 10 backups. The oldest backup will be deleted automatically
 
 When you have at least one backup, you can use it to bootstrap a new cluster. The new cluster is created using the xref:release-notes.adoc[current Hazelcast version].
 
-. Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console,window=_blank] and select your cluster.
+. Sign into the link:{page-cloud-console}[{hazelcast-cloud} console,window=_blank] and select your cluster.
 
 . Go to *Manage* > *Backups*.
 

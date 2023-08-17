@@ -11,6 +11,12 @@ You can use any available client library to connect to Hazelcast {hazelcast-clou
 
 See link:https://hazelcast.com/clients/[Clients and Languages].
 
+== Connector Wizard for {hazelcast-cloud}
+
+Hazelcast {hazelcast-cloud} has a built-in connector wizard, which simplifies the process of connecting to external data sources.
+
+See xref:connector-wizard.adoc[Connector Wizard].
+
 == Hazelcast {hazelcast-cloud} CLI
 
 Hazelcast {hazelcast-cloud} CLI is a command-line tool for creating and managing {hazelcast-cloud} clusters.
@@ -19,9 +25,9 @@ See the documentation on link:{page-url-github-cloud-cli}[GitHub].
 
 include::deprecation-notice-cli.adoc[tag=deprecation-notice-cli]
 
-== Maven Plugin for {hazelcast-cloud} Serverless
+== Maven Plugin for {hazelcast-cloud} Standard
 
-The Maven plugin for {hazelcast-cloud} Serverless is a Java development tool for testing and deploying cluster-side modules on {hazelcast-cloud} Serverless clusters.
+The Maven plugin for {hazelcast-cloud} Standard is a Java development tool for testing and deploying cluster-side modules on {hazelcast-cloud} Standard clusters.
 
 See xref:maven-plugin-hazelcast.adoc[].
 

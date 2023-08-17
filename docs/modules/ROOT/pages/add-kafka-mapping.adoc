@@ -1,0 +1,21 @@
+= Adding a Mapping to a Kafka Data Connection
+:description: You can only add a new mapping to an existing Kafka data connection. You cannot update an existing mapping or data connection using the connector wizard.
+:cloud-tags: Develop Applications
+:cloud-title: Adding a Mapping to a Kafka Data Connection
+:cloud-order: 64
+
+{description}
+
+== Adding a New Mapping to a Data Connection
+
+include::add-postgres-mapping.adoc[tag=new-mapping-start]
+. From the *Choose Topic* list, select the Kafka topic that you want to query. All topic names are listed using the following format: “topic name”.
+. Click *Next Step*.
+. Select the key/value format for the message data in your Kafka topic.
+. Enter the field names and associated data types for the message data that you want to query. Choose the most appropriate data type if an exact match is not available.
+include::add-postgres-mapping.adoc[tag=new-mapping-end]
+
+== Related Resources
+
+* xref:create-kafka-connection.adoc[Creating a Data Connection to Kafka]
+* xref:delete-kafka-connection.adoc[Deleting a Data Connection to Kafka]

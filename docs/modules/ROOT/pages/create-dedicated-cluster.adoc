@@ -1,6 +1,6 @@
-= Creating a {hazelcast-cloud} Dedicated Cluster
+= Creating a {hazelcast-cloud} Dedicated Cluster 
 :page-dedicated: true
-:description: You can create a Dedicated cluster by providing your resource requirements and choosing how to host your cluster. You have the option of cloud providers, regions, machine types, and more.
+:description: You can create a cluster on {hazelcast-cloud} Dedicated by providing your resource requirements and choosing how to host your cluster. You have the option of regions, machine types, and more.
 :page-aliases: enterprise-clusters.adoc, create-enterprise-cluster.adoc
 :cloud-tags: Manage Clusters
 :cloud-title: Creating Dedicated Clusters
@@ -10,7 +10,7 @@
 
 == Before you Begin
 
-You need a xref:create-account.adoc[Hazelcast {hazelcast-cloud} account].
+You need a xref:create-account.adoc[{hazelcast-cloud} account].
 
 Consider the following requirements:
 
@@ -19,11 +19,11 @@ Consider the following requirements:
 
 If you give your cluster too few resources, your cluster may fail under heavy load and cause an outage. If you give your cluster too many resources, you waste money on servers that are just sitting idle.
 
-== Using the Hazelcast {hazelcast-cloud} Console
+== Using the {hazelcast-cloud} Console
 
-To request a {hazelcast-cloud} Dedicated cluster, do the following:
+To request a cluster on {hazelcast-cloud} Dedicated, do the following:
 
-. Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console,window=_blank].
+. Sign into the link:{page-cloud-console}[{hazelcast-cloud} console,window=_blank].
 . Go to *Plans* > *Dedicated* in the left navigation.
 . Complete the form and click *Get in touch*.
 
