@@ -12,7 +12,6 @@
 ** xref:ip-white-list.adoc[IP Whitelist]
 * xref:developer.adoc[API keys]
 
-
 .Develop Applications
 * xref:connect-to-cluster.adoc[Connect to a Cluster]
 * xref:connector-wizard.adoc[Connector Wizard]
