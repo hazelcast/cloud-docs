@@ -8,7 +8,7 @@
 
 The connector wizard helps you to set up, test, and save a secure data connection to a data source or sink from a {hazelcast-cloud} cluster. It also guides you through the process of creating a mapping to selected data resources. The mapping allows you to query any of the selected data using SQL.
 
-From the connector wizard, you can also add mappings to existing data connections.
+From the connector wizard, you can also add mappings to existing data connections and run guided demos.
 
 == Supported Connections
 
