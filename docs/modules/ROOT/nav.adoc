@@ -14,6 +14,9 @@
 
 .Develop Applications
 * xref:connect-to-cluster.adoc[Connect to a Cluster]
+* xref:cluster-side-modules.adoc[Cluster-Side Modules]
+** xref:maploader-and-mapstore.adoc[MapStore]
+** xref:custom-classes-upload.adoc[Deploy Modules]
 * xref:connector-wizard.adoc[Connector Wizard]
 ** xref:kafka-connections.adoc[Kafka Data Connections]
 *** xref:create-kafka-connection.adoc[Create a Data Connection]
@@ -24,9 +27,7 @@
 *** xref:add-postgres-mapping.adoc[Add a Mapping]
 *** xref:delete-postgres-connection.adoc[Delete a Data Connection]
 ** xref:imap-connections.adoc[IMap Mappings]
-* xref:cluster-side-modules.adoc[Cluster-Side Modules]
-** xref:maploader-and-mapstore.adoc[MapStore]
-** xref:custom-classes-upload.adoc[Deploy Modules]
+* xref:execute-sql-queries.adoc[Execute SQL Queries]
 * xref:logging.adoc[Logging]
 ** xref:stream-logs.adoc[Stream Logs]
 ** xref:download-logs.adoc[Download Logs]
