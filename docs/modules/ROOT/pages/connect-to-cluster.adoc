@@ -58,6 +58,8 @@ You can open a SQL shell in your cluster and submit SQL queries directly from yo
 . Go to *SQL*.
 . Enter your SQL queries.
 
+For full details see xref:execute-sql-queries.adoc[].
+
 == Next Steps
 
 xref:developer-guide.adoc[].
