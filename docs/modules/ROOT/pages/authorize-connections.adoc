@@ -1,4 +1,4 @@
-= Authorizing Client Connections
+= Client Connections
 :description: You can restrict access to your cluster to allow only authorized clients to connect to it.
 
 {description}
