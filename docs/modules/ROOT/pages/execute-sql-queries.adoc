@@ -15,9 +15,9 @@ To submit a SQL query:
 . Sign into the link:{page-cloud-console}[{hazelcast-cloud} console,window=_blank] and select your cluster.
 . Go to *SQL*.
 . Click *Compose New Query*.
-. Enter your SQL queries and execute them.
+. Enter your SQL query and execute it.
 
-Your query syntax is saved, and any data resources accessed via mappings, data connections are added to the Data Explorer for future use.
+Your query syntax is saved, and any data resources accessed via mappings or data connections are added to the Data Explorer for future use.
 
 == Related Resources
 
