@@ -60,6 +60,7 @@
 ** xref:map-configurations.adoc[]
 ** xref:jcache.adoc[]
 ** xref:queue.adoc[]
+** xref:topic.adoc[]
 
 .Releases
 * xref:release-notes.adoc[Release Notes]

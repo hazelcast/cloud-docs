@@ -1,6 +1,6 @@
 = Configuring Distributed Data Structures
 :description: Hazelcast offers distributed implementations of common data structures. From the {hazelcast-cloud} console, you can create new custom configurations or modify the default configuration for these data structures.
-:page-aliases: list.adoc, multimap.adoc, reliable-topic.adoc, replicated-map.adoc, ringbuffer.adoc, set.adoc, topic.adoc
+:page-aliases: list.adoc, multimap.adoc, reliable-topic.adoc, replicated-map.adoc, ringbuffer.adoc, set.adoc
 
 {description}
 
@@ -25,4 +25,8 @@ Consider using the following data structures when building your application.
 |See xref:queue.adoc[Queue Configuration]
 |See xref:hazelcast:data-structures:queue.adoc#configuring-queue[Configuring Queue]
 
+|xref:topic.adoc[Topic]
+|All clients and cluster members can publish topics for consumption by subscribers, and subscribe to topics published by other clients and cluster members.
+|See xref:topic.adoc[Topic Configuration]
+|See xref:hazelcast:data-structures:topic.adoc#configuring-topic[Configuring Topic]
 |===
