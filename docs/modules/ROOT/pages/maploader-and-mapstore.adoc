@@ -1,7 +1,7 @@
 = Build a MapStore for Hazelcast {hazelcast-cloud}
 :toclevels: 3
 :url-code-sample-mapstore: https://github.com/hazelcast/hazelcast-cloud-code-samples/tree/master/mapstore
-:description: pass:q[The Hazelcast map module classes in the link:https://docs.hazelcast.org/docs/latest/javadoc/com/hazelcast/map/package-summary.html[Hazelcast Root API] provide in-memory data stores. The MapStore module classes allow you to integrate data from external data sources, such as a database, file-based data store, or Kafka. This means that, if the requested value is not available in the in-memory data store, Hazelcast can attempt to load it from your external data sources. You can also use MapStore to store or delete values in your external data source. You can implement your own logic in the MapStore methods.]
+:description: pass:q[The Hazelcast map module classes in the link:https://docs.hazelcast.org/docs/latest/javadoc/com/hazelcast/map/package-summary.html[Hazelcast Root API] provide in-memory data stores. The MapStore module classes allow you to integrate data from external data sources, such as databases. This means that, if the requested value is not available in the in-memory data store, Hazelcast can attempt to load it from your external data sources. You can also use MapStore to store or delete values in your external data source. You can implement your own logic in the MapStore methods.]
 
 {description}
 
@@ -28,7 +28,11 @@ If present in the data store, the entry is loaded to the distributed map and rem
 
 |Write-behind
 |MapStore only
-|Adds entries to the data store asynchronously after a configured delay when added to a map.
+|Adds entries to the data store asynchronously when added to a map.
+
+This approach can prevent the thread that is updating the map from becoming blocked, or be used to collect updates into a single batch.
+
+A configured delay limits the time that can be taken between writes to the map and writes to the database.
 |===
 
 To develop a MapStore, you must do the following:

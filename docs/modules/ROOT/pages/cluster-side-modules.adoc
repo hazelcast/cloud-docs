@@ -26,7 +26,7 @@ Cluster-side modules include any code that must be deployed as Java code to the 
 |Module|Description
 
 |link:https://docs.hazelcast.org/docs/latest/javadoc/com/hazelcast/map/MapStore.html[MapStore]
-|Ingest data from an external data source to your Hazelcast map, and add data from your Hazelcast map to an external data source.
+|Load additional and updated data from an external data source to your Hazelcast map, and propogate updates in your Hazelcast map to an external data source.
 
 NOTE: If you only need to ingest data, you can use the link:https://docs.hazelcast.org/docs/latest/javadoc/com/hazelcast/map/MapLoader.html[MapLoader] module class.
 
