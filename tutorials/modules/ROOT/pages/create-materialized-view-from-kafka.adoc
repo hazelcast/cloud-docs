@@ -25,98 +25,33 @@ You need the following:
 
 - A basic understanding of link:https://hazelcast.com/glossary/kafka/[Kafka].
 
-== Step {counter:cnt-step}. Set Up the Hazelcast CLI
+== Step {counter:cnt-step}. Set Up the Hazelcast CLC
 
-You need to use the Hazelcast CLI in later steps to open connections to the SQL shell of your {hazelcast-cloud} cluster.
+You need to use the Hazelcast CLC in later steps to open connections to the SQL shell of your {hazelcast-cloud} cluster.
 
-. Install the Hazelcast CLI client for your operating system. Although the Hazelcast CLI client is included in Hazelcast Enterprise, you don't need a license to run it.
-+
-[tabs] 
-====
-Mac:: 
-+ 
---
-[source,bash]
-----
-brew tap hazelcast/hz
-brew install hazelcast-enterprise
-----
---
-Linux:: 
-+ 
---
-.Linux Debian
-[source,shell]
-----
-wget -qO - https://repository.hazelcast.com/api/gpg/key/public | sudo apt-key add -
-echo "deb https://repository.hazelcast.com/debian stable main" | sudo tee -a /etc/apt/sources.list
-sudo apt update && sudo apt install hazelcast-enterprise
-----
-.Linux RPM
-[source,shell]
-----
-wget https://repository.hazelcast.com/rpm/hazelcast-rpm.repo -O hazelcast-rpm.repo
-sudo mv hazelcast-rpm.repo /etc/yum.repos.d/
-sudo yum install hazelcast-enterprise
-----
---
-Windows:: 
-+ 
---
-At the moment, Hazelcast does not support any Windows package managers. You can link:https://hazelcast.com/get-started/download/[download the latest version as a ZIP file instead and extract the files to your local machine].
---
-====
-
-. From a command prompt, change into the root directory where Hazelcast Enterprise is installed.
-
-. Execute one of the following commands to check that the Hazelcast CLI client is installed.
-
-.. For Linux and Mac OS:
+. xref:clc:ROOT:install-clc.adoc[Install the Hazelcast CLC client] for your operating system.
+. Run the following command to check that the Hazelcast CLC client is installed.
 +
 [source,shell]
 ----
-bin/hz-cli -V
+clc version
 ----
-.. For Windows:
 +
-[source,command]
-----
-bin\hz-cli -V
-----
-
-Next, you need to add the credentials that allow the Hazelcast CLI to connect to your cluster.
-
-. Sign into the link:{page-cloud-console}[{hazelcast-cloud} console, window=blank].
-
-. Select the production cluster that you want to use for this tutorial.
-
-. In *Cluster Details*, click the SQL icon next to *Connect Client*.
-
-. In the *Quick Connection Guide*, click *Download*.
-
-. Extract the ZIP file and copy all the files into the root directory where Hazelcast Enterprise is installed.
-
-. From a command prompt, still in the root directory, execute one of the following commands to connect to your cluster.
-
-.. For Linux and Mac OS:
+You should see your installed version of the Hazelcast CLC client.
+. In the *Quick Connection Guide*, go to step 2 and run the `clc config import` command to import the configuration of your {hazelcast-cloud} cluster.
+. Now execute the following command to connect the Hazelcast CLC to your cluster. Replace the placeholder `$CLUSTER_ID` with your cluster ID. You can find the cluster ID on the dashboard of your cluster under *Cluster Details*.
 +
-[source,shell]
 ```bash
-bin/hz-cli -f hazelcast-client-with-ssl.yml sql
-```
-.. For Windows:
-+
-[source,command]
-```bash
-bin\hz-cli -f hazelcast-client-with-ssl.yml sql
-```
-A SQL prompt is displayed:
-+
-```
-sql>
+clc -c pr-$CLUSTER_ID
 ```
 +
-The Hazelcast CLI client is successfully connected to your {hazelcast-cloud} cluster ready for later steps in this tutorial.
+A CLC prompt is displayed:
++
+```
+CLC>
+```
++
+The Hazelcast CLC client is successfully connected to your cluster ready for later steps in this tutorial.
 
 == Step {counter:cnt-step}. Create a Free Confluent Cloud Kafka Cluster
 
@@ -201,13 +136,13 @@ INSERT INTO trades VALUES
   (2, 'EORG', 14, 20);
 ----
 
-. If you haven't started the SQL prompt on your {hazelcast-cloud} cluster, do it now:
+. If you haven't started the CLC prompt on your {hazelcast-cloud} cluster, do it now:
 +
 ```bash
-hz-cli -f hazelcast-client-with-ssl.yml sql
+clc -c pr-$CLUSTER_ID
 ```
 
-. In the SQL prompt, write a streaming query that filters trade messages, where the total trade order is more than $100.
+. In the CLC prompt, write a streaming query that filters trade messages, where the total trade order is more than $100.
 +
 [source,sql]
 ----
@@ -228,7 +163,7 @@ The result is an empty table. You don't see any results because, by default, Con
 ```
 ====
 
-. Stop the streaming query by pressing kbd:[Ctrl + C] to close the connection to the SQL prompt.
+. Stop the streaming query by pressing kbd:[Ctrl + D] to close the connection to the CLC prompt.
 
 . Back in the SQL browser, create the mapping to the topic again, but this time add the `'auto.offset.reset'='earliest'` configuration. This configuration tells the Kafka consumer to read all data in the topic from the beginning, not just from the latest offset.
 +
@@ -261,7 +196,7 @@ OPTIONS (
 +
 TIP: You can find your previous mapping query in the *History* tab of the SQL browser.
 
-. In the SQL prompt, enter the same streaming query that gave no results the last time you ran it.
+. In the CLC prompt, enter the same streaming query that gave no results the last time you ran it.
 +
 [source,sql]
 ----
@@ -283,7 +218,7 @@ Hazelcast executes the query and filters the results, using your previous trades
 ```
 ====
 
-. Stop the streaming query by pressing kbd:[Ctrl + C] to close the connection to the SQL prompt.
+. Stop the streaming query by pressing kbd:[Ctrl + D] to close the connection to the CLC prompt.
 
 == Step {counter:cnt-step}. Enrich the Data in the Kafka Messages
 
