@@ -40,8 +40,6 @@ You can download and configure the following clients yourself:
 
 - link:http://hazelcast.github.io/hazelcast-csharp-client/latest/doc/index.html[.NET client]
 
-- link:https://github.com/hazelcast/hazelcast-packaging[CLI client]
-
 - xref:clc:ROOT:overview.adoc[Hazelcast Command-Line Client (CLC)]
 
 include::partial$get-connection-creds.adoc[]
@@ -69,7 +67,5 @@ xref:developer-guide.adoc[].
 - link:http://hazelcast.github.io/hazelcast-csharp-client/latest/doc/index.html[.NET client]
 
 - xref:clc:ROOT:overview.adoc[Hazelcast Command-Line Client (CLC)]
-
-- link:https://github.com/hazelcast/hazelcast-packaging[CLI client]
 
 - xref:management-center:tools:sql-browser.adoc[SQL Browser].

@@ -15,12 +15,6 @@ See link:https://hazelcast.com/clients/[Clients and Languages] for available lib
 
 The xref:clc:ROOT:overview.adoc[Hazelcast Command-Line Client (CLC)] introduces a new set of commands specially designed for connecting to and managing your {hazelcast-cloud} clusters. 
 
-== Hazelcast {hazelcast-cloud} CLI
-
-Hazelcast {hazelcast-cloud} CLI is a command-line tool for creating and managing {hazelcast-cloud} clusters.
-
-See the documentation on link:{page-url-github-cloud-cli}[GitHub].
-
 == Maven Plugin for {hazelcast-cloud} Serverless
 
 The Maven plugin for {hazelcast-cloud} Serverless is a Java development tool for testing and deploying cluster-side modules on {hazelcast-cloud} Serverless clusters.
