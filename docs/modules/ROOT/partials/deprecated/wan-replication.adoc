@@ -33,7 +33,7 @@ WAN Replication supports the following use cases:
 
 == Before you Begin
 
-* You need two xref:create-serverless-cluster.adoc[{hazelcast-cloud} Serverless clusters] or two xref:create-dedicated-cluster.adoc[{hazelcast-cloud} Dedicated clusters]. You cannot replicate data between one {hazelcast-cloud} Serverless cluster and one {hazelcast-cloud} Dedicated cluster.
+* You need two xref:create-serverless-cluster.adoc[{hazelcast-cloud} Standard clusters] or two xref:create-dedicated-cluster.adoc[{hazelcast-cloud} Dedicated clusters]. You cannot replicate data between one {hazelcast-cloud} Standard cluster and one {hazelcast-cloud} Dedicated cluster.
 
 +
 Make sure that each cluster is configured with the same settings. For example, if one cluster

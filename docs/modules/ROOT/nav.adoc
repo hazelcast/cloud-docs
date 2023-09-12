@@ -1,17 +1,33 @@
 .Get Started
 * xref:overview.adoc[]
-** xref:serverless-cluster.adoc[]
-** xref:dedicated-cluster.adoc[]
-* xref:free-trial.adoc[Viridian Trial]
+** xref:free-trial.adoc[Trial]
+** xref:serverless-cluster.adoc[Standard]
+** xref:dedicated-cluster.adoc[Dedicated]
 * xref:get-started.adoc[Hello World]
 * xref:tutorials.adoc[Tutorials]
 
-.Develop Applications
+.Clients and Connectivity
 * xref:developer-guide.adoc[Developer Guide]
+* xref:authorize-connections.adoc[Connectivity]
+** xref:ip-white-list.adoc[IP Whitelist]
+* xref:developer.adoc[API keys]
+
+.Develop Applications
 * xref:connect-to-cluster.adoc[Connect to a Cluster]
 * xref:cluster-side-modules.adoc[Cluster-Side Modules]
 ** xref:maploader-and-mapstore.adoc[MapStore]
 ** xref:custom-classes-upload.adoc[Deploy Modules]
+* xref:connector-wizard.adoc[Connector Wizard]
+** xref:kafka-connections.adoc[Kafka Data Connections]
+*** xref:create-kafka-connection.adoc[Create a Data Connection]
+*** xref:add-kafka-mapping.adoc[Add a Mapping]
+*** xref:delete-kafka-connection.adoc[Delete a Data Connection]
+** xref:postgres-connections.adoc[PostgreSQL Data Connections]
+*** xref:create-postgres-connection.adoc[Create a Data Connection]
+*** xref:add-postgres-mapping.adoc[Add a Mapping]
+*** xref:delete-postgres-connection.adoc[Delete a Data Connection]
+** xref:imap-connections.adoc[IMap Mappings]
+* xref:execute-sql-queries.adoc[Execute SQL Queries]
 * xref:logging.adoc[Logging]
 ** xref:stream-logs.adoc[Stream Logs]
 ** xref:download-logs.adoc[Download Logs]
@@ -21,17 +37,12 @@
 * xref:create-account.adoc[Create an Account]
 * xref:delete-account.adoc[Delete an Account]
 * xref:multi-factor-authentication.adoc[Multi-Factor Authentication]
-* xref:developer.adoc[API keys]
 * xref:payment-methods.adoc[Billing and Payments]
 
 .Manage Clusters
 * xref:create-clusters.adoc[Create]
-** xref:create-serverless-cluster.adoc[Create a Serverless Cluster]
+** xref:create-serverless-cluster.adoc[Create a Standard Cluster]
 ** xref:create-dedicated-cluster.adoc[Create a Dedicated Cluster]
-* xref:authorize-connections.adoc[Authorize]
-** xref:ip-white-list.adoc[IP Whitelist]
-//** VPC Peering
-//*** xref:aws-vpc-peering.adoc[AWS VPC Peering]
 * xref:connect-to-cluster.adoc[Connect]
 * xref:stop-and-resume.adoc[Pause and Resume]
 * xref:deleting-a-cluster.adoc[Delete]
@@ -49,6 +60,7 @@
 ** xref:map-configurations.adoc[]
 ** xref:jcache.adoc[]
 ** xref:queue.adoc[]
+** xref:topic.adoc[]
 
 .Releases
 * xref:release-notes.adoc[Release Notes]

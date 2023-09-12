@@ -3,11 +3,11 @@
 
 {description}
 
-NOTE: {hazelcast-cloud} Serverless clusters for teams do not include the free 2 GiB storage.
+NOTE: {hazelcast-cloud} Standard clusters for teams do not include the free 2 GiB storage.
 
 == Creating a Team
 
-. Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console,window=_blank].
+. Sign into the link:{page-cloud-console}[{hazelcast-cloud} console,window=_blank].
 
 . Click the *Account* icon in the bottom left corner.
 
@@ -21,7 +21,7 @@ Now that you've created a team, you can invite users to it and assign them roles
 
 If you've created one or more teams, you can invite users to them and assign those users a role.
 
-. Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console,window=_blank].
+. Sign into the link:{page-cloud-console}[{hazelcast-cloud} console,window=_blank].
 
 . Click the *Account* icon in the bottom left corner.
 

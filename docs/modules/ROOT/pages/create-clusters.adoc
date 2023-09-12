@@ -1,4 +1,4 @@
-= Creating Hazelcast {hazelcast-cloud} Clusters
+= Creating {hazelcast-cloud} Clusters
 :description: You can create clusters, using the console or an API.
 
 {description}

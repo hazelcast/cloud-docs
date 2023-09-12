@@ -1,4 +1,4 @@
-= Developer Guide for Hazelcast {hazelcast-cloud}
+= Developer Guide for {hazelcast-cloud}
 :description: Use these topics to learn how to build applications, using APIs and tools.
 :cloud-tags: Develop Applications
 :cloud-title: Developer Guide
@@ -6,9 +6,11 @@
 
 {description}
 
-To start developing applications for Hazelcast {hazelcast-cloud}, see the following topics:
+To start developing applications for {hazelcast-cloud}, see the following topics:
 
 * xref:connect-to-cluster.adoc[]
 * xref:cluster-side-modules.adoc[]
+* xref:connector-wizard.adoc[]
+* xref:execute-sql-queries.adoc[]
 * xref:logging.adoc[]
 * xref:tools.adoc[]

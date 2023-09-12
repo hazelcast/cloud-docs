@@ -6,9 +6,9 @@
 
 {description}
 
-== Hazelcast {hazelcast-cloud} Console
+== {hazelcast-cloud} Console
 
-Monitor basic performance metrics and the status of your cluster, using the Hazelcast {hazelcast-cloud} console.
+Monitor basic performance metrics and the status of your cluster, using the {hazelcast-cloud} console.
 
 See xref:charts-and-stats.adoc[].
 

@@ -5,7 +5,7 @@ Ringbuffer is a replicated but non-partitioned data structure that stores its da
 
 == RingBuffer Name
 
-You can give to custom name to your ringbuffer structure.
+You can give a custom name to your ringbuffer structure.
 
 == Capacity
 

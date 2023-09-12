@@ -1,11 +1,11 @@
-= Authorizing Client Connections
+= Client Connections
 :description: You can restrict access to your cluster to allow only authorized clients to connect to it.
 
 {description}
 
-== {hazelcast-cloud} Serverless
+== {hazelcast-cloud} Standard
 
-If you're using a {hazelcast-cloud} Serverless cluster, you can add your client IP addresses to a xref:ip-white-list.adoc[whitelist].
+If you're using a {hazelcast-cloud} Standard cluster, you can add your client IP addresses to a xref:ip-white-list.adoc[whitelist].
 
 == {hazelcast-cloud} Dedicated
 

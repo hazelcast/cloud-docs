@@ -1,0 +1,28 @@
+= Deleting a Data Connection to PostgreSQL
+:description: You can delete a data connection if you no longer need it, or if you need to recreate the data connection with different details. This functionality is not currently available in the connector wizard but you can use SQL instead.
+:cloud-tags: Develop Applications
+:cloud-title: Deleting a Data Connection to PostgreSQL
+:cloud-order: 69
+
+{description}
+
+// tag::delete-connection[]
+== Deleting an Existing Data Connection 
+
+Before you start, make sure that the data connection is no longer in use.
+
+. Sign into the link:{page-cloud-console}[{hazelcast-cloud} console, window=blank].
+. Select the cluster where you set up the data connection that you need to delete.
+. In the left navigation, select *SQL* to open the SQL browser.
+. To find the exact name of the data connection, in the *Data Explorer* click *Connector Wizard* and then select the *Existing Connections* tab.
+. Click *Cancel* to return to the SQL browser.
+. Run the following query using your data connection name. If the data connection name includes special characters, put the connection name in quotation marks.
++ 
+```sql
+DROP DATA CONNECTION IF EXISTS myDataConnection;
+```
+// end::delete-connection[]
+
+== Related Resources
+- xref:create-postgres-connection.adoc[Creating a Data Connection to PostgreSQL]
+- xref:add-postgres-mapping.adoc[Adding a Mapping to a PostgreSQL Data Connection]

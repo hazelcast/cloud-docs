@@ -1,0 +1,26 @@
+= Executing SQL Queries
+:description: You can open a SQL shell in your cluster and submit SQL queries directly from a web browser.
+
+{description}
+
+Before you can start querying data, you must do the following:
+
+* If your data is in an existing map on the cluster, create a mapping to it first. To do this, either execute a xref:hazelcast:sql:create-mapping.adoc[`CREATE MAPPING` statement], or use the xref:connector-wizard.adoc[connector wizard].   
+* If your data is in an external system, you can create a data connection to it. To do this, either execute a xref:hazelcast:sql:create-data-connection.adoc[`CREATE DATA CONNECTION` statement], or use the xref:connector-wizard.adoc[connector wizard].
+
+== Executing Your First Query
+
+To submit a SQL query:
+
+. Sign into the link:{page-cloud-console}[{hazelcast-cloud} console,window=_blank] and select your cluster.
+. Go to *SQL*.
+. Click *Compose New Query*.
+. Enter your SQL query and execute it.
+
+Your query syntax is saved, and any data resources accessed via mappings or data connections are added to the Data Explorer for future use.
+
+== Related Resources
+
+- xref:hazelcast:sql:sql-statements.adoc[SQL Statements]
+- xref:hazelcast:sql:get-started-sql.adoc[Get Started with SQL Over Maps]
+- xref:connector-wizard.adoc[]

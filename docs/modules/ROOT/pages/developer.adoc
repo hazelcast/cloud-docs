@@ -6,12 +6,12 @@
 
 {description}
 
-== Using the Hazelcast {hazelcast-cloud} Console
+== Using the {hazelcast-cloud} Console
 
 // tag::create[]
 To create a new set of API credentials, do the following:
 
-. Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console,window=_blank].
+. Sign into the link:{page-cloud-console}[{hazelcast-cloud} console,window=_blank].
 . Go to *Account* > *Developer*.
 . Click *Generate New API Key*.
 // end::create[]

@@ -8,7 +8,7 @@ You can also use wildcards to associate your configuration with multiple queue n
 [WARNING]
 .Heap memory limits
 ====
-{hazelcast-cloud} Serverless clusters have the following heap memory limits:
+{hazelcast-cloud} Standard clusters have the following heap memory limits:
 
 * Production clusters: 1 GB memory per cluster member
 * Development clusters: 300 MB per cluster

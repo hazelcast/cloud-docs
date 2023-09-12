@@ -16,10 +16,10 @@ If you set this value to zero, no capacity constraint will be applied.
 
 == Backup Count
 
-This value sets how many synchronous back-ups there will be. In this case, backup operations block operations until backups are successfully copied to backup members (or deleted from backup members in case of remove) and acknowledgements are received. Therefore, backups are updated before a put operation is completed, provided that the cluster is stable.
+This value sets how many synchronous backups there will be. In this case, backup operations block operations until backups are successfully copied to backup members (or deleted from backup members in case of remove) and acknowledgements are received. Therefore, backups are updated before a put operation is completed, provided that the cluster is stable.
 0 means there will be no backup, and 1 means there will be 1 backup of this set in another member of the cluster. When you set 2, two members will have the backup.
 
 == Asynchronous Backup Count
 
-This value sets how many asynchronous back-ups there will be. In contrast to asynchronous, synchronous backups doesn't block operations. They are fire & forget and do not require acknowledgements; the backup operations are performed at some point in time.
+This value sets how many asynchronous backups there will be. In contrast to asynchronous, synchronous backups doesn't block operations. They are fire & forget and do not require acknowledgements; the backup operations are performed at some point in time.
 0 means there will be no asynchronous backup, and 1 means there will be 1 asynchronous backup of this set in another member of the cluster. When you set 2, two members will have the asynchronous backup.
