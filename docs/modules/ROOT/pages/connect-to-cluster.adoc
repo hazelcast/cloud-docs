@@ -42,7 +42,7 @@ You can download and configure the following clients yourself:
 
 - link:http://hazelcast.github.io/hazelcast-csharp-client/latest/doc/index.html[.NET client]
 
-- link:https://github.com/hazelcast/hazelcast-packaging[CLI client]
+- xref:clc:ROOT:overview.adoc[Hazelcast Command-Line Client (CLC)]
 
 - link:https://docs.hazelcast.com/clc/latest/overview[CLC client]
 
@@ -72,7 +72,7 @@ xref:developer-guide.adoc[].
 
 - link:http://hazelcast.github.io/hazelcast-csharp-client/latest/doc/index.html[.NET client]
 
-- link:https://github.com/hazelcast/hazelcast-packaging[CLI client]
+- xref:clc:ROOT:overview.adoc[Hazelcast Command-Line Client (CLC)]
 
 - link:https://docs.hazelcast.com/clc/latest/overview[CLC client]
 
