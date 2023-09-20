@@ -12,7 +12,7 @@
 You need the following:
 
 - A xref:create-account.adoc[{hazelcast-cloud} account].
-- Access to a command prompt such as Terminal for Mac or Powershell for Windows.
+- Access to a command prompt, such as Terminal for Mac or Powershell for Windows.
 
 == Step 1. Start a Cluster on {hazelcast-cloud} Standard or Trial
 
@@ -143,9 +143,7 @@ TIP: Take a moment to read the code in the link:https://github.com/hazelcast/haz
 CLI (CLC):: 
 + 
 --
-If you've followed the onscreen *Quick Connection Guide*, jump straight to <<step-5clc, step 6>>.
-
-NOTE: We do not recommend this part of the tutorial for customers using {hazelcast-cloud} Trial. 
+If you've followed the onscreen *Quick Connection Guide* in the link:{page-cloud-console}[{hazelcast-cloud} console,window=_blank], jump straight to <<step-5clc, step 6>>.
 
 . xref:clc:ROOT:install-clc.adoc[Install the Hazelcast CLC client] for your operating system.
 
@@ -156,7 +154,7 @@ NOTE: We do not recommend this part of the tutorial for customers using {hazelca
 clc version
 ----
 +
-You should see your installed version of the Hazelcast CLC client.
+If installed, the installed version of the Hazelcast CLC client displays.
 
 . In the *Quick Connection Guide*, go to step 2 and run the `clc config import` command to import the configuration of your {hazelcast-cloud} cluster.
 
@@ -169,7 +167,7 @@ clc -c pr-$CLUSTER_ID
 A CLC prompt is displayed:
 +
 ```
-CLC>
+pr-$CLUSTER_ID>
 ```
 +
 The Hazelcast CLC client is successfully connected to your cluster.
@@ -206,18 +204,34 @@ clc sql -c pr-$CLUSTER_ID "INSERT INTO cities VALUES
 (7, 'Brazil', 'Sao Paulo', 22429800),
 (8, 'Brazil', 'Rio de Janeiro', 13634274);"
 ----
-. Continue to the <<step-3, next step>> to query your sample data in the SQL browser.
+. Continue to the <<step-3, next step>> to query your sample data using SQL queries with CLC.
 --
 ====
 
 [[step-3]]
-== Step 3. Query the Cache with SQL
+== Step 3. Query the Cache Using CLC
 
-Now that you have some data in your cluster, you can query it, using SQL by entering the following queries in the SQL browser.
+Now that you have some data in your cluster, you can query it using CLC. In the following instructions, we use interactive mode to run SQL queries directly.
 
-. From the cluster dashboard, in *Cluster Details*, click *Management Center*, and then from the top toolbar click *SQL Browser*.
+NOTE: Ensure that there is a semi-colon (;) at the end of each SQL query. If this is omitted, CLC assumes that you are entering a multi-line query.
 
-. Execute the following `SELECT` statement to query all data in the map.
+If CLC is not connected, enter the following command replacing the `$CLUSTER_ID` placeholder with your cluster ID:
+
+```bash
+clc -c pr-$CLUSTER_ID
+```
+
+A CLC prompt is displayed:
+
+```
+pr-$CLUSTER_ID>
+```
+
+NOTE: You can find the cluster ID on the dashboard of your cluster under *Cluster Details*.
+
+In the following steps, you enter SQL queries at the CLC prompt to display data in your cluster.
+
+. Run the following `SELECT` statement to query all data in the map:
 +
 [source,sql]
 ----
@@ -241,16 +255,16 @@ SELECT * FROM cities;
 +
 The results are in a random order because the data is distributed across the cluster. Whenever a cluster member has the result, it returns it to the client.
 
-. Order the results by the key.
+. Run the following `SELECT` statement to order the results by the key:
 +
 [source,sql]
 ----
 SELECT * FROM cities ORDER BY __key;
 ----
 +
-Now you see the results start from key 1 and end with key 8.
+Now, you see the results ordered from key 1 to key 8.
 
-. Query only the countries by filtering on the `countries` column.
+. Run the following `SELECT` statement to query only the countries using a filter on the `countries` column:
 +
 [source,sql]
 ----
@@ -272,7 +286,7 @@ SELECT country FROM cities;
 +--------------------+
 ```
 
-. Query only the cities by filtering on the `cities` column.
+. Run the following `SELECT` statement to query only the cities using a filter on the `cities` column:
 +
 [source,sql]
 ----
@@ -294,7 +308,7 @@ SELECT city FROM cities;
 +--------------------+
 ```
 
-. Change the output to display cities first in alphabetical order.
+. Run the following `SELECT` statement to display cities in alphabetical order at the start of the output:
 +
 [source,sql]
 ----
@@ -319,7 +333,7 @@ ORDER BY city;
 
 ```
 
-. Use a filter to display only countries where the name of the city is at least 11 characters long.
+. Run the following `SELECT` statement to apply a filter that displays only countries where the name of the city is at least 11 characters long:
 +
 [source,sql]
 ----
@@ -335,7 +349,7 @@ SELECT country FROM cities WHERE LENGTH(city) >= 11;
 +--------------------+
 ```
 
-. Use another filter to display only cities beginning with the letter 'L' where the length is greater than 6.
+. Run the following `SELECT` statement to apply a filter that displays only cities that begin with the letter 'L' and have a length greater than 6:
 +
 [source,sql]
 ----
@@ -351,9 +365,10 @@ WHERE city LIKE 'L%' AND LENGTH(city) > 6;
 |Los Angeles         |
 +--------------------+
 ```
+
 == Summary
 
-You learned how to connect to a cluster and use SQL to query data in the cluster.
+You learned how to connect to a cluster and use SQL in a CLC shell to query data in the cluster.
 
 == Next Steps
 
