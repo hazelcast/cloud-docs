@@ -2,6 +2,7 @@ site:
   title: Documentation
   url: https://xenodochial-spence-280948.netlify.app
   start_page: cloud::overview.adoc
+  robots: disallow
   keys:
     google_analytics: 'GTM-MQ59XD6'
     docsearch_id: 'QK2EAH8GB0'
