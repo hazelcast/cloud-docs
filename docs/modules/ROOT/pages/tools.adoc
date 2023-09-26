@@ -15,8 +15,6 @@ See link:https://hazelcast.com/clients/[Clients and Languages] for available lib
 
 The xref:clc:ROOT:overview.adoc[Hazelcast Command-Line Client (CLC)] introduces a new set of commands specially designed for connecting to and managing your {hazelcast-cloud} clusters. 
 
-include::deprecation-notice-cli.adoc[tag=deprecation-notice-cli]
-
 == Maven Plugin for {hazelcast-cloud} Standard
 
 The Maven plugin for {hazelcast-cloud} Standard is a Java development tool for testing and deploying cluster-side modules on {hazelcast-cloud} Standard clusters.
