@@ -44,8 +44,6 @@ You can download and configure the following clients yourself:
 
 - xref:clc:ROOT:overview.adoc[Hazelcast Command-Line Client (CLC)]
 
-- link:https://docs.hazelcast.com/clc/latest/overview[CLC client]
-
 include::partial$get-connection-creds.adoc[]
 
 [[sql]]
@@ -73,7 +71,5 @@ xref:developer-guide.adoc[].
 - link:http://hazelcast.github.io/hazelcast-csharp-client/latest/doc/index.html[.NET client]
 
 - xref:clc:ROOT:overview.adoc[Hazelcast Command-Line Client (CLC)]
-
-- link:https://docs.hazelcast.com/clc/latest/overview[CLC client]
 
 - xref:management-center:tools:sql-browser.adoc[SQL Browser].
