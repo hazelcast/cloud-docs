@@ -1,96 +1,175 @@
-= Building a MapStore for Hazelcast {hazelcast-cloud}
+= Build a MapStore for Hazelcast {hazelcast-cloud}
 :toclevels: 3
 :url-code-sample-mapstore: https://github.com/hazelcast/hazelcast-cloud-code-samples/tree/master/mapstore
-:description: pass:q[MapStore is an API for building a cache on top of Hazelcast. The MapStore interface includes methods that are triggered when operations are invoked on a map. You can implement your own logic in these methods to connect to an external data store, load data from it, and write data back to it. For example, you can use a MapStore to load data into your cluster from a MongoDB, MySQL, or PostgreSQL database.]
+:description: pass:q[The Hazelcast map module classes in the link:https://docs.hazelcast.org/docs/latest/javadoc/com/hazelcast/map/package-summary.html[Hazelcast Root API] provide in-memory data stores. The MapStore module classes allow you to integrate data from external data sources, such as databases. This means that, if the requested value is not available in the in-memory data store, Hazelcast can attempt to load it from your external data sources. You can also use MapStore to store or delete values in your external data source. You can implement your own logic in the MapStore methods.]
 
 {description}
 
-MapStore supports the following caching patterns:
+MapStore builds a cache on top of Hazelcast with defined triggers for operations on a map. You can build a MapStore using either of the following module classes, depending on your requirements:
 
-- *Read-through:* If an entry does not exist in memory when an application asks for it, Hazelcast asks the MapStore implementation to load that entry from the data store. If the entry exists, the MapStore implementation requests it from the data store and Hazelcast puts it into memory.
-- *Write-through:* When new entries are added to a map, those entries are added to the data store synchronously.
-- *Write-behind:* When new entries are added to a map, those entries are added to the data store asynchronously, after a configured delay.
+- MapLoader allows you to load data to your cluster from external systems. It supports read-through caching only.
+- MapStore allows you to extend the functionality offered by MapLoader to store and delete data in your external systems. This ensures that all your data stores are synchronized. It supports read-through, write-through, and write-behind caching.
 
-MapStore extends the MapLoader interface with the methods to store and delete data in the external data source, whereas MapLoader contains the methods to load data into Hazelcast. You can use either of these interfaces to meet your requirements, but this guide refers to both interfaces as _MapStore_.
+The caching patterns are as follows:
 
-The following steps describe the workflow for developing a MapStore:
+[cols="h,2,4"]
+|===
+|Caching pattern |Supported by |Description
 
-. <<implement, Implement>>
-. <<test, Test>>
-. <<deploy, Deploy>>
-. <<configure, Configure>>
+|Read-through
+|MapLoader and MapStore
+|If the requested entry is not present in memory, MapStore requests it from the data store. 
+
+If present in the data store, the entry is loaded to the distributed map and remains in memory until removed.
+
+|Write-through
+|MapStore only
+|Adds entries to the data store synchronously when added to a map.
+
+|Write-behind
+|MapStore only
+|Adds entries to the data store asynchronously when added to a map.
+
+This approach can prevent the thread that is updating the map from becoming blocked, or be used to collect updates into a single batch.
+
+A configured delay limits the time that can be taken between writes to the map and writes to the database.
+|===
+
+To develop a MapStore, you must do the following:
+
+. <<implement, Implement a MapStore>>
+. <<test, Test the MapStore>>
+. <<deploy, Deploy the MapStore>>
+. <<configure, Configure the MapStore>>
+
+To <<update, update a MapStore>>, you must delete the existing MapStore and deploy a new one.
 
 [[implement]]
-== Implementing a MapStore
+== Implement a MapStore
 
-To implement a MapStore for {hazelcast-cloud}, you can mostly xref:hazelcast:data-structures:working-with-external-data.adoc[follow the Hazelcast Platform documentation]. However, you must make sure to manage the lifecycle of the MapStore. When the cluster loads the MapStore, it makes a connection to the external data store. If open connections are left open, these connections will consume unnecessary resources. To manage this connection, make sure to implement the link:https://docs.hazelcast.org/docs/latest/javadoc/com/hazelcast/map/MapLoaderLifecycleSupport.html[`MapLoaderLifeCycleSupport` interface] to allow the cluster to close connections to the data store on a graceful shutdown.
+When implementing a MapStore for {hazelcast-cloud}, you must manage the lifecycle to ensure that connections to the external data store are not left open. Closing the connections prevents them from consuming unneccessary resources. You can use the link:https://docs.hazelcast.org/docs/latest/javadoc/com/hazelcast/map/MapLoaderLifecycleSupport.html[`MapLoaderLifeCycleSupport`] interface to clean up the resources on graceful shutdown, including closing the connections.
+
+With this in mind, you can follow the  xref:hazelcast:data-structures:working-with-external-data.adoc[Hazelcast Platform documentation] to implement a MapStore. 
+
+NOTE: When you have finished, return to this page to continue with the testing of your implementation.
 
 [[test]]
-== Testing a MapStore
+== Test a MapStore
 
-Before you deploy the MapStore to {hazelcast-cloud}, you should test the MapStore for the following:
+Before you deploy the MapStore to {hazelcast-cloud}, ensure that:
 
-- The MapStore connects to the data store without errors. Your data source should accept incoming connections from your {hazelcast-cloud} cluster.
+- The MapStore connects to the data store without errors. Your data source accepts incoming connections from your {hazelcast-cloud} cluster.
 - Operations on the map trigger your MapStore implementations. For a list of operations that trigger the MapStore, see the xref:hazelcast:data-structures:working-with-external-data.adoc#map-mapstore[Hazelcast Platform documentation]. You can xref:connect-to-cluster.adoc[use one of the available clients] to invoke map operations.
 
-For general guidance on testing cluster-side modules, see xref:cluster-side-modules.adoc[].
+For general guidance on testing cluster-side modules, see the xref:cluster-side-modules.adoc[] topic.
 
 [[deploy]]
-== Deploying a MapStore
+== Deploy a MapStore
 
-Before you can configure the MapStore, you need to deploy it by packaging your classes into a file along with any dependencies and uploading that file to the cluster. See xref:custom-classes-upload.adoc[].
+Before you can configure the MapStore, you must deploy it. To do this, package your classes into a file that includes any dependencies and upload that file to the cluster. 
+
+For further information on deploying your MapStore, see the xref:custom-classes-upload.adoc[] topic.
 
 [[configure]]
-== Configuring a MapStore
+== Configure a MapStore
 
-To use a MapStore, it must be configured for a specific map in {hazelcast-cloud}. When a map is configured with a MapStore, Hazelcast plugs the MapStore implementation into the lifecycle of the map so that the MapStore is triggered when certain map operations are invoked.
+To use a MapStore, it must be configured for a specific map in {hazelcast-cloud}. When a map is configured with a MapStore, Hazelcast plugs the MapStore implementation into the lifecycle of the map to trigger the MapStore when certain map operations are invoked.
+
+To configure a MapStore, complete the following steps:
 
 . Sign into the link:{page-cloud-console}[{hazelcast-cloud} console,window=_blank] and select your cluster.
-. Go to *Manage* > *Data Structures*.
-. Click *Add New Configuration*.
-. Configure the map.
-. In the bottom left corner, select *Enable MapStore*.
-. Select a classname from the dropdown. If you don't see a classname, you need to deploy the MapStore to the cluster.
-. Configure the fields, depending on your requirements.
-.. To configure a write-through cache, leave the *Write Delay Seconds* field set to `0`.
-.. To configure a write-behind cache, set the *Write Delay Seconds* field to the number of seconds that you want to wait before adding entries to the data store.
-. Click *Save Configuration*.
+. Select *Manage* > *Data Structures* from the navigation bar options, located on the left.
+. Select the *Add New Configuration* button, located at the top right.
+. Complete the fields to configure the map. 
++
+For further information on the available fields, see the xref:map-configurations.adoc[Map Configuration] topic.
 
+. Select the *Enable Map Store* checkbox, located at the bottom left.
++
+Further fields display to configure the Map Store.
++
+NOTE: If you have not deployed the MapStore to the cluster, the classname dropdown menu is not displayed. Deploy your MapStore before continuing.
+
+. Select a classname from the dropdown menu. 
+. Configure the fields according to your requirements. 
++
+The fields are described in the <<config-fields, Configuration Fields>> section below.
++
+[NOTE]
+====
+For a write-through cache, leave the *Write Delay Seconds* field set to `0`. 
+
+For a write-behind cache, enter the time in seconds to wait before adding entries to the data store.
+====
+
+. Select the *Save Configuration* button.
+
+[[config-fields]]
 === Configuration Fields
 
-The following are the descriptions of MapStore configuration elements and attributes:
+The MapStore configuration elements and attributes are as follows:
 
-- *Class Name*: Name of the uploaded file that contains the MapStore.
+*Class Name*:: Select the MapStore you require from the dropdown menu. 
++
+The menu options are populated with uploaded files containing MapStores.
 
-- *Write Delay Seconds*: Number of seconds to delay to call the `MapStore.store(key, value)`. If the value is zero then it is write-through, so the `MapStore.store(key, value)` method is called as soon as the entry is updated. Otherwise, it is write-behind; so the updates will be stored after the *Write Delay Seconds* value by calling the `Hazelcast.storeAll(map)` method. Its default value is *0*.
+*Write Delay Seconds*:: Enter the number of seconds to wait before calling the `MapStore.store(key, value)` method in the text box.
++
+Default is *0*.
++
+A value of zero defines a write-through cache. The `MapStore.store(key, value)` method is called as soon as the entry is updated. 
++
+Any other value defines a write-behind cache. Updates are stored for the specified period using the `Hazelcast.storeAll(map)` method.
 
-- *Write Batch Size*: Used to create batch chunks when writing map store. In default mode, all map entries are tried to be written in one go. To create batch chunks, the minimum meaningful value for write-batch-size is 2. For values smaller than 2, it works as in default mode.
+*Write Batch Size*:: Enter the number of map entries to include in each batch chunk when writing a map store. 
++
+By default, each batch chunk contains a single entry. 
++
+The minimum meaningful value is `2`. If you enter a value of less than 2, the default is used.
++
+NOTE: If you do not have sufficient entries to form a complete batch chunk, the final entries are included in a smaller batch chunk after a timeout.
 
-- *Write Coalescing*: In write-behind mode, Hazelcast coalesces updates on a specific key by default; it applies only the last update on it. Clear the *Write Coalescing* checkbox to store all updates performed on a key to the data store.
+*Write Coalescing*:: Select or de-select the checkbox to determine how to store updates for a key.
++
+NOTE: Applies only when using write-behind caching.
++
+By default, Hazelcast combines updates on a key. 
++
+De-select the checkbox to store all updates on a key.
++
+Select the checkbox to store only the final update on a key that has been changed multiple times.
 
-- *Initial Mode*: Sets the initial load mode. *Lazy* is the default load mode, where the load is asynchronous. *Eager* means the load is blocked till all partitions are loaded. 
+*Initial Mode*:: Select the initial load mode from the dropdown menu.
++
+By default, lazy loading is used.
++
+The menu options are as follows:
++
+* *Lazy*. Select to use asynchronous loading. 
+* *Eager*. Select to pre-load all partitions before loading. 
 
-- *Properties*: The name/value properties that can be read inside the MapStore. For example connection credentials for a database. These properties are encrypted after you save the configuration.
+*Properties*:: Enter the name and value of a property, which can be read inside the MapStore, in the text boxes. 
++
+For example, the connection credentials for a database. 
++
+To add the specified property, select the *Add* button.
++
+You can continue to add properties in the same way. 
++
+NOTE: When you save the configuration, the properties are encrypted.
 
-== Updating a MapStore
+[[update]]
+== Update a MapStore
 
-To update a MapStore after you've deployed it, you must delete it and redeploy another one.
+To update a MapStore after you've deployed it, you must delete it and redeploy another one as follows:
 
-If the name of your MapStore class is the same as the one that you want to update, do the following:
-
-. Click *Upload Custom Classes* and remove the file that contains your MapStore.
-. Optional: <<test-mapstore, Test your new MapStore>>.
+. Select *Upload Custom Classes* and remove the file that contains your MapStore.
+. Optionally, <<test-mapstore, Test your new MapStore>>.
 . <<deploy, Deploy>> the new version of your MapStore.
-
-If the name of your MapStore class is different to the one that you want to update, do the following:
-
-. Click *Upload Custom Classes* and remove the file that contains your MapStore.
-. Optional: <<test-mapstore, Test your new MapStore>>.
-. <<deploy, Deploy>> the new version of your MapStore.
-. <<configure, Reconfigure>> the MapStore.
+. If the name of your MapStore class is different to the one that you are updating, <<configure, Reconfigure>> the MapStore.
 
 == Next Steps
 
-For sample projects that use a MapStore in {hazelcast-cloud}, see this link:{url-code-sample-mapstore}[GitHub repository].
+Build and run sample projects that use a MapStore in {hazelcast-cloud}. You can find the sample projects in the link:{url-code-sample-mapstore}[Hazelcast Cloud Code Samples GitHub repository].
 
-Or, follow a xref:tutorials:ROOT:write-through-cache-serverless-mapstore.adoc[tutorial].
+Work through the xref:tutorials:ROOT:write-through-cache-serverless-mapstore.adoc[tutorial] to build an application that writes changes to a map back to MongoDB Atlas.
