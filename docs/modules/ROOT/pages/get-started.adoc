@@ -39,8 +39,6 @@ To connect to your {hazelcast-cloud} Standard or Trial cluster, you need a Hazel
 
 Choose a client and follow the instructions.
 
-include::deprecation-notice-cli.adoc[tag=deprecation-notice-cli]
-
 [tabs] 
 ====
 Java:: 
