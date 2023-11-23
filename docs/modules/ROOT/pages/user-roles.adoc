@@ -1,0 +1,32 @@
+= User Roles
+:description: Each user has a role assigned to them. The role defines the permissions granted to that user.
+
+{description}
+
+The current user roles are as follows: 
+
+* Admin user. This is the user who set up the organization account
+* Organization user. This is any user who has been added to the organization by the admin user
+
+All users have the following permissions:
+
+* Manage clusters. This allows users to work with Hazelcast, for example to:
++
+** xref:create-clusters.adoc[Create clusters]
+** xref:stop-and-resume.adoc#pausing-a-cluster[Pause clusters]
+** xref:stop-and-resume.adoc#resuming-a-cluster[Resume clusters]
+** xref:deleting-a-cluster.adoc[Delete clusters]
+** xref:backup-and-restore.adoc[Create backups]
+** xref:custom-classes-upload.adoc#package[Upload custom classes]
+** xref:data-structures.adoc[Configure data structures]
+
+* https://docs.hazelcast.com/management-center/5.3/getting-started/overview[Use Management Center^]
+* xref:view-organization-details.adoc[View the organization name]
+* xref:view-and-update-profile.adoc[View and update their own profile]
+
+In addition, admin users have the following permissions:
+
+* xref:invite-user.adoc[Invite user]
+* xref:remove-user.adoc[Delete user]
+* xref:payment-methods.adoc[Manage billing and payments]
+* xref:delete-account.adoc[Delete the organization account]

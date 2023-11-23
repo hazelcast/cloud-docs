@@ -35,6 +35,8 @@ xref:free-trial.adoc[{hazelcast-cloud} Trial] offers the capabilities of {hazelc
 |To maximize security whilst minimizing latency, {hazelcast-cloud} Dedicated clusters expose only private Hazelcast endpoints. For consistent performance and throughput, {hazelcast-cloud} Dedicated clusters do not share infrastructure with any other customers.
 |===
 
+NOTE: When you first create an account on Hazelcast {hazelcast-cloud}, you become the admin user for an organisation. For Trial Edition users, this has no further impact. For Standard and Dedicated Edition users, this means that you can invite users to your organization and share resources, such as clusters. For further information on organizations, see the xref:organizations-and-accounts.adoc[Organizations and Accounts] section.
+
 == Getting Started
 
 If you are a first-time user of Hazelcast {hazelcast-cloud}, see xref:get-started.adoc[].

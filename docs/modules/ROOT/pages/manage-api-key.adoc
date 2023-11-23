@@ -1,0 +1,12 @@
+= Manage Your API Key
+:description: Your API key provides the credentials needed to authenticate clients to your account.
+
+{description}
+
+When you generate your API key, you can copy it directly from the Hazelcast {hazelcast-cloud} console.
+
+include::partial$create-api-key.adoc[]
+
+include::partial$copy-api-key.adoc[]
+
+include::partial$delete-api-key.adoc[]

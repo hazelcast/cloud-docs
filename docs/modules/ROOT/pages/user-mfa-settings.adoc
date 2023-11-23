@@ -1,0 +1,30 @@
+= User MFA Settings
+:description: If enabled at organization level, you must enable Multi-factor Authentication (MFA). If disabled, you can choose whether or not to enable MFA for your sign-in. By default, MFA is disabled.
+
+{description}
+
+Multi-factor authentication (MFA) adds another layer of security to your account. If enabled, instead of relying only on a username and password, MFA uses a trusted device to generate a secure digital identifer used to confirm your identity. 
+
+[[enable]]
+== Enable Multi-Factor Authentication
+
+To enable MFA, complete the following steps:
+
+include::partial$mfa-enable.adoc[]
++
+You must now enter a username and password, and then provide the verification code using the authenticator app each time you sign in.
+
+. Sign out of the Hazelcast {hazelcast-cloud} console
+. Sign in to your account using your username and password
+. Use your authenticator app to complete your sign in
+
+include::partial$mfa-change-device.adoc[]
+
+[[disable]]
+== Disable Multi-Factor Authentication
+
+If your organization has not enabled MFA for all users, you can disable it at any time to sign in without an extra authentication step.
+
+To disable MFA, complete the following steps:
+
+include::partial$mfa-disable.adoc[]

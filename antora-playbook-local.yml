@@ -58,6 +58,7 @@ asciidoc:
     idseparator: '-'
     hazelcast-cloud: Viridian Cloud
     page-cloud-console: https://viridian.hazelcast.com/
+    page-cloud-signup: https://viridian.hazelcast.com/sign-up
   extensions:
     - ./lib/tabs-block.js
     - asciidoctor-kroki

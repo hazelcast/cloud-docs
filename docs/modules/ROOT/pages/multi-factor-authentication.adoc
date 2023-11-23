@@ -1,31 +1,33 @@
 = Multi-Factor Authentication
-:description: Multi-factor authentication (MFA) makes your account more secure by adding an extra step to the sign-in process. Instead of just entering a password, MFA allows you to use a trusted device to generate a secure digital pin for authentication.
+:description: If enabled at organization level, all users associated with the organization must enable Multi-factor Authentication (MFA). If disabled, users can choose whether or not to enable MFA for their sign-in. By default, MFA is disabled.
 :page-aliases: account-security.adoc
 :cloud-tags: Manage Accounts
 :cloud-order: 30
 
 {description}
 
-== Enabling Multi-Factor Authentication
+Multi-factor authentication (MFA) adds another layer of security to your account. If enabled, instead of relying only on a username and password, MFA uses a trusted device to generate a secure digital identifer used to confirm your identity. 
 
-. Install an authenticator app such as Google Authenticator on your device.
-. Sign into the link:{page-cloud-console}[{hazelcast-cloud} console,window=_blank].
-. Go to *Account* > *Security*.
-. Open your authenticator app and scan the QR code that is displayed in the {hazelcast-cloud} console. 
-. Enter the six digit verification code into the input box in the {hazelcast-cloud} console and click *Enable MFA*.
-. Sign out and try signing in again.
+NOTE: If signing in with Google or GitHub, set MFA for those accounts and not for your {hazelcast-cloud} account.
 
-After entering your username and password, you will be asked to enter the verification code, using the authenticator app.
+[[enable]]
+== Enable Multi-Factor Authentication
 
-Verification codes are specific to a particular device and cannot be transferred. If you switch to a new phone, you will need to <<disable, disable MFA>> before you do so, then re-enable it with your new phone.
+To enable MFA for all users associated with your organization, complete the following steps:
+
+include::partial$mfa-enable.adoc[]
++
+. Select the *Enforce MFA* checkbox to enforce the use of MFA for all organization users
+
+You and your organization users must now enter a username and password to sign in, and then provide the verification code using the authenticator app.
+
+include::partial$mfa-change-device.adoc[]
 
 [[disable]]
-== Disabling Multi-Factor Authentication
+== Disable Multi-Factor Authentication
 
-If you've enabled MFA, you can disable it so that you can sign in without an authenticator app.
+If you've enabled MFA, you can disable it at any time to allow you and your organization users to sign in without an extra authentication step.
 
-. Sign into the link:{page-cloud-console}[{hazelcast-cloud} console,window=_blank].
-. Go to *Account* > *Security*.
-. Click *Disable*.
+To disable MFA for all users associated with your organization, complete the following steps:
 
-You'll receive an email to confirm that MFA is disabled.
+include::partial$mfa-disable.adoc[]

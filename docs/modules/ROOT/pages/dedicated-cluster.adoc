@@ -8,6 +8,8 @@
 
 {description}
 
+When you first create an account on Hazelcast {hazelcast-cloud}, you become the admin user for an organisation. This means that you can invite users to your organization and share resources, such as clusters. For further information on organizations, see the xref:organizations-and-accounts.adoc[Organizations and Accounts] section.
+
 You can design a Hazelcast topology that meets your specific compliance and service design needs.
 
 - Deploy your clusters to specific regions to comply with data residency laws.

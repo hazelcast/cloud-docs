@@ -1,0 +1,13 @@
+== Copy API Key
+
+To copy your API key, do the following:
+
+. Sign into the link:{page-cloud-console}[{hazelcast-cloud} console,window=_blank]
+. Select *Account* from the side navigation bar
+. Select *Developer* from the *Account* options
++
+The Developer screen displays.
+
+. Select the *Copy* (overlapping squares) button
+
+The API key is copied to your clipboard. You can now paste the API key into your application configuration.

@@ -1,0 +1,14 @@
+= View Organization Details
+:description: Organization users can view the name of the organization with which their sign in is associated. They cannot change the name.
+
+{description}
+
+NOTE: If you want to change the name of the organization, this must be done by the admin user. For further information on changing the name of the organization, see the xref:update-organization-name.adoc[Update Organization Name] topic.
+
+To view the organization name, complete the following steps:
+
+. Open the link:{page-cloud-console}[{hazelcast-cloud} console, window=_blank]
+. Select *Account* from the side navigation bar
+. Select *Organization* from the *Account* options
++
+The organization name displays.

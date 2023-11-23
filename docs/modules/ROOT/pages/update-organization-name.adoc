@@ -1,0 +1,24 @@
+= Update Organization Name
+:description: When you created an account, an organization was created. You either provided a name for the organization when you created the account, or were prompted to add it when first signing in to the {hazelcast-cloud} console. The organization details can be viewed, and the name updated, at any time.
+:toclevels: 3
+
+{description}
+
+To update the organization name, complete the following steps:
+
+. Open the link:{page-cloud-console}[{hazelcast-cloud} console, window=_blank]
+. Select *Account* from the side navigation bar
+. Select *Organization* from the *Account* options
++
+The Info page displays.
++
+The organization details are as follows:
++
+* *Organization ID*. This is used to identify your account, and cannot be changed
+* *Organization name*. This is the name you provided for your organization, and can be updated at any time
+* *Date created*. This is the date on which you created your account in the format YYYYY - MM - DD, and cannot be changed. For example, if your account was created on the 4th of May 2022, the displayed date would be 2023 - 05 - 04
+
+. Select the *Edit* (pencil) icon beside the current organization name in the *Edit organization name* box
+
+. Update the name as required
+. Select the *Confirm* (check mark) button to save your changes

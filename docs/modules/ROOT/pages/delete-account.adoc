@@ -1,36 +1,52 @@
-= Deleting an Account
-:description: pass:q[If you no longer need to access your clusters, you can delete your account. To avoid additional charges while your clusters are not in use, consider xref:stop-and-resume.adoc[pausing] them instead.]
-:cloud-tags: Manage Accounts
-:cloud-title: Deleting an Account
+= Delete Organization
+:description: pass:q[If you no longer need to access your clusters, you can delete your organizaton. To avoid additional charges while your clusters are not in use, consider xref:stop-and-resume.adoc[pausing] them instead.]
+:cloud-tags: Organizations and Accounts
+:cloud-title: Delete Organization
 :cloud-order: 60
 :toclevels: 3
 
 {description}
 
+You cannot delete an organization while there are outstanding payments on the account.
 
-[[cluster-and-data-deletion]]
-== Cluster and Data Deletion
+If the organization is deleted, all associated users, clusters, and resources are also deleted. If you need to keep any data, ensure that you have migrated it before deleting the organization.
 
-Deleting an account _removes_ all the following:
+NOTE: You can remove organization users from your organization at any time through the User Management screen. For further information on removing organization users, see the xref:remove-user.adoc[Remove User] topic.
 
-- Clusters linked to the account, including any associated data, such as data structures, custom classes, backups, and configuration.
-- Account and payment details.  
-- Billing information.
+Deleting an organization removes the following:
 
-We recommend that you copy any data or details that you might need in the future. You cannot recover any data from a deleted account.
+- Clusters associated with the organization, including any data such as data structures, custom classes, backups, and configuration
+- Account and payment details
+- Billing information
+- The admin user account
+- All organization user sign ins
 
-NOTE: You may still receive marketing communications from time to time. See our link:https://hazelcast.com/privacy/[privacy policy] for more details.  
+NOTE: You might continue to receive occasional marketing communications from Hazelcast. See our link:https://hazelcast.com/privacy/[privacy policy^] for more details.  
 
-[[outstanding-payments]]
-== Outstanding Payments
+Hazelcast recommends that you copy any data or details that you might need in the future. You cannot recover any data from a deleted account.
 
-All outstanding payments are taken during the deletion process. For this reason, we suggest that you pause or delete all clusters before you proceed, so that you know the amount you need to pay.
+To delete an organization, complete the following steps:
 
-== Deleting your Account
+. Open the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console,window=_blank].
+. Select *Account* from the side navigation bar
+. Select *Password* from the *Account* options
++
+The Account Settings screen displays.
 
-Before you start, read the <<outstanding-payments, Outstanding Payments>> and <<cluster-and-data-deletion, Cluster and Data Deletion>> sections carefully. 
+. Scroll down to the *Danger Zone* section of the Account Settings screen
 
-. Sign into the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console,window=_blank].
-. Go to *Account* > *Password*.
-. Scroll down to the *Danger Zone* and click *Delete This Account*.
-. Enter your email address and confirm the deletion.
+. Select the *DELETE THIS ORGANIZATION* button
++
+A confirmation dialog box displays.
++
+WARNING: If you delete the organization, all users, clusters, and other resources associated with the organization are also deleted.
+
+. Enter the admin user's email address in the *Your email* text box
+. Enter `delete my account` in the *To verify, type "delete my account" below:* text box
+. Select the *DELETE THIS ORGANIZATION* button
++
+WARNING: There is no confirmation dialog box. If you select the *DELETE THIS ORGANIZATION* button the users, clusters, and cluster data associated with your account are deleted immediately. This step is irreversible.
+
+NOTE: If the organization has an outstanding balance, it cannot be deleted. For further information on billing and payments, see the xref:payment-methods.adoc[Billing and Payments] section.
+
+When you delete your account, no further charges are incurred and you cannot access your account.

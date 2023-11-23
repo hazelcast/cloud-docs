@@ -6,22 +6,8 @@
 
 {description}
 
-== Using the {hazelcast-cloud} Console
+include::partial$create-api-key.adoc[]
 
-// tag::create[]
-To create a new set of API credentials, do the following:
+include::partial$copy-api-key.adoc[]
 
-. Sign into the link:{page-cloud-console}[{hazelcast-cloud} console,window=_blank].
-. Go to *Account* > *Developer*.
-. Click *Generate New API Key*.
-// end::create[]
-
-You can use these credentials in your applications to manage all clusters in your account. Currently, you can only create one API key and secret pair on your account.
-
-IMPORTANT: Keep your keys and secrets secure. Anyone who has these credentials can delete your clusters.
-
-== Deleting an API Key
-
-You can delete your API key at any time by clicking the *Delete API Key* button.
-
-WARNING: After you delete your API key, any application that uses this key will no longer work unless you configure them with a new set of credentials.
+include::partial$delete-api-key.adoc[]
