@@ -11,6 +11,6 @@ asciidoc:
     page-code-samples: https://github.com/hazelcast/hazelcast-cloud-code-samples
     page-cloud-platform-version: 5.3
     page-cloud-console: https://viridian.hazelcast.com/
-    full-version: '5.3.1'
+    full-version: '5.3.6'
 nav:
 - modules/ROOT/nav.adoc
