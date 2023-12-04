@@ -66,10 +66,10 @@ For further information on the connection properties used by the Hazelcast JDBC 
 
 You can find out more about using JDBC with Hazelcast in the Platform documentation, as follows:
 
-* For information on importing data from external systems, refer to https://docs.hazelcast.com/hazelcast/5.3/integrate/connectors[Connector Guides^]
-* For information on data ingestion with Hazelcast, refer to https://docs.hazelcast.com/hazelcast/5.3/ingest/overview[Ingesting Data from External Sources^]
-* For information on how Hazelcast can use your database vendor's JDBC drivers as sources and sinks, refer to https://docs.hazelcast.com/hazelcast/5.3/integrate/jdbc-connector[JDBC Connector^]
-* For an example of creating a JDBC mapping to a MySQL database, refer to https://docs.hazelcast.com/hazelcast/5.3/sql/mapping-to-jdbc[Mapping to JDBC^]
-* For an example data connection to a MySQL database using a JDBC connection, refer to https://docs.hazelcast.com/hazelcast/5.3/data-connections/data-connections-configuration#JDBC[Example JDBC Data Connection^]
+* For information on importing data from external systems, refer to xref:hazelcast:integrate:connectors.adoc[Connector Guides,window=_blank]
+* For information on data ingestion with Hazelcast, refer to xref:hazelcast:ingest:overview.adoc[Ingesting Data from External Sources,window=_blank]
+* For information on how Hazelcast can use your database vendor's JDBC drivers as sources and sinks, refer to xref:hazelcast:integrate:jdbc-connector.adoc[JDBC Connector,window=_blank]
+* For an example of creating a JDBC mapping to a MySQL database, refer to xref:hazelcast:sql:mapping-to-jdbc.adoc[Mapping to JDBC,window=_blank]
+* For an example data connection to a MySQL database using a JDBC connection, refer to xref:hazelcast:data-connections:data-connections-configuration#JDBC.adoc[Example JDBC Data Connection,window=_blank]
 
 NOTE: These links open in a new window or tab, depending on your settings, to ensure that you do not lose your place in the {hazelcast-cloud} documentation.
