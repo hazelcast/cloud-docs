@@ -20,27 +20,32 @@ If you're using a cluster on {hazelcast-cloud} Dedicated, you need to xref:autho
 [[download]]
 == Using a Preconfigured Client
 
-Your cluster comes with a downloadable client that's preconfigured to connect to your cluster.
+Your cluster comes with the following clients, which are preconfigured to connect to your cluster:
 
-. Sign into the link:{page-cloud-console}[{hazelcast-cloud} console,window=_blank] and select your cluster.
-. Click *Connect Client*.
-. Select a client.
-. Follow the on-screen instructions.
+- xref:hazelcast:clients:java.adoc#configuring-java-client[Java]
 
-For a complete tutorial, see xref:get-started.adoc[].
+- link:https://hazelcast.readthedocs.io/en/stable/configuration_overview.html[Python]
 
-[[advanced]]
-== Using Advanced Setup
-
-You can download and configure the following clients yourself:
-
-- xref:hazelcast:clients:java.adoc#configuring-java-client[Java client]
-
-- link:https://hazelcast.readthedocs.io/en/stable/configuration_overview.html[Python client]
-
-- link:http://hazelcast.github.io/hazelcast-csharp-client/latest/doc/index.html[.NET client]
+- link:http://hazelcast.github.io/hazelcast-csharp-client/latest/doc/index.html[.NET]
 
 - xref:clc:ROOT:overview.adoc[Hazelcast Command-Line Client (CLC)]
+
+To download any of these clients, complete the following steps:
+
+. Sign in to the link:{page-cloud-console}[{hazelcast-cloud} console,window=_blank] 
+. Select your cluster.
+. Select the relevant option in the *Connect Client* section of your Dashboard.
++
+NOTE: To download the CLC client, select the *CLI* option.
+
+. Follow the on-screen instructions.
+
+For a complete tutorial, see the xref:get-started.adoc[] topic.
+
+[[advanced]]
+== Configure Your Own Client
+
+You can access the information needed to connect your own clients through any of the pre-configured client details. 
 
 include::partial$get-connection-creds.adoc[]
 
