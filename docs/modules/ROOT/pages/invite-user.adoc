@@ -41,7 +41,9 @@ If you made a mistake when entering the email address, you can select the *Delet
 . If required, add further users by repeating steps 6 and 7 above until all email addresses to which you want to send an invitation are listed below the text box
 
 . Select the *INVITE USERS* button to send an invitation to all listed email addresses. If you select the *Cancel* button, the dialog box closes without sending any invitations
++
+NOTE: If the email address already exists, no invitation is sent.
 
-NOTE: The users must now accept the invitation before they are added to the account. For further information on accepting an invitation, see the xref:accept-invitation.adoc[Accept Invitation to Organization] topic.
+The users must now accept the invitation before they are added to the account. For further information on accepting an invitation, see the xref:accept-invitation.adoc[Accept Invitation to Organization] topic.
 
 You can track the status of your invitations in the User Management screen.

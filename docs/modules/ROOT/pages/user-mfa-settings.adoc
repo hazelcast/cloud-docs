@@ -1,5 +1,5 @@
 = User MFA Settings
-:description: If enabled at organization level, you must enable Multi-factor Authentication (MFA). If disabled, you can choose whether or not to enable MFA for your sign-in. By default, MFA is disabled.
+:description: If enforced at organization level, you must enable Multi-factor Authentication (MFA). If not enforced by your organization, you can choose whether or not to enable MFA for your sign-in. By default, MFA is disabled.
 
 {description}
 
@@ -23,7 +23,7 @@ include::partial$mfa-change-device.adoc[]
 [[disable]]
 == Disable Multi-Factor Authentication
 
-If your organization has not enabled MFA for all users, you can disable it at any time to sign in without an extra authentication step.
+If your organization does not enforce MFA for all users, you can disable it at any time to sign in without an extra authentication step.
 
 To disable MFA, complete the following steps:
 

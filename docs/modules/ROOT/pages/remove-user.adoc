@@ -23,4 +23,4 @@ The remove user confirmation dialog displays.
 
 . Select the *Yes* button to remove the organization user from the organization and delete their account. Selecting the *No* button closes the dialog box without deleting the user
 
-NOTE: Removing an organization user does not delete any clusters or resources that have been created or updated using their account.
+NOTE: Removing an organization user does not delete any clusters or resources that have been created or updated using their account. When the organization user is removed, the admin user inherits ownership of the relevant clusters and resources.

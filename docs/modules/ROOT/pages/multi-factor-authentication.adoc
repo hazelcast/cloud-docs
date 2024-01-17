@@ -13,11 +13,32 @@ NOTE: If signing in with Google or GitHub, set MFA for those accounts and not fo
 [[enable]]
 == Enable Multi-Factor Authentication
 
-To enable MFA for all users associated with your organization, complete the following steps:
+If you have not set a password, you must do this before you can enable MFA. To set a password, complete the following steps:
+
+. Select *Account* from the side navigation bar
+. Select *Password* from the *Account* options
++
+The Account Settings screen displays.
+
+. Select the *RESET* button
++
+An email is sent to the registered email address.
+
+. Select the *RESET YOUR PASSWORD* link provided in the email
++
+The {hazelcast-cloud} Reset Password screen displays.
+
+. Enter the password you want to use in the *New Password* text box
+. Enter the same password in the *Confirm Password* text box
+. Select the *Reset Password* button
+
+You must log back in to {hazelcast-cloud} using this password before you can continue.
+
+To enable MFA, complete the following steps:
 
 include::partial$mfa-enable.adoc[]
 +
-. Select the *Enforce MFA* checkbox to enforce the use of MFA for all organization users
+. To enforce the use of MFA for all organization users, select the *Enforce MFA* checkbox 
 
 You and your organization users must now enter a username and password to sign in, and then provide the verification code using the authenticator app.
 

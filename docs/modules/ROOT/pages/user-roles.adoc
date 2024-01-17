@@ -10,7 +10,7 @@ The current user roles are as follows:
 
 All users have the following permissions:
 
-* Manage clusters. This allows users to work with Hazelcast, for example to:
+* Manage their own clusters. This allows users to work with Hazelcast, for example to:
 +
 ** xref:create-clusters.adoc[Create clusters]
 ** xref:stop-and-resume.adoc#pausing-a-cluster[Pause clusters]
@@ -30,3 +30,7 @@ In addition, admin users have the following permissions:
 * xref:remove-user.adoc[Delete user]
 * xref:payment-methods.adoc[Manage billing and payments]
 * xref:delete-account.adoc[Delete the organization account]
+
+Admin users can see all clusters. If an organization user is removed, the admin user inherits ownership of the related clusters and resources.
+
+When updates are made, for example to the state of a cluster or to an organization user's name, there is be a delay between the change being made and the view presented to the admin user.

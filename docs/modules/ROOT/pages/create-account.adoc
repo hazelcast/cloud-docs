@@ -6,7 +6,7 @@
 
 Whichever sign-up method you use, you are given the choice of creating a free Trial account, or a paid Viridian Standard account. For further information on the available {hazelcast-cloud} editions, see the xref:overview.adoc[Hazelcast {hazelcast-cloud}] section.
 
-NOTE: By creating an account, you are agreeing to the {hazelcast-cloud} Terms of Service and Privacy Policy. These documents are available from the sign-up page.  
+NOTE: By creating an account, you are agreeing to the {hazelcast-cloud} link:https://viridian.hazelcast.com/terms-of-service[Terms of Service,window=_blank] and the Hazelcast link:https://hazelcast.com/privacy/[Privacy Policy,window=_blank]. These documents are also vailable from the sign-up page.  
 
 To create an account, complete the following steps:
 
@@ -32,6 +32,8 @@ A confirmation email is sent to the provided email address.
 Google:: 
 + 
 --
+NOTE: If you use this method, you do not create a {hazelcast-cloud} password. If you subsequently want to sign in with your email and use MFA in {hazelcast-cloud}, you must set a password first. For further information on setting a password, see the xref:change-password.adoc[] topic.
+
 . Select the *Google* button
 . Select the Google account you want to use, or create a Google account
 +
@@ -44,6 +46,8 @@ A confirmation email is sent to your registered email address and the {hazelcast
 GitHub:: 
 + 
 --
+NOTE: If you use this method, you do not create a {hazelcast-cloud} password. If you subsequently want to sign in with your email and use MFA in {hazelcast-cloud}, you must set a password first. For further information on setting a password, see the xref:change-password.adoc[] topic.
+
 . Select the *GitHub* button
 +
 If you are not already signed in to your GitHub account, sign in now.
