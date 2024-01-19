@@ -17,4 +17,4 @@ The Billing & Payment screen displays.
 
 On this screen, You can view how much you've spent, your invoice history, and payment method at any time. 
 
-You can also xref:add-payment-method.adoc[add] or xref:update-payment-method.adoc[update] your payment method and xref:create-budget-tracker.adoc[create or edit a budget tracker].
+You can also xref:update-payment-method.adoc[update your payment method] and xref:create-budget-tracker.adoc[create or edit a budget tracker].

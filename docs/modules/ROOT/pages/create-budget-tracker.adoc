@@ -3,7 +3,7 @@
 
 {description}
 
-NOTE: The budget tracker is provided as tool to help you manage your spending, and setting a budget does not constrain your payments. If you do not stop your cluster, you will continue to be charged regardless of any specified budgets.
+NOTE: The budget tracker is provided as tool to help you manage your spending, and setting a budget does not constrain your usage or your payments. If you do not stop your cluster, you will continue to be charged regardless of any specified budgets.
 
 To create or edit a budget tracker, complete the following steps:
 

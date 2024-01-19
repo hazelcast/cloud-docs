@@ -1,12 +1,12 @@
 = Create an Account
-:description: You must create an account before you can use {hazelcast-cloud}. Creating an account creates an organization with a single user. You can sign up using an email address and password, or with a Google or GitHub account.
+:description: You must create an account before you can use {hazelcast-cloud}. Creating an account creates an organization with a single user. You can sign up using an email address and password, or with a GitHub or Google account.
 :toclevels: 3
 
 {description}
 
 Whichever sign-up method you use, you are given the choice of creating a free Trial account, or a paid Viridian Standard account. For further information on the available {hazelcast-cloud} editions, see the xref:overview.adoc[Hazelcast {hazelcast-cloud}] section.
 
-NOTE: By creating an account, you are agreeing to the {hazelcast-cloud} link:https://viridian.hazelcast.com/terms-of-service[Terms of Service,window=_blank] and the Hazelcast link:https://hazelcast.com/privacy/[Privacy Policy,window=_blank]. These documents are also vailable from the sign-up page.  
+NOTE: By creating an account, you are agreeing to the {hazelcast-cloud} link:https://viridian.hazelcast.com/terms-of-service[Terms of Service,window=_blank] and the Hazelcast link:https://hazelcast.com/privacy/[Privacy Policy,window=_blank]. These documents are also available from the sign-up page.  
 
 To create an account, complete the following steps:
 
@@ -29,20 +29,6 @@ A confirmation email is sent to the provided email address.
 . Select the *Verify your email* link in the confirmation email to confirm your account
 . Sign into your account using the credentials you entered during sign up
 --
-Google:: 
-+ 
---
-NOTE: If you use this method, you do not create a {hazelcast-cloud} password. If you subsequently want to sign in with your email and use MFA in {hazelcast-cloud}, you must set a password first. For further information on setting a password, see the xref:change-password.adoc[] topic.
-
-. Select the *Google* button
-. Select the Google account you want to use, or create a Google account
-+
-If you are not already signed in to your Google account, sign in now.
-+
-If you have enabled MFA on your Google account, you must confirm your identity using your usual method.
-
-A confirmation email is sent to your registered email address and the {hazelcast-cloud} console displays the Cluster screen ready for you to continue. 
---
 GitHub:: 
 + 
 --
@@ -58,6 +44,20 @@ If you have enabled MFA on your GitHub account, you must confirm your identity u
 
 A confirmation email is sent to your registered email address and the {hazelcast-cloud} console displays the Cluster screen ready for you to continue.
 --
+Google:: 
++ 
+--
+NOTE: If you use this method, you do not create a {hazelcast-cloud} password. If you subsequently want to sign in with your email and use MFA in {hazelcast-cloud}, you must set a password first. For further information on setting a password, see the xref:change-password.adoc[] topic.
+
+. Select the *Google* button
+. Select the Google account you want to use, or create a Google account
++
+If you are not already signed in to your Google account, sign in now.
++
+If you have enabled MFA on your Google account, you must confirm your identity using your usual method.
+
+The {hazelcast-cloud} console displays the Cluster screen ready for you to continue. 
+--
 ====
 
 Depending on the method you chose, you might be asked for further information. This can include the following:
@@ -66,7 +66,29 @@ Depending on the method you chose, you might be asked for further information. T
 * Your role
 * Your organization name
 * Your location
-* Your payment information
+
+== Add Payment Method
+
+Before your cluster can be created, you must add a payment method.
+
+NOTE: Currently, card payments are the only supported payment method.
+
+Complete the Add Payment Method form as follows:
+
+. Enter the full name of the organization in the *Full Name / Company* text box
+. Enter the first line of your address in the *Address Line 1* text box
+. Optionally, add the second line of your address in the *Address Line 2 (Optional)* text box
+. Enter your country in the *Country* text box
+. Enter the city used in your address in the *City* text box
+. Enter your post, or zip, code in the *Postal Code* text box
+. Enter the long number from your payment card in the *Card Number* text number
+. Enter the expiry date from your payment card in the *Expiration Date* text box
+. Enter the card verification code from your card in the *CVC* text box
+. Select the *ADD PAYMENT DETAILS* button to save your payment details
+
+NOTE: Hazelcast uses a third party to store payment details and process payments. Payment details are not stored in Hazelcast.
+
+You can add only one payment method to your account. You can xref:update-payment-method.adoc[update your payment details] at any time.
 
 == Next Steps
 

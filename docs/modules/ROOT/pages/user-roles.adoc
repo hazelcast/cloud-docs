@@ -23,6 +23,7 @@ All users have the following permissions:
 * https://docs.hazelcast.com/management-center/5.3/getting-started/overview[Use Management Center^]
 * xref:view-organization-details.adoc[View the organization name]
 * xref:view-and-update-profile.adoc[View and update their own profile]
+* xref:multi-factor-authentication.adoc[Enable and disable Multi-factor Authentication]
 
 In addition, admin users have the following permissions:
 
@@ -33,4 +34,4 @@ In addition, admin users have the following permissions:
 
 Admin users can see all clusters. If an organization user is removed, the admin user inherits ownership of the related clusters and resources.
 
-When updates are made, for example to the state of a cluster or to an organization user's name, there is be a delay between the change being made and the view presented to the admin user.
+When updates are made, for example to the state of a cluster or to an organization user's name, there might be a delay between the change being made and the view presented to the admin user.

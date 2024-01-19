@@ -21,4 +21,4 @@ Your email address is pre-filled and cannot be edited. This is the email address
 
 Your account is created, and you can sign in using the specified email and password.
 
-NOTE: If your organization enforces multi-factor authentication on all accounts, you are prompted to enable MFA. For further information on enabling MFA, see the xref:user-mfa-settings.adoc[User MFA Settings] topic.
+NOTE: To further secure your account, enable MFA. For further information on enabling MFA, see the xref:multi-factor-authentication.adoc[] topic.

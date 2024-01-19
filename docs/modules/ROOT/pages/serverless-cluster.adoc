@@ -10,7 +10,7 @@
 
 Standard means that Hazelcast manages the cloud infrastructure for you. Each {hazelcast-cloud} Standard cluster is an independent deployment of Hazelcast Platform in a Kubernetes container. This design guarantees resource isolation, prevents resource stealing, and provides isolated network access.
 
-When you first create an account on Hazelcast {hazelcast-cloud}, you become the admin user for an organisation. This means that you can invite users to your organization and share resources, such as clusters. For further information on organizations, see the xref:organizations-and-accounts.adoc[Organizations and Accounts] section.
+When you first create an account on Hazelcast {hazelcast-cloud}, you become the administrator of an organization. This means that you can invite users to your organization and share resources, such as clusters. For further information on organizations, see the xref:organizations-and-accounts.adoc[Organizations and Accounts] section.
 
 == {hazelcast-cloud} Standard Cluster Types
 

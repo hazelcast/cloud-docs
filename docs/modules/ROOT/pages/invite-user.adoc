@@ -28,7 +28,7 @@ The User Management screen displays.
 
 . Select the *INVITE A USER* button
 +
-The invite users dialog displays.
+The Invite users dialog displays.
 
 . Enter the email address that the user will use to sign in to {hazelcast-cloud} in the *Email address* text box
 
@@ -40,9 +40,9 @@ If you made a mistake when entering the email address, you can select the *Delet
 
 . If required, add further users by repeating steps 6 and 7 above until all email addresses to which you want to send an invitation are listed below the text box
 
-. Select the *INVITE USERS* button to send an invitation to all listed email addresses. If you select the *Cancel* button, the dialog box closes without sending any invitations
+. Select the *INVITE* button to send an invitation to all listed email addresses. If you select the *Cancel* button, the dialog box closes without sending any invitations
 +
-NOTE: If the email address already exists, no invitation is sent.
+NOTE: If the email address already exists in {hazelcast-cloud}, no invitation is sent.
 
 The users must now accept the invitation before they are added to the account. For further information on accepting an invitation, see the xref:accept-invitation.adoc[Accept Invitation to Organization] topic.
 

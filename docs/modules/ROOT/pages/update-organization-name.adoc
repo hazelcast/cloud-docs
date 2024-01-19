@@ -1,5 +1,5 @@
 = Update Organization Name
-:description: When you created an account, an organization was created. You either provided a name for the organization when you created the account, or were prompted to add it when first signing in to the {hazelcast-cloud} console. The organization details can be viewed, and the name updated, at any time.
+:description: When you created an account, an organization was created. You provided a name for the organization when you created the account. The organization details can be viewed, and the name updated, at any time.
 :toclevels: 3
 
 {description}

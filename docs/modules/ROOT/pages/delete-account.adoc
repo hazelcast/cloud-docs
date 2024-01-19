@@ -47,6 +47,6 @@ WARNING: If you delete the organization, all users, clusters, and other resource
 +
 WARNING: There is no confirmation dialog box. If you select the *DELETE THIS ORGANIZATION* button the users, clusters, and cluster data associated with your account are deleted immediately. This step is irreversible.
 
-NOTE: If the organization has an outstanding balance, it cannot be deleted. For further information on billing and payments, see the xref:payment-methods.adoc[Billing and Payments] section.
+NOTE: If the organization has an outstanding balance, it cannot be deleted until the balance is cleared. Payment is attempted using the provided payment method, if successful, the organization is deleted. For further information on billing and payments, see the xref:payment-methods.adoc[Billing and Payments] section.
 
 When you delete your account, no further charges are incurred and you cannot access your account.

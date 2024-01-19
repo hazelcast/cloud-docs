@@ -23,7 +23,7 @@ The Update Payment Method screen displays.
 +
 NOTE: Currently, card payments are the only supported payment method.
 
-. Complete the Update Payment Method form as required. For further information on the fields, see the xref:add-payment-method.adoc[Add Payment Method] topic
+. Complete the Update Payment Method form as required. For further information on the fields, see the xref:create-account.adoc[Add Payment Method] section of the Create an Account topic
 
 . Select the *UPDATE PAYMENT DETAILS* button to save the changes to your payment details. Selecting the *Cancel* button returns you to the Billing & Payments screen without saving your changes
 

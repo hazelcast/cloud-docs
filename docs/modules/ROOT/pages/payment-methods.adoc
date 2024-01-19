@@ -8,7 +8,7 @@
 
 When you sign up for a Standard or Dedicated {hazelcast-cloud} account, you must add a payment method as follows:
 
-* For xref:serverless-cluster.adoc[{hazelcast-cloud} Standard clusters], you are prompted to add your payment details after signing in for the first time. You must provide a payment card to create clusters. For further information on adding a payment method, see the xref:add-payment-method.adoc[Add Payment Method] topic
+* For xref:serverless-cluster.adoc[{hazelcast-cloud} Standard clusters], you are prompted to add your payment details after choosing to create a Development or Production cluster during sign-up. You must provide a payment card to create clusters. For further information on adding a payment method, see the xref:create-account.adoc#add-payment[Add Payment Method] section of the Create an Account topic
 * For xref:dedicated-cluster.adoc[{hazelcast-cloud} Dedicated clusters], contact us to discuss your requirement and costs; the payment method is set up as part of this process. Alternatively, you can buy a three-member (13.5GB of storage) package directly from the link:https://aws.amazon.com/marketplace/pp/prodview-olxywxtjninay[AWS Marketplace^]  Payment options include the following:
 +
 ** Card payments
