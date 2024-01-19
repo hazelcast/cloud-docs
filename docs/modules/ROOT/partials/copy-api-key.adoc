@@ -9,5 +9,7 @@ To copy your API key, do the following:
 The Developer screen displays.
 
 . Select the *Copy* (overlapping squares) button
++
+TIP: Copy it now and store it somewhere safe, as the secret is not shown again after you leave this screen. Next time this screen displays, you can view only the API key.
 
 The API key is copied to your clipboard. You can now paste the API key into your application configuration.

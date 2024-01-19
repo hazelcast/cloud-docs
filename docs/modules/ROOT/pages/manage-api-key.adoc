@@ -3,7 +3,7 @@
 
 {description}
 
-When you generate your API key, you can copy it directly from the Hazelcast {hazelcast-cloud} console.
+When you generate your API key, copy it directly from the Hazelcast {hazelcast-cloud} console.
 
 include::partial$create-api-key.adoc[]
 
