@@ -1,5 +1,5 @@
 = {hazelcast-cloud} Dedicated Clusters
-:description: Dedicated is a managed cloud service that allows you to maintain control over the hardware, resources, and deployment options that are available to your cluster. Dedicated means you get specific servers (cloud instances) all to yourself. You do not share infrastructure with other customers, and your clusters are not accessible via the public internet.
+:description: Dedicated is a managed cloud service that allows you to maintain control over the hardware, resources, and deployment options that are available to your cluster. Dedicated means you get specific servers (cloud instances) all to yourself. You do not share infrastructure with other customers, and your clusters are not accessible over the public internet.
 :page-dedicated: true
 :cloud-tags: Get Started
 :cloud-title: About Dedicated
@@ -8,10 +8,12 @@
 
 {description}
 
+When you first create an account on Hazelcast {hazelcast-cloud}, you become the adminstrator of an organization. This means that you can invite users to your organization and share resources, such as clusters. For further information on organizations, see the xref:organizations-and-accounts.adoc[Organizations and Accounts] section.
+
 You can design a Hazelcast topology that meets your specific compliance and service design needs.
 
 - Deploy your clusters to specific regions to comply with data residency laws.
-- Benefit from strict container isolation for projects that require enhanced security. {hazelcast-cloud} Dedicated is SOC 2 compliant.
+- Benefit from strict container isolation for projects that require enhanced security.
 - Deploy clusters to specific regions as part of your organization's cloud strategy. To reduce network latency, you can deploy clusters in regions that are closest to your users' locations.
 - Specify the memory capacity of members in your cluster, with automatic scaling enabled by default, to provide additional capacity when required.
 

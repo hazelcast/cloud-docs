@@ -1,0 +1,17 @@
+= Users
+:description: Whether you are an admin user or an organization user, you can access specific settings to support your use of Hazelcast {hazelcast-cloud}, including managing your profile and API key. Organization users must accept an invition to join the organization account before they can access the {hazelcast-cloud} console.
+:toclevels: 3
+
+{description}
+
+Organization users cannot accept an invitation to join an organization account if they are associated with a different organization using the same email address. For further information on accepting an invitation, see the xref:accept-invitation.adoc[Accept Invitation to Organization] section.
+
+All users can do the following:
+
+* View the name of their associated organization. For further information on viewing the organization name, see the xref:view-organization-details.adoc[View Organization Details] topic
+* View and update their profile. For further information on updating your profile, see the xref:view-and-update-profile.adoc[View and Update Profile] topic
+* Enable and disable MFA on their account. For further information on enabling and disabling MFA for your sign in, see the xref:multi-factor-authentication.adoc[] topic
+* Generate, copy, and delete an API key. For further information on the API key, see the xref:manage-api-key.adoc[Manage API Key] topic
+* Change the password used to sign in to their account. For further information on changing the password associated with your sign in, see the xref:change-password.adoc[Change Password] topic
+
+For further information on the additional options, which are available to admin users only, see the xref:organization.adoc[Organizations] section.

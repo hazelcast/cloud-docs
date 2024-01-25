@@ -1,0 +1,30 @@
+== Update Payment Method
+:description: You can change your payment details at any time. 
+
+{description}
+
+NOTE: A payment method is not required for {hazelcast-cloud} Trial Edition.
+
+To update your payment details, complete the following steps:
+
+. Sign in to the link:{page-cloud-console}[{hazelcast-cloud} console,window=_blank].
+. Select *Account* from the side navigation bar
+. Select *Organization* from the *Account* options
++
+The Info screen displays.
+
+. Select the *Billing & Payments* tab
++
+The Billing & Payment screen displays.
+
+. Select *Update Payment Method*
++
+The Update Payment Method screen displays.
++
+NOTE: Currently, card payments are the only supported payment method.
+
+. Complete the Update Payment Method form as required. For further information on the fields, see the xref:create-account.adoc[Add Payment Method] section of the Create an Account topic
+
+. Select the *UPDATE PAYMENT DETAILS* button to save the changes to your payment details. Selecting the *Cancel* button returns you to the Billing & Payments screen without saving your changes
+
+NOTE: Hazelcast uses a third party to store payment details and process payments. Payment details are not stored in Hazelcast.

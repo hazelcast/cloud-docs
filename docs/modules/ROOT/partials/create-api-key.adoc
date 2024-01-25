@@ -1,0 +1,21 @@
+== Create an API Key
+
+// tag::create[]
+NOTE: You can create only one API key and secret pair on your account. If you need to change your API credentials, you must first remove your existing credentials, and then create new credentials. 
+
+To create a set of API credentials, do the following:
+
+. Sign into the link:{page-cloud-console}[{hazelcast-cloud} console,window=_blank]
+. Select *Account* from the side navigation bar
+. Select *Developer* from the *Account* options
++
+The Developer screen displays.
+
+. Select the *Generate New API Key* button
+
+Use these credentials in your applications to manage all clusters in your account. 
+
+After creating your credentials, ensure that you applications are correctly configured to use the API credentials.
+// end::create[]
+
+IMPORTANT: Keep your keys and secrets secure. Anyone who has these credentials has full access to your clusters.

@@ -1,0 +1,15 @@
+= Organization
+:description: When you create a {hazelcast-cloud} account, an organization is created. This organization has a single administrator who has the same set of permissions that are granted to organization users, plus access to organization-level settings such as user management and payments. All resource-related information belongs to the organization.
+:toclevels: 3
+
+{description}
+
+The admin user manages the following:
+
+* Account creation. You need an account to use {hazelcast-cloud}. On creation of an account, an organization is created. For further information on creating an account, see the xref:create-account.adoc[Create Account] section
+* The name of the organization. You enter an organization name during account creation, but this can be changed at any time. For further information on changing the organization name, see the xref:update-organization-name.adoc[Update Organization Name] topic
+* Organization users. You can invite users to join your organization, or remove them from the organization. For further information on adding organization users and the available user roles, see the xref:add-users.adoc[Add Users] section. For further information on removing users, see the xref:remove-user.adoc[Remove User] topic
+* Account deletion. Deleting the account removes the organization, and all assoicated resources and users. For further information on deleting the organization, see the xref:delete-account.adoc[Delete an Account] topic
+* Billing and payments. You can view your organization usage and bills, update your payment method, and create spending alerts to help manage your budget. For further information on billing and payments, see the xref:payment-methods.adoc[Billing and Payments] section
+
+For further information on the additional options, which are available to all users, see the xref:users.adoc[Users] section.

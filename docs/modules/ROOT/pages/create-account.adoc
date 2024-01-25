@@ -1,78 +1,101 @@
-= Creating an Account
-:description: Before you can create a cluster, you must create an account. You can create an account with your GitHub credentials, Google credentials, or you can provide an email address and password.
+= Create an Account
+:description: You must create an account before you can use {hazelcast-cloud}. Creating an account creates an organization with a single user. You can sign up using an email address and password, or with a GitHub or Google account.
 :toclevels: 3
 
 {description}
 
-== Creating a New Account
+Whichever sign-up method you use, you are given the choice of creating a free Trial account, or a paid Viridian Standard account. For further information on the available {hazelcast-cloud} editions, see the xref:overview.adoc[Hazelcast {hazelcast-cloud}] section.
 
-To create a new account, go to the link:{page-cloud-console}[{hazelcast-cloud} sign-up page, window=_blank].
+NOTE: By creating an account, you are agreeing to the {hazelcast-cloud} link:https://viridian.hazelcast.com/terms-of-service[Terms of Service,window=_blank] and the Hazelcast link:https://hazelcast.com/privacy/[Privacy Policy,window=_blank]. These documents are also available from the sign-up page.  
 
+To create an account, complete the following steps:
+
+. Open the link:{page-cloud-signup}[{hazelcast-cloud} sign-up page, window=_blank]
+
+. Enter the sign-up information for the method you prefer, as follows:
++
 [tabs] 
 ====
 Email::
 + 
 --
-. Enter your name, email address, and a password.
-. Click *Create Account*.
+. Enter your name in the *Full Name* text box
+. Enter your email address in the *Email* text box
+. Enter the password you want to use when signing in in the *Password* text box
+. Select the *Create Account* button
 +
-A confirmation email will be sent to your email address.
-. Click *Verify your email* in the confirmation email to confirm your account.
-. Sign into your account.
---
-Google:: 
-+ 
---
-. Click *Google*.
-. Select a Google account.
-. Sign into Google if you haven't already.
+A confirmation email is sent to the provided email address.
 
-A confirmation email will be sent to your registered email address and you will be signed into the {hazelcast-cloud} console.
+. Select the *Verify your email* link in the confirmation email to confirm your account
+. Sign into your account using the credentials you entered during sign up
 --
 GitHub:: 
 + 
 --
-. Click *GitHub*.
-. Sign into GitHub if you haven't already.
-. Click *Authorize hazelcast*.
+NOTE: If you use this method, you do not create a {hazelcast-cloud} password. If you subsequently want to sign in with your email and use MFA in {hazelcast-cloud}, you must set a password first. For further information on setting a password, see the xref:change-password.adoc[] topic.
 
-A confirmation email will be sent to your registered email address and you will be signed into the {hazelcast-cloud} console.
+. Select the *GitHub* button
++
+If you are not already signed in to your GitHub account, sign in now.
++
+If you have enabled MFA on your GitHub account, you must confirm your identity using your usual method.
+
+. Select the *Authorize Hazelcast* button
+
+A confirmation email is sent to your registered email address and the {hazelcast-cloud} console displays the Cluster screen ready for you to continue.
+--
+Google:: 
++ 
+--
+NOTE: If you use this method, you do not create a {hazelcast-cloud} password. If you subsequently want to sign in with your email and use MFA in {hazelcast-cloud}, you must set a password first. For further information on setting a password, see the xref:change-password.adoc[] topic.
+
+. Select the *Google* button
+. Select the Google account you want to use, or create a Google account
++
+If you are not already signed in to your Google account, sign in now.
++
+If you have enabled MFA on your Google account, you must confirm your identity using your usual method.
+
+The {hazelcast-cloud} console displays the Cluster screen ready for you to continue. 
 --
 ====
 
-After signing in, you can choose from the following options:
+Depending on the method you chose, you might be asked for further information. This can include the following:
 
-- Begin a free 14-day trial
-- Create your own clusters on {hazelcast-cloud} Standard, which requires a xref:payment-methods.adoc[payment method].  
+* Why you are using {hazelcast-cloud}
+* Your role
+* Your organization name
+* Your location
 
+== Add Payment Method
 
-== Changing your Profile
+Before your cluster can be created, you must add a payment method.
 
-When you first sign into the {hazelcast-cloud} console, you are prompted to provide your company name and location. You can update these details at any time.
+NOTE: Currently, card payments are the only supported payment method.
 
-. Sign into the link:{page-cloud-console}[{hazelcast-cloud} console,window=_blank].
-. Go to *Account* > *Profile*.
-. Enter your details and click *Update My Details*.
+Complete the Add Payment Method form as follows:
 
-== Changing your Password
+. Enter the full name of the organization in the *Full Name / Company* text box
+. Enter the first line of your address in the *Address Line 1* text box
+. Optionally, add the second line of your address in the *Address Line 2 (Optional)* text box
+. Enter your country in the *Country* text box
+. Enter the city used in your address in the *City* text box
+. Enter your post, or zip, code in the *Postal Code* text box
+. Enter the long number from your payment card in the *Card Number* text number
+. Enter the expiry date from your payment card in the *Expiration Date* text box
+. Enter the card verification code from your card in the *CVC* text box
+. Select the *ADD PAYMENT DETAILS* button to save your payment details
 
-If you registered with an email address, you can change your account password:
+NOTE: Hazelcast uses a third party to store payment details and process payments. Payment details are not stored in Hazelcast.
 
-. Sign into the link:{page-cloud-console}[{hazelcast-cloud} console,window=_blank].
-. Go to *Account* > *Password*.
-. Enter your current password and then enter and confirm a new password.
-. Click *Change*.
-
-== Keeping your Account Safe
-
-After you set up your account, you'll want to keep it safe. Here are some recommendations:
-
-- *Keep private information secure:* Keep your password and any xref:developer.adoc[API keys] private.
-
-- *Enable multi-factor authentication:* Protect your account from anyone who may know your username and password. With xref:multi-factor-authentication.adoc[multi-factor authentication], you'll need to provide a unique code that's generated on your device as well as your username and password to sign in.
-
-- *Allow only authorized devices to access your cluster:* You can xref:ip-white-list.adoc[set up an IP whitelist] to allow only known IP addresses to access your cluster.
+You can add only one payment method to your account. You can xref:update-payment-method.adoc[update your payment details] at any time.
 
 == Next Steps
 
-xref:get-started.adoc[].
+Follow the xref:get-started.adoc[Hello World] tutorial.
+
+Alternatively, finish setting up your organization as follows:
+
+* xref:add-users.adoc[Add users] to the organization
+* Set up a xref:payment-methods.adoc[payment method or budget tracker]
+* Enable xref:multi-factor-authentication.adoc[MFA]

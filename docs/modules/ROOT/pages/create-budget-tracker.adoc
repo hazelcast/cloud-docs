@@ -1,0 +1,34 @@
+== Create or Edit Budget Tracker
+:description: To get email and in-app notifications when your usage nears specified spending limits, you can set a budget tracker for your daily and monthly spend. 
+
+{description}
+
+NOTE: The budget tracker is provided as tool to help you manage your spending, and setting a budget does not constrain your usage or your payments. If you do not stop your cluster, you will continue to be charged regardless of any specified budgets.
+
+To create or edit a budget tracker, complete the following steps:
+
+. Sign in to the link:{page-cloud-console}[{hazelcast-cloud} console,window=_blank].
+. Select *Account* from the side navigation bar
+. Select *Organization* from the *Account* options
++
+The Info screen displays.
+
+. Select the *Billing & Payments* tab
++
+The Billing & Payment screen displays.
+
+. Open the budget settings screen as follows:
++
+.. If you have not previously set a budget tracker, select *Create Budget Tracker*
+.. If you have a single budget tracker set, either select the *Edit* (pencil) icon beside the budget summary or select *Create Budget Tracker*
+.. If you have both budget trackers set, select the *Edit* (pencil) icon beside either budget summary
++
+The budget settings screen displays.
+
+. Set or disable a spending limit alert as follows:
++
+.. To set a daily spending limit alert, enter the limit in US dollars (USD) in the *Daily Alert* text box, then set the *ON/OFF* toggle to *ON*
+.. To set a monthly spending limit alert, enter the limit in US dollars (USD) in the *Monthly Alert* text box, then set the *ON/OFF* toggle to *ON*
+.. To disable the spending limit alerts, set the relevant *ON/OFF* toggle to *OFF*
+
+. Select the *SAVE CONFIGURATION* button to save your budget settings. Selecting the *Close* link at the bottom of the screen, or the *Cancel* link in the top right, returns you to the Billing & Payments screen without saving your budget settings

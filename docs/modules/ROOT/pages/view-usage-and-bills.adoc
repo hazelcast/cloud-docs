@@ -1,0 +1,20 @@
+== View Billing and Payment Summary
+:description: See how much you've spent in the current month and how much you spent in previous months.
+
+{description}
+
+To view your spending information, complete the following steps:
+
+. Sign in to the link:{page-cloud-console}[{hazelcast-cloud} console,window=_blank].
+. Select *Account* from the side navigation bar
+. Select *Organization* from the *Account* options
++
+The Info screen displays.
+
+. Select the *Billing & Payments* tab
++
+The Billing & Payment screen displays.
+
+On this screen, You can view how much you've spent, your invoice history, and payment method at any time. 
+
+You can also xref:update-payment-method.adoc[update your payment method] and xref:create-budget-tracker.adoc[create or edit a budget tracker].

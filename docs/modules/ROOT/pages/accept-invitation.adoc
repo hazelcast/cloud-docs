@@ -1,0 +1,24 @@
+= Accept Invitation to Organization
+:description: When the admin user invites someone to join the organization, an invitation is sent to the specified email address unless that email address already exists in {hazelcast-cloud}. 
+
+{description}
+
+NOTE: The same email address cannot be used more than once in a single organization, or in more than one organization. 
+
+To accept an invitation to join an organization, complete the following steps:
+
+. Open the email from your organization
+. Select the *ACCEPT INVITE* button
++
+The Hazelcast {hazelcast-cloud} organization invitation screen displays
+
+. Enter your name in the *Full Name* text box
++
+Your email address is pre-filled and cannot be edited. This is the email address used when signing in.
+
+. Enter a password in the *Password* text box. This is the password used when signing in 
+. Select the *Create Account* button
+
+Your account is created, and you can sign in using the specified email and password.
+
+NOTE: To further secure your account, enable MFA. For further information on enabling MFA, see the xref:multi-factor-authentication.adoc[] topic.

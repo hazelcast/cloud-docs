@@ -1,0 +1,19 @@
+= View and Update Profile
+:description: Every user has a profile, which they can view and update at any time.
+
+{description}
+
+To view your profile, complete the following steps:
+
+. Open the link:{page-cloud-console}[{hazelcast-cloud} console, window=_blank]
+. Select *Account* from the side navigation bar
+. Select *Profile* from the *Account* options
++
+The Profile screen displays.
+
+You can update your profile information as follows:
+
+* To change the name, update the *Full Name* text box
+* To change your location, select the new location from the *Location* drop-down menu
+
+When you have made the changes you require, select the *UPDATE MY DETAILS* button.

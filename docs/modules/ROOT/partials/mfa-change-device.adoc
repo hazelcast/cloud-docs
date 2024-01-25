@@ -1,0 +1,10 @@
+=== Change Authenticator Device
+
+Verification codes are specific to a particular device and cannot be transferred. If you use a different device, you cannot use the codes even if they are generated from the same authentication app. 
+
+To change the device used by your authentication app, complete the following steps:
+
+. <<disable, Disable MFA>> on your old device
+. <<enable, Enable MFA>> on your new device
+
+You can now use your authenticator app on your new device.

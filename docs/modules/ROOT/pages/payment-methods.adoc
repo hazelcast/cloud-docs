@@ -1,52 +1,21 @@
 = Billing and Payments
-:description: When you sign up for a {hazelcast-cloud} account, you need to add a payment card to pay for usage as well as to view how much you've spent.
-:cloud-tags: Manage Accounts | Manage Accounts | Manage Accounts
-:cloud-title: Payments and Billing | Add Payment Card | View Bills
-:cloud-order: 33 | 34 | 35
-:cloud-anchor: | adding-a-payment-card | viewing-bills
-:page-aliases: set-budget.adoc 
+:description: When you sign up for the Standard or Dedicated Edition of {hazelcast-cloud}, you must provide a payment method. You can view a summary of your invoices and usage at any time. 
+:cloud-tags: Manage Organizations
+:cloud-title: Billing and Payments
+:cloud-order: 33
 
 {description}
 
-For xref:serverless-cluster.adoc[{hazelcast-cloud} Standard clusters], you must provide a payment card to create new clusters.
+When you sign up for a Standard or Dedicated {hazelcast-cloud} account, you must add a payment method as follows:
 
-For xref:dedicated-cluster.adoc[{hazelcast-cloud} Dedicated clusters], a wider range of payment options is available, including:
+* For xref:serverless-cluster.adoc[{hazelcast-cloud} Standard clusters], you are prompted to add your payment details after choosing to create a Development or Production cluster during sign-up. You must provide a payment card to create clusters. For further information on adding a payment method, see the xref:create-account.adoc#add-payment[Add Payment Method] section of the Create an Account topic
+* For xref:dedicated-cluster.adoc[{hazelcast-cloud} Dedicated clusters], contact us to discuss your requirement and costs; the payment method is set up as part of this process. Alternatively, you can buy a three-member (13.5GB of storage) package directly from the link:https://aws.amazon.com/marketplace/pp/prodview-olxywxtjninay[AWS Marketplace^]  Payment options include the following:
++
+** Card payments
+** Purchase orders 
 
-- Card payments
-- Purchase orders
-- Buying the service link:https://aws.amazon.com/marketplace/pp/prodview-olxywxtjninay[direct from AWS Marketplace].
+Once your account and payment method is set up, you can do the following:
 
-== Adding a Payment Card
-
-To set up automatic payments for your usage, add a payment card to your account. For {hazelcast-cloud} Standard clusters, you are prompted to add your payment details after signing in for the first time. 
-
-NOTE: Hazelcast uses a third party to store payment details and process payments. Payment details are not stored in Hazelcast.
-
-. Sign into the link:{page-cloud-console}[{hazelcast-cloud} console,window=_blank].
-. Go to *Account* > *Billing & Payments*.
-. Click *Add Payment Method*.
-. Complete the form by filling in your payment details.
-
-You can add only one payment card to your account. To change the payment card, update it.
-
-== Updating a Payment Card
-
-. Sign into the link:{page-cloud-console}[{hazelcast-cloud} console,window=_blank].
-. Go to *Account* > *Billing & Payments*.
-. Click *Update Payment Method*.
-. Complete the form by filling in your payment details.
-
-Your updated card is charged for future payments.
-
-== Removing a Card from your Account
-
-You cannot remove payment cards from your account, using the {hazelcast-cloud} console.
-
-To remove a payment card from your account, contact us at mailto:support@hazelcast.com[].
-
-== Viewing Bills
-
-You can see how much you've spent in the current month as well as how much you spent in previous months.
-
-. Sign into the link:{page-cloud-console}[{hazelcast-cloud} console,window=_blank].
-. Go to *Account* > *Billing & Payments*.
+* View your usage and associated costs, along with your payment history, as described in the xref:view-usage-and-bills.adoc[View Usage and Bills] topic
+* Update your payment method, as described in the xref:update-payment-method.adoc[Update Payment Method] topic
+* Create a budget tracker, as described in the xref:create-budget-tracker.adoc[Create or Edit Budget Tracker] topic

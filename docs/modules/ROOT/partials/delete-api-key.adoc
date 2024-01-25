@@ -1,0 +1,19 @@
+== Delete an API Key
+
+WARNING: If you delete your API key, any application using the key will not work unless you update the configuration with a new set of credentials.
+
+To create a set of API credentials, do the following:
+
+. Sign into the link:{page-cloud-console}[{hazelcast-cloud} console,window=_blank]
+. Select *Account* from the side navigation bar
+. Select *Developer* from the *Account* options
++
+The Developer screen displays.
+
+. Select the *Delete API Key* button
++
+A confirmation dialog box displays.
+
+. Select the *OK* button to delete your API key. Selecting the *Cancel* button returns you to the Developer screen without deleting your API key
+
+If you want to continue using your applications with Hazelcast {hazelcast-cloud}, you must create an API key again and ensure that your applications are correctly configured to use the updated API credentials.

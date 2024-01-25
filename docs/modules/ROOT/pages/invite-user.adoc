@@ -1,0 +1,49 @@
+= Invite User
+:description: You can invite users to the account by sending an invitation to the email address they will use to sign in.
+
+{description}
+
+[NOTE]
+==== 
+If the user you want to add to the organization is already using the same email for a different organization account, you cannot invite them to your organization until they are removed from their existing account.
+
+To transfer a user, they must be removed from their current organization. This can only be done by a Hazelcast {hazelcast-cloud} Administrator, or the admin user of the organization to which they are currently associated.
+
+When the user is removed from their existing organization, their {hazelcast-cloud} account is also deleted.
+
+Once their existing account has been removed, you can invite them to your organization account as described below. 
+====
+
+To invite a user, complete the following steps:
+
+. Open the link:{page-cloud-console}[{hazelcast-cloud} console, window=_blank]
+. Select *Account* from the side navigation bar
+. Select *Organization* from the *Account* options
++
+The Info screen displays.
+
+. Select the *User Management* tab
++
+The User Management screen displays.
+
+. Select the *INVITE A USER* button
++
+The Invite users dialog displays.
+
+. Enter the email address that the user will use to sign in to {hazelcast-cloud} in the *Email address* text box
+
+. Select the *Add* (plus) button to add the email address to the invitation list
++
+The added email address is listed below the text box.
++
+If you made a mistake when entering the email address, you can select the *Delete* (cross) button beside the email address. This removes the email address, and you can repeat steps 6 and 7 to add the correct email address.
+
+. If required, add further users by repeating steps 6 and 7 above until all email addresses to which you want to send an invitation are listed below the text box
+
+. Select the *INVITE* button to send an invitation to all listed email addresses. If you select the *Cancel* button, the dialog box closes without sending any invitations
++
+NOTE: If the email address already exists in {hazelcast-cloud}, no invitation is sent.
+
+The users must now accept the invitation before they are added to the account. For further information on accepting an invitation, see the xref:accept-invitation.adoc[Accept Invitation to Organization] topic.
+
+You can track the status of your invitations in the User Management screen.

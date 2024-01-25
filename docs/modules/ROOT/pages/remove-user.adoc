@@ -1,0 +1,26 @@
+= Remove User
+:description: You can remove organization users from your account at any time through the User Management screen.
+
+{description}
+
+NOTE: You cannot remove the admin user in this way. For further information on removing the admin user, see the xref:delete-account.adoc[Delete Organization] topic.
+
+To remove an organization user, complete the following steps:
+
+. Open the link:{page-cloud-console}[{hazelcast-cloud} console, window=_blank]
+. Select *Account* from the side navigation bar
+. Select *Organization* from the *Account* options
++
+The Info screen displays.
+
+. Select the *User Management* tab
++
+The User Management screen displays.
+
+. Select *Remove* from the end of the row for the organization user you want to delete
++
+The remove user confirmation dialog displays.
+
+. Select the *Yes* button to remove the organization user from the organization and delete their account. Selecting the *No* button closes the dialog box without deleting the user
+
+NOTE: Removing an organization user does not delete any clusters or resources that have been created or updated using their account. When the organization user is removed, the admin user inherits ownership of the relevant clusters and resources.

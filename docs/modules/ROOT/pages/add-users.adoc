@@ -1,0 +1,12 @@
+= Add Users
+:description: To share resources across the organization, you must add users to the account.
+
+{description}
+
+NOTE: If you have a Trial subscription, you cannot add users to your organization. For further information on Trial subscriptions, see the xref:free-trial.adoc[{hazelcast-cloud} Trial] topic.
+
+When you add a user to the organization, they are assigned a user role. For further information on user roles, see the xref:user-roles.adoc[User Roles] topic.
+
+NOTE: Currently, there are only two user roles; the admin user, who set up the organization account, and organization users who have been added to the organization by the admin user.
+
+You can add a user by sending an invitation to the email address the user will use when signing in to {hazelcast-cloud}. For further information on sending an invitation, see the xref:invite-user.adoc[Invite User] topic.
