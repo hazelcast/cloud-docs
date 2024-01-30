@@ -42,7 +42,7 @@ content:
   - url: https://github.com/hazelcast/hazelcast-cloud-maven-plugin
     branches: main
     start_path: docs
-  - url: https://github.com/hazelcast/hazelcast-commandline-client
+  - url: https://github.com/hazelcast/clc-docs
     branches: [main]
     start_path: docs
 ui:
