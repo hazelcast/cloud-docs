@@ -10,6 +10,7 @@
 * xref:developer-guide.adoc[Developer Guide]
 * xref:authorize-connections.adoc[Connectivity]
 ** xref:ip-white-list.adoc[IP Whitelist]
+* xref:jdbc-sample-client.adoc[Sample JDBC Client]
 * xref:developer.adoc[API keys]
 
 .Develop Applications
