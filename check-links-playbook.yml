@@ -24,6 +24,9 @@ content:
   - url: https://github.com/hazelcast-guides/sql_basics_on_viridian
     branches: master
     start_paths: docs
+  - url: https://github.com/hazelcast-guides/stream-to-stream-joins
+    branches: master
+    start_paths: docs    
   - url: https://github.com/hazelcast-guides/client-failover
     branches: master
     start_paths: docs
