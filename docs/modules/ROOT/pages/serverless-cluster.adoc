@@ -1,4 +1,4 @@
-= {hazelcast-cloud} Standard Clusters
+= {hazelcast-cloud} Standard Edition
 :description: {hazelcast-cloud} Standard is a managed cloud service that offers a pay-as-you-go pricing model. Standard clusters auto-scale to provide the resources that your application needs. You pay only for the resources that your application consumes.
 :toc-levels: 3
 :page-aliases: architecture.adoc
@@ -17,13 +17,12 @@ When you first create an account on Hazelcast {hazelcast-cloud}, you become the 
 // tag::types[]
 {hazelcast-cloud} Standard clusters come in two types:
 
-- *Development:* Capped storage. You can store at most 0.5 GiB of data.
-- *Production:* Uncapped storage. The cluster scales as you add or remove data.
-// end::types[]
-
 [[dev]]
-== Development Clusters
-
+- *Development:* Capped storage. You can store up to 0.5 GiB of data
++
+.Tell me more
+[%collapsible]
+====
 // tag::development[]
 Development clusters are for fast, iterative development while you prototype your application.
 // end::development[]
@@ -37,19 +36,23 @@ Development clusters have the following limitations:
 - No cluster data persistence
 
 When a development cluster restarts for any reason, you lose all cluster data, such as maps and cluster-side modules. For example, when you manually xref:stop-and-resume.adoc[resume] a cluster after a period of inactivity.
-
+====
++
 NOTE: You cannot convert a development cluster to a production cluster.
 
 [[prod]]
-== Production Clusters
-
+- *Production:* Uncapped storage. The cluster scales as you add or remove data.
++
+.Tell me more
+[%collapsible]
+====
 // tag::production[]
 Production clusters are for applications that have already been tested and are ready for deployment in real-world scenarios.
 // end::production[]
 
 Production clusters automatically scale out and in, depending on the amount of resources that you use. If you xref:stop-and-resume.adoc[pause] a production cluster, Hazelcast saves your cluster data so that you can resume the cluster at a later time.
 
-=== Backups to Disk
+*Backups to Disk*
 
 Backup copies of your cluster data are stored on disk so that you can pause and resume your clusters when you want, without losing data. Cluster data consists of the following:
 
@@ -60,37 +63,56 @@ Backup copies of your cluster data are stored on disk so that you can pause and 
 
 Production clusters use the following backups:
 
-- *Automatic backups:* A full backup of your cluster data is copied to disk once every 24 hours, and when a cluster is paused.
-- *Manual backups:* You can take a xref:backup-and-restore.adoc[manual backup] of your cluster data at any time. Take up to a maximum of ten backups.
+- *Automatic backups:* A full copy of your cluster data is backed up once every 24 hours, and when a cluster is paused.
+- *Manual backups:* You can take a xref:backup-and-restore.adoc[manual backup] of your cluster data at any time. A maximum of ten backups can be retained.
 
-=== Backups to Other Members
+*Backups to Other Members*
 
-By default, data on production clusters is backed up on one other member in the cluster.
+By default, data on production clusters is backed up on another member in the cluster. 
 
-Although you can configure some xref:data-structures.adoc[data structures] with a custom backup count, the effective backup count is limited by the number of members in your cluster. 
+Although you can configure some data structures with a custom backup count, the effective backup count is limited by the number of members in your cluster. For further information on distributed data structure configuration options, see the xref:data-structures.adoc[] topic.
 
-For example, if you configure a map with five backups, but your cluster has only two members, you will have one effective backup. You need to add enough data to the cluster so that it automatically scales up the number of members and backups to your configured count of five. 
+For example, if you configure a map with five backups and your cluster has just two members, only one backup can be made as each member acts as the backup member for the other. When enough data has been added to the cluster, it automatically scales up the number of members and this means that the number of backups also increases. Once enough members exist, your configured count of five backups is achieved. 
+
+For further information about backups and the configuration options, refer to the xref:data-structures:backing-up-maps.doc[Making Your Map Data Safe,window=_blank] topic in the Platform documentation.
+====
+// end::types[]
 
 == Restrictions on {hazelcast-cloud} Standard Clusters
 
-Development clusters and production clusters are xref:stop-and-resume.adoc#pausing-a-cluster[paused] when you don't connect to them cluster for 24 hours.
+Both production and development clusters are xref:stop-and-resume.adoc#pausing-a-cluster[paused] if you don't connect to them for 24 hours. 
 
-If you're using a production cluster, Hazelcast saves your cluster data so that you can resume the cluster at a later time.
+If a cluster is paused, your cluster data is treated as follows:
 
-If you're using a development cluster, all cluster data is lost after the cluster is paused.
+* For production clusters, Hazelcast saves your cluster data so that you can resume the cluster later.
+* For development clusters, all cluster data is lost.
 
 == Charges for {hazelcast-cloud} Standard Clusters
 
-{hazelcast-cloud} Standard clusters are billed monthly only for the amount of storage that you use. You pay for all artifacts that are stored, which includes data, metadata, and custom code. For example, as well as the data that you add to data structures, such as maps, you are charged for backups and metadata.
+{hazelcast-cloud} Standard clusters are billed monthly based on the amount of storage that you use. The used storage includes all artifacts, such as data, metadata, and custom code. For example, this means that - in addition to the data added to data structures, such as maps - any backups and metadata are included in the amount of storage used.
 
-Additional memory usage is also charged for, and may include the following:
+Additional memory usage is also charged for, and can include the following:
 
 - Indexes that you create
 - Stateful jobs
 - Serialization overhead
 
-For example, the xref:cluster-side-modules.adoc#serializers[`HazelcastJsonValue` serializer] includes metadata to allow the cluster to query JSON fields and values. You are charged for this metadata. As a result, the amount of used memory in your cluster may be more than the amount of data that you added to a data structure.
+For example, serializing a JSON string into `HazelcastJsonValue` includes metadata to allow the cluster to query JSON fields and values. You are charged for this metadata. As a result, the amount of used memory in your cluster can be more than the amount of data added to a data structure. 
 
 == Next Steps
 
-- xref:create-serverless-cluster.adoc[]
+If you haven't done so already, sign up for a link:{page-cloud-console}[{hazelcast-cloud} account, window=_blank]. If you want to try {hazelcast-cloud} first, you can start a 14-day no-cost trial from the same place.
+
+If you're ready to get started, you can:
+
+* xref:tutorials.adoc[Follow a tutorial]
+* xref:create-serverless-cluster.adoc[Create a Standard cluster]
+
+== Related Topics
+
+* xref:organizations-and-accounts.adoc[Organizations and Accounts]
+* xref:stop-and-resume.adoc[]
+* xref:backup-and-restore.adoc[]
+* xref:data-structures.adoc[]
+* xref:cluster-side-modules.adoc#serializers[Supported Serializers]
+* xref:free-trial.adoc[]

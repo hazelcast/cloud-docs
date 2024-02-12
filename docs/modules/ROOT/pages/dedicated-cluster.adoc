@@ -1,4 +1,4 @@
-= {hazelcast-cloud} Dedicated Clusters
+= {hazelcast-cloud} Dedicated Edition
 :description: Dedicated is a managed cloud service that allows you to maintain control over the hardware, resources, and deployment options that are available to your cluster. Dedicated means you get specific servers (cloud instances) all to yourself. You do not share infrastructure with other customers, and your clusters are not accessible over the public internet.
 :page-dedicated: true
 :cloud-tags: Get Started
@@ -8,15 +8,40 @@
 
 {description}
 
-When you first create an account on Hazelcast {hazelcast-cloud}, you become the adminstrator of an organization. This means that you can invite users to your organization and share resources, such as clusters. For further information on organizations, see the xref:organizations-and-accounts.adoc[Organizations and Accounts] section.
+Contact Hazelcast to discuss your specific requirements with one of our Sales & Solutions architects. Together, we can design a Hazelcast topology that meets your specific compliance and service design needs. 
 
-You can design a Hazelcast topology that meets your specific compliance and service design needs.
+We can accommodate many different requirements; for example, with Dedicated Edition you can to do the following:
 
 - Deploy your clusters to specific regions to comply with data residency laws.
 - Benefit from strict container isolation for projects that require enhanced security.
 - Deploy clusters to specific regions as part of your organization's cloud strategy. To reduce network latency, you can deploy clusters in regions that are closest to your users' locations.
 - Specify the memory capacity of members in your cluster, with automatic scaling enabled by default, to provide additional capacity when required.
 
+To ensure that we understand your requirements in our discussion, Hazelcast needs the following information:
+
+* Your Classless Inter-domain Routing (CIDR) block
+* The region of your existing workload
+* The number of Availability Zones required
+* The method used for your network connections, such as VPC Peering, on-premises, or a cloud provider
+* Your expected member size
+* Your expected member count
+
+The following information is also useful:
+
+* Your use case
+* Persistence requirements
+* Backup requirements
+
+To set up your account, we will need confirmation of the name and contact details to use for your organization.
+
+Once we have all the details, and your agreement, Hazelcast provisions your environment and takes your account live. Once your Dedicated is ready, Hazelcast will ensure that you have all the information required to complete your connection and get started. 
+
+When an account is created on Hazelcast {hazelcast-cloud}, the name and contact details are used to create the adminstrator for an organization. This means that you can invite users to your organization and share resources, such as clusters. For further information on organizations, see the xref:organizations-and-accounts.adoc[Organizations and Accounts] section.
+
 == Next Steps
 
-- xref:create-dedicated-cluster.adoc[]
+If you're ready to get started, you can:
+
+* xref:tutorials.adoc[Follow a tutorial]
+* xref:create-dedicated-cluster.adoc[Create a Dedicated cluster]
+* xref:add-users.adoc[]
