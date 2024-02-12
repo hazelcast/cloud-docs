@@ -1,5 +1,5 @@
 = {hazelcast-cloud} Trial
-:description: Explore the capabilities of Viridian Cloud Standard with a 14-day trial. 
+:description: Explore the capabilities of Viridian Cloud Standard with a free 14-day trial. 
 
 {description}
 
@@ -7,7 +7,9 @@ Start your trial by signing up for a link:{page-cloud-console}[{hazelcast-cloud}
 
 == What Can I Do During My Trial?
 
-Your trial gives you access to a fully functional Hazelcast environment. During the trial, you can use all the features of a single development cluster. You can also connect to the cluster using one of the preconfigured sample clients: Java, Python, .NET, or (CLC) CLI.
+Your trial gives you access to the Hazelcast environment, with an optional guided tour to get you started. 
+
+During your trial, you can use all the features of a single development cluster. You can connect to the cluster using the preconfigured Java, Python, .NET, or (CLC) CLI sample clients, or you can use our advanced client setup guide to configure your own client.
 
 Development clusters have certain limitations as they are designed for fast, iterative prototyping. These include:
 
@@ -20,7 +22,7 @@ Development clusters have certain limitations as they are designed for fast, ite
 
 NOTE: When a development cluster restarts for any reason, you lose all cluster data, such as maps and cluster-side modules.
 
-== Is Any Support Available During the Free Trial?
+== Is Any Support Available?
 
 You can get support from our team at any point during your trial by sending an email to mailto:viridian@hazelcast.com[].
 
@@ -31,4 +33,11 @@ You'll also receive emails from Hazelcast with useful resources to help you get 
 At the end of the 14-day trial period, two things happen:
 
 - Your account is automatically suspended. This means that although you can still access the trial environment, your cluster is stopped and cannot be restarted.
-- Your trial environment, including all data, will be automatically deleted.
+- Your trial environment, including all data, is automatically deleted.
+
+Hazelcast will be in touch during your trial, and when it ends. If you want to talk further with us about subscription options, mailto:viridian@hazelcast.com[send us an email], or select the button available at the end of most trial communications from Hazelcast.
+
+You can find out more about the subscripton options in the following topics:
+
+* xref:serverless-cluster.adoc[]. This is the pay-as-you-go subscription option
+* xref:dedicated-cluster.adoc[]. This is our contractual subscription option

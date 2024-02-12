@@ -7,7 +7,7 @@
 
 {description}
 
-Hazelcast {hazelcast-cloud} abstracts away the manual effort of managing physical servers or servers in the cloud so that you can focus on what matters: Building your application.
+Hazelcast {hazelcast-cloud} eliminates the manual effort of managing physical servers or servers in the cloud so that you can focus on what matters: building your application.
 
 == Application Topology
 
@@ -19,29 +19,35 @@ Hazelcast {hazelcast-cloud} abstracts away the manual effort of managing physica
 
 == Editions
 
-Hazelcast {hazelcast-cloud} has two editions: {hazelcast-cloud} Standard and {hazelcast-cloud} Dedicated.
-
-xref:free-trial.adoc[{hazelcast-cloud} Trial] offers the capabilities of {hazelcast-cloud} Standard for a 14-day trial period.
-
+Hazelcast {hazelcast-cloud} offers the choice of two editions:
 
 [cols="1a,2a"]
 |===
 |Edition|Description
 
-|xref:serverless-cluster.adoc[{hazelcast-cloud} Standard]
+|{hazelcast-cloud} Standard
 |{hazelcast-cloud} Standard clusters auto-scale, depending on the amount of data you store. 
 
-|xref:dedicated-cluster.adoc[{hazelcast-cloud} Dedicated]
-|To maximize security whilst minimizing latency, {hazelcast-cloud} Dedicated clusters expose only private Hazelcast endpoints. For consistent performance and throughput, {hazelcast-cloud} Dedicated clusters do not share infrastructure with any other customers.
+|{hazelcast-cloud} Dedicated
+|To maximize security whilst minimizing latency, {hazelcast-cloud} Dedicated clusters expose only private Hazelcast endpoints. For consistent performance and throughput, {hazelcast-cloud} Dedicated clusters do not share infrastructure with any other customers.  
 |===
 
 NOTE: When you first create an account on Hazelcast {hazelcast-cloud}, you become the administrator of an organization. For Trial Edition users, this has no further impact. For Standard and Dedicated Edition users, this means that you can invite users to your organization and share resources, such as clusters. For further information on organizations, see the xref:organizations-and-accounts.adoc[Organizations and Accounts] section.
 
 == Getting Started
 
-If you are a first-time user of Hazelcast {hazelcast-cloud}, see xref:get-started.adoc[].
+Find out more about the Hazelcast {hazelcast-cloud} editions:
 
-If you're ready to get started with a real use case, see xref:tutorials.adoc[].
+* xref:serverless-cluster.adoc[{hazelcast-cloud} Standard]
+* xref:dedicated-cluster.adoc[{hazelcast-cloud} Dedicated]
 
-If you want to get an overview of the use cases and advantages of Hazelcast {hazelcast-cloud}, see the link:https://hazelcast.com/products/cloud/[Hazelcast website].
+Try {hazelcast-cloud} for 14 days with no cost or commitment with the xref:free-trial.adoc[{hazelcast-cloud} Trial].
+
+== Next Steps
+
+If you are a first-time user of Hazelcast {hazelcast-cloud}, follow the xref:get-started.adoc[] tutorial.
+
+If you're ready to get started with real use cases, follow our other xref:tutorials.adoc[tutorials].
+
+If you want an overview of the use cases and advantages of Hazelcast {hazelcast-cloud}, see the link:https://hazelcast.com/products/cloud/[Hazelcast website].
 
