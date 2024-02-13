@@ -28,12 +28,12 @@ Hazelcast recommends that you copy any data or details that you might need in th
 To delete an organization, complete the following steps:
 
 . Open the link:{page-cloud-console}[Hazelcast {hazelcast-cloud} console,window=_blank].
-. Select *Account* from the side navigation bar
+. Select *Organization* from the side navigation bar
 . Select *Password* from the *Account* options
 +
-The Account Settings screen displays.
+The Info screen displays.
 
-. Scroll down to the *Danger Zone* section of the Account Settings screen
+. Scroll down to the *Danger Zone* section of the Info screen
 
 . Select the *DELETE THIS ORGANIZATION* button
 +
