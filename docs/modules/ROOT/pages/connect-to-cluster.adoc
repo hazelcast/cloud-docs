@@ -2,7 +2,7 @@
 :description: To communicate with a cluster, you need a client. Hazelcast offers clients in a variety of languages as well as a command-line client for quick prototyping and scripting.
 :page-aliases: connect-to-private-cluster.adoc
 :cloud-tags: Develop Applications | Manage Clusters
-:cloud-title: Connecting to Viridian Cloud Clusters | Connecting to Clusters
+:cloud-title: Connecting to Cloud Clusters | Connecting to Clusters
 :cloud-order: 21 | 50
 
 {description}
@@ -45,7 +45,7 @@ For a complete tutorial, see the xref:get-started.adoc[] topic.
 [[advanced]]
 == Configure Your Own Client
 
-You can access the information needed to connect your own clients through any of the pre-configured client details. 
+You can access the information needed to connect your own clients through the *Advanced* option. 
 
 include::partial$get-connection-creds.adoc[]
 

@@ -1,14 +1,14 @@
 = Create an Account
-:description: You must create an account before you can use {hazelcast-cloud}. Creating an account creates an organization with a single user. You can sign up using an email address and password, or with a GitHub or Google account.
+:description: You must create an account before you can use {hazelcast-cloud}. Creating an account creates an organization with a single user. You can sign up using an email address and password, or with a GitHub or Google account to use our Standard or Trial editions.
 :toclevels: 3
 
 {description}
 
-Whichever sign-up method you use, you are given the choice of creating a free Trial account, or a paid Viridian Standard account. For further information on the available {hazelcast-cloud} editions, see the xref:overview.adoc[Hazelcast {hazelcast-cloud}] section.
+Whichever sign-up method you use, you are given the choice of creating a free Trial account, or a paid {hazelcast-cloud} Standard account. If you would prefer not to share infrastructure with other customers, you can set up a Dedicated account directly with Hazelcast. For further information on the available {hazelcast-cloud} editions, see the xref:overview.adoc[Hazelcast {hazelcast-cloud}] section.
 
-NOTE: By creating an account, you are agreeing to the {hazelcast-cloud} link:https://viridian.hazelcast.com/terms-of-service[Terms of Service,window=_blank] and the Hazelcast link:https://hazelcast.com/privacy/[Privacy Policy,window=_blank]. These documents are also available from the sign-up page.  
+NOTE: By creating an account, you are agreeing to the {hazelcast-cloud} link:https://cloud.hazelcast.com/terms-of-service[Terms of Service,window=_blank] and the Hazelcast link:https://hazelcast.com/privacy/[Privacy Policy,window=_blank]. These documents are also available from the sign-up page.  
 
-To create an account, complete the following steps:
+To create a Standard account, complete the following steps:
 
 . Open the link:{page-cloud-signup}[{hazelcast-cloud} sign-up page, window=_blank]
 
