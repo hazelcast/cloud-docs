@@ -1,5 +1,5 @@
 name: cloud
-title: Hazelcast Viridian Cloud
+title: Hazelcast Cloud
 start_page: overview.adoc
 version: ~
 asciidoc:
@@ -10,8 +10,8 @@ asciidoc:
     page-url-cloud-api: https://cloud.hazelcast.com/v1/api/explorer
     page-code-samples: https://github.com/hazelcast/hazelcast-cloud-code-samples
     page-cloud-platform-version: 5.3
-    page-cloud-console: https://viridian.hazelcast.com/
-    page-cloud-signup: https://viridian.hazelcast.com/sign-up
-    full-version: '5.3.6'
+    page-cloud-console: https://cloud.hazelcast.com/
+    page-cloud-signup: https://cloud.hazelcast.com/sign-up
+    full-version: '5.4.0'
 nav:
 - modules/ROOT/nav.adoc
