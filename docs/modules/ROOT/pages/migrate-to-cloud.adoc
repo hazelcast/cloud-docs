@@ -35,7 +35,7 @@ Exceeding these limits can lead to cluster failure.
 
 Be aware that the following operations use heap memory: writing, caching, or replicating data to data structures other than IMap an JCache. 
 
-For further information on {hazelcast-cloud} Standard clusters and their limits, see the xref:serverless-cluster.adoc[] topic.
+See xref:serverless-cluster.adoc#heap-memory-limits-of-viridian-serverless-clusters[Heap Memory Limits of {hazelcast-cloud} Standard Clusters] for further details.
 ====
 
 - [ ] Remove member configuration from your code. Hazelcast configures the cluster for the best possible performance. All you need to do is configure the client and any data structures.

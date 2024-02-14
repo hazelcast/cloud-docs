@@ -50,7 +50,7 @@ Connect your JDBC client to your {hazelcast-cloud} cluster using the following U
 
 [source]
 ----
-jdbc:hazelcast://<cluster-id>/?discoveryToken=<yourDiscoveryToken>&cloudUrl=https://api.cloud.hazelcast.com&sslEnabled=true
+jdbc:hazelcast://<cluster-id>/?discoveryToken=<yourDiscoveryToken>&cloudUrl=https://api.viridian.hazelcast.com&sslEnabled=true
 ----
 
 This can be understood as follows:
@@ -58,7 +58,7 @@ This can be understood as follows:
 * `jdbc:hazelcast` A required sub-protocol. This is a constant
 * `<cluster-id>` The ID of your cluster as displayed at the top right of the *Cluster Details* in the dashboard for the cluster in your link:{page-cloud-console}[{hazelcast-cloud} console,window=_blank] 
 * `discoveryToken` Set this to the discovery token created with your cluster. To find your discovery token select *CONNECT CLUSTER*. The discovery token can be revealed using the *Advanced setup* tab
-* `cloudURL` This must be set to the API base URL, `\https://api.cloud.hazelcast.com`. As TLS is mandatory, you must also enable SSL by appending `&sslEnabled=true` to the cloud URL
+* `cloudURL` This must be set to the API base URL, `\https://api.viridian.hazelcast.com`. As TLS is mandatory, you must also enable SSL by appending `&sslEnabled=true` to the cloud URL
 
 For further information on the connection properties used by the Hazelcast JDBC driver, refer to the https://github.com/hazelcast/hazelcast-jdbc/blob/main/README.md[READ ME^] file.
 

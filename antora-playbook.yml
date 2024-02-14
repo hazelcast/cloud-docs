@@ -54,9 +54,9 @@ asciidoc:
     page-pagination: true
     idprefix: ''
     idseparator: '-'
-    hazelcast-cloud: Cloud
-    page-cloud-console: https://cloud.hazelcast.com/
-    page-cloud-signup: https://cloud.hazelcast.com/sign-up
+    hazelcast-cloud: Viridian Cloud
+    page-cloud-console: https://viridian.hazelcast.com/
+    page-cloud-signup: https://viridian.hazelcast.com/sign-up
   extensions:
     - ./lib/tabs-block.js
     - asciidoctor-kroki

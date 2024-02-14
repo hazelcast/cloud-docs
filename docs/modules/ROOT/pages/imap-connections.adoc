@@ -1,5 +1,5 @@
 = Creating Mappings to IMaps
-:description: To run a SQL query against data in an IMap on a Hazelcast Cloud cluster, you need to create a mapping. The easiest way to do this is to use the connector wizard.
+:description: To run a SQL query against data in an IMap on a Viridian Cloud cluster, you need to create a mapping. The easiest way to do this is to use the connector wizard.
 :cloud-tags: Develop Applications
 :cloud-title: Creating Mappings to IMaps
 :cloud-order: 70
