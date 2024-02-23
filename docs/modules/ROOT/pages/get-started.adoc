@@ -2,7 +2,7 @@
 :description: In this tutorial, you'll learn how to connect a client to a cluster and use SQL to query data in the cluster.
 :page-aliases: cpp-client.adoc, getting-started.adoc, java-client.adoc, go-client.adoc, net-client.adoc, nodejs-client.adoc, python-client.adoc, sql.adoc
 :cloud-tags: Get Started | Favorites
-:cloud-title: Hello World | Viridian Cloud Hello World
+:cloud-title: Hello World | Hazelcast Cloud Hello World
 :cloud-order: 13 | 0
 
 {description}
@@ -46,7 +46,7 @@ Java::
 --
 Before you begin:
 
-* Install Java 8-17 and set the `JAVA_HOME` environment variable to the location of your JRE.
+* Install Java 17 or later and set the `JAVA_HOME` environment variable to the location of your JRE.
 * If you've followed the onscreen *Quick Connection Guide*, jump straight to <<step-5, step 5>>.
 
 []
