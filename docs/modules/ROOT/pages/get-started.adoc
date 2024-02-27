@@ -46,7 +46,7 @@ Java::
 --
 Before you begin:
 
-* Install Java 8-17 and set the `JAVA_HOME` environment variable to the location of your JRE.
+* Install Java 17 or later and set the `JAVA_HOME` environment variable to the location of your JRE.
 * If you've followed the onscreen *Quick Connection Guide*, jump straight to <<step-5, step 5>>.
 
 []

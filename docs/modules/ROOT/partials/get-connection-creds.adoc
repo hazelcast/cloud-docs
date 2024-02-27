@@ -1,11 +1,9 @@
-To obtain your cluster's connection credentials, complete the following steps:
+To obtain the connection credentials for your cluster, complete the following steps:
 
 . Sign in to the link:{page-cloud-console}[{hazelcast-cloud} console,window=_blank].
 . Select your cluster.
 
-. Select any of the pre-configured clients from the *Connect Client* options.
-
-. Select the *Advanced setup* button at the top of the screen.
+. Select the *Advanced* option in the *Connect Client* section of your Dashboard.
 +
 The connection credentials display.
 
@@ -15,10 +13,10 @@ The connection credentials consist of the following:
 |===
 |Credential|Description
 
-|Cluster ID
-|A unique identifier for your cluster.
+|Cluster Name
+|A unique name that identifies your cluster.
 
-Select the *Copy* icon (overlapping squares) to copy the Cluster ID to your clipboard.
+Select the *Copy* icon (overlapping squares) to copy the Cluster Name to your clipboard.
 
 |Discovery Token
 |A unique token that maps to the current IP address of the cluster. 

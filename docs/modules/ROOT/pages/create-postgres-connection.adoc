@@ -93,6 +93,6 @@ image:postgres_inbound_rules.png[Inbound rules for a postgreSQL database instanc
 == Related Resources
 
 - xref:hazelcast:sql:sql-statements.adoc[SQL Statements]
-- xref:tutorials:ROOT:sql_stock_ticker_cloud.adoc[SQL Basics on Cloud (Stock Ticker)]
+- xref:tutorials:ROOT:sql_stock_ticker_cloud.adoc[SQL Basics on Hazelcast Cloud]
 - xref:add-postgres-mapping.adoc[Adding a Mapping to a PostgreSQL Data Connection]
 - xref:delete-postgres-connection.adoc[Deleting a Data Connection to PostgreSQL]
