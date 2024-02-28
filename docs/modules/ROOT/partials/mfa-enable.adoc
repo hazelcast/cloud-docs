@@ -1,10 +1,10 @@
 . Install an authenticator app, such as Google Authenticator, on your device
 . Sign into the link:{page-cloud-console}[{hazelcast-cloud} console,window=_blank]
 . Select *Account* from the side navigation bar
-. Select *Security* from the *Account* options
+. Select *Ogranization* from the *Account* options
 +
-The Account Settings screen displays.
+The Organization screen displays.
 
+. Select the *Enable MFA* toggle
 . Open the authenticator app on your device, and scan the QR code that is displayed in the {hazelcast-cloud} console 
 . Enter the six-digit verification code provided by the authenticator app in the {hazelcast-cloud} console
-. Select the *Enable MFA* button
