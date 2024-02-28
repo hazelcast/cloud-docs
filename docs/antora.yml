@@ -12,6 +12,6 @@ asciidoc:
     page-cloud-platform-version: 5.3
     page-cloud-console: https://cloud.hazelcast.com/
     page-cloud-signup: https://cloud.hazelcast.com/sign-up
-    full-version: '5.3.6'
+    full-version: '5.4.0'
 nav:
 - modules/ROOT/nav.adoc

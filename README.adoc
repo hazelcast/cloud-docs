@@ -1,4 +1,4 @@
-= Hazelcast Viridian Documentation
+= Hazelcast Cloud Documentation
 // Settings:
 ifdef::env-github[]
 :warning-caption: :warning:
@@ -13,7 +13,7 @@ endif::[]
 
 image:https://img.shields.io/badge/Build-Staging-yellow[link="{url-staging}"]
 
-This repository contains the Antora components for the Hazelcast Viridian documentation.
+This repository contains the Antora components for the Hazelcast Cloud documentation.
 
 The documentation source files are marked up with AsciiDoc.
 
