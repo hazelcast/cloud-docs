@@ -1,12 +1,14 @@
 = Multi-Factor Authentication
-:description: Multi-factor authentication (MFA) adds another layer of security to your account. If enabled, instead of relying only on a username and password, MFA uses a trusted device to generate a secure digital identifier used to confirm your identity. By default, MFA is disabled.
+:description: If enabled at organization level, all users associated with the organization must enable Multi-factor Authentication (MFA). If disabled, users can choose whether or not to enable MFA for their sign-in. By default, MFA is disabled.
 :page-aliases: account-security.adoc
 :cloud-tags: Manage Accounts
 :cloud-order: 30
 
 {description}
 
-NOTE: If signing in with Google or GitHub, set MFA for those accounts and not for your {hazelcast-cloud} account. If you use social sign-in, MFA is not requested in the {hazelcast-cloud} console, even when enabled, as your username and password credentials have not been provided.
+Multi-factor authentication (MFA) adds another layer of security to your account. If enabled, instead of relying only on a username and password, MFA uses a trusted device to generate a secure digital identifer used to confirm your identity. 
+
+NOTE: If signing in with Google or GitHub, set MFA for those accounts and not for your {hazelcast-cloud} account. 
 
 [[enable]]
 == Enable Multi-Factor Authentication
@@ -36,19 +38,17 @@ To enable MFA, complete the following steps:
 
 include::partial$mfa-enable.adoc[]
 +
-You must now enter a username and password, and then provide the verification code using the authenticator app each time you sign in.
+. To enforce the use of MFA for all organization users, select the *Enforce for entire team* toggle 
 
-. Sign out of the Hazelcast {hazelcast-cloud} console
-. Sign in to your account using your username and password
-. Use your authenticator app to complete your sign in
+You and your organization users must now enter a username and password to sign in, and then provide the verification code using the authenticator app.
 
 include::partial$mfa-change-device.adoc[]
 
 [[disable]]
 == Disable Multi-Factor Authentication
 
-If you've enabled MFA, you can disable it at any time to sign in without an extra authentication step.
+If you've enabled MFA, you can disable it at any time to allow you and your organization users to sign in without an extra authentication step.
 
-To disable MFA, complete the following steps:
+To disable MFA for all users associated with your organization, complete the following steps:
 
 include::partial$mfa-disable.adoc[]
