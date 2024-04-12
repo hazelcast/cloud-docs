@@ -156,16 +156,16 @@ If installed, the installed version of the Hazelcast CLC client displays.
 
 . In the *Quick Connection Guide*, go to step 2 and run the `clc config import` command to import the configuration of your {hazelcast-cloud} cluster.
 
-. Now execute the following command to connect the Hazelcast CLC to your cluster. Replace the placeholder `$CLUSTER_ID`. You can find the cluster ID on the dashboard of your cluster under *Cluster Details*.
+. Now execute the following command to connect the Hazelcast CLC to your cluster. Replace the placeholder `$CLUSTER_NAME`. You can find the cluster ID on the dashboard of your cluster under *Cluster Details*.
 +
 ```bash
-clc -c pr-$CLUSTER_ID
+clc -c pr-$CLUSTER_NAME
 ```
 +
 A CLC prompt is displayed:
 +
 ```
-pr-$CLUSTER_ID>
+pr-$CLUSTER_NAME>
 ```
 +
 The Hazelcast CLC client is successfully connected to your cluster.
@@ -180,7 +180,7 @@ The Hazelcast CLC client is successfully connected to your cluster.
 +
 [source,bash]
 ----
-clc sql -c pr-$CLUSTER_ID "CREATE OR REPLACE MAPPING cities (
+clc sql -c pr-$CLUSTER_NAME "CREATE OR REPLACE MAPPING cities (
 __key INT,
 country VARCHAR,
 city VARCHAR,
@@ -192,7 +192,7 @@ type IMap OPTIONS('keyFormat'='int', 'valueFormat'='json-flat');"
 +
 [source,bash]
 ----
-clc sql -c pr-$CLUSTER_ID "INSERT INTO cities VALUES
+clc sql -c pr-$CLUSTER_NAME "INSERT INTO cities VALUES
 (1, 'United Kingdom','London', 9540576),
 (2, 'United Kingdom','Manchester', 2770434),
 (3, 'United States', 'New York', 19223191),
@@ -213,16 +213,16 @@ Now that you have some data in your cluster, you can query it using CLC. In the 
 
 NOTE: Ensure that there is a semi-colon (;) at the end of each SQL query. If this is omitted, CLC assumes that you are entering a multi-line query.
 
-If CLC is not connected, enter the following command replacing the `$CLUSTER_ID` placeholder with your cluster ID:
+If CLC is not connected, enter the following command replacing the `$CLUSTER_NAME` placeholder with your cluster ID:
 
 ```bash
-clc -c pr-$CLUSTER_ID
+clc -c pr-$CLUSTER_NAME
 ```
 
 A CLC prompt is displayed:
 
 ```
-pr-$CLUSTER_ID>
+pr-$CLUSTER_NAME>
 ```
 
 NOTE: You can find the cluster ID on the dashboard of your cluster under *Cluster Details*.
