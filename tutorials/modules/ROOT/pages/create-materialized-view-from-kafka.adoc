@@ -38,17 +38,17 @@ clc version
 ----
 +
 You should see your installed version of the Hazelcast CLC client.
-. In the *Quick Connection Guide*, go to step 2 and run the `clc config import` command to import the configuration of your {hazelcast-cloud} cluster.
-. Now execute the following command to connect the Hazelcast CLC to your cluster. Replace the placeholder `$CLUSTER_ID` with your cluster ID. You can find the cluster ID on the dashboard of your cluster under *Cluster Details*.
+. Navigate to the Cluster Details page on the Viridian UI which shows the Client Connect options.  Choose `CLI` and run the `clc config import` command to import the configuration of your {hazelcast-cloud} cluster.
+. Now execute the following command to connect the Hazelcast CLC to your cluster. Replace the placeholder `$CLUSTER_NAME` with your cluster name. You can find the cluster name on the dashboard of your cluster under *Cluster Details*.
 +
 ```bash
-clc -c pr-$CLUSTER_ID
+clc -c $CLUSTER_NAME
 ```
 +
 A CLC prompt is displayed:
 +
 ```
-pr-$CLUSTER_ID>
+$CLUSTER_NAME...SQL>
 ```
 +
 The Hazelcast CLC client is successfully connected to your cluster ready for later steps in this tutorial.
@@ -114,6 +114,7 @@ OPTIONS (
   'session.timeout.ms'='45000'
 );
 ----
+TIP: The `sasl.jaas.config` entry must be terminated by a semi-colon.
 +
 The `trades` topic accepts trades in JSON format, using the following schema:
 +
@@ -139,7 +140,7 @@ INSERT INTO trades VALUES
 . If you haven't started the CLC prompt on your {hazelcast-cloud} cluster, do it now:
 +
 ```bash
-clc -c pr-$CLUSTER_ID
+clc -c $CLUSTER_NAME
 ```
 
 . In the CLC prompt, write a streaming query that filters trade messages, where the total trade order is more than $100.
