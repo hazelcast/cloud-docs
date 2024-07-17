@@ -20,7 +20,7 @@ All users have the following permissions:
 ** xref:custom-classes-upload.adoc#package[Upload custom classes]
 ** xref:data-structures.adoc[Configure data structures]
 
-* https://docs.hazelcast.com/management-center/5.3/getting-started/overview[Use Management Center^]
+* https://docs.hazelcast.com/management-center/latest/getting-started/overview[Use Management Center^]
 * xref:view-organization-details.adoc[View the organization name]
 * xref:view-and-update-profile.adoc[View and update their own profile]
 * xref:multi-factor-authentication.adoc[Enable and disable Multi-factor Authentication]
