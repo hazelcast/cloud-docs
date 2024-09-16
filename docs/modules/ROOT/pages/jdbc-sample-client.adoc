@@ -7,7 +7,7 @@
 
 Download the https://github.com/hazelcast/hazelcast-cloud-java-sample-client/blob/master/src/main/java/com/hazelcast/cloud/ClientWithSsl.java[sample client^] from GitHub.
 
-You also need the  _hazelcast-jdbc-enterprise-{version}.jar_ file. You can download this file from https://github.com/hazelcast/hazelcast-jdbc/releases[Releases^].
+You also need the  _hazelcast-jdbc-enterprise-\{version}.jar_ file. You can download this file from https://github.com/hazelcast/hazelcast-jdbc/releases[Releases^].
 
 A JDBC Driver allows a Java application to connect to Hazelcast using the JDBC API. The Hazelcast JDBC Driver is available from https://github.com/hazelcast/hazelcast-jdbc[GitHub^]. 
 
