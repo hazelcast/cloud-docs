@@ -19,7 +19,7 @@ Hazelcast {hazelcast-cloud} eliminates the manual effort of managing physical se
 
 == Editions
 
-Hazelcast {hazelcast-cloud} offers the choice of two editions:
+Hazelcast {hazelcast-cloud} offers the choice of two editions: 
 
 [cols="1a,2a"]
 |===
