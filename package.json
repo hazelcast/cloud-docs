@@ -16,7 +16,7 @@
     "@jcahills/antora-link-checker": "^1.0.1",
     "@djencks/antora-aggregate-collector": "^0.1.0-beta.1",
     "asciidoctor-kroki": "^0.15.0",
-    "ngrok": "^4.2.2",
-    "serve": "^13.0.2"
+    "ngrok": "^5.0.0-beta.2",
+    "serve": "^14.2.6"
   }
 }
